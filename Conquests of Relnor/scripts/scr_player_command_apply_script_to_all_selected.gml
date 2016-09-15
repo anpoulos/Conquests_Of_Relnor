@@ -3,9 +3,12 @@
 if(argument0 == noone) return false;
 
     for(var i = 0; i < MAX_NPCS; i++){
-        if(self.selected[i] != noone && self.selected[i]){
+        if(self.commandModule.selected[i] != noone && 
+        self.commandModule.selected[i]){
             with(global.npcs[i]){
                 script_execute(argument0);
             }
         }
     }
+
+

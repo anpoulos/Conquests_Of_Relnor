@@ -74,6 +74,7 @@
           <script>scripts\scr_lifeform_spawn_state.gml</script>
         </scripts>
         <script>scripts\scr_lifeform_automove_check.gml</script>
+        <script>scripts\scr_lifeform_is_path_blocked.gml</script>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_player_get_action_inputs.gml</script>
@@ -93,8 +94,11 @@
             <script>scripts\scr_player_commands_selected_enable_engage.gml</script>
             <script>scripts\scr_player_commands_selected_enable_wander.gml</script>
             <script>scripts\scr_player_commands_selected_disable_wander.gml</script>
+            <script>scripts\scr_player_commands_deselect_all.gml</script>
+            <script>scripts\scr_player_commands_move_all.gml</script>
           </scripts>
-          <script>scripts\scr_player_command_initialize.gml</script>
+          <script>scripts\scr_player_command_module_initialize.gml</script>
+          <script>scripts\scr_player_command_update_gui.gml</script>
         </scripts>
         <script>scripts\scr_player_create_gui.gml</script>
       </scripts>
@@ -146,18 +150,28 @@
           <script>scripts\scr_ui_menu_title_start_game.gml</script>
           <script>scripts\scr_ui_menu_title_initialize.gml</script>
         </scripts>
-        <scripts name="Buttons">
-          <script>scripts\scr_ui_button_constructor.gml</script>
-          <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
-          <script>scripts\scr_ui_button_set_default_draw.gml</script>
-          <script>scripts\scr_ui_button_test_press.gml</script>
-          <script>scripts\scr_ui_button_draw.gml</script>
-          <script>scripts\scr_ui_button_global_left_pressed.gml</script>
-        </scripts>
-        <scripts name="Menu Container">
+        <scripts name="Parent">
           <script>scripts\scr_ui_menu_create_container.gml</script>
-          <script>scripts\scr_ui_menu_container_add_button.gml</script>
+          <script>scripts\scr_ui_menu_container_add_draw_object.gml</script>
           <script>scripts\scr_ui_menu_set_defaults.gml</script>
+          <script>scripts\scr_ui_menu_draw.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Buttons">
+        <script>scripts\scr_ui_button_test_press.gml</script>
+        <scripts name="Parent">
+          <script>scripts\scr_ui_button_global_left_pressed.gml</script>
+          <script>scripts\scr_ui_button_draw.gml</script>
+          <script>scripts\scr_ui_button_set_default_draw.gml</script>
+          <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
+          <script>scripts\scr_ui_button_constructor.gml</script>
+        </scripts>
+      </scripts>
+      <script>scripts\scr_ui_draw_obj_draw.gml</script>
+      <scripts name="Font">
+        <scripts name="Parent">
+          <script>scripts\scr_ui_font_parent_draw.gml</script>
+          <script>scripts\scr_ui_font_constructor.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -169,6 +183,7 @@
     <font>fonts\fnt_default_medium</font>
     <font>fonts\fnt_default_large</font>
     <font>fonts\fnt_default_small</font>
+    <font>fonts\fnt_default_smallest</font>
   </fonts>
   <objects name="objects">
     <objects name="Lifeform">
@@ -177,6 +192,7 @@
         <object>objects\obj_player_view</object>
         <object>objects\obj_player_global</object>
         <object>objects\obj_player_select_box</object>
+        <object>objects\obj_player_command_module</object>
       </objects>
       <objects name="NPC">
         <object>objects\obj_npc_blue_soldier</object>
@@ -201,14 +217,17 @@
     </objects>
     <objects name="UI">
       <objects name="Parent">
+        <object>objects\obj_ui_draw_parent</object>
+      </objects>
+      <objects name="Button">
         <object>objects\obj_ui_button</object>
-        <object>objects\obj_ui_menu_container</object>
         <object>objects\obj_ui_button_information</object>
       </objects>
-      <objects name="Command">
-        <objects name="Selection">
-          <object>objects\obj_ui_command_selection_options</object>
-        </objects>
+      <objects name="Menu">
+        <object>objects\obj_ui_menu_container</object>
+      </objects>
+      <objects name="Font">
+        <object>objects\obj_ui_font</object>
       </objects>
     </objects>
     <object>objects\obj_array</object>

@@ -31,10 +31,11 @@ btn.font = _buttonInformation.font;
 btn.fontColor = _buttonInformation.fontColor;
 btn.buttonAlpha = _buttonInformation.buttonAlpha;
 btn.fontAlpha = _buttonInformation.fontAlpha;
+btn.buttonScriptAs = _buttonInformation.buttonScriptAs;
 
 if(argument7 != noone){
     btn.menuContainer = argument7; 
-    scr_ui_menu_container_add_button(btn, btn.menuContainer);
+    scr_ui_menu_container_add_draw_object(btn, btn.menuContainer);
 }
 
 return btn;

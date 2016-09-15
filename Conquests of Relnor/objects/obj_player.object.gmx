@@ -28,7 +28,10 @@
             <string>///Player
 
 event_inherited();
-scr_player_command_initialize();
+
+stillSelecting = false;
+commandModule = instance_create(0,0,obj_player_command_module);
+commandModule.player = self;
 
 //overrides
 self.allegiance = ALLEGIANCE_BLUE;

@@ -2,9 +2,9 @@
 
 //move units
 if(!self.stillSelecting){
-    if(!self.CommandMenuContainer.buttonPressed){
-        var t = "";
-        scr_player_command_apply_script_to_all_selected(self.unitMoveCommand);
+    if(!self.CommandMenuContainer.buttonPressed && 
+    !self.PassiveMenuContainer.buttonPressed){
+        script_execute(self.commandModule.mouseCommand);
     }    
 }
 

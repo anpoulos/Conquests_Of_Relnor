@@ -1,39 +1,37 @@
-///scr_ui_button_draw(obj_ui_button)
+///scr_ui_button_draw
 
-var _button = argument0;
-
-if(_button.isVisible){
+if(self.isVisible){
     //draw button rectangle
-    draw_set_alpha(_button.buttonAlpha);
-    if(_button.isOutlined){
-        draw_rectangle_colour(_button.leftX, _button.topY, 
-        _button.rightX, _button.bottomY, 
+    draw_set_alpha(self.buttonAlpha);
+    if(self.isOutlined){
+        draw_rectangle_colour(self.leftX, self.topY, 
+        self.rightX, self.bottomY, 
         c_black, c_black, c_black, c_black, 
         true);
     }
     
-    if(_button.pressed){
-        draw_rectangle_colour(_button.leftX, _button.topY, 
-        _button.rightX, _button.bottomY, 
-        _button.buttonPressedColor, _button.buttonPressedColor, 
-        _button.buttonPressedColor, _button.buttonPressedColor, 
+    if(self.pressed){
+        draw_rectangle_colour(self.leftX, self.topY, 
+        self.rightX, self.bottomY, 
+        self.buttonPressedColor, self.buttonPressedColor, 
+        self.buttonPressedColor, self.buttonPressedColor, 
         false);
     }
     else{
-        draw_rectangle_colour(_button.leftX, _button.topY, 
-        _button.rightX, _button.bottomY, 
-        _button.topLeftColor, _button.topRightColor, 
-        _button.bottomRightColor, _button.bottomLeftColor, 
+        draw_rectangle_colour(self.leftX, self.topY, 
+        self.rightX, self.bottomY, 
+        self.topLeftColor, self.topRightColor, 
+        self.bottomRightColor, self.bottomLeftColor, 
         false);
     }
     
     //draw text
-    draw_set_color(_button.fontColor);
-    draw_set_font(_button.font);
+    draw_set_color(self.fontColor);
+    draw_set_font(self.font);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-    draw_set_alpha(_button.fontAlpha);
-    draw_text(x,y,_button.text);
+    draw_set_alpha(self.fontAlpha);
+    draw_text(x,y,self.text);
     
     scr_ui_button_set_default_draw();
 }

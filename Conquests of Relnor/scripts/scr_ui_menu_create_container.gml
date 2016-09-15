@@ -1,4 +1,4 @@
-///scr_ui_menu_create_container(originX, originY, position_array4, color_array4, isOutlined, menuAlpha)
+///scr_ui_menu_create_container(originX, originY, position_array4, color_array4, isOutlined, menuAlpha, stepScript)
 
 var _menu = instance_create(argument0, argument1, obj_ui_menu_container);
 
@@ -20,6 +20,7 @@ _menu.bottomRightColor = argument3.item[2];
 _menu.bottomLeftColor = argument3.item[3];
 _menu.isOutlined = argument4;
 _menu.menuAlpha = argument5;
+_menu.stepScript = argument6;
 
 return _menu;
 

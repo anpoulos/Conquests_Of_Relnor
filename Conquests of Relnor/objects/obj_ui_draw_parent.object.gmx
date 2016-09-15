@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_Lifeform_Parent</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,37 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///NPC
-
-event_inherited();
-
-commandedMoveTo = false;
-isAggressive = false;
-originX = x;
-originY = y;
-wanderRadius = 1000;
-wanderDistance = 50;
-oldWanderRadius = wanderRadius;
-oldWanderDistance = wanderDistance;
-engageScript = scr_npc_engages_stop_moving;
-
-//override
-self.reach = 25;
-self.sight = 50;
-
-self.directions[RIGHT] = 0;
-self.directions[LEFT] = 0;
-self.directions[DOWN] = 0;
-self.directions[UP] = 0;
-
-self.state = scr_npc_choose_next_state;
-self.moveInputs = scr_npc_set_directions_by_offset;
+            <string>///Create
+isVisible = false;
+drawSript = noone;
+menuContainer = noone;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_npc_Parent">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -72,30 +51,13 @@ self.moveInputs = scr_npc_set_directions_by_offset;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Collision
+            <string>///Draw
 
-//two npcs collide in search of same target
-return true;
+if(self.menuContainer == noone){
+    script_execute(self.drawScript);
+}
+//else menu container draws objects accordingly
 
-if(instance_exists(other.target) &amp;&amp; 
-instance_exists(self.target) &amp;&amp; 
-self.target == other.target){
-    var _targetX = self.target.x;
-    var _targetY = self.target.y;
-    var _myDistanceToTarget = point_distance(_targetX, _targetY, self.x, self.y);
-    var _theirDistanceToTarget = point_distance(_targetX, _targetY, other.x, other.y);
-    if(_theirDistanceToTarget &lt; _myDistanceToTarget){
-    
-    }
-    else{
-    
-    }
-}
-else{
-    //commented out so i can test collisions and see when npcs are in a locked state
-    //image_index = 0;
-    //image_speed = 0;
-}
 </string>
           </argument>
         </arguments>

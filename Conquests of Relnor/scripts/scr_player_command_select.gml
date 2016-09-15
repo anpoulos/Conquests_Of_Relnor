@@ -4,8 +4,18 @@ var obj = argument1;
     if(!obj.selected){
         if(_commander.allegianceRank[_commander.allegiance] > obj.allegianceRank[_commander.allegiance]){
             obj.selected = true;
-            _commander.selected[obj.uniqueId] = true;
-            _commander.totalSelected += 1;
+            _commander.commandModule.selected[obj.uniqueId] = true;
+            _commander.commandModule.totalSelected += 1;
             _commander.CommandMenuContainer.isVisible = true;
+            _commander.CommandInformationMenuContainer.isVisible = true;
+            if(obj.isAggressive){
+                _commander.commandModule.totalSelectedWithEngage += 1;
+            }
+            if(obj.wanderDistance > 0){
+                _commander.commandModule.totalSelectedWithWander += 1;
+            }
+            with(_commander){
+                scr_player_command_update_gui();
+            }
         }
     }

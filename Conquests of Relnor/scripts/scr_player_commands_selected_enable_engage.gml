@@ -1,1 +1,3 @@
 scr_player_command_apply_script_to_all_selected(scr_npc_commands_enable_engage_mode);
+self.commandModule.totalSelectedWithEngage = self.commandModule.totalSelected;
+scr_player_command_update_gui();

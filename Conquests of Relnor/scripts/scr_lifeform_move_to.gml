@@ -1,4 +1,10 @@
-///scr_lifeform_move_to(lifeform, x, y, endscript, accuracy)
+///scr_lifeform_move_to(lifeform, x, y, endscript, accuracy, collisionsOn)
+
+if(!argument5){
+    with(argument0){
+        phy_active = false;
+    }
+}
 
 argument0.moveToX = argument1;
 argument0.moveToY = argument2;
