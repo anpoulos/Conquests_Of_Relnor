@@ -220,16 +220,16 @@ WanderText.isVisible = true;
     var _DeselectButtonPressedColor = make_colour_rgb(100,100,100);
     var _DeselectButtonColorArray = scr_create_obj_array4_repeat(_DeselectButtonColor);
     
-    var _DeselectButtonPositionArray = scr_create_obj_array4(-80,-20,80,20);
+    var _DeselectButtonPositionArray = scr_create_obj_array4(-80,-10,80,10);
     
     var _fontColor = c_white;
     
     var _DeselectButtonX = CommandMenuContainer.x;
-    var _DeselectButtonY = DisableWanderButton.y+50;
+    var _DeselectButtonY = DisableWanderButton.y+35;
     
     var _DeselectButtonInfo = 
     scr_ui_get_obj_ui_button_information(5,scr_player_commands_deselect_all,self,
-    "Deselect All",fnt_default_medium,_fontColor,1.0,0.6);
+    "Deselect All",fnt_default_small,_fontColor,1.0,0.6);
     
     DeselectButton = scr_ui_button_constructor(_DeselectButtonX,_DeselectButtonY, 
     _DeselectButtonPositionArray, _DeselectButtonColorArray, 
@@ -238,6 +238,60 @@ WanderText.isVisible = true;
     DeselectButton.isVisible = true;
 //End of Deselect All Button
 
+//Mouse Actions Text
+var _mouseActionsTextX = CommandMenuContainer.x;
+var _mouseActionsTextY = DeselectButton.y+30;
+
+var MouseActionText = scr_ui_font_constructor(_mouseActionsTextX, _mouseActionsTextY, "Mouse Actions",fnt_default_medium, 
+c_white, 1.0, fa_center, fa_middle, CommandMenuContainer);
+MouseActionText.isVisible = true;
+//End of Mouse Actions Text
+
+//Move All Button
+    var _MoveButtonColor = make_colour_rgb(100,100,150);
+    var _MoveButtonPressedColor = make_colour_rgb(0,0,100);
+    var _MoveButtonColorArray = scr_create_obj_array4_repeat(_MoveButtonColor);
+    
+    var _MoveButtonPositionArray = scr_create_obj_array4(-80,-10,80,10);
+    
+    var _fontColor = c_white;
+    
+    var _MoveButtonX = CommandMenuContainer.x;
+    var _MoveButtonY = MouseActionText.y+30;
+    
+    var _MoveButtonInfo = 
+    scr_ui_get_obj_ui_button_information(5,scr_ui_button_commands_enable_move,self,
+    "Move Selected Units",fnt_default_small,_fontColor,1.0,0.6);
+    
+    MoveButton = scr_ui_button_constructor(_MoveButtonX,_MoveButtonY, 
+    _MoveButtonPositionArray, _MoveButtonColorArray, 
+    _MoveButtonPressedColor, true, _MoveButtonInfo, CommandMenuContainer);
+    
+    MoveButton.isVisible = true;
+//End of Move All Button
+
+//Square All Button
+    var _SquareUnitsButtonColor = make_colour_rgb(100,100,150);
+    var _SquareUnitsButtonPressedColor = make_colour_rgb(0,0,100);
+    var _SquareUnitsButtonColorArray = scr_create_obj_array4_repeat(_SquareUnitsButtonColor);
+    
+    var _SquareUnitsButtonPositionArray = scr_create_obj_array4(-80,-10,80,10);
+    
+    var _fontColor = c_white;
+    
+    var _SquareUnitsButtonX = CommandMenuContainer.x;
+    var _SquareUnitsButtonY = MoveButton.y+30;
+    
+    var _SquareUnitsButtonInfo = 
+    scr_ui_get_obj_ui_button_information(5,scr_ui_button_commands_square_formation,self,
+    "Square Selected Units",fnt_default_small,_fontColor,1.0,0.6);
+    
+    SquareUnitsButton = scr_ui_button_constructor(_SquareUnitsButtonX,_SquareUnitsButtonY, 
+    _SquareUnitsButtonPositionArray, _SquareUnitsButtonColorArray, 
+    _SquareUnitsButtonPressedColor, true, _SquareUnitsButtonInfo, CommandMenuContainer);
+    
+    SquareUnitsButton.isVisible = true;
+//End of Square All Button
 
 
 

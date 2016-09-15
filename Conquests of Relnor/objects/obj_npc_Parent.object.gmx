@@ -29,6 +29,8 @@
 
 event_inherited();
 
+squareX = 0;
+squareY = 0;
 commandedMoveTo = false;
 isAggressive = false;
 originX = x;

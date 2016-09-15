@@ -31,7 +31,7 @@ name = "UI Menu Container";
 
 stepScript = noone;
 buttonPressed = false;
-objects = scr_get_obj_array(16);
+objects = scr_create_obj_array(16);
 
 leftX = noone;
 topY = noone;

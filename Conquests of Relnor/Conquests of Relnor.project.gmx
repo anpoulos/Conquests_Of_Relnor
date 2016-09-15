@@ -96,6 +96,7 @@
             <script>scripts\scr_player_commands_selected_disable_wander.gml</script>
             <script>scripts\scr_player_commands_deselect_all.gml</script>
             <script>scripts\scr_player_commands_move_all.gml</script>
+            <script>scripts\scr_player_commands_square_formation.gml</script>
           </scripts>
           <script>scripts\scr_player_command_module_initialize.gml</script>
           <script>scripts\scr_player_command_update_gui.gml</script>
@@ -166,6 +167,10 @@
           <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
           <script>scripts\scr_ui_button_constructor.gml</script>
         </scripts>
+        <scripts name="Commands">
+          <script>scripts\scr_ui_button_commands_square_formation.gml</script>
+          <script>scripts\scr_ui_button_commands_enable_move.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\scr_ui_draw_obj_draw.gml</script>
       <scripts name="Font">
@@ -175,7 +180,7 @@
         </scripts>
       </scripts>
     </scripts>
-    <script>scripts\scr_get_obj_array.gml</script>
+    <script>scripts\scr_create_obj_array.gml</script>
     <script>scripts\scr_create_obj_array4.gml</script>
     <script>scripts\scr_create_obj_array4_repeat.gml</script>
   </scripts>
