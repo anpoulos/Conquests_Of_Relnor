@@ -4,6 +4,7 @@ var obj = argument1;
 
 if(_commander.commandModule.selected[obj.uniqueId]){
     obj.selected = false;
+    obj.healthBar.isVisible = false;
     _commander.commandModule.selected[obj.uniqueId] = false;
     _commander.commandModule.totalSelected -= 1;
     if(_commander.commandModule.totalSelected <= 0){

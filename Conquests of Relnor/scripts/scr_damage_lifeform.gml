@@ -20,6 +20,8 @@ else{
     lifeform.hitpoints -= damage.amount;
 }
 
+scr_lifeform_update_health_bar(lifeform);
+
 var dir = point_direction(source.x,source.y,lifeform.x,lifeform.y);
 var xForce = lengthdir_x(damage.knockback, dir);
 var yForce = lengthdir_y(damage.knockback, dir);

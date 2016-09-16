@@ -33,11 +33,21 @@ stillSelecting = false;
 commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
 
+//equipment and inventory override
+self.equipment.item[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
+self.equipment.item[OFFHAND].owner = self;
+self.equipment.item[OFFHAND].isVisible = true;
+
+self.equipment.item[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
+self.equipment.item[WEAPON].owner = self;
+self.equipment.item[WEAPON].isVisible = true;
+
 //overrides
 self.allegiance = ALLEGIANCE_BLUE;
 self.allegianceRank[ALLEGIANCE_BLUE] = 7;
 self.idleState = noone;
 self.isPlayer = true;
+self.maxHitpoints = 20;
 self.hitpoints = 20;
 self.energy = 10.0;
 self.name = "Player";

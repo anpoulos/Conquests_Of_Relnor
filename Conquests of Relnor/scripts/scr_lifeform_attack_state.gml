@@ -3,6 +3,7 @@ image_speed = self.attackImageSpeed;
 var dmgOffsetX = 0;
 var dmgOffsetY = 0;
 
+
 if(sprite_index == sprites[DOWN]){
     sprite_index = attackSprite[DOWN];
     dmgOffsetX = x;
@@ -14,7 +15,7 @@ else if(sprite_index == sprites[LEFT]){
     dmgOffsetY = y+2;
 }
 else if(sprite_index == sprites[RIGHT]){
-    sprite_index = attackSprite[RIGHT];
+//    sprite_index = attackSprite[RIGHT];
     dmgOffsetX = x+12;
     dmgOffsetY = y+2;
 }

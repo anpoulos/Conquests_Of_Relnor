@@ -14,6 +14,7 @@ var obj = argument1;
             if(obj.wanderDistance > 0){
                 _commander.commandModule.totalSelectedWithWander += 1;
             }
+            scr_lifeform_update_health_bar(obj);
             with(_commander){
                 scr_player_command_update_gui();
             }

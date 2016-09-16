@@ -13,18 +13,19 @@ for(var i = 0; i < MAX_NPCS; i++){
     }
 }
 
-var _originX = mouse_x;
-var _originY = mouse_y;
-
 var _dimension = round(sqrt(_totalSelected));
 if(sqr(_dimension) != _totalSelected){ //not a perfect square
     _dimension += 1;
 }
 
+var _dimensionOffset = _dimension*_selectedNPCs.item[0].reach/4;
+var _originX = mouse_x-_dimensionOffset; 
+var _originY = mouse_y-_dimensionOffset;
+
 var _previousRow = scr_create_obj_array(_dimension);
 
 scr_lifeform_move_to(_selectedNPCs.item[0], _originX, _originY, 
-scr_npc_commands_moved, _selectedNPCs.item[0].reach/2, false);
+scr_npc_commands_moved, 5, false);
 
 _selectedNPCs.item[0].squareX = _originX;
 _selectedNPCs.item[0].squareY = _originY;
@@ -45,7 +46,7 @@ for(var i = 1; i < _dimension; i++){
     _selectedNPCs.item[i].squareX, 
     _selectedNPCs.item[i].squareY, 
     scr_npc_commands_moved,
-    _selectedNPCs.item[i].reach/2,
+    5,
     false);
     
     _previousRow.item[i] = _selectedNPCs.item[i];
@@ -63,7 +64,7 @@ for(var i = _currentCounter; i < _totalSelected; i++){
     _selectedNPCs.item[i].squareX, 
     _selectedNPCs.item[i].squareY,
     scr_npc_commands_moved,
-    _selectedNPCs.item[i].reach/2,
+    5,
     false);
     
     _previousRow.item[_previousRowCounter] = _selectedNPCs.item[i];

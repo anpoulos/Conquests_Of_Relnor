@@ -37,24 +37,28 @@ if(self.length == 0) self.image_index = 0;
 
 //sprite direction
 switch(self.face){
-    case FACE_RIGHT:
+    //case FACE_RIGHT:
+    case RIGHT:
         self.sprite_index = self.sprites[RIGHT];
     break;
     
-    case FACE_LEFT:
+    //case FACE_LEFT:
+    case LEFT:
         self.sprite_index = self.sprites[LEFT];
     break;
     
-    case FACE_UPPERRIGHT:
-    case FACE_UPPERLEFT:
-    case FACE_UP:
+    //case FACE_UPPERRIGHT:
+    //case FACE_UPPERLEFT:
+    //case FACE_UP:
+    case UP:
         self.sprite_index = self.sprites[UP];
     break;
     
-    case FACE_DOWNRIGHT:
-    case FACE_DOWNLEFT:
-    case FACE_DOWN:
-        self.sprite_index = self.sprites[DOWN];   
+    //case FACE_DOWNRIGHT:
+    //case FACE_DOWNLEFT:
+    //case FACE_DOWN:
+    case DOWN:
+        self.sprite_index = self.sprites[DOWN];
     break;
 }
 

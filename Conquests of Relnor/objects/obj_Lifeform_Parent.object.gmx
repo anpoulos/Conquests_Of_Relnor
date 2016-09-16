@@ -29,11 +29,17 @@
 
 phy_fixed_rotation = true;
 
-image_speed = 0;
+equipment = scr_create_obj_array(2);
 
+inventory = scr_create_obj_array(16);
+
+selected = false;
+image_speed = 0;
+currentDepth = depth;
 possibleEnemies[0] = obj_player;
 
 attackImageSpeed = 0.5;
+showHealthBar = false;
 
 xAxis = 0;
 yAxis = 0;
@@ -42,14 +48,15 @@ allegianceRank[ALLEGIANCE_MAX] = 0;
 target = noone;
 moveOffsetX = 0;
 moveOffsetY = 0;
-reach = 0;
+reach = 15;
 
 isPlayer = false;
-hitpoints = 0;
-name = "";
-energy = 0.0;
+maxHitpoints = 10;
+hitpoints = 10;
+name = "Lifeform Parent";
+energy = 10.0;
 state = scr_lifeform_move_state;
-sight = 0;
+sight = 50;
 
 moveToX = noone;
 moveToY = noone;
@@ -70,9 +77,13 @@ triggers[MAX_TRIGGERS] = noone;
 directions[4] = noone;
 attackSprite[4] = noone;
 
+healthBar = instance_create(x,y,obj_lifeform_health_bar);
+healthBar.player = self;
+healthBar.isVisible = false;
+
 //movement
 direction360 = 0;
-face = DOWN;
+face = UP;
 length = 0;
 imageSpeed = 0.2;
 moveSpeed = 2;
@@ -81,6 +92,60 @@ dashSpeed = 6;
 currentMoveSpeed = runSpeed;
 
 attacked = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy attached objects
+
+with(self.healthBar){
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Health Bar reveal/hide check
+
+if(!self.selected){
+    self.healthBar.isVisible = false;
+}
 </string>
           </argument>
         </arguments>
@@ -226,6 +291,7 @@ scr_lifeform_automove_check();
             <string>///Object Depth
 
 depth = -y;
+self.currentDepth = depth;
 </string>
           </argument>
         </arguments>
@@ -330,6 +396,48 @@ switch(state){
         state = moveState;
         attacked = false;
     break;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Equipment
+
+//draw items behind first
+for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
+    var _item = self.equipment.item[i];
+    if(_item != noone &amp;&amp; _item.spriteBehind.item[self.face]){
+        draw_sprite(_item.sprite.item[self.face], image_index, self.x, self.y);
+    }
+}
+
+//draw lifeform
+draw_self();
+
+//draw items in front
+for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
+    var _item = self.equipment.item[i];
+    if(_item != noone &amp;&amp; !_item.spriteBehind.item[self.face]){
+        draw_sprite(_item.sprite.item[self.face], image_index, self.x, self.y);
+    }
 }
 </string>
           </argument>
