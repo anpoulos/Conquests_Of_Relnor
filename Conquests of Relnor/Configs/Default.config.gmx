@@ -649,7 +649,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="21">
+    <constants number="22">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">1</constant>
       <constant name="ATTACK">0</constant>
@@ -671,6 +671,7 @@
       <constant name="MAX_NPCS">100</constant>
       <constant name="WEAPON">0</constant>
       <constant name="OFFHAND">1</constant>
+      <constant name="GAME_TITLE">"Conquests of Relnor"</constant>
     </constants>
   </ConfigConstants>
 </Config>

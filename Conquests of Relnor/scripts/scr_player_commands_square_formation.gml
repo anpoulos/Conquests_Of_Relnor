@@ -74,6 +74,14 @@ for(var i = _currentCounter; i < _totalSelected; i++){
     }
 }
 
+with(_selectedNPCs){
+    instance_destroy();
+}
+
+with(_previousRow){
+    instance_destroy();
+}
+
 scr_player_commands_selected_disable_wander();
 
 

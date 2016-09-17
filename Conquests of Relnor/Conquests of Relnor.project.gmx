@@ -79,6 +79,12 @@
         </backgrounds>
       </backgrounds>
     </backgrounds>
+    <backgrounds name="Stills">
+      <backgrounds name="Title">
+        <background>background\bg_title</background>
+        <background>background\bg_title2</background>
+      </backgrounds>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -209,6 +215,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_default_medium</font>
     <font>fonts\fnt_default_large</font>
+    <font>fonts\fnt_title_large</font>
     <font>fonts\fnt_default_small</font>
     <font>fonts\fnt_default_smallest</font>
   </fonts>

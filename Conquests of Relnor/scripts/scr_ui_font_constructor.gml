@@ -9,7 +9,7 @@ _uiFont.alpha = argument5;
 _uiFont.halign = argument6;
 _uiFont.valign = argument7;
 
-if(argument7 != noone){
+if(argument8 != noone){
     _uiFont.menuContainer = argument8;
     scr_ui_menu_container_add_draw_object(_uiFont,_uiFont.menuContainer);
 }
