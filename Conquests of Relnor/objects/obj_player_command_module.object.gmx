@@ -27,8 +27,6 @@
             <kind>1</kind>
             <string>///Command Module
 
-player = noone;
-
 scr_player_command_module_initialize();
 </string>
           </argument>

@@ -2,13 +2,10 @@
 
 if(argument0 == noone) return false;
 
-    for(var i = 0; i < MAX_NPCS; i++){
-        if(self.commandModule.selected[i] != noone && 
-        self.commandModule.selected[i]){
-            with(global.npcs[i]){
+    for(var i = 0; i < self.commandModule.totalSelected; i++){
+            with(scr_linked_list_get_next(self.commandModule.selected)){
                 script_execute(argument0);
             }
-        }
     }
 
 

@@ -4,7 +4,7 @@ var obj = argument1;
     if(!obj.selected){
         if(_commander.allegianceRank[_commander.allegiance] > obj.allegianceRank[_commander.allegiance]){
             obj.selected = true;
-            _commander.commandModule.selected[obj.uniqueId] = true;
+            scr_linked_list_add(_commander.commandModule.selected, argument1);
             _commander.commandModule.totalSelected += 1;
             _commander.CommandMenuContainer.isVisible = true;
             _commander.CommandInformationMenuContainer.isVisible = true;

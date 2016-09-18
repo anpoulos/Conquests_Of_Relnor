@@ -114,6 +114,7 @@
             <script>scripts\scr_player_command_left_button.gml</script>
             <script>scripts\scr_player_command_right_button.gml</script>
             <script>scripts\scr_player_command_left_released.gml</script>
+            <script>scripts\scr_player_command_find_and_deselect.gml</script>
           </scripts>
           <script>scripts\scr_player_command_apply_script_to_all_selected.gml</script>
           <scripts name="Commands">
@@ -211,6 +212,14 @@
     <script>scripts\scr_create_obj_array.gml</script>
     <script>scripts\scr_create_obj_array4.gml</script>
     <script>scripts\scr_create_obj_array4_repeat.gml</script>
+    <scripts name="Linked List">
+      <script>scripts\scr_linked_list_create.gml</script>
+      <script>scripts\scr_linked_list_get_next.gml</script>
+      <script>scripts\scr_linked_list_peak.gml</script>
+      <script>scripts\scr_linked_list_size.gml</script>
+      <script>scripts\scr_linked_list_remove_next.gml</script>
+      <script>scripts\scr_linked_list_add.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default_medium</font>

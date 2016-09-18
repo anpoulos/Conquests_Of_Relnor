@@ -1,8 +1,5 @@
 ///scr_player_commands_move_all
-    for(var i = 0; i < MAX_NPCS; i++){
-        if(self.commandModule.selected[i] != noone && 
-        self.commandModule.selected[i]){
-            scr_npc_commands_move(global.npcs[i],
+    for(var i = 0; i < self.commandModule.totalSelected; i++){
+            scr_npc_commands_move(scr_linked_list_get_next(self.commandModule.selected),
             self.commandModule.unitArrivalCommand);
-        }
     }
