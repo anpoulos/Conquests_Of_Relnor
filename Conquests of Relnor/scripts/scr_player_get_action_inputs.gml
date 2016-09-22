@@ -6,5 +6,8 @@ directions[LEFT] = keyboard_check(ord('A'));
 directions[UP] = keyboard_check(ord('W'));
 directions[DOWN] = keyboard_check(ord('S'));
 
-triggers[ATTACK] = keyboard_check(ord('F'));
-triggers[DASH] = keyboard_check_pressed(vk_space);
+triggers[TRIGGER_ATTACK] = keyboard_check_pressed(vk_shift);
+triggers[TRIGGER_DASH] = keyboard_check_pressed(vk_space);
+triggers[TRIGGER_FORMATION] = keyboard_check_pressed(ord('F'));
+triggers[TRIGGER_ESC] = keyboard_check_pressed(vk_escape);
+

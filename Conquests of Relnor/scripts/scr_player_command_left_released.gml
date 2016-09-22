@@ -3,7 +3,7 @@
 //move units
 if(!self.stillSelecting){
     if(!self.CommandMenuContainer.buttonPressed && 
-    !self.PassiveMenuContainer.buttonPressed){
+    !self.PassiveMenuContainer.buttonPressed && self.commandModule.mouseCommand != noone){
         script_execute(self.commandModule.mouseCommand);
     }    
 }

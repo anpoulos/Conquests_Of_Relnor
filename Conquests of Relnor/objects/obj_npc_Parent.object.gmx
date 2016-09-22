@@ -28,7 +28,21 @@
             <string>///NPC
 
 event_inherited();
+/*
+fixture = physics_fixture_create();
+physics_fixture_set_box_shape(fixture, 10, 10);
+physics_fixture_set_density(fixture, 0.5);
+physics_fixture_set_friction(fixture, 0.2);
+physics_fixture_set_restitution(fixture, 2);
+physics_fixture_set_linear_damping(fixture, 5);
+physics_fixture_set_angular_damping(fixture, 0.1);
+physics_fixture_set_awake(fixture, true);
 
+physics_fixture_set_collision_group(fixture, FIXTURE_COLLISION_LIFEFORM);
+
+boundFixture = physics_fixture_bind(fixture, self);
+*/
+walkThroughNPCs = false;
 squareX = 0;
 squareY = 0;
 commandedMoveTo = false;
@@ -50,54 +64,9 @@ self.directions[LEFT] = 0;
 self.directions[DOWN] = 0;
 self.directions[UP] = 0;
 
-self.state = scr_npc_choose_next_state;
 self.moveInputs = scr_npc_set_directions_by_offset;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_npc_Parent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Collision
-
-//two npcs collide in search of same target
-return true;
-
-if(instance_exists(other.target) &amp;&amp; 
-instance_exists(self.target) &amp;&amp; 
-self.target == other.target){
-    var _targetX = self.target.x;
-    var _targetY = self.target.y;
-    var _myDistanceToTarget = point_distance(_targetX, _targetY, self.x, self.y);
-    var _theirDistanceToTarget = point_distance(_targetX, _targetY, other.x, other.y);
-    if(_theirDistanceToTarget &lt; _myDistanceToTarget){
-    
-    }
-    else{
-    
-    }
-}
-else{
-    //commented out so i can test collisions and see when npcs are in a locked state
-    //image_index = 0;
-    //image_speed = 0;
-}
+self.moveState = scr_npc_states_move_state;
+self.state = scr_npc_choose_next_state;
 </string>
           </argument>
         </arguments>

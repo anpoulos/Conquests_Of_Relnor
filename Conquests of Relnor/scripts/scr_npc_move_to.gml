@@ -1,8 +1,10 @@
-///scr_lifeform_move_to(lifeform, x, y, endscript, accuracy, collisionsOn)
+///scr_npc_move_to(npc, x, y, endscript, accuracy, walkThroughNPCs)
 
+//collisions off
 if(!argument5){
     with(argument0){
-        phy_active = false;
+        phy_active = false;    
+        walkThroughNPCs = true;
     }
 }
 

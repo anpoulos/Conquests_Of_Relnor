@@ -649,12 +649,10 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="22">
+    <constants number="26">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">1</constant>
-      <constant name="ATTACK">0</constant>
       <constant name="BLOCK">2</constant>
-      <constant name="DASH">1</constant>
       <constant name="DOWN">3</constant>
       <constant name="FACE_DOWN">6</constant>
       <constant name="FACE_DOWNLEFT">5</constant>
@@ -664,14 +662,20 @@
       <constant name="FACE_UP">2</constant>
       <constant name="FACE_UPPERLEFT">3</constant>
       <constant name="FACE_UPPERRIGHT">1</constant>
+      <constant name="FIXTURE_COLLISION_LIFEFORM">-1</constant>
       <constant name="LEFT">2</constant>
-      <constant name="MAX_TRIGGERS">3</constant>
-      <constant name="RIGHT">0</constant>
-      <constant name="UP">1</constant>
       <constant name="MAX_NPCS">100</constant>
-      <constant name="WEAPON">0</constant>
       <constant name="OFFHAND">1</constant>
-      <constant name="GAME_TITLE">"Conquests of Relnor"</constant>
+      <constant name="RIGHT">0</constant>
+      <constant name="STRING_GAME_TITLE">"Conquests of Relnor"</constant>
+      <constant name="TRIGGER_ATTACK">0</constant>
+      <constant name="TRIGGER_DASH">1</constant>
+      <constant name="TRIGGER_ESC">2</constant>
+      <constant name="TRIGGER_FORMATION">3</constant>
+      <constant name="TRIGGERS_MAX">4</constant>
+      <constant name="UP">1</constant>
+      <constant name="WEAPON">0</constant>
+      <constant name="ATTACKS_MAX">8</constant>
     </constants>
   </ConfigConstants>
 </Config>

@@ -30,6 +30,51 @@ event_inherited();
 
 moved = false;
 uniqueId = scr_global_command_get_unique_npc_id();
+
+commander = noone;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy
+
+if(self.selected){
+
+    for(var i = 0; i &lt; self.commander.commandModule.totalSelected; i++){
+        var _currentNPC = scr_linked_list_peak(self.commander.commandModule.selected);
+        if(_currentNPC == self){
+            scr_linked_list_remove_next(self.commander.commandModule.selected);
+            break;
+        }
+        else{
+            scr_linked_list_get_next(self.commander.commandModule.selected);
+        }
+    }
+
+    scr_player_command_deselect(self.commander, self);
+}
+
+event_inherited();
 </string>
           </argument>
         </arguments>
@@ -52,10 +97,36 @@ uniqueId = scr_global_command_get_unique_npc_id();
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Draw AI Path
+
+if(debug_mode){
+    draw_path(path, x,y, true);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Draw
+
 if(selected){
     draw_set_blend_mode(bm_add); 
-    draw_self(); 
+    event_inherited();
     draw_set_blend_mode(bm_normal);
     draw_set_alpha(0.1);
     if(self.isAggressive){
@@ -64,8 +135,8 @@ if(selected){
     //draw_circle_colour(self.originX,self.originY, self.wanderRadius, c_yellow, c_yellow, false); 
     draw_set_alpha(1);
 }
-else{
-    draw_self();
+else{   
+    event_inherited();
 }
 </string>
           </argument>

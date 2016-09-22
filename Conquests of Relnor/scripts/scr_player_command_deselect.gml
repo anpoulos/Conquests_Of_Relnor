@@ -1,7 +1,12 @@
 ///scr_player_command_deselect(commander, obj)
 var _commander = argument0;
 var obj = argument1;
+            
+            with(argument0){
+                scr_player_commands_reset();
+            }
 
+            obj.commander = noone;
             obj.selected = false;
             obj.healthBar.isVisible = false;
             _commander.commandModule.totalSelected -= 1;

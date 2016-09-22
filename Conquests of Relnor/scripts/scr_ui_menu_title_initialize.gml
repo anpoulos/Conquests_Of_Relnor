@@ -33,5 +33,5 @@ var _titleTextColor = make_colour_rgb(255,255,255);
 var _titleTextX = display_get_gui_width() - 30;
 var _titleTextY = display_get_gui_height() - 50;
 
-var _titleText = scr_ui_font_constructor(_titleTextX, _titleTextY, GAME_TITLE, fnt_title_large, _titleTextColor, 0.8, fa_right, fa_center, noone);
+var _titleText = scr_ui_font_constructor(_titleTextX, _titleTextY, STRING_GAME_TITLE, fnt_title_large, _titleTextColor, 0.8, fa_right, fa_center, noone);
 _titleText.isVisible = true;

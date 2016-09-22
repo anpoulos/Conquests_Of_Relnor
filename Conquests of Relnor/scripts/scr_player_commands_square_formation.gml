@@ -1,21 +1,32 @@
 ///scr_player_commands_square_formation()
 
+if(!self.commandModule.squarePreview.isClear){
+    return false;
+}
+
 var _totalSelected = self.commandModule.totalSelected;
 var _selected = self.commandModule.selected;
 var _firstNPC = scr_linked_list_get_next(_selected);
 
-var _dimension = round(sqrt(_totalSelected));
-if(sqr(_dimension) != _totalSelected){ //not a perfect square
-    _dimension += 1;
+var _dimension = self.commandModule.squarePreview.dimension;
+
+var _avgHeight = self.commandModule.squarePreview.averageHeight;
+var _avgWidth = self.commandModule.squarePreview.averageWidth;
+var _avgReach = self.commandModule.squarePreview.averageReach;
+
+var _originX = mouse_x-(_avgReach*(_dimension-1))/2; 
+
+var _d = _dimension;
+
+if(self.commandModule.squarePreview.notPerfectSquare){
+    _d += 1;
 }
 
-var _dimensionOffset = _dimension*_firstNPC.reach/4;
-var _originX = mouse_x-_dimensionOffset; 
-var _originY = mouse_y-_dimensionOffset;
+var _originY = mouse_y-(_avgReach*(_d))/2;
 
 var _previousRow = scr_create_obj_array(_dimension);
 
-scr_lifeform_move_to(_firstNPC, _originX, _originY, 
+scr_npc_move_to(_firstNPC, _originX, _originY, 
 scr_npc_commands_moved, 5, false);
 
 _firstNPC.squareX = _originX;
@@ -34,7 +45,7 @@ for(var i = 1; i < _dimension; i++){
     _currentNPC.squareX = _moveToX;
     _currentNPC.squareY = _moveToY;
     
-    scr_lifeform_move_to(_currentNPC, 
+    scr_npc_move_to(_currentNPC, 
     _currentNPC.squareX, 
     _currentNPC.squareY, 
     scr_npc_commands_moved,
@@ -51,7 +62,7 @@ for(var i = _currentCounter; i < _totalSelected; i++){
     _currentNPC.squareX = _moveToX;
     _currentNPC.squareY = _moveToY;
     
-    scr_lifeform_move_to(_currentNPC,
+    scr_npc_move_to(_currentNPC,
     _currentNPC.squareX, 
     _currentNPC.squareY,
     scr_npc_commands_moved,
@@ -69,6 +80,8 @@ with(_previousRow){
     instance_destroy();
 }
 
+self.commandModule.mouseCommand = noone;
 scr_player_commands_selected_disable_wander();
-
+scr_destroy_instance(self.commandModule.squarePreview);
+self.commandModule.squarePreview = noone;
 

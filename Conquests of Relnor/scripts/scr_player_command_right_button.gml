@@ -1,6 +1,6 @@
 ///scr_player_command_selecting
 
-if(keyboard_check(vk_shift)){
+if(keyboard_check( ord('R'))) {
     if(self.selectBox == noone && !instance_exists(self.selectBox)){
         self.selectBox = instance_create(mouse_x, mouse_y, obj_player_select_box);
         self.selectBox.selectScript = scr_player_command_find_and_deselect;

@@ -54,7 +54,7 @@ self.name = "Player";
 
 self.attackSprite[UP] = spr_player_up;
 self.attackSprite[DOWN] = spr_player_down;
-self.attackSprite[RIGHT] = spr_player_attack_right;
+self.attackSprite[RIGHT] = spr_player_right;
 self.attackSprite[LEFT] = spr_player_left;
 self.attackImageSpeed = 0.2;
 
@@ -64,7 +64,7 @@ self.sprites[RIGHT] = spr_player_right;
 self.sprites[LEFT] = spr_player_left;
 
 self.moveInputs = scr_player_get_action_inputs;
-
+self.moveState = scr_player_states_move_state;
 
 </string>
           </argument>
@@ -114,6 +114,29 @@ view.target = self;
             <kind>1</kind>
             <string>///Create GUI
 scr_player_create_gui();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Lifeform_Parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///
 </string>
           </argument>
         </arguments>
@@ -244,6 +267,36 @@ if debug_mode
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw
+event_inherited();
+
+if(debug_mode){
+    draw_set_alpha(0.2);
+    mp_grid_draw(global.aiGrid);
+    draw_set_alpha(1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="77">
       <action>
         <libid>1</libid>
@@ -305,9 +358,9 @@ instance_create(x+100, y, obj_npc_blue_soldier);
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>8,24</point>
-    <point>24,24</point>
-    <point>24,48</point>
-    <point>8,48</point>
+    <point>10,30</point>
+    <point>23,30</point>
+    <point>23,46</point>
+    <point>10,46</point>
   </PhysicsShapePoints>
 </object>

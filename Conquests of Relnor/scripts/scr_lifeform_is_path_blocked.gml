@@ -1,12 +1,13 @@
-///scr_lifeform_is_path_blocked(desiredX, desiredY)
+///scr_lifeform_is_path_blocked(desiredX, desiredY, objBlocking)
 
     //get direction
-        var _xReach = round(self.reach/3);
-        var _yReach = round(self.reach/3);
+        var _reachRatio = self.reach/4;
+        var _xReach = round(_reachRatio);
+        var _yReach = round(_reachRatio);
         var _direction360 = point_direction(self.x, self.y, argument0, argument1);
         _direction360 = round(_direction360/45);
         if(_direction360 >= 7){
-            _direction360 = FACE_DOWN;
+            _direction360 = FACE_DOWNRIGHT;
         }
         
         //apply multiplier for intended destination direction
@@ -29,8 +30,9 @@
             _xReach = 0;
             _yReach *= -1;
         break;
-//        case FACE_DOWNRIGHT:
-//        break;
+        //case FACE_DOWNRIGHT:
+        //
+        //break;
         case FACE_DOWNLEFT:
             _xReach *= -1;
         break;
@@ -44,6 +46,8 @@
         var _desiredY = self.y+_yReach;
            
         //maybe make this a rectangle?
-        var _colliding = collision_line(self.x, self.y, _desiredX, _desiredY, obj_npc_Parent, false, true);
-    
-        return _colliding;
+        //var _collidingLine = collision_line(self.x, self.y, _desiredX, _desiredY, obj_npc_Parent, false, true);
+ 
+        var _collidingCircleWithUnwalkable = collision_circle(_desiredX, _desiredY, _reachRatio, argument2, false, true);
+        
+        return (_collidingCircleWithOtherNPC || _collidingCircleWithUnwalkable);

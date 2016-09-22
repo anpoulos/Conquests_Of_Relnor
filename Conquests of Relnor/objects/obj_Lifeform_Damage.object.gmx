@@ -52,8 +52,7 @@ source = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy
-
+            <string>///destroy alarm
 instance_destroy();
 </string>
           </argument>
@@ -80,7 +79,6 @@ instance_destroy();
             <string>///Damage whatever is touched
 
 scr_damage_lifeform(other, self.source, self);
-alarm[0] = 1;
 </string>
           </argument>
         </arguments>

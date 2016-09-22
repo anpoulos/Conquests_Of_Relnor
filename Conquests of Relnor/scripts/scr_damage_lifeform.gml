@@ -1,6 +1,7 @@
 ///scr_damage_lifeform(lifeform, source, obj_damage)
 
-if(!instance_exists(argument0)|| !instance_exists(argument0) || argument2 == noone){
+if(!instance_exists(argument0)|| !instance_exists(argument1) || 
+    !instance_exists(argument2)){
     return false;
 }
 
@@ -30,4 +31,5 @@ with(lifeform){
     physics_apply_impulse(x,y, xForce, yForce);
 }
 
+damage.alarm[0] = 1;
 

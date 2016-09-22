@@ -2,10 +2,7 @@
 
 script_execute(self.moveInputs); //populates various direction values and key presses
 
-if(triggers[ATTACK]){
-image_index = 0;
-state = attackState;
-}
+scr_check_triggers(); //may change state
 
 //get axis values
 xAxis = self.directions[RIGHT] - self.directions[LEFT];
@@ -21,7 +18,7 @@ if (xAxis == 0 && yAxis == 0){
 else{
     self.length = self.currentMoveSpeed;
     scr_lifeform_get_face();
-    if(triggers[DASH]){
+    if(triggers[TRIGGER_DASH]){
         state = scr_lifeform_dash_state;
         self.alarm[0] = dashSpeed;
     }
@@ -63,5 +60,5 @@ switch(self.face){
 }
 
 //Move
-scr_obj_move(self, hSpeed, vSpeed);
+scr_obj_move_phy(self, hSpeed, vSpeed);
 

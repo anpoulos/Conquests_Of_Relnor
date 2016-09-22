@@ -7,7 +7,7 @@ hSpeed = lengthdir_x(self.length, self.direction360);
 vSpeed = lengthdir_y(self.length, self.direction360);
 
 //Move
-scr_obj_move(self, hSpeed, vSpeed);
+scr_obj_move_phy(self, hSpeed, vSpeed);
 
 //Create dash effect
 var dash = instance_create(self.x, self.y, obj_Lifeform_Dash_Effect);

@@ -8,3 +8,4 @@ unitMoveCommand = scr_npc_commands_move;
 mouseCommand = scr_player_commands_move_all;
 totalSelectedWithEngage = 0;
 totalSelectedWithWander = 0;
+squarePreview = noone;

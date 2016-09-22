@@ -100,8 +100,8 @@
           <script>scripts\scr_lifeform_move_state.gml</script>
           <script>scripts\scr_lifeform_spawn_state.gml</script>
         </scripts>
-        <script>scripts\scr_lifeform_automove_check.gml</script>
         <script>scripts\scr_lifeform_is_path_blocked.gml</script>
+        <script>scripts\scr_check_triggers.gml</script>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_player_get_action_inputs.gml</script>
@@ -124,16 +124,25 @@
             <script>scripts\scr_player_commands_selected_disable_wander.gml</script>
             <script>scripts\scr_player_commands_deselect_all.gml</script>
             <script>scripts\scr_player_commands_move_all.gml</script>
-            <script>scripts\scr_player_commands_square_formation.gml</script>
+            <scripts name="Square">
+              <script>scripts\scr_square_preview_generate_dimension_avgw_avgh_avgr.gml</script>
+              <script>scripts\scr_player_commands_square_formation.gml</script>
+              <script>scripts\scr_player_commands_square_preview_create.gml</script>
+            </scripts>
+            <script>scripts\scr_player_commands_reset.gml</script>
           </scripts>
           <script>scripts\scr_player_command_module_initialize.gml</script>
           <script>scripts\scr_player_command_update_gui.gml</script>
         </scripts>
         <script>scripts\scr_player_create_gui.gml</script>
+        <scripts name="States">
+          <script>scripts\scr_player_states_move_state.gml</script>
+        </scripts>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
           <scripts name="States">
+            <script>scripts\scr_npc_states_move_state.gml</script>
             <script>scripts\scr_npc_idle_state.gml</script>
             <script>scripts\scr_npc_set_sprites.gml</script>
             <script>scripts\scr_npc_follow_target_state.gml</script>
@@ -157,13 +166,14 @@
             <script>scripts\scr_npc_commands_move.gml</script>
           </scripts>
         </scripts>
+        <script>scripts\scr_npc_move_to.gml</script>
       </scripts>
       <script>scripts\scr_damage_lifeform.gml</script>
-      <script>scripts\scr_lifeform_move_to.gml</script>
       <script>scripts\scr_lifeform_update_health_bar.gml</script>
+      <script>scripts\scr_lifeform_constructor.gml</script>
     </scripts>
     <scripts name="Object">
-      <script>scripts\scr_obj_move.gml</script>
+      <script>scripts\scr_obj_move_phy.gml</script>
       <script>scripts\scr_obj_move_at_speed.gml</script>
       <script>scripts\scr_obj_reset_sprite.gml</script>
       <script>scripts\scr_obj_move_to.gml</script>
@@ -220,6 +230,14 @@
       <script>scripts\scr_linked_list_remove_next.gml</script>
       <script>scripts\scr_linked_list_add.gml</script>
     </scripts>
+    <scripts name="Room">
+      <script>scripts\scr_destroy_instance.gml</script>
+      <script>scripts\scr_room_add_cell.gml</script>
+      <script>scripts\scr_room_remove_cell.gml</script>
+      <script>scripts\scr_room_get_grid_x.gml</script>
+      <script>scripts\scr_room_get_grid_y.gml</script>
+      <script>scripts\scr_room_initialize.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default_medium</font>
@@ -245,8 +263,11 @@
         <object>objects\obj_player</object>
         <object>objects\obj_player_view</object>
         <object>objects\obj_player_global</object>
-        <object>objects\obj_player_select_box</object>
-        <object>objects\obj_player_command_module</object>
+        <objects name="Command">
+          <object>objects\obj_player_select_box</object>
+          <object>objects\obj_player_command_square_preview</object>
+          <object>objects\obj_player_command_module</object>
+        </objects>
       </objects>
       <objects name="NPC">
         <object>objects\obj_npc_blue_soldier</object>
@@ -286,6 +307,7 @@
       </objects>
     </objects>
     <object>objects\obj_array</object>
+    <object>objects\obj_unwalkable</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Menus">

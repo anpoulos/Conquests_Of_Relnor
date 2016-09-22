@@ -11,7 +11,7 @@ if(self.target != noone){
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
 if(self.moveToX == noone && self.moveToY == noone && _distanceFromOrigin > self.wanderRadius){
-    scr_lifeform_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, true);
+    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false);
     return true;
 }
     
@@ -42,7 +42,9 @@ switch(_nextState){
         if(_isNegativeY){
             _moveOffsetY *= -1;
         }
-        scr_lifeform_move_to(self, self.x+_moveOffsetX, self.y+_moveOffsetY,scr_npc_choose_next_state, 10, true);
+        var _desiredX = scr_room_get_grid_x(self.x+_moveOffsetX);
+        var _desiredY = scr_room_get_grid_y(self.y+_moveOffsetY);
+        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, true);
     break;
 
 }

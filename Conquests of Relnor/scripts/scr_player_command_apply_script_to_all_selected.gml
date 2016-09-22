@@ -3,8 +3,14 @@
 if(argument0 == noone) return false;
 
     for(var i = 0; i < self.commandModule.totalSelected; i++){
-            with(scr_linked_list_get_next(self.commandModule.selected)){
-                script_execute(argument0);
+            var _currentNPC = scr_linked_list_peak(self.commandModule.selected);
+            if(instance_exists(_currentNPC)){
+                with(scr_linked_list_get_next(self.commandModule.selected)){
+                    script_execute(argument0);
+                }
+            }
+            else{
+                scr_linked_list_remove_next(self.commandModule.selected);
             }
     }
 
