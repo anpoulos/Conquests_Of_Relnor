@@ -64,7 +64,6 @@ self.sprites[RIGHT] = spr_player_right;
 self.sprites[LEFT] = spr_player_left;
 
 self.moveInputs = scr_player_get_action_inputs;
-self.moveState = scr_player_states_move_state;
 
 </string>
           </argument>
@@ -297,7 +296,7 @@ if(debug_mode){
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="77">
+    <event eventtype="9" enumb="78">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -314,9 +313,9 @@ if(debug_mode){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///debug create npc
+            <string>///Create Red Soldier
 
-instance_create(x+100, y, obj_npc_blue_soldier);
+instance_create(x+100, y, obj_npc_red_soldier);
 </string>
           </argument>
         </arguments>
@@ -339,7 +338,9 @@ instance_create(x+100, y, obj_npc_blue_soldier);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///debug create button
+            <string>///debug create npc
+
+instance_create(x+100, y, obj_npc_blue_soldier);
 </string>
           </argument>
         </arguments>

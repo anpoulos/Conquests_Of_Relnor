@@ -412,7 +412,7 @@
     <option_scale>-1</option_scale>
     <option_scaleprogress>true</option_scaleprogress>
     <option_sci_UseSCI>-1</option_sci_UseSCI>
-    <option_sci_serverLocation>https://github.com/anpoulos/ConquestsOfRelnor</option_sci_serverLocation>
+    <option_sci_serverLocation>https://github.com/anpoulos/Conquests_Of_Relnor</option_sci_serverLocation>
     <option_screenkey>True</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
     <option_shortcircuit>True</option_shortcircuit>
@@ -464,7 +464,7 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
-    <option_version_build>0</option_version_build>
+    <option_version_build>1</option_version_build>
     <option_version_company></option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>
@@ -649,9 +649,11 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="26">
+    <constants number="27">
       <constant name="ALLEGIANCE_BLUE">0</constant>
-      <constant name="ALLEGIANCE_MAX">1</constant>
+      <constant name="ALLEGIANCE_MAX">2</constant>
+      <constant name="ALLEGIANCE_RED">1</constant>
+      <constant name="ATTACKS_MAX">8</constant>
       <constant name="BLOCK">2</constant>
       <constant name="DOWN">3</constant>
       <constant name="FACE_DOWN">6</constant>
@@ -675,7 +677,6 @@
       <constant name="TRIGGERS_MAX">4</constant>
       <constant name="UP">1</constant>
       <constant name="WEAPON">0</constant>
-      <constant name="ATTACKS_MAX">8</constant>
     </constants>
   </ConfigConstants>
 </Config>

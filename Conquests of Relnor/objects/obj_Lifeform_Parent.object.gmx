@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_lifeform_constructor();
+            <string>///Create
+scr_lifeform_constructor();
 </string>
           </argument>
         </arguments>
@@ -252,12 +253,55 @@ script_execute(state);
 var _currentCellX = floor(x / global.tileOffset);
 var _currentCellY = floor(y / global.tileOffset);
 
-mp_grid_add_cell(global.aiGrid, _currentCellX, _currentCellY);
+//mp_grid_add_cell(global.aiGrid, _currentCellX, _currentCellY);
     
 if(_currentCellX != previousCellX || _currentCellY != previousCellY){
-    mp_grid_clear_cell(global.aiGrid, previousCellX, previousCellY);
+    //mp_grid_clear_cell(global.aiGrid, previousCellX, previousCellY);
     previousCellX = _currentCellX;
     previousCellY = _currentCellY;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check for unwalkable object in front with collision line
+
+var _inFrontOfMe = false;
+
+switch(self.face4Way){
+    case RIGHT:
+        _inFrontOfMe = collision_line(x,y,x+self.reach,y,obj_unwalkable,false,true);
+    break;
+    case DOWN:
+        _inFrontOfMe = collision_line(x,y,x,y+self.reach,obj_unwalkable,false,true);
+    break;
+    case LEFT:
+        _inFrontOfMe = collision_line(x,y,x-self.reach,y,obj_unwalkable,false,true);
+    break;
+    case UP:
+        _inFrontOfMe = collision_line(x,y-self.reach*2,x,y,obj_unwalkable,false,true);
+    break;
+}
+
+if(_inFrontOfMe){
+    image_index = 0;
+    image_speed = 0;
 }
 </string>
           </argument>
@@ -281,7 +325,7 @@ if(_currentCellX != previousCellX || _currentCellY != previousCellY){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///
+            <string>/// stop image movement
 </string>
           </argument>
         </arguments>
@@ -362,8 +406,8 @@ switch(state){
 //draw items behind first
 for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
     var _item = self.equipment.item[i];
-    if(_item != noone &amp;&amp; _item.spriteBehind.item[self.face]){
-        draw_sprite(_item.sprite.item[self.face], image_index, self.x, self.y);
+    if(_item != noone &amp;&amp; _item.spriteBehind.item[self.face4Way]){
+        draw_sprite(_item.sprite.item[self.face4Way], image_index, self.x, self.y);
     }
 }
 
@@ -373,8 +417,8 @@ draw_self();
 //draw items in front
 for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
     var _item = self.equipment.item[i];
-    if(_item != noone &amp;&amp; !_item.spriteBehind.item[self.face]){
-        draw_sprite(_item.sprite.item[self.face], image_index, self.x, self.y);
+    if(_item != noone &amp;&amp; !_item.spriteBehind.item[self.face4Way]){
+        draw_sprite(_item.sprite.item[self.face4Way], image_index, self.x, self.y);
     }
 }
 

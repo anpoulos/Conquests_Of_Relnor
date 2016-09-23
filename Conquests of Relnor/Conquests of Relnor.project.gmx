@@ -7,11 +7,17 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="NPC">
-      <sprites name="Test">
-        <sprite>sprites\spr_test_npc_soldier_down</sprite>
-        <sprite>sprites\spr_test_npc_soldier_right</sprite>
-        <sprite>sprites\spr_test_npc_soldier_left</sprite>
+      <sprites name="Blue Soldier">
         <sprite>sprites\spr_test_npc_soldier_up</sprite>
+        <sprite>sprites\spr_test_npc_soldier_right</sprite>
+        <sprite>sprites\spr_test_npc_soldier_down</sprite>
+        <sprite>sprites\spr_test_npc_soldier_left</sprite>
+      </sprites>
+      <sprites name="Red Soldier">
+        <sprite>sprites\spr_npc_soldier_red_down</sprite>
+        <sprite>sprites\spr_npc_soldier_red_right</sprite>
+        <sprite>sprites\spr_npc_soldier_red_up</sprite>
+        <sprite>sprites\spr_npc_soldier_red_left</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
@@ -128,6 +134,7 @@
               <script>scripts\scr_square_preview_generate_dimension_avgw_avgh_avgr.gml</script>
               <script>scripts\scr_player_commands_square_formation.gml</script>
               <script>scripts\scr_player_commands_square_preview_create.gml</script>
+              <script>scripts\scr_square_form.gml</script>
             </scripts>
             <script>scripts\scr_player_commands_reset.gml</script>
           </scripts>
@@ -135,9 +142,6 @@
           <script>scripts\scr_player_command_update_gui.gml</script>
         </scripts>
         <script>scripts\scr_player_create_gui.gml</script>
-        <scripts name="States">
-          <script>scripts\scr_player_states_move_state.gml</script>
-        </scripts>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
@@ -271,6 +275,7 @@
       </objects>
       <objects name="NPC">
         <object>objects\obj_npc_blue_soldier</object>
+        <object>objects\obj_npc_red_soldier</object>
         <objects name="Parent">
           <object>objects\obj_npc_Parent</object>
           <object>objects\obj_npc_Commandable_Npc</object>

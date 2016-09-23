@@ -11,7 +11,7 @@ if(self.target != noone){
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
 if(self.moveToX == noone && self.moveToY == noone && _distanceFromOrigin > self.wanderRadius){
-    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false);
+    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false, false);
     return true;
 }
     
@@ -32,6 +32,7 @@ switch(_nextState){
     
     //wander
     case 2:
+        self.alarm[1] = wanderDistance/2;
         var _moveOffsetX = irandom_range(0,wanderDistance);
         var _isNegativeX = irandom_range(0,1);
         if(_isNegativeX){
@@ -44,7 +45,7 @@ switch(_nextState){
         }
         var _desiredX = scr_room_get_grid_x(self.x+_moveOffsetX);
         var _desiredY = scr_room_get_grid_y(self.y+_moveOffsetY);
-        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, true);
+        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, true, true);
     break;
 
 }

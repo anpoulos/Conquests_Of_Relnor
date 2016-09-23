@@ -64,7 +64,8 @@ healthBar.isVisible = false;
 
 //movement
 direction360 = 0;
-face = UP;
+face4Way = DOWN;
+face8Way = FACE_DOWN;
 length = 0;
 imageSpeed = 0.2;
 moveSpeed = 2;

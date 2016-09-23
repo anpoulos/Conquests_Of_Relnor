@@ -1,4 +1,4 @@
-///scr_npc_move_to(npc, x, y, endscript, accuracy, walkThroughNPCs)
+///scr_npc_move_to(npc, x, y, endscript, accuracy, walkThroughNPCs, allowIdle)
 
 //collisions off
 if(!argument5){
@@ -6,6 +6,10 @@ if(!argument5){
         phy_active = false;    
         walkThroughNPCs = true;
     }
+}
+
+if(!argument6){
+    argument0.alarm[1] = -1;
 }
 
 argument0.moveToX = argument1;
