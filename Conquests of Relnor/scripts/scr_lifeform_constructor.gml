@@ -6,6 +6,7 @@ previousCellX = 0;
 previousCellY = 0;
 
 attacks[ATTACKS_MAX] = noone;
+currentAttack = noone;
 
 phy_fixed_rotation = true;
 ignoreLifeformCollisions = false;
@@ -17,7 +18,7 @@ inventory = scr_create_obj_array(16);
 selected = false;
 image_speed = 0;
 currentDepth = depth;
-possibleEnemies[0] = obj_player;
+possibleEnemies = scr_linked_list_create();
 
 attackImageSpeed = 0.5;
 showHealthBar = false;
@@ -48,7 +49,7 @@ lastY = noone;
 
 deathState = scr_lifeform_death_state;
 moveState = scr_lifeform_move_state;
-attackState = scr_lifeform_attack_state;
+attackState = noone;
 idleState = scr_lifeform_idle_state;
 
 moveInputs = scr_lifeform_get_action_inputs;
@@ -71,6 +72,6 @@ imageSpeed = 0.2;
 moveSpeed = 2;
 runSpeed = 4;
 dashSpeed = 6;
-currentMoveSpeed = runSpeed;
+currentMoveSpeed = moveSpeed;
 
 attacked = false;

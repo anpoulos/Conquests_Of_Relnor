@@ -99,7 +99,6 @@
         <script>scripts\scr_lifeform_get_action_inputs.gml</script>
         <script>scripts\scr_lifeform_get_face.gml</script>
         <scripts name="States">
-          <script>scripts\scr_lifeform_attack_state.gml</script>
           <script>scripts\scr_lifeform_dash_state.gml</script>
           <script>scripts\scr_lifeform_death_state.gml</script>
           <script>scripts\scr_lifeform_idle_state.gml</script>
@@ -108,6 +107,12 @@
         </scripts>
         <script>scripts\scr_lifeform_is_path_blocked.gml</script>
         <script>scripts\scr_check_triggers.gml</script>
+        <scripts name="Combat">
+          <scripts name="Attacks">
+            <script>scripts\scr_lifeform_combat_attacks_melee.gml</script>
+          </scripts>
+        </scripts>
+        <script>scripts\scr_lifeform_update_face.gml</script>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_player_get_action_inputs.gml</script>
@@ -139,9 +144,19 @@
             <script>scripts\scr_player_commands_reset.gml</script>
           </scripts>
           <script>scripts\scr_player_command_module_initialize.gml</script>
-          <script>scripts\scr_player_command_update_gui.gml</script>
         </scripts>
-        <script>scripts\scr_player_create_gui.gml</script>
+        <scripts name="GUI">
+          <script>scripts\scr_player_create_gui.gml</script>
+          <script>scripts\scr_player_gui_update_command_selected.gml</script>
+          <script>scripts\scr_player_gui_update_information.gml</script>
+          <script>scripts\scr_player_gui_create_player_information.gml</script>
+          <script>scripts\scr_player_gui_create_command_menu.gml</script>
+          <script>scripts\scr_player_gui_create_passive_menu.gml</script>
+          <script>scripts\scr_player_gui_create_command_selected_menu.gml</script>
+        </scripts>
+        <scripts name="States">
+          <script>scripts\scr_player_states_attack_state.gml</script>
+        </scripts>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
@@ -149,7 +164,7 @@
             <script>scripts\scr_npc_states_move_state.gml</script>
             <script>scripts\scr_npc_idle_state.gml</script>
             <script>scripts\scr_npc_set_sprites.gml</script>
-            <script>scripts\scr_npc_follow_target_state.gml</script>
+            <script>scripts\scr_npc_states_attack_state.gml</script>
           </scripts>
           <script>scripts\scr_npc_choose_next_state.gml</script>
           <script>scripts\scr_npc_set_move_offset.gml</script>
@@ -157,7 +172,7 @@
           <script>scripts\scr_npc_set_attack_sprites.gml</script>
           <script>scripts\scr_npc_constructor.gml</script>
           <script>scripts\scr_npc_get_move_offset.gml</script>
-          <script>scripts\scr_npc_get_target.gml</script>
+          <script>scripts\scr_npc_get_closest_target.gml</script>
           <scripts name="Engages">
             <script>scripts\scr_npc_engages_stop_moving.gml</script>
           </scripts>
@@ -169,12 +184,23 @@
             <script>scripts\scr_npc_commands_moved.gml</script>
             <script>scripts\scr_npc_commands_move.gml</script>
           </scripts>
+          <scripts name="Combat">
+            <script>scripts\scr_npc_combat_choose_next_attack.gml</script>
+          </scripts>
         </scripts>
         <script>scripts\scr_npc_move_to.gml</script>
+        <script>scripts\scr_npc_are_there_nearby_targets.gml</script>
       </scripts>
       <script>scripts\scr_damage_lifeform.gml</script>
       <script>scripts\scr_lifeform_update_health_bar.gml</script>
       <script>scripts\scr_lifeform_constructor.gml</script>
+      <scripts name="Damage">
+        <script>scripts\scr_lifeform_damage_create.gml</script>
+        <scripts name="Melee">
+          <script>scripts\scr_lifeform_damage_melee_create.gml</script>
+          <script>scripts\scr_lifeform_damage_melee_arrival.gml</script>
+        </scripts>
+      </scripts>
     </scripts>
     <scripts name="Object">
       <script>scripts\scr_obj_move_phy.gml</script>
@@ -193,6 +219,9 @@
         <scripts name="Title">
           <script>scripts\scr_ui_menu_title_start_game.gml</script>
           <script>scripts\scr_ui_menu_title_initialize.gml</script>
+          <script>scripts\scr_ui_menu_title_start_large_test.gml</script>
+          <script>scripts\scr_ui_menu_title_start_large_test2.gml</script>
+          <script>scripts\scr_ui_menu_title_start_large_test3.gml</script>
         </scripts>
         <scripts name="Parent">
           <script>scripts\scr_ui_menu_create_container.gml</script>
@@ -233,6 +262,7 @@
       <script>scripts\scr_linked_list_size.gml</script>
       <script>scripts\scr_linked_list_remove_next.gml</script>
       <script>scripts\scr_linked_list_add.gml</script>
+      <script>scripts\scr_linked_list_destroy.gml</script>
     </scripts>
     <scripts name="Room">
       <script>scripts\scr_destroy_instance.gml</script>
@@ -281,12 +311,15 @@
           <object>objects\obj_npc_Commandable_Npc</object>
         </objects>
       </objects>
-      <object>objects\obj_Lifeform_Damage</object>
       <objects name="Parent">
         <object>objects\obj_Lifeform_Parent</object>
         <object>objects\obj_Lifeform_Dash_Effect</object>
       </objects>
       <object>objects\obj_lifeform_health_bar</object>
+      <objects name="Damage">
+        <object>objects\obj_lifeform_damage_parent</object>
+        <object>objects\obj_lifeform_damage_melee</object>
+      </objects>
     </objects>
     <objects name="Test">
       <object>objects\obj_test_wall</object>
@@ -322,6 +355,9 @@
     </rooms>
     <rooms name="Test">
       <room>rooms\rm_test_room</room>
+      <room>rooms\rm_test_room_large</room>
+      <room>rooms\rm_test_room_large2</room>
+      <room>rooms\rm_test_room_large3</room>
     </rooms>
   </rooms>
   <help>

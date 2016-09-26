@@ -1,17 +1,24 @@
 ///scr_npc_choose_next_state
 
-if(self.target == noone){
-    self.target = scr_npc_get_target();
-}
-
-if(self.target != noone){
-    self.state = scr_npc_follow_target_state;
+if(self.isAggressive){
+    self.target = scr_npc_get_closest_target();
+    if(self.target != noone){
+        var _distanceToTarget = point_distance(self.x, self.y, self.target.x, self.target.y);
+        if(_distanceToTarget <= self.reach){
+            self.alarm[2] = -1;
+            self.state = self.attackState;
+        }
+        else{
+            scr_npc_move_to(self, self.target.x, self.target.y, 
+            scr_npc_choose_next_state,self.reach-1, false, false, self.runSpeed);   
+        }
     return true;
+    }
 }
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
-if(self.moveToX == noone && self.moveToY == noone && _distanceFromOrigin > self.wanderRadius){
-    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false, false);
+if(_distanceFromOrigin > self.wanderRadius){
+    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false, false, self.moveSpeed);
     return true;
 }
     
@@ -45,7 +52,7 @@ switch(_nextState){
         }
         var _desiredX = scr_room_get_grid_x(self.x+_moveOffsetX);
         var _desiredY = scr_room_get_grid_y(self.y+_moveOffsetY);
-        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, true, true);
+        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, false, true, self.moveSpeed);
     break;
 
 }

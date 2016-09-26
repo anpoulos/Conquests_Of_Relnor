@@ -51,9 +51,18 @@ scr_lifeform_constructor();
             <kind>1</kind>
             <string>///Destroy attached objects
 
-with(self.healthBar){
-    instance_destroy();
+scr_destroy_instance(self.healthBar);
+
+for(var i = 0; i &lt; array_length_1d(self.equipment); i++){
+    if(instance_exists(self.equipment[i])){
+        scr_destroy_instance(self.equipment[i]);
+    }
 }
+scr_destroy_instance(self.equipment);
+
+scr_destroy_instance(self.inventory);
+scr_linked_list_destroy(self.possibleEnemies);
+
 </string>
           </argument>
         </arguments>
@@ -282,6 +291,10 @@ if(_currentCellX != previousCellX || _currentCellY != previousCellY){
             <kind>1</kind>
             <string>///Check for unwalkable object in front with collision line
 
+if(self.state != self.moveState){
+    return false;
+}
+
 var _inFrontOfMe = false;
 
 switch(self.face4Way){
@@ -349,36 +362,6 @@ if(_inFrontOfMe){
           <argument>
             <kind>1</kind>
             <string>///
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Animation End Checks
-
-switch(state){
-    case attackState:
-        state = moveState;
-        attacked = false;
-    break;
-}
 </string>
           </argument>
         </arguments>

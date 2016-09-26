@@ -4,6 +4,7 @@ var obj = argument1;
     if(!obj.selected){
         if(_commander.allegiance == obj.allegiance &&
         _commander.allegianceRank[_commander.allegiance] > obj.allegianceRank[_commander.allegiance]){
+            _commander.commandModule.mouseCommand = scr_player_commands_move_all;
             obj.selected = true;
             obj.commander = _commander;
             scr_linked_list_add(_commander.commandModule.selected, argument1);
@@ -18,7 +19,7 @@ var obj = argument1;
             }
             scr_lifeform_update_health_bar(obj);
             with(_commander){
-                scr_player_command_update_gui();
+                scr_player_gui_update_command_selected();
             }
         }
     }

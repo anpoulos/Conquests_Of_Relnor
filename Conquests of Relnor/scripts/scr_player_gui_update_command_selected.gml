@@ -1,4 +1,4 @@
-///scr_player_command_update_gui
+///scr_player_gui_update_command_selected
 
 self.TotalSelectedText.text = string_insert(
 string(self.commandModule.totalSelected), "Total Selected: ",17);

@@ -23,6 +23,6 @@ var obj = argument1;
                 }
             }
             with(_commander){
-                scr_player_command_update_gui();
+                scr_player_gui_update_command_selected();
             }   
 

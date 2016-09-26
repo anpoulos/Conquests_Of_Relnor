@@ -41,7 +41,6 @@ wanderRadius = 1000;
 wanderDistance = 50;
 oldWanderRadius = wanderRadius;
 oldWanderDistance = wanderDistance;
-engageScript = scr_npc_engages_stop_moving;
 
 //override
 self.reach = 25;
@@ -52,9 +51,72 @@ self.directions[LEFT] = 0;
 self.directions[DOWN] = 0;
 self.directions[UP] = 0;
 
+self.attackState = scr_npc_states_attack_state;
 self.moveInputs = scr_npc_set_directions_by_offset;
 self.moveState = scr_npc_states_move_state;
 self.state = scr_npc_choose_next_state;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Lifeform_Parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collision
+
+if(self.isAggressive){
+    if(other.allegiance != self.allegiance){
+        self.target = other;
+        self.alarm[2] = -1;
+        self.state = self.attackState;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Animation End Checks
+
+switch(state){
+    case attackState:
+        target = noone;
+        state = scr_npc_choose_next_state;
+        attacked = false;
+    break;
+}
 </string>
           </argument>
         </arguments>

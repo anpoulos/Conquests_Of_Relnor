@@ -56,7 +56,7 @@ image_speed = 0;
             <string>///Follow Player
 
 x = player.x;
-y = player.y-20;
+y = player.y-30;
 </string>
           </argument>
         </arguments>

@@ -6,15 +6,6 @@ if(self.moveToX == noone || self.moveToY == noone){
     return true;
 }
 
-//lovely performance hit this does
-if(self.isAggressive && self.target == noone){
-    self.target = scr_npc_get_target();
-    if(self.target != noone){
-        self.state = scr_npc_follow_target_state;
-        return true;
-    }
-}
-
 var _rangeStop = self.moveToAccuracy;
 var _distanceToEnd = point_distance(self.x, self.y, self.moveToX, self.moveToY);
 
@@ -68,40 +59,7 @@ if(_pathFound){
     
     //Get direction
     self.direction360 = point_direction(x, y, myNewX,myNewY );
-    
-    //Update face
-    scr_lifeform_get_face();
-    
-    //sprite direction
-    switch(self.face8Way){
-        case FACE_RIGHT:
-        //case RIGHT:
-            self.face4Way = RIGHT;
-            self.sprite_index = self.sprites[RIGHT];
-        break;
-        
-        case FACE_LEFT:
-        //case LEFT:
-            self.face4Way = LEFT;
-            self.sprite_index = self.sprites[LEFT];
-        break;
-        
-        case FACE_UPPERRIGHT:
-        case FACE_UPPERLEFT:
-        case FACE_UP:
-        //case UP:
-            self.face4Way = UP;
-            self.sprite_index = self.sprites[UP];
-        break;
-        
-        case FACE_DOWNRIGHT:
-        case FACE_DOWNLEFT:
-        case FACE_DOWN:
-        //case DOWN:
-            self.face4Way = DOWN;
-            self.sprite_index = self.sprites[DOWN];
-        break;
-    }
+    scr_lifeform_update_face();    
     
     //Get length
     self.length = self.currentMoveSpeed;
@@ -115,11 +73,7 @@ if(_pathFound){
     if(self.length == 0) self.image_index = 0;
     
     //Move
-    var currentX = x;
-    var currentY = y;
     scr_obj_move_phy(self, hSpeed, vSpeed);
-    var newX = x;
-    var newY = y;
 }
 else{
     image_speed = 0;

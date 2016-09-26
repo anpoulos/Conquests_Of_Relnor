@@ -8,4 +8,4 @@
     }
     
     scr_npc_move_to(argument0, scr_room_get_grid_x(mouse_x), scr_room_get_grid_y(mouse_y), 
-    argument1, argument0.reach, true, false);
+    argument1, argument0.reach, false, false, argument0.runSpeed);

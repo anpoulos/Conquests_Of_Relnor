@@ -59,19 +59,20 @@ commander = noone;
             <string>///Destroy
 
 if(self.selected){
-
-    for(var i = 0; i &lt; self.commander.commandModule.totalSelected; i++){
-        var _currentNPC = scr_linked_list_peak(self.commander.commandModule.selected);
-        if(_currentNPC == self){
-            scr_linked_list_remove_next(self.commander.commandModule.selected);
-            break;
+    if(instance_exists(self.commander)){
+        for(var i = 0; i &lt; self.commander.commandModule.totalSelected; i++){
+            var _currentNPC = scr_linked_list_peak(self.commander.commandModule.selected);
+            if(_currentNPC == self){
+                scr_linked_list_remove_next(self.commander.commandModule.selected);
+                break;
+            }
+            else{
+                scr_linked_list_get_next(self.commander.commandModule.selected);
+            }
         }
-        else{
-            scr_linked_list_get_next(self.commander.commandModule.selected);
-        }
+    
+        scr_player_command_deselect(self.commander, self);
     }
-
-    scr_player_command_deselect(self.commander, self);
 }
 
 event_inherited();
@@ -97,11 +98,8 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw AI Path
-
-if(debug_mode){
-    draw_path(path, x,y, true);
-}
+            <string>///Draw
+event_inherited();
 </string>
           </argument>
         </arguments>
@@ -122,21 +120,10 @@ if(debug_mode){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw
+            <string>///Draw AI Path
 
-if(selected){
-    draw_set_blend_mode(bm_add); 
-    event_inherited();
-    draw_set_blend_mode(bm_normal);
-    draw_set_alpha(0.1);
-    if(self.isAggressive){
-        draw_circle_colour(self.x,self.y, self.sight, c_red, c_red, false);
-    }
-    //draw_circle_colour(self.originX,self.originY, self.wanderRadius, c_yellow, c_yellow, false); 
-    draw_set_alpha(1);
-}
-else{   
-    event_inherited();
+if(debug_mode){
+    draw_path(path, x,y, true);
 }
 </string>
           </argument>

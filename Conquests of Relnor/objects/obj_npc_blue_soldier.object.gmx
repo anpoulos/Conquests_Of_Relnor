@@ -28,10 +28,10 @@
             <string>///Blue_Soldier
 
 event_inherited();
-scr_npc_constructor("Blue_Soldier", 20, 10, 30, 100, 200, ALLEGIANCE_BLUE, 0);
+scr_npc_constructor("Blue_Soldier", 200, 10, 30, 300, 200, ALLEGIANCE_BLUE, 0);
 
 scr_npc_set_attack_sprites(spr_test_npc_soldier_up, spr_test_npc_soldier_down,
-spr_test_npc_soldier_right, spr_test_npc_soldier_left, 0.2);
+spr_test_npc_soldier_right, spr_test_npc_soldier_left, 0.4);
 
 scr_npc_set_sprites(spr_test_npc_soldier_up, spr_test_npc_soldier_down,
 spr_test_npc_soldier_right, spr_test_npc_soldier_left);
@@ -46,8 +46,12 @@ self.equipment.item[WEAPON].owner = self;
 self.equipment.item[WEAPON].isVisible = true;
 
 //override
-self.possibleEnemies[0] = obj_npc_red_soldier;
+scr_linked_list_add(self.possibleEnemies, obj_npc_red_soldier);
 self.wanderDistance = 0;
+
+self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee;
+self.currentAttack = self.ATTACKS[ATTACK_MELEE];
+self.isAggressive = true;
 
 
 </string>
@@ -59,17 +63,17 @@ self.wanderDistance = 0;
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>1</PhysicsObjectRestitution>
+  <PhysicsObjectDensity>1</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>5</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectFriction>20</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>10,32</point>
-    <point>23,32</point>
+    <point>10,28</point>
+    <point>23,28</point>
     <point>23,46</point>
     <point>10,46</point>
   </PhysicsShapePoints>

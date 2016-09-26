@@ -1,35 +1,35 @@
 ///scr_damage_lifeform(lifeform, source, obj_damage)
 
-if(!instance_exists(argument0)|| !instance_exists(argument1) || 
+if(!instance_exists(argument0)|| !instance_exists(argument1) ||
     !instance_exists(argument2)){
     return false;
 }
 
-var lifeform = argument0;
-var source = argument1;
-var damage = argument2;
+var _lifeform = argument0;
+var _source = argument1;
+var _damage = argument2;
 
-if(lifeform == source){
+if(_lifeform.allegiance == _source.allegiance){
     return false;
 }
 
-if( (lifeform.hitpoints - damage.amount) <= 0){
-    lifeform.hitpoints = 0;
-    lifeform.state = scr_lifeform_death_state;
+if( (_lifeform.hitpoints - _damage.amount) <= 0){
+    _lifeform.hitpoints = 0;
+    _lifeform.state = _lifeform.deathState;
 }
 else{
-    lifeform.hitpoints -= damage.amount;
+    _lifeform.hitpoints -= _damage.amount;
 }
 
-scr_lifeform_update_health_bar(lifeform);
+scr_lifeform_update_health_bar(_lifeform);
 
-var dir = point_direction(source.x,source.y,lifeform.x,lifeform.y);
-var xForce = lengthdir_x(damage.knockback, dir);
-var yForce = lengthdir_y(damage.knockback, dir);
+var _dir = point_direction(_source.x,_source.y, 
+                        _lifeform.x,_lifeform.y);
+var _xForce = lengthdir_x(_damage.knockback, _dir);
+var _yForce = lengthdir_y(_damage.knockback, _dir);
 
-with(lifeform){
-    physics_apply_impulse(x,y, xForce, yForce);
+with(_lifeform){
+    physics_apply_impulse(x,y, _xForce, _yForce);
 }
 
-damage.alarm[0] = 1;
 

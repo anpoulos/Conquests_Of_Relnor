@@ -9,5 +9,6 @@ self.sight = argument4;
 self.wanderDistance = argument5;
 self.oldWanderDistance = self.wanderDistance;
 self.wanderRadius = self.wanderDistance;
+self.oldWanderRadius = self.wanderRadius;
 self.allegiance = argument6;
 self.allegianceRank[self.allegiance] = argument7;

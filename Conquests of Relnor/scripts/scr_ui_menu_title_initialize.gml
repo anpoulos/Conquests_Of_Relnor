@@ -9,23 +9,83 @@ var _centerX = _menuPosArray.item[2] + 20;
 var _centerY = _menuPosArray.item[3] + 20;
 var _menuContainer = scr_ui_menu_create_container(_centerX, _centerY, _menuPosArray, _menuColorArray, true, 0.7, noone);
 
-///create button
+///create start button
 var _buttonColor = make_colour_rgb(0,50,125);
 var _buttonPressedColor = make_colour_rgb(100,100,150);
 
 var _buttonColorArray = scr_create_obj_array4(_buttonColor,_buttonColor,_buttonColor,_buttonColor);
-var _buttonPositionArray = scr_create_obj_array4(-100,-50,100,50);
+var _buttonPositionArray = scr_create_obj_array4(-100,-30,100,30);
 
 var _fontColor = make_colour_rgb(200,200,200);
 
-var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_game,noone, "Start", fnt_default_medium, 
+var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_game,noone, "Small Test Room", fnt_default_medium, 
 _fontColor, 1, 0.5);
 
-var _button = scr_ui_button_constructor(_centerX, _centerY,
+var _button = scr_ui_button_constructor(_menuContainer.x, _menuContainer.topY+40,
 _buttonPositionArray, _buttonColorArray, _buttonPressedColor, 
 true, _buttonInfo, _menuContainer);
 
 _button.isVisible = true;
+//end start button
+
+///create start large test button
+var _buttonColor = make_colour_rgb(0,50,125);
+var _buttonPressedColor = make_colour_rgb(100,100,150);
+
+var _buttonColorArray = scr_create_obj_array4(_buttonColor,_buttonColor,_buttonColor,_buttonColor);
+var _buttonPositionArray = scr_create_obj_array4(-100,-30,100,30);
+
+var _fontColor = make_colour_rgb(200,200,200);
+
+var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test,noone, "Large Pincer Example", fnt_default_medium, 
+_fontColor, 1, 0.5);
+
+var _button2 = scr_ui_button_constructor(_menuContainer.x, _menuContainer.bottomY-80,
+_buttonPositionArray, _buttonColorArray, _buttonPressedColor, 
+true, _buttonInfo, _menuContainer);
+
+_button2.isVisible = true;
+//end start large test button
+
+///create start large test3 button
+var _buttonColor = make_colour_rgb(0,50,125);
+var _buttonPressedColor = make_colour_rgb(100,100,150);
+
+var _buttonColorArray = scr_create_obj_array4(_buttonColor,_buttonColor,_buttonColor,_buttonColor);
+var _buttonPositionArray = scr_create_obj_array4(-100,-30,100,30);
+
+var _fontColor = make_colour_rgb(200,200,200);
+
+var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test2, noone, "Very Large Test", fnt_default_medium, 
+_fontColor, 1, 0.5);
+
+var _button3 = scr_ui_button_constructor(_menuContainer.x, _menuContainer.bottomY-40,
+_buttonPositionArray, _buttonColorArray, _buttonPressedColor, 
+true, _buttonInfo, _menuContainer);
+
+_button3.isVisible = true;
+//end start large test3 button
+
+///create start large test4 button
+var _buttonColor = make_colour_rgb(0,50,125);
+var _buttonPressedColor = make_colour_rgb(100,100,150);
+
+var _buttonColorArray = scr_create_obj_array4(_buttonColor,_buttonColor,_buttonColor,_buttonColor);
+var _buttonPositionArray = scr_create_obj_array4(-100,-30,100,30);
+
+var _fontColor = make_colour_rgb(200,200,200);
+
+var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test3, noone, "Very Large Encirclement", fnt_default_medium, 
+_fontColor, 1, 0.5);
+
+var _button4 = scr_ui_button_constructor(_menuContainer.x, _menuContainer.bottomY+40,
+_buttonPositionArray, _buttonColorArray, _buttonPressedColor, 
+true, _buttonInfo, _menuContainer);
+
+_button4.isVisible = true;
+//end start large test4 button
+
+
 _menuContainer.isVisible = true;
 
 //Create title text

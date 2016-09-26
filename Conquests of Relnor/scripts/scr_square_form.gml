@@ -11,7 +11,7 @@ var _previousRow = scr_create_obj_array(_dimension);
 var _firstNPC = scr_linked_list_get_next(_selected);
 
 scr_npc_move_to(_firstNPC, _originX, _originY, 
-scr_npc_commands_moved, 5, false, false);
+scr_npc_commands_moved, 5, true, false, _firstNPC.runSpeed);
 
 _firstNPC.squareX = _originX;
 _firstNPC.squareY = _originY;
@@ -35,7 +35,7 @@ for(var i = 1; i < _dimension; i++){
     _currentNPC.squareY, 
     scr_npc_commands_moved,
     5,
-    false, false);
+    true, false, _currentNPC.runSpeed);
 }
 
 var _previousRowCounter = 0;
@@ -52,7 +52,7 @@ for(var i = _currentCounter; i < _totalSelected; i++){
     _currentNPC.squareY,
     scr_npc_commands_moved,
     5,
-    false, false);
+    true, false, _currentNPC.runSpeed);
     
     _previousRow.item[_previousRowCounter] = _currentNPC;
     _previousRowCounter += 1;

@@ -1,7 +1,7 @@
-///scr_npc_move_to(npc, x, y, endscript, accuracy, walkThroughNPCs, allowIdle)
+///scr_npc_move_to(npc, x, y, endscript, accuracy, walkThroughNPCs, allowIdle, moveSpeed)
 
-//collisions off
-if(!argument5){
+//walk through NPCs
+if(argument5){
     with(argument0){
         phy_active = false;    
         walkThroughNPCs = true;
@@ -19,3 +19,4 @@ argument0.moveToAccuracy = argument4;
 
 argument0.moveInputs = scr_npc_set_directions_by_offset;
 argument0.state = argument0.moveState;
+argument0.currentMoveSpeed = argument7;
