@@ -12,12 +12,14 @@
         <sprite>sprites\spr_test_npc_soldier_right</sprite>
         <sprite>sprites\spr_test_npc_soldier_down</sprite>
         <sprite>sprites\spr_test_npc_soldier_left</sprite>
+        <sprite>sprites\spr_npc_soldier_blue_dead</sprite>
       </sprites>
       <sprites name="Red Soldier">
         <sprite>sprites\spr_npc_soldier_red_down</sprite>
         <sprite>sprites\spr_npc_soldier_red_right</sprite>
         <sprite>sprites\spr_npc_soldier_red_up</sprite>
         <sprite>sprites\spr_npc_soldier_red_left</sprite>
+        <sprite>sprites\spr_npc_soldier_red_dead</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
@@ -142,6 +144,8 @@
               <script>scripts\scr_square_form.gml</script>
             </scripts>
             <script>scripts\scr_player_commands_reset.gml</script>
+            <script>scripts\scr_player_commands_selected_enable_defense.gml</script>
+            <script>scripts\scr_player_commands_selected_disable_defense.gml</script>
           </scripts>
           <script>scripts\scr_player_command_module_initialize.gml</script>
         </scripts>
@@ -165,6 +169,7 @@
             <script>scripts\scr_npc_idle_state.gml</script>
             <script>scripts\scr_npc_set_sprites.gml</script>
             <script>scripts\scr_npc_states_attack_state.gml</script>
+            <script>scripts\scr_npc_states_follow_target_state.gml</script>
           </scripts>
           <script>scripts\scr_npc_choose_next_state.gml</script>
           <script>scripts\scr_npc_set_move_offset.gml</script>
@@ -183,13 +188,20 @@
             <script>scripts\scr_npc_commands_disable_wander.gml</script>
             <script>scripts\scr_npc_commands_moved.gml</script>
             <script>scripts\scr_npc_commands_move.gml</script>
+            <script>scripts\scr_npc_commands_enable_defense.gml</script>
+            <script>scripts\scr_npc_commands_disable_defense.gml</script>
           </scripts>
           <scripts name="Combat">
             <script>scripts\scr_npc_combat_choose_next_attack.gml</script>
           </scripts>
+          <script>scripts\scr_npc_auto_retaliate.gml</script>
+          <script>scripts\scr_npc_find_path.gml</script>
         </scripts>
         <script>scripts\scr_npc_move_to.gml</script>
         <script>scripts\scr_npc_are_there_nearby_targets.gml</script>
+        <scripts name="Movement">
+          <script>scripts\scr_npc_movement_move_one_tick.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\scr_damage_lifeform.gml</script>
       <script>scripts\scr_lifeform_update_health_bar.gml</script>
@@ -205,6 +217,7 @@
     <scripts name="Object">
       <script>scripts\scr_obj_move_phy.gml</script>
       <script>scripts\scr_obj_move_at_speed.gml</script>
+      <script>scripts\scr_obj_move_at_speed_x_y.gml</script>
       <script>scripts\scr_obj_reset_sprite.gml</script>
       <script>scripts\scr_obj_move_to.gml</script>
     </scripts>
@@ -314,6 +327,7 @@
       <objects name="Parent">
         <object>objects\obj_Lifeform_Parent</object>
         <object>objects\obj_Lifeform_Dash_Effect</object>
+        <object>objects\obj_lifeform_body</object>
       </objects>
       <object>objects\obj_lifeform_health_bar</object>
       <objects name="Damage">

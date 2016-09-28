@@ -3,13 +3,15 @@
 if(self.isAggressive){
     self.target = scr_npc_get_closest_target();
     if(self.target != noone){
-        var _distanceToTarget = point_distance(self.x, self.y, self.target.x, self.target.y);
+        var _targetGridX = scr_room_get_grid_x(self.target.x);
+        var _targetGridY = scr_room_get_grid_y(self.target.y);
+        var _distanceToTarget = point_distance(self.x, self.y, _targetGridX, _targetGridY);
         if(_distanceToTarget <= self.reach){
             self.alarm[2] = -1;
             self.state = self.attackState;
         }
         else{
-            scr_npc_move_to(self, self.target.x, self.target.y, 
+            scr_npc_move_to(self, _targetGridX, _targetGridY, 
             scr_npc_choose_next_state,self.reach-1, false, false, self.runSpeed);   
         }
     return true;
@@ -27,7 +29,6 @@ var _nextState = irandom_range(0,2);
 if(self.alarm[1] > 0 || self.wanderDistance == 0){ //means we should be idle
     _nextState = 1;
 }
-
 
 switch(_nextState){
     //idle

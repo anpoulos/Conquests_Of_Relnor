@@ -1,21 +1,40 @@
 ///scr_npc_states_move_state
 
-if(self.moveToX == noone || self.moveToY == noone){ 
+
+if(self.target != noone){   //means we are chasing someone
+    var _p = path_add();
+    if(mp_grid_path(global.aiGrid, _p, x, y, target.x, target.y, true)){
+        if(path_get_number(_p) > 0){
+            path_delete(path);
+            path = _p;
+            pathIndex = 1;
+        }
+    }
+}
+
+if(path_get_length(path) == 0){ 
     image_index = 0;
     image_speed = 0;
     return true;
 }
 
 var _rangeStop = self.moveToAccuracy;
-var _distanceToEnd = point_distance(self.x, self.y, self.moveToX, self.moveToY);
+var _totalPoints = path_get_number(path);
+if(_totalPoints < 1){
+    return false;
+}
+var _lastPointX = path_get_point_x(path, _totalPoints-1);
+var _lastPointY = path_get_point_y(path, _totalPoints-1);
+
+var _distanceToEnd = point_distance(self.x, self.y, _lastPointX, _lastPointY);
 
 if(_distanceToEnd < _rangeStop){
         
     self.alarm[1] = -1; //turn off idle state alarm
     
+    self.pathIndex = 0;
     self.commandedMoveTo = false;    
-    self.moveToX = noone;
-    self.moveToY = noone;
+    path_clear_points(path);
     image_index = 0;
     image_speed = 0;
     
@@ -24,60 +43,21 @@ if(_distanceToEnd < _rangeStop){
         self.moveToEndScript = noone;
     }
     
-    self.state = scr_npc_choose_next_state;
+    scr_npc_choose_next_state();
     return true;
 }
 
-var _pathFound = false;
+var _nextPathPointX = path_get_point_x(path, pathIndex);
+var _nextPathPointY = path_get_point_y(path, pathIndex);
 
-if(mp_grid_path(global.aiGrid, path, x, y, self.moveToX, self.moveToY, true)){
-    _pathFound = true;
-}
-else if(mp_grid_path(global.aiGrid, path, x, y, self.moveToX+global.tileOffset, self.moveToY, true)){
-    _pathFound = true;
-}
-else if(mp_grid_path(global.aiGrid, path, x, y, self.moveToX, self.moveToY+global.tileOffset, true)){
-    _pathFound = true;
-}
-else if(mp_grid_path(global.aiGrid, path, x, y, self.moveToX, self.moveToY-global.tileOffset, true)){
-    _pathFound = true;
-}
-else if(mp_grid_path(global.aiGrid, path, x, y, self.moveToX-global.tileOffset, self.moveToY, true)){
-    _pathFound = true;
+var _distanceToNextPathPoint = point_distance(x,y,_nextPathPointX, _nextPathPointY);
+
+if(_distanceToNextPathPoint < self.moveToAccuracy){
+    if(pathIndex + 1 < _totalPoints){
+        pathIndex += 1;
+    }
 }
 
-
-if(_pathFound){
-
-    path_set_kind(path, 1);
-    path_set_precision(path, 8);
-    
-    var myX = x;
-    var myY = y;
-    var myNewX = path_get_point_x(path, 1);
-    var myNewY = path_get_point_y(path, 1);
-    
-    //Get direction
-    self.direction360 = point_direction(x, y, myNewX,myNewY );
-    scr_lifeform_update_face();    
-    
-    //Get length
-    self.length = self.currentMoveSpeed;
-    
-    // Get speeds
-    hSpeed = lengthdir_x(self.length, self.direction360);
-    vSpeed = lengthdir_y(self.length, self.direction360);
-    
-    //Control sprite speed
-    self.image_speed = sign(self.length) * self.imageSpeed;
-    if(self.length == 0) self.image_index = 0;
-    
-    //Move
-    scr_obj_move_phy(self, hSpeed, vSpeed);
-}
-else{
-    image_speed = 0;
-    image_index = 0;
-}
+scr_npc_movement_move_one_tick(_nextPathPointX, _nextPathPointY);
 
 return true;

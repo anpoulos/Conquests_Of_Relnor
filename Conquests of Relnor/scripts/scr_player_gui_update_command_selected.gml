@@ -8,3 +8,6 @@ string(self.commandModule.totalSelectedWithEngage), "Total Aggressive: ",20);
 
 self.TotalWanderText.text = string_insert(
 string(self.commandModule.totalSelectedWithWander), "Total Wandering: ",18);
+
+self.TotalDefenseText.text = string_insert(
+string(self.commandModule.totalSelectedWithDefense), "Total Defensive: ",18);

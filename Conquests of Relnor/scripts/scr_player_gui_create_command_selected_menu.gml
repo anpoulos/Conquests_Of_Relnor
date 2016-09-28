@@ -57,4 +57,15 @@ c_white, 1.0, fa_left, fa_middle, CommandInformationMenuContainer);
 TotalWanderText.isVisible = true;
 //Majority Wander Mode Text
 
+//Majority Defense Mode Text
+var _x = CommandInformationMenuContainer.leftX+20;
+var _y = TotalWanderText.y+20;
+
+var _text = "";
+
+TotalDefenseText = scr_ui_font_constructor(_x, _y,_text,fnt_default_medium, 
+c_white, 1.0, fa_left, fa_middle, CommandInformationMenuContainer);
+TotalDefenseText.isVisible = true;
+//Majority Defense Mode Text
+
 

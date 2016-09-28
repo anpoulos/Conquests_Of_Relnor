@@ -2,6 +2,8 @@
 
 path = path_add();
 
+pathIndex = 0;
+updatePath = false;
 previousCellX = 0;
 previousCellY = 0;
 
@@ -58,6 +60,7 @@ sprites[4] = noone;
 triggers[TRIGGERS_MAX] = noone;
 directions[4] = noone;
 attackSprite[4] = noone;
+deadSprite = noone;
 
 healthBar = instance_create(x,y,obj_lifeform_health_bar);
 healthBar.player = self;

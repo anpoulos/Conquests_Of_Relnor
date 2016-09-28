@@ -6,12 +6,13 @@ var _dimension = argument1;
 var _originX = argument2;
 var _originY = argument3;
 var _totalSelected = scr_linked_list_size(_selected);
+var _unitArrivalCommand = self.commandModule.unitArrivalCommand;
 
 var _previousRow = scr_create_obj_array(_dimension);
 var _firstNPC = scr_linked_list_get_next(_selected);
 
-scr_npc_move_to(_firstNPC, _originX, _originY, 
-scr_npc_commands_moved, 5, true, false, _firstNPC.runSpeed);
+
+scr_npc_commands_move(_firstNPC, _unitArrivalCommand, _originX, _originY, true);
 
 _firstNPC.squareX = _originX;
 _firstNPC.squareY = _originY;
@@ -29,13 +30,8 @@ for(var i = 1; i < _dimension; i++){
     _currentNPC.squareX = _moveToX;
     _currentNPC.squareY = _moveToY;
     
-    
-    scr_npc_move_to(_currentNPC, 
-    _currentNPC.squareX, 
-    _currentNPC.squareY, 
-    scr_npc_commands_moved,
-    5,
-    true, false, _currentNPC.runSpeed);
+    scr_npc_commands_move(_currentNPC, _unitArrivalCommand, 
+    _currentNPC.squareX, _currentNPC.squareY, true);
 }
 
 var _previousRowCounter = 0;
@@ -47,12 +43,8 @@ for(var i = _currentCounter; i < _totalSelected; i++){
     _currentNPC.squareX = _moveToX;
     _currentNPC.squareY = _moveToY;
     
-    scr_npc_move_to(_currentNPC,
-    _currentNPC.squareX, 
-    _currentNPC.squareY,
-    scr_npc_commands_moved,
-    5,
-    true, false, _currentNPC.runSpeed);
+    scr_npc_commands_move(_currentNPC, _unitArrivalCommand, 
+    _currentNPC.squareX, _currentNPC.squareY, true);
     
     _previousRow.item[_previousRowCounter] = _currentNPC;
     _previousRowCounter += 1;

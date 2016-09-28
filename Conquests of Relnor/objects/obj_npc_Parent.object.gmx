@@ -29,6 +29,8 @@
 
 event_inherited();
 
+myCollisionTurn = false;
+isDefensive = true;
 everyOther = false;
 walkThroughNPCs = false;
 squareX = 0;
@@ -79,13 +81,80 @@ self.state = scr_npc_choose_next_state;
             <kind>1</kind>
             <string>///Collision
 
-if(self.isAggressive){
+if(self.isAggressive || self.isDefensive){
     if(other.allegiance != self.allegiance){
-        self.target = other;
-        self.alarm[2] = -1;
-        self.state = self.attackState;
+        scr_npc_auto_retaliate(other);
+        return true;
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Walk Around Other Lifeform
+    
+
+if(self.state != self.moveState || self.target != noone){
+    other.myCollisionTurn = true;
+    return false;
+}
+
+if(!myCollisionTurn){
+    other.myCollisionTurn = true;
+    return false;
+}
+
+myCollisionTurn = false;
+
+var _object360RelativeToMe = point_direction(x,y, other.x, other.y);
+var _directionRelativeToMe4Way = round(_object360RelativeToMe/90);
+if(_directionRelativeToMe4Way &gt; 3){
+    _directionRelativeToMe4Way = RIGHT;
+}
+
+var _face4Way = self.face4Way;
+
+if(self.face4Way == _directionRelativeToMe4Way){
+    var _rand = irandom_range(0,1);
+    if(_rand == 0){
+        _rand = -1;
+    }
+    var _d = reach;
+    switch(self.face4Way){
+        case DOWN:
+            path_change_point(path, pathIndex, x+_d*_rand, y, self.currentMoveSpeed);
+            //scr_obj_move_phy(self, _d*_rand, -_d);
+        case UP:
+            path_change_point(path, pathIndex, x+_d*_rand, y, self.currentMoveSpeed);
+            //scr_obj_move_phy(self, _d*_rand, _d);
+        break;
+        case RIGHT:
+            path_change_point(path, pathIndex, x, y+_d*_rand, self.currentMoveSpeed);
+            //scr_obj_move_phy(self, -_d, _d*_rand);
+        case LEFT:
+            path_change_point(path, pathIndex, x, y+_d*_rand, self.currentMoveSpeed);
+            //scr_obj_move_phy(self, _d, _d*_rand);
+        break;
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -113,8 +182,8 @@ if(self.isAggressive){
 switch(state){
     case attackState:
         target = noone;
-        state = scr_npc_choose_next_state;
         attacked = false;
+        scr_npc_choose_next_state();
     break;
 }
 </string>

@@ -3,7 +3,7 @@
 //create top left command menu container
 var _commandMenuColor = make_colour_rgb(150,100,100); //grey shade of red
 var _commandMenuColorArray = scr_create_obj_array4_repeat(_commandMenuColor);
-var _commandMenuPosArray = scr_create_obj_array4(-90,-110,90,110);
+var _commandMenuPosArray = scr_create_obj_array4(-90,-150,90,150);
 var _commandMenuX = _commandMenuPosArray.item[2]+10;
 var _commandMenuY = _commandMenuPosArray.item[3]+10;
 
@@ -122,6 +122,60 @@ WanderText.isVisible = true;
     DisableWanderButton.isVisible = true;
 //End of Wander Mode Button
 
+//Defense Text
+var _x = CommandMenuContainer.leftX+40;
+var _y = DisableWanderButton.y+30;
+
+var _text = scr_ui_font_constructor(_x, _y, "Defend: ",fnt_default_medium, 
+c_white, 1.0, fa_center, fa_middle, CommandMenuContainer);
+_text.isVisible = true;
+//End of Defense Text
+
+//Enable Defense Button
+    var _color = make_colour_rgb(150,50,50);
+    var _pressedColor = make_colour_rgb(100,0,0);
+    var _colorArray = scr_create_obj_array4_repeat(_color);
+    
+    var _positionArray = scr_create_obj_array4(-20,-10,20,10);
+    
+    var _fontColor = c_white;
+    
+    var _x = _text.x+55;
+    var _y = _text.y;
+    
+    var _buttonInformation = 
+    scr_ui_get_obj_ui_button_information(5,scr_player_commands_selected_enable_defense,self,
+    "Enable",fnt_default_small,_fontColor,1.0,0.6);
+    
+    EnableDefenseButton = scr_ui_button_constructor(_x,_y, 
+    _positionArray, _colorArray, 
+    _pressedColor, true, _buttonInformation, CommandMenuContainer);
+    
+    EnableDefenseButton.isVisible = true;
+//End of Enable Defense Button
+
+//Disable Defense Button
+    var _color = make_colour_rgb(50,150,50);
+    var _pressedColor = make_colour_rgb(0,100,0);
+    var _colorArray = scr_create_obj_array4_repeat(_color);
+    
+    var _positionArray = scr_create_obj_array4(-20,-10,20,10);
+    
+    var _fontColor = c_white;
+    
+    var _x = EnableDefenseButton.x+50;
+    var _y = _text.y;
+    
+    var _buttonInformation = 
+    scr_ui_get_obj_ui_button_information(5,scr_player_commands_selected_disable_defense,self,
+    "Disable",fnt_default_small,_fontColor,1.0,0.6);
+    
+    DisableDefenseButton = scr_ui_button_constructor(_x,_y, 
+    _positionArray, _colorArray, 
+    _pressedColor, true, _buttonInformation, CommandMenuContainer);
+    
+    DisableDefenseButton.isVisible = true;
+//End of Disable Defense Button
 
 //Deselect All Button
     var _DeselectButtonColor = make_colour_rgb(150,150,150);
@@ -133,7 +187,7 @@ WanderText.isVisible = true;
     var _fontColor = c_white;
     
     var _DeselectButtonX = CommandMenuContainer.x;
-    var _DeselectButtonY = DisableWanderButton.y+35;
+    var _DeselectButtonY = EnableDefenseButton.y+35;
     
     var _DeselectButtonInfo = 
     scr_ui_get_obj_ui_button_information(5,scr_player_commands_deselect_all,self,

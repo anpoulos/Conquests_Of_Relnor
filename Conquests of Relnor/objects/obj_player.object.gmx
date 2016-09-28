@@ -142,6 +142,8 @@ scr_player_create_gui();
             <string>///Destroy
 
 scr_destroy_instance(self.commandModule);
+self.view.target = noone;
+
 
 event_inherited();
 </string>
@@ -214,6 +216,30 @@ scr_player_gui_update_information();
           <argument>
             <kind>1</kind>
             <string>///
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_npc_Parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Give collision turn to NPC
+other.myCollisionTurn = true;
 </string>
           </argument>
         </arguments>
@@ -374,6 +400,31 @@ if debug_mode
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Deselect All
+
+scr_player_commands_deselect_all();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="78">
       <action>
         <libid>1</libid>
@@ -399,7 +450,7 @@ instance_create(x+100, y, obj_npc_red_soldier);
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="74">
+    <event eventtype="9" enumb="70">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -416,14 +467,15 @@ instance_create(x+100, y, obj_npc_red_soldier);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///subtract health
-self.hitpoints -= 1;
+            <string>///Square Formation
+
+scr_player_commands_square_preview_create();
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="72">
+    <event eventtype="9" enumb="69">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -440,8 +492,14 @@ self.hitpoints -= 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///add health
-self.hitpoints += 1;
+            <string>///Enable or Disable engage
+
+if(keyboard_check(vk_control)){
+    scr_player_commands_selected_disable_engage();
+}
+else{
+    scr_player_commands_selected_enable_engage();
+}
 </string>
           </argument>
         </arguments>
@@ -467,6 +525,63 @@ self.hitpoints += 1;
             <string>///debug create npc
 
 instance_create(x+100, y, obj_npc_blue_soldier);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="36">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Goto title
+
+room_goto(rm_menus_title);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pause game and bring up menu
+
+//TODO
+
+if(global.gamePaused){
+    global.gamePaused = false;
+}
+else{
+    global.gamePaused = true;
+}
 </string>
           </argument>
         </arguments>

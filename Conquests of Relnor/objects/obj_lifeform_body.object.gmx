@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Command Module
+            <string>///Create
 
-scr_player_command_module_initialize();
+deadSprite = noone;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,10 +50,9 @@ scr_player_command_module_initialize();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy
+            <string>///Object Depth
 
-scr_linked_list_destroy(self.selected);
-
+depth = -y;
 </string>
           </argument>
         </arguments>
@@ -76,39 +75,9 @@ scr_linked_list_destroy(self.selected);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw engage circles and selection
-
-//var _engageCircleAlpha = 0.2/self.totalSelectedWithEngage;
-//var _wanderCircleAlpha = 0.2/self.totalSelectedWithWander;
-
-for(var i = 0; i &lt; scr_linked_list_size(self.selected); i++){
-    var _currentNPC = scr_linked_list_get_next(self.selected);
-    if(_currentNPC.isDefensive){
-        draw_circle_colour(_currentNPC.x, _currentNPC.y, 10, c_red, c_red, true);
-    }
-    else{
-        draw_circle(_currentNPC.x, _currentNPC.y, 10, true);
-    }
-    
-    if(_currentNPC.commandedMoveTo){
-        draw_line_colour(_currentNPC.x, _currentNPC.y, 
-                        _currentNPC.moveToX, _currentNPC.moveToY,
-                        c_green, c_green);
-        draw_circle_colour(_currentNPC.moveToX, _currentNPC.moveToY, 
-                            10, c_green, c_green, true);
-    }
-    
-    if(_currentNPC.isAggressive){
-        draw_set_alpha(0.2);
-        draw_circle_colour(_currentNPC.x,_currentNPC.y, _currentNPC.sight, 
-        c_red, c_red, true);
-    }
-    if(_currentNPC.wanderDistance &gt; 0){
-        draw_set_alpha(0.2);
-        draw_circle_colour(_currentNPC.originX,_currentNPC.originY, _currentNPC.wanderDistance, 
-        c_yellow, c_yellow, true);
-    }
-    draw_set_alpha(1);
+            <string>///Draw Body
+if(deadSprite != noone){
+    draw_sprite(deadSprite, 0, x,y);
 }
 </string>
           </argument>

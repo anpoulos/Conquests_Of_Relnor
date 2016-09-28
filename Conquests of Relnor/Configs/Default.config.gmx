@@ -649,7 +649,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="28">
+    <constants number="31">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">2</constant>
       <constant name="ALLEGIANCE_RED">1</constant>
@@ -675,9 +675,12 @@
       <constant name="TRIGGER_DASH">1</constant>
       <constant name="TRIGGER_ESC">2</constant>
       <constant name="TRIGGER_FORMATION">3</constant>
-      <constant name="TRIGGERS_MAX">4</constant>
+      <constant name="TRIGGER_ENGAGE">4</constant>
+      <constant name="TRIGGER_ENGAGE_DISABLE">5</constant>
+      <constant name="TRIGGERS_MAX">6</constant>
       <constant name="UP">1</constant>
       <constant name="WEAPON">0</constant>
+      <constant name="MOVEMENT_ACCURACY">5</constant>
     </constants>
   </ConfigConstants>
 </Config>

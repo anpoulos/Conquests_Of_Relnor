@@ -12,7 +12,7 @@ var _avgReach = self.commandModule.squarePreview.averageReach;
 
 var _originX = mouse_x-(_avgReach*(_dimension-1))/2; 
 
-var _d = _dimension;
+var _d = _dimension-1;
 
 if(self.commandModule.squarePreview.notPerfectSquare){
     _d += 1;

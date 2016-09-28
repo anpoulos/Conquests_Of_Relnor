@@ -236,38 +236,11 @@ self.currentDepth = depth;
             <kind>1</kind>
             <string>///State execution
 
-script_execute(state);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///global.aiGrid update
-
-var _currentCellX = floor(x / global.tileOffset);
-var _currentCellY = floor(y / global.tileOffset);
-
-//mp_grid_add_cell(global.aiGrid, _currentCellX, _currentCellY);
-    
-if(_currentCellX != previousCellX || _currentCellY != previousCellY){
-    //mp_grid_clear_cell(global.aiGrid, previousCellX, previousCellY);
-    previousCellX = _currentCellX;
-    previousCellY = _currentCellY;
+if(global.gamePaused){
+    image_speed = 0;
+}
+else{
+    script_execute(state);
 }
 </string>
           </argument>
@@ -338,7 +311,7 @@ if(_inFrontOfMe){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// stop image movement
+            <string>///
 </string>
           </argument>
         </arguments>
@@ -362,6 +335,7 @@ if(_inFrontOfMe){
           <argument>
             <kind>1</kind>
             <string>///
+    ///
 </string>
           </argument>
         </arguments>
@@ -386,8 +360,10 @@ if(_inFrontOfMe){
             <kind>1</kind>
             <string>///Draw Equipment and sprite
 
+var _equipmentLength = array_length_1d(self.equipment.item);
+
 //draw items behind first
-for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
+for(var i = 0; i &lt; _equipmentLength; i++){
     var _item = self.equipment.item[i];
     if(_item != noone &amp;&amp; _item.spriteBehind.item[self.face4Way]){
         draw_sprite(_item.sprite.item[self.face4Way], image_index, self.x, self.y);
@@ -398,7 +374,7 @@ for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
 draw_self();
 
 //draw items in front
-for(var i = 0; i &lt; array_length_1d(self.equipment.item); i++){
+for(var i = 0; i &lt; _equipmentLength; i++){
     var _item = self.equipment.item[i];
     if(_item != noone &amp;&amp; !_item.spriteBehind.item[self.face4Way]){
         draw_sprite(_item.sprite.item[self.face4Way], image_index, self.x, self.y);

@@ -29,7 +29,17 @@ var _xForce = lengthdir_x(_damage.knockback, _dir);
 var _yForce = lengthdir_y(_damage.knockback, _dir);
 
 with(_lifeform){
+    if(target == noone && !isPlayer && isDefensive && !isAggressive){
+        _xForce = round(_xForce/2);
+        _yForce = round(_yForce/2);
+        var _distanceToSource = distance_to_point(_source.x, _source.y);
+        if(_distanceToSource < reach){
+            image_speed = attackImageSpeed;
+            scr_npc_auto_retaliate(_source);
+        }
+    }
     physics_apply_impulse(x,y, _xForce, _yForce);
 }
+
 
 

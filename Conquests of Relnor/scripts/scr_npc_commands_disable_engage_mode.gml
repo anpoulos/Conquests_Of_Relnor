@@ -2,4 +2,3 @@
 
 self.isAggressive = false;
 self.target = noone;
-scr_npc_choose_next_state();
