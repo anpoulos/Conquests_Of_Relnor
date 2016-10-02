@@ -72,9 +72,10 @@ face4Way = DOWN;
 face8Way = FACE_DOWN;
 length = 0;
 imageSpeed = 0.2;
-moveSpeed = 2;
+walkSpeed = 2;
 runSpeed = 4;
 dashSpeed = 6;
+moveSpeed = walkSpeed;
 currentMoveSpeed = moveSpeed;
 
 attacked = false;

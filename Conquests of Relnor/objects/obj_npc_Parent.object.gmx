@@ -81,6 +81,14 @@ self.state = scr_npc_choose_next_state;
             <kind>1</kind>
             <string>///Collision
 
+if(currentMoveSpeed &gt; 1){
+    var _myNextPointX = path_get_point_x(path, pathIndex);
+    var _myNextPointY = path_get_point_y(path, pathIndex);
+    if(point_distance(x,y,_myNextPointX, _myNextPointY) &gt; point_distance(other.x,other.y,x,y)){
+        currentMoveSpeed -= 1;
+    }
+}
+
 if(self.isAggressive || self.isDefensive){
     if(other.allegiance != self.allegiance){
         scr_npc_auto_retaliate(other);
@@ -108,11 +116,9 @@ if(self.isAggressive || self.isDefensive){
           <argument>
             <kind>1</kind>
             <string>///Walk Around Other Lifeform
-    
 
-if(self.state != self.moveState || self.target != noone){
-    other.myCollisionTurn = true;
-    return false;
+if(self.state != self.moveState){// || self.target != noone){
+    myCollisionTurn = false;
 }
 
 if(!myCollisionTurn){
@@ -136,22 +142,42 @@ if(self.face4Way == _directionRelativeToMe4Way){
         _rand = -1;
     }
     var _d = reach;
+    var _newXOffset = 0;
+    var _newYOffset = 0;
+    var _newXOffset2 = 0;
+    var _newYOffset2 = 0;
+    
     switch(self.face4Way){
         case DOWN:
-            path_change_point(path, pathIndex, x+_d*_rand, y, self.currentMoveSpeed);
-            //scr_obj_move_phy(self, _d*_rand, -_d);
+            _newXOffset = _d*_rand;
+            _newXOffset2 = _newXOffset;
+            _newYOffset2 = _d;
+        break;
         case UP:
-            path_change_point(path, pathIndex, x+_d*_rand, y, self.currentMoveSpeed);
-            //scr_obj_move_phy(self, _d*_rand, _d);
+            _newXOffset = _d*_rand;
+            _newXOffset2 = _newXOffset;
+            _newYOffset2 = -_d;     
         break;
         case RIGHT:
-            path_change_point(path, pathIndex, x, y+_d*_rand, self.currentMoveSpeed);
-            //scr_obj_move_phy(self, -_d, _d*_rand);
+            _newYOffset = _d*_rand;
+            _newYOffset2 = _newYOffset;
+            _newXOffset2 = _d;
+            break;   
         case LEFT:
-            path_change_point(path, pathIndex, x, y+_d*_rand, self.currentMoveSpeed);
-            //scr_obj_move_phy(self, _d, _d*_rand);
+            _newYOffset = _d*_rand;
+            _newYOffset2 = _newYOffset;
+            _newXOffset2 = -_d;  
         break;
     }
+    
+    
+    if(!collision_circle(x+_newXOffset, y+_newYOffset, 10, obj_Lifeform_Parent, false, true)){
+        path_change_point(path, pathIndex, x+_newXOffset, y+_newYOffset, self.currentMoveSpeed);
+        if(pathIndex+1 &lt; path_get_number(path)){
+           path_change_point(path, pathIndex+1, x+_newXOffset2, y+_newYOffset2, self.currentMoveSpeed);
+        }     
+    }
+    
 }
 
 

@@ -170,6 +170,7 @@
             <script>scripts\scr_npc_set_sprites.gml</script>
             <script>scripts\scr_npc_states_attack_state.gml</script>
             <script>scripts\scr_npc_states_follow_target_state.gml</script>
+            <script>scripts\scr_npc_states_wait_move.gml</script>
           </scripts>
           <script>scripts\scr_npc_choose_next_state.gml</script>
           <script>scripts\scr_npc_set_move_offset.gml</script>
@@ -196,12 +197,12 @@
           </scripts>
           <script>scripts\scr_npc_auto_retaliate.gml</script>
           <script>scripts\scr_npc_find_path.gml</script>
+          <scripts name="Movement">
+            <script>scripts\scr_npc_move_to.gml</script>
+            <script>scripts\scr_npc_movement_move_one_tick.gml</script>
+          </scripts>
         </scripts>
-        <script>scripts\scr_npc_move_to.gml</script>
         <script>scripts\scr_npc_are_there_nearby_targets.gml</script>
-        <scripts name="Movement">
-          <script>scripts\scr_npc_movement_move_one_tick.gml</script>
-        </scripts>
       </scripts>
       <script>scripts\scr_damage_lifeform.gml</script>
       <script>scripts\scr_lifeform_update_health_bar.gml</script>

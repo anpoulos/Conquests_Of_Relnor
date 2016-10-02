@@ -8,8 +8,7 @@
     //}
     
     if(global.gamePaused){
-        mp_grid_path(global.aiGrid, argument0.path, argument0.x, argument0.y, 
-        argument2, argument3, true);
+        scr_npc_find_path(argument0, argument0.path, argument1, argument2);
     }
         
     scr_npc_move_to(argument0,  argument2, argument3,
