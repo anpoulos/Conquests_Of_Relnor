@@ -21,6 +21,12 @@
         <sprite>sprites\spr_npc_soldier_red_left</sprite>
         <sprite>sprites\spr_npc_soldier_red_dead</sprite>
       </sprites>
+      <sprites name="Old Man 1">
+        <sprite>sprites\spr_npc_old_man_01_down</sprite>
+        <sprite>sprites\spr_npc_old_man_01_left</sprite>
+        <sprite>sprites\spr_npc_old_man_01_right</sprite>
+        <sprite>sprites\spr_npc_old_man_01_up</sprite>
+      </sprites>
     </sprites>
     <sprites name="Player">
       <sprites name="Walk">
@@ -146,6 +152,7 @@
             <script>scripts\scr_player_commands_reset.gml</script>
             <script>scripts\scr_player_commands_selected_enable_defense.gml</script>
             <script>scripts\scr_player_commands_selected_disable_defense.gml</script>
+            <script>scripts\scr_player_commands_talk_to_closest_selected.gml</script>
           </scripts>
           <script>scripts\scr_player_command_module_initialize.gml</script>
         </scripts>
