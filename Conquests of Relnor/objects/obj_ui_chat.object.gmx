@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_ui_draw_parent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,30 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Menu Container Create
-event_inherited();
-name = "UI Menu Container";
+            <string>///Create
 
-stepScript = noone;
-buttonPressed = false;
-objects = scr_linked_list_create();
+lines[3] = noone;
+allLines = scr_linked_list_create();
 
-leftX = noone;
-topY = noone;
-rightX = noone;
-bottomY = noone;
-topLeftColor = noone;
-topRightColor = noone;
-bottomRightColor = noone;
-bottomLeftColor = noone;
-isOutlined = noone;
-menuAlpha = noone;
+//Create Chat Container
+    var _menuColorArray = scr_create_obj_array4_repeat(make_colour_rgb(150,150,150));
+    var _menuPosArray = scr_create_obj_array4(-200, -50, 200, 50);
+    
+    var _menuX = display_get_gui_width()/2;
+    var _menuY = _menuPosArray.item[3]+10;
+    
+    ChatContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.5, noone);
+//End Create Chat Container
 
-stretchedX = noone;
-stretchedY = noone;
+//Create Text
+    var _heightOffset = ChatContainer.topY + 20;
+    for(var i = 0; i &lt; 4; i++){
+        var _textX = ChatContainer.leftX + 10;
+        var _textY = _heightOffset;
+        _heightOffset += 20;
+        
+        lines[i] = scr_ui_font_constructor(_textX, _textY, "", fnt_default_medium, c_white, 
+        1.0, fa_left, fa_middle, ChatContainer);
+        lines[i].isVisible = true;
+    }
+//End of Create Text
 
-//overrides
-self.drawScript = scr_ui_menu_draw;
+
+//Create Next Button
+
+//End of Create Next Button
+
+
+ChatContainer.isVisible = true;
 </string>
           </argument>
         </arguments>
@@ -72,33 +83,17 @@ self.drawScript = scr_ui_menu_draw;
           <argument>
             <kind>1</kind>
             <string>///Destroy
-scr_linked_list_destroy(objects);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Step Script Check
-if(self.stepScript != noone){
-    script_execute(self.stepScript);
+
+for(var i = 0; i &lt; array_length_1d(lines); i++){
+    if(instance_exists(lines[i])){
+        scr_destroy_instance(lines[i]);
+    }
 }
+scr_destroy_instance(lines);
+
+scr_destroy_instance(ChatContainer);
+scr_linked_list_destroy(allLines);
+
 </string>
           </argument>
         </arguments>

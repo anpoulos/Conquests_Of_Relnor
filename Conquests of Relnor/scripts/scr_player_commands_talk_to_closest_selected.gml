@@ -23,7 +23,11 @@ for(var i = 0; i < scr_linked_list_size(_selected); i++){
 }
 
 if(_closestNPC != noone){
-//TALK
+    ChatWindow = instance_create(x,y,obj_ui_chat);
+    ChatWindow.lines[0].text = "Line0";
+    ChatWindow.lines[1].text = "Line1";
+    ChatWindow.lines[2].text = "Line2";
+    ChatWindow.lines[3].text = "Line3";    
 }
 else{
 //No npcs close enough selected to talk to

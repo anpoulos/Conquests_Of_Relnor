@@ -365,6 +365,9 @@
       <objects name="Font">
         <object>objects\obj_ui_font</object>
       </objects>
+      <objects name="Chat">
+        <object>objects\obj_ui_chat</object>
+      </objects>
     </objects>
     <object>objects\obj_array</object>
     <object>objects\obj_unwalkable</object>

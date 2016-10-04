@@ -11,6 +11,7 @@ var obj = argument1;
             _commander.commandModule.totalSelected += 1;
             _commander.CommandMenuContainer.isVisible = true;
             _commander.CommandInformationMenuContainer.isVisible = true;
+            _commander.PassiveMenuContainer.isVisible = true;            
             if(obj.isAggressive){
                 _commander.commandModule.totalSelectedWithEngage += 1;
             }

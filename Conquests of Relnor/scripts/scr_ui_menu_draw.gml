@@ -19,12 +19,8 @@ if(self.isVisible){
     self.bottomRightColor, self.bottomLeftColor, 
     false);
     
-    for(var i = 0; i < self.objects.size; i++){
-        var _object = self.objects.item[i];
-        if(_object != noone){
-        var t = _object.name;
-            scr_ui_draw_obj_draw(_object);
-        }
+    for(var i = 0; i < scr_linked_list_size(objects); i++){
+            scr_ui_draw_obj_draw(scr_linked_list_get_next(objects));
     }
     scr_ui_menu_set_defaults();
 }

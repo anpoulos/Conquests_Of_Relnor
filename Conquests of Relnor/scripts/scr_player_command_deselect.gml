@@ -13,6 +13,7 @@ var obj = argument1;
             if(_commander.commandModule.totalSelected <= 0){
                 _commander.CommandMenuContainer.isVisible = false;
                 _commander.CommandInformationMenuContainer.isVisible = false;
+                _commander.PassiveMenuContainer.isVisible = false;
             }
             if(_commander.allegianceRank[_commander.allegiance] > obj.allegianceRank[_commander.allegiance]){
                 if(obj.isAggressive){
