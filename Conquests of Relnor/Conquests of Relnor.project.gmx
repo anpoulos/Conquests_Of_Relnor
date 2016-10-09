@@ -164,6 +164,7 @@
           <script>scripts\scr_player_gui_create_command_menu.gml</script>
           <script>scripts\scr_player_gui_create_passive_menu.gml</script>
           <script>scripts\scr_player_gui_create_command_selected_menu.gml</script>
+          <script>scripts\scr_player_gui_pause_menu.gml</script>
         </scripts>
         <scripts name="States">
           <script>scripts\scr_player_states_attack_state.gml</script>
