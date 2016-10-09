@@ -25,7 +25,7 @@ btn.isOutlined = argument5;
 var _buttonInformation = argument6;
 
 btn.delay = _buttonInformation.delay;
-btn.buttonPressed = _buttonInformation.buttonPressed;
+btn.buttonPressedScript = _buttonInformation.buttonPressedScript;
 btn.text = _buttonInformation.text;
 btn.font = _buttonInformation.font;
 btn.fontColor = _buttonInformation.fontColor;

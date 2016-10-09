@@ -2,6 +2,9 @@
 
 path = path_add();
 
+busyState = noone;
+isBusy = false;
+
 pathIndex = 0;
 updatePath = false;
 previousCellX = 0;
@@ -13,9 +16,11 @@ currentAttack = noone;
 phy_fixed_rotation = true;
 ignoreLifeformCollisions = false;
 
-equipment = scr_create_obj_array(2);
+for(var i = 0; i < 2; i++){
+    equipment[i] = noone;
+}
 
-inventory = scr_create_obj_array(16);
+inventory = scr_linked_list_create();
 
 selected = false;
 image_speed = 0;
@@ -62,9 +67,7 @@ directions[4] = noone;
 attackSprite[4] = noone;
 deadSprite = noone;
 
-healthBar = instance_create(x,y,obj_lifeform_health_bar);
-healthBar.player = self;
-healthBar.isVisible = false;
+healthBarIsVisible = false;
 
 //movement
 direction360 = 0;
@@ -72,10 +75,6 @@ face4Way = DOWN;
 face8Way = FACE_DOWN;
 length = 0;
 imageSpeed = 0.2;
-walkSpeed = 2;
-runSpeed = 4;
-dashSpeed = 6;
-moveSpeed = walkSpeed;
-currentMoveSpeed = moveSpeed;
+scr_npc_set_speeds(2,4,6);
 
 attacked = false;

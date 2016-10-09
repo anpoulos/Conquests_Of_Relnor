@@ -12,3 +12,4 @@ self.wanderRadius = self.wanderDistance;
 self.oldWanderRadius = self.wanderRadius;
 self.allegiance = argument6;
 self.allegianceRank[self.allegiance] = argument7;
+

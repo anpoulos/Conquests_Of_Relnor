@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_player" x="528" y="624" name="inst_20104D17" locked="0" code="scr_room_initialize();" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_npc_old_man_01" x="672" y="528" name="inst_82232217" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

@@ -28,7 +28,7 @@
             <string>///Button Information
 
 delay = noone;
-buttonPressed = noone;
+buttonPressedScript = noone;
 text = noone;
 font = noone;
 buttonScriptAs = noone;

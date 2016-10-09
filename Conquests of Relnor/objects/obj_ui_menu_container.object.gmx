@@ -72,6 +72,12 @@ self.drawScript = scr_ui_menu_draw;
           <argument>
             <kind>1</kind>
             <string>///Destroy
+
+for(var i = 0; i &lt; scr_linked_list_size(objects); i++){
+    var _destroyThis = scr_linked_list_remove_next(objects);
+    scr_destroy_instance(_destroyThis);
+}
+
 scr_linked_list_destroy(objects);
 </string>
           </argument>

@@ -28,23 +28,25 @@
             <string>///Player
 
 event_inherited();
-
+PauseMenuContainer = noone;
+zoom = 50;
+busyState = scr_player_states_busy_state;
 stillSelecting = false;
 commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
 
 //equipment and inventory override
-self.equipment.item[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
-self.equipment.item[OFFHAND].owner = self;
-self.equipment.item[OFFHAND].isVisible = true;
+self.equipment[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
+self.equipment[OFFHAND].owner = self;
+self.equipment[OFFHAND].isVisible = true;
 
-self.equipment.item[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
-self.equipment.item[WEAPON].owner = self;
-self.equipment.item[WEAPON].isVisible = true;
+self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
+self.equipment[WEAPON].owner = self;
+self.equipment[WEAPON].isVisible = true;
 
 //overrides
 self.currentMoveSpeed = self.runSpeed;
-self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee;
+self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
 
 self.allegiance = ALLEGIANCE_BLUE;
@@ -116,6 +118,7 @@ view.target = self;
           <argument>
             <kind>1</kind>
             <string>///Create GUI
+
 scr_player_create_gui();
 </string>
           </argument>
@@ -142,6 +145,7 @@ scr_player_create_gui();
             <string>///Destroy
 
 scr_destroy_instance(self.commandModule);
+scr_linked_list_destroy(self.Menus);
 self.view.target = noone;
 
 
@@ -244,6 +248,33 @@ other.myCollisionTurn = true;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Talk To
+if(keyboard_check(ord('T'))){
+    if(!isBusy){
+        scr_player_enable_busy();
+        ChatWindow = scr_ui_chat_constructor(self, other, noone, noone);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="5" enumb="78">
       <action>
@@ -265,6 +296,31 @@ other.myCollisionTurn = true;
             <string>///Create Red Soldier
 
 instance_create(x+100, y, obj_npc_red_soldier);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///spawn cavalry unit
+
+instance_create(x+60,y,obj_npc_blue_cavalry);
 </string>
           </argument>
         </arguments>
@@ -322,6 +378,66 @@ scr_destroy_instance(_selected);
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="61">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Zoom out
+
+//var _ratio = view_wport[0] / view_hport[0]
+if(zoom &lt; 100){
+    view_wview[0] += 16;
+    view_hview[0] += 10;
+    zoom += 1;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="60">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///zoom in
+
+if(zoom &gt; 0){
+    view_wview[0] -= 16;
+    view_hview[0] -= 10;
+    zoom -= 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="57">
       <action>
         <libid>1</libid>
@@ -340,7 +456,7 @@ scr_destroy_instance(_selected);
           <argument>
             <kind>1</kind>
             <string>///Right Released
-scr_player_command_right_released();
+scr_player_mouse_global_right_released();
 </string>
           </argument>
         </arguments>
@@ -364,7 +480,31 @@ scr_player_command_right_released();
           <argument>
             <kind>1</kind>
             <string>///Left Released
-scr_player_command_left_released();
+scr_player_mouse_global_left_released();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Global Left Pressed
+scr_player_mouse_global_left_pressed();
 </string>
           </argument>
         </arguments>
@@ -388,7 +528,7 @@ scr_player_command_left_released();
           <argument>
             <kind>1</kind>
             <string>///Right Button Clicked
-scr_player_command_right_button();
+scr_player_mouse_global_right_button();
 </string>
           </argument>
         </arguments>
@@ -412,7 +552,7 @@ scr_player_command_right_button();
           <argument>
             <kind>1</kind>
             <string>///Global Left Button
-scr_player_command_left_button();
+scr_player_mouse_global_left_button();
 </string>
           </argument>
         </arguments>
@@ -472,6 +612,31 @@ if debug_mode
    {
    draw_text(display_get_gui_width()-64, 32, "FPS = " + string(fps));
    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="84">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Talk To
+
+scr_player_commands_talk_to_closest_selected();
 </string>
           </argument>
         </arguments>
@@ -605,9 +770,11 @@ room_goto(rm_menus_title);
 
 if(global.gamePaused){
     global.gamePaused = false;
+    scr_player_gui_pause_menu_hide();
 }
 else{
     global.gamePaused = true;
+    scr_player_gui_pause_menu();
 }
 </string>
           </argument>

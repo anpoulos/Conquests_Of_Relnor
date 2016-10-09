@@ -1,4 +1,8 @@
-///scr_player_command_selecting
+///scr_player_mouse_global_left_button
+
+    if(isBusy){
+        return false;
+    }
 
     if(keyboard_check(ord('R'))){
         if(self.selectBox == noone && !instance_exists(self.selectBox)){

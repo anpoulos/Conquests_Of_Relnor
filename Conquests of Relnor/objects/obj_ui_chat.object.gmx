@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>self</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,25 +27,42 @@
             <kind>1</kind>
             <string>///Create
 
+npc = noone;
+player = noone;
 lines[3] = noone;
 allLines = scr_linked_list_create();
+endScript = noone;
+endScriptAs = noone;
 
 //Create Chat Container
-    var _menuColorArray = scr_create_obj_array4_repeat(make_colour_rgb(150,150,150));
-    var _menuPosArray = scr_create_obj_array4(-200, -50, 200, 50);
+    var _menuColorArray = scr_create_obj_array4_repeat(make_colour_rgb(150,150,150), "_menuColorArray");
+    var _menuPosArray = scr_create_obj_array4(-300, -75, 300, 75, "_menuPosArray");
     
     var _menuX = display_get_gui_width()/2;
     var _menuY = _menuPosArray.item[3]+10;
     
     ChatContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.5, noone);
+    
+    scr_destroy_instance(_menuColorArray);
+    scr_destroy_instance(_menuPosArray);    
 //End Create Chat Container
 
+//Create name text
+var _textX = ChatContainer.leftX + 20;
+var _textY = ChatContainer.topY + 20;
+
+NameText = scr_ui_font_constructor(_textX, _textY, "", fnt_default_large, c_white, 
+        1.0, fa_left, fa_middle, ChatContainer);
+NameText.isVisible = true;
+//End create name text
+
 //Create Text
-    var _heightOffset = ChatContainer.topY + 20;
+    var _textOffset = 25;
+    var _heightOffset = NameText.y + _textOffset+5;
     for(var i = 0; i &lt; 4; i++){
-        var _textX = ChatContainer.leftX + 10;
+        var _textX = ChatContainer.leftX + 35;
         var _textY = _heightOffset;
-        _heightOffset += 20;
+        _heightOffset += _textOffset;
         
         lines[i] = scr_ui_font_constructor(_textX, _textY, "", fnt_default_medium, c_white, 
         1.0, fa_left, fa_middle, ChatContainer);
@@ -55,9 +72,50 @@ allLines = scr_linked_list_create();
 
 
 //Create Next Button
-
+    var _buttonColor = make_colour_rgb(100,100,100);
+    var _buttonColorPressed = make_colour_rgb(50,50,50);
+    var _buttonColorArray = scr_create_obj_array4_repeat(_buttonColor, "_buttonColorArray");
+    
+    var _buttonPosArray = scr_create_obj_array4(-70,-20,70,20, "_buttonPosArray");
+    
+    var _buttonX = ChatContainer.rightX - _buttonPosArray.item[2] - 10;
+    var _buttonY = ChatContainer.topY + _buttonPosArray.item[3] + 10;
+    
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_button_chat_next, self, "Next", 
+                        fnt_default_medium, c_white, 1.0, 0.5);
+    
+    NextButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, _buttonColorArray, _buttonColorPressed,
+                                true, _buttonInfo, ChatContainer);
+    
+    NextButton.isVisible = true;
+    
+    scr_destroy_instance(_buttonColorArray);
+    scr_destroy_instance(_buttonPosArray);
+    scr_destroy_instance(_buttonInfo);
 //End of Create Next Button
 
+
+//Create Close Button
+    var _buttonColor = make_colour_rgb(100,100,100);
+    var _buttonColorPressed = make_colour_rgb(50,50,50);
+    var _buttonColorArray = scr_create_obj_array4_repeat(_buttonColor, "_buttonColorArray");
+    
+    var _buttonPosArray = scr_create_obj_array4(-70,-20,70,20, "_buttonPosArray");
+    
+    var _buttonX = ChatContainer.rightX - _buttonPosArray.item[2] - 10;
+    var _buttonY = NextButton.y + _buttonPosArray.item[3] + 30;
+    
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_button_chat_close, self, "Close", 
+                        fnt_default_medium, c_white, 1.0, 0.5);
+    
+    ExitButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, _buttonColorArray, _buttonColorPressed,
+                                true, _buttonInfo, ChatContainer);
+    
+    ExitButton.isVisible = true;
+    scr_destroy_instance(_buttonColorArray);
+    scr_destroy_instance(_buttonPosArray);
+    scr_destroy_instance(_buttonInfo);
+//End of Close Button
 
 ChatContainer.isVisible = true;
 </string>
@@ -84,13 +142,32 @@ ChatContainer.isVisible = true;
             <kind>1</kind>
             <string>///Destroy
 
+if(endScript != noone){
+    if(endScriptAs != noone){
+        with(endScriptAs){
+            script_execute(endScript);
+        }
+    }
+    else{
+        script_execute(endScript);
+    }
+}
+
+with(player){
+    scr_player_disable_busy();
+}
+with(npc){
+    scr_npc_disable_busy();
+}
+
 for(var i = 0; i &lt; array_length_1d(lines); i++){
     if(instance_exists(lines[i])){
         scr_destroy_instance(lines[i]);
     }
 }
-scr_destroy_instance(lines);
 
+scr_destroy_instance(NextButton);
+scr_destroy_instance(ExitButton);
 scr_destroy_instance(ChatContainer);
 scr_linked_list_destroy(allLines);
 

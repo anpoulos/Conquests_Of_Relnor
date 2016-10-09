@@ -6,7 +6,7 @@ if(self.target == noone || !instance_exists(self.target)){
 
 scr_npc_combat_choose_next_attack();
 
-self.direction360 = point_direction(x,y,self.target.x,self.target.y);
+scr_lifeform_face_towards(self, target.x, target.y);
 
 script_execute(self.currentAttack);
 

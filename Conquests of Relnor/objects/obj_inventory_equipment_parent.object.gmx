@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Create Equipment
 owner = noone;
-sprite = scr_create_obj_array(4);
-spriteBehind = scr_create_obj_array(4);
+sprite[4] = noone;
+spriteBehind[4] = noone;
 </string>
           </argument>
         </arguments>

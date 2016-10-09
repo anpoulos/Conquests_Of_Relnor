@@ -31,6 +31,7 @@ vSpeed = lengthdir_y(self.length, self.direction360);
 //Control the sprite
 self.image_speed = sign(self.length) * self.imageSpeed;
 if(self.length == 0) self.image_index = 0;
+ 
 
 //sprite direction
 switch(self.face8Way){

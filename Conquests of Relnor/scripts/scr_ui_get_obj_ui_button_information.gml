@@ -2,7 +2,7 @@
 var _buttonInformation = instance_create(0, 0, obj_ui_button_information);
 
 _buttonInformation.delay = argument0;
-_buttonInformation.buttonPressed = argument1;
+_buttonInformation.buttonPressedScript = argument1;
 _buttonInformation.buttonScriptAs = argument2;
 _buttonInformation.text = argument3;
 _buttonInformation.font = argument4;

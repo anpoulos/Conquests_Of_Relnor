@@ -1,6 +1,6 @@
 ///scr_player_commands_square_preview_create
 
-if(self.commandModule.squarePreview != noone || self.commandModule.totalSelected <= 0){
+if(self.isBusy || self.commandModule.squarePreview != noone || self.commandModule.totalSelected <= 0){
     return false;
 }
 

@@ -3,6 +3,61 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="6" name="datafiles">
+    <datafiles number="6" name="Chat">
+      <datafile>
+        <name>File_Chat_Old_Man_01.txt</name>
+        <exists>-1</exists>
+        <size>290</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>File_Chat_Old_Man_01.txt</filename>
+      </datafile>
+      <datafile>
+        <name>File_Chat_Blue_Soldier.txt</name>
+        <exists>-1</exists>
+        <size>15</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>File_Chat_Blue_Soldier.txt</filename>
+      </datafile>
+      <datafile>
+        <name>File_Chat_Red_Soldier.txt</name>
+        <exists>-1</exists>
+        <size>16</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>File_Chat_Red_Soldier.txt</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -27,6 +82,12 @@
         <sprite>sprites\spr_npc_old_man_01_right</sprite>
         <sprite>sprites\spr_npc_old_man_01_up</sprite>
       </sprites>
+      <sprites name="Blue Cavalry">
+        <sprite>sprites\spr_blue_cavalry_down</sprite>
+        <sprite>sprites\spr_blue_cavalry_up</sprite>
+        <sprite>sprites\spr_blue_cavalry_right</sprite>
+        <sprite>sprites\spr_blue_cavalry_left</sprite>
+      </sprites>
     </sprites>
     <sprites name="Player">
       <sprites name="Walk">
@@ -42,7 +103,6 @@
     <sprites name="Test">
       <sprite>sprites\spr_test_wall</sprite>
       <sprite>sprites\spr_test_grass</sprite>
-      <sprite>sprites\spr_test_damage</sprite>
     </sprites>
     <sprites name="UI">
       <sprites name="Menus">
@@ -81,6 +141,10 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprites name="Damage">
+      <sprite>sprites\spr_damage_small</sprite>
+      <sprite>sprites\spr_damage_medium</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Test">
@@ -104,7 +168,11 @@
   <scripts name="scripts">
     <scripts name="Lifeform">
       <scripts name="Parent">
+        <script>scripts\scr_lifeform_face_towards.gml</script>
         <script>scripts\scr_lifeform_get_action_inputs.gml</script>
+        <script>scripts\scr_lifeform_update_health_bar.gml</script>
+        <script>scripts\scr_damage_lifeform.gml</script>
+        <script>scripts\scr_lifeform_constructor.gml</script>
         <script>scripts\scr_lifeform_get_face.gml</script>
         <scripts name="States">
           <script>scripts\scr_lifeform_dash_state.gml</script>
@@ -117,7 +185,8 @@
         <script>scripts\scr_check_triggers.gml</script>
         <scripts name="Combat">
           <scripts name="Attacks">
-            <script>scripts\scr_lifeform_combat_attacks_melee.gml</script>
+            <script>scripts\scr_lifeform_combat_attacks_melee_small.gml</script>
+            <script>scripts\scr_lifeform_combat_attacks_melee_medium.gml</script>
           </scripts>
         </scripts>
         <script>scripts\scr_lifeform_update_face.gml</script>
@@ -126,13 +195,9 @@
         <script>scripts\scr_player_get_action_inputs.gml</script>
         <scripts name="Command">
           <scripts name="Select">
-            <script>scripts\scr_player_command_right_released.gml</script>
             <script>scripts\scr_player_command_deselect.gml</script>
             <script>scripts\scr_player_command_select.gml</script>
             <script>scripts\scr_player_command_selectbox_select.gml</script>
-            <script>scripts\scr_player_command_left_button.gml</script>
-            <script>scripts\scr_player_command_right_button.gml</script>
-            <script>scripts\scr_player_command_left_released.gml</script>
             <script>scripts\scr_player_command_find_and_deselect.gml</script>
           </scripts>
           <script>scripts\scr_player_command_apply_script_to_all_selected.gml</script>
@@ -165,10 +230,24 @@
           <script>scripts\scr_player_gui_create_passive_menu.gml</script>
           <script>scripts\scr_player_gui_create_command_selected_menu.gml</script>
           <script>scripts\scr_player_gui_pause_menu.gml</script>
+          <script>scripts\scr_player_gui_pause_menu_hide.gml</script>
         </scripts>
         <scripts name="States">
           <script>scripts\scr_player_states_attack_state.gml</script>
+          <script>scripts\scr_player_states_busy_state.gml</script>
+          <script>scripts\scr_player_states_chat_state.gml</script>
         </scripts>
+        <scripts name="Mouse">
+          <scripts name="Global">
+            <script>scripts\scr_player_mouse_global_right_button.gml</script>
+            <script>scripts\scr_player_mouse_global_left_released.gml</script>
+            <script>scripts\scr_player_mouse_global_right_released.gml</script>
+            <script>scripts\scr_player_mouse_global_left_button.gml</script>
+            <script>scripts\scr_player_mouse_global_left_pressed.gml</script>
+          </scripts>
+        </scripts>
+        <script>scripts\scr_player_enable_busy.gml</script>
+        <script>scripts\scr_player_disable_busy.gml</script>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
@@ -179,12 +258,16 @@
             <script>scripts\scr_npc_states_attack_state.gml</script>
             <script>scripts\scr_npc_states_follow_target_state.gml</script>
             <script>scripts\scr_npc_states_wait_move.gml</script>
+            <script>scripts\scr_npc_states_busy.gml</script>
           </scripts>
           <script>scripts\scr_npc_choose_next_state.gml</script>
           <script>scripts\scr_npc_set_move_offset.gml</script>
           <script>scripts\scr_npc_set_directions_by_offset.gml</script>
           <script>scripts\scr_npc_set_attack_sprites.gml</script>
+          <script>scripts\scr_npc_are_there_nearby_targets.gml</script>
+          <script>scripts\scr_npc_disable_busy.gml</script>
           <script>scripts\scr_npc_constructor.gml</script>
+          <script>scripts\scr_npc_enable_busy.gml</script>
           <script>scripts\scr_npc_get_move_offset.gml</script>
           <script>scripts\scr_npc_get_closest_target.gml</script>
           <scripts name="Engages">
@@ -209,12 +292,9 @@
             <script>scripts\scr_npc_move_to.gml</script>
             <script>scripts\scr_npc_movement_move_one_tick.gml</script>
           </scripts>
+          <script>scripts\scr_npc_set_speeds.gml</script>
         </scripts>
-        <script>scripts\scr_npc_are_there_nearby_targets.gml</script>
       </scripts>
-      <script>scripts\scr_damage_lifeform.gml</script>
-      <script>scripts\scr_lifeform_update_health_bar.gml</script>
-      <script>scripts\scr_lifeform_constructor.gml</script>
       <scripts name="Damage">
         <script>scripts\scr_lifeform_damage_create.gml</script>
         <scripts name="Melee">
@@ -237,6 +317,11 @@
       </scripts>
     </scripts>
     <scripts name="UI">
+      <scripts name="Chat">
+        <script>scripts\scr_ui_button_chat_next.gml</script>
+        <script>scripts\scr_ui_button_chat_close.gml</script>
+        <script>scripts\scr_ui_chat_constructor.gml</script>
+      </scripts>
       <scripts name="Menus">
         <scripts name="Title">
           <script>scripts\scr_ui_menu_title_start_game.gml</script>
@@ -251,11 +336,17 @@
           <script>scripts\scr_ui_menu_set_defaults.gml</script>
           <script>scripts\scr_ui_menu_draw.gml</script>
         </scripts>
+        <scripts name="Controls">
+          <script>scripts\scr_ui_menus_controls_open.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Buttons">
+        <scripts name="Pause">
+          <script>scripts\scr_ui_button_pause_close.gml</script>
+          <script>scripts\scr_ui_button_pause_menu_controls_open.gml</script>
+        </scripts>
         <script>scripts\scr_ui_button_test_press.gml</script>
         <scripts name="Parent">
-          <script>scripts\scr_ui_button_global_left_pressed.gml</script>
           <script>scripts\scr_ui_button_draw.gml</script>
           <script>scripts\scr_ui_button_set_default_draw.gml</script>
           <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
@@ -265,6 +356,9 @@
           <script>scripts\scr_ui_button_commands_square_formation.gml</script>
           <script>scripts\scr_ui_button_commands_enable_move.gml</script>
         </scripts>
+        <scripts name="Controls">
+          <script>scripts\scr_ui_buttons_controls_menu_close.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\scr_ui_draw_obj_draw.gml</script>
       <scripts name="Font">
@@ -272,6 +366,9 @@
           <script>scripts\scr_ui_font_parent_draw.gml</script>
           <script>scripts\scr_ui_font_constructor.gml</script>
         </scripts>
+      </scripts>
+      <scripts name="Notification">
+        <script>scripts\scr_ui_notification_constructor.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_create_obj_array.gml</script>
@@ -303,6 +400,11 @@
     <font>fonts\fnt_default_smallest</font>
   </fonts>
   <objects name="objects">
+    <objects name="Damage">
+      <object>objects\obj_damage_parent</object>
+      <object>objects\obj_damage_melee_small</object>
+      <object>objects\obj_damage_melee_medium</object>
+    </objects>
     <objects name="Inventory">
       <objects name="Equipment">
         <object>objects\obj_inventory_equipment_parent</object>
@@ -327,21 +429,18 @@
       </objects>
       <objects name="NPC">
         <object>objects\obj_npc_blue_soldier</object>
+        <object>objects\obj_npc_blue_cavalry</object>
         <object>objects\obj_npc_red_soldier</object>
         <objects name="Parent">
           <object>objects\obj_npc_Parent</object>
           <object>objects\obj_npc_Commandable_Npc</object>
         </objects>
+        <object>objects\obj_npc_old_man_01</object>
       </objects>
       <objects name="Parent">
         <object>objects\obj_Lifeform_Parent</object>
         <object>objects\obj_Lifeform_Dash_Effect</object>
         <object>objects\obj_lifeform_body</object>
-      </objects>
-      <object>objects\obj_lifeform_health_bar</object>
-      <objects name="Damage">
-        <object>objects\obj_lifeform_damage_parent</object>
-        <object>objects\obj_lifeform_damage_melee</object>
       </objects>
     </objects>
     <objects name="Test">
@@ -359,6 +458,7 @@
       <objects name="Button">
         <object>objects\obj_ui_button</object>
         <object>objects\obj_ui_button_information</object>
+        <object>objects\obj_ui_button_mouse_listener</object>
       </objects>
       <objects name="Menu">
         <object>objects\obj_ui_menu_container</object>
@@ -368,6 +468,9 @@
       </objects>
       <objects name="Chat">
         <object>objects\obj_ui_chat</object>
+      </objects>
+      <objects name="Notification">
+        <object>objects\obj_ui_notification</object>
       </objects>
     </objects>
     <object>objects\obj_array</object>

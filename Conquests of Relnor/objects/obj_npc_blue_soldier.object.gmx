@@ -39,19 +39,19 @@ spr_test_npc_soldier_right, spr_test_npc_soldier_left);
 self.deadSprite = spr_npc_soldier_blue_dead;
 
 //equipment and inventory override
-self.equipment.item[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
-self.equipment.item[OFFHAND].owner = self;
-self.equipment.item[OFFHAND].isVisible = true;
+self.equipment[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
+self.equipment[OFFHAND].owner = self;
+self.equipment[OFFHAND].isVisible = true;
 
-self.equipment.item[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
-self.equipment.item[WEAPON].owner = self;
-self.equipment.item[WEAPON].isVisible = true;
+self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
+self.equipment[WEAPON].owner = self;
+self.equipment[WEAPON].isVisible = true;
 
 //override
 scr_linked_list_add(self.possibleEnemies, obj_npc_red_soldier);
 self.wanderDistance = 0;
 
-self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee;
+self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
 self.isAggressive = true;
 

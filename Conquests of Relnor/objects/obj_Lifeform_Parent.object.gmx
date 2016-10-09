@@ -51,16 +51,15 @@ scr_lifeform_constructor();
             <kind>1</kind>
             <string>///Destroy attached objects
 
-scr_destroy_instance(self.healthBar);
-
 for(var i = 0; i &lt; array_length_1d(self.equipment); i++){
-    if(instance_exists(self.equipment[i])){
-        scr_destroy_instance(self.equipment[i]);
+    var _equipment = self.equipment[i];
+    if(instance_exists(_equipment)){
+        scr_destroy_instance(_equipment);
     }
 }
-scr_destroy_instance(self.equipment);
 
-scr_destroy_instance(self.inventory);
+scr_linked_list_destroy(self.inventory);
+
 scr_linked_list_destroy(self.possibleEnemies);
 
 </string>
@@ -88,7 +87,7 @@ scr_linked_list_destroy(self.possibleEnemies);
             <string>///Health Bar reveal/hide check
 
 if(!self.selected){
-    self.healthBar.isVisible = false;
+    self.healthBarIsVisible = false;
 }
 </string>
           </argument>
@@ -360,13 +359,13 @@ if(_inFrontOfMe){
             <kind>1</kind>
             <string>///Draw Equipment and sprite
 
-var _equipmentLength = array_length_1d(self.equipment.item);
+var _equipmentLength = array_length_1d(self.equipment);
 
 //draw items behind first
 for(var i = 0; i &lt; _equipmentLength; i++){
-    var _item = self.equipment.item[i];
-    if(_item != noone &amp;&amp; _item.spriteBehind.item[self.face4Way]){
-        draw_sprite(_item.sprite.item[self.face4Way], image_index, self.x, self.y);
+    var _item = self.equipment[i];
+    if(_item != noone &amp;&amp; _item.spriteBehind[self.face4Way]){
+        draw_sprite(_item.sprite[self.face4Way], image_index, self.x, self.y);
     }
 }
 
@@ -375,13 +374,39 @@ draw_self();
 
 //draw items in front
 for(var i = 0; i &lt; _equipmentLength; i++){
-    var _item = self.equipment.item[i];
-    if(_item != noone &amp;&amp; !_item.spriteBehind.item[self.face4Way]){
-        draw_sprite(_item.sprite.item[self.face4Way], image_index, self.x, self.y);
+    var _item = self.equipment[i];
+    if(_item != noone &amp;&amp; !_item.spriteBehind[self.face4Way]){
+        draw_sprite(_item.sprite[self.face4Way], image_index, self.x, self.y);
     }
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Healthbar
+
+if(healthBarIsVisible){
+    var _h = 50;
+    draw_sprite(spr_lifeform_health_bar, healthBarCurrentBar, x, y-_h);
+}
 </string>
           </argument>
         </arguments>

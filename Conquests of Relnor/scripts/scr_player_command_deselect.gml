@@ -8,7 +8,7 @@ var obj = argument1;
 
             obj.commander = noone;
             obj.selected = false;
-            obj.healthBar.isVisible = false;
+            obj.healthBarIsVisible = false;
             _commander.commandModule.totalSelected -= 1;
             if(_commander.commandModule.totalSelected <= 0){
                 _commander.CommandMenuContainer.isVisible = false;
@@ -22,8 +22,11 @@ var obj = argument1;
                 if(obj.wanderDistance > 0){
                     _commander.commandModule.totalSelectedWithWander -= 1;
                 }
+                if(obj.isDefensive){
+                    _commander.commandModule.totalSelectedWithDefense -= 1;
+                }
             }
             with(_commander){
-                scr_player_gui_update_command_selected();
+                scr_player_gui_update_command_selected(false);
             }   
 

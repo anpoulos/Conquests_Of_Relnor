@@ -2,13 +2,16 @@
 
 //create bottom right command information menu container
 var _commandInformationMenuColor = make_colour_rgb(100,100,150); //grey shade of light blue
-var _commandInformationMenuColorArray = scr_create_obj_array4_repeat(_commandInformationMenuColor);
-var _commandInformationMenuPosArray = scr_create_obj_array4(-150,-100,150,100);
+var _commandInformationMenuColorArray = scr_create_obj_array4_repeat(_commandInformationMenuColor, "_commandInformationMenuColorArray");
+var _commandInformationMenuPosArray = scr_create_obj_array4(-150,-100,150,100, "_commandInformationMenuPosArray");
 var _commandInformationMenuX = display_get_gui_width()-_commandInformationMenuPosArray.item[2]-10;
 var _commandInformationMenuY = display_get_gui_height()-_commandInformationMenuPosArray.item[3]-10;
 
 CommandInformationMenuContainer = scr_ui_menu_create_container(_commandInformationMenuX, _commandInformationMenuY, 
 _commandInformationMenuPosArray, _commandInformationMenuColorArray, true, 0.5, noone);
+
+scr_destroy_instance(_commandInformationMenuColorArray);
+scr_destroy_instance(_commandInformationMenuPosArray);
 //end of bottom right command information menu container
 
 //Unit Information Text

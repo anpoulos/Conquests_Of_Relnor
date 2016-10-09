@@ -8,9 +8,8 @@ var _originY = argument3;
 var _totalSelected = scr_linked_list_size(_selected);
 var _unitArrivalCommand = self.commandModule.unitArrivalCommand;
 
-var _previousRow = scr_create_obj_array(_dimension);
+var _previousRow = scr_create_obj_array(_dimension, "Square Previous Row");
 var _firstNPC = scr_linked_list_get_next(_selected);
-
 
 scr_npc_commands_move(_firstNPC, _unitArrivalCommand, _originX, _originY, true);
 

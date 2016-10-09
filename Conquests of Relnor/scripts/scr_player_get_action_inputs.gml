@@ -1,6 +1,5 @@
 //scr_player_get_action_inputs
 
-
 directions[RIGHT] = keyboard_check(ord('D'));
 directions[LEFT] = keyboard_check(ord('A'));
 directions[UP] = keyboard_check(ord('W'));

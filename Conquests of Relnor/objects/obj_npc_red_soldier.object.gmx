@@ -28,7 +28,7 @@
             <string>///Red_Soldier
 
 event_inherited();
-scr_npc_constructor("Red Soldier", 200, 10, 30, 300, 200, ALLEGIANCE_RED, 0);
+scr_npc_constructor("Red_Soldier", 200, 10, 30, 300, 200, ALLEGIANCE_RED, 0);
 
 scr_npc_set_attack_sprites(spr_npc_soldier_red_up, spr_npc_soldier_red_down,
 spr_npc_soldier_red_right, spr_npc_soldier_red_left, 0.2);
@@ -39,21 +39,22 @@ spr_npc_soldier_red_right, spr_npc_soldier_red_left);
 self.deadSprite = spr_npc_soldier_red_dead;
 
 //equipment and inventory override
-self.equipment.item[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
-self.equipment.item[OFFHAND].owner = self;
-self.equipment.item[OFFHAND].isVisible = true;
+self.equipment[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
+self.equipment[OFFHAND].owner = self;
+self.equipment[OFFHAND].isVisible = true;
 
-self.equipment.item[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
-self.equipment.item[WEAPON].owner = self;
-self.equipment.item[WEAPON].isVisible = true;
+self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
+self.equipment[WEAPON].owner = self;
+self.equipment[WEAPON].isVisible = true;
 
 //override
 scr_linked_list_add(self.possibleEnemies, obj_npc_blue_soldier);
+scr_linked_list_add(self.possibleEnemies, obj_npc_blue_cavalry);
 scr_linked_list_add(self.possibleEnemies, obj_player);
 
 self.isAggressive = true;
 
-self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee;
+self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
 
 </string>

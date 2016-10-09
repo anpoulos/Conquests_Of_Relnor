@@ -29,7 +29,7 @@
 event_inherited();
 name = "UI Button";
 
-buttonPressed = noone;
+buttonPressedScript = noone;
 buttonScriptAs = noone;
 buttonPressedColor = noone;
 leftOffset = noone;
@@ -81,70 +81,19 @@ self.drawScript = scr_ui_button_draw;
           <argument>
             <kind>1</kind>
             <string>///Button Delay Alarm
-if(self.buttonPressed != noone){
+pressed = false;
+
+if(self.buttonPressedScript != noone){
     if(self.buttonScriptAs != noone){
-        var _buttonScript = buttonPressed;
+        var _buttonScript = buttonPressedScript;
         with(self.buttonScriptAs){
             script_execute(_buttonScript);
         }  
     }  
     else{
-        script_execute(self.buttonPressed);
+        script_execute(self.buttonPressedScript);
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="56">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Released
-
-self.pressed = false;
-    
-if(self.menuContainer != noone){
-    self.menuContainer.buttonPressed = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="53">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Pressed
-scr_ui_button_global_left_pressed();
 </string>
           </argument>
         </arguments>

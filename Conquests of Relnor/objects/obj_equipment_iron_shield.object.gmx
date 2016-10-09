@@ -28,17 +28,17 @@
             <string>///Create
 event_inherited();
 
-self.sprite.item[DOWN] = spr_equipment_iron_shield_down;
-self.spriteBehind.item[DOWN] = false;
+self.sprite[DOWN] = spr_equipment_iron_shield_down;
+self.spriteBehind[DOWN] = false;
 
-self.sprite.item[LEFT] = spr_equipment_iron_shield_left;
-self.spriteBehind.item[LEFT] = false;
+self.sprite[LEFT] = spr_equipment_iron_shield_left;
+self.spriteBehind[LEFT] = false;
 
-self.sprite.item[RIGHT] = spr_equipment_iron_shield_right;
-self.spriteBehind.item[RIGHT] = true;
+self.sprite[RIGHT] = spr_equipment_iron_shield_right;
+self.spriteBehind[RIGHT] = true;
 
-self.sprite.item[UP] = spr_equipment_iron_shield_up;
-self.spriteBehind.item[UP] = true;
+self.sprite[UP] = spr_equipment_iron_shield_up;
+self.spriteBehind[UP] = true;
 </string>
           </argument>
         </arguments>

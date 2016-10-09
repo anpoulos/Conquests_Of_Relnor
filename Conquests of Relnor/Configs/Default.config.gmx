@@ -65,6 +65,7 @@
     <option_android_push_id></option_android_push_id>
     <option_android_scale>-1</option_android_scale>
     <option_android_set_device_id></option_android_set_device_id>
+    <option_android_sleep_margin>4</option_android_sleep_margin>
     <option_android_splash_png>Configs\Default\android\splash.png</option_android_splash_png>
     <option_android_splash_time>0</option_android_splash_time>
     <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
@@ -315,6 +316,7 @@
     <option_ios_set_device_id></option_ios_set_device_id>
     <option_ios_splash_png>Configs\Default\ios\splash.png</option_ios_splash_png>
     <option_ios_splash_time>0</option_ios_splash_time>
+    <option_ios_team_id></option_ios_team_id>
     <option_ios_texture_page>1024</option_ios_texture_page>
     <option_ios_use_test_ads>false</option_ios_use_test_ads>
     <option_lastchanged></option_lastchanged>
@@ -649,9 +651,10 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="31">
+    <constants number="32">
       <constant name="ALLEGIANCE_BLUE">0</constant>
-      <constant name="ALLEGIANCE_MAX">2</constant>
+      <constant name="ALLEGIANCE_MAX">3</constant>
+      <constant name="ALLEGIANCE_NEUTRAL">2</constant>
       <constant name="ALLEGIANCE_RED">1</constant>
       <constant name="ATTACK_MELEE">0</constant>
       <constant name="ATTACKS_MAX">8</constant>
@@ -668,19 +671,19 @@
       <constant name="FIXTURE_COLLISION_LIFEFORM">-1</constant>
       <constant name="LEFT">2</constant>
       <constant name="MAX_NPCS">100</constant>
+      <constant name="MOVEMENT_ACCURACY">5</constant>
       <constant name="OFFHAND">1</constant>
       <constant name="RIGHT">0</constant>
       <constant name="STRING_GAME_TITLE">"Conquests of Relnor"</constant>
       <constant name="TRIGGER_ATTACK">0</constant>
       <constant name="TRIGGER_DASH">1</constant>
+      <constant name="TRIGGER_ENGAGE_DISABLE">5</constant>
+      <constant name="TRIGGER_ENGAGE">4</constant>
       <constant name="TRIGGER_ESC">2</constant>
       <constant name="TRIGGER_FORMATION">3</constant>
-      <constant name="TRIGGER_ENGAGE">4</constant>
-      <constant name="TRIGGER_ENGAGE_DISABLE">5</constant>
       <constant name="TRIGGERS_MAX">6</constant>
       <constant name="UP">1</constant>
       <constant name="WEAPON">0</constant>
-      <constant name="MOVEMENT_ACCURACY">5</constant>
     </constants>
   </ConfigConstants>
 </Config>
