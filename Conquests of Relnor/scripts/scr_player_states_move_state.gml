@@ -1,4 +1,4 @@
-///scr_lifeform_move_state()
+///scr_player_states_move_state()
 
 script_execute(self.moveInputs); //populates various direction values and key presses
 
@@ -19,10 +19,20 @@ else{
     self.length = self.currentMoveSpeed;
     scr_lifeform_get_face();
     if(triggers[TRIGGER_DASH]){
-        state = scr_lifeform_dash_state;
-        self.alarm[0] = dashSpeed;
+        //state = scr_lifeform_dash_state;
+        //self.alarm[0] = dashSpeed;
+        if(energy > 0){
+            energy -= 1;
+            self.length = self.dashSpeed;
+        }
     }
 }
+
+//recover energy if not moving or using
+if(energy < maxEnergy && (!triggers[TRIGGER_DASH] || self.length == 0)){
+    energy += 1;
+}
+
 
 // Get speeds
 hSpeed = lengthdir_x(self.length, self.direction360);

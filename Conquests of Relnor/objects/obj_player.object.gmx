@@ -72,8 +72,10 @@ self.sprites[DOWN] = spr_player_down;
 self.sprites[RIGHT] = spr_player_right;
 self.sprites[LEFT] = spr_player_left;
 
+self.moveState = scr_player_states_move_state;
 self.moveInputs = scr_player_get_action_inputs;
 self.attackState = scr_player_states_attack_state;
+self.state = self.moveState;
 </string>
           </argument>
         </arguments>

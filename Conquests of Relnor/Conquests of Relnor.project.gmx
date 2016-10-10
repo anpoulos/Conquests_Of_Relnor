@@ -223,7 +223,6 @@
           <script>scripts\scr_lifeform_dash_state.gml</script>
           <script>scripts\scr_lifeform_death_state.gml</script>
           <script>scripts\scr_lifeform_idle_state.gml</script>
-          <script>scripts\scr_lifeform_move_state.gml</script>
           <script>scripts\scr_lifeform_spawn_state.gml</script>
         </scripts>
         <script>scripts\scr_check_triggers.gml</script>
@@ -281,6 +280,7 @@
         </scripts>
         <scripts name="States">
           <script>scripts\scr_player_states_attack_state.gml</script>
+          <script>scripts\scr_player_states_move_state.gml</script>
           <script>scripts\scr_player_states_busy_state.gml</script>
           <script>scripts\scr_player_states_chat_state.gml</script>
         </scripts>

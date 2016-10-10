@@ -4,6 +4,7 @@ self.name = argument0;
 self.hitpoints = argument1;
 self.maxHitpoints = argument1;
 self.enery = argument2;
+self.maxEnergy = self.energy;
 self.reach = argument3;
 self.sight = argument4;
 self.wanderDistance = argument5;

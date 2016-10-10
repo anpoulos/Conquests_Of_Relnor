@@ -46,7 +46,7 @@ maxHitpoints = 10;
 hitpoints = 10;
 name = "Lifeform Parent";
 energy = 10.0;
-state = scr_lifeform_move_state;
+maxEnergy = energy;
 sight = 50;
 
 moveToX = noone;
@@ -57,7 +57,7 @@ lastX = noone;
 lastY = noone;
 
 deathState = scr_lifeform_death_state;
-moveState = scr_lifeform_move_state;
+moveState = noone;
 attackState = noone;
 idleState = scr_lifeform_idle_state;
 
@@ -80,3 +80,7 @@ imageSpeed = 0.2;
 scr_npc_set_speeds(2,4,6);
 
 attacked = false;
+
+
+
+state = idleState;
