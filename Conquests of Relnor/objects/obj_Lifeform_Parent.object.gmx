@@ -58,8 +58,6 @@ for(var i = 0; i &lt; array_length_1d(self.equipment); i++){
     }
 }
 
-scr_linked_list_destroy(self.inventory);
-
 scr_linked_list_destroy(self.possibleEnemies);
 
 </string>
@@ -271,16 +269,16 @@ var _inFrontOfMe = false;
 
 switch(self.face4Way){
     case RIGHT:
-        _inFrontOfMe = collision_line(x,y,x+self.reach,y,obj_unwalkable,false,true);
+        _inFrontOfMe = collision_line(x,y,x+self.size,y,obj_unwalkable,false,true);
     break;
     case DOWN:
-        _inFrontOfMe = collision_line(x,y,x,y+self.reach,obj_unwalkable,false,true);
+        _inFrontOfMe = collision_line(x,y,x,y+self.size,obj_unwalkable,false,true);
     break;
     case LEFT:
-        _inFrontOfMe = collision_line(x,y,x-self.reach,y,obj_unwalkable,false,true);
+        _inFrontOfMe = collision_line(x,y,x-self.size,y,obj_unwalkable,false,true);
     break;
     case UP:
-        _inFrontOfMe = collision_line(x,y-self.reach*2,x,y,obj_unwalkable,false,true);
+        _inFrontOfMe = collision_line(x,y-self.size*2,x,y,obj_unwalkable,false,true);
     break;
 }
 
@@ -404,7 +402,7 @@ for(var i = 0; i &lt; _equipmentLength; i++){
             <string>///Draw Healthbar
 
 if(healthBarIsVisible){
-    var _h = 50;
+    var _h = 40;
     draw_sprite(spr_lifeform_health_bar, healthBarCurrentBar, x, y-_h);
 }
 </string>

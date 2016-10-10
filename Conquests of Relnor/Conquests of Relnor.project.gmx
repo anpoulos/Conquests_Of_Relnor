@@ -69,12 +69,12 @@
         <sprite>sprites\spr_test_npc_soldier_left</sprite>
         <sprite>sprites\spr_npc_soldier_blue_dead</sprite>
       </sprites>
-      <sprites name="Red Soldier">
-        <sprite>sprites\spr_npc_soldier_red_down</sprite>
-        <sprite>sprites\spr_npc_soldier_red_right</sprite>
-        <sprite>sprites\spr_npc_soldier_red_up</sprite>
-        <sprite>sprites\spr_npc_soldier_red_left</sprite>
-        <sprite>sprites\spr_npc_soldier_red_dead</sprite>
+      <sprites name="Red Archer">
+        <sprite>sprites\spr_npc_archer_red_down</sprite>
+        <sprite>sprites\spr_npc_archer_red_right</sprite>
+        <sprite>sprites\spr_npc_archer_red_up</sprite>
+        <sprite>sprites\spr_npc_archer_red_left</sprite>
+        <sprite>sprites\spr_npc_archer_red_dead</sprite>
       </sprites>
       <sprites name="Old Man 1">
         <sprite>sprites\spr_npc_old_man_01_down</sprite>
@@ -87,6 +87,24 @@
         <sprite>sprites\spr_blue_cavalry_up</sprite>
         <sprite>sprites\spr_blue_cavalry_right</sprite>
         <sprite>sprites\spr_blue_cavalry_left</sprite>
+      </sprites>
+      <sprites name="Red Cavalry">
+        <sprite>sprites\spr_npc_red_cavalry_down</sprite>
+        <sprite>sprites\spr_npc_red_cavalry_left</sprite>
+        <sprite>sprites\spr_npc_red_cavalry_right</sprite>
+        <sprite>sprites\spr_npc_red_cavalry_up</sprite>
+      </sprites>
+      <sprites name="Red Soldier">
+        <sprite>sprites\spr_npc_red_soldier_down</sprite>
+        <sprite>sprites\spr_npc_red_soldier_left</sprite>
+        <sprite>sprites\spr_npc_red_soldier_right</sprite>
+        <sprite>sprites\spr_npc_red_soldier_up</sprite>
+      </sprites>
+      <sprites name="Blue Archer">
+        <sprite>sprites\spr_npc_blue_archer_down</sprite>
+        <sprite>sprites\spr_npc_blue_archer_left</sprite>
+        <sprite>sprites\spr_npc_blue_archer_right</sprite>
+        <sprite>sprites\spr_npc_blue_archer_up</sprite>
       </sprites>
     </sprites>
     <sprites name="Player">
@@ -139,11 +157,30 @@
           <sprite>sprites\spr_equipment_iron_sword_right</sprite>
           <sprite>sprites\spr_equipment_iron_sword_up</sprite>
         </sprites>
+        <sprites name="Wooden Bow">
+          <sprite>sprites\spr_equipment_wooden_bow_down</sprite>
+          <sprite>sprites\spr_equipment_wooden_bow_left</sprite>
+          <sprite>sprites\spr_equipment_wooden_bow_right</sprite>
+          <sprite>sprites\spr_equipment_wooden_bow_up</sprite>
+        </sprites>
+        <sprites name="Projectile">
+          <sprite>sprites\spr_equipment_projectile_arrow_down</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_left</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_right</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_up</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_up_left</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_down_left</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_down_right</sprite>
+          <sprite>sprites\spr_equipment_projectile_arrow_up_right</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Damage">
       <sprite>sprites\spr_damage_small</sprite>
       <sprite>sprites\spr_damage_medium</sprite>
+    </sprites>
+    <sprites name="Obj">
+      <sprite>sprites\spr_obj_unwalkable</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -163,6 +200,14 @@
         <background>background\bg_title2</background>
       </backgrounds>
     </backgrounds>
+    <backgrounds name="Tilesets">
+      <background>background\bg_castle_tileset</background>
+      <background>background\bg_castle_grass</background>
+      <background>background\bg_medieval_tileset</background>
+    </backgrounds>
+    <backgrounds name="Maps">
+      <background>background\bg_maps_export_test1</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -181,12 +226,16 @@
           <script>scripts\scr_lifeform_move_state.gml</script>
           <script>scripts\scr_lifeform_spawn_state.gml</script>
         </scripts>
-        <script>scripts\scr_lifeform_is_path_blocked.gml</script>
         <script>scripts\scr_check_triggers.gml</script>
         <scripts name="Combat">
           <scripts name="Attacks">
-            <script>scripts\scr_lifeform_combat_attacks_melee_small.gml</script>
-            <script>scripts\scr_lifeform_combat_attacks_melee_medium.gml</script>
+            <scripts name="Melee">
+              <script>scripts\scr_lifeform_combat_attacks_melee_small.gml</script>
+              <script>scripts\scr_lifeform_combat_attacks_melee_medium.gml</script>
+            </scripts>
+            <scripts name="Projectile">
+              <script>scripts\scr_lifeform_combat_attacks_projectile_arrow.gml</script>
+            </scripts>
           </scripts>
         </scripts>
         <script>scripts\scr_lifeform_update_face.gml</script>
@@ -229,8 +278,6 @@
           <script>scripts\scr_player_gui_create_command_menu.gml</script>
           <script>scripts\scr_player_gui_create_passive_menu.gml</script>
           <script>scripts\scr_player_gui_create_command_selected_menu.gml</script>
-          <script>scripts\scr_player_gui_pause_menu.gml</script>
-          <script>scripts\scr_player_gui_pause_menu_hide.gml</script>
         </scripts>
         <scripts name="States">
           <script>scripts\scr_player_states_attack_state.gml</script>
@@ -285,6 +332,15 @@
           </scripts>
           <scripts name="Combat">
             <script>scripts\scr_npc_combat_choose_next_attack.gml</script>
+            <scripts name="Attacks">
+              <scripts name="Projectile">
+                <script>scripts\scr_npc_combat_attacks_projectile_arrow.gml</script>
+              </scripts>
+              <scripts name="Melee">
+                <script>scripts\scr_npc_combat_attacks_melee_medium.gml</script>
+                <script>scripts\scr_npc_combat_attacks_melee_small.gml</script>
+              </scripts>
+            </scripts>
           </scripts>
           <script>scripts\scr_npc_auto_retaliate.gml</script>
           <script>scripts\scr_npc_find_path.gml</script>
@@ -294,12 +350,22 @@
           </scripts>
           <script>scripts\scr_npc_set_speeds.gml</script>
         </scripts>
+        <scripts name="Red Allegiance">
+          <script>scripts\scr_npc_allegiance_red_declare_enemies.gml</script>
+        </scripts>
+        <scripts name="Blue Allegiance">
+          <script>scripts\scr_npc_allegiance_blue_declare_enemies.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Damage">
         <script>scripts\scr_lifeform_damage_create.gml</script>
         <scripts name="Melee">
           <script>scripts\scr_lifeform_damage_melee_create.gml</script>
           <script>scripts\scr_lifeform_damage_melee_arrival.gml</script>
+        </scripts>
+        <scripts name="Projectile">
+          <script>scripts\scr_lifeform_damage_projectile_arrival.gml</script>
+          <script>scripts\scr_lifeform_damage_projectile_fire.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -335,15 +401,31 @@
           <script>scripts\scr_ui_menu_container_add_draw_object.gml</script>
           <script>scripts\scr_ui_menu_set_defaults.gml</script>
           <script>scripts\scr_ui_menu_draw.gml</script>
+          <script>scripts\scr_ui_menus_hide.gml</script>
+          <script>scripts\scr_ui_menus_reveal.gml</script>
         </scripts>
-        <scripts name="Controls">
-          <script>scripts\scr_ui_menus_controls_open.gml</script>
+        <scripts name="Pause">
+          <scripts name="Controls">
+            <script>scripts\scr_ui_menus_controls_open.gml</script>
+          </scripts>
+          <script>scripts\scr_player_gui_pause_menu.gml</script>
+          <script>scripts\scr_player_gui_pause_menu_hide.gml</script>
+          <scripts name="Save Game">
+            <script>scripts\scr_ui_menus_pause_save_game.gml</script>
+          </scripts>
         </scripts>
       </scripts>
       <scripts name="Buttons">
         <scripts name="Pause">
           <script>scripts\scr_ui_button_pause_close.gml</script>
           <script>scripts\scr_ui_button_pause_menu_controls_open.gml</script>
+          <scripts name="Controls">
+            <script>scripts\scr_ui_buttons_controls_menu_close.gml</script>
+          </scripts>
+          <scripts name="Save Game">
+            <script>scripts\scr_ui_buttons_pause_save_game_close_menu.gml</script>
+            <script>scripts\scr_ui_buttons_pause_save_game_1.gml</script>
+          </scripts>
         </scripts>
         <script>scripts\scr_ui_button_test_press.gml</script>
         <scripts name="Parent">
@@ -355,9 +437,6 @@
         <scripts name="Commands">
           <script>scripts\scr_ui_button_commands_square_formation.gml</script>
           <script>scripts\scr_ui_button_commands_enable_move.gml</script>
-        </scripts>
-        <scripts name="Controls">
-          <script>scripts\scr_ui_buttons_controls_menu_close.gml</script>
         </scripts>
       </scripts>
       <script>scripts\scr_ui_draw_obj_draw.gml</script>
@@ -404,6 +483,10 @@
       <object>objects\obj_damage_parent</object>
       <object>objects\obj_damage_melee_small</object>
       <object>objects\obj_damage_melee_medium</object>
+      <object>objects\obj_damage_range_projectile</object>
+      <objects name="Projectile">
+        <object>objects\obj_damage_projectile_arrow</object>
+      </objects>
     </objects>
     <objects name="Inventory">
       <objects name="Equipment">
@@ -413,6 +496,9 @@
         </objects>
         <objects name="Swords">
           <object>objects\obj_equipment_iron_sword</object>
+        </objects>
+        <objects name="Bows">
+          <object>objects\obj_equipment_bows_wooden</object>
         </objects>
       </objects>
     </objects>
@@ -429,8 +515,11 @@
       </objects>
       <objects name="NPC">
         <object>objects\obj_npc_blue_soldier</object>
+        <object>objects\obj_npc_blue_archer</object>
         <object>objects\obj_npc_blue_cavalry</object>
+        <object>objects\obj_npc_red_cavalry</object>
         <object>objects\obj_npc_red_soldier</object>
+        <object>objects\obj_npc_red_archer</object>
         <objects name="Parent">
           <object>objects\obj_npc_Parent</object>
           <object>objects\obj_npc_Commandable_Npc</object>

@@ -1,3 +1,3 @@
 ///scr_ui_buttons_controls_menu_close
-scr_destroy_instance(ControlMenuContainer);
+ControlMenuContainer.isVisible = false;
 PauseMenuContainer.isVisible = true;

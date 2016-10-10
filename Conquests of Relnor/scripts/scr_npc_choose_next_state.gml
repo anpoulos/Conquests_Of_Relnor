@@ -8,7 +8,7 @@
         }
         else{
             scr_npc_move_to(self, target.x, target.y, 
-            scr_npc_choose_next_state,self.reach-1, false, false, self.runSpeed);   
+            scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed);   
         }
         return true;
     }

@@ -4,7 +4,7 @@ path = path_add();
 
 busyState = noone;
 isBusy = false;
-
+size = 0;
 pathIndex = 0;
 updatePath = false;
 previousCellX = 0;
@@ -20,7 +20,9 @@ for(var i = 0; i < 2; i++){
     equipment[i] = noone;
 }
 
-inventory = scr_linked_list_create();
+for(var i = 0; i < 16; i++){
+    inventory[i] = noone;
+}
 
 selected = false;
 image_speed = 0;

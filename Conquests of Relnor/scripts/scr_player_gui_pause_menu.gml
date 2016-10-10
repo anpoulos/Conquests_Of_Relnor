@@ -71,7 +71,7 @@ if(PauseMenuContainer != noone){
     var _buttonX = _button.x;
     var _buttonY = _button.y + _buttonPosArray.item[3] + _buttonOffset;
     
-    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, noone, 
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_menus_pause_save_game, self, 
     "Save Game", fnt_default_medium, _fontColor, 1.0, 0.8);
     
     var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
@@ -83,6 +83,30 @@ if(PauseMenuContainer != noone){
     scr_destroy_instance(_buttonPosArray);
     scr_destroy_instance(_buttonInfo);
 //End of Save Game Button
+
+//Start of Load Game Button
+    var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
+    var _buttonPressedColor = make_colour_rgb(0,0,100);
+    
+    var _buttonPosArray = scr_create_obj_array4(-70, -20, 70, 20, "_buttonPosArray");
+    
+    var _fontColor = c_white;
+    
+    var _buttonX = _button.x;
+    var _buttonY = _button.y + _buttonPosArray.item[3] + _buttonOffset;
+    
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, noone, 
+    "Load Game", fnt_default_medium, _fontColor, 1.0, 0.8);
+    
+    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+    _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuContainer);
+    
+    _button.isVisible = true;
+    
+    scr_destroy_instance(_buttonColorArray);
+    scr_destroy_instance(_buttonPosArray);
+    scr_destroy_instance(_buttonInfo);
+//End of Load Game Button
 
 
 //Start of Controls Button

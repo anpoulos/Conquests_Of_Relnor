@@ -1,6 +1,4 @@
 ///scr_npc_get_closest_target
-
-    var _minQ = ds_priority_create();
     
     var _closestEnemy = noone;
     var _closestEnemyDistance = 100000;
@@ -17,5 +15,5 @@
         }
     }           
 
-return _closestEnemy;
+    return _closestEnemy;
 

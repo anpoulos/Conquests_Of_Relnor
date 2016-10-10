@@ -40,7 +40,7 @@ isClear = false;
 dimension = 0;
 averageWidth = 0;
 averageHeight = 0;
-averageReach = 0;
+averageSize = 0;
 
 notPerfectSquare = false;
 </string>

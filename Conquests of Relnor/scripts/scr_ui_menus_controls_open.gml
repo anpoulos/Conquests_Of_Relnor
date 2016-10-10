@@ -1,5 +1,12 @@
 ///scr_ui_menus_controls_open
 
+PauseMenuContainer.isVisible = false;
+    
+if(ControlMenuContainer != noone){
+    ControlMenuContainer.isVisible = true;
+    return true;
+}
+
 //Menu Container
     var _menuColor = make_colour_rgb(100,100,150);
     var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
@@ -166,6 +173,15 @@ var _textOffset = 20;
     var _textY = _text.y + _textOffset;
     
     _text = scr_ui_font_constructor(_textX, _textY, "scroll in/out - zoom in/out", fnt_default_medium, c_white, 
+            1.0, fa_left, fa_middle, ControlMenuContainer);
+    _text.isVisible = true;
+//End of Text
+
+//Text
+    var _textX = _text.x;
+    var _textY = _text.y + _textOffset;
+    
+    _text = scr_ui_font_constructor(_textX, _textY, "c - pause game", fnt_default_medium, c_white, 
             1.0, fa_left, fa_middle, ControlMenuContainer);
     _text.isVisible = true;
 //End of Text

@@ -42,9 +42,7 @@ switch(self.face8Way){
 }
 
 if (!attacked && image_index >= 3){
-    var dmg = 1;
-    if(isPlayer)
-        dmg = 5;
+    var dmg = 5;
     scr_lifeform_damage_create(x,y,obj_damage_melee_small, dmg, 
     self, x+_oX, y+_oY);
     attacked = true;

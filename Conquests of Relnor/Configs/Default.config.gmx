@@ -651,12 +651,13 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="32">
+    <constants number="33">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">3</constant>
       <constant name="ALLEGIANCE_NEUTRAL">2</constant>
       <constant name="ALLEGIANCE_RED">1</constant>
       <constant name="ATTACK_MELEE">0</constant>
+      <constant name="ATTACK_RANGE">1</constant>
       <constant name="ATTACKS_MAX">8</constant>
       <constant name="BLOCK">2</constant>
       <constant name="DOWN">3</constant>

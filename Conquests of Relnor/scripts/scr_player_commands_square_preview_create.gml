@@ -16,7 +16,7 @@ var _d = _squarePreview.dimension;
 if(_squarePreview.notPerfectSquare){
     _d += 1;
 }
-_squarePreview.heightOffset = round((_squarePreview.averageReach*_d)/2);
+_squarePreview.heightOffset = round((_squarePreview.averageSize*_d)/2);
 
 self.commandModule.mouseCommand = scr_player_commands_square_formation;
 

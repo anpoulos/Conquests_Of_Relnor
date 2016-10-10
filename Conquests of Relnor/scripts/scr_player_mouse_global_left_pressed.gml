@@ -9,7 +9,8 @@ if(ClickedUIObject != noone){
 
 for(var i = 0; i < instance_number(obj_ui_button); i++){
     var _button = instance_find(obj_ui_button, i);
-    if(_button.isVisible){
+    if(_button.isVisible && _button.menuContainer == noone ||
+        (_button.menuContainer != noone && _button.menuContainer.isVisible && _button.isVisible)){
         var _isInButton = point_in_rectangle(_mouseX, _mouseY, 
         _button.leftX, _button.topY, _button.rightX, _button.bottomY);
         if(_isInButton){

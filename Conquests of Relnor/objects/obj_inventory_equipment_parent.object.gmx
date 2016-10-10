@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Create Equipment
-owner = noone;
 sprite[4] = noone;
 spriteBehind[4] = noone;
 </string>

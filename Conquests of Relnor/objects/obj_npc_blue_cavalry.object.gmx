@@ -34,16 +34,15 @@ scr_npc_set_attack_sprites(spr_blue_cavalry_up, spr_blue_cavalry_down,
 spr_blue_cavalry_right, spr_blue_cavalry_left, 0.1);
 
 scr_npc_set_sprites(spr_blue_cavalry_up, spr_blue_cavalry_down,
-spr_blue_cavalry_right, spr_blue_cavalry_left);
+spr_blue_cavalry_right, spr_blue_cavalry_left, 60);
 
 self.deadSprite = spr_npc_soldier_blue_dead;
 
 //equipment and inventory override
 
 //override
-scr_linked_list_add(self.possibleEnemies, obj_npc_red_soldier);
 self.wanderDistance = 0;
-self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_medium;
+self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_medium;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
 self.isAggressive = true;
 

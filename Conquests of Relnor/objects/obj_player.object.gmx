@@ -36,18 +36,21 @@ commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
 
 //equipment and inventory override
-self.equipment[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
-self.equipment[OFFHAND].owner = self;
-self.equipment[OFFHAND].isVisible = true;
+self.inventory[0] = instance_create(x,y,obj_equipment_iron_shield);
+self.inventory[1] = instance_create(x,y,obj_equipment_iron_sword);
+self.inventory[2] = instance_create(x,y,obj_equipment_bows_wooden);
 
-self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
-self.equipment[WEAPON].owner = self;
-self.equipment[WEAPON].isVisible = true;
+//self.equipment[OFFHAND] = inventory[0];
+
+self.equipment[WEAPON] = inventory[2];
 
 //overrides
 self.currentMoveSpeed = self.runSpeed;
+
 self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
-self.currentAttack = self.ATTACKS[ATTACK_MELEE];
+self.ATTACKS[ATTACK_RANGE] = scr_lifeform_combat_attacks_projectile_arrow;
+
+self.currentAttack = self.ATTACKS[ATTACK_RANGE];
 
 self.allegiance = ALLEGIANCE_BLUE;
 self.allegianceRank[ALLEGIANCE_BLUE] = 7;
@@ -617,6 +620,61 @@ if debug_mode
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug Draw
+event_inherited();
+if(debug_mode){
+    draw_set_alpha(0.2);
+    mp_grid_draw(global.aiGrid);
+    draw_set_alpha(1.0);
+}
+   
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="86">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawn Red Cavalry
+
+instance_create(x+100, y, obj_npc_red_cavalry);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="84">
       <action>
         <libid>1</libid>
@@ -722,6 +780,38 @@ else{
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="67">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pause game
+
+//TODO
+
+if(global.gamePaused){
+    global.gamePaused = false;
+}
+else{
+    global.gamePaused = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="36">
       <action>
         <libid>1</libid>
@@ -764,18 +854,20 @@ room_goto(rm_menus_title);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pause game and bring up menu
+            <string>///Bring up esc menu
 
-//TODO
+if(PauseMenuContainer != noone){
+    if(PauseMenuContainer.isVisible){
+        scr_player_gui_pause_menu_hide();
+        return true;
+    }
+    else{
+        scr_player_gui_pause_menu();
+        return true;
+    }    
+}
 
-if(global.gamePaused){
-    global.gamePaused = false;
-    scr_player_gui_pause_menu_hide();
-}
-else{
-    global.gamePaused = true;
-    scr_player_gui_pause_menu();
-}
+scr_player_gui_pause_menu();
 </string>
           </argument>
         </arguments>

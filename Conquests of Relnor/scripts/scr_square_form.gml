@@ -24,7 +24,7 @@ for(var i = 1; i < _dimension; i++){
     _previousRow.item[i] = _currentNPC;
     _currentCounter += 1;
     
-    var _moveToX = _previousRow.item[i-1].squareX+_currentNPC.reach;
+    var _moveToX = _previousRow.item[i-1].squareX+_currentNPC.size;
     var _moveToY = _originY;
     _currentNPC.squareX = _moveToX;
     _currentNPC.squareY = _moveToY;
@@ -38,7 +38,7 @@ for(var i = _currentCounter; i < _totalSelected; i++){
     var _currentNPC = scr_linked_list_get_next(_selected);    
 
     var _moveToX = _previousRow.item[_previousRowCounter].squareX;
-    var _moveToY = _previousRow.item[_previousRowCounter].squareY+_currentNPC.reach;
+    var _moveToY = _previousRow.item[_previousRowCounter].squareY+_currentNPC.size;
     _currentNPC.squareX = _moveToX;
     _currentNPC.squareY = _moveToY;
     

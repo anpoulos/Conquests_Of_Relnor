@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Variables
 
+accuracy = 5;
 amount = 0;
 knockback = 0;
 source = noone;
@@ -83,9 +84,11 @@ instance_destroy();
             <kind>1</kind>
             <string>///Travel towards destination
 
+
+
 var _closeness = distance_to_point(destinationX, destinationY);
 
-if(_closeness &lt; 5){
+if(_closeness &lt; accuracy){
     if(self.arrivalScript != noone){
         script_execute(self.arrivalScript);
     }

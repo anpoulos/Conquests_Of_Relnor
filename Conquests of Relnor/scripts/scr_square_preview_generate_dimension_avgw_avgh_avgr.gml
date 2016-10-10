@@ -9,17 +9,17 @@ if(sqr(argument0.dimension) != _totalSelected){ //not a perfect square
 
 var _avgHeight = 0;
 var _avgWidth = 0;
-var _avgReach = 0;
+var _avgSize = 0;
 for(var i = 0; i < _totalSelected; i++){
     with(scr_linked_list_get_next(self.commandModule.selected)){
         _avgHeight += sprite_get_height(sprite_index);
         _avgWidth += sprite_get_width(sprite_index);
-        _avgReach += reach;
+        _avgSize += size;
     }
 }
 
 argument0.averageHeight = round(_avgHeight/_totalSelected);
 argument0.averageWidth = round(_avgWidth/_totalSelected);
-argument0.averageReach = round(_avgReach/_totalSelected);
+argument0.averageSize = round(_avgSize/_totalSelected);
 
 

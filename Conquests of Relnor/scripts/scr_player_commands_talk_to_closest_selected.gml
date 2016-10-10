@@ -3,7 +3,7 @@
 var _selected = commandModule.selected;
 var _closestNPC = noone;
 var _closestNPCDistance = 10000;
-var _talkReach = reach*2;
+var _talkReach = size*2;
 
 for(var i = 0; i < scr_linked_list_size(_selected); i++){
     var _currentNPC = scr_linked_list_get_next(_selected);
