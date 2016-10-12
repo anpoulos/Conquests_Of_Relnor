@@ -58,7 +58,7 @@ self.idleState = noone;
 self.isPlayer = true;
 self.hitpoints = 300;
 self.maxHitpoints = self.hitpoints;
-self.energy = 10.0;
+self.energy = 100;
 self.name = "Player";
 
 self.attackSprite[UP] = spr_player_up;
@@ -805,9 +805,11 @@ else{
 
 if(global.gamePaused){
     global.gamePaused = false;
+    scr_ui_notification_hide_pause_message();
 }
 else{
     global.gamePaused = true;
+    scr_ui_notification_show_pause_message();
 }
 </string>
           </argument>
@@ -888,9 +890,9 @@ scr_player_gui_pause_menu();
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>10,30</point>
-    <point>23,30</point>
-    <point>23,46</point>
-    <point>10,46</point>
+    <point>6,30</point>
+    <point>27,30</point>
+    <point>27,46</point>
+    <point>6,46</point>
   </PhysicsShapePoints>
 </object>

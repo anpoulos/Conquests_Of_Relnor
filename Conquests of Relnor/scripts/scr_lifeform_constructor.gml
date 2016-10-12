@@ -45,7 +45,7 @@ isPlayer = false;
 maxHitpoints = 10;
 hitpoints = 10;
 name = "Lifeform Parent";
-energy = 10.0;
+energy = 100;
 maxEnergy = energy;
 sight = 50;
 
@@ -80,7 +80,5 @@ imageSpeed = 0.2;
 scr_npc_set_speeds(2,4,6);
 
 attacked = false;
-
-
 
 state = idleState;

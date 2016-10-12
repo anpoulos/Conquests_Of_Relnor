@@ -10,6 +10,11 @@ for(var i = 0; i < scr_linked_list_size(Menus); i++){
     }
 }
 
+if(PauseText != noone){
+    PauseText.wasVisible = PauseText.isVisible;
+    PauseText.isVisible = false;
+}
+
 if(PauseMenuContainer != noone){
     PauseMenuContainer.isVisible = true;
     return true;

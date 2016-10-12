@@ -182,6 +182,16 @@
     <sprites name="Obj">
       <sprite>sprites\spr_obj_unwalkable</sprite>
     </sprites>
+    <sprite>sprites\spr_map_unwalkable_medium</sprite>
+    <sprites name="Map">
+      <sprites name="Door">
+        <sprite>sprites\spr_map_door_wooden_1</sprite>
+        <sprite>sprites\spr_map_door_wooden_2</sprite>
+        <sprite>sprites\spr_map_door_wooden_3</sprite>
+        <sprite>sprites\spr_map_door_wooden_4</sprite>
+        <sprite>sprites\spr_map_door_wooden_5</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Test">
@@ -207,6 +217,10 @@
     </backgrounds>
     <backgrounds name="Maps">
       <background>background\bg_maps_export_test1</background>
+      <backgrounds name="Tutorial">
+        <background>background\bg_maps_tutorial_town_background</background>
+        <background>background\bg_maps_tutorial_town_foreground</background>
+      </backgrounds>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -448,6 +462,8 @@
       </scripts>
       <scripts name="Notification">
         <script>scripts\scr_ui_notification_constructor.gml</script>
+        <script>scripts\scr_ui_notification_show_pause_message.gml</script>
+        <script>scripts\scr_ui_notification_hide_pause_message.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_create_obj_array.gml</script>
@@ -564,6 +580,9 @@
     </objects>
     <object>objects\obj_array</object>
     <object>objects\obj_unwalkable</object>
+    <objects name="Map">
+      <object>objects\obj_map_unwalkable_medium</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menus">
@@ -573,8 +592,8 @@
     </rooms>
     <rooms name="Test">
       <room>rooms\rm_test_room</room>
-      <room>rooms\rm_test_room_large</room>
       <room>rooms\rm_test_room_large2</room>
+      <room>rooms\rm_test_room_large</room>
       <room>rooms\rm_test_room_large3</room>
     </rooms>
   </rooms>

@@ -6,6 +6,6 @@ directions[UP] = keyboard_check(ord('W'));
 directions[DOWN] = keyboard_check(ord('S'));
 
 triggers[TRIGGER_ATTACK] = keyboard_check(vk_shift);
-triggers[TRIGGER_DASH] = keyboard_check_pressed(vk_space);
+triggers[TRIGGER_DASH] = keyboard_check(vk_space);
 
 

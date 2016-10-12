@@ -86,7 +86,8 @@ self.state = scr_npc_choose_next_state;
 if(currentMoveSpeed &gt; 1){
     var _myNextPointX = path_get_point_x(path, pathIndex);
     var _myNextPointY = path_get_point_y(path, pathIndex);
-    if(point_distance(x,y,_myNextPointX, _myNextPointY) &gt; point_distance(other.x,other.y,x,y)){
+    if(point_distance(x,y,_myNextPointX, _myNextPointY) &gt; 
+        point_distance(other.x,other.y,_myNextPointX, _myNextPointY)){
         currentMoveSpeed -= 1;
     }
 }
@@ -173,8 +174,13 @@ if(self.face4Way == _directionRelativeToMe4Way){
     }
     
     
-    if(!collision_circle(x+_newXOffset, y+_newYOffset, 10, obj_Lifeform_Parent, false, true)){
-        path_change_point(path, pathIndex, x+_newXOffset, y+_newYOffset, self.currentMoveSpeed);
+    var _destinedX1 = x+_newXOffset;
+    var _destinedY1 = y+_newYOffset;
+    
+    if(!collision_circle(_destinedX1, _destinedY1, 10, obj_Lifeform_Parent, false, true) &amp;&amp; 
+    !collision_circle(_destinedX1, _destinedY1, 10, obj_unwalkable, false, true) &amp;&amp; 
+    mp_grid_get_cell(global.aiGrid, scr_room_get_grid_x(_destinedX1), scr_room_get_grid_y(_destinedY1)) != 0 ){
+        path_change_point(path, pathIndex, _destinedX1, _destinedY1, self.currentMoveSpeed);
         if(pathIndex+1 &lt; path_get_number(path)){
            path_change_point(path, pathIndex+1, x+_newXOffset2, y+_newYOffset2, self.currentMoveSpeed);
         }     

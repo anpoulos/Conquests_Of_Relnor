@@ -13,7 +13,7 @@ if(self.isAggressive && !self.commandedMoveTo){
             self.state = self.attackState;
             return true;
         }
-        else{
+        else {
             var _p = path_add();
             if(scr_npc_find_path(self, _p, target.x, target.y)){
                 if(path_get_number(_p) > 0){

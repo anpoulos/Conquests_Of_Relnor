@@ -2,6 +2,10 @@
 
 scr_player_disable_busy();
     
+if(PauseText != noone){
+    PauseText.isVisible = PauseText.wasVisible;
+}
+
 if(PauseMenuContainer != noone){
     for(var i = 0; i < scr_linked_list_size(Menus); i++){
         var _menu = scr_linked_list_get_next(Menus);
