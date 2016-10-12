@@ -73,7 +73,7 @@ var _textOffset = 20;
     var _textX = _text.x;
     var _textY = _text.y + _textOffset;
     
-    _text = scr_ui_font_constructor(_textX, _textY, "t - talk to", fnt_default_medium, c_white, 
+    _text = scr_ui_font_constructor(_textX, _textY, "t - activate object/talk to NPC", fnt_default_medium, c_white, 
             1.0, fa_left, fa_middle, ControlMenuContainer);
     _text.isVisible = true;
 //End of Text
@@ -185,6 +185,7 @@ var _textOffset = 20;
             1.0, fa_left, fa_middle, ControlMenuContainer);
     _text.isVisible = true;
 //End of Text
+
 
 
 ControlMenuContainer.isVisible = true;

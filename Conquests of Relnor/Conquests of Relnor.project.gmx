@@ -486,6 +486,14 @@
       <script>scripts\scr_room_get_grid_y.gml</script>
       <script>scripts\scr_room_initialize.gml</script>
     </scripts>
+    <scripts name="Map">
+      <scripts name="Door">
+        <scripts name="Parent">
+          <script>scripts\scr_map_door_parent_check.gml</script>
+          <script>scripts\scr_map_door_parent_opened.gml</script>
+        </scripts>
+      </scripts>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default_medium</font>
@@ -582,6 +590,13 @@
     <object>objects\obj_unwalkable</object>
     <objects name="Map">
       <object>objects\obj_map_unwalkable_medium</object>
+      <objects name="Door">
+        <objects name="Parent">
+          <object>objects\obj_map_door_parent</object>
+        </objects>
+        <object>objects\obj_map_door_wooden_1</object>
+        <object>objects\obj_map_door_wooden_2</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
