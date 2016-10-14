@@ -229,7 +229,7 @@ scr_player_gui_update_information();
 if(keyboard_check_pressed(ord('T'))){
     other.player = self;
     with(other){
-        script_execute(other.doorCheckScript);
+        script_execute(doorCheckScript);
     }
 }
 </string>

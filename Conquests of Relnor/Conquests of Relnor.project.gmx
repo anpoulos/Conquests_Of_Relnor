@@ -220,6 +220,12 @@
       <backgrounds name="Tutorial">
         <background>background\bg_maps_tutorial_town_background</background>
         <background>background\bg_maps_tutorial_town_foreground</background>
+        <backgrounds name="Town">
+          <backgrounds name="Item Shop">
+            <background>background\bg_maps_tutorial_town_item_shop_foreground</background>
+            <background>background\bg_maps_tutorial_town_item_shop_background</background>
+          </backgrounds>
+        </backgrounds>
       </backgrounds>
     </backgrounds>
   </backgrounds>
@@ -596,6 +602,9 @@
         </objects>
         <object>objects\obj_map_door_wooden_1</object>
         <object>objects\obj_map_door_wooden_2</object>
+        <object>objects\obj_map_door_wooden_3</object>
+        <object>objects\obj_map_door_wooden_4</object>
+        <object>objects\obj_map_door_wooden_5</object>
       </objects>
     </objects>
   </objects>
@@ -610,6 +619,13 @@
       <room>rooms\rm_test_room_large2</room>
       <room>rooms\rm_test_room_large</room>
       <room>rooms\rm_test_room_large3</room>
+    </rooms>
+    <rooms name="Tutorial">
+      <rooms name="Town">
+        <rooms name="Item Shop">
+          <room>rooms\rm_tutorial_town_item_shop</room>
+        </rooms>
+      </rooms>
     </rooms>
   </rooms>
   <help>
