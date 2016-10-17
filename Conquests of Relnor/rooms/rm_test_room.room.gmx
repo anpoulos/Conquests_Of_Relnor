@@ -1327,7 +1327,7 @@
     <instance objName="obj_unwalkable" x="640" y="640" name="inst_5E5C8C74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="656" y="656" name="inst_ACBBF659" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_map_unwalkable_medium" x="592" y="880" name="inst_10B290A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_map_door_wooden_4" x="464" y="800" name="inst_AEE4A6B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_map_door_wooden_4" x="464" y="800" name="inst_AEE4A6B5" locked="0" code="destinationRoom = rm_tutorial_town_item_shop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="456" y="824" name="inst_E11F4C45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="472" y="824" name="inst_5B2CDE18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
