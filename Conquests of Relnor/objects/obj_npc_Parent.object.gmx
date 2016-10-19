@@ -45,6 +45,7 @@ wanderRadius = 1000;
 wanderDistance = 50;
 oldWanderRadius = wanderRadius;
 oldWanderDistance = wanderDistance;
+lockedTarget = noone;
 
 //override
 self.reach = 25;
@@ -83,7 +84,7 @@ self.state = scr_npc_choose_next_state;
             <kind>1</kind>
             <string>///Collision
 
-if(currentMoveSpeed &gt; 1){
+if(currentMoveSpeed &gt; 0){
     var _myNextPointX = path_get_point_x(path, pathIndex);
     var _myNextPointY = path_get_point_y(path, pathIndex);
     if(point_distance(x,y,_myNextPointX, _myNextPointY) &gt; 
@@ -92,7 +93,7 @@ if(currentMoveSpeed &gt; 1){
     }
 }
 
-if(self.isAggressive || self.isDefensive){
+if((self.isAggressive || self.isDefensive) &amp;&amp; !self.commandedMoveTo){
     if(other.allegiance != self.allegiance){
         scr_npc_auto_retaliate(other);
         return true;

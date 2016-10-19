@@ -48,7 +48,7 @@ self.equipment[WEAPON] = inventory[2];
 self.currentMoveSpeed = self.runSpeed;
 
 self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
-self.ATTACKS[ATTACK_RANGE] = scr_lifeform_combat_attacks_projectile_arrow;
+self.ATTACKS[ATTACK_RANGE] = scr_player_combat_attacks_projectile_arrow;
 
 self.currentAttack = self.ATTACKS[ATTACK_RANGE];
 

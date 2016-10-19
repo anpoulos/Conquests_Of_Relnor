@@ -4,9 +4,14 @@ if(currentMoveSpeed < moveSpeed){
     currentMoveSpeed += 0.5;
 }
 
-if(self.isAggressive && !self.commandedMoveTo){
-    self.target = scr_npc_get_closest_target();
-    if(self.target != noone){   //means we are chasing someone
+if((self.isAggressive && !self.commandedMoveTo) || lockedTarget != noone){
+    if(lockedTarget != noone){
+        target = lockedTarget;
+    }
+    else{
+        self.target = scr_npc_get_closest_target();
+    }
+    if(self.target != noone && instance_exists(target)){   //means we are chasing someone
     var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
         if(_distanceToTarget <= self.reach){
             self.alarm[2] = -1;

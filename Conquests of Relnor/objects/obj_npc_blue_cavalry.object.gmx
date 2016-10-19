@@ -44,7 +44,6 @@ self.deadSprite = spr_npc_soldier_blue_dead;
 self.wanderDistance = 0;
 self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_medium;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
-self.isAggressive = true;
 
 scr_npc_set_speeds(2,8,12);
 

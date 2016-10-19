@@ -16,7 +16,9 @@
     }
     else{
         var _selected = instance_position(mouse_x, mouse_y, obj_npc_Parent);
-        if(_selected != noone && instance_exists(_selected)){
+        if(_selected != noone && 
+        instance_exists(_selected) && 
+        (_selected.allegiance == allegiance || _selected.allegiance == ALLEGIANCE_NEUTRAL)){
             self.stillSelecting = true;
             scr_player_command_select(self, _selected);
             alarm[3] = 2;

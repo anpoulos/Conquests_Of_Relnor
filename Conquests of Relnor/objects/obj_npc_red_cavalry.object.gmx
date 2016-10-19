@@ -47,7 +47,6 @@ self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
 self.wanderDistance = 0;
 self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_medium;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
-self.isAggressive = true;
 
 scr_npc_set_speeds(2,8,12);
 

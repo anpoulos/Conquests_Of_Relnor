@@ -1,17 +1,26 @@
 ///scr_npc_choose_next_state
 
-    if(instance_exists(target)){
-        var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
-        if(_distanceToTarget <= self.reach){
-            self.alarm[2] = -1; //turn off idle alarm
-            self.state = self.attackState;
-        }
-        else{
-            scr_npc_move_to(self, target.x, target.y, 
-            scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed);   
-        }
-        return true;
+if(lockedTarget != noone){
+    if(instance_exists(lockedTarget)){
+        target = lockedTarget;
     }
+    else{
+        lockedTarget = noone;
+    }
+}
+
+if(instance_exists(target)){
+    var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
+    if(_distanceToTarget <= self.reach){
+        self.alarm[2] = -1; //turn off idle alarm
+        self.state = self.attackState;
+    }
+    else{
+        scr_npc_move_to(self, target.x, target.y, 
+        scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed);   
+    }
+    return true;
+}
 
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);

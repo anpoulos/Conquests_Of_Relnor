@@ -45,8 +45,6 @@ self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
 
 //override
 
-self.isAggressive = true;
-
 self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_small;
 self.currentAttack = self.ATTACKS[ATTACK_MELEE];
 

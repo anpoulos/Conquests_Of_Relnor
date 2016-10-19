@@ -47,7 +47,6 @@ self.wanderDistance = 0;
 self.ATTACKS[ATTACK_RANGE] = scr_npc_combat_attacks_projectile_arrow;
 self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_small;
 self.currentAttack = self.ATTACKS[ATTACK_RANGE];
-self.isAggressive = true;
 
 
 </string>

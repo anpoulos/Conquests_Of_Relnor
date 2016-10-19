@@ -117,6 +117,12 @@
       <sprites name="Attack">
         <sprite>sprites\spr_player_attack_right</sprite>
       </sprites>
+      <sprites name="Command Module">
+        <sprites name="Mouse Pointers">
+          <sprite>sprites\spr_player_command_module_mouse_move_all</sprite>
+          <sprite>sprites\spr_player_command_module_mouse_enemy</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Test">
       <sprite>sprites\spr_test_wall</sprite>
@@ -252,9 +258,6 @@
               <script>scripts\scr_lifeform_combat_attacks_melee_small.gml</script>
               <script>scripts\scr_lifeform_combat_attacks_melee_medium.gml</script>
             </scripts>
-            <scripts name="Projectile">
-              <script>scripts\scr_lifeform_combat_attacks_projectile_arrow.gml</script>
-            </scripts>
           </scripts>
         </scripts>
         <script>scripts\scr_lifeform_update_face.gml</script>
@@ -315,6 +318,9 @@
         </scripts>
         <script>scripts\scr_player_enable_busy.gml</script>
         <script>scripts\scr_player_disable_busy.gml</script>
+        <scripts name="Combat">
+          <script>scripts\scr_player_combat_attacks_projectile_arrow.gml</script>
+        </scripts>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
@@ -361,6 +367,7 @@
                 <script>scripts\scr_npc_combat_attacks_melee_small.gml</script>
               </scripts>
             </scripts>
+            <script>scripts\scr_npc_combat_lock_target.gml</script>
           </scripts>
           <script>scripts\scr_npc_auto_retaliate.gml</script>
           <script>scripts\scr_npc_find_path.gml</script>
@@ -491,6 +498,10 @@
       <script>scripts\scr_room_get_grid_x.gml</script>
       <script>scripts\scr_room_get_grid_y.gml</script>
       <script>scripts\scr_room_initialize.gml</script>
+      <scripts name="npc">
+        <script>scripts\scr_room_npc_all_engage.gml</script>
+        <script>scripts\scr_room_npc_all_defensive.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Map">
       <scripts name="Door">

@@ -5,6 +5,7 @@
     }
     
     argument0.commandedMoveTo = true;
+    argument0.lockedTarget = noone;
     
     if(global.gamePaused){
         scr_npc_find_path(argument0, argument0.path, argument1, argument2);

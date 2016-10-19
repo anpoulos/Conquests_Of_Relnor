@@ -99,17 +99,52 @@ for(var i = 0; i &lt; scr_linked_list_size(self.selected); i++){
     }
     
     if(_currentNPC.isAggressive){
-        draw_set_alpha(0.2);
+        draw_set_alpha(0.7);
         draw_circle_colour(_currentNPC.x,_currentNPC.y, _currentNPC.sight, 
         c_red, c_red, true);
     }
     if(_currentNPC.wanderDistance &gt; 0){
-        draw_set_alpha(0.2);
+        draw_set_alpha(0.7);
         draw_circle_colour(_currentNPC.originX,_currentNPC.originY, _currentNPC.wanderDistance, 
         c_yellow, c_yellow, true);
     }
     draw_set_alpha(1);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw mouse pointers
+
+var _potentialEnemy = instance_position(mouse_x, mouse_y, obj_npc_Parent);
+if(totalSelected &gt; 0 &amp;&amp; instance_exists(_potentialEnemy) &amp;&amp; _potentialEnemy.allegiance != player.allegiance){
+    draw_sprite(spr_player_command_module_mouse_enemy, 0, _potentialEnemy.x, _potentialEnemy.y);
+}
+else{
+    switch(mouseCommand){
+        case scr_player_commands_move_all:
+            draw_sprite(spr_player_command_module_mouse_move_all, 0, mouse_x, mouse_y);
+        break;
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
