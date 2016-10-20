@@ -30,6 +30,8 @@
 event_inherited();
 scr_npc_constructor("Blue_Soldier", 200, 10, 30, 400, 200, ALLEGIANCE_BLUE, 0);
 
+self.size = sprite_get_height(self.sprite_index);
+
 scr_npc_set_attack_sprites(spr_test_npc_soldier_up, spr_test_npc_soldier_down,
 spr_test_npc_soldier_right, spr_test_npc_soldier_left, 0.2);
 

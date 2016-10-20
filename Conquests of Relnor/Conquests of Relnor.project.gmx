@@ -148,6 +148,9 @@
       <sprites name="HealthBar">
         <sprite>sprites\spr_lifeform_health_bar</sprite>
       </sprites>
+      <sprites name="Energy Bar">
+        <sprite>sprites\spr_lifeform_energy_bar</sprite>
+      </sprites>
     </sprites>
     <sprites name="Inventory">
       <sprites name="Equipment">
@@ -261,6 +264,7 @@
           </scripts>
         </scripts>
         <script>scripts\scr_lifeform_update_face.gml</script>
+        <script>scripts\scr_lifeform_get_energy_bar_state.gml</script>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_player_get_action_inputs.gml</script>
@@ -478,6 +482,12 @@
         <script>scripts\scr_ui_notification_show_pause_message.gml</script>
         <script>scripts\scr_ui_notification_hide_pause_message.gml</script>
       </scripts>
+      <scripts name="Health Bar">
+        <script>scripts\scr_ui_health_bar_draw.gml</script>
+      </scripts>
+      <scripts name="Draw">
+        <script>scripts\scr_ui_draw_parent_draw_self.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\scr_create_obj_array.gml</script>
     <script>scripts\scr_create_obj_array4.gml</script>
@@ -514,6 +524,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default_medium</font>
+    <font>fonts\fnt_default_medium_bold</font>
     <font>fonts\fnt_default_large</font>
     <font>fonts\fnt_title_large</font>
     <font>fonts\fnt_default_small</font>
@@ -601,6 +612,10 @@
       </objects>
       <objects name="Notification">
         <object>objects\obj_ui_notification</object>
+      </objects>
+      <objects name="Health Bar">
+        <object>objects\obj_ui_health_bar</object>
+        <object>objects\obj_ui_energy_bar</object>
       </objects>
     </objects>
     <object>objects\obj_array</object>

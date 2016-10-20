@@ -6,6 +6,7 @@ var hpRatio = argument0.hitpoints / argument0.maxHitpoints;
 var barState = round(hpRatio*9);
 
 argument0.healthBarCurrentBar = barState;
+argument0.energyBarCurrentBar = scr_lifeform_get_energy_bar_state(argument0);
 argument0.healthBarIsVisible = true;
 
 argument0.alarm[4] = room_speed*5;
