@@ -28,7 +28,17 @@
             <string>///Initialize Room
 scr_room_begin_initialize();
 
-instance_create(global.playerSpawnX, global.playerSpawnY, obj_player);
+var _playerX = x;
+var _playerY = y;
+
+if(global.playerSpawnX != noone){
+    _playerX = global.playerSpawnX;
+}
+if(global.playerSpawnY != noone){
+    _playerY = global.playerSpawnY;
+}
+
+instance_create(_playerX, _playerY, obj_player);
 
 instance_destroy();
 </string>

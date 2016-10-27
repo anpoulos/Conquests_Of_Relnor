@@ -684,8 +684,8 @@
     <rooms name="Test">
       <room>rooms\rm_test_room</room>
       <room>rooms\rm_test_room_large2</room>
-      <room>rooms\rm_test_room_large</room>
       <room>rooms\rm_test_room_large3</room>
+      <room>rooms\rm_test_room_large</room>
     </rooms>
     <rooms name="Tutorial">
       <rooms name="Town">
