@@ -10,8 +10,7 @@ _uiFont.halign = argument6;
 _uiFont.valign = argument7;
 
 if(argument8 != noone){
-    _uiFont.menuContainer = argument8;
-    scr_ui_menu_container_add_draw_object(_uiFont,_uiFont.menuContainer);
+    scr_ui_menu_container_add_draw_object(_uiFont,argument8);
 }
 
 return _uiFont;

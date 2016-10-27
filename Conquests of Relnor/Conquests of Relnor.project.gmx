@@ -165,6 +165,7 @@
           <sprite>sprites\spr_equipment_iron_sword_left</sprite>
           <sprite>sprites\spr_equipment_iron_sword_right</sprite>
           <sprite>sprites\spr_equipment_iron_sword_up</sprite>
+          <sprite>sprites\spr_equipment_iron_sword_icon</sprite>
         </sprites>
         <sprites name="Wooden Bow">
           <sprite>sprites\spr_equipment_wooden_bow_down</sprite>
@@ -298,12 +299,16 @@
         </scripts>
         <scripts name="GUI">
           <script>scripts\scr_player_create_gui.gml</script>
-          <script>scripts\scr_player_gui_update_command_selected.gml</script>
-          <script>scripts\scr_player_gui_update_information.gml</script>
-          <script>scripts\scr_player_gui_create_player_information.gml</script>
-          <script>scripts\scr_player_gui_create_command_menu.gml</script>
-          <script>scripts\scr_player_gui_create_passive_menu.gml</script>
-          <script>scripts\scr_player_gui_create_command_selected_menu.gml</script>
+          <scripts name="Create">
+            <script>scripts\scr_player_gui_create_passive_menu.gml</script>
+            <script>scripts\scr_player_gui_create_command_menu.gml</script>
+            <script>scripts\scr_player_gui_create_player_information.gml</script>
+            <script>scripts\scr_player_gui_create_command_selected_menu.gml</script>
+          </scripts>
+          <scripts name="Update">
+            <script>scripts\scr_player_gui_update_information.gml</script>
+            <script>scripts\scr_player_gui_update_command_selected.gml</script>
+          </scripts>
         </scripts>
         <scripts name="States">
           <script>scripts\scr_player_states_attack_state.gml</script>
@@ -325,6 +330,7 @@
         <scripts name="Combat">
           <script>scripts\scr_player_combat_attacks_projectile_arrow.gml</script>
         </scripts>
+        <script>scripts\scr_player_new_room.gml</script>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
@@ -434,13 +440,16 @@
           <script>scripts\scr_ui_menu_draw.gml</script>
           <script>scripts\scr_ui_menus_hide.gml</script>
           <script>scripts\scr_ui_menus_reveal.gml</script>
+          <script>scripts\scr_ui_menu_get_width.gml</script>
+          <script>scripts\scr_ui_menu_get_height.gml</script>
+          <script>scripts\scr_ui_menu_get_pos_array.gml</script>
         </scripts>
         <scripts name="Pause">
           <scripts name="Controls">
             <script>scripts\scr_ui_menus_controls_open.gml</script>
           </scripts>
-          <script>scripts\scr_player_gui_pause_menu.gml</script>
-          <script>scripts\scr_player_gui_pause_menu_hide.gml</script>
+          <script>scripts\scr_player_gui_party_menu.gml</script>
+          <script>scripts\scr_player_gui_party_menu_hide.gml</script>
           <scripts name="Save Game">
             <script>scripts\scr_ui_menus_pause_save_game.gml</script>
           </scripts>
@@ -489,9 +498,6 @@
         <script>scripts\scr_ui_draw_parent_draw_self.gml</script>
       </scripts>
     </scripts>
-    <script>scripts\scr_create_obj_array.gml</script>
-    <script>scripts\scr_create_obj_array4.gml</script>
-    <script>scripts\scr_create_obj_array4_repeat.gml</script>
     <scripts name="Linked List">
       <script>scripts\scr_linked_list_create.gml</script>
       <script>scripts\scr_linked_list_get_next.gml</script>
@@ -507,11 +513,12 @@
       <script>scripts\scr_room_remove_cell.gml</script>
       <script>scripts\scr_room_get_grid_x.gml</script>
       <script>scripts\scr_room_get_grid_y.gml</script>
-      <script>scripts\scr_room_initialize.gml</script>
+      <script>scripts\scr_room_begin_initialize.gml</script>
       <scripts name="npc">
         <script>scripts\scr_room_npc_all_engage.gml</script>
         <script>scripts\scr_room_npc_all_defensive.gml</script>
       </scripts>
+      <script>scripts\scr_room_finish_initialize.gml</script>
     </scripts>
     <scripts name="Map">
       <scripts name="Door">
@@ -520,6 +527,21 @@
           <script>scripts\scr_map_door_parent_opened.gml</script>
         </scripts>
       </scripts>
+    </scripts>
+    <scripts name="Equipment">
+      <scripts name="Weapons">
+        <scripts name="Parent">
+          <script>scripts\scr_equipment_weapons_create.gml</script>
+        </scripts>
+        <scripts name="Swords">
+          <script>scripts\scr_equipment_create_iron_sword.gml</script>
+        </scripts>
+      </scripts>
+    </scripts>
+    <scripts name="Array">
+      <script>scripts\scr_create_obj_array4.gml</script>
+      <script>scripts\scr_create_obj_array4_repeat.gml</script>
+      <script>scripts\scr_create_obj_array.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -546,11 +568,18 @@
         <objects name="Shields">
           <object>objects\obj_equipment_iron_shield</object>
         </objects>
-        <objects name="Swords">
-          <object>objects\obj_equipment_iron_sword</object>
-        </objects>
-        <objects name="Bows">
-          <object>objects\obj_equipment_bows_wooden</object>
+        <objects name="Weapon">
+          <objects name="Parent">
+            <object>objects\obj_equipment_weapon_parent</object>
+          </objects>
+          <objects name="Bows">
+            <object>objects\obj_equipment_bows_wooden</object>
+          </objects>
+          <objects name="Swords">
+            <objects name="Parent">
+              <object>objects\obj_equipment_sword_parent</object>
+            </objects>
+          </objects>
         </objects>
       </objects>
     </objects>
@@ -596,16 +625,12 @@
       <objects name="Parent">
         <object>objects\obj_ui_draw_parent</object>
       </objects>
-      <objects name="Button">
-        <object>objects\obj_ui_button</object>
-        <object>objects\obj_ui_button_information</object>
-        <object>objects\obj_ui_button_mouse_listener</object>
-      </objects>
       <objects name="Menu">
         <object>objects\obj_ui_menu_container</object>
       </objects>
       <objects name="Font">
         <object>objects\obj_ui_font</object>
+        <object>objects\obj_damage_display_amount</object>
       </objects>
       <objects name="Chat">
         <object>objects\obj_ui_chat</object>
@@ -617,11 +642,20 @@
         <object>objects\obj_ui_health_bar</object>
         <object>objects\obj_ui_energy_bar</object>
       </objects>
+      <objects name="Clickable">
+        <objects name="Button">
+          <object>objects\obj_ui_button</object>
+          <object>objects\obj_ui_button_information</object>
+          <object>objects\obj_ui_button_mouse_listener</object>
+        </objects>
+        <objects name="Icon">
+          <object>objects\obj_ui_icon</object>
+        </objects>
+        <object>objects\obj_ui_clickable_draw_parent</object>
+      </objects>
     </objects>
     <object>objects\obj_array</object>
-    <object>objects\obj_unwalkable</object>
     <objects name="Map">
-      <object>objects\obj_map_unwalkable_medium</object>
       <objects name="Door">
         <objects name="Parent">
           <object>objects\obj_map_door_parent</object>
@@ -631,6 +665,13 @@
         <object>objects\obj_map_door_wooden_3</object>
         <object>objects\obj_map_door_wooden_4</object>
         <object>objects\obj_map_door_wooden_5</object>
+      </objects>
+      <objects name="unwalkable">
+        <object>objects\obj_unwalkable</object>
+        <object>objects\obj_map_unwalkable_medium</object>
+      </objects>
+      <objects name="initialize">
+        <object>objects\obj_map_initialize</object>
       </objects>
     </objects>
   </objects>

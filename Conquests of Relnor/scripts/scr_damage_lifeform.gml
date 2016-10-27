@@ -21,6 +21,12 @@ else{
     _lifeform.hitpoints -= _damage.amount;
 }
 
+var _displayX = _lifeform.x-7+irandom(15);
+
+var _dmgDisplay = instance_create(_displayX, _lifeform.y, obj_damage_display_amount);
+_dmgDisplay.text = string(_damage.amount);
+_dmgDisplay.depth = _lifeform.depth - 1;
+
 scr_lifeform_update_health_bar(_lifeform);
 
 var _dir = point_direction(_source.x,_source.y, 

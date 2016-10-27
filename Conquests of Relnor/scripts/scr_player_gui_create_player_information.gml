@@ -18,7 +18,6 @@ scr_destroy_instance(_playerInformationMenuPosArray);
 var _x = PlayerInformationMenuContainer.leftX+75;
 var _y = PlayerInformationMenuContainer.topY+20;
 PlayerInformationHealthBar = instance_create(_x, _y, obj_ui_health_bar);
-PlayerInformationHealthBar.menuContainer = PlayerInformationMenuContainer;
 PlayerInformationHealthBar.isVisible = true;
 scr_ui_menu_container_add_draw_object(PlayerInformationHealthBar, 
 PlayerInformationMenuContainer);
@@ -37,7 +36,6 @@ PlayerInformationHealthText.isVisible = true;
 var _x = PlayerInformationHealthBar.x;
 var _y = PlayerInformationHealthBar.y+30;
 PlayerInformationEnergyBar = instance_create(_x, _y, obj_ui_energy_bar);
-PlayerInformationEnergyBar.menuContainer = PlayerInformationMenuContainer;
 PlayerInformationEnergyBar.isVisible = true;
 scr_ui_menu_container_add_draw_object(PlayerInformationEnergyBar, 
 PlayerInformationMenuContainer);

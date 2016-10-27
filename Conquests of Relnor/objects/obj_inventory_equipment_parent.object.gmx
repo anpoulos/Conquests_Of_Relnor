@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -28,6 +28,10 @@
             <string>///Create Equipment
 sprite[4] = noone;
 spriteBehind[4] = noone;
+name = "";
+weight = 0;
+useScript = noone;
+icon = noone;
 </string>
           </argument>
         </arguments>

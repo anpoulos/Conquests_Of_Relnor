@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>scr_room_finish_initialize();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -51,7 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_player" x="392" y="1016" name="inst_6E6C5E6C" locked="0" code="scr_room_initialize();" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_map_initialize" x="336" y="1120" name="inst_AC4C10CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="376" y="824" name="inst_D009671B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="392" y="824" name="inst_B9BF6737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="408" y="824" name="inst_7DD3A18C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -638,24 +638,13 @@
     <instance objName="obj_unwalkable" x="264" y="968" name="inst_66001A3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="248" y="968" name="inst_34FEFD62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="232" y="968" name="inst_51EA035E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="344" y="1080" name="inst_AD3F9A8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="328" y="1080" name="inst_4713DB30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="312" y="1080" name="inst_3F9751C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="296" y="1080" name="inst_48EDDCFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="280" y="1080" name="inst_9DF884A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="264" y="1080" name="inst_B72EC6D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_unwalkable" x="304" y="1068" name="inst_AD3F9A8C" locked="0" code="" scaleX="6" scaleY="1.86666667461395" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="248" y="1080" name="inst_6802614C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="232" y="1080" name="inst_00297E74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="248" y="1096" name="inst_8AED466A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="232" y="1096" name="inst_3D3E0FCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="248" y="1112" name="inst_F5789CF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="232" y="1112" name="inst_C2B29AF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="344" y="1064" name="inst_A1011579" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="328" y="1064" name="inst_085285A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="312" y="1064" name="inst_8714BD12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="296" y="1064" name="inst_B6069307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="280" y="1064" name="inst_5C3CF1ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unwalkable" x="264" y="1064" name="inst_F54651C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="248" y="1064" name="inst_41AB0220" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="232" y="1064" name="inst_34678BA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="248" y="1048" name="inst_1486030F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

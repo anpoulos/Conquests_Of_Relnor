@@ -2,6 +2,10 @@
 
 ///Draw Sprite, Menu, and Buttons
 
+if(self.menuContainer != noone && !self.menuContainer.isVisible){
+    return true;
+}
+
 if(self.isVisible){    
     //draw menu rectangle
     draw_set_alpha(self.menuAlpha);

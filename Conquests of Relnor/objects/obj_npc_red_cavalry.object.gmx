@@ -41,7 +41,7 @@ self.deadSprite = spr_npc_soldier_blue_dead;
 //equipment and inventory override
 self.equipment[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
 
-self.equipment[WEAPON] = instance_create(x,y,obj_equipment_iron_sword);
+self.equipment[WEAPON] = scr_equipment_create_iron_sword();
 
 //override
 self.wanderDistance = 0;

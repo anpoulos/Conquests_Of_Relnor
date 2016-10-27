@@ -11,8 +11,8 @@ var _menuContainer = scr_ui_menu_create_container(_centerX, _centerY, _menuPosAr
 
 scr_destroy_instance(_menuColorArray);
 scr_destroy_instance(_menuPosArray);
-///create start button
 
+///create start button
 var _buttonColor = make_colour_rgb(0,50,125);
 var _buttonPressedColor = make_colour_rgb(100,100,150);
 

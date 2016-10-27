@@ -2,6 +2,7 @@
 var _object = argument0;
 var _menuContainer = argument1;
 
+_object.menuContainer = _menuContainer;
 scr_linked_list_add(_menuContainer.objects, _object);
 
 return false;

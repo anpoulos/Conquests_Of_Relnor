@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>scr_room_npc_all_engage(obj_npc_Commandable_Npc, 100);</code>
+  <code>scr_room_npc_all_engage(obj_npc_Commandable_Npc, 100);
+scr_room_finish_initialize();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -51,7 +52,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_player" x="1136" y="120" name="inst_6E6C5E6C" locked="0" code="scr_room_initialize();" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_map_initialize" x="1136" y="80" name="inst_794B8B80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="376" y="824" name="inst_D009671B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="392" y="824" name="inst_B9BF6737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_unwalkable" x="408" y="824" name="inst_7DD3A18C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

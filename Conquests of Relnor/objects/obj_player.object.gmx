@@ -37,7 +37,7 @@ commandModule.player = self;
 
 //equipment and inventory override
 self.inventory[0] = instance_create(x,y,obj_equipment_iron_shield);
-self.inventory[1] = instance_create(x,y,obj_equipment_iron_sword);
+self.inventory[1] = scr_equipment_create_iron_sword();
 self.inventory[2] = instance_create(x,y,obj_equipment_bows_wooden);
 
 //self.equipment[OFFHAND] = inventory[0];
@@ -45,6 +45,9 @@ self.inventory[2] = instance_create(x,y,obj_equipment_bows_wooden);
 self.equipment[WEAPON] = inventory[2];
 
 //overrides
+self.reach = 30;
+self.size = round(sprite_get_width(spr_player_up));
+
 self.currentMoveSpeed = self.runSpeed;
 
 self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
@@ -892,16 +895,16 @@ room_goto(rm_menus_title);
 
 if(PauseMenuContainer != noone){
     if(PauseMenuContainer.isVisible){
-        scr_player_gui_pause_menu_hide();
+        scr_player_gui_party_menu_hide();
         return true;
     }
     else{
-        scr_player_gui_pause_menu();
+        scr_player_gui_party_menu();
         return true;
     }    
 }
 
-scr_player_gui_pause_menu();
+scr_player_gui_party_menu();
 </string>
           </argument>
         </arguments>

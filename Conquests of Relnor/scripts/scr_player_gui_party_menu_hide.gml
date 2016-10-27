@@ -1,4 +1,4 @@
-///scr_player_gui_pause_menu
+///scr_player_gui_party_menu_hide
 
 scr_player_disable_busy();
     

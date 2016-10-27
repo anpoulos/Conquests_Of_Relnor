@@ -19,5 +19,7 @@ scr_linked_list_add(Menus, CommandInformationMenuContainer);
 scr_player_gui_create_passive_menu();
 scr_linked_list_add(Menus, PassiveMenuContainer);
 
+
+
 PlayerInformationMenuContainer.isVisible = true;
 

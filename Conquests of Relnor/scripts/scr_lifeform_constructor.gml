@@ -4,7 +4,7 @@ path = path_add();
 
 busyState = noone;
 isBusy = false;
-size = 0;
+size = 15;
 pathIndex = 0;
 updatePath = false;
 previousCellX = 0;

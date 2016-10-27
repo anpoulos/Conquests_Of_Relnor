@@ -25,17 +25,16 @@ btn.isOutlined = argument5;
 var _buttonInformation = argument6;
 
 btn.delay = _buttonInformation.delay;
-btn.buttonPressedScript = _buttonInformation.buttonPressedScript;
+btn.clickedScript = _buttonInformation.clickedScript;
 btn.text = _buttonInformation.text;
 btn.font = _buttonInformation.font;
 btn.fontColor = _buttonInformation.fontColor;
 btn.buttonAlpha = _buttonInformation.buttonAlpha;
 btn.fontAlpha = _buttonInformation.fontAlpha;
-btn.buttonScriptAs = _buttonInformation.buttonScriptAs;
+btn.clickedAs = _buttonInformation.clickedAs;
 
 if(argument7 != noone){
-    btn.menuContainer = argument7; 
-    scr_ui_menu_container_add_draw_object(btn, btn.menuContainer);
+    scr_ui_menu_container_add_draw_object(btn, argument7);
 }
 
 return btn;

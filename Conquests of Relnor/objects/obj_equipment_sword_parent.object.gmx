@@ -2,10 +2,10 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_ui_clickable_draw_parent</parentName>
+  <parentName>obj_equipment_weapon_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,18 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create Font
+            <string>///Create
 event_inherited();
-name = "UI Font";
 
-font = fnt_default_medium;
-color = c_gray;
-alpha = 1;
-halign = fa_center;
-valign = fa_middle;
+//Overrides
+self.weaponType = WEAPON_MELEE;
 
-//override
-self.drawScript = scr_ui_font_parent_draw;
+//Sprites
+self.sprite[DOWN] = spr_equipment_iron_sword_down;
+self.spriteBehind[DOWN] = false;
+
+self.sprite[LEFT] = spr_equipment_iron_sword_left;
+self.spriteBehind[LEFT] = true;
+
+self.sprite[RIGHT] = spr_equipment_iron_sword_right;
+self.spriteBehind[RIGHT] = false;
+
+self.sprite[UP] = spr_equipment_iron_sword_up;
+self.spriteBehind[UP] = false;
+
+
 </string>
           </argument>
         </arguments>

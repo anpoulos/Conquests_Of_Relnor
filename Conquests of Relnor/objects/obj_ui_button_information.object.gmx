@@ -31,7 +31,7 @@ delay = noone;
 buttonPressedScript = noone;
 text = noone;
 font = noone;
-buttonScriptAs = noone;
+clickedAs = noone;
 </string>
           </argument>
         </arguments>

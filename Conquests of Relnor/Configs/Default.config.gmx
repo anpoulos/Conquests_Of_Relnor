@@ -651,7 +651,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="33">
+    <constants number="36">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">3</constant>
       <constant name="ALLEGIANCE_NEUTRAL">2</constant>
@@ -685,6 +685,9 @@
       <constant name="TRIGGERS_MAX">6</constant>
       <constant name="UP">1</constant>
       <constant name="WEAPON">0</constant>
+      <constant name="WEAPON_MELEE">0</constant>
+      <constant name="WEAPON_RANGE">1</constant>
+      <constant name="WEAPON_MAGIC">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

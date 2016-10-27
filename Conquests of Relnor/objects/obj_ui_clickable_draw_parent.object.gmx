@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_ui_clickable_draw_parent</parentName>
+  <parentName>obj_ui_draw_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,18 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create Font
+            <string>///Create
+
 event_inherited();
-name = "UI Font";
 
-font = fnt_default_medium;
-color = c_gray;
-alpha = 1;
-halign = fa_center;
-valign = fa_middle;
-
-//override
-self.drawScript = scr_ui_font_parent_draw;
+clickedAs = noone;
+clickedScript = noone;
 </string>
           </argument>
         </arguments>

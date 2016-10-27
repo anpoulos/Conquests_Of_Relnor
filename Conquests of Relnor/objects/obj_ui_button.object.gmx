@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_ui_draw_parent</parentName>
+  <parentName>obj_ui_clickable_draw_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,8 +29,6 @@
 event_inherited();
 name = "UI Button";
 
-buttonPressedScript = noone;
-buttonScriptAs = noone;
 buttonPressedColor = noone;
 leftOffset = noone;
 rightOffset = noone;
@@ -83,15 +81,15 @@ self.drawScript = scr_ui_button_draw;
             <string>///Button Delay Alarm
 pressed = false;
 
-if(self.buttonPressedScript != noone){
-    if(self.buttonScriptAs != noone){
-        var _buttonScript = buttonPressedScript;
-        with(self.buttonScriptAs){
+if(self.clickedScript != noone){
+    if(self.clickedAs != noone){
+        var _buttonScript = clickedScript;
+        with(self.clickedAs){
             script_execute(_buttonScript);
         }  
     }  
     else{
-        script_execute(self.buttonPressedScript);
+        script_execute(self.clickedScript);
     }
 }
 </string>
