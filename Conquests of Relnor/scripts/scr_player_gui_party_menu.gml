@@ -114,14 +114,30 @@ var _margin = 10;
         var _menuX = PauseMenuInventoryContainer.rightX - _menuPosArray.item[2] - _margin;
         var _menuY = PauseMenuInventoryContainer.y;
         
+        InventoryInfoContainerInventorySlots[INVENTORY_MAX] = noone;
         InventoryInfoContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.9, noone);
         
         scr_ui_menu_container_add_draw_object(InventoryInfoContainer, PauseMenuInventoryContainer);
         InventoryInfoContainer.isVisible = true;
         
         scr_destroy_instance(_menuColorArray);
-        scr_destroy_instance(_menuPosArray);
+        scr_destroy_instance(_menuPosArray);          
+        
+        InventoryInfoContainerItemStats = instance_create(x,y,obj_ui_party_inventory_item_info);
+        InventoryInfoContainerItemStats.inventoryInfoContainer = InventoryInfoContainer;
+        
+        scr_ui_menu_container_add_draw_object(InventoryInfoContainerItemStats, InventoryInfoContainer);
     //End of Inventory Info Container
+    
+    //Icons section
+        for(var i = 0; i < INVENTORY_MAX; i++){
+            InventoryContainerRow[i] = instance_create(0,0,obj_ui_party_inventory_row);
+            InventoryContainerRow[i].itemInfo = InventoryInfoContainerItemStats;
+            scr_ui_menu_container_add_draw_object(InventoryContainerRow[i], PauseMenuInventoryContainer);
+        }
+        scr_player_gui_party_update_inventory();
+    //End of icons section
+    
 //End of Inventory Container
 
 //Start of Close Menu Button

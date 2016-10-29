@@ -28,9 +28,7 @@
             <string>///Create
 event_inherited();
 
-weaponType = noone;
-damage = 0;
-
+equipmentStats[EQUIPMENT_STATS_TYPE] = EQUIPMENT_TYPE_WEAPON;
 </string>
           </argument>
         </arguments>

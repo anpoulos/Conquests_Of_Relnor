@@ -159,6 +159,7 @@
           <sprite>sprites\spr_equipment_iron_shield_left</sprite>
           <sprite>sprites\spr_equipment_iron_shield_right</sprite>
           <sprite>sprites\spr_equipment_iron_shield_up</sprite>
+          <sprite>sprites\spr_equipment_iron_shield_icon</sprite>
         </sprites>
         <sprites name="Iron Sword">
           <sprite>sprites\spr_equipment_iron_sword_down</sprite>
@@ -202,6 +203,7 @@
         <sprite>sprites\spr_map_door_wooden_5</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_inventory_parent</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Test">
@@ -308,6 +310,11 @@
           <scripts name="Update">
             <script>scripts\scr_player_gui_update_information.gml</script>
             <script>scripts\scr_player_gui_update_command_selected.gml</script>
+          </scripts>
+          <scripts name="Party">
+            <script>scripts\scr_player_gui_party_menu_hide.gml</script>
+            <script>scripts\scr_player_gui_party_menu.gml</script>
+            <script>scripts\scr_player_gui_party_update_inventory.gml</script>
           </scripts>
         </scripts>
         <scripts name="States">
@@ -448,8 +455,6 @@
           <scripts name="Controls">
             <script>scripts\scr_ui_menus_controls_open.gml</script>
           </scripts>
-          <script>scripts\scr_player_gui_party_menu.gml</script>
-          <script>scripts\scr_player_gui_party_menu_hide.gml</script>
           <scripts name="Save Game">
             <script>scripts\scr_ui_menus_pause_save_game.gml</script>
           </scripts>
@@ -497,6 +502,11 @@
       <scripts name="Draw">
         <script>scripts\scr_ui_draw_parent_draw_self.gml</script>
       </scripts>
+      <scripts name="Party">
+        <script>scripts\scr_ui_party_inventory_row_draw.gml</script>
+        <script>scripts\scr_ui_party_inventory_row_clicked.gml</script>
+        <script>scripts\scr_ui_party_inventory_item_info_draw.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Linked List">
       <script>scripts\scr_linked_list_create.gml</script>
@@ -528,20 +538,32 @@
         </scripts>
       </scripts>
     </scripts>
-    <scripts name="Equipment">
-      <scripts name="Weapons">
-        <scripts name="Parent">
-          <script>scripts\scr_equipment_weapons_create.gml</script>
-        </scripts>
-        <scripts name="Swords">
-          <script>scripts\scr_equipment_create_iron_sword.gml</script>
-        </scripts>
-      </scripts>
-    </scripts>
     <scripts name="Array">
       <script>scripts\scr_create_obj_array4.gml</script>
       <script>scripts\scr_create_obj_array4_repeat.gml</script>
       <script>scripts\scr_create_obj_array.gml</script>
+    </scripts>
+    <scripts name="Item">
+      <scripts name="Equipment">
+        <script>scripts\scr_equipment_get_type_name.gml</script>
+        <scripts name="Weapons">
+          <scripts name="Parent">
+            <script>scripts\scr_equipment_create.gml</script>
+          </scripts>
+          <scripts name="Swords">
+            <script>scripts\scr_equipment_create_iron_sword.gml</script>
+          </scripts>
+          <script>scripts\scr_equipment_weapons_get_type_name.gml</script>
+        </scripts>
+        <scripts name="Offhand">
+          <scripts name="Shields">
+            <script>scripts\scr_equipment_offhand_create_iron_shield.gml</script>
+          </scripts>
+        </scripts>
+        <script>scripts\scr_equipment_get_stat_name.gml</script>
+      </scripts>
+      <script>scripts\scr_item_get_stat_name.gml</script>
+      <script>scripts\scr_item_type_get_name.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -564,16 +586,14 @@
     </objects>
     <objects name="Inventory">
       <objects name="Equipment">
-        <object>objects\obj_inventory_equipment_parent</object>
-        <objects name="Shields">
-          <object>objects\obj_equipment_iron_shield</object>
-        </objects>
         <objects name="Weapon">
           <objects name="Parent">
             <object>objects\obj_equipment_weapon_parent</object>
           </objects>
           <objects name="Bows">
-            <object>objects\obj_equipment_bows_wooden</object>
+            <objects name="Parent">
+              <object>objects\obj_equipment_bows_parent</object>
+            </objects>
           </objects>
           <objects name="Swords">
             <objects name="Parent">
@@ -581,7 +601,21 @@
             </objects>
           </objects>
         </objects>
+        <objects name="Offhand">
+          <objects name="Shields">
+            <objects name="Parent">
+              <object>objects\obj_equipment_iron_shield_parent</object>
+            </objects>
+          </objects>
+          <objects name="Parent">
+            <object>objects\obj_inventory_equipment_offhand_parent</object>
+          </objects>
+        </objects>
+        <objects name="Parent">
+          <object>objects\obj_inventory_equipment_parent</object>
+        </objects>
       </objects>
+      <object>objects\obj_inventory_item_parent</object>
     </objects>
     <objects name="Lifeform">
       <objects name="Player">
@@ -649,9 +683,13 @@
           <object>objects\obj_ui_button_mouse_listener</object>
         </objects>
         <objects name="Icon">
-          <object>objects\obj_ui_icon</object>
+          <object>objects\obj_ui_icon_parent</object>
         </objects>
-        <object>objects\obj_ui_clickable_draw_parent</object>
+        <object>objects\obj_ui_clickable_parent</object>
+      </objects>
+      <objects name="Party">
+        <object>objects\obj_ui_party_inventory_row</object>
+        <object>objects\obj_ui_party_inventory_item_info</object>
       </objects>
     </objects>
     <object>objects\obj_array</object>

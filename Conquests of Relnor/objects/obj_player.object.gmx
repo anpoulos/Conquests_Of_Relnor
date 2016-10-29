@@ -36,13 +36,11 @@ commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
 
 //equipment and inventory override
-self.inventory[0] = instance_create(x,y,obj_equipment_iron_shield);
-self.inventory[1] = scr_equipment_create_iron_sword();
-self.inventory[2] = instance_create(x,y,obj_equipment_bows_wooden);
+self.inventory[0] = scr_equipment_create_iron_sword();
 
 //self.equipment[OFFHAND] = inventory[0];
 
-self.equipment[WEAPON] = inventory[2];
+self.equipment[WEAPON] = inventory[0];
 
 //overrides
 self.reach = 30;
@@ -53,7 +51,7 @@ self.currentMoveSpeed = self.runSpeed;
 self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
 self.ATTACKS[ATTACK_RANGE] = scr_player_combat_attacks_projectile_arrow;
 
-self.currentAttack = self.ATTACKS[ATTACK_RANGE];
+self.currentAttack = self.ATTACKS[ATTACK_MELEE];
 
 self.allegiance = ALLEGIANCE_BLUE;
 self.allegianceRank[ALLEGIANCE_BLUE] = 7;

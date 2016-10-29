@@ -39,7 +39,7 @@ spr_npc_red_soldier_right, spr_npc_red_soldier_left, 30);
 self.deadSprite = noone;
 
 //equipment and inventory override
-self.equipment[OFFHAND] = instance_create(x,y,obj_equipment_iron_shield);
+self.equipment[OFFHAND] = scr_equipment_offhand_create_iron_shield();
 
 self.equipment[WEAPON] = scr_equipment_create_iron_sword();
 

@@ -6,6 +6,8 @@ if(PauseText != noone){
     PauseText.isVisible = PauseText.wasVisible;
 }
 
+InventoryInfoContainerItemStats.isVisible = false;
+
 if(PauseMenuContainer != noone){
     for(var i = 0; i < scr_linked_list_size(Menus); i++){
         var _menu = scr_linked_list_get_next(Menus);

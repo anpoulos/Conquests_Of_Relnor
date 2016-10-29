@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_ui_draw_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,20 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create Text
-name = "Obj Damage Display Amount";
+            <string>///Create
 
-font = fnt_default_medium;
-color = c_white;
-alpha = 1;
-halign = fa_center;
-valign = fa_middle;
-fade = false;
-yOffset = 0.5;
-text = "";
-y -= 45;
-alarm[0] = room_speed/2;
+event_inherited();
 
+clickedAs = noone;
+clickedScript = noone;
+leftX = noone;
+topY = noone;
+rightX = noone;
+bottomY = noone;
+delay = noone;
+pressed = false;
 </string>
           </argument>
         </arguments>
@@ -61,60 +59,20 @@ alarm[0] = room_speed/2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fade enabled
+            <string>///Clicked Delay Alarm
+pressed = false;
 
-fade = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw
-
-    if(fade){
-        self.alpha -= 0.3;
+if(self.clickedScript != noone){
+    if(self.clickedAs != noone){
+        var _script = clickedScript;
+        with(self.clickedAs){
+            script_execute(_script);
+        }  
+    }  
+    else{
+        script_execute(self.clickedScript);
     }
-
-    y -= self.yOffset;
-    
-    //begin draw text
-    draw_set_font(self.font);
-    draw_set_halign(self.halign);
-    draw_set_valign(self.valign);
-    
-    //draw text
-    draw_set_alpha(self.alpha);
-    draw_set_color(self.color);
-    draw_text(x,y,self.text);
-
-    //reset text
-    draw_set_halign(fa_left);
-    draw_set_halign(fa_top);
-    draw_set_colour(c_black);
-    draw_set_font(fnt_default_medium);
-    draw_set_alpha(1);
-    
-    
-    if(self.alpha &lt;= 0){
-        instance_destroy();
-    }
+}
 </string>
           </argument>
         </arguments>

@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_inventory_item_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,12 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Create Equipment
+event_inherited();
+
 sprite[4] = noone;
 spriteBehind[4] = noone;
-name = "";
-weight = 0;
-useScript = noone;
-icon = noone;
+itemStats[ITEM_STATS_TYPE] = ITEM_TYPE_EQUIPMENT;
+equipmentStats[EQUIPMENT_STATS_MAX] = noone;
 </string>
           </argument>
         </arguments>

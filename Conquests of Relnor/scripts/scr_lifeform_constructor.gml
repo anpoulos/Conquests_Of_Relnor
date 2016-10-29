@@ -19,11 +19,11 @@ energyBarCurrentBar = 9;
 phy_fixed_rotation = true;
 ignoreLifeformCollisions = false;
 
-for(var i = 0; i < 2; i++){
+for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
     equipment[i] = noone;
 }
 
-for(var i = 0; i < 16; i++){
+for(var i = 0; i < INVENTORY_MAX; i++){
     inventory[i] = noone;
 }
 

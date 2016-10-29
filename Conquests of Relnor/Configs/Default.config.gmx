@@ -651,7 +651,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="36">
+    <constants number="52">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">3</constant>
       <constant name="ALLEGIANCE_NEUTRAL">2</constant>
@@ -661,6 +661,14 @@
       <constant name="ATTACKS_MAX">8</constant>
       <constant name="BLOCK">2</constant>
       <constant name="DOWN">3</constant>
+      <constant name="EQUIPMENT_STATS_DAMAGE">0</constant>
+      <constant name="EQUIPMENT_STATS_DEFENCE">2</constant>
+      <constant name="EQUIPMENT_STATS_MAX">4</constant>
+      <constant name="EQUIPMENT_STATS_RANGE">1</constant>
+      <constant name="EQUIPMENT_STATS_TYPE">3</constant>
+      <constant name="EQUIPMENT_TYPE_MAX">2</constant>
+      <constant name="EQUIPMENT_TYPE_OFFHAND">1</constant>
+      <constant name="EQUIPMENT_TYPE_WEAPON">0</constant>
       <constant name="FACE_DOWN">6</constant>
       <constant name="FACE_DOWNLEFT">5</constant>
       <constant name="FACE_DOWNRIGHT">7</constant>
@@ -670,6 +678,14 @@
       <constant name="FACE_UPPERLEFT">3</constant>
       <constant name="FACE_UPPERRIGHT">1</constant>
       <constant name="FIXTURE_COLLISION_LIFEFORM">-1</constant>
+      <constant name="INVENTORY_MAX">16</constant>
+      <constant name="ITEM_STATS_MAX">3</constant>
+      <constant name="ITEM_STATS_NAME">0</constant>
+      <constant name="ITEM_STATS_TYPE">2</constant>
+      <constant name="ITEM_STATS_WEIGHT">1</constant>
+      <constant name="ITEM_TYPE_CONSUMABLE">0</constant>
+      <constant name="ITEM_TYPE_EQUIPMENT">1</constant>
+      <constant name="ITEM_TYPE_MAX">2</constant>
       <constant name="LEFT">2</constant>
       <constant name="MAX_NPCS">100</constant>
       <constant name="MOVEMENT_ACCURACY">5</constant>
@@ -684,10 +700,10 @@
       <constant name="TRIGGER_FORMATION">3</constant>
       <constant name="TRIGGERS_MAX">6</constant>
       <constant name="UP">1</constant>
+      <constant name="WEAPON_TYPE_MAGIC">2</constant>
+      <constant name="WEAPON_TYPE_MELEE">0</constant>
+      <constant name="WEAPON_TYPE_RANGE">1</constant>
       <constant name="WEAPON">0</constant>
-      <constant name="WEAPON_MELEE">0</constant>
-      <constant name="WEAPON_RANGE">1</constant>
-      <constant name="WEAPON_MAGIC">2</constant>
     </constants>
   </ConfigConstants>
 </Config>
