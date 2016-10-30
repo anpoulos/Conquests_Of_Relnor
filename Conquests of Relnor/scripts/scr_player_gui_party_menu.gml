@@ -16,6 +16,8 @@ if(PauseText != noone){
 }
 
 if(PauseMenuContainer != noone){
+    InventoryInfoContainerItemStats.useItemButton.isVisible = false;
+    scr_player_gui_party_update_inventory();
     PauseMenuContainer.isVisible = true;
     return true;
 }
@@ -125,18 +127,71 @@ var _margin = 10;
         
         InventoryInfoContainerItemStats = instance_create(x,y,obj_ui_party_inventory_item_info);
         InventoryInfoContainerItemStats.inventoryInfoContainer = InventoryInfoContainer;
+        InventoryInfoContainerItemStats.player = self;
         
         scr_ui_menu_container_add_draw_object(InventoryInfoContainerItemStats, InventoryInfoContainer);
+        
+            //Start of Use Button
+                var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
+                var _buttonPressedColor = make_colour_rgb(0,0,100);
+                
+                var _buttonPosArray = scr_create_obj_array4(-25, -10, 25, 10, "_buttonPosArray");
+                
+                var _fontColor = c_white;
+                
+                var _buttonX = InventoryInfoContainer.rightX - 50;
+                var _buttonY = InventoryInfoContainer.topY + 20;
+                
+                var _text = "";
+                            
+                var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, self, 
+                _text, fnt_default_small, _fontColor, 1.0, 0.8);
+                
+                InventoryInfoContainerItemStats.useItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+                _buttonColorArray, _buttonPressedColor, true, _buttonInfo, InventoryInfoContainer);
+                
+                scr_destroy_instance(_buttonColorArray);
+                scr_destroy_instance(_buttonPosArray);
+                scr_destroy_instance(_buttonInfo);
+            //End of Use Button
+        
     //End of Inventory Info Container
     
-    //Icons section
+    //Inventory Row section
         for(var i = 0; i < INVENTORY_MAX; i++){
             InventoryContainerRow[i] = instance_create(0,0,obj_ui_party_inventory_row);
             InventoryContainerRow[i].itemInfo = InventoryInfoContainerItemStats;
+            InventoryContainerRow[i].inventoryContainerRow = InventoryContainerRow;
+            InventoryContainerRow[i].player = self;
+            
+            //Start of Use Button
+                var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
+                var _buttonPressedColor = make_colour_rgb(0,0,100);
+                
+                var _buttonPosArray = scr_create_obj_array4(-25, -10, 25, 10, "_buttonPosArray");
+                
+                var _fontColor = c_white;
+                
+                var _buttonX = x;
+                var _buttonY = y;
+                
+                var _text = "";
+                            
+                var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, self, 
+                _text, fnt_default_small, _fontColor, 1.0, 0.8);
+                
+                InventoryContainerRow[i].useItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+                _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
+                
+                scr_destroy_instance(_buttonColorArray);
+                scr_destroy_instance(_buttonPosArray);
+                scr_destroy_instance(_buttonInfo);
+            //End of Use Button
+            
             scr_ui_menu_container_add_draw_object(InventoryContainerRow[i], PauseMenuInventoryContainer);
         }
         scr_player_gui_party_update_inventory();
-    //End of icons section
+    //End of Inventory Row section
     
 //End of Inventory Container
 

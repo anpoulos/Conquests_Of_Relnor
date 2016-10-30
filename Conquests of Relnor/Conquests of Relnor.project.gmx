@@ -173,6 +173,7 @@
           <sprite>sprites\spr_equipment_wooden_bow_left</sprite>
           <sprite>sprites\spr_equipment_wooden_bow_right</sprite>
           <sprite>sprites\spr_equipment_wooden_bow_up</sprite>
+          <sprite>sprites\spr_equipment_wooden_bow_icon</sprite>
         </sprites>
         <sprites name="Projectile">
           <sprite>sprites\spr_equipment_projectile_arrow_down</sprite>
@@ -478,6 +479,7 @@
           <script>scripts\scr_ui_button_set_default_draw.gml</script>
           <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
           <script>scripts\scr_ui_button_constructor.gml</script>
+          <script>scripts\scr_ui_button_move.gml</script>
         </scripts>
         <scripts name="Commands">
           <script>scripts\scr_ui_button_commands_square_formation.gml</script>
@@ -554,6 +556,9 @@
             <script>scripts\scr_equipment_create_iron_sword.gml</script>
           </scripts>
           <script>scripts\scr_equipment_weapons_get_type_name.gml</script>
+          <scripts name="Bows">
+            <script>scripts\scr_equipment_weapons_create_wooden_bow.gml</script>
+          </scripts>
         </scripts>
         <scripts name="Offhand">
           <scripts name="Shields">
@@ -564,6 +569,7 @@
       </scripts>
       <script>scripts\scr_item_get_stat_name.gml</script>
       <script>scripts\scr_item_type_get_name.gml</script>
+      <script>scripts\scr_item_get_use_type.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

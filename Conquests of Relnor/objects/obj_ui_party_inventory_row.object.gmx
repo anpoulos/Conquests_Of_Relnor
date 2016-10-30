@@ -35,6 +35,10 @@ clickedScript = scr_ui_party_inventory_row_clicked;
 clickedAs = self;
 inventoryItem = noone;
 delay = 2;
+inventoryContainerRow[INVENTORY_MAX] = noone;
+player = noone;
+
+useItemButton = noone;
 </string>
           </argument>
         </arguments>

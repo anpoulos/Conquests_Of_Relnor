@@ -3,8 +3,10 @@
 //clear old order and refresh with new order
 var _x = PauseMenuInventoryContainer.leftX + 30;
 var _y = PauseMenuInventoryContainer.topY + 10;
-var _yOffset = 20;
+var _yOffset = 30;
 for(var i = 0; i < INVENTORY_MAX; i++){
+    InventoryContainerRow[i].useItemButton.isVisible = false;
+    
     if(inventory[i] != noone){
         InventoryContainerRow[i].x = _x;
         InventoryContainerRow[i].y = _y + _yOffset;
@@ -15,11 +17,16 @@ for(var i = 0; i < INVENTORY_MAX; i++){
         var _heightOffset = round(sprite_get_height(InventoryContainerRow[i].sprite_index)/2);
         
         InventoryContainerRow[i].leftX = InventoryContainerRow[i].x - _widthOffset;
-        InventoryContainerRow[i].rightX = InventoryContainerRow[i].x + _widthOffset + string_length(inventory[i].itemStats[ITEM_STATS_NAME])*10;
+        InventoryContainerRow[i].rightX = InventoryContainerRow[i].x + _widthOffset + string_length(inventory[i].itemStats[ITEM_STATS_NAME])*15;
         InventoryContainerRow[i].topY = InventoryContainerRow[i].y - _heightOffset;
         InventoryContainerRow[i].bottomY = InventoryContainerRow[i].y + _heightOffset;
         
-        InventoryContainerRow[i].isVisible = true;
+        var _newX = InventoryContainerRow[i].rightX + 20;
+        var _newY = InventoryContainerRow[i].y;
+        
+        scr_ui_button_move(InventoryContainerRow[i].useItemButton, _newX, _newY);
+        
+        InventoryContainerRow[i].isVisible = true;        
         _y += _yOffset;
     }
     else{

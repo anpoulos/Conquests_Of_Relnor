@@ -29,6 +29,7 @@
 event_inherited();
 
 self.weaponType = WEAPON_TYPE_RANGE;
+self.icon = spr_equipment_wooden_bow_icon;
 
 self.sprite[DOWN] = spr_equipment_wooden_bow_down;
 self.spriteBehind[DOWN] = false;

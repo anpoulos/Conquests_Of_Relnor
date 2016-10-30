@@ -37,10 +37,13 @@ commandModule.player = self;
 
 //equipment and inventory override
 self.inventory[0] = scr_equipment_create_iron_sword();
+self.inventory[1] = scr_equipment_offhand_create_iron_shield();
+self.inventory[2] = scr_equipment_weapons_create_wooden_bow();
 
 //self.equipment[OFFHAND] = inventory[0];
 
-self.equipment[WEAPON] = inventory[0];
+self.equipment[EQUIPMENT_TYPE_WEAPON] = inventory[0];
+self.equipment[EQUIPMENT_TYPE_OFFHAND] = inventory[1];
 
 //overrides
 self.reach = 30;
