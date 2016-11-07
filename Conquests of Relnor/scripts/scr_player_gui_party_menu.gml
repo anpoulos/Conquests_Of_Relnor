@@ -112,8 +112,8 @@ var _margin = 10;
         var _y2 = PauseMenuInventoryContainer.bottomY;
         var _width = 1;
         
-        var _centerLine = scr_ui_draw_line_constructor(_x, _y1, _x, _y2, _width, c_black, c_black, PauseMenuInventoryContainer);
-        _centerLine.isVisible = true;
+        InventoryCenterLine = scr_ui_draw_line_constructor(_x, _y1, _x, _y2, _width, c_black, c_black, PauseMenuInventoryContainer);
+        InventoryCenterLine.isVisible = true;
     //End of Container Center Line
     
     //Container Right Line
@@ -227,11 +227,47 @@ var _margin = 10;
         }
         scr_player_gui_party_update_inventory();
     //End of Inventory Row section
-    
+
+    //Equipment Row Section
+        for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
+            EquipmentInventoryContainerRow[i] = instance_create(0,0,obj_ui_party_inventory_row);
+            EquipmentInventoryContainerRow[i].itemInfo = InventoryInfoContainerItemStats;
+            EquipmentInventoryContainerRow[i].inventoryContainerRow = EquipmentInventoryContainerRow;
+            EquipmentInventoryContainerRow[i].player = self;
+            
+            //Start of unequip Button
+                var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
+                var _buttonPressedColor = make_colour_rgb(0,0,100);
+                
+                var _buttonPosArray = scr_create_obj_array4(-25, -10, 25, 10, "_buttonPosArray");
+                
+                var _fontColor = c_white;
+                
+                var _buttonX = x;
+                var _buttonY = y;
+                
+                var _text = "Unequip";
+                            
+                var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, self, 
+                _text, fnt_default_small, _fontColor, 1.0, 0.8);
+                
+                EquipmentInventoryContainerRow[i].useItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+                _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
+                
+                scr_destroy_instance(_buttonColorArray);
+                scr_destroy_instance(_buttonPosArray);
+                scr_destroy_instance(_buttonInfo);
+            //End of unequip Button
+            
+            scr_ui_menu_container_add_draw_object(EquipmentInventoryContainerRow[i], PauseMenuInventoryContainer);
+        }
+        scr_player_gui_party_update_equipment();    
+    //End of Equipment Row Section    
+        
     //Equipment Row Section
         //Equipment Row Text
             var _PauseMenuInventoryContainerLength = PauseMenuInventoryContainer.rightX - PauseMenuInventoryContainer.leftX;
-            var _x = _centerLine.x1 + 50; 
+            var _x = InventoryCenterLine.x1 + 50; 
             var _y = PauseMenuInventoryContainer.topY + 20;
             var _text = "Equipment";
             

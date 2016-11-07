@@ -316,6 +316,7 @@
             <script>scripts\scr_player_gui_party_menu_hide.gml</script>
             <script>scripts\scr_player_gui_party_menu.gml</script>
             <script>scripts\scr_player_gui_party_update_inventory.gml</script>
+            <script>scripts\scr_player_gui_party_update_equipment.gml</script>
           </scripts>
         </scripts>
         <scripts name="States">
