@@ -37,6 +37,7 @@ inventoryItem = noone;
 delay = 2;
 inventoryContainerRow[INVENTORY_MAX] = noone;
 player = noone;
+isEquipped = false;
 
 useItemButton = noone;
 </string>

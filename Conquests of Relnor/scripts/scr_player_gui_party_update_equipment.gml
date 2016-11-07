@@ -2,7 +2,7 @@
 
 //clear old order and refresh with new order
 var _x = InventoryCenterLine.x1 + 30;
-var _y = PauseMenuInventoryContainer.topY + 10;
+var _y = PauseMenuInventoryContainer.topY + 30;
 var _yOffset = 30;
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
     EquipmentInventoryContainerRow[i].useItemButton.isVisible = false;
@@ -12,6 +12,7 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
         EquipmentInventoryContainerRow[i].y = _y + _yOffset;
         EquipmentInventoryContainerRow[i].inventoryItem = equipment[i];
         EquipmentInventoryContainerRow[i].sprite_index = equipment[i].icon;
+        EquipmentInventoryContainerRow[i].isEquipped = true;
         
         var _widthOffset = round(sprite_get_width(EquipmentInventoryContainerRow[i].sprite_index)/2);
         var _heightOffset = round(sprite_get_height(EquipmentInventoryContainerRow[i].sprite_index)/2);
@@ -32,6 +33,7 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
     else{
         EquipmentInventoryContainerRow[i].sprite = noone;
         EquipmentInventoryContainerRow[i].name = "";
+        EquipmentInventoryContainerRow[i].isEquipped = false;
         EquipmentInventoryContainerRow[i].isVisible = false;
     }
 }
