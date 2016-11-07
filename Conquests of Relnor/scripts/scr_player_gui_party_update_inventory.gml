@@ -2,7 +2,7 @@
 
 //clear old order and refresh with new order
 var _x = PauseMenuInventoryContainer.leftX + 30;
-var _y = PauseMenuInventoryContainer.topY + 10;
+var _y = PauseMenuInventoryContainer.topY + 30;
 var _yOffset = 30;
 for(var i = 0; i < INVENTORY_MAX; i++){
     InventoryContainerRow[i].useItemButton.isVisible = false;

@@ -104,20 +104,45 @@ var _margin = 10;
     
     scr_destroy_instance(_menuColorArray);
     scr_destroy_instance(_menuPosArray);
+        
+    //Container Center Line
+        var _PauseMenuInventoryContainerLength = PauseMenuInventoryContainer.rightX - PauseMenuInventoryContainer.leftX;
+        var _x = PauseMenuInventoryContainer.leftX + round(_PauseMenuInventoryContainerLength * 0.30); //centered at 30% of width
+        var _y1 = PauseMenuInventoryContainer.topY-2;
+        var _y2 = PauseMenuInventoryContainer.bottomY;
+        var _width = 1;
+        
+        var _centerLine = scr_ui_draw_line_constructor(_x, _y1, _x, _y2, _width, c_black, c_black, PauseMenuInventoryContainer);
+        _centerLine.isVisible = true;
+    //End of Container Center Line
+    
+    //Container Right Line
+        var _PauseMenuInventoryContainerLength = PauseMenuInventoryContainer.rightX - PauseMenuInventoryContainer.leftX;
+        var _x = PauseMenuInventoryContainer.leftX + round(_PauseMenuInventoryContainerLength * 0.60); //centered at 60% of width
+        var _y1 = PauseMenuInventoryContainer.topY-2;
+        var _y2 = PauseMenuInventoryContainer.bottomY;
+        var _width = 1;
+        
+        var _rightLine = scr_ui_draw_line_constructor(_x, _y1, _x, _y2, _width, c_black, c_black, PauseMenuInventoryContainer);
+        _rightLine.isVisible = true;
+    //End of Container Right Line
+    
     //Inventory Info Container
         var _menuColor = make_colour_rgb(100,100,150);
         var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
             
         var _width = round((scr_ui_menu_get_width(PauseMenuInventoryContainer)-_margin*2) * 0.3);
-        var _height = scr_ui_menu_get_height(PauseMenuInventoryContainer) - _margin*2;
+        var _height = scr_ui_menu_get_height(PauseMenuInventoryContainer) - _margin*2 - 50;
         
         var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
+        
+        var _rightSideLength = PauseMenuInventoryContainer.rightX - _rightLine.x1;
     
-        var _menuX = PauseMenuInventoryContainer.rightX - _menuPosArray.item[2] - _margin;
-        var _menuY = PauseMenuInventoryContainer.y;
+        var _menuX = _rightLine.x1 + round(_rightSideLength/2);
+        var _menuY = PauseMenuInventoryContainer.bottomY - _menuPosArray.item[3] - _margin;
         
         InventoryInfoContainerInventorySlots[INVENTORY_MAX] = noone;
-        InventoryInfoContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.9, noone);
+        InventoryInfoContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, false, 0.9, noone);
         
         scr_ui_menu_container_add_draw_object(InventoryInfoContainer, PauseMenuInventoryContainer);
         InventoryInfoContainer.isVisible = true;
@@ -158,6 +183,16 @@ var _margin = 10;
     //End of Inventory Info Container
     
     //Inventory Row section
+    
+        //Inventory Row Text
+            var _x = PauseMenuInventoryContainer.leftX + 50;
+            var _y = PauseMenuInventoryContainer.topY + 20;
+            var _text = "Inventory";
+            
+            var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, PauseMenuInventoryContainer);
+            _font.isVisible = true;
+        //End of Inventory Row Text
+    
         for(var i = 0; i < INVENTORY_MAX; i++){
             InventoryContainerRow[i] = instance_create(0,0,obj_ui_party_inventory_row);
             InventoryContainerRow[i].itemInfo = InventoryInfoContainerItemStats;
@@ -192,6 +227,19 @@ var _margin = 10;
         }
         scr_player_gui_party_update_inventory();
     //End of Inventory Row section
+    
+    //Equipment Row Section
+        //Equipment Row Text
+            var _PauseMenuInventoryContainerLength = PauseMenuInventoryContainer.rightX - PauseMenuInventoryContainer.leftX;
+            var _x = _centerLine.x1 + 50; 
+            var _y = PauseMenuInventoryContainer.topY + 20;
+            var _text = "Equipment";
+            
+            var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, PauseMenuInventoryContainer);
+            _font.isVisible = true;
+        //End of Equipment Row Text
+    
+    //End of Equipment Row Section
     
 //End of Inventory Container
 

@@ -433,6 +433,59 @@
         <script>scripts\scr_ui_button_chat_close.gml</script>
         <script>scripts\scr_ui_chat_constructor.gml</script>
       </scripts>
+      <scripts name="Buttons">
+        <scripts name="Commands">
+          <script>scripts\scr_ui_button_commands_square_formation.gml</script>
+          <script>scripts\scr_ui_button_commands_enable_move.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Draw">
+        <scripts name="Parent">
+          <script>scripts\scr_ui_draw_parent_draw_self.gml</script>
+          <script>scripts\scr_ui_draw_obj_draw.gml</script>
+        </scripts>
+        <scripts name="Party">
+          <script>scripts\scr_ui_party_inventory_row_draw.gml</script>
+          <script>scripts\scr_ui_party_inventory_row_clicked.gml</script>
+          <script>scripts\scr_ui_party_inventory_item_info_draw.gml</script>
+        </scripts>
+        <scripts name="Health Bar">
+          <script>scripts\scr_ui_health_bar_draw.gml</script>
+        </scripts>
+        <scripts name="Notification">
+          <script>scripts\scr_ui_notification_constructor.gml</script>
+          <script>scripts\scr_ui_notification_show_pause_message.gml</script>
+          <script>scripts\scr_ui_notification_hide_pause_message.gml</script>
+        </scripts>
+        <scripts name="Font">
+          <scripts name="Parent">
+            <script>scripts\scr_ui_font_parent_draw.gml</script>
+            <script>scripts\scr_ui_font_constructor.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="Menu">
+          <script>scripts\scr_ui_menu_container_add_draw_object.gml</script>
+          <script>scripts\scr_ui_menus_reveal.gml</script>
+          <script>scripts\scr_ui_menu_get_height.gml</script>
+          <script>scripts\scr_ui_menu_get_pos_array.gml</script>
+          <script>scripts\scr_ui_menu_get_width.gml</script>
+          <script>scripts\scr_ui_menu_draw.gml</script>
+          <script>scripts\scr_ui_menus_hide.gml</script>
+          <script>scripts\scr_ui_menu_set_defaults.gml</script>
+          <script>scripts\scr_ui_menu_create_container.gml</script>
+        </scripts>
+        <scripts name="Button">
+          <script>scripts\scr_ui_button_constructor.gml</script>
+          <script>scripts\scr_ui_button_draw.gml</script>
+          <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
+          <script>scripts\scr_ui_button_set_default_draw.gml</script>
+          <script>scripts\scr_ui_button_move.gml</script>
+        </scripts>
+        <scripts name="Line">
+          <script>scripts\scr_ui_draw_line_draw.gml</script>
+          <script>scripts\scr_ui_draw_line_constructor.gml</script>
+        </scripts>
+      </scripts>
       <scripts name="Menus">
         <scripts name="Title">
           <script>scripts\scr_ui_menu_title_start_game.gml</script>
@@ -441,17 +494,6 @@
           <script>scripts\scr_ui_menu_title_start_large_test2.gml</script>
           <script>scripts\scr_ui_menu_title_start_large_test3.gml</script>
         </scripts>
-        <scripts name="Parent">
-          <script>scripts\scr_ui_menu_create_container.gml</script>
-          <script>scripts\scr_ui_menu_container_add_draw_object.gml</script>
-          <script>scripts\scr_ui_menu_set_defaults.gml</script>
-          <script>scripts\scr_ui_menu_draw.gml</script>
-          <script>scripts\scr_ui_menus_hide.gml</script>
-          <script>scripts\scr_ui_menus_reveal.gml</script>
-          <script>scripts\scr_ui_menu_get_width.gml</script>
-          <script>scripts\scr_ui_menu_get_height.gml</script>
-          <script>scripts\scr_ui_menu_get_pos_array.gml</script>
-        </scripts>
         <scripts name="Pause">
           <scripts name="Controls">
             <script>scripts\scr_ui_menus_controls_open.gml</script>
@@ -459,55 +501,18 @@
           <scripts name="Save Game">
             <script>scripts\scr_ui_menus_pause_save_game.gml</script>
           </scripts>
-        </scripts>
-      </scripts>
-      <scripts name="Buttons">
-        <scripts name="Pause">
-          <script>scripts\scr_ui_button_pause_close.gml</script>
-          <script>scripts\scr_ui_button_pause_menu_controls_open.gml</script>
-          <scripts name="Controls">
-            <script>scripts\scr_ui_buttons_controls_menu_close.gml</script>
-          </scripts>
-          <scripts name="Save Game">
-            <script>scripts\scr_ui_buttons_pause_save_game_close_menu.gml</script>
-            <script>scripts\scr_ui_buttons_pause_save_game_1.gml</script>
+          <scripts name="Buttons">
+            <scripts name="Controls">
+              <script>scripts\scr_ui_buttons_controls_menu_close.gml</script>
+            </scripts>
+            <scripts name="Save Game">
+              <script>scripts\scr_ui_buttons_pause_save_game_close_menu.gml</script>
+              <script>scripts\scr_ui_buttons_pause_save_game_1.gml</script>
+            </scripts>
+            <script>scripts\scr_ui_button_pause_menu_controls_open.gml</script>
+            <script>scripts\scr_ui_button_pause_close.gml</script>
           </scripts>
         </scripts>
-        <script>scripts\scr_ui_button_test_press.gml</script>
-        <scripts name="Parent">
-          <script>scripts\scr_ui_button_draw.gml</script>
-          <script>scripts\scr_ui_button_set_default_draw.gml</script>
-          <script>scripts\scr_ui_get_obj_ui_button_information.gml</script>
-          <script>scripts\scr_ui_button_constructor.gml</script>
-          <script>scripts\scr_ui_button_move.gml</script>
-        </scripts>
-        <scripts name="Commands">
-          <script>scripts\scr_ui_button_commands_square_formation.gml</script>
-          <script>scripts\scr_ui_button_commands_enable_move.gml</script>
-        </scripts>
-      </scripts>
-      <script>scripts\scr_ui_draw_obj_draw.gml</script>
-      <scripts name="Font">
-        <scripts name="Parent">
-          <script>scripts\scr_ui_font_parent_draw.gml</script>
-          <script>scripts\scr_ui_font_constructor.gml</script>
-        </scripts>
-      </scripts>
-      <scripts name="Notification">
-        <script>scripts\scr_ui_notification_constructor.gml</script>
-        <script>scripts\scr_ui_notification_show_pause_message.gml</script>
-        <script>scripts\scr_ui_notification_hide_pause_message.gml</script>
-      </scripts>
-      <scripts name="Health Bar">
-        <script>scripts\scr_ui_health_bar_draw.gml</script>
-      </scripts>
-      <scripts name="Draw">
-        <script>scripts\scr_ui_draw_parent_draw_self.gml</script>
-      </scripts>
-      <scripts name="Party">
-        <script>scripts\scr_ui_party_inventory_row_draw.gml</script>
-        <script>scripts\scr_ui_party_inventory_row_clicked.gml</script>
-        <script>scripts\scr_ui_party_inventory_item_info_draw.gml</script>
       </scripts>
     </scripts>
     <scripts name="Linked List">
@@ -662,40 +667,45 @@
       </objects>
     </objects>
     <objects name="UI">
-      <objects name="Parent">
-        <object>objects\obj_ui_draw_parent</object>
-      </objects>
-      <objects name="Menu">
-        <object>objects\obj_ui_menu_container</object>
-      </objects>
-      <objects name="Font">
-        <object>objects\obj_ui_font</object>
-        <object>objects\obj_damage_display_amount</object>
-      </objects>
       <objects name="Chat">
         <object>objects\obj_ui_chat</object>
       </objects>
-      <objects name="Notification">
-        <object>objects\obj_ui_notification</object>
-      </objects>
-      <objects name="Health Bar">
-        <object>objects\obj_ui_health_bar</object>
-        <object>objects\obj_ui_energy_bar</object>
-      </objects>
-      <objects name="Clickable">
-        <objects name="Button">
-          <object>objects\obj_ui_button</object>
-          <object>objects\obj_ui_button_information</object>
-          <object>objects\obj_ui_button_mouse_listener</object>
+      <objects name="Draw">
+        <objects name="Health Bar">
+          <object>objects\obj_ui_health_bar</object>
+          <object>objects\obj_ui_energy_bar</object>
         </objects>
-        <objects name="Icon">
-          <object>objects\obj_ui_icon_parent</object>
+        <objects name="Parent">
+          <object>objects\obj_ui_draw_parent</object>
         </objects>
-        <object>objects\obj_ui_clickable_parent</object>
-      </objects>
-      <objects name="Party">
-        <object>objects\obj_ui_party_inventory_row</object>
-        <object>objects\obj_ui_party_inventory_item_info</object>
+        <objects name="Party">
+          <object>objects\obj_ui_party_inventory_row</object>
+          <object>objects\obj_ui_party_inventory_item_info</object>
+        </objects>
+        <objects name="Clickable">
+          <objects name="Button">
+            <object>objects\obj_ui_button</object>
+            <object>objects\obj_ui_button_information</object>
+            <object>objects\obj_ui_button_mouse_listener</object>
+          </objects>
+          <objects name="Icon">
+            <object>objects\obj_ui_icon_parent</object>
+          </objects>
+          <object>objects\obj_ui_clickable_parent</object>
+        </objects>
+        <objects name="Notification">
+          <object>objects\obj_ui_notification</object>
+        </objects>
+        <objects name="Menu">
+          <object>objects\obj_ui_menu_container</object>
+        </objects>
+        <objects name="Font">
+          <object>objects\obj_ui_font</object>
+          <object>objects\obj_damage_display_amount</object>
+        </objects>
+        <objects name="Line">
+          <object>objects\obj_ui_line</object>
+        </objects>
       </objects>
     </objects>
     <object>objects\obj_array</object>
