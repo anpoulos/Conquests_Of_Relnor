@@ -6,6 +6,7 @@ var _y = PauseMenuInventoryContainer.topY + 30;
 var _yOffset = 30;
 for(var i = 0; i < INVENTORY_MAX; i++){
     InventoryContainerRow[i].useItemButton.isVisible = false;
+    InventoryContainerRow[i].isSelected = false;
     
     if(inventory[i] != noone){
         InventoryContainerRow[i].x = _x;

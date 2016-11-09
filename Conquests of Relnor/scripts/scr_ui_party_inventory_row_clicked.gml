@@ -36,4 +36,5 @@ itemInfo.useItemButton.clickedAs = inventoryItem;
 itemInfo.useItemButton.clickedScript = inventoryItem.useScript;
 itemInfo.useItemButton.isVisible = true;
 
+player.InventoryInfoContainer.isVisible = true;
 itemInfo.isVisible = true;
