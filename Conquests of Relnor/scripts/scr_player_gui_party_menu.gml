@@ -123,8 +123,8 @@ var _margin = 10;
         var _y2 = PauseMenuInventoryContainer.bottomY;
         var _width = 1;
         
-        var _rightLine = scr_ui_draw_line_constructor(_x, _y1, _x, _y2, _width, c_black, c_black, PauseMenuInventoryContainer);
-        _rightLine.isVisible = true;
+        InventoryRightLine = scr_ui_draw_line_constructor(_x, _y1, _x, _y2, _width, c_black, c_black, PauseMenuInventoryContainer);
+        InventoryRightLine.isVisible = true;
     //End of Container Right Line
     
     //Inventory Info Container
@@ -136,9 +136,9 @@ var _margin = 10;
         
         var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
         
-        var _rightSideLength = PauseMenuInventoryContainer.rightX - _rightLine.x1;
+        var _rightSideLength = PauseMenuInventoryContainer.rightX - InventoryRightLine.x1;
     
-        var _menuX = _rightLine.x1 + round(_rightSideLength/2);
+        var _menuX = InventoryRightLine.x1 + round(_rightSideLength/2);
         var _menuY = PauseMenuInventoryContainer.bottomY - _menuPosArray.item[3] - _margin;
         
         InventoryInfoContainerInventorySlots[INVENTORY_MAX] = noone;

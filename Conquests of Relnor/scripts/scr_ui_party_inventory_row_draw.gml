@@ -4,6 +4,14 @@ if(!isVisible){
     return false;
 }
 
+if(isSelected){
+    draw_set_alpha(0.4);
+    var _color = c_gray;
+    draw_rectangle_colour(leftX, topY, rightX, bottomY, 
+        _color, _color, _color, _color, false);
+    draw_set_alpha(1.0);
+}
+
 draw_self();
 
 if(inventoryItem != noone){
@@ -13,3 +21,5 @@ if(inventoryItem != noone){
         c_white, c_white, c_white, c_white, 1);    
     draw_set_halign(fa_center);
 }
+
+

@@ -39,9 +39,9 @@ spr_npc_red_cavalry_right, spr_npc_red_cavalry_left, 60);
 self.deadSprite = spr_npc_soldier_blue_dead;
 
 //equipment and inventory override
-self.equipment[OFFHAND] = scr_equipment_offhand_create_iron_shield();
+self.equipment[OFFHAND] = scr_equipment_offhand_create_iron_shield(self);
 
-self.equipment[WEAPON] = scr_equipment_create_iron_sword();
+self.equipment[WEAPON] = scr_equipment_create_iron_sword(self);
 
 //override
 self.wanderDistance = 0;

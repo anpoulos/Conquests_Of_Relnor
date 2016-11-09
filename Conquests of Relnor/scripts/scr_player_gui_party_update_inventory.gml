@@ -16,20 +16,24 @@ for(var i = 0; i < INVENTORY_MAX; i++){
         var _widthOffset = round(sprite_get_width(InventoryContainerRow[i].sprite_index)/2);
         var _heightOffset = round(sprite_get_height(InventoryContainerRow[i].sprite_index)/2);
         
-        InventoryContainerRow[i].leftX = InventoryContainerRow[i].x - _widthOffset;
-        InventoryContainerRow[i].rightX = InventoryContainerRow[i].x + _widthOffset + string_length(inventory[i].itemStats[ITEM_STATS_NAME])*15;
+        InventoryContainerRow[i].leftX = PauseMenuInventoryContainer.leftX + 1;
+        InventoryContainerRow[i].rightX = InventoryCenterLine.x1-60;
         InventoryContainerRow[i].topY = InventoryContainerRow[i].y - _heightOffset;
         InventoryContainerRow[i].bottomY = InventoryContainerRow[i].y + _heightOffset;
         
-        var _newX = InventoryContainerRow[i].rightX + 20;
+        var _newX = InventoryContainerRow[i].rightX + 30;
         var _newY = InventoryContainerRow[i].y;
         
         scr_ui_button_move(InventoryContainerRow[i].useItemButton, _newX, _newY);
+        InventoryContainerRow[i].useItemButton.clickedScript = inventory[i].useScript;
+        InventoryContainerRow[i].useItemButton.clickedAs = inventory[i];
         
         InventoryContainerRow[i].isVisible = true;        
         _y += _yOffset;
     }
     else{
+        InventoryContainerRow[i].useItemButton.clickedScript = noone;
+        InventoryContainerRow[i].useItemButton.clickedAs = noone;
         InventoryContainerRow[i].sprite = noone;
         InventoryContainerRow[i].name = "";
         InventoryContainerRow[i].isVisible = false;

@@ -269,6 +269,10 @@
         </scripts>
         <script>scripts\scr_lifeform_update_face.gml</script>
         <script>scripts\scr_lifeform_get_energy_bar_state.gml</script>
+        <scripts name="Inventory">
+          <script>scripts\scr_lifeform_parent_inventory_get_free_space.gml</script>
+          <script>scripts\scr_lifeform_parent_inventory_add.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_player_get_action_inputs.gml</script>
@@ -317,6 +321,7 @@
             <script>scripts\scr_player_gui_party_menu.gml</script>
             <script>scripts\scr_player_gui_party_update_inventory.gml</script>
             <script>scripts\scr_player_gui_party_update_equipment.gml</script>
+            <script>scripts\scr_player_gui_party_update_all.gml</script>
           </scripts>
         </scripts>
         <scripts name="States">
@@ -572,10 +577,15 @@
           </scripts>
         </scripts>
         <script>scripts\scr_equipment_get_stat_name.gml</script>
+        <scripts name="Parent">
+          <script>scripts\scr_item_equipment_parent_use.gml</script>
+          <script>scripts\scr_item_equipment_parent_unequip.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\scr_item_get_stat_name.gml</script>
       <script>scripts\scr_item_type_get_name.gml</script>
       <script>scripts\scr_item_get_use_type.gml</script>
+      <script>scripts\scr_item_inventory_get_slot.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
