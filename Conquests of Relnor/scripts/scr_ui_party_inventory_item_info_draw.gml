@@ -40,7 +40,19 @@ for(var i = 0; i < ITEM_STATS_MAX; i++){
                             _equipmentStatString += ": " + string(_equipmentStat);
                         break;
                     }
-                    draw_text_colour(_x+10,_y, _equipmentStatString, c_white, c_white, c_white, c_white,1);
+                    var _color = c_white;
+                    var _alreadyEquipped = inventoryItem.owner.equipment[inventoryItem.equipmentStats[EQUIPMENT_STATS_TYPE]];
+                    if(_alreadyEquipped != noone &&
+                    _alreadyEquipped != inventoryItem &&
+                    j != EQUIPMENT_STATS_TYPE){
+                       if(inventoryItem.equipmentStats[j] < _alreadyEquipped.equipmentStats[j]){
+                        _color = c_red;
+                       }
+                       else if(inventoryItem.equipmentStats[j] > _alreadyEquipped.equipmentStats[j]){
+                        _color = c_green;
+                       }
+                    }
+                    draw_text_colour(_x+10,_y, _equipmentStatString, _color, _color, _color, _color,1);
                     _y += _yOffset;
                 }
             }
