@@ -1,4 +1,4 @@
-///scr_lifeform_combat_attacks_melee_small
+///scr_player_combat_attacks_melee_small
 
 image_speed = self.attackImageSpeed;
 
@@ -9,41 +9,41 @@ sprite_index = attackSprite[self.face4Way];
 
 switch(self.face8Way){
     case FACE_RIGHT:
-        _oX = 80;
+        _oX = 40;
     break;
     
     case FACE_LEFT:
-        _oX = -80;
+        _oX = -40;
     break;
     
     case FACE_UPPERRIGHT:
-        _oY = -60;
-        _oX = 60;
+        _oY = -30;
+        _oX = 30;
     break;
     case FACE_UPPERLEFT:
-        _oY = -60;
-        _oX = -60;
+        _oY = -30;
+        _oX = -30;
     break;
     case FACE_UP:
-        _oY = -80;
+        _oY = -40;
     break;
     
     case FACE_DOWNRIGHT:
-        _oX = 60;
-        _oY = 60;
+        _oX = 30;
+        _oY = 30;
     break;
     case FACE_DOWNLEFT:
-        _oX = -60;
-        _oY = 60;
+        _oX = -30;
+        _oY = 30;
     break;
     case FACE_DOWN:
-        _oY = 80;
+        _oY = 40;
     break;
 }
 
 if (!attacked && image_index >= 3){
     var dmg = 5;
-    scr_lifeform_damage_create(x,y,obj_damage_melee_medium, dmg, 
+    scr_lifeform_damage_create(x,y,obj_damage_melee_small, dmg, 
     self, x+_oX, y+_oY);
     attacked = true;
 }

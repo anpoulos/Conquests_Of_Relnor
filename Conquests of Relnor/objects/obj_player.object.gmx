@@ -34,13 +34,12 @@ busyState = scr_player_states_busy_state;
 stillSelecting = false;
 commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
+self.isPlayer = true;
 
 //equipment and inventory override
 self.inventory[0] = scr_equipment_create_iron_sword(self);
 self.inventory[1] = scr_equipment_offhand_create_iron_shield(self);
 self.inventory[2] = scr_equipment_weapons_create_wooden_bow(self);
-
-//self.equipment[OFFHAND] = inventory[0];
 
 self.equipment[EQUIPMENT_TYPE_WEAPON] = inventory[0];
 self.equipment[EQUIPMENT_TYPE_OFFHAND] = inventory[1];
@@ -51,15 +50,9 @@ self.size = round(sprite_get_width(spr_player_up));
 
 self.currentMoveSpeed = self.runSpeed;
 
-self.ATTACKS[ATTACK_MELEE] = scr_lifeform_combat_attacks_melee_small;
-self.ATTACKS[ATTACK_RANGE] = scr_player_combat_attacks_projectile_arrow;
-
-self.currentAttack = self.ATTACKS[ATTACK_MELEE];
-
 self.allegiance = ALLEGIANCE_BLUE;
 self.allegianceRank[ALLEGIANCE_BLUE] = 7;
 self.idleState = noone;
-self.isPlayer = true;
 self.hitpoints = 300;
 self.maxHitpoints = self.hitpoints;
 self.energy = 100;

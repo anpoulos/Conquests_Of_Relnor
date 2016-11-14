@@ -42,10 +42,6 @@ self.deadSprite = spr_npc_archer_red_dead;
 self.equipment[WEAPON] = instance_create(x,y,obj_equipment_bows_wooden);
 
 //override
-self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_small;
-self.ATTACKS[ATTACK_RANGE] = scr_npc_combat_attacks_projectile_arrow;
-
-self.currentAttack = self.ATTACKS[ATTACK_RANGE];
 
 </string>
           </argument>

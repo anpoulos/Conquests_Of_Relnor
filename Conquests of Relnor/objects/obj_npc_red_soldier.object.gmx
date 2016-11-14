@@ -45,9 +45,6 @@ self.equipment[WEAPON] = scr_equipment_create_iron_sword(self);
 
 //override
 
-self.ATTACKS[ATTACK_MELEE] = scr_npc_combat_attacks_melee_small;
-self.currentAttack = self.ATTACKS[ATTACK_MELEE];
-
 </string>
           </argument>
         </arguments>

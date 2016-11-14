@@ -259,14 +259,6 @@
           <script>scripts\scr_lifeform_spawn_state.gml</script>
         </scripts>
         <script>scripts\scr_check_triggers.gml</script>
-        <scripts name="Combat">
-          <scripts name="Attacks">
-            <scripts name="Melee">
-              <script>scripts\scr_lifeform_combat_attacks_melee_small.gml</script>
-              <script>scripts\scr_lifeform_combat_attacks_melee_medium.gml</script>
-            </scripts>
-          </scripts>
-        </scripts>
         <script>scripts\scr_lifeform_update_face.gml</script>
         <script>scripts\scr_lifeform_get_energy_bar_state.gml</script>
         <scripts name="Inventory">
@@ -342,7 +334,15 @@
         <script>scripts\scr_player_enable_busy.gml</script>
         <script>scripts\scr_player_disable_busy.gml</script>
         <scripts name="Combat">
-          <script>scripts\scr_player_combat_attacks_projectile_arrow.gml</script>
+          <scripts name="Attacks">
+            <scripts name="Range">
+              <script>scripts\scr_player_combat_attacks_projectile_arrow.gml</script>
+            </scripts>
+            <scripts name="Melee">
+              <script>scripts\scr_player_combat_attacks_melee_medium.gml</script>
+              <script>scripts\scr_player_combat_attacks_melee_small.gml</script>
+            </scripts>
+          </scripts>
         </scripts>
         <script>scripts\scr_player_new_room.gml</script>
       </scripts>

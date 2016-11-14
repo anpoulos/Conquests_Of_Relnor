@@ -10,7 +10,6 @@ updatePath = false;
 previousCellX = 0;
 previousCellY = 0;
 
-attacks[ATTACKS_MAX] = noone;
 currentAttack = noone;
 
 healthBarCurrentBar = 9;
