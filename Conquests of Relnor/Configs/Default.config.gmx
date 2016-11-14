@@ -651,7 +651,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="52">
+    <constants number="56">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">3</constant>
       <constant name="ALLEGIANCE_NEUTRAL">2</constant>
@@ -704,6 +704,10 @@
       <constant name="WEAPON_TYPE_MELEE">0</constant>
       <constant name="WEAPON_TYPE_RANGE">1</constant>
       <constant name="WEAPON">0</constant>
+      <constant name="STATS_MAX">16</constant>
+      <constant name="STATS_STRENGTH">0</constant>
+      <constant name="STATS_HEALTH">1</constant>
+      <constant name="STATS_ENERGY">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

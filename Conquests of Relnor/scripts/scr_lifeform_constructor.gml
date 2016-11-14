@@ -26,6 +26,14 @@ for(var i = 0; i < INVENTORY_MAX; i++){
     inventory[i] = noone;
 }
 
+for(var i = 0; i < STATS_MAX; i++){
+    statsCurrent[i] = noone;
+}
+
+for(var i = 0; i < STATS_MAX; i++){
+    statsMax[i] = noone;
+}
+
 selected = false;
 image_speed = 0;
 currentDepth = depth;
@@ -44,11 +52,11 @@ moveOffsetY = 0;
 reach = 15;
 
 isPlayer = false;
-maxHitpoints = 10;
-hitpoints = 10;
+statsMax[STATS_HEALTH] = 10;
+statsCurrent = statsMax[STATS_HEALTH];
 name = "Lifeform Parent";
-energy = 100;
-maxEnergy = energy;
+statsMax[STATS_ENERGY] = 100;
+statsCurrent = statsMax[STATS_ENERGY];
 sight = 50;
 
 moveToX = noone;

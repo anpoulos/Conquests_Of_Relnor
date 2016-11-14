@@ -13,12 +13,12 @@ if(_lifeform.allegiance == _source.allegiance){
     return false;
 }
 
-if( (_lifeform.hitpoints - _damage.amount) <= 0){
-    _lifeform.hitpoints = 0;
+if( (_lifeform.statsCurrent[STATS_HEALTH] - _damage.amount) <= 0){
+    _lifeform.statsCurrent[STATS_HEALTH] = 0;
     _lifeform.state = _lifeform.deathState;
 }
 else{
-    _lifeform.hitpoints -= _damage.amount;
+    _lifeform.statsCurrent[STATS_HEALTH] -= _damage.amount;
 }
 
 var _displayX = _lifeform.x-7+irandom(15);

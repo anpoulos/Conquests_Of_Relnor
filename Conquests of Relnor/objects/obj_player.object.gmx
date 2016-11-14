@@ -53,9 +53,13 @@ self.currentMoveSpeed = self.runSpeed;
 self.allegiance = ALLEGIANCE_BLUE;
 self.allegianceRank[ALLEGIANCE_BLUE] = 7;
 self.idleState = noone;
-self.hitpoints = 300;
-self.maxHitpoints = self.hitpoints;
-self.energy = 100;
+
+self.statsMax[STATS_HEALTH] = 200;
+self.statsCurrent[STATS_HEALTH] = self.statsMax[STATS_HEALTH];
+
+self.statsMax[STATS_ENERGY] = 100;
+self.statsCurrent[STATS_ENERGY] = self.statsMax[STATS_ENERGY];
+
 self.name = "Player";
 
 self.attackSprite[UP] = spr_player_up;
