@@ -21,16 +21,17 @@ else{
     if(triggers[TRIGGER_DASH]){
         //state = scr_lifeform_dash_state;
         //self.alarm[0] = dashSpeed;
-        if(statsCurrent[STATS_ENERGY] > 0){
-            statsCurrent[STATS_ENERGY] -= 1;
+        if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] > 0){
+            statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] -= 1;
             self.length = self.dashSpeed;
         }
     }
 }
 
 //recover energy if not moving or using
-if(statsCurrent[STATS_ENERGY] < statsMax[STATS_ENERGY] && (!triggers[TRIGGER_DASH] || self.length == 0)){
-    statsCurrent[STATS_ENERGY] += 1;
+if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] < statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] && 
+(!triggers[TRIGGER_DASH] || self.length == 0)){
+    statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] += 1;
 }
 
 

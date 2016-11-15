@@ -651,7 +651,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="56">
+    <constants number="72">
       <constant name="ALLEGIANCE_BLUE">0</constant>
       <constant name="ALLEGIANCE_MAX">3</constant>
       <constant name="ALLEGIANCE_NEUTRAL">2</constant>
@@ -691,6 +691,26 @@
       <constant name="MOVEMENT_ACCURACY">5</constant>
       <constant name="OFFHAND">1</constant>
       <constant name="RIGHT">0</constant>
+      <constant name="STATS_COMMANDING_DISCIPLINE">1</constant>
+      <constant name="STATS_COMMANDING_INSPIRATION">0</constant>
+      <constant name="STATS_COMMANDING_MAX">2</constant>
+      <constant name="STATS_COMMANDING">2</constant>
+      <constant name="STATS_INTELLIGENCE_INTERPRETATION">1</constant>
+      <constant name="STATS_INTELLIGENCE_LANGUAGES">0</constant>
+      <constant name="STATS_INTELLIGENCE_MAX">2</constant>
+      <constant name="STATS_INTELLIGENCE">3</constant>
+      <constant name="STATS_MAX">4</constant>
+      <constant name="STATS_PHYSICAL_ENERGY">2</constant>
+      <constant name="STATS_PHYSICAL_HEALTH">1</constant>
+      <constant name="STATS_PHYSICAL_MAX">3</constant>
+      <constant name="STATS_PHYSICAL_STRENGTH">0</constant>
+      <constant name="STATS_PHYSICAL">0</constant>
+      <constant name="STATS_TOOLS_BOWS">1</constant>
+      <constant name="STATS_TOOLS_KNIVES">2</constant>
+      <constant name="STATS_TOOLS_MAX">4</constant>
+      <constant name="STATS_TOOLS_SHIELDS">3</constant>
+      <constant name="STATS_TOOLS_SWORDS">0</constant>
+      <constant name="STATS_TOOLS">1</constant>
       <constant name="STRING_GAME_TITLE">"Conquests of Relnor"</constant>
       <constant name="TRIGGER_ATTACK">0</constant>
       <constant name="TRIGGER_DASH">1</constant>
@@ -704,10 +724,6 @@
       <constant name="WEAPON_TYPE_MELEE">0</constant>
       <constant name="WEAPON_TYPE_RANGE">1</constant>
       <constant name="WEAPON">0</constant>
-      <constant name="STATS_MAX">16</constant>
-      <constant name="STATS_STRENGTH">0</constant>
-      <constant name="STATS_HEALTH">1</constant>
-      <constant name="STATS_ENERGY">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

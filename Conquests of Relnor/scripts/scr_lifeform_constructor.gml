@@ -26,13 +26,7 @@ for(var i = 0; i < INVENTORY_MAX; i++){
     inventory[i] = noone;
 }
 
-for(var i = 0; i < STATS_MAX; i++){
-    statsCurrent[i] = noone;
-}
-
-for(var i = 0; i < STATS_MAX; i++){
-    statsMax[i] = noone;
-}
+scr_lifeform_constructor_initialize_stats();
 
 selected = false;
 image_speed = 0;
@@ -52,11 +46,11 @@ moveOffsetY = 0;
 reach = 15;
 
 isPlayer = false;
-statsMax[STATS_HEALTH] = 10;
-statsCurrent = statsMax[STATS_HEALTH];
+statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = 10;
+statsCurrent = statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
 name = "Lifeform Parent";
-statsMax[STATS_ENERGY] = 100;
-statsCurrent = statsMax[STATS_ENERGY];
+statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = 100;
+statsCurrent = statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY];
 sight = 50;
 
 moveToX = noone;

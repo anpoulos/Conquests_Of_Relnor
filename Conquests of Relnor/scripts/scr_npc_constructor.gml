@@ -1,10 +1,10 @@
 ///scr_npc_constructor(name, hitpoints, energy, reach, sight, wanderDistance, allegiance, allegianceRank)
 
 self.name = argument0;
-self.statsMax[STATS_HEALTH] = argument1;
-self.statsCurrent[STATS_HEALTH] = argument1;
-self.statsMax[STATS_ENERGY] = argument2;
-self.statsCurrent[STATS_ENERGY] = argument2;
+self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = argument1;
+self.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = argument1;
+self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = argument2;
+self.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = argument2;
 self.reach = argument3;
 self.sight = argument4;
 self.wanderDistance = argument5;

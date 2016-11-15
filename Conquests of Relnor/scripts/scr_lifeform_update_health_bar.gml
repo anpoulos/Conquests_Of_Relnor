@@ -2,7 +2,7 @@
 
 //healthbar has 9 states, 0-9 no fill to full fill
 
-var hpRatio = argument0.statsCurrent[STATS_HEALTH] / argument0.statsMax[STATS_HEALTH];
+var hpRatio = argument0.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] / argument0.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
 var barState = round(hpRatio*9);
 
 argument0.healthBarCurrentBar = barState;

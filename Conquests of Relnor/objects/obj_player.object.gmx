@@ -54,11 +54,11 @@ self.allegiance = ALLEGIANCE_BLUE;
 self.allegianceRank[ALLEGIANCE_BLUE] = 7;
 self.idleState = noone;
 
-self.statsMax[STATS_HEALTH] = 200;
-self.statsCurrent[STATS_HEALTH] = self.statsMax[STATS_HEALTH];
+self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = 200;
+self.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
 
-self.statsMax[STATS_ENERGY] = 100;
-self.statsCurrent[STATS_ENERGY] = self.statsMax[STATS_ENERGY];
+self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = 100;
+self.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY];
 
 self.name = "Player";
 
