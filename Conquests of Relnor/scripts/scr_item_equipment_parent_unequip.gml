@@ -11,6 +11,6 @@ if(scr_lifeform_parent_inventory_get_free_space(owner) < _freeSpaceNeeded){
 owner.equipment[self.equipmentStats[EQUIPMENT_STATS_TYPE]] = noone;
 
 scr_lifeform_parent_inventory_add(owner, self);
-scr_player_gui_party_update_all(owner);
+scr_player_gui_party_update_all();
 
 return true;

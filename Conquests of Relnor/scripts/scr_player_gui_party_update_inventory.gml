@@ -1,14 +1,15 @@
 ///scr_player_gui_party_update_inventory
 
 //clear old order and refresh with new order
+    
+var selectedPlayer = InventoryInfoContainerItemStats.player;
+    
 var _x = PauseMenuInventoryContainer.leftX + 30;
 var _y = PauseMenuInventoryContainer.topY + 30;
 var _yOffset = 30;
 for(var i = 0; i < INVENTORY_MAX; i++){
     InventoryContainerRow[i].useItemButton.isVisible = false;
     InventoryContainerRow[i].isSelected = false;
-    
-    var selectedPlayer = InventoryInfoContainerItemStats.player;
     
     if(selectedPlayer.inventory[i] != noone){
         InventoryContainerRow[i].x = _x;

@@ -315,6 +315,9 @@
             <script>scripts\scr_player_gui_party_update_inventory.gml</script>
             <script>scripts\scr_player_gui_party_update_equipment.gml</script>
             <script>scripts\scr_player_gui_party_update_all.gml</script>
+            <script>scripts\scr_player_gui_party_character_clicked.gml</script>
+            <script>scripts\scr_player_gui_party_create_character_panel.gml</script>
+            <script>scripts\scr_player_gui_party_update_character_panels.gml</script>
           </scripts>
         </scripts>
         <scripts name="States">
@@ -342,6 +345,7 @@
             <scripts name="Melee">
               <script>scripts\scr_player_combat_attacks_melee_medium.gml</script>
               <script>scripts\scr_player_combat_attacks_melee_small.gml</script>
+              <script>scripts\scr_player_combat_attacks_melee_fists.gml</script>
             </scripts>
           </scripts>
         </scripts>
@@ -390,6 +394,7 @@
               <scripts name="Melee">
                 <script>scripts\scr_npc_combat_attacks_melee_medium.gml</script>
                 <script>scripts\scr_npc_combat_attacks_melee_small.gml</script>
+                <script>scripts\scr_npc_combat_attacks_melee_fists.gml</script>
               </scripts>
             </scripts>
             <script>scripts\scr_npc_combat_lock_target.gml</script>
@@ -455,6 +460,7 @@
           <script>scripts\scr_ui_party_inventory_row_draw.gml</script>
           <script>scripts\scr_ui_party_inventory_row_clicked.gml</script>
           <script>scripts\scr_ui_party_inventory_item_info_draw.gml</script>
+          <script>scripts\scr_ui_party_character_panel_draw.gml</script>
         </scripts>
         <scripts name="Health Bar">
           <script>scripts\scr_ui_health_bar_draw.gml</script>
@@ -531,6 +537,7 @@
       <script>scripts\scr_linked_list_add.gml</script>
       <script>scripts\scr_linked_list_destroy.gml</script>
       <script>scripts\scr_linked_list_clear.gml</script>
+      <script>scripts\scr_linked_list_is_empty.gml</script>
     </scripts>
     <scripts name="Room">
       <script>scripts\scr_destroy_instance.gml</script>
@@ -694,6 +701,7 @@
         <objects name="Party">
           <object>objects\obj_ui_party_inventory_row</object>
           <object>objects\obj_ui_party_inventory_item_info</object>
+          <object>objects\obj_ui_party_character_panel</object>
         </objects>
         <objects name="Clickable">
           <objects name="Button">

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_ui_draw_parent</parentName>
+  <parentName>obj_ui_clickable_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -29,21 +29,24 @@
 
 event_inherited();
 
-leftX = noone;
-topY = noone;
-rightX = noone;
-bottomY = noone;
+character = noone;
+player = noone;
 
-clickedAs = noone;
-clickedScript = noone;
-delay = 1; //1 by default
-pressed = false;
+clickedAs = self;
+clickedScript = scr_player_gui_party_character_clicked;
+
+drawScript = scr_ui_party_character_panel_draw;
+menuContainer = noone;
+
+selected = false;
+
+dimDelay = 0.5;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -60,19 +63,10 @@ pressed = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Clicked Delay Alarm
-pressed = false;
+            <string>///Destroy
 
-if(self.clickedScript != noone){
-    if(self.clickedAs != noone){
-        var _script = clickedScript;
-        with(self.clickedAs){
-            script_execute(_script);
-        }  
-    }  
-    else{
-        script_execute(self.clickedScript);
-    }
+with(menuContainer){
+    instance_destroy();
 }
 </string>
           </argument>

@@ -16,8 +16,9 @@ if(PauseText != noone){
 }
 
 if(PauseMenuContainer != noone){
+    InventoryInfoContainerItemStats.player = self;
     InventoryInfoContainerItemStats.useItemButton.isVisible = false;
-    scr_player_gui_party_update_inventory();
+    scr_player_gui_party_update_all();
     PauseMenuContainer.isVisible = true;
     return true;
 }
@@ -85,24 +86,8 @@ var _margin = 10;
     scr_destroy_instance(_menuPosArray);
     
     //Character Information Panels
-    var _charPanelColor = make_colour_rgb(100,100,150);
-    var _charPanelColors = scr_create_obj_array4_repeat(_charPanelColor, "_charPanelColor");
-    
-    var _width = 80;
-    var _height = 80;
-    
-    var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
-
-    var _menuX = PauseMenuPlayerInformationContainer.leftX + _menuPosArray.item[2] + _margin;
-    var _menuY = PauseMenuPlayerInformationContainer.topY + _menuPosArray.item[3] + _margin;
-    
-    var _panel = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _charPanelColors, true, 0.9, noone);
-    
-    scr_ui_menu_container_add_draw_object(_panel, PauseMenuPlayerInformationContainer);
-    _panel.isVisible = true;
-    
-    scr_destroy_instance(_charPanelColors);
-    scr_destroy_instance(_menuPosArray);
+        CharacterPanels = scr_linked_list_create();
+        scr_player_gui_party_update_character_panels();
     //End of Character Information Panels
     
 //End of Character Information Container
@@ -172,7 +157,6 @@ var _margin = 10;
         scr_destroy_instance(_menuColorArray);
         scr_destroy_instance(_menuPosArray);          
         
-        InventoryInfoContainerItemStats = instance_create(x,y,obj_ui_party_inventory_item_info);
         InventoryInfoContainerItemStats.inventoryInfoContainer = InventoryInfoContainer;
         InventoryInfoContainerItemStats.player = self;
         

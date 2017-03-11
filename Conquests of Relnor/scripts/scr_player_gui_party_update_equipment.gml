@@ -1,14 +1,14 @@
 ///scr_player_gui_party_update_equipment
 
 //clear old order and refresh with new order
+var selectedPlayer = InventoryInfoContainerItemStats.player;
+
 var _x = InventoryCenterLine.x1 + 30;
 var _y = PauseMenuInventoryContainer.topY + 30;
 var _yOffset = 30;
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
     EquipmentInventoryContainerRow[i].useItemButton.isVisible = false;
     EquipmentInventoryContainerRow[i].isSelected = false;
-    
-    var selectedPlayer = InventoryInfoContainerItemStats.player;
     
     if(selectedPlayer.equipment[i] != noone){
         EquipmentInventoryContainerRow[i].x = _x;

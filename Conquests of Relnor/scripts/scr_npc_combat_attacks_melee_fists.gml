@@ -1,4 +1,4 @@
-///scr_npc_combat_attacks_melee_small
+///scr_npc_combat_attacks_melee_fists
 
 image_speed = self.attackImageSpeed;
 
