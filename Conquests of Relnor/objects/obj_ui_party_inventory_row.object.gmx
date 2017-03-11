@@ -39,6 +39,7 @@ inventoryContainerRow[INVENTORY_MAX] = noone;
 player = noone;
 isEquipped = false;
 isSelected = false;
+inventoryInfoContainerItemStats = noone;
 
 useItemButton = noone;
 </string>

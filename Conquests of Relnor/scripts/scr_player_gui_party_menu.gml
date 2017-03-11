@@ -83,6 +83,28 @@ var _margin = 10;
     
     scr_destroy_instance(_menuColorArray);
     scr_destroy_instance(_menuPosArray);
+    
+    //Character Information Panels
+    var _charPanelColor = make_colour_rgb(100,100,150);
+    var _charPanelColors = scr_create_obj_array4_repeat(_charPanelColor, "_charPanelColor");
+    
+    var _width = 80;
+    var _height = 80;
+    
+    var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
+
+    var _menuX = PauseMenuPlayerInformationContainer.leftX + _menuPosArray.item[2] + _margin;
+    var _menuY = PauseMenuPlayerInformationContainer.topY + _menuPosArray.item[3] + _margin;
+    
+    var _panel = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _charPanelColors, true, 0.9, noone);
+    
+    scr_ui_menu_container_add_draw_object(_panel, PauseMenuPlayerInformationContainer);
+    _panel.isVisible = true;
+    
+    scr_destroy_instance(_charPanelColors);
+    scr_destroy_instance(_menuPosArray);
+    //End of Character Information Panels
+    
 //End of Character Information Container
 
 //Inventory Container

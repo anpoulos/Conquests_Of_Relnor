@@ -6,6 +6,10 @@ var _size = INVENTORY_MAX;
 if(isEquipped){
     _size = EQUIPMENT_TYPE_MAX;
     _buttonText = "Unequip";
+    itemInfo.useItemButton.clickedScript = inventoryItem.unequipScript;
+}
+else{
+    itemInfo.useItemButton.clickedScript = inventoryItem.useScript;
 }
 
 //disable others
@@ -33,7 +37,6 @@ itemInfo.inventoryItem = inventoryItem;
 
 itemInfo.useItemButton.text = _buttonText;
 itemInfo.useItemButton.clickedAs = inventoryItem;
-itemInfo.useItemButton.clickedScript = inventoryItem.useScript;
 itemInfo.useItemButton.isVisible = true;
 
 player.InventoryInfoContainer.isVisible = true;

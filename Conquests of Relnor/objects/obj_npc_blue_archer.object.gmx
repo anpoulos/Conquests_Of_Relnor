@@ -39,7 +39,7 @@ spr_npc_blue_archer_right, spr_npc_blue_archer_left, 30);
 self.deadSprite = noone;
 
 //equipment and inventory override
-self.equipment[WEAPON] = instance_create(x,y,obj_equipment_bows_wooden);
+self.equipment[WEAPON] = scr_equipment_weapons_create_wooden_bow(self);
 
 //override
 self.wanderDistance = 0;

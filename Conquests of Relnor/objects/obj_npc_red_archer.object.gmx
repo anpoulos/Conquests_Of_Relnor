@@ -39,7 +39,7 @@ spr_npc_archer_red_right, spr_npc_archer_red_left, 30);
 self.deadSprite = spr_npc_archer_red_dead;
 
 //equipment and inventory override
-self.equipment[WEAPON] = instance_create(x,y,obj_equipment_bows_wooden);
+self.equipment[WEAPON] = scr_equipment_weapons_create_wooden_bow(self);
 
 //override
 
