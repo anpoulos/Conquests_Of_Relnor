@@ -1,7 +1,7 @@
 ///scr_player_create_gui
 
 Menus = scr_linked_list_create();
-ClickedUIObject = noone;
+ClickedUIObjects = scr_linked_list_create();
 ControlMenuContainer = noone;
 SaveGameMenuContainer = noone;
 PauseText = noone;

@@ -29,12 +29,13 @@
 
 event_inherited();
 
-clickedAs = noone;
-clickedScript = noone;
 leftX = noone;
 topY = noone;
 rightX = noone;
 bottomY = noone;
+
+clickedAs = noone;
+clickedScript = noone;
 delay = noone;
 pressed = false;
 </string>

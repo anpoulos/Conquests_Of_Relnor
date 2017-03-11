@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_ui_draw_parent</parentName>
+  <parentName>obj_ui_clickable_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,13 +30,9 @@ event_inherited();
 name = "UI Menu Container";
 
 stepScript = noone;
-buttonPressed = false;
+//buttonPressed = false; //i dont think i need this for anything?
 objects = scr_linked_list_create();
 
-leftX = noone;
-topY = noone;
-rightX = noone;
-bottomY = noone;
 topLeftColor = noone;
 topRightColor = noone;
 bottomRightColor = noone;
@@ -46,7 +42,6 @@ menuAlpha = noone;
 
 stretchedX = noone;
 stretchedY = noone;
-
 //overrides
 self.drawScript = scr_ui_menu_draw;
 </string>
