@@ -304,7 +304,9 @@ other.myCollisionTurn = true;
 if(keyboard_check(ord('T'))){
     if(!isBusy){
         scr_player_enable_busy();
-        ChatWindow = scr_ui_chat_constructor(self, other, noone, noone);
+        ChatWindow = scr_ui_chat_constructor(self, other);
+        scr_ui_open_chat(ChatWindow);
+        scr_linked_list_add(Menus, ChatWindow.ChatContainer);
     }
 }
 </string>
@@ -727,7 +729,7 @@ instance_create(x+100, y, obj_npc_red_cavalry);
             <kind>1</kind>
             <string>///Talk To
 
-scr_player_commands_talk_to_closest_selected();
+scr_player_talk_to_closest();
 </string>
           </argument>
         </arguments>

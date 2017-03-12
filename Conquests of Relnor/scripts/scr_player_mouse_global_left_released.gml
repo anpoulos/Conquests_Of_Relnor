@@ -5,9 +5,7 @@ if(isBusy || scr_linked_list_size(ClickedUIObjects) > 0){
     while(scr_linked_list_size(ClickedUIObjects) > 0){
         var _uiObject = scr_linked_list_remove_next(ClickedUIObjects);
         //all objects in this list are from the clickable parent class
-        if(_uiObject.clickedAs != noone){
-            _uiObject.alarm[0] = _uiObject.delay;
-        }
+        _uiObject.alarm[0] = _uiObject.delay;
     }    
 
     return false;

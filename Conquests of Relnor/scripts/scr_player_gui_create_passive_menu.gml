@@ -26,7 +26,7 @@ scr_destroy_instance(_passiveMenuPosArray);
     var _talkButtonX = PassiveMenuContainer.x;
     var _talkButtonY = PassiveMenuContainer.y-30;
     
-    var _talkButtonInfo = scr_ui_get_obj_ui_button_information(5,scr_player_commands_talk_to_closest_selected,self,"Talk To",fnt_default_medium,_fontColor,0.7,0.6);
+    var _talkButtonInfo = scr_ui_get_obj_ui_button_information(5,scr_player_commands_talk_to_selected,self,"Talk To",fnt_default_medium,_fontColor,0.7,0.6);
     
     TalkButton = scr_ui_button_constructor(_talkButtonX,_talkButtonY, _talkButtonPositionArray, _talkButtonColorArray, 
     _talkButtonPressedColor, true, _talkButtonInfo, PassiveMenuContainer);

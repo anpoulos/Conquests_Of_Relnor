@@ -293,7 +293,7 @@
             <script>scripts\scr_player_commands_reset.gml</script>
             <script>scripts\scr_player_commands_selected_enable_defense.gml</script>
             <script>scripts\scr_player_commands_selected_disable_defense.gml</script>
-            <script>scripts\scr_player_commands_talk_to_closest_selected.gml</script>
+            <script>scripts\scr_player_commands_talk_to_selected.gml</script>
           </scripts>
           <script>scripts\scr_player_command_module_initialize.gml</script>
         </scripts>
@@ -350,6 +350,7 @@
           </scripts>
         </scripts>
         <script>scripts\scr_player_new_room.gml</script>
+        <script>scripts\scr_player_talk_to_closest.gml</script>
       </scripts>
       <scripts name="NPC">
         <scripts name="Parent">
@@ -444,6 +445,10 @@
         <script>scripts\scr_ui_button_chat_next.gml</script>
         <script>scripts\scr_ui_button_chat_close.gml</script>
         <script>scripts\scr_ui_chat_constructor.gml</script>
+        <script>scripts\scr_ui_chat_load_file.gml</script>
+        <script>scripts\scr_ui_open_chat.gml</script>
+        <script>scripts\scr_ui_chat_load_branch.gml</script>
+        <script>scripts\scr_ui_chat_button_branch.gml</script>
       </scripts>
       <scripts name="Buttons">
         <scripts name="Commands">
@@ -595,6 +600,10 @@
       <script>scripts\scr_item_type_get_name.gml</script>
       <script>scripts\scr_item_get_use_type.gml</script>
       <script>scripts\scr_item_inventory_get_slot.gml</script>
+    </scripts>
+    <scripts name="String">
+      <script>scripts\scr_string_compare.gml</script>
+      <script>scripts\scr_string_split.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
