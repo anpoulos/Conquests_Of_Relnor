@@ -1348,8 +1348,8 @@
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
                     "name": "inst_AC4C10CD",
-                    "x": 336,
-                    "y": 1120,
+                    "x": 448,
+                    "y": 864,
                     "IsDnD": false,
                     "colour": {
                         "Value": 4294967295
