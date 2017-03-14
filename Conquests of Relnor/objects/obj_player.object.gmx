@@ -727,9 +727,24 @@ instance_create(x+100, y, obj_npc_red_cavalry);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Talk To
+            <string>///T Pressed
 
-scr_player_talk_to_closest();
+if(scr_player_talk_to_closest()){
+
+}
+else{
+    for(i = 0; i &lt; instance_number(obj_map_door_invisible); i++){
+        var _doorInvisible = instance_find(obj_map_door_invisible, i);
+        if( (x &lt;= _doorInvisible.rightX &amp;&amp; x &gt;= _doorInvisible.leftX) &amp;&amp; 
+            (y &lt;= _doorInvisible.bottomY &amp;&amp; y &gt;= _doorInvisible.topY) ){
+                _doorInvisible.player = self;
+                with(_doorInvisible){
+                    script_execute(doorOpenedScript);
+                }
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>

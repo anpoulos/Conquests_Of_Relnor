@@ -194,17 +194,152 @@
     <sprites name="Obj">
       <sprite>sprites\spr_obj_unwalkable</sprite>
     </sprites>
-    <sprite>sprites\spr_map_unwalkable_medium</sprite>
     <sprites name="Map">
       <sprites name="Door">
         <sprite>sprites\spr_map_door_wooden_1</sprite>
+        <sprite>sprites\spr_map_door_placeholder</sprite>
         <sprite>sprites\spr_map_door_wooden_2</sprite>
         <sprite>sprites\spr_map_door_wooden_3</sprite>
         <sprite>sprites\spr_map_door_wooden_4</sprite>
         <sprite>sprites\spr_map_door_wooden_5</sprite>
       </sprites>
+      <sprites name="Clutter">
+        <sprites name="Chair">
+          <sprite>sprites\spr_map_clutter_chair_01_U</sprite>
+          <sprite>sprites\spr_map_clutter_chair_01_R</sprite>
+          <sprite>sprites\spr_map_clutter_chair_01_L</sprite>
+          <sprite>sprites\spr_map_clutter_chair_01_D</sprite>
+        </sprites>
+        <sprites name="Stool">
+          <sprite>sprites\spr_map_clutter_stool_01</sprite>
+          <sprite>sprites\spr_map_clutter_stool_02</sprite>
+          <sprite>sprites\spr_map_clutter_stool_04</sprite>
+          <sprite>sprites\spr_map_clutter_stool_03</sprite>
+        </sprites>
+        <sprites name="Table">
+          <sprite>sprites\spr_map_clutter_table_01</sprite>
+          <sprite>sprites\spr_map_clutter_table_02</sprite>
+          <sprite>sprites\spr_map_clutter_table_03</sprite>
+          <sprite>sprites\spr_map_clutter_table_04</sprite>
+        </sprites>
+        <sprites name="Drink">
+          <sprite>sprites\spr_map_clutter_drink_01</sprite>
+          <sprite>sprites\spr_map_clutter_drink_spilled_02</sprite>
+          <sprite>sprites\spr_map_clutter_drinks_01</sprite>
+          <sprite>sprites\spr_map_clutter_drink_spilled_01</sprite>
+          <sprite>sprites\spr_map_clutter_drinks_02</sprite>
+          <sprite>sprites\spr_map_clutter_drink_02</sprite>
+        </sprites>
+        <sprites name="Bottle">
+          <sprite>sprites\spr_map_clutter_bottle_01</sprite>
+          <sprite>sprites\spr_map_cluter_bottle_02</sprite>
+          <sprite>sprites\spr_map_clutter_bottle_03</sprite>
+          <sprite>sprites\spr_map_clutter_bottle_04</sprite>
+        </sprites>
+        <sprites name="Barrel">
+          <sprite>sprites\spr_map_clutter_barrel_01</sprite>
+          <sprite>sprites\spr_map_clutter_barrel_tools_01</sprite>
+        </sprites>
+        <sprites name="Light">
+          <sprite>sprites\spr_map_clutter_light_candle_01_U</sprite>
+          <sprite>sprites\spr_map_clutter_light_wall_torch_01_U_L</sprite>
+          <sprite>sprites\spr_map_clutter_light_wall_torch_02_U_L</sprite>
+          <sprite>sprites\spr_map_clutter_light_wall_torch_02_U_R</sprite>
+          <sprite>sprites\spr_map_clutter_light_wall_torch_02_U_C</sprite>
+          <sprite>sprites\spr_map_clutter_light_wall_torch_01_U_C</sprite>
+          <sprite>sprites\spr_map_clutter_light_wall_torch_01_U_R</sprite>
+        </sprites>
+        <sprites name="Pot">
+          <sprite>sprites\spr_map_clutter_pot_clay_01_F</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_E</sprite>
+          <sprite>sprites\spr_map_clutter_pot_clay_01_E</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f01</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f02</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f03</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f04</sprite>
+          <sprite>sprites\spr_map_clutter_pot_tree_01_f01</sprite>
+          <sprite>sprites\spr_map_clutter_pot_stone_01_E</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f05</sprite>
+          <sprite>sprites\spr_map_clutter_pot_stone_01_F</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f06</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f07</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f08</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f09</sprite>
+          <sprite>sprites\spr_map_clutter_pot_tree_01_E</sprite>
+          <sprite>sprites\spr_map_clutter_pot_flower_01_f10</sprite>
+        </sprites>
+        <sprites name="Bucket">
+          <sprite>sprites\spr_map_clutter_bucket_01_E</sprite>
+        </sprites>
+        <sprites name="Sack">
+          <sprite>sprites\spr_map_clutter_sack_01_pile</sprite>
+          <sprite>sprites\spr_map_clutter_sack_01</sprite>
+        </sprites>
+        <sprites name="Crate">
+          <sprite>sprites\spr_map_clutter_crate_large_01</sprite>
+          <sprite>sprites\spr_map_clutter_crate_medium_01</sprite>
+          <sprite>sprites\spr_map_clutter_crate_large_02</sprite>
+        </sprites>
+        <sprites name="Chest">
+          <sprite>sprites\spr_map_clutter_chest_01_closed</sprite>
+        </sprites>
+        <sprites name="Weapon">
+          <sprite>sprites\spr_map_clutter_weapon_sword_02_s01</sprite>
+          <sprite>sprites\spr_map_clutter_weapon_spear_01_s01</sprite>
+          <sprite>sprites\spr_map_clutter_weapon_warhammer_01_s01</sprite>
+          <sprite>sprites\spr_map_clutter_weapon_sword_01_s01</sprite>
+          <sprite>sprites\spr_map_clutter_weapon_longaxe_01_s01</sprite>
+          <sprite>sprites\spr_map_clutter_weapon_waraxe_01_s01</sprite>
+        </sprites>
+        <sprites name="Tool">
+          <sprite>sprites\spr_map_clutter_tool_saw_01_s01</sprite>
+          <sprite>sprites\spr_map_clutter_tool_saw_01_s02</sprite>
+          <sprite>sprites\spr_map_clutter_tool_saw_02_s01</sprite>
+        </sprites>
+        <sprites name="Bed">
+          <sprite>sprites\spr_map_clutter_bed_02</sprite>
+          <sprite>sprites\spr_map_clutter_bed_03</sprite>
+          <sprite>sprites\spr_map_clutter_bed_01</sprite>
+        </sprites>
+        <sprites name="Dresser">
+          <sprite>sprites\spr_map_clutter_dresser_01_W</sprite>
+          <sprite>sprites\spr_map_clutter_dresser_02</sprite>
+          <sprite>sprites\spr_map_clutter_dresser_01</sprite>
+          <sprite>sprites\spr_map_clutter_dresser_02_W</sprite>
+        </sprites>
+        <sprites name="Counter">
+          <sprite>sprites\spr_map_clutter_counter_01</sprite>
+          <sprite>sprites\spr_map_clutter_counter_01_end</sprite>
+        </sprites>
+        <sprites name="Forge">
+          <sprite>sprites\spr_map_clutter_forge_01</sprite>
+          <sprite>sprites\spr_map_clutter_forge_anvil</sprite>
+        </sprites>
+        <sprites name="Stand">
+          <sprite>sprites\spr_map_clutter_stand_01_E</sprite>
+          <sprite>sprites\spr_map_clutter_stand_01_f01</sprite>
+          <sprite>sprites\spr_map_clutter_stand_01_f02</sprite>
+        </sprites>
+        <sprites name="Statue">
+          <sprite>sprites\spr_map_clutter_statue_01_C</sprite>
+          <sprite>sprites\spr_map_clutter_statue_01_R</sprite>
+          <sprite>sprites\spr_map_clutter_statue_01_L</sprite>
+        </sprites>
+        <sprites name="Wardrobe">
+          <sprite>sprites\spr_map_clutter_wardrobe_01</sprite>
+          <sprite>sprites\spr_map_clutter_wardrobe_01_W</sprite>
+        </sprites>
+        <sprites name="Bookshelf">
+          <sprite>sprites\spr_map_clutter_bookshelf_01_W</sprite>
+          <sprite>sprites\spr_map_clutter_bookshelf_01</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Foreground">
+        <sprite>sprites\spr_map_foreground_black</sprite>
+        <sprite>sprites\spr_map_foreground_placeholder</sprite>
+      </sprites>
+      <sprite>sprites\spr_map_unwalkable_medium</sprite>
     </sprites>
-    <sprite>sprites\spr_inventory_parent</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Test">
@@ -266,6 +401,7 @@
           <script>scripts\scr_lifeform_parent_inventory_add.gml</script>
         </scripts>
         <script>scripts\scr_lifeform_constructor_initialize_stats.gml</script>
+        <script>scripts\scr_lifeform_is_facing.gml</script>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_player_get_action_inputs.gml</script>
@@ -743,6 +879,7 @@
       <objects name="Door">
         <objects name="Parent">
           <object>objects\obj_map_door_parent</object>
+          <object>objects\obj_map_door_invisible</object>
         </objects>
         <object>objects\obj_map_door_wooden_1</object>
         <object>objects\obj_map_door_wooden_2</object>
@@ -752,10 +889,62 @@
       </objects>
       <objects name="unwalkable">
         <object>objects\obj_unwalkable</object>
+        <object>objects\obj_map_foreground_black</object>
         <object>objects\obj_map_unwalkable_medium</object>
       </objects>
       <objects name="initialize">
         <object>objects\obj_map_initialize</object>
+      </objects>
+      <objects name="Clutter">
+        <objects name="Stool">
+          <object>objects\obj_map_clutter_stool_01</object>
+          <object>objects\obj_map_clutter_stool_02</object>
+        </objects>
+        <objects name="Table">
+          <object>objects\obj_map_clutter_table_01</object>
+          <object>objects\obj_map_clutter_table_02</object>
+          <object>objects\obj_map_clutter_table_03</object>
+          <object>objects\obj_map_clutter_table_04</object>
+        </objects>
+        <objects name="Counter">
+          <object>objects\obj_map_clutter_counter_01</object>
+          <object>objects\obj_map_clutter_counter_01_end</object>
+        </objects>
+        <objects name="Drink">
+          <object>objects\obj_map_clutter_drink_01</object>
+          <object>objects\obj_map_clutter_drink02</object>
+        </objects>
+        <objects name="Weapon">
+          <object>objects\obj_map_weapon_sword_02_s01</object>
+        </objects>
+        <objects name="Bottle">
+          <object>objects\obj_map_clutter_bottle_01</object>
+          <object>objects\obj_map_clutter_bottle_02</object>
+          <object>objects\obj_map_clutter_bottle_03</object>
+          <object>objects\obj_map_clutter_bottle_04</object>
+        </objects>
+        <objects name="Pot">
+          <object>objects\flower01</object>
+          <object>objects\flower_e</object>
+        </objects>
+        <objects name="Chest">
+          <object>objects\chest_01_c</object>
+        </objects>
+        <objects name="Stand">
+          <object>objects\stand_01</object>
+          <object>objects\stand_02</object>
+          <object>objects\empty</object>
+        </objects>
+        <objects name="Light">
+          <object>objects\obj_map_clutter_light_candle_01_U</object>
+          <object>objects\torch_01_u_L</object>
+          <object>objects\torch_01_u_R</object>
+          <object>objects\torch_01_u_C</object>
+        </objects>
+      </objects>
+      <objects name="Parent">
+        <object>objects\obj_map_solid_parent</object>
+        <object>objects\obj_map_foreground</object>
       </objects>
     </objects>
   </objects>

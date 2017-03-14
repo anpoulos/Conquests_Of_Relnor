@@ -1,5 +1,5 @@
 ///scr_map_door_parent_opened
 
 if(destinationRoom != noone){
-    room_goto(destinationRoom);
+    scr_player_new_room(newX,newY,destinationRoom);
 }

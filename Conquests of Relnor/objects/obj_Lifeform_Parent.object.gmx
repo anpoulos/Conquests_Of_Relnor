@@ -291,7 +291,7 @@ if(_inFrontOfMe){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_unwalkable">
+    <event eventtype="4" ename="obj_map_solid_parent">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -308,7 +308,7 @@ if(_inFrontOfMe){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///
+            <string>///Empty Code Placeholder
 </string>
           </argument>
         </arguments>
