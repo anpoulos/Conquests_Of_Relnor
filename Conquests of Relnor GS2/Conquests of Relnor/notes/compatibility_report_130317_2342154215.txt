@@ -1,0 +1,63 @@
+Converting GML script : ${project_dir}\scripts\scr_player_get_action_inputs\scr_player_get_action_inputs.gml
+Converted string : line 3 : 'D' -> "D"
+Converted string : line 4 : 'A' -> "A"
+Converted string : line 5 : 'W' -> "W"
+Converted string : line 6 : 'S' -> "S"
+
+Converting GML script : ${project_dir}\scripts\scr_player_mouse_global_right_button\scr_player_mouse_global_right_button.gml
+Converted string : line 7 : 'R' -> "R"
+
+Converting GML script : ${project_dir}\scripts\scr_player_mouse_global_left_button\scr_player_mouse_global_left_button.gml
+Converted string : line 7 : 'R' -> "R"
+
+Converting GML script : ${project_dir}\scripts\scr_ui_chat_load_file\scr_ui_chat_load_file.gml
+Converted string : line 18 : '#' -> "#"
+Converted string : line 39 : '/' -> "/"
+Converted string : line 39 : '/' -> "/"
+
+Converting GML script : ${project_dir}\scripts\scr_ui_chat_load_branch\scr_ui_chat_load_branch.gml
+Converted string : line 25 : '#' -> "#"
+
+Converting GML script : ${project_dir}\scripts\scr_string_split\scr_string_split.gml
+Converted string : line 21 : "\" -> "\\"
+Converted string : line 24 : '"' -> "\""
+
+Font fnt_default_medium has been converted to font family Palatino Linotype (Regular). Font has been regenerated, small inconsistencies may occur.
+Font fnt_default_medium_bold has been converted to font family Palatino Linotype (Bold). Font has been regenerated, small inconsistencies may occur.
+Font fnt_default_large has been converted to font family Palatino Linotype (Regular). Font has been regenerated, small inconsistencies may occur.
+Font fnt_default_small has been converted to font family Palatino Linotype (Regular). Font has been regenerated, small inconsistencies may occur.
+Font fnt_title_large has been converted to font family High Tower Text (Regular). Font has been regenerated, small inconsistencies may occur.
+Font fnt_default_smallest has been converted to font family Palatino Linotype (Regular). Font has been regenerated, small inconsistencies may occur.
+Converting GML script : ${project_dir}\objects\obj_player\Collision_990c1723-f68e-4ac1-a0d9-dcaef53eb5f8.gml
+Converted string : line 3 : 'T' -> "T"
+
+Converting GML script : ${project_dir}\objects\obj_player\Collision_348f5489-a94e-42b6-aad6-f2639f79d04e.gml
+Converted string : line 5 : 'T' -> "T"
+
+Converting GML script : ${project_dir}\objects\obj_player\Mouse_61.gml
+Converted builtin : line 5 : view_wview[0] += 16 -> __view_set( e__VW.WView, 0, __view_get( e__VW.WView, 0 ) + (16) )
+Converted builtin : line 6 : view_hview[0] += 10 -> __view_set( e__VW.HView, 0, __view_get( e__VW.HView, 0 ) + (10) )
+
+Converting GML script : ${project_dir}\objects\obj_player\Mouse_60.gml
+Converted builtin : line 4 : view_wview[0] -= 16 -> __view_set( e__VW.WView, 0, __view_get( e__VW.WView, 0 ) - (16) )
+Converted builtin : line 5 : view_hview[0] -= 10 -> __view_set( e__VW.HView, 0, __view_get( e__VW.HView, 0 ) - (10) )
+
+Converting GML script : ${project_dir}\objects\obj_ui_chat\Create_0.gml
+ERROR : E:\GameMaker Projects\Conquests of Relnor\trunk\Conquests of Relnor GS2\Conquests of Relnor\objects\obj_ui_chat\Create_0.gml : 7 : unexpected syntax error
+ERROR : E:\GameMaker Projects\Conquests of Relnor\trunk\Conquests of Relnor GS2\Conquests of Relnor\objects\obj_ui_chat\Create_0.gml : 7 : expected expression
+ERROR : E:\GameMaker Projects\Conquests of Relnor\trunk\Conquests of Relnor GS2\Conquests of Relnor\objects\obj_ui_chat\Create_0.gml : 9 : unexpected syntax error
+ERROR : E:\GameMaker Projects\Conquests of Relnor\trunk\Conquests of Relnor GS2\Conquests of Relnor\objects\obj_ui_chat\Create_0.gml : 9 : expected expression
+ERROR : E:\GameMaker Projects\Conquests of Relnor\trunk\Conquests of Relnor GS2\Conquests of Relnor\objects\obj_ui_chat\Create_0.gml : 10 : unexpected syntax error
+ERROR : E:\GameMaker Projects\Conquests of Relnor\trunk\Conquests of Relnor GS2\Conquests of Relnor\objects\obj_ui_chat\Create_0.gml : 10 : expected expression
+Too many errors - GML not processed : ${project_dir}\objects\obj_ui_chat\Create_0.gml
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit.
+game speed set to 30
+added compatibility script instance/instance_create.gml
+added compatibility script object/object_get_depth.gml
+added compatibility script view/__view_get.gml
+added compatibility script view/__view_set.gml
+added compatibility script view/__view_set_internal.gml
+added compatibility script view/__init_view.gml
+added compatibility script __init_global.gml
+added compatibility script __global_object_depths.gml

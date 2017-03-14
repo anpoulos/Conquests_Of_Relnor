@@ -1,0 +1,4 @@
+///Create
+
+deadSprite = noone;
+

@@ -1,0 +1,1 @@
+scr_ui_menu_title_initialize();
