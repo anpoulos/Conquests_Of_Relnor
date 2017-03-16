@@ -6,19 +6,19 @@ if(effectsIntelligence != noone){
 }
 
 if(effectsCommanding != noone){
-	for(var i = 0; i < STATS_COMMANDING; i++){
+	for(var i = 0; i < STATS_COMMANDING_MAX; i++){
 		scr_lifeform_increase_current_stat(owner, STATS_COMMANDING, i, effectsCommanding[i]);
 	}
 }
 
 if(effectsPhysical != noone){
-	for(var i = 0; i < STATS_PHYSICAL; i++){
+	for(var i = 0; i < STATS_PHYSICAL_MAX; i++){
 		scr_lifeform_increase_current_stat(owner, STATS_PHYSICAL, i, effectsPhysical[i]);
 	}
 }
 
 if(effectsTools != noone){
-	for(var i = 0; i < STATS_TOOLS; i++){
+	for(var i = 0; i < STATS_TOOLS_MAX; i++){
 		scr_lifeform_increase_current_stat(owner, STATS_TOOLS, i, effectsTools[i]);
 	}
 }
@@ -37,4 +37,8 @@ if(uses == 0){
 			instance_destroy();
 		}
 	}
+}
+
+if(owner.object_index == obj_player){
+	scr_player_gui_update_all();
 }

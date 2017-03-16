@@ -11,11 +11,11 @@ if(_amount == noone || _amount == 0){
 
 var _newStatAmount = _lifeform.statsCurrent[_statType, _statIndex] + _amount;
 
-if(_lifeform.statsCurrent[_statType, _statIndex] > _lifeform.statsMax[_statType, _statIndex]){
+if(_newStatAmount > _lifeform.statsMax[_statType, _statIndex]){
 	_newStatAmount = _lifeform.statsMax[_statType, _statIndex];
 }
 
-if(_lifeform.statsCurrent[_statType, _statIndex] < 0){
+if(_newStatAmount < 0){
 	_newStatAmount = 0;
 }
 
