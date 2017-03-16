@@ -1,5 +1,4 @@
-///Initialize Room
-scr_room_begin_initialize();
+///Constructor, room initialize script called on creation code
 
 var _playerX = x;
 var _playerY = y;

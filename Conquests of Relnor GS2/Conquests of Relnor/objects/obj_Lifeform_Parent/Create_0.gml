@@ -18,6 +18,9 @@ currentAttack = noone;
 healthBarCurrentBar = 9;
 energyBarCurrentBar = 9;
 
+origin = ORIGIN_NONE;
+region = REGION_NONE;
+
 phy_fixed_rotation = true;
 ignoreLifeformCollisions = false;
 

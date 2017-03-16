@@ -1,0 +1,52 @@
+#branch 0
+How's it going soldier?
+#button #branch 1 "Fine"
+#button #close Walk_Away
+
+
+#branch 1
+#title #player_to_#default:
+It's going fine.
+#button #branch 2 Continue
+
+#branch 2
+#title #default:
+That's good to hear.
+You from round the region?
+Or from out of the kingdom?
+#button #branch 3 "I'm from around here."
+#button #branch  "I'm a foreigner to these parts."
+
+#branch 3
+#title #player_to_#default:
+I'm from...
+#button #branch 4 Relnor
+#button #branch 5 Agnor
+#button #branch 6 Deviah
+#button #branch 7 Crossheim
+#button #branch 8 Eckhart
+
+#branch 4
+//Relnor
+#title #default:
+#script 0
+
+#branch 5
+//Agnor
+#title #default:
+#script 1
+
+#branch 6
+//Deviah
+#title #default:
+#script 2
+
+#branch 7
+//Crossheim
+#title #default:
+#script 3
+
+#branch 8
+//Eckhart
+#title #default:
+#script 4

@@ -1,4 +1,0 @@
-#branch 0
-I'll see to it personally that you burn.
-#button 0 #close End_Conversation
-#button 1 #hide
