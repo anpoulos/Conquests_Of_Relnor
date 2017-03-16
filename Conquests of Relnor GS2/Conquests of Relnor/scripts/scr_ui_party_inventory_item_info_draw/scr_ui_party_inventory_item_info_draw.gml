@@ -54,15 +54,14 @@ for(var i = 0; i < ITEM_STATS_MAX; i++){
 					break;
 					
 					case ITEM_TYPE_CONSUMABLE:
-						if(inventoryItem.effectsPhysical != noone){
-							var _statName = scr_lifeform_get_stat_name(ITEM_TYPE_CONSUMABLE, noone);
-							draw_text_colour(_x+5, _y, _statName, _color,_color,_color,_color, 1);
-							_y += _yOffset;
-							
-							for(var i = 0; i < STATS_PHYSICAL_MAX; i++){
-								
-							}
-						}
+						var _useString = "Uses: "+string(inventoryItem.uses);
+						draw_text_colour(_x, _y, _useString, c_white, c_white, c_white, c_white, 1);
+						_y += _yOffset;
+						
+						_y = scr_ui_party_inventory_consumable_draw_effect(STATS_PHYSICAL, _x, _y, _yOffset);
+						_y = scr_ui_party_inventory_consumable_draw_effect(STATS_INTELLIGENCE, _x, _y, _yOffset);
+						_y = scr_ui_party_inventory_consumable_draw_effect(STATS_TOOLS, _x, _y, _yOffset);
+						_y = scr_ui_party_inventory_consumable_draw_effect(STATS_COMMANDING, _x, _y, _yOffset);
 					break;
 					
 				}

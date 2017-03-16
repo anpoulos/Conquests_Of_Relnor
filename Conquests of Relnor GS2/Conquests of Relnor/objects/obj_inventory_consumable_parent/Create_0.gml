@@ -15,3 +15,8 @@ effectsPhysical = noone;
 effectsCommanding = noone;
 effectsTools = noone;
 
+effectsIntelligenceHidden = noone;
+effectsPhysicalHidden = noone;
+effectsCommandingHidden = noone;
+effectsToolsHidden = noone;
+

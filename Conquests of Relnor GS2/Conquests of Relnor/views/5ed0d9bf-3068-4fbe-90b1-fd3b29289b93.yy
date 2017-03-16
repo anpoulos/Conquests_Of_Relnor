@@ -7,7 +7,8 @@
         "47352b0a-b9b3-4ba7-8e5d-b8da5ed61c42",
         "591c35c6-069a-4e07-b6e8-fc700a06b9e3",
         "6fc00636-0c9f-4f89-8891-90deebde410b",
-        "7d41b1c7-d326-4c4a-83c2-423de6f2d607"
+        "7d41b1c7-d326-4c4a-83c2-423de6f2d607",
+        "409ba9b7-163b-432e-ab23-6136d4643c2f"
     ],
     "filterType": "GMScript",
     "folderName": "Party",

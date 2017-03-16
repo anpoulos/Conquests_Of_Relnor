@@ -1903,6 +1903,14 @@
             }
         },
         {
+            "Key": "409ba9b7-163b-432e-ab23-6136d4643c2f",
+            "Value": {
+                "id": "09db2175-bed4-485f-9891-d47b1084e1c6",
+                "resourcePath": "scripts\\scr_ui_party_inventory_consumable_draw_effect\\scr_ui_party_inventory_consumable_draw_effect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "40d5b304-6bf4-49c3-9813-76575c6353e7",
             "Value": {
                 "id": "1928c3eb-c1bc-479f-968e-839be1111ed9",
@@ -7966,6 +7974,7 @@
         "591c35c6-069a-4e07-b6e8-fc700a06b9e3",
         "6fc00636-0c9f-4f89-8891-90deebde410b",
         "7d41b1c7-d326-4c4a-83c2-423de6f2d607",
+        "409ba9b7-163b-432e-ab23-6136d4643c2f",
         "6b07aa7d-f2ac-4de2-84c0-40ac544f6920",
         "ff5154b5-7e65-4cbe-b7bf-dd5ded85a04c",
         "c9ca29c6-2cec-44ee-92c5-b96ed11e84ca",
