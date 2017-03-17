@@ -43,18 +43,40 @@ var _margin = 10;
     scr_destroy_instance(_menuPosArray);
 //End of Menu Container
 
+//Character Stats Container
+	var _menuColor = make_colour_rgb(100,100,150);
+	var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
+	
+	var _height = (PauseMenuContainer.bottomY - PauseMenuContainer.topY - _margin*6)/2;
+	
+    var _width = round(scr_ui_menu_get_width(PauseMenuContainer) * 0.15);
+	
+	var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
+	
+	var _menuX = PauseMenuContainer.leftX + _menuPosArray.item[2]+_margin;
+	var _menuY = (PauseMenuContainer.y + PauseMenuContainer.topY)/2 - _margin*2;
+	
+	CharacterStatsContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.9, noone);
+	
+	scr_ui_menu_container_add_draw_object(CharacterStatsContainer, PauseMenuContainer);
+    CharacterStatsContainer.isVisible = true;
+    
+    scr_destroy_instance(_menuColorArray);
+    scr_destroy_instance(_menuPosArray);
+//Character Stats Container
+
 //Options Container
     var _menuColor = make_colour_rgb(100,100,150);
     var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
         
-    var _height = PauseMenuContainer.bottomY - PauseMenuContainer.topY - _margin*2; 
+    var _height = (PauseMenuContainer.bottomY - PauseMenuContainer.topY - _margin*2)/2; 
     
     var _width = round(scr_ui_menu_get_width(PauseMenuContainer) * 0.15);
     
     var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
 
     var _menuX = PauseMenuContainer.leftX + _menuPosArray.item[2]+_margin;
-    var _menuY = PauseMenuContainer.y;
+    var _menuY = (PauseMenuContainer.y+PauseMenuContainer.bottomY)/2 - _margin*3;
     
     PauseMenuOptionsContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.9, noone);
     
@@ -89,6 +111,8 @@ var _margin = 10;
         CharacterPanels = scr_linked_list_create();
         scr_player_gui_party_update_character_panels();
     //End of Character Information Panels
+	
+	
     
 //End of Character Information Container
 
@@ -394,6 +418,10 @@ var _margin = 10;
 
 //End of Quite Game Button
                 
+//Stats Text
+	CharacterStatsContainerList = scr_linked_list_create();
+	scr_player_gui_party_update_character_stats();
+//End of Stats Text
                 
 PauseMenuContainer.isVisible = true;
 

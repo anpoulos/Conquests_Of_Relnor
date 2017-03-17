@@ -17,8 +17,11 @@ draw_self();
 if(inventoryItem != noone){
     draw_set_halign(fa_left);
     draw_set_font(fnt_default_medium);
-    draw_text_colour(x+20, y, string_hash_to_newline(inventoryItem.itemStats[ITEM_STATS_NAME]), 
-        c_white, c_white, c_white, c_white, 1);    
+	var _itemName = inventoryItem.itemStats[ITEM_STATS_NAME];
+	if(inventoryItem.itemStats[ITEM_STATS_TYPE] == ITEM_TYPE_CONSUMABLE){
+		_itemName += " ("+string(inventoryItem.uses)+")";
+	}
+    draw_text_colour(x+20, y, _itemName, c_white, c_white, c_white, c_white, 1);    
     draw_set_halign(fa_center);
 }
 

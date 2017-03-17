@@ -5,5 +5,6 @@ with(player){
     scr_player_gui_party_update_inventory();
     scr_player_gui_party_update_equipment();
     scr_player_gui_party_update_character_panels();
+	scr_player_gui_party_update_character_stats();
     InventoryInfoContainer.isVisible = false;
 }

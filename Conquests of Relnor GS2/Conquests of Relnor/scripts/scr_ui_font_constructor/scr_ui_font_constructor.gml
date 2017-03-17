@@ -1,4 +1,13 @@
-///scr_ui_font_constructor(x,y, text, font, color, alpha, halign, valign, menuContainer)
+///@param x
+///@param y
+///@param text
+///@param font
+///@param color
+///@param alpha
+///@param halign
+///@param valign
+///@param menuContainer
+
 
 var _uiFont = instance_create(argument0,argument1,obj_ui_font);
 
