@@ -7,12 +7,12 @@ with(npc){
     scr_npc_disable_busy();
 }
 
-for(var i = 0; i < scr_linked_list_size(buttons); i++){
+while(!scr_linked_list_is_empty(buttons)){
 	instance_destroy(scr_linked_list_remove_next(buttons));
 }
 scr_linked_list_destroy(buttons);
 
-for(var i = 0; i < scr_linked_list_size(lines); i++){
+while(!scr_linked_list_is_empty(lines)){
 	instance_destroy(scr_linked_list_remove_next(lines));
 }
 scr_linked_list_destroy(lines);

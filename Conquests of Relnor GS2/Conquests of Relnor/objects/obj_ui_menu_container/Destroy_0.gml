@@ -1,8 +1,7 @@
 ///Destroy
 
-for(var i = 0; i < scr_linked_list_size(objects); i++){
-    var _destroyThis = scr_linked_list_remove_next(objects);
-    scr_destroy_instance(_destroyThis);
+while(!scr_linked_list_is_empty(objects)){
+	instance_destroy(scr_linked_list_remove_next(objects));
 }
 
 scr_linked_list_destroy(objects);

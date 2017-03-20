@@ -103,6 +103,14 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
                         _button.clickedAs = ChatWindow;
                         _button.isVisible = true;
                     break;
+					
+					case "#shop":
+                        var _buttonText = string_replace_all(ds_queue_dequeue(_args), "_", " ");
+                        _button.text = _buttonText;
+                        _button.clickedScript = scr_ui_chat_button_shop;
+                        _button.clickedAs = ChatWindow.npc;
+                        _button.isVisible = true;
+					break;
                     
                     case "#hide":
                         _button.isVisible = false;

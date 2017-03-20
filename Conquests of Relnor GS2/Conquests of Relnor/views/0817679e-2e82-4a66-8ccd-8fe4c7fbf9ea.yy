@@ -8,7 +8,8 @@
         "00bb4498-b162-4791-8480-dce3537d6b45",
         "363d2759-e81c-4e53-b782-b0cc9f02d50c",
         "4a914143-8b20-4538-86bf-e805ac5cb72f",
-        "3e1bb041-31b8-4e1c-96a3-782fc19d8848"
+        "3e1bb041-31b8-4e1c-96a3-782fc19d8848",
+        "84c6995c-7df4-46f3-b8a3-31239255e6ba"
     ],
     "filterType": "GMScript",
     "folderName": "UI",

@@ -1,5 +1,13 @@
 ///scr_ui_menu_create_container(originX, originY, position_array4, color_array4, isOutlined, menuAlpha, stepScript)
 
+///@param originX
+///@param originY
+///@param position_array4
+///@param color_array4
+///@param isOutlined
+///@param menuAlpha
+///@param stepScript
+
 var _menu = instance_create(argument0, argument1, obj_ui_menu_container);
 
 _menu.leftOffset = argument2.item[0];

@@ -31,7 +31,7 @@ if(self.isVisible){
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_set_alpha(self.fontAlpha);
-    draw_text(x,y,string_hash_to_newline(self.text));
+    draw_text(textX,textY,string_hash_to_newline(self.text));
     
     scr_ui_button_set_default_draw();
 }

@@ -1,5 +1,5 @@
 ///Draw
-depth += depthOffset;
+depth = depthOffset;
 if(self.menuContainer == noone){
     script_execute(self.drawScript);
 }

@@ -9,6 +9,9 @@ if(scr_linked_list_size(ClickedUIObjects) > 0){
 
 for(var i = 0; i < instance_number(obj_ui_clickable_parent); i++){
     var _uiObject = instance_find(obj_ui_clickable_parent, i);
+	//if(!instance_exists(_uiObject)){
+	//	continue;
+	//}
     if(_uiObject.isVisible && _uiObject.menuContainer == noone ||
         (_uiObject.menuContainer != noone && _uiObject.menuContainer.isVisible && _uiObject.isVisible)){
         var _isInButton = point_in_rectangle(_mouseX, _mouseY, 

@@ -1,4 +1,13 @@
 ///scr_ui_get_obj_ui_button_information(delay, buttonScript, buttonScriptAs, text, font, fontColor, fontAlpha, buttonAlpha)
+///@param delay
+///@param clickedScript
+///@param clickedAs
+///@param text
+///@param font
+///@param fontColor
+///@param fontAlpha
+///@param buttonAlpha
+
 var _buttonInformation = instance_create(0, 0, obj_ui_button_information);
 
 _buttonInformation.delay = argument0;

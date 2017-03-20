@@ -3,6 +3,8 @@
 
 event_inherited();
 
-shopItems = noone;
-shopItemsAmount = noone;
+for(var i = 0; i < SHOP_ITEMS_MAX; i++){
+	shopItems[i] = noone;
+}
+shopItemsAmount[SHOP_ITEMS_MAX] = noone;
 shopMoney = 0;

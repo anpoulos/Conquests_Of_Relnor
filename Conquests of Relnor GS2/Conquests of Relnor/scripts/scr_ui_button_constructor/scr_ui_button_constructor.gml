@@ -1,4 +1,12 @@
 ///scr_ui_button_constructor(x, y, position_obj_array, color_obj_array, pressedColor, isOutlined, obj_ui_button_information, menuContainer)
+///@param x
+///@param y
+///@param position_obj_array
+///@param color_obj_array
+///@param pressedColor
+///@param isOutlined
+///@param obj_ui_button_information
+///@param menuContainer
 var btn = instance_create(argument0, argument1, obj_ui_button);
 
 btn.leftOffset = argument2.item[0];
@@ -27,6 +35,8 @@ var _buttonInformation = argument6;
 btn.delay = _buttonInformation.delay;
 btn.clickedScript = _buttonInformation.clickedScript;
 btn.text = _buttonInformation.text;
+btn.textX = btn.x;
+btn.textY = btn.y+5;
 btn.font = _buttonInformation.font;
 btn.fontColor = _buttonInformation.fontColor;
 btn.buttonAlpha = _buttonInformation.buttonAlpha;
