@@ -1,6 +1,7 @@
 ///scr_lifeform_constructor
 
-        
+gold = 0;
+
 InventoryInfoContainerItemStats = instance_create(x,y,obj_ui_party_inventory_item_info);
 
 path = path_add();

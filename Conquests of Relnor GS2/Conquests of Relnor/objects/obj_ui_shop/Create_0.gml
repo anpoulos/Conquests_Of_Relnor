@@ -142,3 +142,4 @@ var _margin = 20;
 	
 	_button.isVisible = true;
 //End of Close Button
+

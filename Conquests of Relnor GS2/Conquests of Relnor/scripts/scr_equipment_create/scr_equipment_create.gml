@@ -1,12 +1,19 @@
-///scr_equipment_create(obj_equipment, name, weight, damage, defence, reach, owner)
+///@param x
+///@param y
+///@param obj_equipment
+///@param name
+///@param weight
+///@param value
+///@param damage
+///@param defence
+///@param reach
+///@param owner
 
-var _equipment = instance_create(0,0,argument0);
+var _equipment = scr_item_create(argument0, argument1, argument2, argument3, argument4,
+		argument5,noone,noone,argument9,false);
 
-_equipment.itemStats[ITEM_STATS_NAME] = argument1;
-_equipment.itemStats[ITEM_STATS_WEIGHT] = argument2;
-_equipment.equipmentStats[EQUIPMENT_STATS_DAMAGE] = argument3;
-_equipment.equipmentStats[EQUIPMENT_STATS_DEFENCE] = argument4;
-_equipment.equipmentStats[EQUIPMENT_STATS_RANGE] = argument5;
-_equipment.owner = argument6;
+_equipment.equipmentStats[EQUIPMENT_STATS_DAMAGE] = argument6;
+_equipment.equipmentStats[EQUIPMENT_STATS_DEFENCE] = argument7;
+_equipment.equipmentStats[EQUIPMENT_STATS_RANGE] = argument8;
 
 return _equipment;

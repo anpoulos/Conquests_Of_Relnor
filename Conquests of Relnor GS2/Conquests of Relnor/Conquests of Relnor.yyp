@@ -855,6 +855,14 @@
             }
         },
         {
+            "Key": "1ab6b49c-dcb5-44dd-8d3e-0405c9533005",
+            "Value": {
+                "id": "e8cb365a-b407-40e7-a3b1-0d609e2c1bfa",
+                "resourcePath": "scripts\\scr_ui_shop_button_player_item_select\\scr_ui_shop_button_player_item_select.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1ac76367-b9f0-4be5-8a69-69c415c6f3cb",
             "Value": {
                 "id": "dde83784-4212-41ed-80ad-13b916581917",
@@ -2995,6 +3003,14 @@
             "Value": {
                 "id": "f0069d1b-fae2-4537-a82f-7e1e935d7f8c",
                 "resourcePath": "scripts\\scr_obj_move_at_speed_x_y\\scr_obj_move_at_speed_x_y.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "638961e4-157d-4e02-8b2b-05211efee75f",
+            "Value": {
+                "id": "f4afceaf-0a05-41d9-a268-58aa2f5bcd8e",
+                "resourcePath": "scripts\\scr_ui_shop_button_item_sell\\scr_ui_shop_button_item_sell.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -7039,6 +7055,14 @@
             }
         },
         {
+            "Key": "dd4852a7-2c4c-475c-a8d3-df17ba27725e",
+            "Value": {
+                "id": "fd3e21af-7f4d-432a-b189-5881c628c14c",
+                "resourcePath": "scripts\\scr_item_create\\scr_item_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "dd677c25-0235-4a15-8db2-fbc0460462f0",
             "Value": {
                 "id": "6a9870e1-c47b-4f29-b3ff-0e9179ffeeb3",
@@ -8311,6 +8335,8 @@
         "883401be-2cf8-491e-bb29-a4472a44b20c",
         "b89d27c5-08d1-4a76-a78e-de3ca9b4706d",
         "56cc5c46-b02d-48fe-826a-20c1015b626c",
+        "1ab6b49c-dcb5-44dd-8d3e-0405c9533005",
+        "638961e4-157d-4e02-8b2b-05211efee75f",
         "e39fdf10-47aa-4a2a-93dc-cd04cb59b9df",
         "8e274a99-fcb4-4b99-b0ce-f2d48c22391a",
         "442fc0c4-3997-4c46-b5df-9350fd137dc1",
@@ -8354,6 +8380,7 @@
         "3476d0c0-c291-470b-baa0-0ea94c9246db",
         "2c017c89-c343-4c01-854d-148bb6cb8c59",
         "12a88621-dd74-43fc-9597-c9351c21c824",
+        "dd4852a7-2c4c-475c-a8d3-df17ba27725e",
         "7286cbfc-fc31-4517-bca7-971b8718e6d7",
         "b860cac3-502c-4273-8e72-ed0ac581fcf6"
     ],

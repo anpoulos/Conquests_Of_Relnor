@@ -66,7 +66,7 @@ if(_effects != noone){
 		}
 								
 		draw_text_colour(_previousX+20, _previousY, _statString, _color, _color, _color, _color, 1);
-		_previousY += _previousY-2;								
+		_previousY += _offsetY-2;								
 	}
 }
 

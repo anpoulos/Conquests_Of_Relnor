@@ -7,4 +7,6 @@ switch(argument0){
         return "Weight";
     case ITEM_STATS_TYPE:
         return "Item Type";
+	case ITEM_STATS_VALUE:
+		return "Value";
 }

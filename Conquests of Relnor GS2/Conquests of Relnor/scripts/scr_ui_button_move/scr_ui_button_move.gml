@@ -15,3 +15,5 @@ _button.topY = _y - _topOffset;
 _button.bottomY = _y + _bottomOffset;
 _button.x = _x;
 _button.y = _y;
+_button.textX = _button.x;
+_button.textY = _button.y+5;
