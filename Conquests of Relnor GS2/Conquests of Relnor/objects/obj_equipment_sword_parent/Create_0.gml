@@ -4,6 +4,7 @@ event_inherited();
 //Overrides
 self.weaponType = WEAPON_TYPE_MELEE;
 self.icon = spr_equipment_iron_sword_icon;
+self.groundSprite = spr_equipment_iron_sword_icon;
 
 //Sprites
 self.sprite[DOWN] = spr_equipment_iron_sword_down;

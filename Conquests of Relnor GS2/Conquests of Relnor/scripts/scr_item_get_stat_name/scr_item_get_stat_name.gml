@@ -9,4 +9,6 @@ switch(argument0){
         return "Item Type";
 	case ITEM_STATS_VALUE:
 		return "Value";
+	case ITEM_STATS_DROP_PERCENTAGE:
+		return "Drop Rate";
 }

@@ -3,7 +3,7 @@
 
 var _owner = argument0;
 
-var _potion = scr_item_consumable_create(0,0,obj_inventory_consumable_parent, "Small Health Potion", 1,15,2,_owner);
+var _potion = scr_item_consumable_create(0,0,obj_inventory_consumable_parent, "Small Health Potion", 1,15,2,0.5,_owner);
 
 _potion.effectsPhysical[STATS_PHYSICAL_MAX] = 0;
 _potion.effectsPhysical[STATS_PHYSICAL_HEALTH] = 15;
