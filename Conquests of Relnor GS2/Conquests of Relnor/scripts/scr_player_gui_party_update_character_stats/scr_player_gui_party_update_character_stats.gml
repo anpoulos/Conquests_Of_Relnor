@@ -15,6 +15,14 @@ var _characterNameText = scr_ui_font_constructor(_textX, _textY, _text, fnt_defa
 scr_linked_list_add(CharacterStatsContainerList, _characterNameText);
 _characterNameText.isVisible = true;
 
+var _textX = CharacterStatsContainer.leftX+_margin;
+var _textY = _characterNameText.y + _margin;
+var _text = "Gold: "+string(_character.gold);
+
+var _characterGoldText = scr_ui_font_constructor(_textX, _textY, _text, fnt_default_medium, c_white, 1, fa_left, fa_center, CharacterStatsContainer);
+scr_linked_list_add(CharacterStatsContainerList, _characterGoldText);
+_characterGoldText.isVisible = true;
+
 var _yOffsetMedium = 20;
 var _yOffsetSmall = 15;
 

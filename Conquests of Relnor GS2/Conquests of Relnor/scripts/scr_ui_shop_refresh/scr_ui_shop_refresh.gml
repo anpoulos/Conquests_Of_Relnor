@@ -9,8 +9,8 @@ while(!scr_linked_list_is_empty(_shop.itemButtons)){
 	instance_destroy(scr_linked_list_remove_next(_shop.itemButtons));
 }
 
-var _yOffset = 50;
-var _currentY = _shop.itemInformationContainer.topY + _yOffset*2;
+var _yOffset = 40;
+var _currentY = _shop.shopKeeperItemsContainer.topY + _yOffset*3;
 
 for(var i = 0; i < SHOP_ITEMS_MAX; i++){
 	var _item = _shop.owner.shopItems[i];
@@ -63,7 +63,7 @@ for(var i = 0; i < SHOP_ITEMS_MAX; i++){
 	// Item Button Borderles
 }
 
-var _currentY = _shop.playerItemsContainer.topY + _yOffset*2;
+var _currentY = _shop.playerItemsContainer.topY + _yOffset*3;
 for(var i = 0; i < INVENTORY_MAX; i++){
 	var _item = _shop.player.inventory[i];
 	if(_item == noone){
@@ -120,6 +120,14 @@ for(var i = 0; i < INVENTORY_MAX; i++){
     var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, _shop.shopKeeperItemsContainer);
     _font.isVisible = true;
 	scr_linked_list_add(_shop.itemButtons, _font);
+	
+	var _x = _shop.shopKeeperItemsContainer.leftX + _margin;
+	var _y = _font.y + _margin*2;
+    var _text = "Shop Gold: "+string(_shop.owner.shopGold);
+	
+	var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, _shop.shopKeeperItemsContainer);
+    _font.isVisible = true;
+	scr_linked_list_add(_shop.itemButtons, _font);
 //End of shop keeper text
 
 
@@ -129,6 +137,14 @@ for(var i = 0; i < INVENTORY_MAX; i++){
     var _text = _shop.player.name+"'s Items";
             
     var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, _shop.playerItemsContainer);
+    _font.isVisible = true;
+	scr_linked_list_add(_shop.itemButtons, _font);
+	
+	var _x = _shop.playerItemsContainer.leftX + _margin;
+	var _y = _font.y + _margin*2;
+    var _text = _shop.player.name+" Gold: "+string(_shop.player.gold);
+	
+	var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, _shop.playerItemsContainer);
     _font.isVisible = true;
 	scr_linked_list_add(_shop.itemButtons, _font);
 //End of player items text

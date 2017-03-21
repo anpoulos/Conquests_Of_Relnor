@@ -1,6 +1,7 @@
 ///Player
 
 event_inherited();
+gold = 1000;
 PauseMenuContainer = noone;
 zoom = 50;
 busyState = scr_player_states_busy_state;

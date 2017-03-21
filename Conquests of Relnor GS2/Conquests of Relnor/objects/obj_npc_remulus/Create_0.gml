@@ -8,7 +8,7 @@ self.isDefensive = false;
 
 scr_npc_set_sprites(spr_remulus_up, spr_remulus_down, spr_remulus_right, spr_remulus_left,30);
 
-shopMoney = 500;
+shopGold = 500;
 
 shopItems[0] = scr_equipment_create_iron_sword(self);
 shopItemsAmount[0] = 2;
