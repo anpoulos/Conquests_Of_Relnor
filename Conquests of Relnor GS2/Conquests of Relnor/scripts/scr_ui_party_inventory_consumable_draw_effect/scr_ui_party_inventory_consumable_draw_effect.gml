@@ -37,12 +37,25 @@ switch(_statType){
 	break;
 }
 
-if(_effects != noone){
+
+var _hasStat = false;
+
+for(var i = 0; i < _statMax; i++){
+	if(_effects[i] != noone && _effects[i] != 0){
+		_hasStat = true;
+		break;
+	}
+}
+	
+if(_hasStat){
 	var _statName = scr_lifeform_get_stat_name(_statType, noone);
 	draw_text_colour(_previousX+10, _previousY, _statName, c_white,c_white,c_white,c_white, 1);
 	_previousY += _offsetY;
 							
 	for(var i = 0; i < _statMax; i++){
+		if(_effects[i] == noone){
+			continue;
+		}
 		var _statString = scr_lifeform_get_stat_name(_statType, i)+": ";
 		var _statIncreaseAmount = _effects[i];
 		if(_statIncreaseAmount == 0){
@@ -58,7 +71,7 @@ if(_effects != noone){
 			_color = c_red;
 		}
 								
-		if(_effectsHidden != noone && _effectsHidden[i] != true){
+		if(_effectsHidden[i] != noone && _effectsHidden[i]){
 			_statString += "?";
 		}
 		else{
@@ -69,5 +82,8 @@ if(_effects != noone){
 		_previousY += _offsetY-2;								
 	}
 }
+
+	
+
 
 return _previousY;

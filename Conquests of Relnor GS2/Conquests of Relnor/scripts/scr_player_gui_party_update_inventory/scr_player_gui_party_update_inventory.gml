@@ -8,8 +8,15 @@ var _x = PauseMenuInventoryContainer.leftX + 30;
 var _y = PauseMenuInventoryContainer.topY + 30;
 var _yOffset = 30;
 for(var i = 0; i < INVENTORY_MAX; i++){
-    InventoryContainerRow[i].useItemButton.isVisible = false;
-    InventoryContainerRow[i].isSelected = false;
+	if(InventoryContainerRow[i].isSelected && 
+		selectedPlayer.inventory[i] != noone && 
+		selectedPlayer.inventory[i].itemStats[ITEM_STATS_TYPE] == ITEM_TYPE_CONSUMABLE){
+		
+	}
+	else{
+	    InventoryContainerRow[i].isSelected = false;
+	    InventoryContainerRow[i].useItemButton.isVisible = false;
+	}
     
     if(selectedPlayer.inventory[i] != noone){
         InventoryContainerRow[i].x = _x;

@@ -1,25 +1,33 @@
 
 if(effectsIntelligence != noone){
 	for(var i = 0; i < STATS_INTELLIGENCE_MAX; i++){
-		scr_lifeform_increase_current_stat(owner, STATS_INTELLIGENCE, i, effectsIntelligence[i]);
+		if(effectsIntelligence[i] != noone){
+			scr_lifeform_increase_current_stat(owner, STATS_INTELLIGENCE, i, effectsIntelligence[i]);
+		}
 	}
 }
 
 if(effectsCommanding != noone){
 	for(var i = 0; i < STATS_COMMANDING_MAX; i++){
-		scr_lifeform_increase_current_stat(owner, STATS_COMMANDING, i, effectsCommanding[i]);
+		if(effectsCommanding[i] != noone){
+			scr_lifeform_increase_current_stat(owner, STATS_COMMANDING, i, effectsCommanding[i]);
+		}
 	}
 }
 
 if(effectsPhysical != noone){
 	for(var i = 0; i < STATS_PHYSICAL_MAX; i++){
-		scr_lifeform_increase_current_stat(owner, STATS_PHYSICAL, i, effectsPhysical[i]);
+		if(effectsPhysical[i] != noone){
+			scr_lifeform_increase_current_stat(owner, STATS_PHYSICAL, i, effectsPhysical[i]);
+		}
 	}
 }
 
 if(effectsTools != noone){
 	for(var i = 0; i < STATS_TOOLS_MAX; i++){
-		scr_lifeform_increase_current_stat(owner, STATS_TOOLS, i, effectsTools[i]);
+		if(effectsTools[i] != noone){
+			scr_lifeform_increase_current_stat(owner, STATS_TOOLS, i, effectsTools[i]);
+		}
 	}
 }
 
@@ -39,6 +47,6 @@ if(uses == 0){
 	}
 }
 
-if(owner.object_index == obj_player){
+if(global.gamePaused){
 	scr_player_gui_update_all();
 }

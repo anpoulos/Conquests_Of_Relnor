@@ -2,6 +2,8 @@
 
 scr_player_disable_busy();
     
+global.gamePaused = false;
+
 if(PauseText != noone){
     PauseText.isVisible = PauseText.wasVisible;
 }

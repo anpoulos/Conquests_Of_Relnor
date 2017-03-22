@@ -14,6 +14,8 @@ self.deadSprite = spr_npc_archer_red_dead;
 //equipment and inventory override
 self.equipment[WEAPON] = scr_equipment_weapons_create_wooden_bow(self);
 
+self.inventory[0] = scr_consumable_potion_random(self);
+self.inventory[1] = scr_consumable_food_random(self);
 //override
 
 

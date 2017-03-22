@@ -14,7 +14,8 @@ self.isPlayer = true;
 self.inventory[0] = scr_equipment_create_iron_sword(self);
 self.inventory[1] = scr_equipment_offhand_create_iron_shield(self);
 self.inventory[2] = scr_equipment_weapons_create_wooden_bow(self);
-self.inventory[3] = scr_consumable_create_small_health_potion(self);
+self.inventory[3] = scr_consumable_strong_health_potion(self);
+self.inventory[4] = scr_consumable_bread(self);
 
 self.equipment[EQUIPMENT_TYPE_WEAPON] = inventory[0];
 self.equipment[EQUIPMENT_TYPE_OFFHAND] = inventory[1];

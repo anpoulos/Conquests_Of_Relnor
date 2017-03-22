@@ -18,6 +18,8 @@ self.equipment[OFFHAND] = scr_equipment_offhand_create_iron_shield(self);
 
 self.equipment[WEAPON] = scr_equipment_create_iron_sword(self);
 
+self.inventory[0] = scr_consumable_potion_random(self);
+self.inventory[1] = scr_consumable_food_random(self);
 //override
 self.wanderDistance = 0;
 

@@ -6,11 +6,12 @@
 ///@param weight 4
 ///@param value 5
 ///@param uses 6
-///@param drop_percentage 8
-///@param owner 7
+///@param drop_percentage 7
+///@param owner 8
+///@param icon 9
 
 var _consumable = scr_item_create(argument0, argument1, argument2, argument3, argument4,
-		argument5,argument8,noone,noone,argument7, false);
+		argument5,argument7,argument9,argument9,argument8, false);
 
 _consumable.uses = argument6;
 

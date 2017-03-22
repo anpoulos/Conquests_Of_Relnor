@@ -3,13 +3,9 @@
 
 var _owner = argument0;
 
-var _potion = scr_item_consumable_create(0,0,obj_inventory_consumable_parent, "Small Health Potion", 1,15,2,0.5,_owner);
+var _potion = scr_item_consumable_create(0,0,obj_inventory_consumable_parent, "Weak Health Potion", 1,15,2,0.75,_owner,spr_consumable_small_health_potion_icon);
 
 _potion.effectsPhysical[STATS_PHYSICAL_MAX] = 0;
 _potion.effectsPhysical[STATS_PHYSICAL_HEALTH] = 15;
-
-_potion.itemStats[ITEM_STATS_WEIGHT] = 1;
-_potion.icon = spr_consumable_small_health_potion_icon;
-_potion.uses = 2;
 
 return _potion;

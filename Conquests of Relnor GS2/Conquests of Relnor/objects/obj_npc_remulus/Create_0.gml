@@ -16,5 +16,5 @@ shopItemsAmount[0] = 2;
 shopItems[1] = scr_equipment_offhand_create_iron_shield(self);
 shopItemsAmount[1] = 1;
 
-shopItems[2] = scr_consumable_create_small_health_potion(self);
+shopItems[2] = scr_consumable_weak_health_potion(self);
 shopItemsAmount[2] = 100;

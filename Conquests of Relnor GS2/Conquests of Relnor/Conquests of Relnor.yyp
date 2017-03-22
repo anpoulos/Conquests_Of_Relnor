@@ -551,6 +551,14 @@
             }
         },
         {
+            "Key": "0f873ffc-0649-47d6-bda8-c5fe66960d7d",
+            "Value": {
+                "id": "f38b8e48-98ca-48b7-ae41-52eb4bb2ed2f",
+                "resourcePath": "scripts\\scr_consumable_apple\\scr_consumable_apple.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0f998902-267a-40b8-ae9c-2b4f561da1a1",
             "Value": {
                 "id": "390c4306-1074-44aa-a551-5e5ee1909807",
@@ -959,11 +967,27 @@
             }
         },
         {
+            "Key": "1eed8c0c-c473-4423-b3bb-a152712f07d8",
+            "Value": {
+                "id": "2066278b-6eb9-46a7-9768-9c4f74dae4ed",
+                "resourcePath": "scripts\\scr_consumable_food_random\\scr_consumable_food_random.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1f177a3e-eca9-46d3-a1ce-600c105082f7",
             "Value": {
                 "id": "0cc8fdf5-055b-4321-8169-52c1268c0307",
                 "resourcePath": "scripts\\scr_linked_list_destroy\\scr_linked_list_destroy.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "1f33b0bf-9d84-4a1c-aee3-96b0553272c6",
+            "Value": {
+                "id": "f14d31f1-7b88-42b9-8478-636377d7d5eb",
+                "resourcePath": "sprites\\spr_consumable_beef\\spr_consumable_beef.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -996,6 +1020,14 @@
                 "id": "68624649-02c2-4055-b774-8a16f1517835",
                 "resourcePath": "views\\1ff8a5f5-8ab6-4f71-b93f-9b13fd9dad27.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2044d09c-57be-4867-989d-6dc53c4526d3",
+            "Value": {
+                "id": "deb4b438-0b1c-4312-af58-1426bb4956b7",
+                "resourcePath": "scripts\\scr_consumable_fish\\scr_consumable_fish.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1068,6 +1100,14 @@
                 "id": "17d5578d-46a5-41cc-9fbb-b8c916a28d8e",
                 "resourcePath": "sprites\\spr_map_clutter_statue_01_R\\spr_map_clutter_statue_01_R.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "224fdb17-1c4b-47c8-99c9-4c394415b58c",
+            "Value": {
+                "id": "bf683177-7f98-45ad-9443-0af0a3dc336c",
+                "resourcePath": "scripts\\scr_consumable_beef\\scr_consumable_beef.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1487,6 +1527,14 @@
             }
         },
         {
+            "Key": "308b1b51-5051-4cae-8271-0f01a75c9d32",
+            "Value": {
+                "id": "2eee02e5-784d-413e-b38a-8e4841df2b77",
+                "resourcePath": "scripts\\scr_consumable_medium_health_potion\\scr_consumable_medium_health_potion.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3102a1e8-6aba-45a4-a1ad-ab8643fe3590",
             "Value": {
                 "id": "30c4db63-eed8-450a-8f15-a9e6221ac3f7",
@@ -1627,6 +1675,14 @@
             "Value": {
                 "id": "fa740417-3907-4b98-8fbb-6505fd5c7fcf",
                 "resourcePath": "scripts\\scr_item_type_get_name\\scr_item_type_get_name.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "348d5017-50e1-4544-a9e3-9fce4da3045f",
+            "Value": {
+                "id": "1ac134c8-ec8e-424d-97ab-64cac9242125",
+                "resourcePath": "scripts\\scr_array_set_all_noone\\scr_array_set_all_noone.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1804,6 +1860,14 @@
                 "id": "0ed7e920-08c2-4ba8-9bff-22503ce4ae7c",
                 "resourcePath": "objects\\obj_npc_red_soldier\\obj_npc_red_soldier.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3a4d8e78-96a2-4078-a4bf-9c03c0a8582c",
+            "Value": {
+                "id": "f5110b24-a59f-4025-9307-bb11c6524ea8",
+                "resourcePath": "scripts\\scr_consumable_strong_health_potion\\scr_consumable_strong_health_potion.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2155,6 +2219,14 @@
             "Value": {
                 "id": "15b55757-d2b5-4ec5-8d4e-39a7b787f92b",
                 "resourcePath": "views\\44dd4c88-f50a-42f6-917f-d29fe2f54893.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "45101cc3-396b-4202-a4c4-ce8062cdb90d",
+            "Value": {
+                "id": "9eb7bea7-7481-4ac7-a341-b36bb8825849",
+                "resourcePath": "views\\45101cc3-396b-4202-a4c4-ce8062cdb90d.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -3826,7 +3898,7 @@
             "Key": "7b08c259-541b-4968-906d-efd4d0b90a62",
             "Value": {
                 "id": "7ef86937-9866-4330-b054-7d8f06070dc0",
-                "resourcePath": "scripts\\scr_consumable_create_small_health_potion\\scr_consumable_create_small_health_potion.yy",
+                "resourcePath": "scripts\\scr_consumable_weak_health_potion\\scr_consumable_weak_health_potion.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4903,6 +4975,14 @@
             }
         },
         {
+            "Key": "9af38d41-0bbe-4981-804e-1d7bcb4bb666",
+            "Value": {
+                "id": "ed773ed4-796e-457d-9e1d-2d521e8d0855",
+                "resourcePath": "views\\9af38d41-0bbe-4981-804e-1d7bcb4bb666.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9b1186d1-52a1-454c-a4ac-86fb8f234e51",
             "Value": {
                 "id": "75937c67-8bc6-40e7-ac23-f3c81446cccf",
@@ -5676,6 +5756,14 @@
                 "id": "6e54c571-baf2-4b4f-81a3-de89869c1f19",
                 "resourcePath": "views\\b42c369d-6913-486b-91a5-74f77de90021.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b4385c73-41b8-4fa0-b5cf-53567354e2d7",
+            "Value": {
+                "id": "7c7bca67-a1ac-46c7-95cf-3a870e758d86",
+                "resourcePath": "scripts\\scr_consumable_cheese\\scr_consumable_cheese.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6519,6 +6607,14 @@
             }
         },
         {
+            "Key": "c81e40fe-2baf-4970-8ece-a62618b7976f",
+            "Value": {
+                "id": "59e129b7-897a-453c-b297-e5a029dfde98",
+                "resourcePath": "sprites\\spr_consumable_apple\\spr_consumable_apple.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c845fefc-5e43-4024-aa9f-ba4061456b22",
             "Value": {
                 "id": "9e599a44-8662-41f1-8fc0-edf36924a6d6",
@@ -6623,6 +6719,14 @@
             }
         },
         {
+            "Key": "cb7bee18-b097-4a89-8914-d45f5231db51",
+            "Value": {
+                "id": "705e80c0-1efb-49d7-9f4c-091cf9c968b9",
+                "resourcePath": "scripts\\scr_consumable_potion_random\\scr_consumable_potion_random.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cb8ba9a4-8618-4cf8-b49f-008174fcc289",
             "Value": {
                 "id": "4f6d8eb9-5f2b-4c0e-b171-888d000b80a7",
@@ -6684,6 +6788,14 @@
                 "id": "a670b2b1-0c3d-4d4b-8401-910f4653f1ea",
                 "resourcePath": "scripts\\@__global_object_depths\\__global_object_depths.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cd7a85d0-9d99-4a95-b795-a53c7a3852c8",
+            "Value": {
+                "id": "efeb1c48-e53d-44e8-9d57-7693940c11d6",
+                "resourcePath": "sprites\\spr_consumable_bread\\spr_consumable_bread.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -6892,6 +7004,14 @@
                 "id": "e6d5cb45-56f6-4ea8-87b5-f1ee7b864890",
                 "resourcePath": "views\\d572731f-14fd-43fb-b295-e713ee0b5f38.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d5b61e32-89d6-408d-8101-892e404baae7",
+            "Value": {
+                "id": "75e7f3c1-6ae1-4038-8b44-9697cc46a800",
+                "resourcePath": "sprites\\spr_consumable_fish\\spr_consumable_fish.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -7287,6 +7407,14 @@
             }
         },
         {
+            "Key": "e1daf729-a021-477f-90cc-c078be78486a",
+            "Value": {
+                "id": "5ecade3d-6c1e-428b-8f93-986699dffe6c",
+                "resourcePath": "sprites\\spr_consumable_cheese\\spr_consumable_cheese.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e1ec58c5-eea3-4149-a12b-859b6dae8d15",
             "Value": {
                 "id": "91294d41-6aa4-460d-a033-3fdd8be62d6f",
@@ -7443,6 +7571,14 @@
             "Value": {
                 "id": "d70b721b-35bc-496a-b6bb-d53733ff390d",
                 "resourcePath": "views\\e4d64287-d158-4102-a368-ad9de7ad5842.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e5079a28-6a48-487f-a8aa-13e4c880665d",
+            "Value": {
+                "id": "00f32857-25ba-442d-8f51-729e9e141005",
+                "resourcePath": "views\\e5079a28-6a48-487f-a8aa-13e4c880665d.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -7919,6 +8055,14 @@
             }
         },
         {
+            "Key": "f7bb7a0f-8c64-41b9-8282-7543c25e459b",
+            "Value": {
+                "id": "046dc3d0-3d2a-4cd3-9bb4-929fae68a00b",
+                "resourcePath": "sprites\\spr_consumable_strong_health_potion\\spr_consumable_strong_health_potion.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f82bbb69-21b1-4c6e-94e5-a4d90d2eb381",
             "Value": {
                 "id": "5fc1672f-4ae9-4b70-9f21-c82046ac1490",
@@ -8043,6 +8187,14 @@
             "Value": {
                 "id": "387d0f43-4cb0-437b-be0a-e99667cc8613",
                 "resourcePath": "scripts\\scr_create_obj_array4_repeat\\scr_create_obj_array4_repeat.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fbb589c4-fd61-4afa-bcf8-d84f0b2f0abe",
+            "Value": {
+                "id": "3f09a812-15ce-4a3e-9368-3e38b530f3fe",
+                "resourcePath": "scripts\\scr_consumable_bread\\scr_consumable_bread.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8412,6 +8564,7 @@
         "fae5e7a7-a45a-41d6-a742-b618ae8fbb8b",
         "b3ed9a19-1f5c-4525-9d43-2b372920aaa9",
         "b1f49b7c-a9b9-40fb-906c-46339954689b",
+        "348d5017-50e1-4544-a9e3-9fce4da3045f",
         "f93a6259-858e-4af4-a507-f756b3ef9f66",
         "b739f42c-6c05-474a-ac5c-d972edf5dc01",
         "799445e1-adf0-49d9-9353-f86f30c54e09",
@@ -8424,6 +8577,15 @@
         "07969be7-30ce-4222-93e0-62d2d139d965",
         "971a1bee-a981-4ba5-9188-3a202d5959bd",
         "7b08c259-541b-4968-906d-efd4d0b90a62",
+        "308b1b51-5051-4cae-8271-0f01a75c9d32",
+        "3a4d8e78-96a2-4078-a4bf-9c03c0a8582c",
+        "cb7bee18-b097-4a89-8914-d45f5231db51",
+        "fbb589c4-fd61-4afa-bcf8-d84f0b2f0abe",
+        "b4385c73-41b8-4fa0-b5cf-53567354e2d7",
+        "224fdb17-1c4b-47c8-99c9-4c394415b58c",
+        "2044d09c-57be-4867-989d-6dc53c4526d3",
+        "0f873ffc-0649-47d6-bda8-c5fe66960d7d",
+        "1eed8c0c-c473-4423-b3bb-a152712f07d8",
         "70f3a5d4-cc5a-4c73-90d1-a1580afc4426",
         "3476d0c0-c291-470b-baa0-0ea94c9246db",
         "2c017c89-c343-4c01-854d-148bb6cb8c59",

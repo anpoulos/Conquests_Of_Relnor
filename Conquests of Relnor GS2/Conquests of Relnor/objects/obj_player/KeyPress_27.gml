@@ -2,6 +2,7 @@
 
 if(PauseMenuContainer != noone){
     if(PauseMenuContainer.isVisible){
+		
         scr_player_gui_party_menu_hide();
         return true;
     }
@@ -12,4 +13,3 @@ if(PauseMenuContainer != noone){
 }
 
 scr_player_gui_party_menu();
-
