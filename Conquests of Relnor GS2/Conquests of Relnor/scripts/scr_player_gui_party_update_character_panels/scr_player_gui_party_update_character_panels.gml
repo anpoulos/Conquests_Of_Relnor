@@ -1,7 +1,12 @@
 ///scr_player_gui_party_update_character_panels
 
+	var _selectedCharacter = noone;
+
     while(!scr_linked_list_is_empty(CharacterPanels)){
         var _panel = scr_linked_list_remove_next(CharacterPanels);
+		if(_panel.selected){
+			_selectedCharacter = _panel.character;
+		}
         with(_panel){
             instance_destroy();
         }
@@ -30,5 +35,8 @@
         }
         
         var _panel = scr_player_gui_party_create_character_panel(_selectedNPC, _lastX, _lastY);
+		if(_panel.character == _selectedCharacter){
+			_panel.selected = true;
+		}
         scr_linked_list_add(CharacterPanels, _panel);
     }

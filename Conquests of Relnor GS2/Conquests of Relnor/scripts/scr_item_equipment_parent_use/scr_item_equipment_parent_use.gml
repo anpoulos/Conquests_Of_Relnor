@@ -17,4 +17,7 @@ if(_alreadyEquippedItem != noone){
 }
 
 owner.equipment[self.equipmentStats[EQUIPMENT_STATS_TYPE]] = self; //equip equipment item
-scr_player_gui_party_update_all();
+
+if(global.gamePaused){
+	scr_player_gui_update_all(true);
+}

@@ -1,14 +1,14 @@
-///@param x 
-///@param y
-///@param obj_item
-///@param item_stats_name
-///@param item_stats_weight
-///@param item_stats_value
-///@param item_stats_drop_percentage
-///@param icon
-///@param groundSprite
-///@param owner
-///@param isVisible
+///@param x 0
+///@param y 1
+///@param obj_item 2
+///@param item_stats_name 3
+///@param item_stats_weight   4
+///@param item_stats_value 5
+///@param item_stats_drop_percentage 6
+///@param icon 7
+///@param groundSprite 8 
+///@param owner9
+///@param isVisible 10
 
 var _item = instance_create(argument0, argument1, argument2);
 

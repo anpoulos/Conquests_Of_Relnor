@@ -12,7 +12,8 @@
         "41545733-ef18-446d-957b-56f8f41f8d01",
         "f943bc2f-31fe-4636-b43f-80dfff0172db",
         "0b7c57a2-249c-4f14-ad23-7cbe737077a0",
-        "f399e082-dbce-4c0d-8b58-91076d323c3b"
+        "f399e082-dbce-4c0d-8b58-91076d323c3b",
+        "7a495357-13b2-4a64-a4d7-f7134dac0eee"
     ],
     "filterType": "GMObject",
     "folderName": "Draw",

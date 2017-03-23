@@ -48,5 +48,10 @@ if(uses == 0){
 }
 
 if(global.gamePaused){
-	scr_player_gui_update_all();
+	if(uses == 0){
+		scr_player_gui_update_all(true);
+	}
+	else{
+		scr_player_gui_update_all(false);
+	}
 }

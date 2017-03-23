@@ -10,11 +10,13 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
     EquipmentInventoryContainerRow[i].useItemButton.isVisible = false;
     EquipmentInventoryContainerRow[i].isSelected = false;
     
-    if(selectedPlayer.equipment[i] != noone){
+	var _equipment = selectedPlayer.equipment[i];
+	
+    if(_equipment != noone){
         EquipmentInventoryContainerRow[i].x = _x;
         EquipmentInventoryContainerRow[i].y = _y + _yOffset;
-        EquipmentInventoryContainerRow[i].inventoryItem = selectedPlayer.equipment[i];
-        EquipmentInventoryContainerRow[i].sprite_index = selectedPlayer.equipment[i].icon;
+        EquipmentInventoryContainerRow[i].inventoryItem = _equipment;
+        EquipmentInventoryContainerRow[i].sprite_index = _equipment.icon;
         EquipmentInventoryContainerRow[i].isEquipped = true;
         
         var _widthOffset = round(sprite_get_width(EquipmentInventoryContainerRow[i].sprite_index)/2);
@@ -29,8 +31,9 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
         var _newY = EquipmentInventoryContainerRow[i].y;
         
         scr_ui_button_move(EquipmentInventoryContainerRow[i].useItemButton, _newX, _newY);
-        EquipmentInventoryContainerRow[i].useItemButton.clickedScript = selectedPlayer.equipment[i].unequipScript;
-        EquipmentInventoryContainerRow[i].useItemButton.clickedAs = selectedPlayer.equipment[i];
+        EquipmentInventoryContainerRow[i].useItemButton.clickedScript = _equipment.unequipScript;
+        EquipmentInventoryContainerRow[i].useItemButton.clickedAs = _equipment;
+		EquipmentInventoryContainerRow[i].useItemButton.isVisible = true;
         
         EquipmentInventoryContainerRow[i].isVisible = true;        
         _y += _yOffset;

@@ -52,7 +52,8 @@ for(var i = 0; i < SHOP_ITEMS_MAX; i++){
 		scr_linked_list_add(_shop.itemButtons, _button);
 		
 		// Item icon
-			var _buttonIcon = scr_ui_draw_sprite_constructor(_shop.shopKeeperItemsContainer.leftX + 20, _button.y, _item.icon, 0);
+			var _buttonIcon = scr_ui_draw_sprite_constructor(_shop.shopKeeperItemsContainer.leftX + 20, 
+				_button.y, _item.icon, 0, _shop.shopKeeperItemsContainer);
 			_buttonIcon.depthOffset = _button.depth - 10;
 			scr_linked_list_add(_shop.itemButtons, _buttonIcon);
 		//End of item icon
@@ -101,7 +102,8 @@ for(var i = 0; i < INVENTORY_MAX; i++){
 		scr_linked_list_add(_shop.itemButtons, _button);
 		
 		// Item icon
-			var _buttonIcon = scr_ui_draw_sprite_constructor(_shop.playerItemsContainer.leftX + 20, _button.y, _item.icon, 0);
+			var _buttonIcon = scr_ui_draw_sprite_constructor(_shop.playerItemsContainer.leftX + 20, 
+				_button.y, _item.icon, 0,_shop.playerItemsContainer);
 			_buttonIcon.depthOffset = _button.depth - 10;
 			scr_linked_list_add(_shop.itemButtons, _buttonIcon);
 		//End of item icon

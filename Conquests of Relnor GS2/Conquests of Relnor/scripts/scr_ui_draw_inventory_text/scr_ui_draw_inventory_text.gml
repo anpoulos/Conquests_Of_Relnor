@@ -10,6 +10,10 @@ var _observingUser = argument3;
 
 var _yOffset = 20;
 
+draw_sprite(_inventoryItem.icon, 0, _x, _y);
+
+_y += _yOffset*2;
+
 draw_set_halign(fa_left);
 draw_set_font(fnt_default_medium);
 for(var i = 0; i < ITEM_STATS_MAX; i++){

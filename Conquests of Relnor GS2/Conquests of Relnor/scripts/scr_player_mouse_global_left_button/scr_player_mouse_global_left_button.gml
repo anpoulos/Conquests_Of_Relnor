@@ -1,6 +1,25 @@
-///scr_player_mouse_global_left_button
+///scr_player_mouse_global_left_button_down
 
-    if(isBusy){
+	
+	var _mouseX = device_mouse_x_to_gui(0);
+	var _mouseY = device_mouse_y_to_gui(0);
+	
+	for(var i = 0; i < instance_number(obj_ui_clickable_parent); i++){
+	    var _uiObject = instance_find(obj_ui_clickable_parent, i);
+		if(_uiObject.clickedScript == noone || _uiObject.alarm[0] > 0){
+			continue;
+		}
+	    if(scr_ui_draw_is_visible(_uiObject)){
+	        var _isInButton = point_in_rectangle(_mouseX, _mouseY, 
+	        _uiObject.leftX, _uiObject.topY, _uiObject.rightX, _uiObject.bottomY);
+	        if(_isInButton){
+	            _uiObject.pressed = true; 
+	            scr_linked_list_add(ClickedUIObjects, _uiObject);
+	        }
+	    }
+	}
+
+    if(isBusy || scr_linked_list_size(ClickedUIObjects) > 0){
         return false;
     }
 

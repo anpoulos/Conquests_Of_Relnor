@@ -13,8 +13,7 @@ if(PauseText != noone){
 
 if(PauseMenuContainer != noone){
     InventoryInfoContainerItemStats.player = self;
-    InventoryInfoContainerItemStats.useItemButton.isVisible = false;
-    scr_player_gui_party_update_all();
+    scr_player_gui_update_all(true);
     PauseMenuContainer.isVisible = true;
     return true;
 }
@@ -83,7 +82,7 @@ var _margin = 10;
     scr_destroy_instance(_menuPosArray);
 //End of Options Container
 
-//Character Information Container
+//Character Panels Container
     var _menuColor = make_colour_rgb(100,100,150);
     var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
         
@@ -108,9 +107,7 @@ var _margin = 10;
         scr_player_gui_party_update_character_panels();
     //End of Character Information Panels
 	
-	
-    
-//End of Character Information Container
+//End of Character Panels Container
 
 //Inventory Container
     var _menuColor = make_colour_rgb(100,100,150);
@@ -172,7 +169,6 @@ var _margin = 10;
         InventoryInfoContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, false, 0.9, noone);
         
         scr_ui_menu_container_add_draw_object(InventoryInfoContainer, PauseMenuInventoryContainer);
-        InventoryInfoContainer.isVisible = true;
         
         scr_destroy_instance(_menuColorArray);
         scr_destroy_instance(_menuPosArray);          
@@ -182,6 +178,14 @@ var _margin = 10;
         
         scr_ui_menu_container_add_draw_object(InventoryInfoContainerItemStats, InventoryInfoContainer);
         
+			//Item info draw object
+				var _topY = InventoryInfoContainer.topY+20;
+				var _leftX = InventoryRightLine.x1+50;
+				
+				ItemInfoDrawObject = scr_ui_item_info_constructor(_leftX, _topY, noone, InventoryInfoContainer);
+				ItemInfoDrawObject.isVisible = true;
+			//end of item info draw object
+		
             //Start of Use Button
                 var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
                 var _buttonPressedColor = make_colour_rgb(0,0,100);
@@ -198,110 +202,36 @@ var _margin = 10;
                 var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, self, 
                 _text, fnt_default_small, _fontColor, 1.0, 0.8);
                 
-                InventoryInfoContainerItemStats.useItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+                UseItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
                 _buttonColorArray, _buttonPressedColor, true, _buttonInfo, InventoryInfoContainer);
                 
+				UseItemButton.isVisible = true;
+				
                 scr_destroy_instance(_buttonColorArray);
                 scr_destroy_instance(_buttonPosArray);
                 scr_destroy_instance(_buttonInfo);
             //End of Use Button
         
-    //End of Inventory Info Container
-    
-    //Inventory Row section
-    
-        //Inventory Row Text
-            var _x = PauseMenuInventoryContainer.leftX + 50;
-            var _y = PauseMenuInventoryContainer.topY + 20;
-            var _text = "Inventory";
-            
-            var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, PauseMenuInventoryContainer);
-            _font.isVisible = true;
-        //End of Inventory Row Text
-    
-        for(var i = 0; i < INVENTORY_MAX; i++){
-            InventoryContainerRow[i] = instance_create(0,0,obj_ui_party_inventory_row);
-            InventoryContainerRow[i].itemInfo = InventoryInfoContainerItemStats;
-            InventoryContainerRow[i].inventoryContainerRow = InventoryContainerRow;
-            InventoryContainerRow[i].player = self;
-            
-            //Start of Use Button
-                var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
-                var _buttonPressedColor = make_colour_rgb(0,0,100);
-                
-                var _buttonPosArray = scr_create_obj_array4(-25, -10, 25, 10, "_buttonPosArray");
-                
-                var _fontColor = c_white;
-                
-                var _buttonX = x;
-                var _buttonY = y;
-                
-                var _text = "";
-                            
-                var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, self, 
-                _text, fnt_default_small, _fontColor, 1.0, 0.8);
-                
-                InventoryContainerRow[i].useItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
-                _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
-                
-                scr_destroy_instance(_buttonColorArray);
-                scr_destroy_instance(_buttonPosArray);
-                scr_destroy_instance(_buttonInfo);
-            //End of Use Button
-            
-            scr_ui_menu_container_add_draw_object(InventoryContainerRow[i], PauseMenuInventoryContainer);
-        }
-        scr_player_gui_party_update_inventory();
-    //End of Inventory Row section
-
-    //Equipment Row Section
-        for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
-            EquipmentInventoryContainerRow[i] = instance_create(0,0,obj_ui_party_inventory_row);
-            EquipmentInventoryContainerRow[i].itemInfo = InventoryInfoContainerItemStats;
-            EquipmentInventoryContainerRow[i].inventoryContainerRow = EquipmentInventoryContainerRow;
-            EquipmentInventoryContainerRow[i].player = self;
-            
-            //Start of unequip Button
-                var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
-                var _buttonPressedColor = make_colour_rgb(0,0,100);
-                
-                var _buttonPosArray = scr_create_obj_array4(-25, -10, 25, 10, "_buttonPosArray");
-                
-                var _fontColor = c_white;
-                
-                var _buttonX = x;
-                var _buttonY = y;
-                
-                var _text = "Unequip";
-                            
-                var _buttonInfo = scr_ui_get_obj_ui_button_information(5, noone, self, 
-                _text, fnt_default_small, _fontColor, 1.0, 0.8);
-                
-                EquipmentInventoryContainerRow[i].useItemButton = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
-                _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
-                
-                scr_destroy_instance(_buttonColorArray);
-                scr_destroy_instance(_buttonPosArray);
-                scr_destroy_instance(_buttonInfo);
-            //End of unequip Button
-            
-            scr_ui_menu_container_add_draw_object(EquipmentInventoryContainerRow[i], PauseMenuInventoryContainer);
-        }
-        scr_player_gui_party_update_equipment();    
-    //End of Equipment Row Section    
+    //End of Inventory Info Container 
         
-    //Equipment Row Section
-        //Equipment Row Text
-            var _PauseMenuInventoryContainerLength = PauseMenuInventoryContainer.rightX - PauseMenuInventoryContainer.leftX;
-            var _x = InventoryCenterLine.x1 + 50; 
-            var _y = PauseMenuInventoryContainer.topY + 20;
-            var _text = "Equipment";
+    //Equipment Row Text
+        var _PauseMenuInventoryContainerLength = PauseMenuInventoryContainer.rightX - PauseMenuInventoryContainer.leftX;
+        var _x = InventoryCenterLine.x1 + 50; 
+        var _y = PauseMenuInventoryContainer.topY + 30;
+        var _text = "Equipment";
             
-            var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, PauseMenuInventoryContainer);
-            _font.isVisible = true;
-        //End of Equipment Row Text
-    
-    //End of Equipment Row Section
+        var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, PauseMenuInventoryContainer);
+        _font.isVisible = true;
+    //End of Equipment Row Text
+        
+    //Inventory Row Text
+        var _x = PauseMenuInventoryContainer.leftX + 50; 
+        var _y = PauseMenuInventoryContainer.topY + 30;
+        var _text = "Inventory";
+            
+        var _font = scr_ui_font_constructor(_x,_y, _text, fnt_default_large, c_white, 1.0, fa_left, fa_middle, PauseMenuInventoryContainer);
+        _font.isVisible = true;
+    //End of Inventory Row Text
     
 //End of Inventory Container
 
@@ -419,6 +349,9 @@ var _margin = 10;
 	scr_player_gui_party_update_character_stats();
 //End of Stats Text
                 
+PauseMenuInventoryButtons = scr_linked_list_create();
+scr_ui_party_inventory_equipment_refresh(true);
+
 PauseMenuContainer.isVisible = true;
 
 

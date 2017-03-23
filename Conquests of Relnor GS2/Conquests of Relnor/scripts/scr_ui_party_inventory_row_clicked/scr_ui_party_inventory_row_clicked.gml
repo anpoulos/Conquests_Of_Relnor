@@ -1,43 +1,23 @@
-///scr_ui_party_inventory_row_clicked
+///clicked as button
+///tempVal is the item related
 
-var _buttonText = scr_item_get_use_type(inventoryItem.itemStats[ITEM_STATS_TYPE]);
-var _size = INVENTORY_MAX;
+var _item = tempVal;
 
-if(isEquipped){
-    _size = EQUIPMENT_TYPE_MAX;
-    _buttonText = "Unequip";
-    itemInfo.useItemButton.clickedScript = inventoryItem.unequipScript;
+var _player = instance_find(obj_player, 0);
+_player.ItemInfoDrawObject.item = _item;
+
+if(scr_lifeform_parent_inventory_is_equipped(_item.owner, _item)){
+	_player.UseItemButton.text = "Unequip";
+	_player.UseItemButton.clickedScript = _item.unequipScript;
+	_player.UseItemButton.clickedAs = _item;
 }
 else{
-    itemInfo.useItemButton.clickedScript = inventoryItem.useScript;
+	_player.UseItemButton.text = scr_item_get_use_type(_item.itemStats[ITEM_STATS_TYPE]);
+	_player.UseItemButton.clickedScript = _item.useScript;
+	_player.UseItemButton.clickedAs = _item;
 }
 
-//disable others
-for(var i = 0; i < INVENTORY_MAX; i++){
-    player.InventoryContainerRow[i].isSelected = false;
-    if(player.InventoryContainerRow[i] != self && 
-    player.InventoryContainerRow[i].useItemButton != noone){
-        player.InventoryContainerRow[i].useItemButton.isVisible = false;
-    }
+
+if(!_player.InventoryInfoContainer.isVisible){
+	_player.InventoryInfoContainer.isVisible = true;
 }
-for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
-    player.EquipmentInventoryContainerRow[i].isSelected = false;
-    if(player.EquipmentInventoryContainerRow[i] != self && 
-    player.EquipmentInventoryContainerRow[i].useItemButton != noone){
-        player.EquipmentInventoryContainerRow[i].useItemButton.isVisible = false;
-    }
-}
-
-isSelected = true;
-
-useItemButton.text = _buttonText;
-useItemButton.isVisible = true;
-
-itemInfo.inventoryItem = inventoryItem;
-
-itemInfo.useItemButton.text = _buttonText;
-itemInfo.useItemButton.clickedAs = inventoryItem;
-itemInfo.useItemButton.isVisible = true;
-
-player.InventoryInfoContainer.isVisible = true;
-itemInfo.isVisible = true;

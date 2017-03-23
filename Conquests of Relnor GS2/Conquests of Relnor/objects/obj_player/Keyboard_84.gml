@@ -1,5 +1,9 @@
 ///T Pressed
 
+if(isBusy){
+	return false;
+}
+
 var _closestItem = noone;
 var _closestDistance = reach*2;
 for(var i = 0; i < instance_number(obj_inventory_item_parent); i++){

@@ -15,4 +15,4 @@ isSelected = false;
 inventoryInfoContainerItemStats = noone;
 
 useItemButton = noone;
-
+dropItemButton = noone;
