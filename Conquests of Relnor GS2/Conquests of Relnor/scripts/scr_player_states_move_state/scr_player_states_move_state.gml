@@ -75,6 +75,14 @@ switch(self.face8Way){
     break;
 }
 
+//var _cellX = (self.x + hSpeed) div global.tileOffset;
+//var _cellY = (self.y + vSpeed) div global.tileOffset;
+
+//if(mp_grid_get_cell(global.aiGrid, _cellX, _cellY) == 0){
+//	
+//}
 //Move
 scr_obj_move_phy(self, hSpeed, vSpeed);
+
+
 

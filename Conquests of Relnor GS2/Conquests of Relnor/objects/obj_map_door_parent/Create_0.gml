@@ -6,6 +6,6 @@ doorCheckScript = scr_map_door_parent_check;
 player = noone;
 destinationRoom = noone;
 isVisible = true;
-newX = noone;
-newY = noone;
-
+destinationX = noone;
+destinationY = noone;
+depth = -y;
