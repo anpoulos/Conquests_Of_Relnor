@@ -8,7 +8,9 @@
         "9694ad25-8e84-47c7-a402-15e1356edd07",
         "b1dca6cb-02ac-4cd5-aa9a-5f65f0de3f2c",
         "2a4fbf99-a367-48f5-8755-af352aacfe90",
-        "49b9fee9-34ea-4658-8d01-127e5c9ca9f4"
+        "49b9fee9-34ea-4658-8d01-127e5c9ca9f4",
+        "fe3df07c-4420-429d-ac42-bd50bf23506c",
+        "1e95cd18-8633-4ae4-81af-027dea13b059"
     ],
     "filterType": "GMSprite",
     "folderName": "Counter",

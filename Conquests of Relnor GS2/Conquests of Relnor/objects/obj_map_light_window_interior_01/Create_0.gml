@@ -2,7 +2,5 @@
 // You can write your code in this editor
 event_inherited();
 
-sprite = sprite_index;
-isStill = true;
-
-scr_map_light_reset(self, 100, -y, c_ltgray);
+daySprite = sprite_index;
+nightSprite = spr_light_window_dark_04;

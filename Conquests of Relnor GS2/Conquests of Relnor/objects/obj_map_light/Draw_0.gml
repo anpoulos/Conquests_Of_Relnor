@@ -7,7 +7,7 @@ if(sprite != noone){
 		draw_sprite(sprite, 0, x,y);
 	}
 	else{
-		draw_set_alpha(0.7);
+		draw_set_alpha(0.5);
 		draw_self();
 	}
 	draw_set_alpha(1);
