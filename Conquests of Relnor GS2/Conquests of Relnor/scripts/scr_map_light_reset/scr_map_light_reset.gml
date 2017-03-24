@@ -9,13 +9,14 @@ var _depth = argument2;
 var _color = argument3;
 
 with(_light){
-	lightColor = _color;
+	if(_color != noone){
+		lightColor = _color;
+	}
 	radius = _radius;
-	depth = _depth;
-	leftX = x - radius;
-	rightX = x + radius;
-	topY = round(y - radius*0.8);
-	bottomY = y + radius;
+	if(_depth != noone){
+		depth = _depth;
+	}
+	scr_map_light_calculate_dimensions();
 	leftOffset = leftX;
 	rightOffset = rightX;
 	topOffset = topY;

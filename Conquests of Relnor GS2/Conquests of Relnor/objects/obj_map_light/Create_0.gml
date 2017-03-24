@@ -11,9 +11,9 @@ isFire = false;
 isStill = false;
 sprite = noone;
 
-depth = -1947482200;
+lightDirection = LIGHT_DIRECTION_STANDARD;
 
-scr_map_light_reset(self, 200, -1947482200, c_orange);
+scr_map_light_reset(self, 200, noone, c_orange);
 
 lightOffset = 0;
 leftOffset = 0;

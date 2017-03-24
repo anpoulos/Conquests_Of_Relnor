@@ -7,3 +7,6 @@ if debug_mode
    }
 
 draw_text_color(30, 30, "Time: "+string(global.time), c_white, c_white, c_white, c_white, 1.0);
+
+
+

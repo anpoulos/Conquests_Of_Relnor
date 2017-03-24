@@ -3,7 +3,7 @@
 
 
 
-	if(global.time % 60 == 0){ 
+	if(global.time % 6 == 0){ 
 
 		if(global.time >= 700 && global.time <= 2000){
 			//nighttime to daytime transition

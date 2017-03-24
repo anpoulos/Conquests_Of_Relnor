@@ -8,10 +8,22 @@ else{
 
 	global.time += 1;
 
-	if(global.time % 60 == 0){ 
+	//if(!global.isInterior && global.time >= 500 && global.time <= 600){
+	//	if(global.sun.x != room_width){
+	//		global.sun.x = room_width;
+	//	}
+	//}
+
+	if(global.time % 6 == 0){ 
 
 		if(global.time >= 700 && global.time <= 2000){
 			//nighttime to daytime transition
+			if(!global.isInterior && global.sun.x > 0){
+				global.sun.x -= sunStep;
+				if(global.sun.x < 0){
+					global.sun.x = 0;
+				}
+			} 
 			if(global.lightSurfaceRGB > global.maxLight){
 				global.lightSurfaceRGB -= global.lightStep;
 				if(global.lightSurfaceRGB < global.maxLight){
@@ -31,6 +43,12 @@ else{
 		}
 		else{
 			//daytime to nighttime transition
+			if(!global.isInterior && global.sun.x < room_width){
+				global.sun.x += sunStep;
+				if(global.sun.x > room_width){
+					global.sun.x = room_width;
+				}
+			} 
 			if(global.lightSurfaceRGB <= global.minLight){
 				global.lightSurfaceRGB += global.lightStep;
 				if(global.lightSurfaceRGB > global.minLight){
@@ -57,13 +75,6 @@ else{
 }
 
 surface_set_target(global.lightSurface);
-	if(global.isInterior){
-		var _color = make_color_rgb(global.minLight, global.minLight, global.minLight);
-		draw_set_color(_color);
-	}
-	else{
-		var _color = make_color_rgb(global.lightSurfaceRGB,global.lightSurfaceRGB,global.lightSurfaceRGB);
-		draw_set_color(_color);
-	}
+	draw_set_color(minColorRGB);
 	draw_rectangle(0,0,room_width, room_height, false);
 surface_reset_target();

@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "0cc72550-61b5-4da2-af07-38215a8886c8",
+            "Value": {
+                "id": "1792faf5-a77c-468d-8623-994ebc3338f5",
+                "resourcePath": "objects\\obj_map_light_night_cycle\\obj_map_light_night_cycle.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d148d2d-43e3-4879-bf17-f17030c5a70d",
             "Value": {
                 "id": "162237ec-0a8c-4151-b9d2-6e71c841dea7",
@@ -524,6 +532,14 @@
                 "id": "c184b381-09c9-4f1c-95cc-9860c070c850",
                 "resourcePath": "scripts\\scr_lifeform_face_towards\\scr_lifeform_face_towards.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "0daa7acf-2020-40c4-817d-0afd5898c463",
+            "Value": {
+                "id": "f168dbab-7916-4978-a89d-757215b02915",
+                "resourcePath": "objects\\obj_map_light_sun\\obj_map_light_sun.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -863,6 +879,14 @@
             }
         },
         {
+            "Key": "187ac1a0-6a4d-46c8-a3dd-e8faaad0e391",
+            "Value": {
+                "id": "72598f32-50bf-482b-b7cc-d7d1b13897f5",
+                "resourcePath": "sprites\\spr_map_light_night_cycle_placeholder\\spr_map_light_night_cycle_placeholder.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "18ce3508-dd87-44bb-b0c2-d280da71481f",
             "Value": {
                 "id": "662a8b1b-4f6b-450e-a30f-0b51b0109f0c",
@@ -1028,6 +1052,14 @@
                 "id": "09de3084-057d-47fe-b51f-df377b6e78e9",
                 "resourcePath": "views\\1d7637a4-1242-4786-9a99-18ed631aa159.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1d8dcfac-4563-47c7-9fe7-240004910e39",
+            "Value": {
+                "id": "bade35cc-31a6-4a26-8436-2c890b974963",
+                "resourcePath": "sprites\\spr_night_cycle_placeholder\\spr_night_cycle_placeholder.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1427,6 +1459,14 @@
             "Value": {
                 "id": "14c0bb9d-db3a-4b99-9796-59dc7151524c",
                 "resourcePath": "objects\\obj_npc_blue_cavalry\\obj_npc_blue_cavalry.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "29ea4dad-d560-4d9f-8c6c-35272e13b7d3",
+            "Value": {
+                "id": "c8148aea-15a9-4ba1-902a-cfb93f0f96be",
+                "resourcePath": "objects\\obj_map_light_test01\\obj_map_light_test01.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3103,6 +3143,14 @@
             }
         },
         {
+            "Key": "5a517b5a-a8bb-4439-b70f-a845300388a5",
+            "Value": {
+                "id": "1de41eaa-b084-4f61-b145-1d185591079f",
+                "resourcePath": "scripts\\scr_map_light_set_direction\\scr_map_light_set_direction.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5a9ad98b-18a4-45eb-9595-495bcb54bff2",
             "Value": {
                 "id": "3d9a1f91-d28b-4f8b-be3c-80701937cc6e",
@@ -4220,6 +4268,14 @@
                 "id": "f15f0233-e4ed-44d4-b1c9-777528e1ab64",
                 "resourcePath": "views\\7df37f13-8af8-4c5c-9ba6-61aae7ceac4b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7e22f30e-d23b-49ee-898d-b8d4cf652249",
+            "Value": {
+                "id": "ae40f4cb-a156-40c2-a338-99133864e02e",
+                "resourcePath": "objects\\obj_map_light_day_cycle\\obj_map_light_day_cycle.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6991,6 +7047,14 @@
             }
         },
         {
+            "Key": "c7d682a9-52b4-4f75-821e-f00620f9421a",
+            "Value": {
+                "id": "af555c14-464c-4064-9269-52554a58be49",
+                "resourcePath": "sprites\\sprite_232\\sprite_232.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c7fe5021-a698-4e23-b931-fe4866e51b90",
             "Value": {
                 "id": "65fbf8e1-5ff0-4e06-b340-b8b0ce8548b1",
@@ -8562,7 +8626,7 @@
             "Key": "f7a4de06-2b1b-4220-8d41-23ddd05092b7",
             "Value": {
                 "id": "7a8bfa58-53c7-492f-8d16-da6caf9d8192",
-                "resourcePath": "objects\\obj_map_light_interior_opening\\obj_map_light_interior_opening.yy",
+                "resourcePath": "objects\\obj_map_light_day_night_cycle\\obj_map_light_day_night_cycle.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -8756,6 +8820,14 @@
                 "id": "b2111d96-fd82-438d-81b3-e4003150e699",
                 "resourcePath": "objects\\obj_damage_projectile_arrow\\obj_damage_projectile_arrow.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "fcd4be7b-563d-4eb7-8378-10259f008857",
+            "Value": {
+                "id": "3648b41e-3e3b-43a8-ab00-0a3a92100cec",
+                "resourcePath": "sprites\\spr_light_day_cycle_placeholder\\spr_light_day_cycle_placeholder.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -9089,6 +9161,7 @@
         "dd1b5618-332a-4f9b-ac25-b676274d52d6",
         "7b7aade9-1328-430b-bd7f-599c8825fdb8",
         "40dffcde-5c44-49ee-8cee-0740716568fa",
+        "5a517b5a-a8bb-4439-b70f-a845300388a5",
         "0f521da4-8790-43f7-9737-23be04ac2288",
         "fae5e7a7-a45a-41d6-a742-b618ae8fbb8b",
         "b3ed9a19-1f5c-4525-9d43-2b372920aaa9",

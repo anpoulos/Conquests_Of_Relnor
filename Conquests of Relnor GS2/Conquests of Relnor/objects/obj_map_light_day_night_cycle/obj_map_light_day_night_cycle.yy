@@ -2,7 +2,7 @@
     "id": "f7a4de06-2b1b-4220-8d41-23ddd05092b7",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_map_light_interior_opening",
+    "name": "obj_map_light_day_night_cycle",
     "eventList": [
         {
             "id": "78d77259-d5ab-4984-a89f-726c6d8323b4",

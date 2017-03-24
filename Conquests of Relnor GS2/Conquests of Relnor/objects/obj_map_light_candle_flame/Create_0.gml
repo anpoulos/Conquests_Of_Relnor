@@ -5,4 +5,4 @@ event_inherited();
 sprite = sprite_index;
 isFire = true;
 
-scr_map_light_reset(self, 125, depth, c_orange);
+scr_map_light_reset(self, 125, -MAX, c_orange);

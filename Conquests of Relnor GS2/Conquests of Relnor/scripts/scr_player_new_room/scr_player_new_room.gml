@@ -14,7 +14,7 @@ if(!_foundOldTime){
 	global.maxLight = 0;
 	global.minLight = 225;
 	global.lightSurface = 0;
-	global.lightStep = 25;
+	global.lightStep = 5;
 	global.forceNight = false;
 	global.lightColorRGB = make_color_rgb(0,0,0);
 }

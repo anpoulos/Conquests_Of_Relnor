@@ -1,5 +1,24 @@
 ///Draw Equipment and sprite
 
+//draw shadow
+if(hasShadow && !global.isInterior){
+	var _opacity = global.lightSurfaceRGB / global.minLight;
+	var _sun = global.sun;
+	var _direction = point_direction(_sun.x, _sun.y, x, y);
+	
+	var _distance = point_distance(_sun.x, _sun.y, x, y);
+	
+	var _p = _distance/_sun.radius;
+	
+	draw_sprite_ext(sprite_index, 0, 
+						x + 10*dcos(_direction),
+						y - 10*dsin(_direction),
+						1 ,
+						0.75 + _p,
+						_direction-90,
+						c_black,0.25+_p);
+}
+
 var _equipmentLength = array_length_1d(self.equipment);
 
 //draw items behind first

@@ -1,14 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 event_inherited();
 
-daySprite = noone;
-nightSprite = noone;
 isStill = true;
 
-scr_map_light_reset(self, 100, -y, c_ltgray);
+scr_map_light_reset(self, 2000, -MAX, noone);
 
 maxRadius = round(radius*2.0);
-minRadius = radius;
-radiusStep = 10;
-isHidden = false;
+radiusStep = 40;
+minRadius = 2000;

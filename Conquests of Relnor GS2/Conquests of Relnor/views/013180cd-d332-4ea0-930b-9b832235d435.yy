@@ -12,7 +12,9 @@
         "8f862b55-c8ae-4332-a92e-90eb27b74e60",
         "4fbe738f-7f0f-41bb-9711-289f1bfd935d",
         "e5937bf4-52e3-49d5-85fb-f4048acc0690",
-        "537121b1-2de4-4314-bf96-d586c30a5804"
+        "537121b1-2de4-4314-bf96-d586c30a5804",
+        "0daa7acf-2020-40c4-817d-0afd5898c463",
+        "29ea4dad-d560-4d9f-8c6c-35272e13b7d3"
     ],
     "filterType": "GMObject",
     "folderName": "Light",
