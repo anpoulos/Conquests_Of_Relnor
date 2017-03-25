@@ -20,6 +20,7 @@ if(!_foundOldTime){
 	global.sun = noone;
 	global.shadowOpacity = 0.0;
 	global.shadowOpacityMax = 0.5;
+	global.nightShadowOpacity = 0.0;
 }
 
 room_goto(argument2);

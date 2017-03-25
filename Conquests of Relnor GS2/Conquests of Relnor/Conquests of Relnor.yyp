@@ -759,6 +759,14 @@
             }
         },
         {
+            "Key": "14e802aa-6b1a-4dd4-a9fb-498b44e56463",
+            "Value": {
+                "id": "bb54b5c2-47c8-423a-83e6-c355c91e6d71",
+                "resourcePath": "scripts\\scr_lifeform_draw_shadows_misc\\scr_lifeform_draw_shadows_misc.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "14e8f078-6f2a-40c4-a3cb-9e5a4b0f1975",
             "Value": {
                 "id": "de27e96f-f578-48ab-bad3-15e3858c7511",
@@ -8295,6 +8303,14 @@
             }
         },
         {
+            "Key": "eb6b9132-078e-4653-a734-4f5fd8536f93",
+            "Value": {
+                "id": "08f682f6-f9d4-489d-8454-4ea8e7c93652",
+                "resourcePath": "rooms\\rm_light_test\\rm_light_test.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "ebb0ac4a-3197-433a-bf60-3a43c8393393",
             "Value": {
                 "id": "b1e39c8d-7fb2-439f-9b90-1a6e1eefcd46",
@@ -8964,6 +8980,7 @@
         "df7e9eda-53c4-494f-a2f1-17d35105ae42",
         "ac87a5a1-7698-4839-a312-c7b32730c171",
         "1f42f81b-d215-4a48-bdff-8b0b16ea626d",
+        "14e802aa-6b1a-4dd4-a9fb-498b44e56463",
         "72c915a5-b42e-47b8-9102-716f0577cb99",
         "c7179506-8023-48a6-9563-6e00d1fff3c8",
         "b652bf0f-49c2-49a1-9c67-3fd07f6ee56c",

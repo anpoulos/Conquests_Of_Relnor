@@ -24,7 +24,12 @@ else{
 					global.shadowOpacity = global.shadowOpacityMax;
 				}
 			}
-			
+			if(global.nightShadowOpacity > 0.0){
+				global.nightShadowOpacity -= 0.01;
+				if(global.nightShadowOpacity < 0.0){
+					global.nightShadowOpacity = 0.0;
+				}
+			}
 			if(!global.isInterior && global.sun.x > 0){
 				global.sun.x -= sunStep;
 				if(global.sun.x < 0){
@@ -54,6 +59,12 @@ else{
 				global.shadowOpacity -= 0.05;
 				if(global.shadowOpacity < 0.0){
 					global.shadowOpacity = 0.0;
+				}
+			}
+			if(global.nightShadowOpacity < global.shadowOpacityMax){
+				global.nightShadowOpacity += 0.05;
+				if(global.nightShadowOpacity > global.shadowOpacityMax){
+					global.nightShadowOpacity = global.shadowOpacityMax;
 				}
 			}
 			if(!global.isInterior && global.sun.x < room_width){
