@@ -17,6 +17,9 @@ if(!_foundOldTime){
 	global.lightStep = 5;
 	global.forceNight = false;
 	global.lightColorRGB = make_color_rgb(0,0,0);
+	global.sun = noone;
+	global.shadowOpacity = 0.0;
+	global.shadowOpacityMax = 0.5;
 }
 
 room_goto(argument2);

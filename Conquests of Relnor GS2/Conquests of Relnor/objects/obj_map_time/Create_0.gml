@@ -19,17 +19,11 @@ else{
 	lightColorMin[0] = 0;
 	lightColorMin[1] = 0;
 	lightColorMin[2] = 0;
+	if(instance_exists(global.sun)){
+		instance_destroy(global.sun);
+	}
 	global.sun = instance_create(room_width-100, room_height, obj_map_light_sun);
 	sunStep = round(room_width/200)
-	if(global.time >= 700 && global.time <= 2000){
-		var s = (global.time-700)/1300;
-		global.sun.x = room_width - (room_width)*s;
-		
-	}
-	else{
-		
-		var s = (t/1100);
-	}
 }
 lightColor[0] = lightColorMax[0];
 lightColor[1] = lightColorMax[1];

@@ -767,6 +767,14 @@
             }
         },
         {
+            "Key": "1633b6b1-c077-489f-a9b5-854491a73f68",
+            "Value": {
+                "id": "13e54721-4b04-4a3c-ab95-4b5dafbc4639",
+                "resourcePath": "scripts\\scr_map_light_cycle_calc_light\\scr_map_light_cycle_calc_light.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1652d7f3-9333-46da-bcb0-87126c8b5d3c",
             "Value": {
                 "id": "5b9fc3dd-3719-4d5b-a9fa-ab2421e08f6e",
@@ -9162,6 +9170,7 @@
         "7b7aade9-1328-430b-bd7f-599c8825fdb8",
         "40dffcde-5c44-49ee-8cee-0740716568fa",
         "5a517b5a-a8bb-4439-b70f-a845300388a5",
+        "1633b6b1-c077-489f-a9b5-854491a73f68",
         "0f521da4-8790-43f7-9737-23be04ac2288",
         "fae5e7a7-a45a-41d6-a742-b618ae8fbb8b",
         "b3ed9a19-1f5c-4525-9d43-2b372920aaa9",

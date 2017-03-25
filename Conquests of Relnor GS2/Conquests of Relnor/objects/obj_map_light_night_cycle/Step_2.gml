@@ -5,7 +5,7 @@
 	if(global.time % 6 == 0){ 
 
 		if(!(global.time >= 700 && global.time <= 2000)){
-			//nighttime to daytime transition
+			//daytime to nighttime transition
 			if(radius < maxRadius){
 				radius += radiusStep;
 				if(radius > maxRadius){
@@ -25,7 +25,7 @@
 			}
 		}
 		else{
-			//daytime to nighttime transition
+			//nighttime to daytime transition
 			if(radius > minRadius){
 				radius -= radiusStep;
 				if(radius < minRadius){

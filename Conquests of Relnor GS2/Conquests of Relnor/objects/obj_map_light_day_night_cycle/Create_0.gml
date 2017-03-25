@@ -12,3 +12,5 @@ maxRadius = round(radius*2.0);
 minRadius = radius;
 radiusStep = 3;
 isHidden = false;
+
+scr_map_light_cycle_calc_light();

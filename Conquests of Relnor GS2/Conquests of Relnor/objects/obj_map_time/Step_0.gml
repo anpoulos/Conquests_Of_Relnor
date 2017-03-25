@@ -18,6 +18,13 @@ else{
 
 		if(global.time >= 700 && global.time <= 2000){
 			//nighttime to daytime transition
+			if(global.shadowOpacity < global.shadowOpacityMax){
+				global.shadowOpacity += 0.01;
+				if(global.shadowOpacity > global.shadowOpacityMax){
+					global.shadowOpacity = global.shadowOpacityMax;
+				}
+			}
+			
 			if(!global.isInterior && global.sun.x > 0){
 				global.sun.x -= sunStep;
 				if(global.sun.x < 0){
@@ -43,6 +50,12 @@ else{
 		}
 		else{
 			//daytime to nighttime transition
+			if(global.shadowOpacity > 0.0){
+				global.shadowOpacity -= 0.05;
+				if(global.shadowOpacity < 0.0){
+					global.shadowOpacity = 0.0;
+				}
+			}
 			if(!global.isInterior && global.sun.x < room_width){
 				global.sun.x += sunStep;
 				if(global.sun.x > room_width){
