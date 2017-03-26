@@ -18,7 +18,7 @@ self.inventory[3] = scr_consumable_strong_health_potion(self);
 self.inventory[4] = scr_consumable_bread(self);
 
 self.equipment[EQUIPMENT_TYPE_WEAPON] = inventory[0];
-self.equipment[EQUIPMENT_TYPE_OFFHAND] = inventory[1];
+self.equipment[EQUIPMENT_TYPE_OFFHAND] = scr_equipment_torch_create(self);
 
 //overrides
 self.reach = 30;

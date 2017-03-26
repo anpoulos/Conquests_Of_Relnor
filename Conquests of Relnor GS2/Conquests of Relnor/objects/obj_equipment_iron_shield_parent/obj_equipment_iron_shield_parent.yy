@@ -29,7 +29,20 @@
     "physicsSensor": false,
     "physicsShape": 0,
     "physicsShapePoints": [
-        
+        {
+            "id": "715754c7-0d58-43a9-b8e7-8dfdc4ec6b9d",
+            "modelName": "GMPoint",
+            "mvc": "1.0",
+            "x": 32,
+            "y": 32
+        },
+        {
+            "id": "8d2df20d-a32d-4a44-9ca6-ff5f305c2af3",
+            "modelName": "GMPoint",
+            "mvc": "1.0",
+            "x": 64,
+            "y": 32
+        }
     ],
     "physicsStartAwake": true,
     "solid": false,
