@@ -5,10 +5,8 @@
     "name": "013180cd-d332-4ea0-930b-9b832235d435",
     "children": [
         "8e69b77e-ae4d-44d5-b838-18ed3536518d",
-        "4fbe738f-7f0f-41bb-9711-289f1bfd935d",
-        "f594cb2a-bc95-465f-a458-8e7bbad30a43",
-        "4b6d0355-a9e5-46db-b60c-5b2b0cf5f5d3",
-        "ec204ed7-2ac9-4465-a6d7-d7c687c97c02"
+        "af01e7f3-eba9-416b-a32d-19fe82f661dc",
+        "1cedcfbf-18ff-4454-a4da-0c34e31577a8"
     ],
     "filterType": "GMObject",
     "folderName": "Light",

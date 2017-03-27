@@ -16,4 +16,8 @@ self.spriteBehind[RIGHT] = true;
 self.sprite[UP] = spr_equipment_torch_up;
 self.spriteBehind[UP] = true;
 
-flame = instance_create(x,y,obj_map_light_torch_flame);
+flame = noone;
+
+useScript = scr_equipment_torch_use;
+unequipScript = scr_equipment_torch_unequip;
+dropScript = scr_equipment_torch_drop;

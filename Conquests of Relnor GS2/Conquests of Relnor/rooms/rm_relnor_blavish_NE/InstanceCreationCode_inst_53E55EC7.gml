@@ -1,0 +1,1 @@
+scr_map_light_set_direction(LIGHT_DIRECTION_LEFT);

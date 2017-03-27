@@ -13,7 +13,10 @@ if(_alreadyEquippedItem != noone){
         owner.inventory[_inventorySlot] = self; //revert changes
         return false;
     }    
-    scr_lifeform_parent_inventory_add(owner, _alreadyEquippedItem); //unequip item to inventory
+	with(_alreadyEquippedItem){
+		script_execute(unequipScript);
+	}
+    //scr_lifeform_parent_inventory_add(owner, _alreadyEquippedItem); //unequip item to inventory
 }
 
 owner.equipment[self.equipmentStats[EQUIPMENT_STATS_TYPE]] = self; //equip equipment item

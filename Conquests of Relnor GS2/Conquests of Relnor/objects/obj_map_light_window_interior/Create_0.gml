@@ -41,7 +41,7 @@ dayColorTarget[1] = 225;
 dayColorTarget[2] = 150;
 
 daySprite = sprite_index;
-nightSprite = spr_light_window_dark_04;
+nightSprite = spr_light_window_dark;
 
 scr_map_light_calculate_dimensions();
 scr_map_light_cycle_calc_light();

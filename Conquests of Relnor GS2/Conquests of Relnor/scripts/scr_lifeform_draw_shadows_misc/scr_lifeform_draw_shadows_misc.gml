@@ -37,7 +37,7 @@ if(_totalLights > 0){
 	
 	var _direction = point_direction(x+_vectorX, y+_vectorY, x,y);
 	
-	draw_sprite_ext(sprite_index, 0, 
+	draw_sprite_ext(sprite_index, image_index, 
 						x + 10*dcos(_direction),
 						y - 10*dsin(_direction),
 						1,

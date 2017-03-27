@@ -104,7 +104,7 @@ with(_player){
                 
 			    var _text = "Drop";
                             
-			    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_item_drop, _item, 
+			    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, _item.dropScript, _item, 
 					_text, fnt_default_medium, _fontColor, 1.0, 0.5);
                 
 			    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 

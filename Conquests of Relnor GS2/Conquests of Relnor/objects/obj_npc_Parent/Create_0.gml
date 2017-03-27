@@ -34,3 +34,9 @@ self.moveInputs = scr_npc_set_directions_by_offset;
 self.moveState = scr_npc_states_move_state;
 self.state = scr_npc_choose_next_state;
 
+if(global.currentRoom != -1 && 
+	global.mapSaves.lifeformList[global.currentRoom] != noone &&
+	!global.loadingInstances){
+	instance_destroy();
+	return false;
+}

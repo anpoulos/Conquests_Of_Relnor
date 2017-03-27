@@ -3,7 +3,7 @@
 event_inherited(); 
 
 
-if(owner != noone){
+if(owner != noone && flame != noone){
 	switch(owner.face4Way){
 		case DOWN:
 			flame.x = owner.x + 5;

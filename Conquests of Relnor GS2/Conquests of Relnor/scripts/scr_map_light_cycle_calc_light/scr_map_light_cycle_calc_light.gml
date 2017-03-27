@@ -11,9 +11,9 @@ if(global.time >= 700 && global.time <= 2000){
 	nightOpacity = nightOpacityTargetDuringDay*s;
 	radius = dayRadiusTarget*s;
 	strength = dayStrengthTarget*s;
-	color[0] = dayColorTarget[0]*s;
-	color[1] = dayColorTarget[1]*s;
-	color[2] = dayColorTarget[2]*s;
+	color[0] = round(dayColorTarget[0]*s);
+	color[1] = round(dayColorTarget[1]*s);
+	color[2] = round(dayColorTarget[2]*s);
 }
 else{
 	var s = 1;
@@ -30,9 +30,9 @@ else{
 	}
 	radius = nightRadiusTarget*s;
 	strength = nightStrengthTarget*s;
-	color[0] = nightColorTarget[0]*s;
-	color[1] = nightColorTarget[1]*s;
-	color[2] = nightColorTarget[2]*s;
+	color[0] = round(nightColorTarget[0]*s);
+	color[1] = round(nightColorTarget[1]*s);
+	color[2] = round(nightColorTarget[2]*s);
 	
 }
 

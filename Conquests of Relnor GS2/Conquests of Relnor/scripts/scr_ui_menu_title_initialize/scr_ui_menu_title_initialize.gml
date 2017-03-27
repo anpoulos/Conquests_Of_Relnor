@@ -1,5 +1,9 @@
 ///scr_ui_menu_title_initialize
 
+global.mapSaves = instance_create(0,0,obj_map_saves);
+global.currentRoom = -1;
+global.loadingInstances = false;
+
 //create menu container
 var _menuColor = make_colour_rgb(0,50,100);
 var _menuColorArray = scr_create_obj_array4(_menuColor, _menuColor, _menuColor, _menuColor, "_menuColorArray");

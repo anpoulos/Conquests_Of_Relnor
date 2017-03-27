@@ -1,5 +1,6 @@
 ///scr_lifeform_constructor
 
+
 hasShadow = true;
 
 gold = 0;

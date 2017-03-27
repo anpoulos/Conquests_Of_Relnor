@@ -16,9 +16,10 @@ self.inventory[1] = scr_equipment_offhand_create_iron_shield(self);
 self.inventory[2] = scr_equipment_weapons_create_wooden_bow(self);
 self.inventory[3] = scr_consumable_strong_health_potion(self);
 self.inventory[4] = scr_consumable_bread(self);
+self.inventory[5] = scr_equipment_torch_create(self, false);
 
-self.equipment[EQUIPMENT_TYPE_WEAPON] = inventory[0];
-self.equipment[EQUIPMENT_TYPE_OFFHAND] = scr_equipment_torch_create(self);
+self.equipment[EQUIPMENT_TYPE_WEAPON] = scr_equipment_create_iron_sword(self);
+self.equipment[EQUIPMENT_TYPE_OFFHAND] = scr_equipment_offhand_create_iron_shield(self);
 
 //overrides
 self.reach = 30;

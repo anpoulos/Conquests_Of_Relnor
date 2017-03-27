@@ -45,7 +45,7 @@ for(var i = 0; i < INVENTORY_MAX; i++){
 		_newX += 40;	        
 		
         scr_ui_button_move(InventoryContainerRow[i].dropItemButton, _newX, _newY);
-		InventoryContainerRow[i].dropItemButton.clickedScript = scr_item_drop;
+		InventoryContainerRow[i].dropItemButton.clickedScript = _item.dropScript;
 		InventoryContainerRow[i].dropItemButton.clickedAs = _item;	
 		InventoryContainerRow[i].dropItemButton.isVisible = true;
         

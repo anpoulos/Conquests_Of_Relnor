@@ -1,4 +1,5 @@
 ///scr_room_begin_initialize(tileOffset)
+randomize();
 
 var _tileOffset = argument0;
 
@@ -10,3 +11,4 @@ room_height/global.tileOffset, global.tileOffset, global.tileOffset);
 mp_potential_settings(45, 5, 5, true);
 global.gamePaused = false;
 
+scr_map_load_positions();
