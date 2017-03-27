@@ -1,5 +1,7 @@
 
 objects[0] = noone;
+objectsHeight[0] = 0;
+objectsWidth[0] = 0;
 
 sparsity = 0.01;
 tries = 5;

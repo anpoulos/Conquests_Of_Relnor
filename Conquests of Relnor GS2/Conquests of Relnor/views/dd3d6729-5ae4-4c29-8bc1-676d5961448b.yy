@@ -7,7 +7,7 @@
         "07c01fa4-074c-4d7e-90fe-4ea2c1123a9d"
     ],
     "filterType": "GMScript",
-    "folderName": "Grove",
+    "folderName": "Group",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

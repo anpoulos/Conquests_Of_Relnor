@@ -3,13 +3,13 @@ if(global.currentRoom == -1){
 	return false;
 }
 
-if(instance_number(obj_map_solid_parent) > 0){
+if(instance_number(obj_map_parent) > 0){
 	global.mapSaves.objectList[global.currentRoom] = scr_linked_list_create();
 }
 //global.mapSaves.lifeformList[global.currentRoom] = scr_linked_list_create();
 
-for(var i = 0; i < instance_number(obj_map_solid_parent); i++){
-	var _object = instance_find(obj_map_solid_parent, i);
+for(var i = 0; i < instance_number(obj_map_parent); i++){
+	var _object = instance_find(obj_map_parent, i);
 	var _objectSave = instance_create(_object.x, _object.y, obj_map_object_save);
 	_objectSave.objectIndex = _object.object_index;
 	_objectSave.xScale = _object.image_xscale;
