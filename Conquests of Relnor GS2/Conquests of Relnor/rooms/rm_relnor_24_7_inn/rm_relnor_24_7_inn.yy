@@ -2,7 +2,7 @@
     "id": "138346d1-a462-457f-a338-1d09cbd3efbe",
     "modelName": "GMRoom",
     "mvc": "1.0",
-    "name": "rm_world_relnor_relnor_travor_inn",
+    "name": "rm_relnor_24_7_inn",
     "IsDnD": false,
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
@@ -67,7 +67,6 @@
         "3f1ca429-506d-43ee-a044-614013d89b42",
         "dcb2f0ce-c02f-4604-80e4-40a68079fbaf",
         "e66e840f-4fa7-4f0d-83a9-a9288e588182",
-        "f6244a15-d8ee-4942-bca3-9a672a19b17a",
         "a7beb0b7-ac0d-44a4-a410-05ffa9ea3b45",
         "a6f85ea2-27f0-4231-a447-1160cfda180b",
         "a95bed0a-d73a-4f0c-b29f-460cb29269d4",
@@ -107,7 +106,8 @@
         "50851585-3343-4446-aa3f-b9a40af020c8",
         "66f08cb7-a283-4530-8fb0-477bfa496d84",
         "32f79a89-be42-4c67-bb4e-86f9a38bd48e",
-        "5870c36f-9b04-4f69-a210-ca3c55223c3b"
+        "5870c36f-9b04-4f69-a210-ca3c55223c3b",
+        "ca6bedab-cb68-4472-b910-9bba8cbaa14c"
     ],
     "layers": [
         {
@@ -880,30 +880,6 @@
                     "scaleY": 1
                 },
                 {
-                    "id": "f6244a15-d8ee-4942-bca3-9a672a19b17a",
-                    "modelName": "GMRInstance",
-                    "mvc": "1.0",
-                    "ignore": false,
-                    "inheritItemSettings": false,
-                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
-                    "m_serialiseFrozen": false,
-                    "name": "inst_5E5FDD03",
-                    "x": 1072,
-                    "y": 752,
-                    "IsDnD": false,
-                    "colour": {
-                        "Value": 4294967295
-                    },
-                    "creationCodeFile": "InstanceCreationCode_inst_5E5FDD03.gml",
-                    "creationCodeType": ".gml",
-                    "inheritCode": false,
-                    "name_with_no_file_rename": "inst_5E5FDD03",
-                    "objId": "05095ede-7115-4d38-abf2-c45b4b088ea7",
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                },
-                {
                     "id": "a7beb0b7-ac0d-44a4-a410-05ffa9ea3b45",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
@@ -1211,6 +1187,30 @@
                     "inheritCode": false,
                     "name_with_no_file_rename": "inst_3A30E1D2",
                     "objId": "4fbe738f-7f0f-41bb-9711-289f1bfd935d",
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "id": "ca6bedab-cb68-4472-b910-9bba8cbaa14c",
+                    "modelName": "GMRInstance",
+                    "mvc": "1.0",
+                    "ignore": false,
+                    "inheritItemSettings": false,
+                    "m_originalParentID": "00000000-0000-0000-0000-000000000000",
+                    "m_serialiseFrozen": false,
+                    "name": "inst_68C69B51",
+                    "x": 1072,
+                    "y": 752,
+                    "IsDnD": false,
+                    "colour": {
+                        "Value": 4294967295
+                    },
+                    "creationCodeFile": "InstanceCreationCode_inst_68C69B51.gml",
+                    "creationCodeType": ".gml",
+                    "inheritCode": false,
+                    "name_with_no_file_rename": "inst_68C69B51",
+                    "objId": "05095ede-7115-4d38-abf2-c45b4b088ea7",
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1

@@ -770,7 +770,7 @@
             "Key": "138346d1-a462-457f-a338-1d09cbd3efbe",
             "Value": {
                 "id": "d9daca77-815a-4adf-b99a-d1d02008d9b1",
-                "resourcePath": "rooms\\rm_world_relnor_relnor_travor_inn\\rm_world_relnor_relnor_travor_inn.yy",
+                "resourcePath": "rooms\\rm_relnor_24_7_inn\\rm_relnor_24_7_inn.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -3703,14 +3703,6 @@
             }
         },
         {
-            "Key": "678a0857-b35f-4b4f-92bb-fdeb5abe2036",
-            "Value": {
-                "id": "589ef720-e283-4a7a-9490-51c579c5ac29",
-                "resourcePath": "objects\\obj_map_light\\obj_map_light.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "67eb8441-617e-4254-95e3-9e6c569b5b97",
             "Value": {
                 "id": "7525b1d4-0ce5-49d7-89a2-ff13cb8a41ff",
@@ -5346,7 +5338,7 @@
             "Key": "958d5534-008b-4ecf-a35c-55af6729af1b",
             "Value": {
                 "id": "f397c899-639e-4b86-ba3b-fbcc35e1a053",
-                "resourcePath": "rooms\\rm_relnor_blavish_NE\\rm_relnor_blavish_NE.yy",
+                "resourcePath": "rooms\\rm_relnor_24_7_blavish_NE\\rm_relnor_24_7_blavish_NE.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -8231,6 +8223,14 @@
             }
         },
         {
+            "Key": "e033c86a-87b6-4d08-989c-4bd8a61254f9",
+            "Value": {
+                "id": "3d29db58-5cb4-4634-a8f6-bab033095ead",
+                "resourcePath": "views\\e033c86a-87b6-4d08-989c-4bd8a61254f9.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "e0439df1-c094-4c0f-bb8a-62393852b6e2",
             "Value": {
                 "id": "d97a58c9-e3ec-43ba-9ecc-13647be4d69d",
@@ -8468,6 +8468,14 @@
                 "id": "903601a8-d285-4749-b7b0-efd59c28e026",
                 "resourcePath": "views\\e5556fc6-5ad8-46f3-887e-da7d0efbe2ed.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e5d32e28-3993-49db-9b34-94db62551733",
+            "Value": {
+                "id": "b11301ca-bd03-4e56-935c-a743fba3c193",
+                "resourcePath": "rooms\\rm_relnor_24_8\\rm_relnor_24_8.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

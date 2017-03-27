@@ -1,10 +1,10 @@
 
 var _objIndex = self.object_index;
 
-if(global.time >= 700 && global.time <= 2000){
+if(global.time >= 7000 && global.time <= 20000){
 	var s = 1;
-	if(global.time >= 700 && global.time <= 1000){
-		s = (global.time-700)/300;
+	if(global.time >= 7000 && global.time <= 10000){
+		s = (global.time-7000)/3000;
 	}
 	
 	dayOpacity = dayOpacityTargetDuringDay*s;
@@ -18,8 +18,8 @@ if(global.time >= 700 && global.time <= 2000){
 else{
 	var s = 1;
 	
-	if(global.time <= 2400 && global.time >= 2000){
-		s = (global.time - 2000)/200;
+	if(global.time <= 24000 && global.time >= 20000){
+		s = (global.time - 20000)/2000;
 	}
 
 	dayOpacity = dayOpacityTargetDuringNight*s;

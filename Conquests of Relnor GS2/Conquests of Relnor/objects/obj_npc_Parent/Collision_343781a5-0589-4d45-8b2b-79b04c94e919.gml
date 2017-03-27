@@ -77,7 +77,7 @@ if(self.face4Way == _directionRelativeToMe4Way){
     
     if(!collision_circle(_destinedX1, _destinedY1, 10, obj_Lifeform_Parent, false, true) && 
     !collision_circle(_destinedX1, _destinedY1, 10, obj_unwalkable, false, true) && 
-    mp_grid_get_cell(global.aiGrid, scr_room_get_grid_x(_destinedX1), scr_room_get_grid_y(_destinedY1)) != 0 ){
+    mp_grid_get_cell(global.aiGrid, scr_room_get_grid_x(_destinedX1), scr_room_get_grid_y(_destinedY1)) != -1 ){
         path_change_point(path, pathIndex, _destinedX1, _destinedY1, self.currentMoveSpeed);
         if(pathIndex+1 < path_get_number(path)){
            path_change_point(path, pathIndex+1, x+_newXOffset2, y+_newYOffset2, self.currentMoveSpeed);

@@ -2,7 +2,7 @@
 
 switch(argument0){
 case rm_light_test:
-case rm_world_relnor_relnor_travor_inn: 
+case rm_relnor_24_7_inn: 
 	return true;
 
 default: 

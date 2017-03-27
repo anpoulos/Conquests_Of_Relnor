@@ -4,7 +4,7 @@
 lightX = x + xOffset;
 lightY = y + yOffset;
 
-if(global.time >= 700 && global.time <= 1900){
+if(global.time >= 7000 && global.time <= 19000){
 	//daytime
 	scr_map_light_cycle_color_step(dayColorTarget);
 	scr_map_light_cycle_strength_step(dayStrengthTarget);
