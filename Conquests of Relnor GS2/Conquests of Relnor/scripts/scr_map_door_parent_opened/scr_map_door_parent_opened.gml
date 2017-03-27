@@ -1,5 +1,9 @@
 ///scr_map_door_parent_opened
 
 if(destinationRoom != noone){
-    scr_player_new_room(destinationX,destinationY,destinationRoom);
+	global.mapSaves.destinationX = destinationX;
+	global.mapSaves.destinationY = destinationY;
+	global.mapSaves.destinationRoom = destinationRoom;
+	global.mapSaves.isLoading = true;
+	global.mapSaves.loadingOpacity = 0.1;
 }

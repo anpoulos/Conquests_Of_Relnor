@@ -5,3 +5,8 @@ for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;
 	objectList[i] = noone;
 }
+
+destinationX = noone;
+destinationY = noone;
+destinationRoom = noone;
+loadingOpacity = 0.0;

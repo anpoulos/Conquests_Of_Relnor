@@ -1,4 +1,6 @@
-///scr_player_new_room(x,y,room)
+///@param x
+///@param y
+///@param room
 
 scr_map_save_positions();
 
