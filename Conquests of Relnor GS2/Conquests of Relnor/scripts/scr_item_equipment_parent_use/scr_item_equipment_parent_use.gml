@@ -23,6 +23,8 @@ if(_alreadyEquippedItem != noone){
 
 owner.equipment[self.equipmentStats[EQUIPMENT_STATS_TYPE]] = self; //equip equipment item
 
+isEquipped = true;
+
 if(global.gamePaused){
 	scr_player_gui_update_all(true);
 }

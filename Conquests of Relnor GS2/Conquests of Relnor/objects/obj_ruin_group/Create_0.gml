@@ -3,7 +3,7 @@
 
 event_inherited();
 
-sparsity = 0.03;
+sparsity = 0.04;
 
 objects[0] = obj_map_ruin_bricks;
 objectsHeight[0] = 40;
@@ -20,3 +20,7 @@ objectsWidth[2] = 60;
 objects[3] = obj_map_ruin_rubble_random;
 objectsHeight[3] = 0;
 objectsWidth[3] = 0;
+
+objects[4] = obj_map_ruin_rubble_random;
+objectsHeight[4] = 0;
+objectsWidth[4] = 0;

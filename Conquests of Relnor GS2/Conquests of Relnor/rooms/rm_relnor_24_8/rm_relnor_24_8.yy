@@ -4519,8 +4519,8 @@
                             "name_with_no_file_rename": "inst_7D9B8032",
                             "objId": "bf7a3ca4-8732-49ac-a038-442bc95e1f42",
                             "rotation": 0,
-                            "scaleX": 6,
-                            "scaleY": 10
+                            "scaleX": 6.5,
+                            "scaleY": 10.5
                         }
                     ]
                 },

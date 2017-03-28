@@ -14,7 +14,7 @@ isStill = false;
 hasDayFlicker = true;
 hasNightFlicker = true;
 flickerAmount = 20;
-lightFlickerOffset = 10;
+lightFlickerOffset = 5;
 
 dayOpacity = 1.0;
 nightOpacity = 1.0;

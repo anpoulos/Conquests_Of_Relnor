@@ -9,3 +9,4 @@ equipmentStats[EQUIPMENT_STATS_MAX] = noone;
 useScript = scr_item_equipment_parent_use;
 unequipScript = scr_item_equipment_parent_unequip;
 
+isEquipped = false;

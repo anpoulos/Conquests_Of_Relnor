@@ -75,11 +75,16 @@ switch(self.face8Way){
     break;
 }
 
-var _cellX = (self.x + hSpeed) div global.tileOffset;
-var _cellY = (self.y + vSpeed) div global.tileOffset;
+//var _cellX = (self.x + hSpeed) div global.tileOffset;
+//var _cellY = (self.y + vSpeed) div global.tileOffset;
 
 //if(mp_grid_get_cell(global.aiGrid, _cellX, _cellY) == 0){
-	scr_obj_move_phy(self, hSpeed, vSpeed);
+var _destinationX = x + hSpeed;
+var _destinationY = y + vSpeed;
+if(_destinationX > 0 && _destinationX < room_width &&
+	_destinationY > 0 && _destinationY < room_height){
+	scr_obj_move_phy(self, hSpeed, vSpeed);	
+}
 //}
 
 

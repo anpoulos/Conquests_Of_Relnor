@@ -10,6 +10,8 @@ if(scr_lifeform_parent_inventory_get_free_space(owner) < _freeSpaceNeeded){
 //unequip item
 owner.equipment[self.equipmentStats[EQUIPMENT_STATS_TYPE]] = noone;
 
+isEquipped = false;
+
 scr_lifeform_parent_inventory_add(owner, self);
 scr_player_gui_update_all(true);
 

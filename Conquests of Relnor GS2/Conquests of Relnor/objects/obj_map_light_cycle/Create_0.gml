@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+isVisible = true;
+
 xOffset = 0;
 yOffset = 0;
 lightX = x+xOffset;
