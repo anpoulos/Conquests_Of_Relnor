@@ -23,5 +23,3 @@ self.inventory[1] = scr_consumable_food_random(self);
 //override
 self.wanderDistance = 0;
 
-
-

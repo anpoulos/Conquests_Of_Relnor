@@ -18,4 +18,3 @@ self.equipment[WEAPON] = scr_equipment_weapons_create_wooden_bow(self);
 self.wanderDistance = 0;
 
 
-

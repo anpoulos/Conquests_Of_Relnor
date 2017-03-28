@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+objectIndex = noone;
 
 gold = 0;
 healthBarCurrentBar = 9;
@@ -32,3 +33,18 @@ for(var j = 0; j < STATS_INTELLIGENCE_MAX; j++){
 
 sight = 50;
 reach = 15;
+
+isDefensive = true;
+isAggressive = false;
+originX = x;
+originY = y;
+wanderRadius = 1000;
+wanderDistance = 50;
+oldWanderRadius = wanderRadius;
+oldWanderDistance = wanderDistance;
+
+for(var i = 0; i < SHOP_ITEMS_MAX; i++){
+	shopItems[i] = noone;
+}
+shopItemsAmount[SHOP_ITEMS_MAX] = noone;
+shopGold = 0;

@@ -10,6 +10,6 @@ if(global.playerSpawnY != noone){
     _playerY = global.playerSpawnY;
 }
 
-instance_create(_playerX, _playerY, obj_player);
+global.player = instance_create(_playerX, _playerY, obj_player);
 
 instance_create(0,0,obj_map_time);

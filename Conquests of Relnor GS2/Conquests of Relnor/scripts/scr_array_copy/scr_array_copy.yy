@@ -1,8 +1,8 @@
 {
-    "id": "4f1a8a4e-4ea6-41cf-a816-f4b20229aabf",
+    "id": "e8d84d38-c8e6-4948-b1cf-78f4e459f047",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_global_command_get_unique_npc_id",
+    "name": "scr_array_copy",
     "IsCompatibility": false,
     "IsDnD": false
 }

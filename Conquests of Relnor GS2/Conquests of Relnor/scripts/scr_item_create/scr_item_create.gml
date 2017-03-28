@@ -7,7 +7,7 @@
 ///@param item_stats_drop_percentage 6
 ///@param icon 7
 ///@param groundSprite 8 
-///@param owner9
+///@param owner 9
 ///@param isVisible 10
 
 var _item = instance_create(argument0, argument1, argument2);

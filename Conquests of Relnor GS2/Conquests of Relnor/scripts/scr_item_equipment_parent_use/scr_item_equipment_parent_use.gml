@@ -3,7 +3,9 @@
 var _freeSpaceNeeded = 0;
 var _inventorySlot = scr_item_inventory_get_slot(self);
 
-owner.inventory[_inventorySlot] = noone;
+if(_inventorySlot != -1){
+	owner.inventory[_inventorySlot] = noone;
+}
 
 //item is already in that equipment slot
 var _alreadyEquippedItem = owner.equipment[self.equipmentStats[EQUIPMENT_STATS_TYPE]];

@@ -20,5 +20,3 @@ self.inventory[0] = scr_consumable_potion_random(self);
 self.inventory[1] = scr_consumable_food_random(self);
 
 //override
-
-

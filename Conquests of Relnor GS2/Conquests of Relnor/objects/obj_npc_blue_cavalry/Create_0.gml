@@ -19,4 +19,3 @@ self.wanderDistance = 0;
 scr_npc_set_speeds(2,8,12);
 
 
-

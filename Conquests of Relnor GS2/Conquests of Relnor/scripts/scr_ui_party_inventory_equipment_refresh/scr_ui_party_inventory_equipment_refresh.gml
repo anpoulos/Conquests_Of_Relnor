@@ -1,8 +1,6 @@
 ///@param hideItemInfo
 
-var _player = instance_find(obj_player, 0);
-
-with(_player){
+with(global.player){
 
 	if(argument0){
 		InventoryInfoContainer.isVisible = false;

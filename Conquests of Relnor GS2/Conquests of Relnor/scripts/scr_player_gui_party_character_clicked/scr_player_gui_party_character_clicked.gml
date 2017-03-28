@@ -9,8 +9,8 @@ with(player){
         _panel.selected = false;
     }
 	
-    scr_ui_party_inventory_equipment_refresh(true);
 	scr_player_gui_party_update_character_stats();
 }
 
 selected = true;
+scr_ui_party_inventory_equipment_refresh(true);
