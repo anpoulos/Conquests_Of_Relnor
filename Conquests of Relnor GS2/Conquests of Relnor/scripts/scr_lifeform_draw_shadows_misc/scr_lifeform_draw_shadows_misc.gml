@@ -14,10 +14,8 @@ for(var i = 0; i < instance_number(obj_map_light_cycle); i++){
 	
 	_totalLights += 1;
 	
-	//draw_circle(_light.lightX, _light.lightY, _light.radius, true);
 	
 	var _playerDistanceFromCenter = point_distance(x,y,_light.lightX, _light.lightY);
-	//draw_line_color(x,y,_light.lightX, _light.lightY, c_red, c_red);
 	
 	var _direction = point_direction(_light.lightX, _light.lightY, x,y);
 	
@@ -25,15 +23,20 @@ for(var i = 0; i < instance_number(obj_map_light_cycle); i++){
 	
 	var _pointX = x + (_light.radius-_playerDistanceFromCenter)*dcos(_direction)*_radiusStrength*_light.strength;
 	var _pointY = y - (_light.radius-_playerDistanceFromCenter)*dsin(_direction)*_radiusStrength*_light.strength;
-	
-	//draw_line_color(x,y,_pointX, _pointY, c_blue, c_blue);
+	if(global.debug > 0){
+		draw_line_color(x,y,_light.lightX, _light.lightY, c_red, c_red);
+		draw_line_color(x,y,_pointX, _pointY, c_blue, c_blue);
+		draw_circle(_light.lightX, _light.lightY, _light.radius, true);
+	}
 	
 	_vectorX += (x - _pointX);
 	_vectorY += (y - _pointY);
 }
 
 if(_totalLights > 0){
-	//draw_circle(x+_vectorX, y+_vectorY, 10, false);
+	if(global.debug > 0){
+		draw_circle(x+_vectorX, y+_vectorY, 10, false);
+	}
 	
 	var _direction = point_direction(x+_vectorX, y+_vectorY, x,y);
 	

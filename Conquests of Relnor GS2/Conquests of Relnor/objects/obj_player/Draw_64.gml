@@ -2,7 +2,7 @@
 
 event_inherited();
 
-if debug_mode {
+if (global.debug > 0) {
 	draw_text_color(30, 50, string_hash_to_newline("FPS = " + string(fps)), c_white, c_white, c_white, c_white, 1.0);
 	draw_text_color(30, 100, "Time: "+string(global.time), c_white, c_white, c_white, c_white, 1.0);
 	if(!global.isInterior){

@@ -1,6 +1,6 @@
 ///if debug, draw self
 
-if(debug_mode){
+if(global.debug > 0){
     draw_self();
 }
 

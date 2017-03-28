@@ -3,7 +3,7 @@ event_inherited();
 
 ///Draw AI Path
 
-if(debug_mode){
+if(global.debug > 0){
     draw_path(path, x,y, true);
 }
 
