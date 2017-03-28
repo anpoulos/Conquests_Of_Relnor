@@ -6,7 +6,7 @@ mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
 global.playerSpawnX = noone;
 global.playerSpawnY = noone;
 
-if(global.mapSaves.objectList[global.currentRoom] == noone){
+if(global.mapSaves.objectList[scr_room_get_id(room)] == noone){
 	var _groups = scr_linked_list_create();
 
 	for(var i = 0; i < instance_number(obj_group_parent); i++){

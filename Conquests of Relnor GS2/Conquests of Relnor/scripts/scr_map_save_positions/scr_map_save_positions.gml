@@ -1,14 +1,16 @@
 
-if(global.currentRoom == -1){
+var _roomId = scr_room_get_id(room);
+
+if(_roomId == -1){
 	return false;
 }
 
-if(global.mapSaves.objectList[global.currentRoom] == noone){
-	global.mapSaves.objectList[global.currentRoom] = scr_linked_list_create();
+if(global.mapSaves.objectList[_roomId] == noone){
+	global.mapSaves.objectList[_roomId] = scr_linked_list_create();
 }
 
-if(global.mapSaves.lifeformList[global.currentRoom] == noone){
-	global.mapSaves.lifeformList[global.currentRoom] = scr_linked_list_create();
+if(global.mapSaves.lifeformList[_roomId] == noone){
+	global.mapSaves.lifeformList[_roomId] = scr_linked_list_create();
 }
 
 for(var i = 0; i < instance_number(obj_map_parent); i++){
@@ -23,7 +25,7 @@ for(var i = 0; i < instance_number(obj_map_parent); i++){
 	_objectSave.bboxRight = _object.bbox_right;
 	_objectSave.bboxTop = _object.bbox_top;
 	
-	scr_linked_list_add(global.mapSaves.objectList[global.currentRoom], _objectSave);
+	scr_linked_list_add(global.mapSaves.objectList[_roomId], _objectSave);
 }
 
 for(var k = 0; k < instance_number(obj_npc_Parent); k++){
@@ -100,5 +102,5 @@ for(var k = 0; k < instance_number(obj_npc_Parent); k++){
 		_lifeformSave.shopGold = _lifeform.shopGold;
 	}
 	
-	scr_linked_list_add(global.mapSaves.lifeformList[global.currentRoom], _lifeformSave);
+	scr_linked_list_add(global.mapSaves.lifeformList[_roomId], _lifeformSave);
 }

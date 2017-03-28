@@ -7,7 +7,6 @@ scr_map_save_positions();
 global.playerSpawnX = argument0;
 global.playerSpawnY = argument1;
 global.isInterior = scr_room_is_interior(argument2);
-global.currentRoom = scr_room_get_id(argument2);
 
 var _oldTime = instance_find(obj_map_time, 0);
 var _foundOldTime = instance_exists(_oldTime);

@@ -1,15 +1,17 @@
 
-if(global.currentRoom == -1){
+var _roomId = scr_room_get_id(room);
+
+if(_roomId == -1){
 	return false;
 }
 
-if(global.mapSaves.lifeformList[global.currentRoom] != noone){
+if(global.mapSaves.lifeformList[_roomId] != noone){
 
 	while(instance_number(obj_npc_Parent) != 0){
 		instance_destroy(instance_find(obj_npc_Parent, 0));
 	}
 
-	var _lifeformList = global.mapSaves.lifeformList[global.currentRoom];
+	var _lifeformList = global.mapSaves.lifeformList[scr_room_get_id(room)];
 
 	while(scr_linked_list_size(_lifeformList) != 0){
 		var _lifeformSave = scr_linked_list_remove_next(_lifeformList);
@@ -111,7 +113,7 @@ if(global.mapSaves.lifeformList[global.currentRoom] != noone){
 
 }
 
-if(global.mapSaves.objectList[global.currentRoom] != noone){
+if(global.mapSaves.objectList[_roomId] != noone){
 
 	for(var i = 0; i < instance_number(obj_map_parent); i++){
 		with(obj_map_parent){
@@ -119,7 +121,7 @@ if(global.mapSaves.objectList[global.currentRoom] != noone){
 		}
 	}
 
-	var _objectList = global.mapSaves.objectList[global.currentRoom];
+	var _objectList = global.mapSaves.objectList[_roomId];
 	while(scr_linked_list_size(_objectList) != 0){
 		var _objectSave = scr_linked_list_remove_next(_objectList);
 		global.loadingInstances = true;
