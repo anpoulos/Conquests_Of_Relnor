@@ -4,5 +4,5 @@
 depth = -y;
 
 hasShadow = false;
-shadowOpacity = 0.5;
+shadowOpacity = 0.3;
 blend = false;

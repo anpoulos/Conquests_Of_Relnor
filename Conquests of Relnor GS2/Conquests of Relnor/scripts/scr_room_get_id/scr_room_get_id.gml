@@ -7,7 +7,9 @@ switch(argument0){
 	
 	case rm_relnor_24_8: return 2;
 	
+	case rm_light_test: return 3;
+	
 	default: return -1;
 }
 
-#macro ROOM_MAX 3
+#macro ROOM_MAX 4

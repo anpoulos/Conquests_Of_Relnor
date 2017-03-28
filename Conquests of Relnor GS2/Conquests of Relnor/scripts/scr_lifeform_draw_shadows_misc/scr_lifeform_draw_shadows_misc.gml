@@ -1,5 +1,5 @@
 
-var _opacity = argument0;
+var _opacityMultiplier = argument0;
 var _vectorX = 0;
 var _vectorY = 0;
 var _totalLights = 0;
@@ -14,7 +14,6 @@ for(var i = 0; i < instance_number(obj_map_light_cycle); i++){
 	
 	_totalLights += 1;
 	
-	
 	var _playerDistanceFromCenter = point_distance(x,y,_light.lightX, _light.lightY);
 	
 	var _direction = point_direction(_light.lightX, _light.lightY, x,y);
@@ -23,6 +22,7 @@ for(var i = 0; i < instance_number(obj_map_light_cycle); i++){
 	
 	var _pointX = x + (_light.radius-_playerDistanceFromCenter)*dcos(_direction)*_radiusStrength*_light.strength;
 	var _pointY = y - (_light.radius-_playerDistanceFromCenter)*dsin(_direction)*_radiusStrength*_light.strength;
+	
 	if(global.debug > 0){
 		draw_line_color(x,y,_light.lightX, _light.lightY, c_red, c_red);
 		draw_line_color(x,y,_pointX, _pointY, c_blue, c_blue);
@@ -34,18 +34,29 @@ for(var i = 0; i < instance_number(obj_map_light_cycle); i++){
 }
 
 if(_totalLights > 0){
+	var _pointX = x + _vectorX;
+	var _pointY = y + _vectorY;
+	
+	var _direction = point_direction(_pointX, _pointY, x,y);
+	
+	var _opacity = ( 1 - (max(sprite_width, sprite_height)/point_distance(x,y,_pointX,_pointY)) ) *_opacityMultiplier;
+	
 	if(global.debug > 0){
-		draw_circle(x+_vectorX, y+_vectorY, 10, false);
+		draw_circle(_pointX, _pointY, 10, false);
+		if(global.debug > 1){
+			draw_text_color(x,y-75, "opacity: "+string(_opacity),
+				c_white, c_white, c_white, c_white, 1.0);
+		}
 	}
 	
-	var _direction = point_direction(x+_vectorX, y+_vectorY, x,y);
+	var _xDirection = _direction+180;
 	
 	draw_sprite_ext(sprite_index, image_index, 
 						x + 10*dcos(_direction),
 						y - 10*dsin(_direction),
-						1,
-						1.25,
-						_direction-90,
-						c_black, 0.10);
+						-1,
+						0.5+_opacity*2,
+						_direction+270,
+						c_black, _opacity);
 }
 
