@@ -1,6 +1,9 @@
 ///Player
 
 event_inherited();
+
+InventoryInfoContainerItemStats = instance_create(x,y,obj_ui_party_inventory_item_info);
+
 gold = 1000;
 PauseMenuContainer = noone;
 zoom = 50;
