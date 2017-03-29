@@ -8,7 +8,7 @@ self.isAggressive = true;
 scr_npc_set_sprites(spr_mob_white_wolf_up, 
 	spr_mob_white_wolf_down, 
 	spr_mob_white_wolf_right, 
-	spr_mob_white_wolf_left,30);
+	spr_mob_white_wolf_left,40);
 	
 scr_npc_set_attack_sprites(spr_mob_white_wolf_up, 
 	spr_mob_white_wolf_down, 

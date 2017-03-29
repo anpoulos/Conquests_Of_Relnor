@@ -2,7 +2,7 @@
 
 //draw shadow
 if(hasShadow){
-	scr_lifeform_draw_shadows_misc(0.3);
+	scr_map_shadow_draw(0.5, 0.9);
 }
 
 var _equipmentLength = array_length_1d(self.equipment);

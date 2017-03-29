@@ -4,16 +4,7 @@
     "mvc": "1.0",
     "name": "obj_bush",
     "eventList": [
-        {
-            "id": "71130994-a379-4e99-ab77-a6ae19f8fee1",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "61771938-540a-4cf1-9429-d4b25a4169dd"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "2a6760f0-6f15-4545-886e-f5ca99ca6f9e",

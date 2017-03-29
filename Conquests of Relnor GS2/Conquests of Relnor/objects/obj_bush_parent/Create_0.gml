@@ -3,4 +3,4 @@
 
 event_inherited();
 
-hasShadow = true;
+shadowPortion = 0.8;

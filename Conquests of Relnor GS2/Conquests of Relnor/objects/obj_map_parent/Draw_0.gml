@@ -2,12 +2,7 @@
 // You can write your code in this editor
 
 if(hasShadow){
-	scr_lifeform_draw_shadows_misc(shadowOpacity);
+	scr_map_shadow_draw(shadowOpacity, shadowPortion);
 }
 
-if(blend){
-//TODO - blend bottom of sprite with ground
-}
-else{
-	draw_self();
-}
+draw_self();

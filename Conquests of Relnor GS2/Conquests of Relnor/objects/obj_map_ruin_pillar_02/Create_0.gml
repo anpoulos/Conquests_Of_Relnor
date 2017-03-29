@@ -2,4 +2,4 @@
 // You can write your code in this editor
 event_inherited();
 
-hasShadow = true;
+shadowPortion = 0.9;

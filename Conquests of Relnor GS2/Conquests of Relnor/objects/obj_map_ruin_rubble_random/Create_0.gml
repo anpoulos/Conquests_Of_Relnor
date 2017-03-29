@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-hasShadow = true;
+shadowPortion = 0.8;
 
 switch(irandom(2)){
 	case 1: sprite_index = spr_map_exterior_ruin_rubble_02;
