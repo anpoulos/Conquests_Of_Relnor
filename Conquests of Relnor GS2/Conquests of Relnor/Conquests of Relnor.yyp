@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "02c6589d-4351-4606-8380-fea3da8f1612",
+            "Value": {
+                "id": "14a40182-c7eb-4944-a767-c5014e69987e",
+                "resourcePath": "views\\02c6589d-4351-4606-8380-fea3da8f1612.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "03012414-3cc2-4d42-9cc6-24c756911068",
             "Value": {
                 "id": "4355c283-fb9a-4fc6-b785-7fd0431bab85",
@@ -1103,6 +1111,14 @@
             }
         },
         {
+            "Key": "1c8b1f28-6f25-4e34-ac32-e9fecaad429e",
+            "Value": {
+                "id": "0630f3e1-d54c-454e-b293-276f95d2227e",
+                "resourcePath": "views\\1c8b1f28-6f25-4e34-ac32-e9fecaad429e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1c90e64d-be45-404d-a29e-ecf8922f9d9f",
             "Value": {
                 "id": "a9449ce9-e7fc-4e46-974c-88ce834c2131",
@@ -1511,6 +1527,14 @@
             }
         },
         {
+            "Key": "278a98a5-0038-4f53-927f-af54fdace802",
+            "Value": {
+                "id": "4e0ef992-ac6c-47f9-b21b-3872a01e648a",
+                "resourcePath": "sprites\\spr_mob_white_wolf_left\\spr_mob_white_wolf_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "27ecb924-1641-4c26-9fde-bba8f793aa12",
             "Value": {
                 "id": "3ba302d3-69d7-46eb-828e-955053135464",
@@ -1556,6 +1580,14 @@
                 "id": "7b826080-1dfe-43b7-a635-52bb88eafb20",
                 "resourcePath": "scripts\\scr_player_command_apply_script_to_all_selected\\scr_player_command_apply_script_to_all_selected.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "295951a2-e568-4d68-a190-2f4c3b8f552c",
+            "Value": {
+                "id": "233bfc68-89b9-45ff-9504-7fb68b70b3f4",
+                "resourcePath": "sprites\\spr_mob_white_wolf_up\\spr_mob_white_wolf_up.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1636,6 +1668,14 @@
                 "id": "e696a3c2-169a-43ff-b1cf-a3f6f9b7595e",
                 "resourcePath": "sprites\\spr_map_clutter_weapon_spear_01_s01\\spr_map_clutter_weapon_spear_01_s01.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2b1f29fd-146e-4978-9fac-b9f4e884bf2a",
+            "Value": {
+                "id": "f4082ff8-1af2-44e5-a492-3739cbb6d204",
+                "resourcePath": "views\\2b1f29fd-146e-4978-9fac-b9f4e884bf2a.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2548,6 +2588,14 @@
                 "id": "f673d4d2-16b9-4891-856f-a52b02cd36cf",
                 "resourcePath": "views\\42d253c0-c4c1-4250-a9f0-9f7e8b01287a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "42dba7a1-a975-4a1f-8acc-f4fc9f721d15",
+            "Value": {
+                "id": "26c5b845-316e-4e6c-83de-9baf12521239",
+                "resourcePath": "sprites\\spr_mob_white_wolf_right\\spr_mob_white_wolf_right.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4796,6 +4844,14 @@
                 "id": "f43ce148-49f3-4643-9270-f0de8203cf82",
                 "resourcePath": "views\\8539b4f7-1ee9-4911-adfa-2668f415af4d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "853ca24f-8c62-4bcc-b0ad-05ef6c11e29d",
+            "Value": {
+                "id": "bef7694f-d37d-4ac3-a2f9-331550b55e00",
+                "resourcePath": "objects\\obj_mob_white_wolf\\obj_mob_white_wolf.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -8423,6 +8479,14 @@
             }
         },
         {
+            "Key": "e1369ac2-3512-43c6-bbab-ed900eb32022",
+            "Value": {
+                "id": "7db3715e-a214-4b12-adab-8a14829c73ad",
+                "resourcePath": "views\\e1369ac2-3512-43c6-bbab-ed900eb32022.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "e180db0f-7670-4513-8349-01001607ee58",
             "Value": {
                 "id": "d3f7b0f3-3e27-48b0-9ecc-bb6f570d97b0",
@@ -8468,6 +8532,14 @@
                 "id": "419cd2ac-3e76-4e13-a842-7355838fd064",
                 "resourcePath": "views\\e21c5727-83eb-4558-9df5-8f724d1abb79.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e23538c6-219f-4f4c-8e39-5b515db14a13",
+            "Value": {
+                "id": "741e769b-0eff-4015-a777-851b31976d02",
+                "resourcePath": "sprites\\spr_mob_white_wolf_down\\spr_mob_white_wolf_down.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -8636,6 +8708,14 @@
                 "id": "b11301ca-bd03-4e56-935c-a743fba3c193",
                 "resourcePath": "rooms\\rm_relnor_24_8\\rm_relnor_24_8.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "e6199ffd-7b6e-4b2f-b89a-3271519c6d0e",
+            "Value": {
+                "id": "5da3fe6f-6e0b-4194-ae8e-51829ae00347",
+                "resourcePath": "views\\e6199ffd-7b6e-4b2f-b89a-3271519c6d0e.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
