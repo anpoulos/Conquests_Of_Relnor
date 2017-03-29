@@ -4,6 +4,7 @@
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;
 	objectList[i] = noone;
+	itemList[i] = noone;
 }
 
 destinationX = noone;

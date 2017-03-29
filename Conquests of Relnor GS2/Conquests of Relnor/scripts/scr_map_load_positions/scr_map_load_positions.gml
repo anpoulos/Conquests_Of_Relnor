@@ -5,6 +5,14 @@ if(_roomId == -1){
 	return false;
 }
 
+if(global.mapSaves.itemList[_roomId] != noone){
+	while(scr_linked_list_size(global.mapSaves.itemList[_roomId]) != 0){
+		var _item = scr_linked_list_remove_next(global.mapSaves.itemList[_roomId]);
+		_item.isVisible = _item.wasVisible;
+		_item.wasVisible = false;
+	}
+}
+
 if(global.mapSaves.lifeformList[_roomId] != noone){
 
 	while(instance_number(obj_npc_Parent) != 0){

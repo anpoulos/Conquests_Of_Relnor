@@ -1,4 +1,8 @@
-///scr_npc_set_attack_sprites(up, down, right, left, image_speed)
+///@param up
+///@param down
+///@param right
+///@param left
+///@param speed
 
 self.attackSprite[UP] = argument0;
 self.attackSprite[DOWN] = argument1;

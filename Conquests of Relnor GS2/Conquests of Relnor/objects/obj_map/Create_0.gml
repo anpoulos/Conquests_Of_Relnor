@@ -26,7 +26,7 @@ else{
 		scr_player_create_gui();
 	}
 	global.player.commandModule = instance_create(0,0,obj_player_command_module);
-	global.player.commandModule.player = self;
+	global.player.commandModule.player = global.player;
 	
 	for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 		var _item = global.player.equipment[i];

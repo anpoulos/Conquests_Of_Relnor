@@ -49,8 +49,6 @@ if(_totalLights > 0){
 		}
 	}
 	
-	var _xDirection = _direction+180;
-	
 	draw_sprite_ext(sprite_index, image_index, 
 						x + 10*dcos(_direction),
 						y - 10*dsin(_direction),

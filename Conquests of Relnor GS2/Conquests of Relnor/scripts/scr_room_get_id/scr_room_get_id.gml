@@ -9,7 +9,9 @@ switch(argument0){
 	
 	case rm_light_test: return 3;
 	
+	case rm_test_room_large: return 4;
+	
 	default: return -1;
 }
 
-#macro ROOM_MAX 4
+#macro ROOM_MAX 5

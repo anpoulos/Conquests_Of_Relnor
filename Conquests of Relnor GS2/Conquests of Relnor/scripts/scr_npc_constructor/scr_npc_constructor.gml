@@ -22,13 +22,5 @@ self.wanderRadius = self.wanderDistance;
 self.oldWanderRadius = self.wanderRadius;
 
 self.allegiance = argument6;
-switch(self.allegiance){ //auto declaration of enemies
-    case ALLEGIANCE_BLUE:
-        scr_npc_allegiance_blue_declare_enemies();
-    break;
-    case ALLEGIANCE_RED:
-        scr_npc_allegiance_red_declare_enemies();
-    break;
-}
 self.allegianceRank[self.allegiance] = argument7;
 
