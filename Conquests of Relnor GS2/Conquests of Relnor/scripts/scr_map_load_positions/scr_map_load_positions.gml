@@ -8,10 +8,10 @@ if(_roomId == -1){
 if(global.mapSaves.itemList[_roomId] != noone){
 	while(scr_linked_list_size(global.mapSaves.itemList[_roomId]) != 0){
 		var _item = scr_linked_list_remove_next(global.mapSaves.itemList[_roomId]);
-		_item.isVisible = _item.wasVisible;
-		_item.wasVisible = false;
+		_item.isVisible = true;
 	}
 }
+
 
 if(global.mapSaves.lifeformList[_roomId] != noone){
 
@@ -42,7 +42,6 @@ if(global.mapSaves.lifeformList[_roomId] != noone){
 			var _item = _lifeformSave.equipment[i];
 			if(_item != noone){
 				_item.owner = _lifeform;
-				_item.isVisible = _item.wasVisible;
 			
 				with(_item){
 					script_execute(_item.useScript, _item);
@@ -61,7 +60,6 @@ if(global.mapSaves.lifeformList[_roomId] != noone){
 			var _item = _lifeformSave.inventory[i];
 			if(_item != noone){
 				_item.owner = _lifeform;
-				_item.isVisible = _item.wasVisible;
 				scr_lifeform_parent_inventory_add(_lifeform, _item);
 			}
 		}
@@ -106,7 +104,6 @@ if(global.mapSaves.lifeformList[_roomId] != noone){
 				var _item = _lifeformSave.shopItems[i];
 				if(_item != noone){
 					_item.owner = _lifeform;
-					_item.isVisible = _item.wasVisible;
 				}
 				
 				_lifeform.shopItems[i] = _item;

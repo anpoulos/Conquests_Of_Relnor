@@ -5,5 +5,3 @@ moved = false;
 
 commander = noone;
 
-
-

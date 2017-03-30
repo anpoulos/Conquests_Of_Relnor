@@ -33,6 +33,9 @@
         }
         scr_obj_move_to(self.selectBox, mouse_x, mouse_y);
     }
+	else if(commandModule.followButtonClicked){
+	
+	}
     else{
         var _selected = instance_position(mouse_x, mouse_y, obj_npc_Parent);
         if(_selected != noone && 

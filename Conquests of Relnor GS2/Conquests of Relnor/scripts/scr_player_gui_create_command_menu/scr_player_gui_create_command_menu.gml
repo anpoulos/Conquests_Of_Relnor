@@ -289,5 +289,30 @@ MouseActionText.isVisible = true;
     scr_destroy_instance(_SquareUnitsButtonInfo);
 //End of Square All Button
 
+//Follow Button
+    var _SquareUnitsButtonColor = make_colour_rgb(100,100,150);
+    var _SquareUnitsButtonPressedColor = make_colour_rgb(0,0,100);
+    var _SquareUnitsButtonColorArray = scr_create_obj_array4_repeat(_SquareUnitsButtonColor, "_SquareUnitsButtonColorArray");
+    
+    var _SquareUnitsButtonPositionArray = scr_create_obj_array4(-80,-10,80,10, "_SquareUnitsButtonPositionArray");
+    
+    var _fontColor = c_white;
+    
+    var _SquareUnitsButtonX = CommandMenuContainer.x;
+    var _SquareUnitsButtonY = SquareUnitsButton.y+30;
+    
+    var _SquareUnitsButtonInfo = 
+    scr_ui_get_obj_ui_button_information(5,scr_ui_button_commands_follow,self,
+    "Follow",fnt_default_small,_fontColor,1.0,0.6);
+    
+    FollowButton = scr_ui_button_constructor(_SquareUnitsButtonX,_SquareUnitsButtonY, 
+    _SquareUnitsButtonPositionArray, _SquareUnitsButtonColorArray, 
+    _SquareUnitsButtonPressedColor, true, _SquareUnitsButtonInfo, CommandMenuContainer);
+    
+    FollowButton.isVisible = true;
+    scr_destroy_instance(_SquareUnitsButtonColorArray);
+    scr_destroy_instance(_SquareUnitsButtonPositionArray);
+    scr_destroy_instance(_SquareUnitsButtonInfo);
+//Follow Button
 
 

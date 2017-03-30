@@ -12,9 +12,9 @@ spr_npc_archer_red_right, spr_npc_archer_red_left, 30);
 self.deadSprite = spr_npc_archer_red_dead;
 
 //equipment and inventory override
-self.equipment[WEAPON] = scr_equipment_weapons_create_wooden_bow(self);
+scr_lifeform_parent_inventory_equip(scr_equipment_weapons_create_wooden_bow(self));
 
-self.inventory[0] = scr_consumable_potion_random(self);
-self.inventory[1] = scr_consumable_food_random(self);
+scr_lifeform_parent_inventory_add(self, scr_consumable_potion_random(self));
+scr_lifeform_parent_inventory_add(self, scr_consumable_food_random(self));
 //override
 

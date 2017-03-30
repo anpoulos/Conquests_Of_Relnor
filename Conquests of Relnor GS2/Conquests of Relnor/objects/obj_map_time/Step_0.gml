@@ -5,6 +5,7 @@ global.time += 1;
 
 if(global.time >= 7000 && global.time <= 20000){
 	//nighttime to daytime transition
+	global.isNight = false;
 	if(!global.isInterior && global.sun.x > 0){
 		global.sun.x -= sunStep;
 		if(global.sun.x < 0){
@@ -14,6 +15,7 @@ if(global.time >= 7000 && global.time <= 20000){
 }
 else{
 	//daytime to nighttime transition
+	global.isNight = true;
 	if(!global.isInterior && global.sun.x < room_width){
 		global.sun.x += sunStep;
 		if(global.sun.x > room_width){

@@ -12,11 +12,11 @@ spr_npc_red_soldier_right, spr_npc_red_soldier_left, 30);
 self.deadSprite = noone;
 
 //equipment and inventory override
-self.equipment[OFFHAND] = scr_equipment_offhand_create_iron_shield(self);
+scr_lifeform_parent_inventory_equip(scr_equipment_offhand_create_iron_shield(self));
 
-self.equipment[WEAPON] = scr_equipment_create_iron_sword(self);
+scr_lifeform_parent_inventory_equip(scr_equipment_create_iron_sword(self));
 
-self.inventory[0] = scr_consumable_potion_random(self);
-self.inventory[1] = scr_consumable_food_random(self);
+scr_lifeform_parent_inventory_add(self, scr_consumable_potion_random(self));
+scr_lifeform_parent_inventory_add(self, scr_consumable_food_random(self));
 
 //override

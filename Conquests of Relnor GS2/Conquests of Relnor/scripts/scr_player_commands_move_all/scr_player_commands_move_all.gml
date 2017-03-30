@@ -1,5 +1,7 @@
 ///scr_player_commands_move_all
 
+	commandModule.followTarget = noone;
+
     var _averageX = 0;
     var _averageY = 0;
     var _totalSelected = self.commandModule.totalSelected;
@@ -22,6 +24,5 @@
         
         var _destinationX = mouse_x + _myOffsetX;//scr_room_get_grid_x(mouse_x)+ _myOffsetX;
         var _destinationY = mouse_y + _myOffsetY;//scr_room_get_grid_y(mouse_y) + _myOffsetY;
-        
         scr_npc_commands_move(_currentNPC, _unitArrivalCommand, _destinationX, _destinationY, false);
     }

@@ -6,3 +6,7 @@ if(self.commandModule.squarePreview != noone){
 }
 
 self.commandModule.mouseCommand = noone;
+commandModule.followButtonClicked = false;
+commandModule.followTarget = false;
+
+

@@ -1,5 +1,6 @@
 ///scr_lifeform_constructor
 
+followTarget = noone;
 
 hasShadow = true;
 

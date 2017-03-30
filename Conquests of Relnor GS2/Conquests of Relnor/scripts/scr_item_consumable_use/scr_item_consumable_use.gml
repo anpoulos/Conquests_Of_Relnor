@@ -47,6 +47,8 @@ if(uses == 0){
 	}
 }
 
+scr_lifeform_update_health_bar(owner);
+
 if(global.gamePaused){
 	if(uses == 0){
 		scr_player_gui_update_all(true);

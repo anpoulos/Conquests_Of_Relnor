@@ -13,6 +13,7 @@ var _foundOldTime = instance_exists(_oldTime);
 	
 if(!_foundOldTime){
 	global.lightSurface = 0;
+	global.isNight = false;
 	global.time = 0;
 	global.sun = noone;
 }

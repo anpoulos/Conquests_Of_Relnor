@@ -1,5 +1,6 @@
 ///scr_square_form(linkedList_SelectedNPCs, dimension, originX, originY)
 
+commandModule.followTarget = noone;
 
 var _selected = argument0;
 var _dimension = argument1;

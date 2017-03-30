@@ -2,6 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
+hasShadow = true;
 shadowPortion = 0.8;
 
 switch(irandom(2)){

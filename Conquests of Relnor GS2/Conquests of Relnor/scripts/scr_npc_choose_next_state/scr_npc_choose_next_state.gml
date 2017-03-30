@@ -17,11 +17,39 @@ if(instance_exists(target)){
     }
     else{
         scr_npc_move_to(self, target.x, target.y, 
-        scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed);   
+			scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed);   
     }
     return true;
 }
 
+if(followTarget != noone){
+	if(instance_exists(followTarget)){
+		var _distanceToTarget = point_distance(self.x, self.y, followTarget.x, followTarget.y);
+		if(_distanceToTarget > size*4){
+	        scr_npc_move_to(self, followTarget.x, followTarget.y, 
+				scr_npc_choose_next_state,self.size*4, false, false, self.runSpeed); 
+		}
+		return true;
+	}
+	else{
+		followTarget = noone;
+	}	
+}
+
+if(waitForX != noone && waitForY != noone){
+	var _distance = point_distance(x,y,waitForX,waitForY);
+	if(_distance <= 5){
+		waitForX = noone;
+		waitForY = noone;
+	}
+	else{
+		var _anything = collision_circle(waitForX, waitForY, 5, obj_Lifeform_Parent, false, true);
+		if(_anything == noone){
+			scr_npc_move_to(self, waitForX, waitForY, scr_npc_choose_next_state, size, false, false, self.runSpeed);
+		}
+	}
+	return true;
+}
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
 if(_distanceFromOrigin > self.wanderRadius){
@@ -40,7 +68,8 @@ switch(_nextState){
     case 0:
     case 1:
         self.alarm[1] = irandom_range(30,90);
-        self.state = scr_npc_idle_state;
+        self.state = idleState;
+		scr_npc_rotate_equipment();
     break;
     
     //wander

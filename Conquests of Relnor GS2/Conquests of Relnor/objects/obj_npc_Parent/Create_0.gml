@@ -2,6 +2,8 @@
 
 event_inherited();
 
+checkedNightEquipment = false;
+checkedDayEquipment = false;
 nameIdentifier = "";
 busyState = scr_npc_states_busy;
 myCollisionTurn = false;
@@ -19,6 +21,8 @@ wanderDistance = 50;
 oldWanderRadius = wanderRadius;
 oldWanderDistance = wanderDistance;
 lockedTarget = noone;
+waitForX = noone;
+waitForY = noone;
 
 //override
 self.reach = 25;
@@ -33,3 +37,4 @@ self.attackState = scr_npc_states_attack_state;
 self.moveInputs = scr_npc_set_directions_by_offset;
 self.moveState = scr_npc_states_move_state;
 self.state = scr_npc_choose_next_state;
+self.idleState = scr_npc_idle_state;

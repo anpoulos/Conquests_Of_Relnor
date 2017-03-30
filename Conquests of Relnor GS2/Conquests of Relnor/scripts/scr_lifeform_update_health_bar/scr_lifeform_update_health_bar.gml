@@ -1,4 +1,5 @@
 ///scr_lifeform_update_health_bar(lifeform)
+///@param lifeform
 
 //healthbar has 9 states, 0-9 no fill to full fill
 
