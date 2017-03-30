@@ -19,8 +19,8 @@
     var _playerPanelX = PauseMenuPlayerInformationContainer.leftX + _panelWidth/2 + _margin;
     var _playerPanelY = PauseMenuPlayerInformationContainer.topY + _panelHeight/2 + _margin;
     var _playerPanel = scr_player_gui_party_create_character_panel(self, _playerPanelX, _playerPanelY);
-    
-    scr_linked_list_add(CharacterPanels, _playerPanel);
+
+	scr_linked_list_add(CharacterPanels, _playerPanel);
     
     var _lastX = _playerPanelX;
     var _lastY = _playerPanelY;
@@ -39,4 +39,5 @@
 			_panel.selected = true;
 		}
         scr_linked_list_add(CharacterPanels, _panel);
+		
     }

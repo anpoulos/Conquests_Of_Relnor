@@ -15,5 +15,7 @@ if (global.debug > 0) {
 
 
 if(MoveItem != noone){
-	draw_sprite(MoveItem.icon, 0, mouse_x, mouse_y);
+	draw_sprite(MoveItem.icon, 0, 
+		device_mouse_x_to_gui(0), 
+		device_mouse_y_to_gui(0));
 }

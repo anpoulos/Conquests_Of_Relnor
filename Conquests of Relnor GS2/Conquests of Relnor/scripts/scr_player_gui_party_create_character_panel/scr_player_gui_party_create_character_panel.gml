@@ -1,4 +1,8 @@
 ///scr_player_gui_party_create_character_panel(character, menuX, menuY)
+///@param character
+///@param menuX
+///@param menuY
+
 
 var _character = argument0;
 var _menuX = argument1;

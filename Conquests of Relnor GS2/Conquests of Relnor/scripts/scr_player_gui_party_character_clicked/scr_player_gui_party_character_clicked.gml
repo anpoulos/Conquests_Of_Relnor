@@ -2,7 +2,7 @@
 
 //this script is being executed as obj_ui_party_character_panel object
 if(player.MoveItem != noone){
-	//TODO move item from owner to character here
+	scr_lifeform_parent_inventory_move(player.MoveItem.owner, player.MoveItem, character);
 	
 	player.MoveItem = noone;
 	player.MoveItemButtonClicked = false;

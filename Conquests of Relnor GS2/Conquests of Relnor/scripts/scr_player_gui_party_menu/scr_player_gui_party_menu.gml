@@ -12,8 +12,22 @@ if(PauseText != noone){
 }
 
 if(PauseMenuContainer != noone){
-    InventoryInfoContainerItemStats.character = self;
+
+	var _selectedCharacter = self;
+
+	var _totalPanels = scr_linked_list_size(CharacterPanels);
+	for(var i = 0; i < _totalPanels; i++){
+		var _panel = scr_linked_list_get_next(CharacterPanels);
+		if(_panel.selected){
+			if(scr_linked_list_exists(commandModule.selected, _panel.character)){
+				_selectedCharacter = _panel.character;
+			}
+		}
+	}
+	
+    InventoryInfoContainerItemStats.character = _selectedCharacter;
     scr_player_gui_update_all(true);
+	
     PauseMenuContainer.isVisible = true;
     return true;
 }

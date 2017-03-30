@@ -1,4 +1,3 @@
-///Clicked Delay Alarm
 pressed = false;
 
 if(self.clickedScript != noone){
@@ -16,4 +15,3 @@ if(self.clickedScript != noone){
         script_execute(self.clickedScript);
     }
 }
-

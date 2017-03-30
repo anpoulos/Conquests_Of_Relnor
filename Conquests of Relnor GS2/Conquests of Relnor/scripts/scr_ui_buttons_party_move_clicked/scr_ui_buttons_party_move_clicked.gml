@@ -6,11 +6,13 @@ var _player = instance_find(obj_player, 0);
 if(_player.MoveItemButtonClicked){
 	_player.MoveItemButtonClicked = false;
 	_player.MoveItem = noone;
+	_player.MoveItemButtonCurrent = noone;
 	text = "Move";
 }
 else{
 	_player.MoveItemButtonClicked = true;
 	_player.MoveItem = _item;
+	_player.MoveItemButtonCurrent = self;
 	text = "Cancel";
 	var _panels = _player.CharacterPanels;
 	var _totalPanels = scr_linked_list_size(_panels);

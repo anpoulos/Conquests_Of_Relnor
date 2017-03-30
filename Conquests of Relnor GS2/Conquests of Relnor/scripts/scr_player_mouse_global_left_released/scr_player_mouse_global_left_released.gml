@@ -5,7 +5,12 @@ if(isBusy || scr_linked_list_size(ClickedUIObjects) > 0){
     while(scr_linked_list_size(ClickedUIObjects) > 0){
         var _uiObject = scr_linked_list_remove_next(ClickedUIObjects);
         //all objects in this list are from the clickable parent class
-        _uiObject.alarm[0] = _uiObject.delay;
+		if(MoveItem == noone || 
+			(_uiObject == MoveItemButtonCurrent || _uiObject.object_index == obj_ui_party_character_panel)){
+	        with(_uiObject){
+				scr_ui_draw_clickable_clicked();
+			}
+		}
     }    
 
     return false;

@@ -11,6 +11,7 @@ PlayerInformationHealthBar = noone;
 PauseMenuContainer = noone;
 MoveItemButtonClicked = false;
 MoveItem = noone;
+MoveItemButtonCurrent = noone;
 
 scr_player_gui_create_player_information();
 scr_linked_list_add(Menus, PlayerInformationMenuContainer);
