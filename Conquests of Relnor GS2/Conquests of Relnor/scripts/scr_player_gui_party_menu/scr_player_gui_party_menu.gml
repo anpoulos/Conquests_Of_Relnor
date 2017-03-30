@@ -12,7 +12,7 @@ if(PauseText != noone){
 }
 
 if(PauseMenuContainer != noone){
-    InventoryInfoContainerItemStats.player = self;
+    InventoryInfoContainerItemStats.character = self;
     scr_player_gui_update_all(true);
     PauseMenuContainer.isVisible = true;
     return true;
@@ -174,7 +174,7 @@ var _margin = 10;
         scr_destroy_instance(_menuPosArray);          
         
         InventoryInfoContainerItemStats.inventoryInfoContainer = InventoryInfoContainer;
-        InventoryInfoContainerItemStats.player = self;
+        InventoryInfoContainerItemStats.character = self;
         
         scr_ui_menu_container_add_draw_object(InventoryInfoContainerItemStats, InventoryInfoContainer);
         

@@ -7,14 +7,14 @@ with(global.player){
 		ItemInfoDrawObject.item = noone;
 	}
 
-	var _selectedCharacter = InventoryInfoContainerItemStats.player;
+	var _selectedCharacter = InventoryInfoContainerItemStats.character;
 
 	while(!scr_linked_list_is_empty(PauseMenuInventoryButtons)){
 		instance_destroy(scr_linked_list_remove_next(PauseMenuInventoryButtons));
 	}
 
-	var _width = InventoryCenterLine.x1 - PauseMenuInventoryContainer.leftX - 100;
-	var _currentX = (InventoryCenterLine.x1 + PauseMenuInventoryContainer.leftX)/2 - 50;
+	var _width = InventoryCenterLine.x1 - PauseMenuInventoryContainer.leftX - 140;
+	var _currentX = (InventoryCenterLine.x1 + PauseMenuInventoryContainer.leftX)/2 - 70;
 	var _currentY = PauseMenuInventoryContainer.topY + 75;
 	var _yOffset = 40;
 
@@ -37,7 +37,7 @@ with(global.player){
 			    var _text = _item.itemStats[ITEM_STATS_NAME];
                             
 			    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_party_inventory_row_clicked, noone, 
-					_text, fnt_default_medium, _fontColor, 1.0, 0.5);
+					_text, fnt_default_small_medium, _fontColor, 1.0, 0.5);
                 
 			    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
 					_buttonColorArray, _buttonPressedColor, false, _buttonInfo, PauseMenuInventoryContainer);
@@ -116,6 +116,35 @@ with(global.player){
 		
 				scr_linked_list_add(PauseMenuInventoryButtons, _button);
 			//end of item drop button
+		
+			//item move button
+				var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(0,0,100), "_buttonColorArray");
+			    var _buttonPressedColor = make_colour_rgb(0,0,50);
+           
+			    var _buttonPosArray = scr_create_obj_array4_ui(40, 34);
+                
+			    var _fontColor = c_white;
+                
+			    var _buttonX = _button.rightX + 25;
+			    var _buttonY = _currentY;
+                
+			    var _text = "Move";
+                            
+			    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_buttons_party_move_clicked, noone, 
+					_text, fnt_default_medium, _fontColor, 1.0, 0.5);
+                
+			    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+					_buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
+				
+				_button.isVisible = true;
+				_button.tempVal = _item;
+                
+			    scr_destroy_instance(_buttonColorArray);
+			    scr_destroy_instance(_buttonPosArray);
+			    scr_destroy_instance(_buttonInfo);
+		
+				scr_linked_list_add(PauseMenuInventoryButtons, _button);
+			//end of item move button
 		
 			_currentY += _yOffset;
 		}

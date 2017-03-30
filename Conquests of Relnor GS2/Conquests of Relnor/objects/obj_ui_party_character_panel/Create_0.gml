@@ -15,3 +15,4 @@ selected = false;
 
 dimDelay = 0.5;
 
+characterHasRoom = false;

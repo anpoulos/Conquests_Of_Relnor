@@ -14,4 +14,6 @@ if (global.debug > 0) {
 }
 
 
-
+if(MoveItem != noone){
+	draw_sprite(MoveItem.icon, 0, mouse_x, mouse_y);
+}

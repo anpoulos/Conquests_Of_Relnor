@@ -1,4 +1,4 @@
-var _character = InventoryInfoContainerItemStats.player;
+var _character = InventoryInfoContainerItemStats.character;
 
 while(scr_linked_list_size(CharacterStatsContainerList) != 0){
 	var _textObject = scr_linked_list_remove_next(CharacterStatsContainerList);
