@@ -17,6 +17,7 @@ if(surface_exists(global.lightSurface)){
 }
 
 global.lightSurface = surface_create(room_width, room_height);
+global.shadowSurface = surface_create(room_width, room_height);
 
 minColorRGB = make_color_rgb(225,225,225);
 

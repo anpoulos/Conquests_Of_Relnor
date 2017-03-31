@@ -29,7 +29,6 @@ if(global.time >= 24000){
 	global.time = 0;
 }
 
-
 surface_set_target(global.lightSurface);
 	draw_set_color(minColorRGB);
 	draw_rectangle(0,0,room_width, room_height, false);

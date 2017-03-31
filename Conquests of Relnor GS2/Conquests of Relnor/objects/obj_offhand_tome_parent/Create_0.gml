@@ -28,3 +28,4 @@ self.spriteBehind[UP] = true;
 flameObject = obj_map_light_spell_blue;
 
 useScript = scr_equipment_tome_equip;
+

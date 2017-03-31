@@ -66,7 +66,7 @@ draw_sprite_ext(sprite_index, sprite_index,
 		_direction > 180 ? -1 : 1,
 		0.5+_opacity,
 		_direction+270,
-		c_black, _opacity*argument0);
+		c_black, _opacity/2*argument0);
 			
 			
 //draw_sprite_ext(sprite_index, image_index, 

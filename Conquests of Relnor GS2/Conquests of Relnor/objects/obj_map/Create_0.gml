@@ -31,8 +31,9 @@ else{
 	for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 		var _item = global.player.equipment[i];
 		if(_item != noone){
-			if(_item.object_index == obj_equipment_torch_parent){
-				_item.flame = instance_create(_item.x, _item.y, obj_map_light_torch_flame);
+			if(_item.object_index == obj_equipment_torch_parent || 
+			object_is_ancestor(_item.object_index, obj_equipment_torch_parent)){
+				_item.flame = instance_create(_item.x, _item.y, _item.flameObject);
 			}
 		}
 	}
