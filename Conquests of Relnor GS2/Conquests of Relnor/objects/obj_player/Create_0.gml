@@ -2,6 +2,8 @@
 
 event_inherited();
 
+PrimaryAttackText = noone;
+
 gold = 1000;
 zoom = 50;
 busyState = scr_player_states_busy_state;
@@ -11,15 +13,14 @@ commandModule.player = self;
 self.isPlayer = true;
 
 //equipment and inventory override
-self.inventory[0] = scr_equipment_create_iron_sword(self);
-self.inventory[1] = scr_equipment_offhand_create_iron_shield(self);
-self.inventory[2] = scr_equipment_weapons_create_wooden_bow(self);
-self.inventory[3] = scr_consumable_strong_health_potion(self);
-self.inventory[4] = scr_consumable_bread(self);
-self.inventory[5] = scr_equipment_torch_create(self, false);
+scr_lifeform_parent_inventory_add(self, scr_equipment_tome_create_beginner_fire(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_create_iron_sword(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_offhand_create_iron_shield(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_weapons_create_wooden_bow(self));
+scr_lifeform_parent_inventory_add(self, scr_consumable_strong_health_potion(self));
+scr_lifeform_parent_inventory_add(self, scr_consumable_bread(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_torch_create(self, false));
 
-self.equipment[EQUIPMENT_TYPE_WEAPON] = scr_equipment_create_iron_sword(self);
-self.equipment[EQUIPMENT_TYPE_OFFHAND] = scr_equipment_offhand_create_iron_shield(self);
 
 //overrides
 self.reach = 30;

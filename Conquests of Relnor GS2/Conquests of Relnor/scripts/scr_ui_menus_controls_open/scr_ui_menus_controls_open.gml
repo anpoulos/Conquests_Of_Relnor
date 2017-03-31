@@ -51,141 +51,39 @@ if(ControlMenuContainer != noone){
 
 var _textOffset = 20;
 
-//Text
-    var _textX = _button.x + 80;
-    var _textY = ControlMenuContainer.topY + _textOffset;
+var _texts = scr_linked_list_create();
+scr_linked_list_add(_texts, "t - activate object/talk to NPC");
+scr_linked_list_add(_texts, "shift - attack");
+scr_linked_list_add(_texts, "ctrl+shift - cycle attacks");
+scr_linked_list_add(_texts, "space - dash");
+scr_linked_list_add(_texts, "e - use magic");
+scr_linked_list_add(_texts, "ctrl+e - cycle magic");
+
+scr_linked_list_add(_texts, "left click - select unit or command selected units");
+scr_linked_list_add(_texts, "right click - deselect unit");
+scr_linked_list_add(_texts, "r (hold) + left click (hold) - selection box");
+scr_linked_list_add(_texts, "r (hold) + right click (hold) - deselection box");
+scr_linked_list_add(_texts, "q - deselect all");
+scr_linked_list_add(_texts, "c - enable engage mode");
+scr_linked_list_add(_texts, "ctrl + c - disable engage mode");
+scr_linked_list_add(_texts, "v - enable defensive mode");
+scr_linked_list_add(_texts, "ctrl+v - enable defensive mode");
+scr_linked_list_add(_texts, "f - square formation");
+scr_linked_list_add(_texts, "scroll in/out - zoom in/out");
+
+var _yOffset = 25;
+var _currentX = _button.x + 100;
+var _currentY = ControlMenuContainer.topY + _yOffset;
+
+while(!scr_linked_list_is_empty(_texts)){
+	var _text = scr_linked_list_remove_next(_texts);
     
-    _text = scr_ui_font_constructor(_textX, _textY, "r (hold) + left click (hold) - selection box", fnt_default_medium, c_white, 
+    var _textDraw = scr_ui_font_constructor(_currentX, _currentY, _text, fnt_default_medium, c_white, 
             1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
+    _textDraw.isVisible = true;
+	_currentY += _yOffset;
+}
 
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "r (hold) + right click (hold) - deselection box", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "t - activate object/talk to NPC", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "shift - attack", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "space - dash", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "q - deselect all", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "e - enable engage mode", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "ctrl + e - disable engage mode", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "v - enable defensive mode", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "ctrl+v - enable defensive mode", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "f - square formation", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "left click - select unit or command selected units", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "right click - deselect", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "scroll in/out - zoom in/out", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-//Text
-    var _textX = _text.x;
-    var _textY = _text.y + _textOffset;
-    
-    _text = scr_ui_font_constructor(_textX, _textY, "c - pause game", fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _text.isVisible = true;
-//End of Text
-
-
+scr_linked_list_destroy(_texts);
 
 ControlMenuContainer.isVisible = true;

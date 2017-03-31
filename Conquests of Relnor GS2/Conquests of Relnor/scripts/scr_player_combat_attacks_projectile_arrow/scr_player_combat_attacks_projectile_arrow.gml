@@ -17,6 +17,6 @@ if (!attacked && image_index >= 3){
     obj_damage_projectile_arrow, dmg, 
     self, _x, _y);
     _arrow.sprite_index = _arrow.sprites[self.face8Way];
-    scr_lifeform_damage_projectile_fire(_arrow);
+    scr_lifeform_damage_projectile_physical_fire(_arrow);
     attacked = true;
 }

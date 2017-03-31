@@ -2,7 +2,9 @@
 
 followTarget = noone;
 
+walkThroughNPCs = false;
 hasShadow = true;
+offhandSpell = noone;
 
 gold = 0;
 path = path_add();

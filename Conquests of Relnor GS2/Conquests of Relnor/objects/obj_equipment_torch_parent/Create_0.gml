@@ -2,7 +2,6 @@
 event_inherited();
 
 self.icon = spr_equipment_torch_icon;
-self.equipmentStats[EQUIPMENT_STATS_TYPE] = EQUIPMENT_TYPE_OFFHAND;
 
 self.sprite[DOWN] = spr_equipment_torch_down;
 self.spriteBehind[DOWN] = false;
@@ -21,3 +20,5 @@ flame = noone;
 useScript = scr_equipment_torch_use;
 unequipScript = scr_equipment_torch_unequip;
 dropScript = scr_equipment_torch_drop;
+
+flameObject = obj_map_light_torch_flame;

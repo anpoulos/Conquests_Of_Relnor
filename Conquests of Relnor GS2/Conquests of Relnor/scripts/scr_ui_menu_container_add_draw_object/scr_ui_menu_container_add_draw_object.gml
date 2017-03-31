@@ -1,5 +1,5 @@
 ///scr_ui_menu_container_add_draw_object(obj_ui_draw_parent, obj_ui_menu_container)
-///@param obj_ui_draw_parent Object being added.
+///@param addObject Object being added.
 ///@param obj_ui_menu_container Container to be added to.
 
 if(argument0 == noone || argument1 == noone){

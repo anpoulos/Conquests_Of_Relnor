@@ -1,8 +1,8 @@
 {
-    "id": "dcab8186-da14-4f91-b980-83e1c6b40031",
+    "id": "d1fbad30-d4a5-44fb-ad69-949a8883bfd4",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_lifeform_damage_projectile_fire",
+    "name": "scr_equipment_tome_create",
     "IsCompatibility": false,
     "IsDnD": false
 }

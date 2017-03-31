@@ -3,6 +3,8 @@
 
 event_inherited();
 
+allegianceParent = obj_npc_allegiance_red_parent;
+
 scr_linked_list_add(self.possibleEnemies, obj_npc_allegiance_blue_parent);
 scr_linked_list_add(self.possibleEnemies, obj_npc_allegiance_animal_parent);
 scr_linked_list_add(self.possibleEnemies, obj_player);

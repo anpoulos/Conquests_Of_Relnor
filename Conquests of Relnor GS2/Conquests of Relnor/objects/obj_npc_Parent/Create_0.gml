@@ -2,6 +2,8 @@
 
 event_inherited();
 
+allegianceParent = noone;
+
 checkedNightEquipment = false;
 checkedDayEquipment = false;
 nameIdentifier = "";
@@ -9,7 +11,6 @@ busyState = scr_npc_states_busy;
 myCollisionTurn = false;
 isDefensive = true;
 everyOther = false;
-walkThroughNPCs = false;
 squareX = 0;
 squareY = 0;
 commandedMoveTo = false;

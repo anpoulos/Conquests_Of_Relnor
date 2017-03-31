@@ -23,3 +23,28 @@ var _s2 = "Energy: " + string(self.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_E
 self.PlayerInformationEnergyText.text = string_insert(string(self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY]), _s2, string_length(_s2)+1);
 PlayerInformationEnergyBar.image_index = scr_lifeform_get_energy_bar_state(self);
 
+if(equipment[EQUIPMENT_TYPE_OFFHAND] != noone){
+	var _item = equipment[EQUIPMENT_TYPE_OFFHAND];
+	if(_item.object_index == obj_offhand_tome_parent && _item.selectedSpell != noone){
+		SecondaryAttackText.text = _item.selectedSpell.name;
+		SecondaryAttackIcon.sprite = _item.selectedSpell.icon;
+	}
+	else{
+		SecondaryAttackText.text = _item.itemStats[ITEM_STATS_NAME];
+		SecondaryAttackIcon.sprite = _item.icon;
+	}
+}
+else{
+	SecondaryAttackText.text = "";
+	SecondaryAttackIcon.sprite = noone;
+}
+
+if(equipment[EQUIPMENT_TYPE_WEAPON]){
+	var _item = equipment[EQUIPMENT_TYPE_WEAPON];
+	PrimaryAttackText.text = _item.itemStats[ITEM_STATS_NAME];
+	PrimaryAttackIcon.sprite = _item.icon;
+}
+else{
+	PrimaryAttackText.text = "";
+	PrimaryAttackIcon.sprite = noone;
+}

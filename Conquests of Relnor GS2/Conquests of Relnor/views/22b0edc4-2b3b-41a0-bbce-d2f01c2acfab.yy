@@ -4,8 +4,8 @@
     "mvc": "1.1",
     "name": "22b0edc4-2b3b-41a0-bbce-d2f01c2acfab",
     "children": [
-        "d20b4e25-d3c4-4a94-a27e-ec52fa760ea9",
-        "c59ed281-8d6d-46d6-81b7-00ef171d9a58"
+        "c59ed281-8d6d-46d6-81b7-00ef171d9a58",
+        "cd12d62c-6bbd-40c1-9e7f-be20f5369ae7"
     ],
     "filterType": "GMSprite",
     "folderName": "Group",

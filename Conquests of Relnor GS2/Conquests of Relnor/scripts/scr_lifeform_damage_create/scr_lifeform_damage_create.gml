@@ -1,5 +1,13 @@
 ///scr_lifeform_damage_create(x,y, obj_lifeform_damage, amount, source, destinationX, destinationY)
 
+///@param x
+///@param y
+///@param obj_damage
+///@param amount
+///@param source
+///@param destinationX
+///@param destinationY
+
 var _a = instance_create(argument0, argument1, argument2);
 _a.amount = argument3;
 _a.source = argument4;

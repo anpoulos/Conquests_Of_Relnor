@@ -10,8 +10,7 @@
         "6bed38ed-35ff-488f-a5cf-9f377af018f6",
         "2c4881bc-a08a-4522-ad39-119f7e65f124",
         "95b820cd-0043-4dc3-8cc2-7a3026065ef5",
-        "56ceb192-8ca2-4516-a630-97398df9fe35",
-        "6961b8d3-7eb1-439f-bc22-53418a5d54e6"
+        "56ceb192-8ca2-4516-a630-97398df9fe35"
     ],
     "filterType": "GMScript",
     "folderName": "States",

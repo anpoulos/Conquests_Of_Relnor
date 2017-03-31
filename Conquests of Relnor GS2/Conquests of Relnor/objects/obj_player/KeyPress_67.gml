@@ -1,13 +1,9 @@
-///Pause game
+///Enable or Disable engage
 
-//TODO
-
-if(global.gamePaused){
-    global.gamePaused = false;
-    scr_ui_notification_hide_pause_message();
+if(keyboard_check(vk_control)){
+    scr_player_commands_selected_disable_engage();
 }
 else{
-    global.gamePaused = true;
-    scr_ui_notification_show_pause_message();
+    scr_player_commands_selected_enable_engage();
 }
 

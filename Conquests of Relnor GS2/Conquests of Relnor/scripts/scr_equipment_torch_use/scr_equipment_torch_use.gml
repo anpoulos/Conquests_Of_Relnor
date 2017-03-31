@@ -4,4 +4,4 @@ if(flame != noone){
 	instance_destroy(flame);
 	flame = noone;
 }
-flame = instance_create(owner.x, owner.y, obj_map_light_torch_flame);
+flame = instance_create(owner.x, owner.y, flameObject);
