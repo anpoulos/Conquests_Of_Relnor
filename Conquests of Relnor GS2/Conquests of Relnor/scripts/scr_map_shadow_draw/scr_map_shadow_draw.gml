@@ -40,8 +40,9 @@ var _pointX = x + _vectorX;
 var _pointY = y + _vectorY;
 	
 var _direction = point_direction(_pointX, _pointY,x,y);
+var _distance = point_distance(x,y,_pointX,_pointY);	
 	
-var _opacity = 1 - (max(sprite_width, sprite_height)/point_distance(x,y,_pointX,_pointY)) ;
+var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
 	
 //var _a = sprite_get_xoffset(sprite_index);
 var _b = sprite_get_yoffset(sprite_index);
@@ -50,13 +51,11 @@ var _x = x + (sprite_height-_b)*dcos(_direction);
 var _y = y - (sprite_height-_b)*dsin(_direction);
 
 if(global.debug > 0){
-	draw_circle(_pointX, _pointY, 10, false);
 	if(global.debug > 1){
 		draw_text_color(x,y-75, "opacity: "+string(_opacity),
 			c_white, c_white, c_white, c_white, 1.0);
 	}
 	draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
-	draw_circle(_x, _y, 10, true);
 }
 
 
@@ -66,7 +65,7 @@ draw_sprite_ext(sprite_index, sprite_index,
 		_direction > 180 ? -1 : 1,
 		0.5+_opacity,
 		_direction+270,
-		c_black, _opacity/2*argument0);
+		c_black, _opacity*argument0);
 			
 			
 //draw_sprite_ext(sprite_index, image_index, 

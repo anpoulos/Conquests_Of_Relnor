@@ -57,7 +57,8 @@ if(_distanceToEnd < _rangeStop){
         self.moveToEndScript = noone;
     }
     
-    scr_npc_choose_next_state();
+    
+	scr_npc_choose_next_state();
     return true;
 }
 

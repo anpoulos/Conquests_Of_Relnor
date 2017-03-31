@@ -34,7 +34,7 @@ switch(_statType){
 
 _textY += _yOffsetMedium;
 var _text = scr_lifeform_get_stat_name(_statType, noone);
-var _statText = scr_ui_font_constructor(_textX+10, _textY, _text, fnt_default_medium, c_white, 1, fa_left, fa_center, CharacterStatsContainer);
+var _statText = scr_ui_font_constructor(_textX+10, _textY, _text, fnt_default_medium_large, c_white, 1, fa_left, fa_center, CharacterStatsContainer);
 _statText.isVisible = true;
 scr_linked_list_add(CharacterStatsContainerList, _statText);
 for(var j = 0; j < _statMax; j++){
@@ -55,7 +55,7 @@ for(var j = 0; j < _statMax; j++){
 		break;
 	}
 	
-	var _statText = scr_ui_font_constructor(_textX+20, _textY, _text, fnt_default_small, _color, 1, fa_left, fa_center, CharacterStatsContainer);
+	var _statText = scr_ui_font_constructor(_textX+20, _textY, _text, fnt_default_medium, _color, 1, fa_left, fa_center, CharacterStatsContainer);
 	_statText.isVisible = true;
 	scr_linked_list_add(CharacterStatsContainerList, _statText);
 }

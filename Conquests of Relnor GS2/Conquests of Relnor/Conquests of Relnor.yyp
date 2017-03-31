@@ -8047,6 +8047,14 @@
             }
         },
         {
+            "Key": "ca06d368-db60-45b7-be19-cf0ab0c4ec39",
+            "Value": {
+                "id": "ae95078d-3131-4365-b827-ccb106357414",
+                "resourcePath": "fonts\\fnt_default_medium_large\\fnt_default_medium_large.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "ca3948aa-0073-48c1-b542-fff09bfa6f7b",
             "Value": {
                 "id": "4e1d0dff-718b-4bd2-8cb1-3161ab1548b1",
@@ -9124,6 +9132,14 @@
                 "id": "7945eeee-0bf8-45db-a4e5-f5e7a0a66246",
                 "resourcePath": "views\\e43e5b1e-7e7a-4bc9-ba06-cbfdb754e699.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e4737ac6-12b3-4c1b-9b48-6623242dab5d",
+            "Value": {
+                "id": "0d975c7d-eeb9-445a-8803-c152db54c24f",
+                "resourcePath": "scripts\\scr_exit\\scr_exit.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -10259,6 +10275,7 @@
         "6425e3aa-8cfe-4040-b7b8-3e31faca4be7",
         "3c7a8473-26d7-4ea1-b429-d91a5b12d938",
         "d31c05b7-9aa9-4d59-b12f-8e27bb3cb1a5",
+        "e4737ac6-12b3-4c1b-9b48-6623242dab5d",
         "6ac04edb-1a97-4ec8-845d-cb88263f63f9",
         "b69d5f84-e9e5-4583-a964-216112ffa38e",
         "4f016917-252e-44dc-bbc3-3c02c9e31949",

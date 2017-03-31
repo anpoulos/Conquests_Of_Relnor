@@ -17,7 +17,7 @@ if(instance_exists(target)){
     }
     else{
         scr_npc_move_to(self, target.x, target.y, 
-			scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed);   
+			scr_npc_choose_next_state,self.size-1, false, false, self.runSpeed, self.sight);   
     }
     return true;
 }
@@ -27,7 +27,7 @@ if(followTarget != noone){
 		var _distanceToTarget = point_distance(self.x, self.y, followTarget.x, followTarget.y);
 		if(_distanceToTarget > size*4){
 	        scr_npc_move_to(self, followTarget.x, followTarget.y, 
-				scr_npc_choose_next_state,self.size*4, false, false, self.runSpeed); 
+				scr_npc_choose_next_state,self.size*4, false, false, self.runSpeed, self.sight); 
 		}
 		return true;
 	}
@@ -45,7 +45,7 @@ if(waitForX != noone && waitForY != noone){
 	else{
 		var _anything = collision_circle(waitForX, waitForY, 5, obj_Lifeform_Parent, false, true);
 		if(_anything == noone){
-			scr_npc_move_to(self, waitForX, waitForY, scr_npc_choose_next_state, size, false, false, self.runSpeed);
+			scr_npc_move_to(self, waitForX, waitForY, scr_npc_choose_next_state, size, false, false, self.runSpeed, self.sight);
 		}
 	}
 	return true;
@@ -53,7 +53,7 @@ if(waitForX != noone && waitForY != noone){
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
 if(_distanceFromOrigin > self.wanderRadius){
-    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false, false, self.walkSpeed);
+    scr_npc_move_to(self, self.originX, self.originY, scr_npc_choose_next_state, 50, false, false, self.walkSpeed, _distanceFromOrigin*2);
     return true;
 }
     
@@ -87,7 +87,7 @@ switch(_nextState){
         }
         var _desiredX = scr_room_get_grid_x(self.x+_moveOffsetX);
         var _desiredY = scr_room_get_grid_y(self.y+_moveOffsetY);
-        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, false, true, self.walkSpeed);
+        scr_npc_move_to(self, _desiredX, _desiredY, scr_npc_choose_next_state, 10, false, true, self.walkSpeed, self.sight);
     break;
 
 }
