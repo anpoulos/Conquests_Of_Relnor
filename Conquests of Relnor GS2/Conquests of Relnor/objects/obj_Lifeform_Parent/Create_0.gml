@@ -1,5 +1,7 @@
 ///scr_lifeform_constructor
 
+mapLocked = true;
+
 lastCollidedObject = noone;
 firstCollidedObject = noone;
 

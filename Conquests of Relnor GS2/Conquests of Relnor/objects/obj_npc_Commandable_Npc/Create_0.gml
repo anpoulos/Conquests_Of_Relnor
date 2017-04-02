@@ -5,3 +5,4 @@ moved = false;
 
 commander = noone;
 
+mapLocked = false;

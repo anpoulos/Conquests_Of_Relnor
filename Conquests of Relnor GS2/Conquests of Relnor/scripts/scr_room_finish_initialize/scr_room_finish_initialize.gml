@@ -26,3 +26,42 @@ if(global.mapSaves.objectList[_roomId] == noone){
 
 	scr_linked_list_destroy(_groups);
 }
+
+	
+var _maxDistance = 200;
+var _currentDistance = 50;
+var _angle = 0;
+	
+while(!scr_linked_list_is_empty(global.mapSaves.followingList)){
+	var _lifeformSave = scr_linked_list_remove_next(global.mapSaves.followingList);
+	var _foundFreeSpot = false;
+	
+	while(_currentDistance < _maxDistance && !_foundFreeSpot){
+		
+		var _checkX = global.player.x + _currentDistance*dcos(_angle);
+		var _checkY = global.player.y - _currentDistance*dsin(_angle);
+		
+		if(mp_grid_get_cell(global.aiGrid, _checkX div global.tileOffset, _checkY div global.tileOffset) != -1){
+			var _lifeform = scr_map_convert_save_to_lifeform(_lifeformSave);
+			_lifeform.x = _checkX;
+			_lifeform.y = _checkY;
+			_lifeform.phy_position_x = _checkX;
+			_lifeform.phy_position_y = _checkY;
+			_lifeform.originX = _checkX;
+			_lifeform.origsinY = _checkY;
+			_lifeform.followTarget = global.player;
+			_foundFreeSpot = true;
+		}
+		
+		_angle += 10;
+		
+		if(_angle > 360){
+			_angle = 0;
+			_currentDistance += 10;
+		}
+	}
+	
+	if(!_foundFreeSpot){
+		scr_linked_list_add(global.mapSaves.lifeformList[_lifeformSave.lastRoomId], _lifeformSave);
+	}
+}

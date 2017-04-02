@@ -2,6 +2,8 @@
 // You can write your code in this editor
 objectIndex = noone;
 
+lastRoomId = noone;
+
 autoLevel = true;
 level = 1;
 experience = 0;
@@ -11,6 +13,8 @@ statPoints = 0;
 gold = 0;
 healthBarCurrentBar = 9;
 energyBarCurrentBar = 9;
+
+mapLocked = true;
 
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
     equipment[i] = noone;

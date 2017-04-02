@@ -98,6 +98,9 @@ for(var k = 0; k < instance_number(obj_npc_Parent); k++){
 	_lifeformSave.experience = _lifeform.experience;
 	_lifeformSave.defence = _lifeform.defence;
 	_lifeformSave.statPoints = _lifeform.statPoints;
+	_lifeformSave.mapLocked = _lifeform.mapLocked;
+	
+	_lifeformSave.lastRoomId = _roomId;
 	
 	if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) || _lifeformSave.objectIndex == obj_lifeform_npc_shopkeeper){
 		for(var i = 0; i < SHOP_ITEMS_MAX; i++){
@@ -112,5 +115,10 @@ for(var k = 0; k < instance_number(obj_npc_Parent); k++){
 		_lifeformSave.shopGold = _lifeform.shopGold;
 	}
 	
-	scr_linked_list_add(global.mapSaves.lifeformList[_roomId], _lifeformSave);
+	if(!_lifeformSave.mapLocked && _lifeform.followTarget != noone && _lifeform.followTarget == global.player){
+		scr_linked_list_add(global.mapSaves.followingList, _lifeformSave);
+	}
+	else{
+		scr_linked_list_add(global.mapSaves.lifeformList[_roomId], _lifeformSave);
+	}
 }

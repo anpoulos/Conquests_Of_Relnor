@@ -27,3 +27,6 @@ for(var i = 0; i < LEVEL_CAP; i++){
 for(var i = 0; i < LEVEL_CAP-1; i++){
 	experienceDifference[i] = experienceTotal[i+1]-experienceTotal[i];
 }
+
+
+followingList = scr_linked_list_create();
