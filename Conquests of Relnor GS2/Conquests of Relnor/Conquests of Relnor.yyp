@@ -407,6 +407,14 @@
             }
         },
         {
+            "Key": "098e7db4-3f30-42eb-8ac7-adab7a059fc5",
+            "Value": {
+                "id": "30cd088d-d3fb-4a6a-ab01-6a4c6b8109fa",
+                "resourcePath": "scripts\\scr_spell_get_energy_drain\\scr_spell_get_energy_drain.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "09969287-a1fb-45a6-8711-7a7411d2c991",
             "Value": {
                 "id": "e977d2c5-2041-4da1-89f8-410a84e818f5",
@@ -1252,6 +1260,14 @@
                 "id": "f14d31f1-7b88-42b9-8478-636377d7d5eb",
                 "resourcePath": "sprites\\spr_consumable_beef\\spr_consumable_beef.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "1f3b37e0-b0de-4109-9d17-ff765e823cee",
+            "Value": {
+                "id": "98542eaa-05ad-4350-a808-b4184c38d41e",
+                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -5119,6 +5135,14 @@
             }
         },
         {
+            "Key": "8326bce5-de20-4775-a0b6-bfd4474b7367",
+            "Value": {
+                "id": "bffc3f59-e0d4-43db-bb62-24df2097b55c",
+                "resourcePath": "scripts\\scr_story_cut_scene_example\\scr_story_cut_scene_example.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8364a316-d5ac-43f9-8bbc-9538c2011b54",
             "Value": {
                 "id": "0052d2a7-4cf4-4ef6-949f-45f4dbdb3784",
@@ -6148,14 +6172,6 @@
                 "id": "acd0326d-d402-44df-940e-ac6da2228c87",
                 "resourcePath": "sprites\\spr_tileset_exterior_market\\spr_tileset_exterior_market.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "9c0ac940-ec64-46f0-a030-1de736a6f92a",
-            "Value": {
-                "id": "622d3006-008b-4cb6-97a9-ee3140a4661c",
-                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -8815,6 +8831,14 @@
             }
         },
         {
+            "Key": "dc2d411e-eb25-4535-aadb-5ac06e1c137d",
+            "Value": {
+                "id": "cee01eb3-8bda-4cb4-9ad2-7554c8ac671f",
+                "resourcePath": "views\\dc2d411e-eb25-4535-aadb-5ac06e1c137d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "dcab8186-da14-4f91-b980-83e1c6b40031",
             "Value": {
                 "id": "c9f719b7-11b2-4d98-b330-3b88cb16887d",
@@ -9316,6 +9340,14 @@
                 "id": "903601a8-d285-4749-b7b0-efd59c28e026",
                 "resourcePath": "views\\e5556fc6-5ad8-46f3-887e-da7d0efbe2ed.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e5658721-3014-44ae-9355-71285cb651ca",
+            "Value": {
+                "id": "64f06c01-34c3-434b-9b32-a279328c16a7",
+                "resourcePath": "scripts\\scr_spell_get_damage\\scr_spell_get_damage.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -10582,7 +10614,10 @@
         "b91bfe74-5b54-4d9b-8b68-b3dfe044c41b",
         "28186375-b331-47d6-bab5-e5a4db757e81",
         "225702ce-99b9-40ed-a246-ad5cb8196b8e",
-        "836f0c17-17a2-47b7-99ea-b09eb23d7069"
+        "836f0c17-17a2-47b7-99ea-b09eb23d7069",
+        "e5658721-3014-44ae-9355-71285cb651ca",
+        "098e7db4-3f30-42eb-8ac7-adab7a059fc5",
+        "8326bce5-de20-4775-a0b6-bfd4474b7367"
     ],
     "tutorial": ""
 }

@@ -17,6 +17,14 @@ for(var i = 0; i < INVENTORY_MAX; i++){
 	var _radius = reach;
 	var _itemDropPercentage = _item.itemStats[ITEM_STATS_DROP_PERCENTAGE]*100;
 	if(_r <= _itemDropPercentage){
+	
+		if(_item.object_index == obj_equipment_torch_parent || object_is_ancestor(_item.object_index, obj_equipment_torch_parent)){
+			if(_item.flame != noone && instance_exists(_item.flame)){
+				instance_destroy(_item.flame);
+				_item.flame = noone; 
+			}
+		}
+		
 		_item.x = x + scr_misc_random_sign(_radius);
 		_item.y = y + scr_misc_random_sign(_radius);
 		_item.isVisible = true;
@@ -34,6 +42,14 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	var _radius = reach;
 	var _itemDropPercentage = _item.itemStats[ITEM_STATS_DROP_PERCENTAGE]*100;
 	if(_r <= _itemDropPercentage){
+	
+		if(_item.object_index == obj_equipment_torch_parent || object_is_ancestor(_item.object_index, obj_equipment_torch_parent)){
+			if(_item.flame != noone && instance_exists(_item.flame)){
+				instance_destroy(_item.flame);
+				_item.flame = noone; 
+			}
+		}
+		
 		_item.x = x + scr_misc_random_sign(_radius);
 		_item.y = y + scr_misc_random_sign(_radius);
 		_item.isVisible = true;

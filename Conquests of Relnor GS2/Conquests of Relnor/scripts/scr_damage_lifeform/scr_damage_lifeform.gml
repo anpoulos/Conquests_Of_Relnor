@@ -11,7 +11,7 @@ var _source = argument1;
 var _amount = argument2.amount;
 var _knockback = argument2.knockback;
 
-var _defenceBonus = _lifeform.defence/STATS_MULTIPLIER + irandom(_lifeform.defence + _lifeform.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH]);
+var _defenceBonus = irandom(_lifeform.defence + _lifeform.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH]/LEVEL_CAP);
 
 _amount -= _defenceBonus;
 if(_amount < 0){

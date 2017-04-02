@@ -45,6 +45,7 @@ with(argument0){
 				if(mp_grid_get_cell(global.aiGrid, _cellX, _cellY) == 0){
 					instance_create(_randomX, _randomY, _object);				
 					mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
+					mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
 					break;
 				}
 			}

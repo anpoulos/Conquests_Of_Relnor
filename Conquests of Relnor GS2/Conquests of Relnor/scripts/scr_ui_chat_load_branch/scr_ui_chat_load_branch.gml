@@ -32,7 +32,7 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
         var _arg0 = ds_queue_dequeue(_args);
         
         switch(_arg0){
-			case "script":
+			case "#script":
 				var _scriptIndex = ds_queue_dequeue(_args);
 				script_execute(ChatWindow.scripts[_scriptIndex]);
 			break;
@@ -86,7 +86,7 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
                         _button.isVisible = true;
                     break;
 					
-					case "script":
+					case "#script":
 						var _scriptIndex = ds_queue_dequeue(_args);
                         var _buttonText = string_replace_all(ds_queue_dequeue(_args), "_", " ");
                         _button.text = _buttonText;

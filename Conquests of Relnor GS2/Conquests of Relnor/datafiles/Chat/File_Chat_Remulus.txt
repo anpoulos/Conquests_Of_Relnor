@@ -3,10 +3,19 @@ How do you do there?
 What will you be needing today?
 #button #branch 1 "Do_you_have_any_supplies?"
 #button #branch  "I_think_I'll_be_needing_a_room."
-#button #branch  "What's_new?"
+#button #branch 2 "What's_new?"
 
 #branch 1
 Supplies? Of course we do.
 #button #shop Open_Shop
 #button #close "Nevermind."
 
+#branch 2
+This is an example for Sam.
+Dialogue here.
+#button #branch 3 "Make_him_walk_here."
+
+#branch 3
+#script 5
+Here he comes!
+#button #close Okay_then

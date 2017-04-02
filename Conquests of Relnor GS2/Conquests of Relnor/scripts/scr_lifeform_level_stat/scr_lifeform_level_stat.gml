@@ -19,11 +19,11 @@ if(_statType == STATS_PHYSICAL){
 
 	switch(_statIndex){
 		case STATS_PHYSICAL_HEALTH:
-			_increaseStatBy = 10;
+			_increaseStatBy = STATS_HEALTH_MULTIPLIER;
 		break;
 		
 		case STATS_PHYSICAL_ENERGY:
-			_increaseStatBy = 5;
+			_increaseStatBy = STATS_ENERGY_MULTIPLIER;
 		break;
 	}
 }

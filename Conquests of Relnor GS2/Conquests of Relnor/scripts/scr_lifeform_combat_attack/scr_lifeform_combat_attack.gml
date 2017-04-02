@@ -64,7 +64,7 @@ if (!attacked && image_index >= 3){
 		var _weight = 5;
 	}
 	
-	var _energyDrain = -_weight*(1 + (statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH]/STATS_MULTIPLIER/LEVEL_CAP));
+	var _energyDrain = -_weight*(1.5 - (statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH]/STATS_MULTIPLIER/LEVEL_CAP));
 	
 	if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] + _energyDrain > 0){
 		if(_item != noone){
@@ -75,8 +75,10 @@ if (!attacked && image_index >= 3){
 		}
 		else{
 			var _damageType = obj_damage_melee_small;
-			var _accuracy = irandom_range(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY], LEVEL_CAP)/LEVEL_CAP;
-			var _damage = irandom(min(level, 10))*_accuracy;
+			var _accuracy = irandom_range( ceil(statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY]/(STATS_MULTIPLIER*STATS_ENERGY_MULTIPLIER)), LEVEL_CAP ) / LEVEL_CAP;
+			var _strength = statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH];
+			var _a = ceil(_strength/STATS_MULTIPLIER);
+			var _damage = irandom(_a)*_accuracy;
 		}
 
 	    scr_lifeform_damage_create(x, y, _damageType, _damage, 
