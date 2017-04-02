@@ -1,5 +1,8 @@
 ///scr_lifeform_constructor
 
+lastCollidedObject = noone;
+firstCollidedObject = noone;
+
 autoLevel = true;
 
 level = 1;
@@ -85,6 +88,8 @@ deathState = scr_lifeform_death_state;
 moveState = noone;
 attackState = noone;
 idleState = scr_lifeform_idle_state;
+collisionMapObjectState = scr_lifeform_collision_map_object_state;
+
 
 moveInputs = scr_lifeform_get_action_inputs;
 

@@ -57,7 +57,6 @@ if(_distanceToEnd < _rangeStop){
         self.moveToEndScript = noone;
     }
     
-    
 	scr_npc_choose_next_state();
     return true;
 }
@@ -90,4 +89,4 @@ if(self.length == 0) self.image_index = 0;
 
 //Move
 scr_obj_move_phy(self, hSpeed, vSpeed);
-
+    

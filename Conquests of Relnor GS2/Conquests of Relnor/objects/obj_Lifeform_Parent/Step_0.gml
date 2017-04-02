@@ -54,7 +54,7 @@ if(self.state != self.moveState){
 }
 
 var _inFrontOfMe = false;
-
+//TODO redo this with direction line
 switch(self.face4Way){
     case RIGHT:
         _inFrontOfMe = collision_line(x,y,x+self.size,y,obj_unwalkable,false,true);
