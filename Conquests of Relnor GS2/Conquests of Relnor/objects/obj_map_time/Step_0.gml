@@ -3,6 +3,18 @@
 
 global.time += 1;
 
+if(global.time == 18000){
+	if(irandom(2) == 0){
+		global.moonTonight = irandom(2) == 0;
+		global.sun.nightStrengthTarget = 0.5;
+		global.sun.nightRadiusTarget = 4000;
+	}
+	else{
+		global.sun.nightStrengthTarget = 0.0;
+		global.sun.nightRadiusTarget = 0;
+	}
+}
+
 if(global.time >= 7000 && global.time <= 20000){
 	//nighttime to daytime transition
 	global.isNight = false;
@@ -12,6 +24,16 @@ if(global.time >= 7000 && global.time <= 20000){
 			global.sun.x = 0;
 		}
 	} 
+	if(global.time >= 10000 && global.time <= 12000){
+		if(global.shadowOpacity > 0){
+			global.shadowOpacity -= shadowOpacityStep;
+		}
+	}
+	if(global.time >= 18000){
+		if(global.shadowOpacity < global.shadowOpacityMax){
+			global.shadowOpacity += shadowOpacityStep;
+		}
+	}
 }
 else{
 	//daytime to nighttime transition

@@ -23,3 +23,4 @@ scr_lifeform_parent_inventory_add(self, scr_consumable_food_random(self));
 //override
 self.wanderDistance = 0;
 
+gold = irandom(100);

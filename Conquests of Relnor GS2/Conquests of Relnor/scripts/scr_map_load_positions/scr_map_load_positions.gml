@@ -91,7 +91,11 @@ if(global.mapSaves.lifeformList[_roomId] != noone){
 		_lifeform.wanderDistance = _lifeformSave.wanderDistance;
 		_lifeform.oldWanderRadius = _lifeformSave.oldWanderRadius;
 		_lifeform.oldWanderDistance = _lifeformSave.oldWanderDistance;
-		
+		_lifeform.autoLevel = _lifeformSave.autoLevel;
+		_lifeform.level = _lifeformSave.level;
+		_lifeform.experience = _lifeformSave.experience;
+		_lifeform.defence = _lifeformSave.defence;
+		_lifeform.statPoints = _lifeformSave.statPoints;		
 	
 		if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) || _lifeformSave.objectIndex == obj_lifeform_npc_shopkeeper){
 			for(var i = 0; i < SHOP_ITEMS_MAX; i++){
@@ -111,6 +115,8 @@ if(global.mapSaves.lifeformList[_roomId] != noone){
 			}
 			_lifeform.shopGold = _lifeformSave.shopGold;
 		}
+	
+		scr_lifeform_update_defence(_lifeform);
 	
 		global.loadingInstances = false;
 		instance_destroy(_lifeformSave);

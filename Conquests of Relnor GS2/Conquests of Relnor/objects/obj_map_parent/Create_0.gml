@@ -4,6 +4,5 @@
 depth = -y;
 
 hasShadow = false;
-shadowOpacity = 0.5;
 shadowPortion = 1.0;
 shadowSprite = noone;

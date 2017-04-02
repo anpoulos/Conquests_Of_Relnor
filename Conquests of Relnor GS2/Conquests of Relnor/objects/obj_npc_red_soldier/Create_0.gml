@@ -19,4 +19,6 @@ scr_lifeform_parent_inventory_equip(scr_equipment_create_iron_sword(self));
 scr_lifeform_parent_inventory_add(self, scr_consumable_potion_random(self));
 scr_lifeform_parent_inventory_add(self, scr_consumable_food_random(self));
 
+gold = irandom(100);
+
 //override

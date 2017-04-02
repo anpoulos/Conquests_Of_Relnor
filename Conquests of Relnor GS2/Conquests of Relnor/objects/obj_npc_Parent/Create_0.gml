@@ -4,6 +4,7 @@ event_inherited();
 
 allegianceParent = noone;
 
+hasDialogue = false;
 checkedNightEquipment = false;
 checkedDayEquipment = false;
 nameIdentifier = "";

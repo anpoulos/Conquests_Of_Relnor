@@ -3,8 +3,10 @@
 
 x = 0;
 y = 0;
+minColorRGB = make_color_rgb(255,255,255);
 
 if(!global.isInterior){
+	minColorRGB = make_color_rgb(250,250,250);
 	if(instance_exists(global.sun)){
 		instance_destroy(global.sun);
 	}
@@ -19,7 +21,7 @@ if(surface_exists(global.lightSurface)){
 global.lightSurface = surface_create(room_width, room_height);
 global.shadowSurface = surface_create(room_width, room_height);
 
-minColorRGB = make_color_rgb(225,225,225);
+shadowOpacityStep = 0.001;
 
 depth = -1947482200;
 

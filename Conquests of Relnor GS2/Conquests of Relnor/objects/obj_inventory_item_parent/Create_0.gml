@@ -15,3 +15,4 @@ isVisible = false;
 offset = 0;
 spriteGoingUp = true;
 spriteOffset = 0.0;
+pickupScript = scr_item_pickup;

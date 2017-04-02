@@ -1,8 +1,19 @@
 ///@param item
 
 var _item = argument0;
+var _weight = 5;
+	
+if(_item != noone){
+	_weight = _item.itemStats[ITEM_STATS_WEIGHT];
+}
 
-image_speed = attackImageSpeed;
+var _a = statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH]/LEVEL_CAP;
+if(_a < 1){
+	_a = 1;
+}
+var _b = _a/_weight;
+
+image_speed = _b;
 sprite_index = attackSprite[face4Way];
 
 var _destinationX = 0;
@@ -55,14 +66,6 @@ else{
 //}
 
 if (!attacked && image_index >= 3){
-//TODO calculate damage
-	
-	if(_item != noone){
-		var _weight = _item.itemStats[ITEM_STATS_WEIGHT];
-	}
-	else{
-		var _weight = 5;
-	}
 	
 	var _energyDrain = -_weight*(1.5 - (statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH]/STATS_MULTIPLIER/LEVEL_CAP));
 	

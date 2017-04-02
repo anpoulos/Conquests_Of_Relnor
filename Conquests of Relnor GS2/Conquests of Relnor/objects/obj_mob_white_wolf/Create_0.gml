@@ -19,3 +19,5 @@ scr_lifeform_parent_inventory_add(self, scr_consumable_food_random(self));
 
 statsMax[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH] = 10;
 statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH] = 10;
+
+gold = irandom(10);

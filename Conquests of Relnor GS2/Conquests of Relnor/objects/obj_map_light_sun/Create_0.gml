@@ -61,6 +61,10 @@ radiusDecrement = 10;
 
 strength = 0.5;
 nightStrengthTarget = 0.0;
+if(global.moonTonight){
+	nightStrengthTarget = 0.5;
+	nightRadiusTarget = 4000;
+}
 dayStrengthTarget = 1.0;
 strengthIncrement = 0.01;
 strengthDecrement = 0.01;
@@ -69,9 +73,9 @@ dayColorTarget[0] = 255;
 dayColorTarget[1] = 255;
 dayColorTarget[2] = 200;
 
-nightColorTarget[0] = 25;
-nightColorTarget[1] = 25;
-nightColorTarget[2] = 50;
+nightColorTarget[0] = 10;
+nightColorTarget[1] = 10;
+nightColorTarget[2] = 20;
 
 colorIncrement = 1;
 colorDecrement = 1;

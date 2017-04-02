@@ -2,6 +2,12 @@
 // You can write your code in this editor
 objectIndex = noone;
 
+autoLevel = true;
+level = 1;
+experience = 0;
+defence = 0;
+statPoints = 0;
+
 gold = 0;
 healthBarCurrentBar = 9;
 energyBarCurrentBar = 9;

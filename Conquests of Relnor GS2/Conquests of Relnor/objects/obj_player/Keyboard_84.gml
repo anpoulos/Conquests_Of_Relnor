@@ -21,8 +21,7 @@ for(var i = 0; i < instance_number(obj_inventory_item_parent); i++){
 }
 if(_closestItem != noone){
 	if(scr_lifeform_parent_inventory_get_free_space(self) > 0){
-		scr_lifeform_parent_inventory_add(self, _closestItem);
-		_closestItem.isVisible = false;
+		script_execute(_closestItem.pickupScript, self, _closestItem);
 		return true;
 	}
 }

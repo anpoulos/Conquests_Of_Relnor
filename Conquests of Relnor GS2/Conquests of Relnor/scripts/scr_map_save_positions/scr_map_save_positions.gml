@@ -93,6 +93,11 @@ for(var k = 0; k < instance_number(obj_npc_Parent); k++){
 	_lifeformSave.wanderDistance = _lifeform.wanderDistance;
 	_lifeformSave.oldWanderDistance = _lifeform.oldWanderDistance;
 	_lifeformSave.oldWanderRadius = _lifeform.oldWanderRadius;
+	_lifeformSave.autoLevel = _lifeform.autoLevel;
+	_lifeformSave.level = _lifeform.level;
+	_lifeformSave.experience = _lifeform.experience;
+	_lifeformSave.defence = _lifeform.defence;
+	_lifeformSave.statPoints = _lifeform.statPoints;
 	
 	if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) || _lifeformSave.objectIndex == obj_lifeform_npc_shopkeeper){
 		for(var i = 0; i < SHOP_ITEMS_MAX; i++){

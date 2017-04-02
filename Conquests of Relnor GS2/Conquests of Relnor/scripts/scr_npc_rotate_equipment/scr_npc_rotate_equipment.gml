@@ -25,10 +25,12 @@ if(global.isNight){
 				var _isInLight = false;
 				for(var j = 0; j < _totalLights; j++){
 					var _light = instance_find(obj_map_light_cycle, j);
-					var _distance = point_distance(x,y, _light.lightX, _light.lightY);
-					if(_distance <= _light.radius){
-						_isInLight = true;
-						break;
+					if(_light.object_index != obj_map_light_sun){
+						var _distance = point_distance(x,y, _light.lightX, _light.lightY);
+						if(_distance <= _light.radius){
+							_isInLight = true;
+							break;
+						}
 					}
 				}
 				if(!_isInLight){

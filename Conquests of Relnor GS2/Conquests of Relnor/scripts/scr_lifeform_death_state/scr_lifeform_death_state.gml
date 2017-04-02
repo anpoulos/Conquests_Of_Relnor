@@ -8,6 +8,12 @@ if(irandom(1) == 1){
 	_body.liveSprite = self.sprites[RIGHT];
 }
 
+if(gold > 0){
+	var _gold = instance_create(x,y, obj_inventory_item_gold_parent);
+
+	_gold.itemStats[ITEM_STATS_VALUE] = gold;
+}
+
 for(var i = 0; i < INVENTORY_MAX; i++){
 	var _item = inventory[i];
 	if(_item == noone){

@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.shadowOpacity = 0.3;
+global.shadowOpacityMax = 0.3;
+global.moonTonight = false;
+
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;
 	objectList[i] = noone;

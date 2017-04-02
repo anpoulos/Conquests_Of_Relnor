@@ -8,3 +8,5 @@ for(var i = 0; i < SHOP_ITEMS_MAX; i++){
 }
 shopItemsAmount[SHOP_ITEMS_MAX] = noone;
 shopGold = 0;
+
+hasDialogue = true;

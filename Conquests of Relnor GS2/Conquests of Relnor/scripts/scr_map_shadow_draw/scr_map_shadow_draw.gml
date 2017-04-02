@@ -2,7 +2,7 @@
 
 var _totalLights = instance_number(obj_map_light_cycle);
 
-if(_totalLights == 0){
+if(_totalLights == 0 || argument0 <= 0.0){
 	return false;
 }
 
