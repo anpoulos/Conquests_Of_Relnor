@@ -28,13 +28,6 @@ else{
     }
 }
 
-//recover energy if not moving or using
-if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] < statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] && 
-(!triggers[TRIGGER_DASH] || self.length == 0)){
-    statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] += 1;
-}
-
-
 // Get speeds
 hSpeed = lengthdir_x(self.length, self.direction360);
 vSpeed = lengthdir_y(self.length, self.direction360);

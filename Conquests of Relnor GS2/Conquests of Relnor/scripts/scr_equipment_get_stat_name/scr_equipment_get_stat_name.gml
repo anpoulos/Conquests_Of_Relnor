@@ -11,5 +11,11 @@ switch(argument0){
     return "Reach";
     
     case EQUIPMENT_STATS_TYPE:
-    return "Equipment Type"
+    return "Equipment Type";
+    
+    case EQUIPMENT_STATS_TOOL_TYPE:
+    return "Tool Type";
+	
+	default:
+	return "EQUIPMENT STAT NOT FOUND";
 }

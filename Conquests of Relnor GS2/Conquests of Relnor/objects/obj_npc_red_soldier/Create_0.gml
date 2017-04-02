@@ -1,7 +1,7 @@
 ///Red_Soldier
 
 event_inherited();
-scr_npc_constructor("Red_Soldier", 200, 10, 30, 400, 200, ALLEGIANCE_RED, 0);
+scr_npc_constructor("Red_Soldier", 100, 100, 30, 400, 200, ALLEGIANCE_RED, 0);
 
 scr_npc_set_attack_sprites(spr_npc_red_soldier_up, spr_npc_red_soldier_down,
 spr_npc_red_soldier_right, spr_npc_red_soldier_left, 0.2);

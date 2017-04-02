@@ -26,7 +26,8 @@ PlayerInformationEnergyBar.image_index = scr_lifeform_get_energy_bar_state(self)
 if(equipment[EQUIPMENT_TYPE_OFFHAND] != noone){
 	var _item = equipment[EQUIPMENT_TYPE_OFFHAND];
 	if(_item.object_index == obj_offhand_tome_parent && _item.selectedSpell != noone){
-		SecondaryAttackText.text = _item.selectedSpell.name;
+		var _text = _item.selectedSpell.name;
+		SecondaryAttackText.text = _text;
 		SecondaryAttackIcon.sprite = _item.selectedSpell.icon;
 	}
 	else{

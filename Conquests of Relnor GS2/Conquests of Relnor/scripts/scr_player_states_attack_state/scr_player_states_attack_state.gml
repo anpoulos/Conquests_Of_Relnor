@@ -1,13 +1,7 @@
 ///scr_player_states_attack_state
 
 if(triggers[TRIGGER_ATTACK]){
-	var _item = equipment[EQUIPMENT_TYPE_WEAPON];
-	if(_item != noone){
-	    script_execute(_item.weaponScript);
-	}
-	else{
-	    script_execute(scr_player_combat_attacks_melee_fists);
-	}
+	scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);
 }
 else if(triggers[TRIGGER_MAGIC]){
 	if(offhandSpell != noone){

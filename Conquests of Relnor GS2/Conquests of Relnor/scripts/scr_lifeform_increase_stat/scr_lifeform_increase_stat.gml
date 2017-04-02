@@ -1,4 +1,7 @@
-/// scr_lifeform_increase_stat(lifeform, statType, statIndex, amount);
+///@param lifeform
+///@param statType
+///@param statIndex
+///@param amount
 
 var _lifeform = argument0;
 var _statType = argument1;
@@ -11,8 +14,15 @@ if(_amount == noone || _amount == 0){
 
 var _newStatAmount = _lifeform.statsCurrent[_statType, _statIndex] + _amount;
 
-if(_newStatAmount > _lifeform.statsMax[_statType, _statIndex]){
-	_newStatAmount = _lifeform.statsMax[_statType, _statIndex];
+if(_statType == STATS_PHYSICAL){
+	switch(_statIndex){
+		case STATS_PHYSICAL_ENERGY:
+		case STATS_PHYSICAL_HEALTH:
+			if(_newStatAmount > _lifeform.statsMax[_statType, _statIndex]){
+				_newStatAmount = _lifeform.statsMax[_statType, _statIndex];
+			}
+		break;
+	}
 }
 
 if(_newStatAmount < 0){

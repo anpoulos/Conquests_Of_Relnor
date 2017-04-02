@@ -2,7 +2,7 @@
 if(effectsIntelligence != noone){
 	for(var i = 0; i < STATS_INTELLIGENCE_MAX; i++){
 		if(effectsIntelligence[i] != noone){
-			scr_lifeform_increase_current_stat(owner, STATS_INTELLIGENCE, i, effectsIntelligence[i]);
+			scr_lifeform_increase_stat(owner, STATS_INTELLIGENCE, i, effectsIntelligence[i]);
 		}
 	}
 }
@@ -10,7 +10,7 @@ if(effectsIntelligence != noone){
 if(effectsCommanding != noone){
 	for(var i = 0; i < STATS_COMMANDING_MAX; i++){
 		if(effectsCommanding[i] != noone){
-			scr_lifeform_increase_current_stat(owner, STATS_COMMANDING, i, effectsCommanding[i]);
+			scr_lifeform_increase_stat(owner, STATS_COMMANDING, i, effectsCommanding[i]);
 		}
 	}
 }
@@ -18,7 +18,7 @@ if(effectsCommanding != noone){
 if(effectsPhysical != noone){
 	for(var i = 0; i < STATS_PHYSICAL_MAX; i++){
 		if(effectsPhysical[i] != noone){
-			scr_lifeform_increase_current_stat(owner, STATS_PHYSICAL, i, effectsPhysical[i]);
+			scr_lifeform_increase_stat(owner, STATS_PHYSICAL, i, effectsPhysical[i]);
 		}
 	}
 }
@@ -26,7 +26,7 @@ if(effectsPhysical != noone){
 if(effectsTools != noone){
 	for(var i = 0; i < STATS_TOOLS_MAX; i++){
 		if(effectsTools[i] != noone){
-			scr_lifeform_increase_current_stat(owner, STATS_TOOLS, i, effectsTools[i]);
+			scr_lifeform_increase_stat(owner, STATS_TOOLS, i, effectsTools[i]);
 		}
 	}
 }

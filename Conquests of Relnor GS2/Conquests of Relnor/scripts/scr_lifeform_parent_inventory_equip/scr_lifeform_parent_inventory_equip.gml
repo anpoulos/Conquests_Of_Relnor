@@ -1,5 +1,6 @@
 ///@param item
 
 with(argument0){
-	return script_execute(useScript);
+	var _equipped = script_execute(useScript);
+	return _equipped;
 }

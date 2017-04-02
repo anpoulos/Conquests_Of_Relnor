@@ -123,6 +123,26 @@ var _margin = 10;
 	
 //End of Character Panels Container
 
+//Stats Tree Container
+    var _menuColor = make_colour_rgb(100,100,150);
+    var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
+        
+    var _width = (PauseMenuContainer.rightX - _margin) - (PauseMenuOptionsContainer.rightX + _margin);
+    var _height = round((scr_ui_menu_get_height(PauseMenuContainer)-_margin*2) * 0.7);
+    
+    var _menuPosArray = scr_ui_menu_get_pos_array(_width, _height);
+
+    var _menuX = PauseMenuOptionsContainer.rightX + _menuPosArray.item[2] + _margin;
+    var _menuY = PauseMenuPlayerInformationContainer.bottomY + _menuPosArray.item[3] + _margin;
+    
+    PauseMenuStatsTreeContainer = scr_ui_menu_create_container(_menuX, _menuY, _menuPosArray, _menuColorArray, true, 0.9, noone);
+    
+    scr_ui_menu_container_add_draw_object(PauseMenuStatsTreeContainer, PauseMenuContainer);
+    
+    scr_destroy_instance(_menuColorArray);
+    scr_destroy_instance(_menuPosArray);
+//Stats Tree Container
+
 //Inventory Container
     var _menuColor = make_colour_rgb(100,100,150);
     var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
@@ -249,7 +269,9 @@ var _margin = 10;
     
 //End of Inventory Container
 
-//Start of Close Menu Button
+var _buttonOffset = 40;
+
+//Start of Party Menu Button
     var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
     var _buttonPressedColor = make_colour_rgb(0,0,100);
     
@@ -259,6 +281,54 @@ var _margin = 10;
     
     var _buttonX = PauseMenuOptionsContainer.x;
     var _buttonY = PauseMenuOptionsContainer.topY + _buttonPosArray.item[3] + 10;
+    
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_buttons_party_menu_clicked, self, 
+    "Party Menu", fnt_default_medium, _fontColor, 1.0, 0.8);
+    
+    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+    _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuOptionsContainer);
+    
+    _button.isVisible = true;
+    
+    scr_destroy_instance(_buttonColorArray);
+    scr_destroy_instance(_buttonPosArray);
+    scr_destroy_instance(_buttonInfo);
+//End of Party Menu Button
+
+//Start of Stats Tree Button
+    var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
+    var _buttonPressedColor = make_colour_rgb(0,0,100);
+    
+    var _buttonPosArray = scr_create_obj_array4(-70, -20, 70, 20, "_buttonPosArray");
+    
+    var _fontColor = c_white;
+    
+    var _buttonX = _button.x;
+    var _buttonY = _button.y + _buttonPosArray.item[3] + _buttonOffset;
+    
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_buttons_stats_tree_clicked, self, 
+    "Stat Tree", fnt_default_medium, _fontColor, 1.0, 0.8);
+    
+    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+    _buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuOptionsContainer);
+    
+    _button.isVisible = true;
+    
+    scr_destroy_instance(_buttonColorArray);
+    scr_destroy_instance(_buttonPosArray);
+    scr_destroy_instance(_buttonInfo);
+//End of Stats Tree Button
+
+//Start of Close Menu Button
+    var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
+    var _buttonPressedColor = make_colour_rgb(0,0,100);
+    
+    var _buttonPosArray = scr_create_obj_array4(-70, -20, 70, 20, "_buttonPosArray");
+    
+    var _fontColor = c_white;
+    
+    var _buttonX = _button.x;
+    var _buttonY = _button.y + _buttonPosArray.item[3] + _buttonOffset;
     
     var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_button_pause_close, self, 
     "Close Menu", fnt_default_medium, _fontColor, 1.0, 0.8);
@@ -272,8 +342,6 @@ var _margin = 10;
     scr_destroy_instance(_buttonPosArray);
     scr_destroy_instance(_buttonInfo);
 //End of Close Menu Button
-
-    var _buttonOffset = 40;
 
 //Start of Save Game Button
     var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
@@ -390,6 +458,7 @@ var _margin = 10;
                 
 PauseMenuInventoryButtons = scr_linked_list_create();
 scr_ui_party_inventory_equipment_refresh(true);
+scr_ui_party_stats_tree_refresh();
 
 PauseMenuContainer.isVisible = true;
 

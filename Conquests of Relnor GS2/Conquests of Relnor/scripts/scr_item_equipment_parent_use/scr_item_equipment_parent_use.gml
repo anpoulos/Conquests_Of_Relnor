@@ -31,6 +31,8 @@ if(owner.object_index == obj_player){
 
 isEquipped = true;
 
+scr_lifeform_update_defence(owner);
+
 if(global.gamePaused){
 	scr_player_gui_update_all(true);
 }

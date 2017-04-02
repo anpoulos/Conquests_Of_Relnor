@@ -13,10 +13,10 @@ while(true){
 		break;
 	}
 	else{
-		_parentObject = _parentObject.menuContainer;
 		if(!_parentObject.isVisible){
 			return false;
 		}
+		_parentObject = _parentObject.menuContainer;
 	}
 }
 

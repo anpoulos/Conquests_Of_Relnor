@@ -21,4 +21,7 @@ else{
 
 	selected = true;
 }
+
 scr_ui_party_inventory_equipment_refresh(true);
+
+scr_ui_party_stats_tree_refresh();

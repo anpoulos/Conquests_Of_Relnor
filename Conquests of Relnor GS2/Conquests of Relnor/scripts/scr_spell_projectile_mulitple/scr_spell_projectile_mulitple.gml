@@ -41,7 +41,7 @@ with(owner){
 				_direction += _directionOffset;
 			}
 			    
-			scr_lifeform_stat_add(self, STATS_PHYSICAL, STATS_PHYSICAL_ENERGY, -_selectedSpell.energyCost);
+			scr_lifeform_increase_stat(self, STATS_PHYSICAL, STATS_PHYSICAL_ENERGY, -_selectedSpell.energyCost);
 			_spell.sprite_index = _spell.sprites[self.face8Way];			
 		    attacked = true;
 		}

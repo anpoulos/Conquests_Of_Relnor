@@ -11,7 +11,7 @@ if(_statIndex == noone){
 		case STATS_PHYSICAL: return "Physical"
 		case STATS_INTELLIGENCE: return "Intelligence";
 		case STATS_TOOLS: return "Tools";
-		default: return "STAT_NAME_NOT_FOUND";
+		default: return "STAT NAME NOT FOUND";
 	}
 }
 
@@ -40,10 +40,10 @@ switch(_statType){
 	
 	case STATS_TOOLS:
 		switch(_statIndex){
-			case STATS_TOOLS_BOWS: return "Bows";
-			case STATS_TOOLS_KNIVES: return "Knives";
-			case STATS_TOOLS_SHIELDS: return "Shields";
-			case STATS_TOOLS_SWORDS: return "Swords";
+			case STATS_TOOLS_BOWS: return "Bow";
+			case STATS_TOOLS_BLADES: return "Blade";
+			case STATS_TOOLS_SHIELDS: return "Shield";
+			case STATS_TOOLS_BLUNTS: return "Blunt";
 		}
 	break;
 	

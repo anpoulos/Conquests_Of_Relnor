@@ -6,4 +6,5 @@ with(player){
 	scr_ui_party_inventory_equipment_refresh(argument0);
     scr_player_gui_party_update_character_panels();
 	scr_player_gui_party_update_character_stats();
+	scr_ui_party_stats_tree_refresh();
 }

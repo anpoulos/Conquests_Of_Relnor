@@ -4,9 +4,4 @@ if(self.target == noone || !instance_exists(self.target)){
     return false;
 }
 
-scr_npc_combat_choose_next_attack();
-
-scr_lifeform_face_towards(self, target.x, target.y);
-
-script_execute(self.currentAttack);
-
+scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);

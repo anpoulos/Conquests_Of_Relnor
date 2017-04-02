@@ -12,6 +12,7 @@ PauseMenuContainer = noone;
 MoveItemButtonClicked = false;
 MoveItem = noone;
 MoveItemButtonCurrent = noone;
+PauseMenuStatsTreeObjects = scr_linked_list_create();
 
 scr_player_gui_create_player_information();
 scr_linked_list_add(Menus, PlayerInformationMenuContainer);

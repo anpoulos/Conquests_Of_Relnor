@@ -36,6 +36,10 @@ for(var i = 0; i < ITEM_STATS_MAX; i++){
 			                        case EQUIPMENT_STATS_TYPE:
 			                            _equipmentStatString += ": " + scr_equipment_get_type_name(_equipmentStat);
 			                        break;
+									
+			                        case EQUIPMENT_STATS_TOOL_TYPE:
+			                            _equipmentStatString += ": " + scr_lifeform_get_stat_name(STATS_TOOLS, _equipmentStat);
+			                        break;
                         
 			                        default:
 			                            _equipmentStatString += ": " + string(_equipmentStat);

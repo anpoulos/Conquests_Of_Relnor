@@ -1,8 +1,8 @@
 {
-    "id": "6411581c-e602-459b-bde0-db5f4e182cb3",
+    "id": "28a7db5e-3729-450c-ab0d-2fec81c1d145",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_npc_combat_choose_next_attack",
+    "name": "scr_lifeform_add_exp",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -22,3 +22,5 @@ unequipScript = scr_equipment_torch_unequip;
 dropScript = scr_equipment_torch_drop;
 
 flameObject = obj_map_light_torch_flame;
+
+equipmentStats[EQUIPMENT_STATS_TOOL_TYPE] = STATS_TOOLS_BLUNTS;

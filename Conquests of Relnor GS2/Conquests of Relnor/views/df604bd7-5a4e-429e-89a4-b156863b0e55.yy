@@ -5,7 +5,8 @@
     "name": "df604bd7-5a4e-429e-89a4-b156863b0e55",
     "children": [
         "53db8903-c41c-4c9c-82ca-8b77bfc04dce",
-        "738fafbc-87b6-410d-bffd-44139a26540c"
+        "738fafbc-87b6-410d-bffd-44139a26540c",
+        "265d326b-013b-4a47-9a2f-d55eec74dfbf"
     ],
     "filterType": "GMScript",
     "folderName": "Update",

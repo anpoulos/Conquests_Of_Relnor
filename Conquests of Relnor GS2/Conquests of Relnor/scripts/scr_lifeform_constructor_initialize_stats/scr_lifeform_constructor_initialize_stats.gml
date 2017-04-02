@@ -1,29 +1,22 @@
 ///scr_lifeform_constructor_initialize_stats
 
-for(var i = 0; i < STATS_MAX; i++){
-    statsCurrent[i] = noone;
+for(var j = 0; j < STATS_PHYSICAL_MAX; j++){
+	statsMax[STATS_PHYSICAL, j] = 0;
+	statsCurrent[STATS_PHYSICAL, j] = 0;
+	statsLevel[STATS_PHYSICAL, j] = 0;
 }
-
-for(var i = 0; i < STATS_MAX; i++){
-    statsMax[i] = noone;
+for(var j = 0; j < STATS_COMMANDING_MAX; j++){
+	statsMax[STATS_COMMANDING, j] = 0;
+	statsCurrent[STATS_COMMANDING, j] = 0;
+	statsLevel[STATS_COMMANDING, j] = 0;
 }
-
-for(var i = 0; i < STATS_PHYSICAL_MAX; i++){
-    statsMax[STATS_PHYSICAL, i] = noone;
-    statsCurrent[STATS_PHYSICAL, i] = noone;
+for(var j = 0; j < STATS_TOOLS_MAX; j++){
+	statsMax[STATS_TOOLS, j] = 0;
+	statsCurrent[STATS_TOOLS, j] = 0;
+	statsLevel[STATS_TOOLS, j] = 0;
 }
-
-for(var i = 0; i < STATS_COMMANDING_MAX; i++){
-    statsMax[STATS_COMMANDING, i] = noone;
-    statsCurrent[STATS_COMMANDING, i] = noone;
-}
-
-for(var i = 0; i < STATS_TOOLS_MAX; i++){
-    statsMax[STATS_TOOLS, i] = noone;
-    statsCurrent[STATS_TOOLS, i] = noone;
-}
-
-for(var i = 0; i < STATS_INTELLIGENCE_MAX; i++){
-    statsMax[STATS_INTELLIGENCE, i] = noone;
-    statsCurrent[STATS_INTELLIGENCE, i] = noone;
+for(var j = 0; j < STATS_INTELLIGENCE_MAX; j++){
+	statsMax[STATS_INTELLIGENCE, j] = 0;
+	statsCurrent[STATS_INTELLIGENCE, j] = 0;
+	statsLevel[STATS_INTELLIGENCE, j] = 0;
 }

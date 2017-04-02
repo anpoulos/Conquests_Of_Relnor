@@ -1,5 +1,13 @@
 ///scr_lifeform_constructor
 
+autoLevel = true;
+
+level = 1;
+experience = 0;
+defence = 0;
+
+statPoints = 0;
+
 followTarget = noone;
 
 walkThroughNPCs = false;
@@ -55,22 +63,8 @@ moveOffsetX = 0;
 moveOffsetY = 0;
 reach = 15;
 
-for(var j = 0; j < STATS_PHYSICAL_MAX; j++){
-	statsMax[STATS_PHYSICAL, j] = 0;
-	statsCurrent[STATS_PHYSICAL, j] = 0;
-}
-for(var j = 0; j < STATS_COMMANDING_MAX; j++){
-	statsMax[STATS_COMMANDING, j] = 0;
-	statsCurrent[STATS_COMMANDING, j] = 0;
-}
-for(var j = 0; j < STATS_TOOLS_MAX; j++){
-	statsMax[STATS_TOOLS, j] = 0;
-	statsCurrent[STATS_TOOLS, j] = 0;
-}
-for(var j = 0; j < STATS_INTELLIGENCE_MAX; j++){
-	statsMax[STATS_INTELLIGENCE, j] = 0;
-	statsCurrent[STATS_INTELLIGENCE, j] = 0;
-}
+statRestoreStep = 0;
+
 
 isPlayer = false;
 statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = 10;

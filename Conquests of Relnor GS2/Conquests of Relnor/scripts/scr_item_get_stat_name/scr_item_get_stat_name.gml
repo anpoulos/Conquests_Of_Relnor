@@ -11,4 +11,6 @@ switch(argument0){
 		return "Value";
 	case ITEM_STATS_DROP_PERCENTAGE:
 		return "Drop Rate";
+	default:
+		return "ITEM STAT NAME NOT FOUND"
 }

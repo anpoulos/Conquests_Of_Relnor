@@ -7,4 +7,4 @@ event_inherited();
 self.knockback = 6;
 self.destinationSpeed = 5;
 self.arrivalScript = scr_lifeform_damage_melee_arrival;
-
+creationScript = scr_lifeform_damage_melee_create;

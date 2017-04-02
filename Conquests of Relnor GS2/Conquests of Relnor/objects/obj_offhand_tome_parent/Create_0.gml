@@ -29,3 +29,6 @@ flameObject = obj_map_light_spell_blue;
 
 useScript = scr_equipment_tome_equip;
 
+unequipScript = scr_equipment_tome_unequip;
+
+equipmentStats[EQUIPMENT_STATS_TOOL_TYPE] = noone;

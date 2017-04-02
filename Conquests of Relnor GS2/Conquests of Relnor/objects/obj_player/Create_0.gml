@@ -2,6 +2,8 @@
 
 event_inherited();
 
+autoLevel = false;
+
 PrimaryAttackText = noone;
 
 gold = 1000;

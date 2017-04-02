@@ -3,6 +3,41 @@
 depth = -y;
 self.currentDepth = depth;
 
+//recover energy if not moving or using
+if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] < statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] && 
+(!triggers[TRIGGER_DASH] && state != attackState)){
+    statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] += 1;
+}
+
+statRestoreStep += 1;
+
+//every ten seconds
+if(statRestoreStep > 300){
+	statRestoreStep = 0;
+	
+	for(var j = 0; j < STATS_PHYSICAL_MAX; j++){
+		if(statsCurrent[STATS_PHYSICAL, j] > statsMax[STATS_PHYSICAL, j]){
+			scr_lifeform_increase_stat(self, STATS_PHYSICAL, j, -1);
+		}
+	}
+	for(var j = 0; j < STATS_COMMANDING_MAX; j++){
+		if(statsCurrent[STATS_COMMANDING, j] > statsMax[STATS_COMMANDING, j]){
+			scr_lifeform_increase_stat(self, STATS_COMMANDING, j, -1);
+		}
+	}
+	for(var j = 0; j < STATS_TOOLS_MAX; j++){
+		if(statsCurrent[STATS_TOOLS, j] > statsMax[STATS_TOOLS, j]){
+			scr_lifeform_increase_stat(self, STATS_TOOLS, j, -1);
+		}
+	}
+	for(var j = 0; j < STATS_INTELLIGENCE_MAX; j++){
+		if(statsCurrent[STATS_INTELLIGENCE, j] > statsMax[STATS_INTELLIGENCE, j]){
+			scr_lifeform_increase_stat(self, STATS_INTELLIGENCE, j, -1);
+		}
+	}
+
+}
+
 ///State execution
 
 if(global.gamePaused){

@@ -43,7 +43,7 @@ for(var j = 0; j < _statMax; j++){
 	_text += string(_character.statsCurrent[_statType, j]) + "/";
 	_text += string(_character.statsMax[_statType, j]);
 	
-	var _ratioOfThree = self.statsCurrent[_statType, j]/self.statsMax[_statType, j];
+	var _ratioOfThree = _character.statsCurrent[_statType, j]/_character.statsMax[_statType, j];
 	var _range = round(_ratioOfThree * 2);
 	var _color = c_green;
 	switch(_range){

@@ -16,10 +16,10 @@ var _sigma = 72;
 var _mu = LEVEL_CAP + 100;
 
 for(var i = 0; i < LEVEL_CAP; i++){
-	experienceTotal[i] = 10000000000 * ( 1 / (_sigma*sqrt(2*pi)) ) * exp( - (sqr(i - _mu) / (2*sqr(_sigma))) );
+	experienceTotal[i] = -280 + 10000000000 * ( 1 / (_sigma*sqrt(2*pi)) ) * exp( - (sqr(i - _mu) / (2*sqr(_sigma))) );
 	//level[i] = 100*sqr(i/2);
 }
 
 for(var i = 0; i < LEVEL_CAP-1; i++){
-	experienceDifference[i] = level[i+1]-level[i];
+	experienceDifference[i] = experienceTotal[i+1]-experienceTotal[i];
 }

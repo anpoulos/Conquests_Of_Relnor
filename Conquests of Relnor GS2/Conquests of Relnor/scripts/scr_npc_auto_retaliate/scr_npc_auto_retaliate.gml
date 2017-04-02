@@ -16,10 +16,10 @@
 		_distance <= _npc.sight && 
 		_npc.target == noone &&
 		_npc.lockedTarget == noone &&
-		_npc.isDefensive){
-			if(!_npc.isAggressive){
-				_npc.isAggressive = true;
-			}
-			scr_npc_combat_lock_target(_npc, self.target);
+		_npc.isDefensive &&
+		!_npc.isAggressive){
+			_npc.isAggressive = true;
+		    _npc.target = argument0;
+		    _npc.alarm[2] = -1;
 		}
 	}
