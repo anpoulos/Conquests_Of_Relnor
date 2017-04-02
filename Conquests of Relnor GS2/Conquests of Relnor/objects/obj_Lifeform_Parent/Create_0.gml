@@ -4,6 +4,8 @@ mapLocked = true;
 
 lastCollidedObject = noone;
 firstCollidedObject = noone;
+firstCollidedX = noone;
+firstCollidedY = noone;
 
 autoLevel = true;
 

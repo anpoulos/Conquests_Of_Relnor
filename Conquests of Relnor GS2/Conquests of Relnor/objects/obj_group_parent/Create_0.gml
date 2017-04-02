@@ -12,3 +12,5 @@ topY = y - (sprite_get_height(sprite_index)/2)*image_yscale;
 bottomY = y + (sprite_get_height(sprite_index)/2)*image_yscale;
 
 roomId = scr_room_get_id(room);
+
+masterIndex = 0;

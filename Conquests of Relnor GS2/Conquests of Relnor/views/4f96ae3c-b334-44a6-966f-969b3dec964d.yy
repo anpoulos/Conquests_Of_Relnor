@@ -10,7 +10,8 @@
         "20322222-be1f-43ff-a8c1-5f207278e95b",
         "7a73d846-cdf0-48c4-8330-cb7e42e43972",
         "158ee1fa-5fde-4a86-9e54-2f98a034a36d",
-        "c3ca8d5a-f94a-4a91-955d-0400fd5edc94"
+        "c3ca8d5a-f94a-4a91-955d-0400fd5edc94",
+        "c8b63557-8b7b-4de1-931c-a3a5885fbfe4"
     ],
     "filterType": "GMSprite",
     "folderName": "Ruin",

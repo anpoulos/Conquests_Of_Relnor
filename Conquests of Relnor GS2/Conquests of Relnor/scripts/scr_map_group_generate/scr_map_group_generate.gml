@@ -1,4 +1,7 @@
 ///@param obj_group
+///@param mp_grid
+
+var _grid = argument1;
 
 with(argument0){
 	
@@ -31,7 +34,7 @@ with(argument0){
 			
 				for(var _x = _minX; _x <= _maxX; _x+= global.tileOffset){
 					for(var _y = _minY; _y <= _maxY; _y += global.tileOffset){
-						if(mp_grid_get_cell(global.aiGrid, _x div global.tileOffset, _y div global.tileOffset) != 0){
+						if(mp_grid_get_cell(_grid, _x div global.tileOffset, _y div global.tileOffset) != 0){
 								_allFree = false;
 								break;
 							}
@@ -42,10 +45,10 @@ with(argument0){
 			if(_allFree){
 				var _cellX = _randomX div global.tileOffset;
 				var _cellY = _randomY div global.tileOffset;
-				if(mp_grid_get_cell(global.aiGrid, _cellX, _cellY) == 0){
+				if(mp_grid_get_cell(_grid, _cellX, _cellY) == 0){
 					instance_create(_randomX, _randomY, _object);				
-					mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
-					mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
+					mp_grid_add_instances(_grid, obj_map_solid_parent, true);
+					mp_grid_add_instances(_grid, obj_unwalkable, true);
 					break;
 				}
 			}

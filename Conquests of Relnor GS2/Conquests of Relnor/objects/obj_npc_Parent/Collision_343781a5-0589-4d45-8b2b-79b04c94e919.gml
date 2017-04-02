@@ -21,10 +21,10 @@
 	
 //	scr_npc_move_to(self, _tempX, _tempY, scr_npc_choose_next_state, size-1, false, false, self.runSpeed);
 //}
-if(state == idleState && 
-	other.walkThroughNPCs){
+if(walkThroughNPCs &&
+other.allegiance == allegiance){
 	phy_active = false;
-	other.phy_active = true;
+	alarm[6] = room_speed;
 }
 else{
 

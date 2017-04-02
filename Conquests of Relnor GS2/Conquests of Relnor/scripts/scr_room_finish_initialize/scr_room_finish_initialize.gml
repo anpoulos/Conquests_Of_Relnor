@@ -2,8 +2,12 @@
 
 scr_map_load_positions();
 
-mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
-mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
+var _tempGrid = mp_grid_create(0,0,room_width/global.tileOffset, 
+room_height/global.tileOffset, global.tileOffset, global.tileOffset);
+mp_grid_add_instances(_tempGrid, obj_map_solid_parent, true);
+mp_grid_add_instances(_tempGrid, obj_unwalkable, true);
+mp_grid_add_instances(_tempGrid, obj_Lifeform_Parent, true);
+
 global.playerSpawnX = noone;
 global.playerSpawnY = noone;
 
@@ -15,7 +19,7 @@ if(global.mapSaves.objectList[_roomId] == noone){
 	for(var i = 0; i < instance_number(obj_group_parent); i++){
 		var _group = instance_find(obj_group_parent, i);
 		if(_group.roomId = _roomId){
-			scr_map_group_generate(_group);
+			scr_map_group_generate(_group, _tempGrid);
 			scr_linked_list_add(_groups, _group);
 		}
 	}
@@ -41,7 +45,7 @@ while(!scr_linked_list_is_empty(global.mapSaves.followingList)){
 		var _checkX = global.player.x + _currentDistance*dcos(_angle);
 		var _checkY = global.player.y - _currentDistance*dsin(_angle);
 		
-		if(mp_grid_get_cell(global.aiGrid, _checkX div global.tileOffset, _checkY div global.tileOffset) != -1){
+		if(mp_grid_get_cell(_tempGrid, _checkX div global.tileOffset, _checkY div global.tileOffset) != -1){
 			var _lifeform = scr_map_convert_save_to_lifeform(_lifeformSave);
 			_lifeform.x = _checkX;
 			_lifeform.y = _checkY;
@@ -65,3 +69,8 @@ while(!scr_linked_list_is_empty(global.mapSaves.followingList)){
 		scr_linked_list_add(global.mapSaves.lifeformList[_lifeformSave.lastRoomId], _lifeformSave);
 	}
 }
+
+mp_grid_destroy(_tempGrid);
+
+mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
+mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);

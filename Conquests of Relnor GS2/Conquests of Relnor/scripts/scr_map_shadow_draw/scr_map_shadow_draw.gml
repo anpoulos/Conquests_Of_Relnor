@@ -59,9 +59,9 @@ if(global.debug > 0){
 }
 
 
-draw_sprite_ext(sprite_index, sprite_index, 
+draw_sprite_ext(sprite_index, image_index, 
 		_x,
-		_y,
+		_y + (sprite_height-_b)/2,
 		_direction > 180 ? -1 : 1,
 		0.5+_opacity,
 		_direction+270,

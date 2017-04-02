@@ -2,7 +2,7 @@
 
 var _owner = argument0;
 
-var _consumable = scr_item_consumable_create(0,0,obj_inventory_consumable_parent, "Apple", 1, 4, 1, 0.95, _owner,spr_consumable_apple);
+var _consumable = scr_item_consumable_create(0,0,obj_inventory_consumable_parent, "Apple", 1, 4, 1, 0.25, _owner,spr_consumable_apple);
 
 _consumable.effectsPhysical[STATS_PHYSICAL_HEALTH] = 5;
 

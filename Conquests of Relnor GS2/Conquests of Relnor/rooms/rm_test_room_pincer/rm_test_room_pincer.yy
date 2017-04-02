@@ -2,7 +2,7 @@
     "id": "5a9ad98b-18a4-45eb-9595-495bcb54bff2",
     "modelName": "GMRoom",
     "mvc": "1.0",
-    "name": "rm_test_room_large",
+    "name": "rm_test_room_pincer",
     "IsDnD": false,
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,

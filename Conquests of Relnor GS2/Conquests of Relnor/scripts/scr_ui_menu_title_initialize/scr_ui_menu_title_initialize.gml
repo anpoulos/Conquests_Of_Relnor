@@ -71,7 +71,7 @@ var _buttonPositionArray = scr_create_obj_array4(-100,-30,100,30, "_buttonPositi
 
 var _fontColor = make_colour_rgb(200,200,200);
 
-var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test2, noone, "Test Room 2", fnt_default_medium, 
+var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test2, noone, "Start Game", fnt_default_medium, 
 _fontColor, 1, 0.5);
 
 var _button3 = scr_ui_button_constructor(_menuContainer.x, _button2.y+80,
@@ -93,7 +93,7 @@ var _buttonPositionArray = scr_create_obj_array4(-100,-30,100,30, "_buttonPositi
 
 var _fontColor = make_colour_rgb(200,200,200);
 
-var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test3, noone, "Test Room 3", fnt_default_medium, 
+var _buttonInfo = scr_ui_get_obj_ui_button_information(10, scr_ui_menu_title_start_large_test3, noone, "Forest Battle Test", fnt_default_medium, 
 _fontColor, 1, 0.5);
 
 var _button4 = scr_ui_button_constructor(_menuContainer.x, _button3.y+80,
