@@ -45,6 +45,65 @@ else{
 	    }
 	}
 	
+	if(collisionCounter == -1){
+		firstCollidedLifeform = other;
+		collisionCounter = room_speed;
+	}
+	else if(collisionCounter > 0){
+		lastCollidedLifeform = other;
+		if(lastCollidedLifeform != firstCollidedLifeform){
+			collisionCounter = -1;
+			lastCollidedLifeform = noone;
+			firstCollidedLifeform = noone;
+		}
+	}
+	
+	if(collisionCounter > 0){
+		collisionCounter -= 1;
+		if(collisionCounter == 0){
+			if(firstCollidedLifeform == lastCollidedLifeform && instance_exists(firstCollidedLifeform)){
+			//random move
+	
+				var _direction = point_direction(phy_position_x, phy_position_y, firstCollidedLifeform.phy_position_x, firstCollidedLifeform.phy_position_y);
+				var _randDirection1 = _direction + 135;
+				var _randDirection2 = _direction - 135;
+	
+				switch(irandom(1)){
+					case 0: _direction = _randDirection1;
+					case 1: _direction = _randDirection2;
+				}
+	
+				var _distance = size;
+				var _newX = phy_position_x + _distance*dcos(_direction);
+				var _newY = phy_position_y - _distance*dsin(_direction);
+	
+				if(collision_line(phy_position_x, phy_position_y, _newX, _newY, obj_Lifeform_Parent, false, true) == noone){
+					target = noone;
+					currentMoveSpeed = runSpeed;
+					scr_npc_move_to(self, _newX, _newY, scr_npc_choose_next_state, size,
+					false,false,runSpeed, 200);
+				}
+				else{
+					if(_direction == _randDirection1){
+						_direction = _randDirection2;
+					}
+					else{
+						_direction = _randDirection1;
+					}
+					var _newX = phy_position_x + _distance*dcos(_direction);
+					var _newY = phy_position_y - _distance*dsin(_direction);
+					if(collision_line(phy_position_x, phy_position_y, _newX, _newY, obj_Lifeform_Parent, false, true) == noone){
+						target = noone;
+						currentMoveSpeed = runSpeed;
+						scr_npc_move_to(self, _newX, _newY, scr_npc_choose_next_state, size,
+						false,false,runSpeed, 200);
+					}
+				}
+	
+			}
+			collisionCounter = -1;
+		}
+	}
 	
 	
 	return true;
