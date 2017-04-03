@@ -1847,6 +1847,14 @@
             }
         },
         {
+            "Key": "2bb36c04-69e2-41c8-99d8-60901ed83cb0",
+            "Value": {
+                "id": "07ec3fa8-3451-4c1c-936f-e863383a8a7b",
+                "resourcePath": "scripts\\scr_item_use\\scr_item_use.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2bcf1e5b-6263-4144-8e05-27fab1a38720",
             "Value": {
                 "id": "13ad4aad-7ca2-479e-a440-499e4b4de2b7",
@@ -2244,6 +2252,14 @@
                 "id": "d9efaa89-fb99-4375-a1ee-6e0d22e38dff",
                 "resourcePath": "views\\34ecfc97-545f-4d56-b125-1048fcd66c81.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "34efe963-73bf-4053-ab9d-16a546f28c93",
+            "Value": {
+                "id": "b4397e06-4e23-4290-b017-52653256725b",
+                "resourcePath": "sprites\\spr_map_light_torch_stand\\spr_map_light_torch_stand.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3783,6 +3799,14 @@
             }
         },
         {
+            "Key": "5afe5bd1-3504-45e8-a728-95fd30769e83",
+            "Value": {
+                "id": "6f8f2708-f4b6-4c1d-a4b8-bac1c5c62a69",
+                "resourcePath": "objects\\obj_map_clutter_torch_stand\\obj_map_clutter_torch_stand.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "5bccb366-113f-40c7-be7a-e40cdd300577",
             "Value": {
                 "id": "8e2ec602-6379-4955-aa1c-73a66b7893d2",
@@ -4946,7 +4970,7 @@
             "Key": "7ba8226d-73df-418a-b281-fb3288885b95",
             "Value": {
                 "id": "19184403-636b-4f56-b780-21fc00833001",
-                "resourcePath": "scripts\\scr_npc_rotate_equipment\\scr_npc_rotate_equipment.yy",
+                "resourcePath": "scripts\\scr_npc_check_equipment\\scr_npc_check_equipment.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5180,6 +5204,14 @@
                 "id": "607567bf-8cbb-409f-87b6-d49a97cd3d16",
                 "resourcePath": "scripts\\scr_lifeform_damage_melee_arrival\\scr_lifeform_damage_melee_arrival.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "82b31155-8962-4d40-be6e-dea64e31b8c4",
+            "Value": {
+                "id": "2df9f222-f225-4227-8d5d-ba6f60a91cdd",
+                "resourcePath": "sprites\\spr_map_exterior_ground_torch\\spr_map_exterior_ground_torch.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -7095,6 +7127,14 @@
             }
         },
         {
+            "Key": "b1f2cdb8-8617-4f51-b3f9-bc8f536bd653",
+            "Value": {
+                "id": "6634e97d-1592-4e25-9478-c1ba8fcb9353",
+                "resourcePath": "objects\\obj_map_ruin_wall\\obj_map_ruin_wall.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b1f49b7c-a9b9-40fb-906c-46339954689b",
             "Value": {
                 "id": "6c997c0b-0055-45cc-9de3-87c29490687a",
@@ -8551,6 +8591,14 @@
             }
         },
         {
+            "Key": "cf4ae13c-8c9f-4541-ba01-67398ab046ae",
+            "Value": {
+                "id": "d6513101-574c-4218-b80e-7fd61a0fdfec",
+                "resourcePath": "objects\\obj_ground_torch_group\\obj_ground_torch_group.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cfa28acf-38a0-4461-987d-0fb2297e0f88",
             "Value": {
                 "id": "f184f632-6da0-413c-a0ef-b4a701e0e1f6",
@@ -8980,6 +9028,14 @@
                 "id": "7cb82ecb-58f6-4ad3-9986-a00c359afe49",
                 "resourcePath": "views\\dbb5dfab-b484-410c-b18b-f4ecad1e4a58.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "dc0e2dba-f119-4f3e-a6f6-0df3aebcec43",
+            "Value": {
+                "id": "03817627-0f57-4027-b911-106cd9cdd3e4",
+                "resourcePath": "sprites\\spr_ground_torch_group\\spr_ground_torch_group.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -10764,6 +10820,7 @@
         "7296504c-72a5-4b37-b1ae-30f1ab6476de",
         "36187a44-e658-4c7f-a447-fcaa36848cea",
         "13c86f7d-2be7-4260-b730-ee382b3d8d88",
+        "2bb36c04-69e2-41c8-99d8-60901ed83cb0",
         "0b751605-fee1-41ea-8710-d05f60cb59e7",
         "7286cbfc-fc31-4517-bca7-971b8718e6d7",
         "b860cac3-502c-4273-8e72-ed0ac581fcf6",

@@ -47,8 +47,7 @@ with(argument0){
 				var _cellY = _randomY div global.tileOffset;
 				if(mp_grid_get_cell(_grid, _cellX, _cellY) == 0){
 					instance_create(_randomX, _randomY, _object);				
-					mp_grid_add_instances(_grid, obj_map_solid_parent, true);
-					mp_grid_add_instances(_grid, obj_unwalkable, true);
+					mp_grid_add_instances(_grid, _object, true);
 					break;
 				}
 			}

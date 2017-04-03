@@ -4,6 +4,8 @@ event_inherited();
 
 allegianceParent = noone;
 
+healthThreshold = irandom_range(25,75)/100;
+
 hasDialogue = false;
 checkedNightEquipment = false;
 checkedDayEquipment = false;

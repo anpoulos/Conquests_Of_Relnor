@@ -48,7 +48,7 @@ var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
 var _b = sprite_get_yoffset(sprite_index);
 
 var _x = x + (sprite_height-_b)*dcos(_direction);
-var _y = y - (sprite_height-_b)*dsin(_direction);
+var _y = y + (sprite_height-_b)*(0.5 - dsin(_direction));
 
 if(global.debug > 0){
 	if(global.debug > 1){
@@ -61,7 +61,7 @@ if(global.debug > 0){
 
 draw_sprite_ext(sprite_index, image_index, 
 		_x,
-		_y + (sprite_height-_b)/2,
+		_y,
 		_direction > 180 ? -1 : 1,
 		0.5+_opacity,
 		_direction+270,

@@ -6,7 +6,8 @@
     "children": [
         "a7d36242-4719-482a-9e88-2aee840002f2",
         "6de8146d-a1c3-46fb-8f8d-1d88f2eb8c64",
-        "dfe3c705-de9b-4131-b18b-fe015a1d124d"
+        "dfe3c705-de9b-4131-b18b-fe015a1d124d",
+        "5afe5bd1-3504-45e8-a728-95fd30769e83"
     ],
     "filterType": "GMObject",
     "folderName": "Stand",

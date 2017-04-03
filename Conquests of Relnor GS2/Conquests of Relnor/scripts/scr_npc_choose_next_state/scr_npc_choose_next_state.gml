@@ -69,7 +69,7 @@ switch(_nextState){
     case 1:
         self.alarm[1] = irandom_range(30,90);
         self.state = idleState;
-		scr_npc_rotate_equipment();
+		scr_npc_check_equipment();
     break;
     
     //wander

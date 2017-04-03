@@ -8,10 +8,10 @@
         "744888ce-d6b9-4ebd-ba8b-bf78d7908678",
         "514caaf6-3106-4339-bed7-42e8a854068c",
         "51eddd93-60ca-4c6d-8d35-3d318de5c3bf",
-        "7673478c-3bb7-4815-9730-73a0d7e673da",
         "9ae9a731-578a-4814-8828-885bfe1d5bd4",
         "ae589b2b-4c24-4f3e-b4aa-0068e184ac74",
-        "30d23043-ea2d-4148-9e90-9ba22dbd5294"
+        "30d23043-ea2d-4148-9e90-9ba22dbd5294",
+        "b1f2cdb8-8617-4f51-b3f9-bc8f536bd653"
     ],
     "filterType": "GMObject",
     "folderName": "Ruin",

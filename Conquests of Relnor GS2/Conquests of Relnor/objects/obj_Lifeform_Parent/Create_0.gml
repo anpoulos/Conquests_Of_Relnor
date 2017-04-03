@@ -7,6 +7,9 @@ firstCollidedObject = noone;
 firstCollidedX = noone;
 firstCollidedY = noone;
 
+lastCollidedLifeform = noone;
+firstCollidedLifeform = noone;
+
 autoLevel = true;
 
 level = 1;
