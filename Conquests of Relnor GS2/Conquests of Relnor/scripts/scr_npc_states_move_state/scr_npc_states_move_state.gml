@@ -4,7 +4,7 @@ if(currentMoveSpeed < moveSpeed){
     currentMoveSpeed += 0.5;
 }
 
-if((self.isAggressive && !self.commandedMoveTo) || lockedTarget != noone){
+if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTarget != noone){
     if(lockedTarget != noone){
         target = lockedTarget;
     }
@@ -44,6 +44,8 @@ if(_totalPoints > 0){
 
 if(_distanceToEnd < _rangeStop){
         
+	ignoreTargeting = false;	
+		
     self.alarm[1] = -1; //turn off idle state alarm
     
     self.pathIndex = 0;

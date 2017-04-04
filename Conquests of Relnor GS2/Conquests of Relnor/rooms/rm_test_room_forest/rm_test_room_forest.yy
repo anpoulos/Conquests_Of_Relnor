@@ -201,7 +201,7 @@
                             "objId": "ca9aa93d-6355-4230-a1d9-904f7c4bb4ff",
                             "rotation": 0,
                             "scaleX": 50.9999962,
-                            "scaleY": 14.000001
+                            "scaleY": 14
                         },
                         {
                             "id": "09473266-5dce-4654-b4e4-be5c19c60859",

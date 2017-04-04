@@ -55,7 +55,7 @@ else{
 					for(var i = 0; i < INVENTORY_MAX; i++){
 						var _inventoryItem = inventory[i];
 				
-						if(object_is_ancestor(_inventoryItem.object_index, obj_equipment_shield_parent)){
+						if(_inventoryItem!= noone && object_is_ancestor(_inventoryItem.object_index, obj_equipment_shield_parent)){
 							if(_bestOffhand == noone){
 								if(_inventoryItem.equipmentStats[EQUIPMENT_STATS_DEFENCE] > _item.equipmentStats[EQUIPMENT_STATS_DEFENCE]){
 									_bestOffhand = _item;

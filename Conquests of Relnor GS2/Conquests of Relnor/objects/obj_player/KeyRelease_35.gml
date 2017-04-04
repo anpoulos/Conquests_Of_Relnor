@@ -3,6 +3,6 @@
 
 global.debug += 1;
 
-if(global.debug > 2){
+if(global.debug > 4){
 	global.debug = 0;
 }

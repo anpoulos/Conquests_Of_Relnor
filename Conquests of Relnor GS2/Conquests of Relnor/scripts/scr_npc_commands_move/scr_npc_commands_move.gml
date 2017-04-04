@@ -20,4 +20,4 @@
     }
         
     scr_npc_move_to(argument0,  argument2, argument3,
-	    argument1, argument0.size, argument4, false, argument0.runSpeed, 10000000);
+	    argument1, argument0.size, argument4, false, argument0.runSpeed, 10000000, true);

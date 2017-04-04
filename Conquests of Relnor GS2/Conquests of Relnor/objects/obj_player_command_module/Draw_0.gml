@@ -37,7 +37,7 @@ for(var i = 0; i < scr_linked_list_size(self.selected); i++){
         c_yellow, c_yellow, true);
     }
 	
-	if(global.debug > 0 && _currentNPC.waitForX != noone){
+	if(global.debug == 1 && _currentNPC.waitForX != noone){
 		draw_line_color(_currentNPC.x, _currentNPC.y, _currentNPC.waitForX, _currentNPC.waitForY, c_red, c_red);
 	}
 	

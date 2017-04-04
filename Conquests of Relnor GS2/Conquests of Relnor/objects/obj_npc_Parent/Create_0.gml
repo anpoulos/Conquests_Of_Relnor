@@ -5,6 +5,7 @@ event_inherited();
 allegianceParent = noone;
 
 collisionCounter = -1;
+ignoreTargeting = false;
 
 healthThreshold = irandom_range(25,75)/100;
 

@@ -26,7 +26,7 @@ for(var i = 0; i < _totalLights; i++){
 	var _pointX = x + (_light.radius-_playerDistanceFromCenter)*dcos(_direction)*_radiusStrength*_light.strength;
 	var _pointY = y - (_light.radius-_playerDistanceFromCenter)*dsin(_direction)*_radiusStrength*_light.strength;
 	
-	if(global.debug > 0){
+	if(global.debug == 2){
 		draw_line_color(x,y,_light.lightX, _light.lightY, c_red, c_red);
 		draw_line_color(x,y,_pointX, _pointY, c_blue, c_blue);
 		draw_circle(_light.lightX, _light.lightY, _light.radius, true);
@@ -50,11 +50,9 @@ var _b = sprite_get_yoffset(sprite_index);
 var _x = x + (sprite_height-_b)*dcos(_direction);
 var _y = y + (sprite_height-_b)*(0.5 - dsin(_direction));
 
-if(global.debug > 0){
-	if(global.debug > 1){
-		draw_text_color(x,y-75, "opacity: "+string(_opacity),
-			c_white, c_white, c_white, c_white, 1.0);
-	}
+if(global.debug == 2){
+	draw_text_color(x,y-75, "opacity: "+string(_opacity),
+		c_white, c_white, c_white, c_white, 1.0);
 	draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
 }
 

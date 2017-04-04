@@ -21,13 +21,17 @@
 	
 //	scr_npc_move_to(self, _tempX, _tempY, scr_npc_choose_next_state, size-1, false, false, self.runSpeed);
 //}
+
+if(!instance_exists(self)){
+	return;
+}
+
 if(walkThroughNPCs &&
 other.allegiance == allegiance){
 	phy_active = false;
 	alarm[6] = room_speed;
 }
 else{
-
 	if(currentMoveSpeed > 0){
 	    var _myNextPointX = path_get_point_x(path, pathIndex);
 	    var _myNextPointY = path_get_point_y(path, pathIndex);
@@ -40,70 +44,59 @@ else{
 
 	if((self.isAggressive || self.isDefensive) && !self.commandedMoveTo){
 	    if(other.allegiance != self.allegiance){
+			collisionCounter = -1;
+			lastCollidedLifeform = noone;
+			firstCollidedLifeform = noone;
 	        scr_npc_auto_retaliate(other);
 	        return true;
 	    }
 	}
 	
-	if(collisionCounter == -1){
-		firstCollidedLifeform = other;
-		collisionCounter = room_speed;
-	}
-	else if(collisionCounter > 0){
-		lastCollidedLifeform = other;
-		if(lastCollidedLifeform != firstCollidedLifeform){
-			collisionCounter = -1;
+		if(collisionCounter == -1){
+			firstCollidedLifeform = other;
 			lastCollidedLifeform = noone;
-			firstCollidedLifeform = noone;
+			collisionCounter = room_speed;
 		}
-	}
+		else if(collisionCounter > 0){
+			lastCollidedLifeform = other;
+			if(lastCollidedLifeform != firstCollidedLifeform){
+				collisionCounter = -1;
+				lastCollidedLifeform = noone;
+				firstCollidedLifeform = noone;
+			}
+		}
 	
-	if(collisionCounter > 0){
-		collisionCounter -= 1;
-		if(collisionCounter == 0){
-			if(firstCollidedLifeform == lastCollidedLifeform && instance_exists(firstCollidedLifeform)){
-			//random move
+		if(collisionCounter > 0){
+			collisionCounter -= 1;
+			if(collisionCounter == 0){
+				if(firstCollidedLifeform == lastCollidedLifeform && instance_exists(firstCollidedLifeform)){
+				//random move
+					var _myNextPointX = path_get_point_x(path, pathIndex);
+					var _myNextPointY = path_get_point_y(path, pathIndex);
 	
-				var _direction = point_direction(phy_position_x, phy_position_y, firstCollidedLifeform.phy_position_x, firstCollidedLifeform.phy_position_y);
-				var _randDirection1 = _direction + 135;
-				var _randDirection2 = _direction - 135;
+					var _direction = point_direction(phy_position_x, phy_position_y, _myNextPointX, _myNextPointY);
+					var _randDirection1 = _direction + 45;
+					var _randDirection2 = _direction - 45;
 	
-				switch(irandom(1)){
-					case 0: _direction = _randDirection1;
-					case 1: _direction = _randDirection2;
-				}
-	
-				var _distance = size;
-				var _newX = phy_position_x + _distance*dcos(_direction);
-				var _newY = phy_position_y - _distance*dsin(_direction);
-	
-				if(collision_line(phy_position_x, phy_position_y, _newX, _newY, obj_Lifeform_Parent, false, true) == noone){
-					target = noone;
-					currentMoveSpeed = runSpeed;
-					scr_npc_move_to(self, _newX, _newY, scr_npc_choose_next_state, size,
-					false,false,runSpeed, 200);
-				}
-				else{
-					if(_direction == _randDirection1){
-						_direction = _randDirection2;
+					switch(irandom(1)){
+						case 0: _direction = _randDirection1;
+						case 1: _direction = _randDirection2;
 					}
-					else{
-						_direction = _randDirection1;
-					}
+	
+					var _distance = size*2;
 					var _newX = phy_position_x + _distance*dcos(_direction);
 					var _newY = phy_position_y - _distance*dsin(_direction);
-					if(collision_line(phy_position_x, phy_position_y, _newX, _newY, obj_Lifeform_Parent, false, true) == noone){
-						target = noone;
-						currentMoveSpeed = runSpeed;
-						scr_npc_move_to(self, _newX, _newY, scr_npc_choose_next_state, size,
-						false,false,runSpeed, 200);
-					}
+					target = noone;
+					scr_npc_move_to(self, _newX, _newY, noone, size,
+					false,false,runSpeed, 200, true);
+					currentMoveSpeed = runSpeed;
 				}
-	
+				lastCollidedLifeform = noone;
+				firstCollidedLifeform = noone;
+				collisionCounter = -1;
 			}
-			collisionCounter = -1;
 		}
-	}
+	
 	
 	
 	return true;
