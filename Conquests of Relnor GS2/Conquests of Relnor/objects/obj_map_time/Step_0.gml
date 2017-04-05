@@ -25,7 +25,10 @@ if(global.time >= 7000 && global.time <= 20000){
 	} 
 	if(global.time >= 10000 && global.time <= 12000){
 		global.isNight = false;
-		if(global.shadowOpacity > 0){
+		if(global.isInterior){
+			global.shadowOpacity = global.shadowOpacityMax;
+		}
+		else if(global.shadowOpacity > 0){
 			global.shadowOpacity -= shadowOpacityStep;
 		}
 	}

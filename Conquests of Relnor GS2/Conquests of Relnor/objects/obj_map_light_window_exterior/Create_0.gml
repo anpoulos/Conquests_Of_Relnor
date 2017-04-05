@@ -62,6 +62,8 @@ color[0] = 100;
 color[1] = 100;
 color[2] = 100;
 
+scr_linked_list_add(global.additiveLights, self);
+
 lightColorRGB = make_color_rgb(color[0],color[1],color[2]);
 lightDirection = LIGHT_DIRECTION_DOWN;
 

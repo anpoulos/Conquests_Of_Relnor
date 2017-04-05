@@ -2,6 +2,9 @@
 
 mapLocked = true;
 
+isRevealed = true;
+nightSightStrength = 0.05;
+
 lastCollidedObject = noone;
 firstCollidedObject = noone;
 firstCollidedX = noone;

@@ -33,11 +33,12 @@ else{
 	}
 }
 
-lightColorRGB = make_color_rgb(color[0], color[1], color[2]);
+lightColorRGB = make_color_rgb(color[0]*strength, color[1]*strength, color[2]*strength);
 
 gpu_set_blendmode(bm_subtract);
 
 surface_set_target(global.lightSurface);
+
 
 draw_ellipse_color(leftX, topY, rightX, bottomY, 
 	lightColorRGB, c_black, false);

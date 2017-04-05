@@ -4,6 +4,7 @@
 global.shadowOpacity = 0.3;
 global.shadowOpacityMax = 0.3;
 global.moonTonight = false;
+global.additiveLights = scr_linked_list_create();
 
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;

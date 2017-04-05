@@ -47,15 +47,29 @@ var _xForce = lengthdir_x(_knockback, _dir);
 var _yForce = lengthdir_y(_knockback, _dir);
 
 with(_lifeform){
-    if(target == noone && !isPlayer && isDefensive && !isAggressive){
-        _xForce = round(_xForce/2);
-        _yForce = round(_yForce/2);
-        var _distanceToSource = distance_to_point(_source.x, _source.y);
-        if(_distanceToSource < reach){
-            image_speed = attackImageSpeed;
-            scr_npc_auto_retaliate(_source);
-        }
-    }
+
+	var _lookup = allegianceParent == noone ? obj_npc_Parent : allegianceParent;
+	var _total = instance_number(_lookup);
+	for(var i = 0; i < _total; i++){
+		var _npc = instance_find(_lookup, i);
+		var _distance = point_distance(x,y,_npc.x, _npc.y);
+		if(_npc.state == _npc.idleState &&
+		_distance <= _npc.sight && 
+		_npc.isDefensive &&
+		!_npc.isAggressive){
+			_npc.isAggressive = true;
+		    _npc.alarm[2] = -1;
+		}
+	}
+	
+	if(!isAggressive){
+		isAggressive = true;
+	}
+	
+    _xForce = round(_xForce/2);
+    _yForce = round(_yForce/2);
+    //image_speed = attackImageSpeed;
+    scr_npc_auto_retaliate(_source);
     physics_apply_impulse(x,y, _xForce, _yForce);
 }
 

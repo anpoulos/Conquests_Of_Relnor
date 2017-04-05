@@ -4,6 +4,8 @@ event_inherited();
 
 depth = -MAX;
 
+isAdditive = false;
+
 xOffset = 0;
 yOffset = 0;
 

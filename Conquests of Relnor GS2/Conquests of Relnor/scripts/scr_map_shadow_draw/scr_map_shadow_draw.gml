@@ -1,69 +1,123 @@
 ///@param opacityMultiplier
 
 var _totalLights = instance_number(obj_map_light_cycle);
+	
+if(argument0 <= 0.0){ //means in daylight
+	isRevealed = true;
+	return false;
+}
 
-if(_totalLights == 0 || argument0 <= 0.0){
+isRevealed = false;
+
+if(_totalLights == 0){
 	return false;
 }
 
 var _vectorX = 0;
 var _vectorY = 0;
+var _forceAdditive = false;
+
+var _additiveLights = global.additiveLights;
+var _totalAdditiveLights = scr_linked_list_size(_additiveLights);
+
+for(var i = 0; i < _totalAdditiveLights; i++){
+	var _light = scr_linked_list_get_next(_additiveLights);
+	if(point_distance(x,y,_light.lightX, _light.lightY) <= _light.radius*_light.strength){
+		_forceAdditive = true;
+		break;
+	}
+}
 
 for(var i = 0; i < _totalLights; i++){
 
 	var _light = instance_find(obj_map_light_cycle, i);
+	var _effectiveRadius = _light.radius*_light.strength;
 	
-	if(point_distance(x,y,_light.lightX, _light.lightY) > _light.radius){
+	if(point_distance(x,y,_light.lightX, _light.lightY) > _effectiveRadius){
 		continue;
 	}
+	
+	isRevealed = true;
 	
 	var _playerDistanceFromCenter = point_distance(x,y,_light.lightX, _light.lightY);
 	
 	var _direction = point_direction(_light.lightX, _light.lightY, x,y);
 	
-	var _radiusStrength = _light.radius/_playerDistanceFromCenter;
+	var _radiusStrength = _effectiveRadius/_playerDistanceFromCenter;
 	
-	var _pointX = x + (_light.radius-_playerDistanceFromCenter)*dcos(_direction)*_radiusStrength*_light.strength;
-	var _pointY = y - (_light.radius-_playerDistanceFromCenter)*dsin(_direction)*_radiusStrength*_light.strength;
+	var _pointX = x + (_effectiveRadius - _playerDistanceFromCenter)*dcos(_direction)*_radiusStrength;
+	var _pointY = y - (_effectiveRadius - _playerDistanceFromCenter)*dsin(_direction)*_radiusStrength;
 	
 	if(global.debug == 2){
 		draw_line_color(x,y,_light.lightX, _light.lightY, c_red, c_red);
 		draw_line_color(x,y,_pointX, _pointY, c_blue, c_blue);
-		draw_circle(_light.lightX, _light.lightY, _light.radius, true);
+		draw_circle(_light.lightX, _light.lightY, _effectiveRadius, true);
 	}
 	
-	_vectorX += (x - _pointX);
-	_vectorY += (y - _pointY);
+	if(_forceAdditive){
+		_vectorX += (x - _pointX);
+		_vectorY += (y - _pointY);
+	}
+	else{
+	
+		var _direction = point_direction(x,y,_pointX, _pointY);
+		var _distance = point_distance(x,y,_pointX,_pointY);	
+	
+		var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
+	
+		//var _a = sprite_get_xoffset(sprite_index);
+		var _b = sprite_get_yoffset(sprite_index);
+
+		var _x = x + (sprite_height-_b)*dcos(_direction);
+		var _y = y + (sprite_height-_b)*(0.5 - dsin(_direction));
+
+		if(global.debug == 2){
+			draw_text_color(x,y-75, "opacity: "+string(_opacity),
+				c_white, c_white, c_white, c_white, 1.0);
+			draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
+		}
+
+
+		draw_sprite_ext(sprite_index, image_index, 
+				_x,
+				_y,
+				_direction > 180 ? -1 : 1,
+				0.5+_opacity,
+				_direction+270,
+				c_black, _opacity*argument0);
+	}
 }
 
-var _pointX = x + _vectorX;
-var _pointY = y + _vectorY;
+if(_vectorX != 0 || _vectorY != 0){
+	var _pointX = x + _vectorX;
+	var _pointY = y + _vectorY;
 	
-var _direction = point_direction(_pointX, _pointY,x,y);
-var _distance = point_distance(x,y,_pointX,_pointY);	
+	var _direction = point_direction(_pointX, _pointY,x,y);
+	var _distance = point_distance(x,y,_pointX,_pointY);	
 	
-var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
+	var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
 	
-//var _a = sprite_get_xoffset(sprite_index);
-var _b = sprite_get_yoffset(sprite_index);
+	//var _a = sprite_get_xoffset(sprite_index);
+	var _b = sprite_get_yoffset(sprite_index);
 
-var _x = x + (sprite_height-_b)*dcos(_direction);
-var _y = y + (sprite_height-_b)*(0.5 - dsin(_direction));
+	var _x = x + (sprite_height-_b)*dcos(_direction);
+	var _y = y + (sprite_height-_b)*(0.5 - dsin(_direction));
 
-if(global.debug == 2){
-	draw_text_color(x,y-75, "opacity: "+string(_opacity),
-		c_white, c_white, c_white, c_white, 1.0);
-	draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
+	if(global.debug == 2){
+		draw_text_color(x,y-75, "opacity: "+string(_opacity),
+			c_white, c_white, c_white, c_white, 1.0);
+		draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
+	}
+
+
+	draw_sprite_ext(sprite_index, image_index, 
+			_x,
+			_y,
+			_direction > 180 ? -1 : 1,
+			0.5+_opacity,
+			_direction+270,
+			c_black, _opacity*argument0);
 }
-
-
-draw_sprite_ext(sprite_index, image_index, 
-		_x,
-		_y,
-		_direction > 180 ? -1 : 1,
-		0.5+_opacity,
-		_direction+270,
-		c_black, _opacity*argument0);
 			
 			
 //draw_sprite_ext(sprite_index, image_index, 

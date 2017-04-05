@@ -2,6 +2,8 @@
 ///@param y
 ///@param room
 
+scr_linked_list_clear(global.additiveLights);
+
 scr_map_save_positions();
 
 global.playerSpawnX = argument0;

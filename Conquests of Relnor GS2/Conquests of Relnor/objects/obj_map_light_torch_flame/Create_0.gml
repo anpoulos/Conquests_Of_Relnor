@@ -5,6 +5,8 @@ event_inherited();
 xOffset = 0;
 yOffset = 0;
 
+isAdditive = false;
+
 leftX = lightX;
 rightX = lightX;
 topY = lightY;

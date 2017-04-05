@@ -8,7 +8,14 @@
         for(var j = 0; j < instance_number(_enemyType); j++){
             var _objectType = instance_find(_enemyType, j);
             var _distance = point_distance(self.x, self.y, _objectType.x, _objectType.y);
-            if(_distance < self.sight && _distance < _closestEnemyDistance){
+			
+			var _effectiveSite = sight;
+			
+			if(global.isNight && !_objectType.isRevealed){
+				_effectiveSite *= nightSightStrength;
+			}
+			
+            if(_distance < _effectiveSite && _distance < _closestEnemyDistance){
                 _closestEnemy = _objectType;
                 _closestEnemyDistance = _distance;
             }
