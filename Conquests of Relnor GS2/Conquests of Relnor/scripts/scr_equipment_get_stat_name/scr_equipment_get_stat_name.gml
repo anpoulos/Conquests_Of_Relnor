@@ -8,7 +8,7 @@ switch(argument0){
     return "Defence";
     
     case EQUIPMENT_STATS_RANGE:
-    return "Reach";
+    return "Range";
     
     case EQUIPMENT_STATS_TYPE:
     return "Equipment Type";

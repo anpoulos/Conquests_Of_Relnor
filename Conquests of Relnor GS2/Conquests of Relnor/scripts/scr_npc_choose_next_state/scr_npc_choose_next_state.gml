@@ -19,15 +19,7 @@ if(lockedTarget != noone){
 }
 
 if(instance_exists(target)){
-    var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
-    if(_distanceToTarget <= self.reach){
-        self.alarm[2] = -1; //turn off idle alarm
-        self.state = self.attackState;
-    }
-    else{
-        scr_npc_move_to(self, target.x, target.y, 
-			noone,self.size-1, false, false, self.runSpeed, self.sight, false);   
-    }
+    state = attackState;
     return true;
 }
 

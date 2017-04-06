@@ -9,3 +9,4 @@ owner = noone;
 useScript = noone;
 useAs = self;
 others = 0;
+amount = 0;

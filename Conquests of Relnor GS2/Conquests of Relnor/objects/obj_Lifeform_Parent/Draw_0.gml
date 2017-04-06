@@ -10,7 +10,9 @@ var _equipmentLength = array_length_1d(self.equipment);
 //draw items behind first
 for(var i = 0; i < _equipmentLength; i++){
     var _item = self.equipment[i];
-    if(_item != noone && _item.spriteBehind[self.face4Way]){
+    if(_item != noone && 
+	_item.isVisibleWhenEquipped &&
+	_item.spriteBehind[self.face4Way]){
         draw_sprite(_item.sprite[self.face4Way], image_index, self.x, self.y);
     }
 }
@@ -21,7 +23,9 @@ draw_self();
 //draw items in front
 for(var i = 0; i < _equipmentLength; i++){
     var _item = self.equipment[i];
-    if(_item != noone && !_item.spriteBehind[self.face4Way]){
+    if(_item != noone && 
+	_item.isVisibleWhenEquipped &&
+	!_item.spriteBehind[self.face4Way]){
         draw_sprite(_item.sprite[self.face4Way], image_index, self.x, self.y);
     }
 }

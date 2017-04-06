@@ -9,5 +9,5 @@ icon = spr_light_flame_01_small;
 name = "Mutliple Fire Projectile";
 amount = 3;
 knockback = 3;
+
 others = 2;
-useScript = scr_spell_projectile_mulitple;

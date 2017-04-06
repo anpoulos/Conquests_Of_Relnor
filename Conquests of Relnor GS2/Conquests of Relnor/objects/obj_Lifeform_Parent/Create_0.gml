@@ -2,6 +2,8 @@
 
 mapLocked = true;
 
+canEat = true;
+
 isRevealed = true;
 nightSightStrength = 0.05;
 

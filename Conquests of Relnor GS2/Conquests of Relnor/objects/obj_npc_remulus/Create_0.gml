@@ -10,10 +10,10 @@ scr_npc_set_sprites(spr_remulus_up, spr_remulus_down, spr_remulus_right, spr_rem
 
 shopGold = 500;
 
-scr_shop_add_item(self, scr_equipment_create_iron_sword(self));
-
-scr_shop_add_item(self, scr_equipment_offhand_create_iron_shield(self));
-
 for(var i = 0; i < 100; i++){
+	scr_shop_add_item(self, scr_consumable_food_random(self));
+}
+
+for(var i = 0; i < 5; i++){
 	scr_shop_add_item(self, scr_consumable_weak_health_potion(self));
 }

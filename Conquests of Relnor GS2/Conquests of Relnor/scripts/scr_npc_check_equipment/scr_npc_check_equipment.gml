@@ -79,18 +79,22 @@ else{
 	}
 }
 
-for(var i = 0; i < INVENTORY_MAX; i++){
-	var _item = inventory[i];
-	if(_item != noone){
-		if(object_is_ancestor(_item.object_index, obj_inventory_consumable_parent) && _item.effectsPhysical[STATS_PHYSICAL_HEALTH] > 0){
-			var _currentHealth = statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
-			var _maxHealth = statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
-			while(_currentHealth/_maxHealth  <= healthThreshold && instance_exists(_item)){
-				scr_item_use(_item);
+
+if(canEat){
+	for(var i = 0; i < INVENTORY_MAX; i++){
+		var _item = inventory[i];
+		if(_item != noone){
+			if(object_is_ancestor(_item.object_index, obj_inventory_consumable_parent) && _item.effectsPhysical[STATS_PHYSICAL_HEALTH] > 0){
+				var _currentHealth = statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
+				var _maxHealth = statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH];
+				while(_currentHealth/_maxHealth  <= healthThreshold && instance_exists(_item)){
+					scr_item_use(_item);
+				}
 			}
 		}
 	}
 }
+
 
 
 
