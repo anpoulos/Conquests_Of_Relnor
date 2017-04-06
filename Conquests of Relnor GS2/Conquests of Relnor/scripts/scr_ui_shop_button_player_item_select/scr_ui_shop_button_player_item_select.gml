@@ -1,5 +1,5 @@
 ///Clicked as shop object
-///tempVal is the item index in owner.shopItems
+///tempVal is the item index in player inventory
 
 selectedItem = player.inventory[tempVal];
 buySellButton.text = "Sell";

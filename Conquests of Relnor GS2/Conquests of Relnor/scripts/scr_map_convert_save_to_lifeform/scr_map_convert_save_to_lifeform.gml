@@ -79,19 +79,19 @@ _lifeform.mapLocked = _lifeformSave.mapLocked;
 	
 if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) || _lifeformSave.objectIndex == obj_lifeform_npc_shopkeeper){
 	for(var i = 0; i < SHOP_ITEMS_MAX; i++){
-		if(_lifeform.shopItems[i] != noone){
-			instance_destroy(_lifeform.shopItems[i]);
-			_lifeform.shopItems[i] = noone;
+		while(!scr_linked_list_is_empty(_lifeform.shopItems[i])){
+			instance_destroy(scr_linked_list_remove_next(_lifeform.shopItems[i]));
 		}
+		scr_linked_list_destroy(_lifeform.shopItems[i]);
 	}
 	for(var i = 0; i < SHOP_ITEMS_MAX; i++){
-		var _item = _lifeformSave.shopItems[i];
-		if(_item != noone){
+	
+		for(var j = 0; j < scr_linked_list_size(_lifeformSave.shopItems[i]); j++){
+			var _item = scr_linked_list_get_next(_lifeformSave.shopItems[i]);
 			_item.owner = _lifeform;
 		}
-				
-		_lifeform.shopItems[i] = _item;
-		_lifeform.shopItemsAmount[i] = _lifeformSave.shopItemsAmount[i];
+		
+		_lifeform.shopItems[i] = _lifeformSave.shopItems[i];
 	}
 	_lifeform.shopGold = _lifeformSave.shopGold;
 }

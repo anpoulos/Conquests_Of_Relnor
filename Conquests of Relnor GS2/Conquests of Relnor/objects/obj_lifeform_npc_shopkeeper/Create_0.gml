@@ -4,9 +4,8 @@
 event_inherited();
 
 for(var i = 0; i < SHOP_ITEMS_MAX; i++){
-	shopItems[i] = noone;
+	shopItems[i] = scr_linked_list_create();
 }
-shopItemsAmount[SHOP_ITEMS_MAX] = noone;
 shopGold = 0;
 
 hasDialogue = true;

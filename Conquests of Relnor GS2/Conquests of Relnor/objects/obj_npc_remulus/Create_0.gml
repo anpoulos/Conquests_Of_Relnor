@@ -10,11 +10,10 @@ scr_npc_set_sprites(spr_remulus_up, spr_remulus_down, spr_remulus_right, spr_rem
 
 shopGold = 500;
 
-shopItems[0] = scr_equipment_create_iron_sword(self);
-shopItemsAmount[0] = 2;
+scr_shop_add_item(self, scr_equipment_create_iron_sword(self));
 
-shopItems[1] = scr_equipment_offhand_create_iron_shield(self);
-shopItemsAmount[1] = 1;
+scr_shop_add_item(self, scr_equipment_offhand_create_iron_shield(self));
 
-shopItems[2] = scr_consumable_weak_health_potion(self);
-shopItemsAmount[2] = 100;
+for(var i = 0; i < 100; i++){
+	scr_shop_add_item(self, scr_consumable_weak_health_potion(self));
+}

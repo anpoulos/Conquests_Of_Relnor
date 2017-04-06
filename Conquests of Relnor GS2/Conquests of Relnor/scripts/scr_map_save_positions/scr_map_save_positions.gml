@@ -104,12 +104,13 @@ for(var k = 0; k < instance_number(obj_npc_Parent); k++){
 	
 	if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) || _lifeformSave.objectIndex == obj_lifeform_npc_shopkeeper){
 		for(var i = 0; i < SHOP_ITEMS_MAX; i++){
-			var _item = _lifeform.shopItems[i];
-			if(_item != noone){
+			
+			for(var j = 0; j < scr_linked_list_size(_lifeform.shopItems[i]); j++){
+				var _item = scr_linked_list_get_next(_lifeform.shopItems[i]);
 				_item.owner = noone;
-				_lifeformSave.shopItems[i] = _item;
 			}
-			_lifeformSave.shopItemsAmount[i] = _lifeform.shopItemsAmount[i];
+			
+			_lifeformSave.shopItems[i] = _lifeform.shopItems[i];
 		}
 	
 		_lifeformSave.shopGold = _lifeform.shopGold;

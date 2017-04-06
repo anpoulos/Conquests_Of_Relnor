@@ -10,7 +10,7 @@ if(_itemValue <= owner.shopGold &&
 		var _item = player.inventory[i];
 		if(_item == selectedItem){
 	
-			scr_shop_add_item(self, _item);
+			scr_shop_add_item(owner, _item);
 			owner.shopGold -= _itemValue;
 			player.gold += _itemValue;
 	

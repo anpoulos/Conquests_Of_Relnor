@@ -9279,14 +9279,6 @@
             }
         },
         {
-            "Key": "e0af10de-b597-45e2-9a6d-96cb4ec23247",
-            "Value": {
-                "id": "8f568ee6-18dd-418e-b541-d1b4696c1417",
-                "resourcePath": "scripts\\scr_shop_get_free_space\\scr_shop_get_free_space.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "e0d46d5d-23d2-4c8d-ae2b-111cba75f768",
             "Value": {
                 "id": "db540e3a-170b-475d-84ec-095a9c40160f",
@@ -10824,7 +10816,6 @@
         "0b751605-fee1-41ea-8710-d05f60cb59e7",
         "7286cbfc-fc31-4517-bca7-971b8718e6d7",
         "b860cac3-502c-4273-8e72-ed0ac581fcf6",
-        "e0af10de-b597-45e2-9a6d-96cb4ec23247",
         "57305ef8-c298-4fd1-a4f6-14cc986fffb1",
         "b91bfe74-5b54-4d9b-8b68-b3dfe044c41b",
         "28186375-b331-47d6-bab5-e5a4db757e81",

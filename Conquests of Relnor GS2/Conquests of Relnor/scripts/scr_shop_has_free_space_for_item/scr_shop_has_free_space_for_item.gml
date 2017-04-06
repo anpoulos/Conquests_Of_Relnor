@@ -5,10 +5,11 @@ var _shop = argument0;
 var _item = argument1;
 
 for(var i = 0; i < SHOP_ITEMS_MAX; i++){
-	if(_shop.owner.shopItems[i] == noone){
+	if(scr_linked_list_is_empty(_shop.owner.shopItems[i])){
 		return true;
 	}
-	if(scr_item_equals(_shop.owner.shopItems[i], _item)){
+	var _shopItem = scr_linked_list_peak(_shop.owner.shopItems[i]);
+	if(scr_item_equals(_shopItem, _item)){
 		return true;
 	}
 }

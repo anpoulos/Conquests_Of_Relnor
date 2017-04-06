@@ -13,10 +13,12 @@ var _yOffset = 40;
 var _currentY = _shop.shopKeeperItemsContainer.topY + _yOffset*3;
 
 for(var i = 0; i < SHOP_ITEMS_MAX; i++){
-	var _item = _shop.owner.shopItems[i];
-	if(_item == noone){
+	
+	var _stock = scr_linked_list_size(_shop.owner.shopItems[i]);
+	if(_stock == 0){
 		continue;
 	}
+	var _item = scr_linked_list_peak(_shop.owner.shopItems[i]);
 	// Item Button Borderless
 	    var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
 	    var _buttonPressedColor = make_colour_rgb(0,0,100);
@@ -29,8 +31,8 @@ for(var i = 0; i < SHOP_ITEMS_MAX; i++){
 		if(_item.itemStats[ITEM_STATS_TYPE] == ITEM_TYPE_CONSUMABLE){
 			_buttonText += " (" + string(_item.uses)+ ")";
 		}
-		if(_shop.owner.shopItemsAmount[i] > 1){
-			_buttonText += " x" + string(_shop.owner.shopItemsAmount[i]);
+		if(_stock > 1){
+			_buttonText += " x" + string(_stock);
 		}
                 
 	    var _buttonX = _shop.shopKeeperItemsContainer.x;
