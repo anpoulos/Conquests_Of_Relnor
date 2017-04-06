@@ -75,12 +75,15 @@ else{
 					var _myNextPointY = path_get_point_y(path, pathIndex);
 	
 					var _direction = point_direction(phy_position_x, phy_position_y, _myNextPointX, _myNextPointY);
-					var _randDirection1 = _direction + 45;
-					var _randDirection2 = _direction - 45;
 	
 					switch(irandom(1)){
-						case 0: _direction = _randDirection1;
-						case 1: _direction = _randDirection2;
+						case 0: 
+							_direction += 45;
+						break;
+						
+						case 1: 
+							_direction -= 45; 
+						break;
 					}
 	
 					var _distance = size*2;

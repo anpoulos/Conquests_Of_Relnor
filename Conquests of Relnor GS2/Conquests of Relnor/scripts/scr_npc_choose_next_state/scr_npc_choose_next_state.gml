@@ -1,8 +1,13 @@
 ///scr_npc_choose_next_state
 
-			collisionCounter = -1;
-			lastCollidedLifeform = noone;
-			firstCollidedLifeform = noone;
+collisionCounter = -1;
+lastCollidedLifeform = noone;
+firstCollidedLifeform = noone;
+
+if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] <= 0){
+	state = deathState;
+	return true;
+}
 			
 if(lockedTarget != noone){
     if(instance_exists(lockedTarget)){
