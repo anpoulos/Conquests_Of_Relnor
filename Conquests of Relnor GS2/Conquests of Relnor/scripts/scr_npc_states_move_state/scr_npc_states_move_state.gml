@@ -13,9 +13,9 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
     }
     if(self.target != noone && instance_exists(target)){   //means we are chasing someone
     var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
-        if(_distanceToTarget <= self.reach){
-            self.alarm[2] = -1;
+        if(_distanceToTarget <= moveToAccuracy){
             self.state = self.attackState;
+            path_clear_points(path);
             return true;
         }
         else {

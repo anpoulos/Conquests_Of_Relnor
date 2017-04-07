@@ -6,8 +6,8 @@ var _object = argument1;
 
 for(var i = 0; i < INVENTORY_MAX; i++){
     if(_lifeform.inventory[i] == noone){
+		_object.owner = _lifeform;
         _lifeform.inventory[i] = _object;
-		_lifeform.inventory[i].owner = _lifeform;
         return true;
     }
 }

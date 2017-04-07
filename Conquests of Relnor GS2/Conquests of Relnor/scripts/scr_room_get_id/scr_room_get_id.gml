@@ -13,7 +13,9 @@ switch(argument0){
 	
 	case rm_test_room_pincer: return 5;
 	
+	case rm_relnor_24_7_inn_floor_2: return 6;
+	
 	default: return -1;
 }
 
-#macro ROOM_MAX 6
+#macro ROOM_MAX 7

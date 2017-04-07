@@ -58,16 +58,16 @@ if(_offhand != noone){
 var _effectiveRange = max(_primaryRange, _offhandRange);
 
 var _desiredRange = _effectiveRange - size;
-if(_desiredRange < 0){
-	_desiredRange = 0;
-}
+//if(_desiredRange < 0){
+//	_desiredRange = 0;
+//}
 
-var _angle = point_direction(target.x, target.y, x,y);
+//var _angle = point_direction(target.x, target.y, x,y);
 
-var _desiredX = target.x + _desiredRange*dcos(_angle);
-var _desiredY = target.y - _desiredRange*dsin(_angle);
+//var _desiredX = target.x + _desiredRange*dcos(_angle);
+//var _desiredY = target.y - _desiredRange*dsin(_angle);
 
-scr_npc_move_to(self, _desiredX, _desiredY, noone,self.size-1, false, false, self.runSpeed, self.sight, false);   
+scr_npc_move_to(self, target.x, target.y, noone,_desiredRange, false, false, self.runSpeed, self.sight, false);   
 
 
 //if(triggers[TRIGGER_ATTACK]){

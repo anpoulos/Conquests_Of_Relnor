@@ -6,3 +6,4 @@ depth = -y;
 hasShadow = false;
 shadowPortion = 1.0;
 shadowSprite = noone;
+useScript = noone;

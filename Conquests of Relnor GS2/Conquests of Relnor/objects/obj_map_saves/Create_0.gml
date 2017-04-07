@@ -10,6 +10,7 @@ for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;
 	objectList[i] = noone;
 	itemList[i] = noone;
+	vaultList[i] = noone;
 }
 
 destinationX = noone;

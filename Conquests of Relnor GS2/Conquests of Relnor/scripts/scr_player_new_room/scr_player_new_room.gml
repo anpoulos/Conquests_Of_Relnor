@@ -17,7 +17,7 @@ if(!_foundOldTime){
 	global.shadowSurface = 0;
 	global.lightSurface = 0;
 	global.isNight = false;
-	global.time = 0;
+	global.time = 10000;
 	global.sun = noone;
 }
 
