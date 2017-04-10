@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = -MAX;
+depth = -round(MAX/2);
 
 isVisible = true;
 

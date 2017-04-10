@@ -63,14 +63,13 @@ with(_lifeform){
 		}
 	}
 	
-	if(!isPlayer && !isAggressive){
-		isAggressive = true;
+	if(!isPlayer){
+		scr_npc_auto_retaliate(_source);
 	}
 	
     _xForce = round(_xForce/2);
     _yForce = round(_yForce/2);
     //image_speed = attackImageSpeed;
-    scr_npc_auto_retaliate(_source);
     physics_apply_impulse(x,y, _xForce, _yForce);
 }
 
