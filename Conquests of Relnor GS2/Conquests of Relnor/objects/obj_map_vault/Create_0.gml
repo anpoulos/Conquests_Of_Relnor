@@ -7,3 +7,5 @@ for(var i = 0; i < VAULT_MAX; i++){
 }
 owner = noone;
 ownedByPlayer = false;
+
+name = "";

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-depth = -MAX;
+depth = -MAX + 100;
 
 isAdditive = false;
 

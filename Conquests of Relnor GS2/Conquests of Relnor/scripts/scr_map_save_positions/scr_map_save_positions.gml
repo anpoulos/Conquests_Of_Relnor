@@ -26,8 +26,11 @@ for(var i = 0; i < instance_number(obj_inventory_item_parent); i++){
 }
 
 for(var i = 0; i < instance_number(obj_map_parent); i++){
+
 	var _object = instance_find(obj_map_parent, i);
+	
 	var _objectSave = instance_create(_object.x, _object.y, obj_map_object_save);
+	
 	_objectSave.objectIndex = _object.object_index;
 	_objectSave.xScale = _object.image_xscale;
 	_objectSave.yScale = _object.image_yscale;
@@ -36,6 +39,16 @@ for(var i = 0; i < instance_number(obj_map_parent); i++){
 	_objectSave.bboxLeft = _object.bbox_left;
 	_objectSave.bboxRight = _object.bbox_right;
 	_objectSave.bboxTop = _object.bbox_top;
+	_objectSave.isVisible = _object.isVisible;
+	if(object_get_physics(_object)){
+		_objectSave.phyActive = _object.phy_active;
+	}
+	
+	if(object_is_ancestor(_object.object_index, obj_chest_parent)){
+		_objectSave.vaultId = _object.vaultId;
+	}
+	
+	_objectSave.keyId = _object.keyId;
 	
 	scr_linked_list_add(global.mapSaves.objectList[_roomId], _objectSave);
 }

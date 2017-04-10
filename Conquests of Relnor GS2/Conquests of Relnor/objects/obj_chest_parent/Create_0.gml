@@ -21,5 +21,6 @@ for(var i = 0; i < scr_linked_list_size(_vaultList); i++){
 if(!_foundVault){
 	vault = instance_create(0,0,obj_map_vault);
 	vault.vaultId = self.vaultId;
+	vault.name = "Chest";
 	scr_linked_list_add(_vaultList, vault);
 }

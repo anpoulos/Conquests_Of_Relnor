@@ -51,7 +51,8 @@
 
 #macro ITEM_TYPE_CONSUMABLE 0
 #macro ITEM_TYPE_EQUIPMENT 1
-#macro ITEM_TYPE_MAX 2
+#macro ITEM_TYPE_KEY 2
+#macro ITEM_TYPE_MAX 3
 
 #macro LEFT 2
 #macro MAX_NPCS 100

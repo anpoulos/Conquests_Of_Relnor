@@ -1,3 +1,5 @@
 /// @description Override
 
-draw_self();
+if(isVisible){
+	draw_self();
+}

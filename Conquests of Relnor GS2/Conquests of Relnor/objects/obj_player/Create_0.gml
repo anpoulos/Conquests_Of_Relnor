@@ -5,7 +5,7 @@ event_inherited();
 autoLevel = false;
 
 PrimaryAttackText = noone;
-
+allegianceParent = obj_npc_allegiance_blue_parent;
 gold = 1000;
 zoom = 50;
 busyState = scr_player_states_busy_state;
@@ -22,6 +22,7 @@ scr_lifeform_parent_inventory_add(self, scr_equipment_weapons_create_wooden_bow(
 scr_lifeform_parent_inventory_add(self, scr_consumable_strong_health_potion(self));
 scr_lifeform_parent_inventory_add(self, scr_consumable_bread(self));
 scr_lifeform_parent_inventory_add(self, scr_equipment_torch_create(self, false));
+scr_lifeform_parent_inventory_add(self, scr_item_key_24_7_inn_room(self));
 
 
 //overrides

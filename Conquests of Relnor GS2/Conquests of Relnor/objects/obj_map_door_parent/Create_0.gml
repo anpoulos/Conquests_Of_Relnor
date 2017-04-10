@@ -9,3 +9,4 @@ isVisible = true;
 destinationX = noone;
 destinationY = noone;
 depth = -y;
+isOpen = false;

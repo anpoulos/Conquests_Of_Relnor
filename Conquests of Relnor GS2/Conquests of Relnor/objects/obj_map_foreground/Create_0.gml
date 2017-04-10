@@ -1,5 +1,5 @@
 ///Set Depth -y*100
 event_inherited();
 
-depth = -y*100;
+depth = -round(MAX/2);
 

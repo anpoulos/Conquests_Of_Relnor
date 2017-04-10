@@ -4,3 +4,9 @@
 objectIndex = noone;
 xScale = noone;
 yScale = noone;
+
+vaultId = -1;
+
+keyId = -1;
+isVisible = false;
+phyActive = true;

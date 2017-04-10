@@ -53,7 +53,8 @@ with(_lifeform){
 	for(var i = 0; i < _total; i++){
 		var _npc = instance_find(_lookup, i);
 		var _distance = point_distance(x,y,_npc.x, _npc.y);
-		if(_npc.state == _npc.idleState &&
+		if(_npc != self &&
+		 _npc.state == _npc.idleState &&
 		_distance <= _npc.sight && 
 		_npc.isDefensive &&
 		!_npc.isAggressive){
@@ -62,7 +63,7 @@ with(_lifeform){
 		}
 	}
 	
-	if(!isAggressive){
+	if(!isPlayer && !isAggressive){
 		isAggressive = true;
 	}
 	

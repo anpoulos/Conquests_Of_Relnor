@@ -1,4 +1,5 @@
 ///@param opacityMultiplier
+///@param yScaleMultiplier
 
 var _totalLights = instance_number(obj_map_light_cycle);
 	
@@ -114,7 +115,7 @@ if(_vectorX != 0 || _vectorY != 0){
 			_x,
 			_y,
 			_direction > 180 ? -1 : 1,
-			0.5+_opacity,
+			(0.5+_opacity)*argument1,
 			_direction+270,
 			c_black, _opacity*argument0);
 }

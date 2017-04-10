@@ -7,3 +7,6 @@ hasShadow = false;
 shadowPortion = 1.0;
 shadowSprite = noone;
 useScript = noone;
+isVisible = true;
+
+keyId = -1;
