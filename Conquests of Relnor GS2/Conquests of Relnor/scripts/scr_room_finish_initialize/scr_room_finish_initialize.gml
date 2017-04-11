@@ -46,7 +46,8 @@ while(!scr_linked_list_is_empty(global.mapSaves.followingList)){
 		var _checkY = global.player.y - _currentDistance*dsin(_angle);
 		
 		if(mp_grid_get_cell(_tempGrid, _checkX div global.tileOffset, _checkY div global.tileOffset) != -1){
-			var _lifeform = scr_map_convert_save_to_lifeform(_lifeformSave);
+			var _lifeform = scr_save_convert_to_lifeform(_lifeformSave);
+			instance_destroy(_lifeformSave);
 			_lifeform.x = _checkX;
 			_lifeform.y = _checkY;
 			_lifeform.phy_position_x = _checkX;

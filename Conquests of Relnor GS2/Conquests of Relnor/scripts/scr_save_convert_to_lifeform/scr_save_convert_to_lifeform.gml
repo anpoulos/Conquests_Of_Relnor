@@ -99,7 +99,5 @@ if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) ||
 scr_lifeform_update_defence(_lifeform);
 	
 global.loadingInstances = false;
-		
-instance_destroy(_lifeformSave);
 
 return _lifeform;

@@ -1,8 +1,8 @@
 {
-    "id": "4584a2fe-12a8-40f9-a116-d6cc935720f0",
+    "id": "8d12f1f0-60d9-4e8d-a6e1-6c615bae425b",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_map_convert_save_to_lifeform",
+    "name": "scr_save_convert_to_object",
     "IsCompatibility": false,
     "IsDnD": false
 }

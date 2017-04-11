@@ -23,7 +23,8 @@ if(global.mapSaves.lifeformList[_roomId] != noone){
 
 	while(scr_linked_list_size(_lifeformList) != 0){
 		var _lifeformSave = scr_linked_list_remove_next(_lifeformList);
-		var _lifeform = scr_map_convert_save_to_lifeform(_lifeformSave); //destroys _lifeformSave
+		var _lifeform = scr_save_convert_to_lifeform(_lifeformSave); 
+		instance_destroy(_lifeformSave);		
 	}
 
 }
@@ -39,23 +40,7 @@ if(global.mapSaves.objectList[_roomId] != noone){
 	var _objectList = global.mapSaves.objectList[_roomId];
 	while(scr_linked_list_size(_objectList) != 0){
 		var _objectSave = scr_linked_list_remove_next(_objectList);
-		global.loadingInstances = true;
-		var _object = instance_create(_objectSave.x, _objectSave.y, _objectSave.objectIndex);
-		if(_objectSave.vaultId != -1){
-			_object.vaultId = _objectSave.vaultId;
-		}
-		_object.keyId = _objectSave.keyId;
-		_object.isVisible = _objectSave.isVisible;
-		
-		if(object_get_physics(_object)){
-			_object.phy_active = _objectSave.phyActive;
-		}
-		
-		
-		_object.image_xscale = _objectSave.xScale;
-		_object.image_yscale = _objectSave.yScale;
-		_object.depth = _objectSave.objectDepth;
-		global.loadingInstances = false;
+		var _object = scr_save_convert_to_object(_objectSave);
 		instance_destroy(_objectSave);
 	}
 	

@@ -25,19 +25,20 @@ with(argument0){
 			var _allFree = true;
 			
 			if(_objectHeightHalf != 0 || _objectWidthHalf != 0){
-				var _halfOffset = global.tileOffset/2;
-				
-				var _minX = _randomX - _objectWidthHalf + _halfOffset;
-				var _maxX = _randomX + _objectWidthHalf + _halfOffset;
-				var _minY = _randomY - _objectHeightHalf + _halfOffset;
-				var _maxY = _randomY + _objectHeightHalf + _halfOffset;
+				var _minX = _randomX - _objectWidthHalf;
+				var _maxX = _randomX + _objectWidthHalf;
+				var _minY = _randomY - _objectHeightHalf;
+				var _maxY = _randomY + _objectHeightHalf;
 			
-				for(var _x = _minX; _x <= _maxX; _x+= global.tileOffset){
-					for(var _y = _minY; _y <= _maxY; _y += global.tileOffset){
-						if(mp_grid_get_cell(_grid, _x div global.tileOffset, _y div global.tileOffset) != 0){
-								_allFree = false;
-								break;
-							}
+				for(var _x = _minX; _x <= _maxX; _x++){
+					for(var _y = _minY; _y <= _maxY; _y++){
+						if(mp_grid_get_cell(_grid, _x div global.tileOffset, _y div global.tileOffset) == -1){
+							_allFree = false;
+							break;
+						}
+					}
+					if(!_allFree){
+						break;
 					}
 				}
 			}
@@ -46,8 +47,17 @@ with(argument0){
 				var _cellX = _randomX div global.tileOffset;
 				var _cellY = _randomY div global.tileOffset;
 				if(mp_grid_get_cell(_grid, _cellX, _cellY) == 0){
-					instance_create(_randomX, _randomY, _object);				
-					mp_grid_add_instances(_grid, _object, true);
+					instance_create(_randomX, _randomY, _object);
+				
+					var _minX = _randomX - _objectWidthHalf;
+					var _maxX = _randomX + _objectWidthHalf;
+					var _minY = _randomY - _objectHeightHalf;
+					var _maxY = _randomY + _objectHeightHalf;
+					for(var _x = _minX; _x <= _maxX; _x++){
+						for(var _y = _minY; _y <= _maxY; _y++){
+							mp_grid_add_cell(_grid, _x div global.tileOffset, _y div global.tileOffset);
+						}
+					}
 					break;
 				}
 			}
