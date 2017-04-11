@@ -7,7 +7,7 @@ if(self.isAggressive){
     
     if(self.target != noone){
         alarm[1] = -1; //turn off idle alarm
-        scr_npc_choose_next_state();
+		state = attackState;
         return true;
     }
 }

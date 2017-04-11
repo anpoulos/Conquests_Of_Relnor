@@ -9,7 +9,13 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
         target = lockedTarget;
     }
     else{
+		var _hadPreviousTarget = target != noone;
         self.target = scr_npc_get_closest_target();
+		if(_hadPreviousTarget && target == noone){
+            path_clear_points(path);
+			scr_npc_choose_next_state();
+		    return true;
+		}
     }
     if(self.target != noone && instance_exists(target)){   //means we are chasing someone
     var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
@@ -82,8 +88,8 @@ scr_lifeform_update_face();
 self.length = self.currentMoveSpeed;
 
 // Get speeds
-hSpeed = lengthdir_x(self.length, self.direction360);
-vSpeed = lengthdir_y(self.length, self.direction360);
+var hSpeed = lengthdir_x(self.length, self.direction360);
+var vSpeed = lengthdir_y(self.length, self.direction360);
 
 //Control sprite speed
 self.image_speed = sign(self.length) * self.imageSpeed;

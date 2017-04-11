@@ -1,7 +1,7 @@
 ///@description Constructor
 event_inherited();
 
-scr_npc_constructor("White Wolf", 10, 50, 30, 100, 100, ALLEGIANCE_ANIMAL, 0);
+scr_npc_constructor("White Wolf", 10, 50, 30, 100, 300, ALLEGIANCE_ANIMAL, 0);
 self.isDefensive = true;
 self.isAggressive = true;
 

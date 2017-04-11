@@ -86,8 +86,8 @@ switch(_nextState){
         if(_isNegativeY){
             _moveOffsetY *= -1;
         }
-        var _desiredX = scr_room_get_grid_x(self.x+_moveOffsetX);
-        var _desiredY = scr_room_get_grid_y(self.y+_moveOffsetY);
+        var _desiredX = x+_moveOffsetX;
+        var _desiredY = y+_moveOffsetY;
         scr_npc_move_to(self, _desiredX, _desiredY, noone, 10, false, true, self.walkSpeed, self.sight, false);
     break;
 

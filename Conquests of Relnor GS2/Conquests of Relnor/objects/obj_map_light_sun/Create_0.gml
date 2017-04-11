@@ -3,6 +3,8 @@
 
 event_inherited();
 
+isAdditive = true;
+
 depth = -MAX;
 
 if(global.time >= 7000 && global.time <= 20000){
