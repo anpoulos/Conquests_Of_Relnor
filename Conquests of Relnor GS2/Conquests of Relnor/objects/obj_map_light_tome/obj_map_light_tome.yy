@@ -2,7 +2,7 @@
     "id": "0376c9d8-bab9-49dc-903b-30d83988032c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_map_light_spell_blue",
+    "name": "obj_map_light_tome",
     "eventList": [
         {
             "id": "5e09ec67-f86b-467c-abfe-0cb1d46e17dc",

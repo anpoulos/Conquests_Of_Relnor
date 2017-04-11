@@ -25,7 +25,11 @@ self.spriteBehind[RIGHT] = false;
 self.sprite[UP] = spr_tome_up;
 self.spriteBehind[UP] = true;
 
-flameObject = obj_map_light_spell_blue;
+flameObject = obj_map_light_tome;
+
+flameColor[0] = 200;
+flameColor[1] = 200;
+flameColor[2] = 200;
 
 useScript = scr_equipment_tome_equip;
 

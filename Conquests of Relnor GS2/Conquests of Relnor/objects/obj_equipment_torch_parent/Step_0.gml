@@ -3,6 +3,22 @@
 event_inherited(); 
 
 if(owner != noone && flame != noone){
+
+	if(flame.color[0] != flameColor[0] || 
+	flame.color[1] != flameColor[1] || 
+	flame.color[2] != flameColor[2]){
+		flame.color[0] = flameColor[0];
+		flame.color[1] = flameColor[1];
+		flame.color[2] = flameColor[2];
+		flame.nightColorTarget[0] = flameColor[0];
+		flame.nightColorTarget[1] = flameColor[1];
+		flame.nightColorTarget[2] = flameColor[2];
+
+		flame.dayColorTarget[0] = flameColor[0];
+		flame.dayColorTarget[1] = flameColor[1];
+		flame.dayColorTarget[2] = flameColor[2];
+	}
+
 	switch(owner.face4Way){
 		case DOWN:
 			flame.x = owner.x + 5;

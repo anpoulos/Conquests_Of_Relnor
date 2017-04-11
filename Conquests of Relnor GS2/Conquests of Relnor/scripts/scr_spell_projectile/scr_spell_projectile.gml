@@ -11,6 +11,8 @@ with(owner){
 
 	if(!isPlayer){
 		//recalculate for NPCs
+		_x = target.x;
+		_y = target.y;
 	}
 
 	scr_lifeform_face_towards(self, _x,_y);

@@ -35,20 +35,20 @@ strength = 0.5;
 nightStrengthTarget = 1.0;
 dayStrengthTarget = 1.0;
 
-color[0] = 0;
+color[0] = 200;
 color[1] = 200;
 color[2] = 200;
 
 lightColorRGB = make_color_rgb(color[0],color[1],color[2]);
 lightDirection = LIGHT_DIRECTION_STANDARD;
 
-nightColorTarget[0] = 255;
-nightColorTarget[1] = 255;
-nightColorTarget[2] = 0;
+nightColorTarget[0] = 200;
+nightColorTarget[1] = 200;
+nightColorTarget[2] = 200;
 
-dayColorTarget[0] = 255;
-dayColorTarget[1] = 255;
-dayColorTarget[2] = 0;
+dayColorTarget[0] = 200;
+dayColorTarget[1] = 200;
+dayColorTarget[2] = 200;
 
 daySprite = noone;
 nightSprite = noone;

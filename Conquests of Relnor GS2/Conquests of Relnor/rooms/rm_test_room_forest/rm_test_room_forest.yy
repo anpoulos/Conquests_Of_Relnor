@@ -194,8 +194,8 @@
                             "colour": {
                                 "Value": 4294967295
                             },
-                            "creationCodeFile": "",
-                            "creationCodeType": "",
+                            "creationCodeFile": "InstanceCreationCode_inst_51FBAA54.gml",
+                            "creationCodeType": ".gml",
                             "inheritCode": false,
                             "name_with_no_file_rename": "inst_51FBAA54",
                             "objId": "ca9aa93d-6355-4230-a1d9-904f7c4bb4ff",
@@ -218,8 +218,8 @@
                             "colour": {
                                 "Value": 4294967295
                             },
-                            "creationCodeFile": "",
-                            "creationCodeType": "",
+                            "creationCodeFile": "InstanceCreationCode_inst_624F14A3.gml",
+                            "creationCodeType": ".gml",
                             "inheritCode": false,
                             "name_with_no_file_rename": "inst_624F14A3",
                             "objId": "9f562f68-aeb1-43ce-99e2-49f4295e364d",

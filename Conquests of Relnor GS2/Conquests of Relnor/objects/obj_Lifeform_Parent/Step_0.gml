@@ -6,7 +6,7 @@ self.currentDepth = depth;
 //recover energy if not moving or using
 if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] < statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] && 
 (!triggers[TRIGGER_DASH] && state != attackState)){
-    statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] += 1;
+    statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] += recoverEnergyAmount;
 }
 
 statRestoreStep += 1;

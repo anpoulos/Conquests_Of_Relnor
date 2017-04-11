@@ -1,7 +1,7 @@
 ///scr_lifeform_constructor
 
 mapLocked = true;
-
+recoverEnergyAmount = 1;
 canEat = true;
 
 isRevealed = true;
