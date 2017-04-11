@@ -26,5 +26,3 @@ flameObject = obj_map_light_torch_flame;
 flameColor[0] = 255;
 flameColor[1] = 100;
 flameColor[2] = 0;
-
-equipmentStats[EQUIPMENT_STATS_TOOL_TYPE] = STATS_TOOLS_BLUNTS;

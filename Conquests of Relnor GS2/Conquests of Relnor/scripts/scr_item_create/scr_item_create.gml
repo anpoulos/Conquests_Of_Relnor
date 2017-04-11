@@ -17,7 +17,7 @@ _item.itemStats[ITEM_STATS_WEIGHT] = argument4;
 _item.itemStats[ITEM_STATS_VALUE] = argument5;
 _item.itemStats[ITEM_STATS_DROP_PERCENTAGE] = argument6;
 
-if(_item.icon == noone){
+if(argument7 != noone){
 	_item.icon = argument7;
 }
 

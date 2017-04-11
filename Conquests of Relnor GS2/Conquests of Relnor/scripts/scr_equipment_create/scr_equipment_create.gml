@@ -1,5 +1,5 @@
-///@param x 0
-///@param y 1
+///@param icon 0
+///@param groundSprite 1
 ///@param obj_equipment 2
 ///@param name 3
 ///@param weight 4 
@@ -10,8 +10,8 @@
 ///@param drop_percentage 9
 ///@param owner 10
 
-var _equipment = scr_item_create(argument0, argument1, argument2, argument3, argument4,
-		argument5,argument9,noone,noone,argument10,false);
+var _equipment = scr_item_create(0, 0, argument2, argument3, argument4,
+		argument5,argument9,argument0,argument1,argument10,false);
 
 _equipment.equipmentStats[EQUIPMENT_STATS_DAMAGE] = argument6;
 _equipment.equipmentStats[EQUIPMENT_STATS_DEFENCE] = argument7;

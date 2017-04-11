@@ -1,22 +1,22 @@
 {
-    "id": "b96b4b18-b0a5-4e84-a517-e49e720edefb",
+    "id": "740e75e8-01f4-4c3b-8f7d-438a320c762e",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_equipment_sword_parent",
+    "name": "obj_map_item_save",
     "eventList": [
         {
-            "id": "6271387f-1493-4f76-868c-57faeaf45ac7",
+            "id": "2db28cd2-bf7b-4e20-aaf9-ac24894df11b",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "b96b4b18-b0a5-4e84-a517-e49e720edefb"
+            "m_owner": "740e75e8-01f4-4c3b-8f7d-438a320c762e"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
-    "parentObjectId": "0606b669-cd76-4de0-9f82-bad94d2e9e10",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -27,12 +27,10 @@
     "physicsObject": false,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
-    "physicsShape": 0,
-    "physicsShapePoints": [
-        
-    ],
+    "physicsShape": 1,
+    "physicsShapePoints": null,
     "physicsStartAwake": true,
     "solid": false,
     "spriteId": "00000000-0000-0000-0000-000000000000",
-    "visible": true
+    "visible": false
 }

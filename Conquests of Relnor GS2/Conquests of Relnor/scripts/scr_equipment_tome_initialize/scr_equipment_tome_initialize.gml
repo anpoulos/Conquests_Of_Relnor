@@ -8,12 +8,10 @@ while(!scr_linked_list_is_empty(_initializedSpells)){
 	instance_destroy(scr_linked_list_remove_next(_initializedSpells));
 }
 
-for(var i = 0; i < SPELL_MAX; i++){
-	var _spell = _tome.spell[i];
-	if(_spell != noone){
-		var _iSpell = instance_create(0,0,_spell);
-		_iSpell.owner = _tome.owner;
-		//TODO calculate max values here
-		scr_linked_list_add(_tome.initializedSpells, _iSpell);
-	}
+for(var i = 0; i < scr_linked_list_size(_tome.uninitializedSpells); i++){
+	var _spell = scr_linked_list_get_next(_tome.uninitializedSpells);
+	var _iSpell = instance_create(0,0,_spell);
+	_iSpell.owner = _tome.owner;
+	//TODO calculate max values here
+	scr_linked_list_add(_tome.initializedSpells, _iSpell);
 }
