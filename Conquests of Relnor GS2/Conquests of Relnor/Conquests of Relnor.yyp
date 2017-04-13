@@ -1687,6 +1687,14 @@
             }
         },
         {
+            "Key": "278c9995-df7b-4a8d-a2f0-900da31f4e61",
+            "Value": {
+                "id": "4a32d43a-58f6-4956-ba07-ab4905c7dce9",
+                "resourcePath": "rooms\\rm_relnor_25_25_blavish\\rm_relnor_25_25_blavish.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "27ecb924-1641-4c26-9fde-bba8f793aa12",
             "Value": {
                 "id": "3ba302d3-69d7-46eb-828e-955053135464",

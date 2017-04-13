@@ -64,7 +64,7 @@ for(var i = 0; i < _totalLights; i++){
 		var _direction = point_direction(x,y,_pointX, _pointY);
 		var _distance = point_distance(x,y,_pointX,_pointY);	
 	
-		var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
+		var _opacity = 1 - (max(sprite_width, sprite_height)/_distance);
 	
 		//var _a = sprite_get_xoffset(sprite_index);
 		var _b = sprite_get_yoffset(sprite_index);

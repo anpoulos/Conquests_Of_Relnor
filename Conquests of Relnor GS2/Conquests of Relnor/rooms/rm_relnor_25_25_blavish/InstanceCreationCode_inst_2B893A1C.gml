@@ -1,0 +1,1 @@
+lightDirection = LIGHT_DIRECTION_STANDARD
