@@ -1,1 +1,0 @@
-sparsity = sparsity*2;

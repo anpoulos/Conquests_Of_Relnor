@@ -1,0 +1,1 @@
+destinationRoom = rm_relnor_map;

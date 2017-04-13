@@ -834,7 +834,7 @@
             "Key": "138346d1-a462-457f-a338-1d09cbd3efbe",
             "Value": {
                 "id": "d9daca77-815a-4adf-b99a-d1d02008d9b1",
-                "resourcePath": "rooms\\rm_relnor_24_7_inn\\rm_relnor_24_7_inn.yy",
+                "resourcePath": "rooms\\rm_relnor_25_24_inn\\rm_relnor_25_24_inn.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -915,6 +915,14 @@
             "Value": {
                 "id": "5b9fc3dd-3719-4d5b-a9fa-ab2421e08f6e",
                 "resourcePath": "views\\1652d7f3-9333-46da-bcb0-87126c8b5d3c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "168c714f-62fb-44cf-90fe-797b6aee2df9",
+            "Value": {
+                "id": "69281515-3ab6-47b9-943a-cf39a1b2670e",
+                "resourcePath": "views\\168c714f-62fb-44cf-90fe-797b6aee2df9.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -2431,6 +2439,14 @@
             }
         },
         {
+            "Key": "3835bfce-52c6-4658-a312-a87c67e55b06",
+            "Value": {
+                "id": "5ddcbc0e-6a6b-476c-8381-60a533d44c99",
+                "resourcePath": "sprites\\spr_world_grassland\\spr_world_grassland.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "384cd562-f7ae-4a07-b52c-ffae1259c400",
             "Value": {
                 "id": "c808329f-3acf-4eae-aa34-d502aad0348e",
@@ -2962,7 +2978,7 @@
             "Key": "44e459d5-a1b7-4e10-88d7-335b110eb7b2",
             "Value": {
                 "id": "c0df61f2-0a49-4a80-8679-c36449e4f1c5",
-                "resourcePath": "rooms\\rm_relnor_24_7_inn_floor_2\\rm_relnor_24_7_inn_floor_2.yy",
+                "resourcePath": "rooms\\rm_relnor_25_24_inn_floor_2\\rm_relnor_25_24_inn_floor_2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -3359,6 +3375,14 @@
             }
         },
         {
+            "Key": "4f737fe7-94f8-45a5-ac8e-b7edf6bb9269",
+            "Value": {
+                "id": "1dd452e1-6db2-4faa-b1e2-4318eb005491",
+                "resourcePath": "sprites\\spr_grid\\spr_grid.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4f96ae3c-b334-44a6-966f-969b3dec964d",
             "Value": {
                 "id": "9cd90032-7bd6-41c3-b411-7bfa2919e865",
@@ -3420,6 +3444,14 @@
                 "id": "bf50245f-6cad-4140-a5ae-b1ef5870b465",
                 "resourcePath": "views\\517f9468-cd50-4995-be14-9241c0a2c5ff.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "51ca6d46-a397-4815-9768-77d9223576e6",
+            "Value": {
+                "id": "3571f6d3-d958-49b5-853c-e3fcb9c4162c",
+                "resourcePath": "rooms\\rm_relnor_map\\rm_relnor_map.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -4396,6 +4428,14 @@
                 "id": "4868f711-7f28-4c3c-9c88-894cd1e439d1",
                 "resourcePath": "views\\6914ad47-534c-4d87-aadc-da0a2b2fab77.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "691e8e9e-9aff-48db-a8ab-9af2adce1091",
+            "Value": {
+                "id": "edf4f18c-ea28-48cd-8a8a-c4feb78f2231",
+                "resourcePath": "tilesets\\tileset_world_map\\tileset_world_map.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -6218,7 +6258,7 @@
             "Key": "958d5534-008b-4ecf-a35c-55af6729af1b",
             "Value": {
                 "id": "f397c899-639e-4b86-ba3b-fbcc35e1a053",
-                "resourcePath": "rooms\\rm_relnor_24_7_blavish_NE\\rm_relnor_24_7_blavish_NE.yy",
+                "resourcePath": "rooms\\rm_relnor_25_24_blavish_NE\\rm_relnor_25_24_blavish_NE.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -8335,6 +8375,14 @@
             }
         },
         {
+            "Key": "c54749de-05da-4fdf-867f-cb8018f02f3c",
+            "Value": {
+                "id": "2901fcfe-ec19-48a3-948e-3f6225d45e02",
+                "resourcePath": "views\\c54749de-05da-4fdf-867f-cb8018f02f3c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c568b03e-4119-4d31-83aa-c7f4be8cb3ed",
             "Value": {
                 "id": "077ac555-7ee0-4b79-be05-9b42d6198038",
@@ -9482,7 +9530,7 @@
             "Key": "dedca99d-142e-48c5-9c87-81be62013ba8",
             "Value": {
                 "id": "e6cbcae5-3318-466f-ae58-1d28bbbfdc27",
-                "resourcePath": "rooms\\rm_relnor_25_8\\rm_relnor_25_8.yy",
+                "resourcePath": "rooms\\rm_relnor_26_23\\rm_relnor_26_23.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -9850,7 +9898,7 @@
             "Key": "e5d32e28-3993-49db-9b34-94db62551733",
             "Value": {
                 "id": "b11301ca-bd03-4e56-935c-a743fba3c193",
-                "resourcePath": "rooms\\rm_relnor_24_8\\rm_relnor_24_8.yy",
+                "resourcePath": "rooms\\rm_relnor_25_23\\rm_relnor_25_23.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -10220,6 +10268,14 @@
                 "id": "080a99b5-14bc-49fc-8a07-4d6d24da9307",
                 "resourcePath": "views\\ee96a03d-0139-4c48-8e85-a215c871a279.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ef056606-d7c4-41a9-83c8-e2a9582594cd",
+            "Value": {
+                "id": "92c85afb-6814-4421-90a2-03870daccb77",
+                "resourcePath": "tilesets\\tileset_grid\\tileset_grid.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {

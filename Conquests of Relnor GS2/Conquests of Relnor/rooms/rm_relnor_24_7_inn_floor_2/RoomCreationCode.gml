@@ -1,1 +1,0 @@
-scr_room_finish_initialize();
