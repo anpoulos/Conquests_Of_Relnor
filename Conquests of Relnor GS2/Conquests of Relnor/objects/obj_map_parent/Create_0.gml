@@ -3,6 +3,7 @@
 
 depth = -y;
 
+hasShadowSprite = false;
 hasShadow = false;
 shadowPortion = 1.0;
 shadowSprite = noone;

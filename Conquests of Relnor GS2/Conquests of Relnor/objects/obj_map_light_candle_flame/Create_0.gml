@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 
-depth = -MAX + 100;
+depth = -round(MAX/2);
 
 isAdditive = false;
 

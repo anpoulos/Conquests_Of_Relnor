@@ -2,7 +2,7 @@
 
 //draw shadow
 if(hasShadow){
-	scr_map_shadow_draw(global.shadowOpacity, 1.0);
+	scr_map_shadow_draw(global.shadowOpacity, 0.75, image_index);
 }
 
 var _equipmentLength = array_length_1d(self.equipment);

@@ -25,8 +25,6 @@ var _margin = 20;
     
 	scr_destroy_instance(_menuColorArray);
 	scr_destroy_instance(_menuPosArray);
-
-	shopContainer.isVisible = true;
 //End of Menu Container
 
 //Shop Keeper Items Container

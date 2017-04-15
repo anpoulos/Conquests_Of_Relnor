@@ -12,6 +12,7 @@ with(instance_find(obj_player, 0)){
 	scr_player_enable_busy();
 	    
 	scr_ui_menus_hide_all();
+	_shop.shopContainer.isVisible = true;
 }
 
 with(_shopKeeper){

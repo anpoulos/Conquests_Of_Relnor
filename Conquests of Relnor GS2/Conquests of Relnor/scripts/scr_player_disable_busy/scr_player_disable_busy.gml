@@ -1,6 +1,8 @@
 ///scr_player_disable_busy
 
-if(isBusy){
-    isBusy = false;
-    self.state = self.moveState;
+with(global.player){
+	if(isBusy){
+	    isBusy = false;
+	    self.state = self.moveState;
+	}
 }

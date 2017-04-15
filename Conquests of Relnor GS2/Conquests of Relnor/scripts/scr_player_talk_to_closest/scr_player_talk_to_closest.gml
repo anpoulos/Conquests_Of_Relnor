@@ -20,7 +20,6 @@ for(var i = 0; i < instance_number(obj_npc_Parent); i++){
 if(_closestNPC != noone){
     ChatWindow = scr_ui_chat_constructor(self, _closestNPC);
     scr_ui_open_chat(ChatWindow);
-    scr_linked_list_add(Menus, ChatWindow.ChatContainer);
     return true;
 }
 

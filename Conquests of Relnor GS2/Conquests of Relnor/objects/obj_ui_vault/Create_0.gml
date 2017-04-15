@@ -24,7 +24,7 @@ character = noone;
     scr_destroy_instance(_menuPosArray);
 //End of Menu Container
 		
-//Start of Use Button
+//Start of X Button
     var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,150), "_buttonColorArray");
     var _buttonPressedColor = make_colour_rgb(0,0,100);
                 
@@ -48,7 +48,7 @@ character = noone;
     scr_destroy_instance(_buttonColorArray);
     scr_destroy_instance(_buttonPosArray);
     scr_destroy_instance(_buttonInfo);
-//End of Use Button
+//End of X Button
 
 //Menu Container
     var _menuColor = make_colour_rgb(100,100,150);

@@ -11,7 +11,8 @@
         "a4344e7b-be22-48e9-aac0-827ea670f47e",
         "2f0bb21e-bc72-4c5e-a2fe-20aa773d327e",
         "4f125ecd-4168-490f-97cb-e94ff254ad31",
-        "34efe963-73bf-4053-ab9d-16a546f28c93"
+        "34efe963-73bf-4053-ab9d-16a546f28c93",
+        "304dea64-ecd9-4f77-9d22-dbd20a447d5e"
     ],
     "filterType": "GMSprite",
     "folderName": "Light",

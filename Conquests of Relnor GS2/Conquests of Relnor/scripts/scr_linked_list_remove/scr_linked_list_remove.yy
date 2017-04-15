@@ -1,8 +1,8 @@
 {
-    "id": "6a936518-3998-45cc-911e-19e43c7805a0",
+    "id": "250cdcf9-2934-449c-a691-9deb9ba8bdca",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_ui_menus_cleanup_list",
+    "name": "scr_linked_list_remove",
     "IsCompatibility": false,
     "IsDnD": false
 }

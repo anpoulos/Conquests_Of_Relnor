@@ -4,14 +4,22 @@
 global.time += 1;
 
 if(global.time == 18000){
-	if(irandom(2) == 0){
-		global.moonTonight = irandom(2) == 0;
-		global.sun.nightStrengthTarget = 0.5;
-		global.sun.nightRadiusTarget = 4000;
-	}
-	else{
-		global.sun.nightStrengthTarget = 0.0;
-		global.sun.nightRadiusTarget = 0;
+	global.moonTonight = irandom(2) == 0;
+	if(!global.isInterior && global.sun != noone){
+		if(global.moonTonight){
+			global.sun.nightStrengthTarget = 0.5;
+			global.sun.nightRadiusTarget = 4000;
+			if(scr_linked_list_exists(global.additiveLights, global.sun)){
+				scr_linked_list_remove(global.additiveLights, global.sun);
+			}
+		}
+		else{
+			global.sun.nightStrengthTarget = 0.0;
+			global.sun.nightRadiusTarget = 0;
+			if(!scr_linked_list_exists(global.additiveLights, global.sun)){
+				scr_linked_list_add(global.additiveLights, global.sun);
+			}
+		}
 	}
 }
 

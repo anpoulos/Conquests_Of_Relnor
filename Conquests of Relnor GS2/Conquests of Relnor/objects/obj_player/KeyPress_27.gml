@@ -1,15 +1,21 @@
 ///Bring up esc menu
 
-if(PauseMenuContainer != noone){
-    if(PauseMenuContainer.isVisible){
-		
-        scr_player_gui_party_menu_hide();
-        return true;
-    }
-    else{
-        scr_player_gui_party_menu();
-        return true;
-    }    
-}
+if(global.gamePaused){
 
-scr_player_gui_party_menu();
+	PauseMenuContainer.isVisible = false;
+	
+	scr_ui_menus_restore_all();
+	
+	scr_player_disable_busy();
+	
+	global.gamePaused = false;
+}
+else{
+	global.gamePaused = true;
+	
+	scr_ui_menus_hide_all();
+
+	scr_player_enable_busy();
+
+	scr_player_gui_party_menu();
+}

@@ -1,3 +1,7 @@
 ///scr_ui_button_pause_close
 
-scr_player_gui_party_menu_hide();
+scr_player_disable_busy();
+    
+global.gamePaused = false;
+
+scr_ui_menus_restore_all();

@@ -2,6 +2,8 @@
 // You can write your code in this editor
 event_inherited();
 
+depth = -round(MAX/2);
+
 xOffset = 0;
 yOffset = 0;
 
