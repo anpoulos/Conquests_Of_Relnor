@@ -775,6 +775,14 @@
             }
         },
         {
+            "Key": "11ee09a3-2ab9-47c7-83da-b6aefc95af0e",
+            "Value": {
+                "id": "52d9e866-1e87-4445-b4a4-7387da1feafe",
+                "resourcePath": "scripts\\scr_ui_chat_get_text\\scr_ui_chat_get_text.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "12364036-b9a0-44f8-85ef-ab81ba061a58",
             "Value": {
                 "id": "8d7ae70e-1806-4554-a505-645388ea9e29",
@@ -1303,14 +1311,6 @@
             }
         },
         {
-            "Key": "1f3b37e0-b0de-4109-9d17-ff765e823cee",
-            "Value": {
-                "id": "98542eaa-05ad-4350-a808-b4184c38d41e",
-                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "1f42f81b-d215-4a48-bdff-8b0b16ea626d",
             "Value": {
                 "id": "ae3f13bc-fd64-4a91-8261-10d16cd09235",
@@ -1516,6 +1516,14 @@
                 "id": "b1593a5d-b15c-446d-90a8-32bd9fe5d98e",
                 "resourcePath": "sprites\\spr_npc_archer_red_right\\spr_npc_archer_red_right.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "24007b24-f8a4-4234-a742-825622f7f62e",
+            "Value": {
+                "id": "64fb1463-b985-4029-85ec-fea921daea6f",
+                "resourcePath": "scripts\\scr_story_remulus_name_input\\scr_story_remulus_name_input.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -3543,6 +3551,14 @@
             }
         },
         {
+            "Key": "53fcfaed-012a-4be8-8e82-4dfd8224e60c",
+            "Value": {
+                "id": "bd5b1ae9-3364-403c-bf2b-2aec468ba53a",
+                "resourcePath": "views\\53fcfaed-012a-4be8-8e82-4dfd8224e60c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "54121d7b-363c-41d4-a146-076b55a84030",
             "Value": {
                 "id": "08421968-45db-4d93-85ec-8d87bb79d632",
@@ -4140,6 +4156,14 @@
                 "id": "ec6b2c3d-68c5-4d32-b387-aed624c50d67",
                 "resourcePath": "views\\6036e151-b7c9-4ddb-a106-bf03f778792d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "603d5a17-1742-4b97-8801-454b21e42b56",
+            "Value": {
+                "id": "50fe18d5-13c8-4f31-ba75-9cb216b081a3",
+                "resourcePath": "scripts\\scr_ui_chat_initialize_misc\\scr_ui_chat_initialize_misc.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -5479,6 +5503,14 @@
             }
         },
         {
+            "Key": "83185e5c-fd66-4c8f-941d-411a0ba56334",
+            "Value": {
+                "id": "539e22e2-740b-46dc-bbcf-2bb7db73dbcc",
+                "resourcePath": "views\\83185e5c-fd66-4c8f-941d-411a0ba56334.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8321b29a-6530-43ed-b553-2b51b623ec30",
             "Value": {
                 "id": "b43cae0a-cf35-4014-bb11-f53ca6d4eab8",
@@ -5668,6 +5700,14 @@
                 "id": "d7f0a70d-cab2-45ac-80fe-fd4c1ca350b1",
                 "resourcePath": "views\\871788c8-bdc9-4326-b071-f12fc6f51441.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8796037f-8dcd-4493-9da3-f9ab023cd723",
+            "Value": {
+                "id": "6d7d167d-2766-4327-b457-14e056d61639",
+                "resourcePath": "scripts\\scr_story_remulus_name_input_finish\\scr_story_remulus_name_input_finish.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -6212,6 +6252,14 @@
                 "id": "50301b8f-8a9b-4975-bce6-98bef1fbac20",
                 "resourcePath": "views\\9413fa60-61a9-4df7-82ad-30128ad27f4f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "94197415-cd10-4303-8b68-1d7ed7c656d3",
+            "Value": {
+                "id": "5644446b-64c2-470a-ae6e-dda5c5f48e24",
+                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -8396,6 +8444,14 @@
                 "id": "077ac555-7ee0-4b79-be05-9b42d6198038",
                 "resourcePath": "sprites\\bg_maps_export_test1\\bg_maps_export_test1.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c58a091e-54e2-467a-ab78-810db8280c06",
+            "Value": {
+                "id": "c484c42a-4041-46ce-a5bf-2224ef4f1059",
+                "resourcePath": "scripts\\scr_ui_input_save_button_clicked\\scr_ui_input_save_button_clicked.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -10863,6 +10919,14 @@
             }
         },
         {
+            "Key": "ff472c1a-2168-4645-8acb-2b83319ce57e",
+            "Value": {
+                "id": "3c07084c-18f7-4f1a-9877-e0fac9818633",
+                "resourcePath": "objects\\obj_ui_keyboard_input\\obj_ui_keyboard_input.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ff5154b5-7e65-4cbe-b7bf-dd5ded85a04c",
             "Value": {
                 "id": "87a22c39-1224-4f2d-94ff-990a8a9dada3",
@@ -11035,6 +11099,7 @@
         "d31c05b7-9aa9-4d59-b12f-8e27bb3cb1a5",
         "e4737ac6-12b3-4c1b-9b48-6623242dab5d",
         "40f706f1-c5a9-4d75-8f09-07cc86548eaf",
+        "603d5a17-1742-4b97-8801-454b21e42b56",
         "6ac04edb-1a97-4ec8-845d-cb88263f63f9",
         "b69d5f84-e9e5-4583-a964-216112ffa38e",
         "4f016917-252e-44dc-bbc3-3c02c9e31949",
@@ -11049,6 +11114,7 @@
         "6a1325e6-de9a-4b5a-a0a6-ed0f2eedc421",
         "b02e17f7-0a3a-42ba-8cbb-24bde7d99026",
         "ed1428be-9ef0-4223-b084-80a002c7c80f",
+        "11ee09a3-2ab9-47c7-83da-b6aefc95af0e",
         "d09aa990-a777-4099-bb96-7cb1c9b373f4",
         "3ab28102-5776-418b-9ae8-7ea0b7a725dc",
         "b62416ba-3881-44c4-a118-1268b6c478ef",
@@ -11124,6 +11190,7 @@
         "5f8c684c-5219-4144-a8bd-2fe59aa95d53",
         "a02634d8-a8cb-44e1-b8aa-114dd49fb9b2",
         "372db655-1c0b-4b52-9fa2-b5a2b85a375b",
+        "c58a091e-54e2-467a-ab78-810db8280c06",
         "442fc0c4-3997-4c46-b5df-9350fd137dc1",
         "c0ca982b-8a29-43ef-bb70-b6e894129d7b",
         "c89ef891-7e1b-402e-b639-ab2f486afd57",
@@ -11229,6 +11296,8 @@
         "e5658721-3014-44ae-9355-71285cb651ca",
         "098e7db4-3f30-42eb-8ac7-adab7a059fc5",
         "8326bce5-de20-4775-a0b6-bfd4474b7367",
+        "24007b24-f8a4-4234-a742-825622f7f62e",
+        "8796037f-8dcd-4493-9da3-f9ab023cd723",
         "4584a2fe-12a8-40f9-a116-d6cc935720f0",
         "8d12f1f0-60d9-4e8d-a6e1-6c615bae425b",
         "aac1a06f-188b-4a14-953d-adf823192b7f",

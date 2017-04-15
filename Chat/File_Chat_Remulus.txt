@@ -2,11 +2,39 @@
 How do you do there?
 What will you be needing today?
 #button #branch 1 "Do_you_have_any_supplies?"
-#button #branch  "I_think_I'll_be_needing_a_room."
-#button #branch  "What's_new?"
+#button #branch 2 "I_think_I'll_be_needing_a_room."
+
+#if #quest 0 less 1
+#button #branch 4 "You_Wanted_To_See_Me?"
+#endif #quest 0
 
 #branch 1
 Supplies? Of course we do.
 #button #shop Open_Shop
 #button #close "Nevermind."
+
+#branch 2
+Of course sir. We only have one left. 
+Did you want the key or just to stay the night?
+I sell the key in my shop.
+And staying the night only costs 50.
+#button #branch 3 "I'll_stay_the_night."
+#button #shop "I'll take the key."
+#button #close "Nevermind."
+
+#branch 3
+//TODO charge and sleep
+
+#branch 4
+Oh... well... this is quite embarrassing, but
+I seemed to have forgotten your name from last night.
+In my defense, I may have had a little too much to drink.
+#button #script 6 "Don't_worry_about_it!"
+
+#branch 5
+#title #player_to_#npc
+Don't worry about it! That's why we liked you.
+The name's #player.
+
+#button #close "Goodbye."
 

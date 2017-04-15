@@ -20,7 +20,9 @@ while(scr_linked_list_size(ChatWindow.buttons) != 0){
     instance_destroy(_tempButton);
 }
 
-for(var i = 0; i < scr_linked_list_size(_list); i++){
+
+var _listSize = scr_linked_list_size(_list);
+for(var i = 0; i < _listSize; i++){
     var _line = scr_linked_list_get_next(_list);
     
     if(string_length(_line) == 0){
@@ -32,17 +34,56 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
         var _arg0 = ds_queue_dequeue(_args);
         
         switch(_arg0){
+		
+			case "#set":
+				ds_queue_dequeue(_args);
+				var _questIndex = real(ds_queue_dequeue(_args));
+				var _newValue = real(ds_queue_dequeue(_args));
+				_player.quest[_questIndex] = _newValue;
+			break;
+		
+			case "#if":
+				ds_queue_dequeue(_args);
+				var _questIndex = real(ds_queue_dequeue(_args));
+				var _comparator = ds_queue_dequeue(_args);
+				var _value = real(ds_queue_dequeue(_args));
+				
+				var _failedCondition = false;
+				switch(_comparator){
+					case "less":
+						_failedCondition = (_player.quest[_questIndex] >= _value);
+					break;
+					
+					case "greater":
+						_failedCondition = (_player.quest[_questIndex] <= _value);
+					break;
+				}
+				
+				if(_failedCondition){
+					do{
+						var _nextLine = scr_linked_list_get_next(_list);
+						var _nextLineArgs = scr_string_split(_nextLine, " ");
+						var _nextLineArg0 = ds_queue_dequeue(_nextLineArgs);
+						var _nextLineArg1 = "";
+						var _endQuestIndex = -1;
+						if(_nextLineArg0 == "#endif"){
+							_nextLineArg1 = ds_queue_dequeue(_nextLineArgs);
+							_endQuestIndex = real(ds_queue_dequeue(_nextLineArgs));
+						}
+					}
+					until( _nextLineArg1 == "#quest" && _endQuestIndex == _questIndex  );
+					
+				}
+			break;
+		
 			case "#script":
 				var _scriptIndex = ds_queue_dequeue(_args);
 				script_execute(ChatWindow.scripts[_scriptIndex]);
 			break;
 		
             case "#title":
-                var _text = ds_queue_dequeue(_args);
-                _text = string_replace_all(_text, "#default", ChatWindow.defaultNameText);
-                _text = string_replace_all(_text, "#player", _player.name);
-                _text = string_replace_all(_text, "_", " ");
-                ChatWindow.NameText.text = _text;
+                var _rawText = ds_queue_dequeue(_args);
+                ChatWindow.NameText.text = scr_ui_chat_get_text(_rawText);
             break;
         
             case "#button":
@@ -78,7 +119,8 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
                 switch(_buttonCommand){
                     case "#branch":
                         var _jumpToBranch = ds_queue_dequeue(_args);
-                        var _buttonText = string_replace_all(ds_queue_dequeue(_args), "_", " ");
+		                var _rawText = ds_queue_dequeue(_args);
+		                var _buttonText = scr_ui_chat_get_text(_rawText);
                         _button.text = _buttonText;
                         _button.tempVal = _jumpToBranch;
                         _button.clickedScript = scr_ui_chat_button_branch;
@@ -88,7 +130,8 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
 					
 					case "#script":
 						var _scriptIndex = ds_queue_dequeue(_args);
-                        var _buttonText = string_replace_all(ds_queue_dequeue(_args), "_", " ");
+		                var _rawText = ds_queue_dequeue(_args);
+		                var _buttonText = scr_ui_chat_get_text(_rawText);
                         _button.text = _buttonText;
                         _button.tempVal = _scriptIndex;
                         _button.clickedScript = scr_ui_chat_button_ex_script;
@@ -97,7 +140,8 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
 					break;
                     
                     case "#close":
-                        var _buttonText = string_replace_all(ds_queue_dequeue(_args), "_", " ");
+		                var _rawText = ds_queue_dequeue(_args);
+		                var _buttonText = scr_ui_chat_get_text(_rawText);
                         _button.text = _buttonText;
                         _button.clickedScript = scr_ui_button_chat_close;
                         _button.clickedAs = ChatWindow;
@@ -105,7 +149,8 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
                     break;
 					
 					case "#shop":
-                        var _buttonText = string_replace_all(ds_queue_dequeue(_args), "_", " ");
+		                var _rawText = ds_queue_dequeue(_args);
+		                var _buttonText = scr_ui_chat_get_text(_rawText);
                         _button.text = _buttonText;
                         _button.clickedScript = scr_ui_chat_button_shop;
                         _button.clickedAs = ChatWindow.npc;
@@ -128,7 +173,9 @@ for(var i = 0; i < scr_linked_list_size(_list); i++){
 			ChatWindow.NameText.y : scr_linked_list_peak_last(ChatWindow.lines).y;
 		var _textY = _offsetY + 35;	
 		
-		var _lineObject = scr_ui_font_constructor(_textX, _textY, _line, fnt_default_medium, c_white, 
+		var _lineText = scr_ui_chat_get_text(_line);
+		
+		var _lineObject = scr_ui_font_constructor(_textX, _textY, _lineText, fnt_default_medium, c_white, 
 		    1.0, fa_left, fa_middle, ChatWindow.ChatContainer);
 		_lineObject.isVisible = true;
 		

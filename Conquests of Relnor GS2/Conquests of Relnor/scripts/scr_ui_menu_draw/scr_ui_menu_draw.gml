@@ -23,8 +23,13 @@ if(self.isVisible){
     self.bottomRightColor, self.bottomLeftColor, 
     false);
     
-    for(var i = 0; i < scr_linked_list_size(objects); i++){
-            scr_ui_draw_obj_draw(scr_linked_list_get_next(objects));
+	var _objectsSize = scr_linked_list_size(objects);
+	
+    for(var i = 0; i < _objectsSize; i++){
+		var _object = scr_linked_list_get_next(objects);
+		if(instance_exists(_object) && _object.isVisible){
+			scr_ui_draw_obj_draw(_object);
+		}
     }
     scr_ui_menu_set_defaults();
 }

@@ -10,7 +10,6 @@ with(_player){
     _chatWindow.player = self;
     _chatWindow.npc = _npc;
     _chatWindow.NameText.text = string_replace_all(_npc.name, "_", " ")+":";
-    _chatWindow.defaultNameText = _npc.name;
     with(_npc){
         scr_npc_enable_busy();
     }

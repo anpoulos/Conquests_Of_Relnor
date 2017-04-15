@@ -13,7 +13,8 @@
         "8a351856-ad81-4365-b99b-16f567a18e64",
         "6a1325e6-de9a-4b5a-a0a6-ed0f2eedc421",
         "b02e17f7-0a3a-42ba-8cbb-24bde7d99026",
-        "ed1428be-9ef0-4223-b084-80a002c7c80f"
+        "ed1428be-9ef0-4223-b084-80a002c7c80f",
+        "11ee09a3-2ab9-47c7-83da-b6aefc95af0e"
     ],
     "filterType": "GMScript",
     "folderName": "Chat",

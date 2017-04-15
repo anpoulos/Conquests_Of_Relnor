@@ -2,6 +2,8 @@
 
 event_inherited();
 
+quest[0] = 0;
+
 autoLevel = false;
 
 PrimaryAttackText = noone;
