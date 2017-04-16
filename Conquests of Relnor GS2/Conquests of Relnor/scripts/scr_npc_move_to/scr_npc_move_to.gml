@@ -12,25 +12,7 @@
 
 argument0.pathIndex = 0; 
 
-var _currentCellX = argument0.x div global.tileOffset;
-var _currentCellY = argument0.y div global.tileOffset;
-
-var _liftedCell = false;
-
-if(mp_grid_get_cell(global.aiGrid, _currentCellX, _currentCellY) == -1){
-	mp_grid_clear_cell(global.aiGrid, _currentCellX, _currentCellY);
-	_liftedCell = true;
-}
-
-var _foundPath = scr_npc_find_path(argument0, argument0.path, argument1, argument2);
-
-if(_liftedCell){
-	mp_grid_add_cell(global.aiGrid, _currentCellX, _currentCellY);
-}
-
-
-if(!_foundPath){
-	path_clear_points(argument0.path);
+if(!scr_npc_get_path(argument0, argument1, argument2, argument0.path)){
 	return false;
 }
 

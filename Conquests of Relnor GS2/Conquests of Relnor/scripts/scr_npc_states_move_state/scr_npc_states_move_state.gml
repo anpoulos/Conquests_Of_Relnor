@@ -25,14 +25,14 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
             return true;
         }
         else {
-            var _p = path_add();
-            if(scr_npc_find_path(self, _p, target.x, target.y)){
-                if(path_get_number(_p) > 0){
-                    path_delete(path);
-                    path = _p;
-                    pathIndex = 1;
-                }
-            }
+			if(!scr_npc_get_path(self, target.x, target.y, path)){
+				scr_npc_choose_next_state();
+				moveSpeed = 0;
+				return true;
+			}
+			else{
+                pathIndex = 1;
+			}
         }
     }
 }
