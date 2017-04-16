@@ -43,35 +43,47 @@ for(var i = 0; i < _listSize; i++){
 			break;
 		
 			case "#if":
-				ds_queue_dequeue(_args);
-				var _questIndex = real(ds_queue_dequeue(_args));
+				var _variableName = ds_queue_dequeue(_args);
+				
+				var _variable = noone;
+				
+				switch(_variableName){
+					case "#quest":
+						var _questIndex = real(ds_queue_dequeue(_args));
+						_variable = _player.quest[_questIndex];
+					break;
+					
+					case "#balance":
+						_variable = _player.balance;
+					break;
+				}
+				
 				var _comparator = ds_queue_dequeue(_args);
 				var _value = real(ds_queue_dequeue(_args));
 				
 				var _failedCondition = false;
 				switch(_comparator){
 					case "less":
-						_failedCondition = (_player.quest[_questIndex] >= _value);
+						_failedCondition = (_variable >= _value);
 					break;
 					
 					case "greater":
-						_failedCondition = (_player.quest[_questIndex] <= _value);
+						_failedCondition = (_variable <= _value);
 					break;
 				}
 				
 				if(_failedCondition){
 					do{
+						_listSize -= 1;
 						var _nextLine = scr_linked_list_get_next(_list);
 						var _nextLineArgs = scr_string_split(_nextLine, " ");
 						var _nextLineArg0 = ds_queue_dequeue(_nextLineArgs);
-						var _nextLineArg1 = "";
-						var _endQuestIndex = -1;
+						var _endVariableName = "";
 						if(_nextLineArg0 == "#endif"){
-							_nextLineArg1 = ds_queue_dequeue(_nextLineArgs);
-							_endQuestIndex = real(ds_queue_dequeue(_nextLineArgs));
+							_endVariableName = ds_queue_dequeue(_nextLineArgs);
 						}
 					}
-					until( _nextLineArg1 == "#quest" && _endQuestIndex == _questIndex  );
+					until( _endVariableName == _variableName);
 					
 				}
 			break;
