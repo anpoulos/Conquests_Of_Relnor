@@ -29,7 +29,6 @@ if(scr_is_ancestor_or_is(_itemIndex, obj_inventory_equipment_parent)){
 		}
 		for(var i = 0; i < 4; i++){
 			sprite[i] = _item.sprite[i];
-			spriteBehind[i] = _item.spriteBehind[i];
 		}
 		
 		unequipScript = _item.unequipScript;

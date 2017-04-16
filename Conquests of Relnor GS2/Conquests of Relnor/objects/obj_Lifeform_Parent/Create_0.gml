@@ -1,5 +1,24 @@
 ///scr_lifeform_constructor
 
+hasBodyParts = false;
+
+sex = noone;
+
+body[BODY_BODY, DOWN] = noone;
+body[BODY_BODY, LEFT] = noone;
+body[BODY_BODY, RIGHT] = noone;
+body[BODY_BODY, UP] = noone;
+
+body[BODY_EYES, DOWN] = noone;
+body[BODY_EYES, LEFT] = noone;
+body[BODY_EYES, RIGHT] = noone;
+body[BODY_EYES, UP] = noone;
+
+body[BODY_HAIR, DOWN] = noone;
+body[BODY_HAIR, LEFT] = noone;
+body[BODY_HAIR, RIGHT] = noone;
+body[BODY_HAIR, UP] = noone;
+
 mapLocked = true;
 recoverEnergyAmount = 1;
 canEat = true;

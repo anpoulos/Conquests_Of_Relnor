@@ -25,6 +25,8 @@ scr_lifeform_parent_inventory_add(self, scr_consumable_strong_health_potion(self
 scr_lifeform_parent_inventory_add(self, scr_consumable_bread(self));
 scr_lifeform_parent_inventory_add(self, scr_equipment_torch_create(self, false));
 scr_lifeform_parent_inventory_add(self, scr_item_key_24_7_inn_room(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_armor_blue_heavy_create(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_helmet_heavy_create(self));
 
 
 //overrides
@@ -55,6 +57,15 @@ self.sprites[UP] = spr_player_up;
 self.sprites[DOWN] = spr_player_down;
 self.sprites[RIGHT] = spr_player_right;
 self.sprites[LEFT] = spr_player_left;
+
+hasBodyParts = true;
+
+scr_lifeform_body_set_sex(self, MALE);
+scr_lifeform_body_set_eyes(self, BLUE);
+body[BODY_HAIR, DOWN] = spr_male_hair_black_medium_down;
+body[BODY_HAIR, LEFT] = spr_male_hair_black_medium_left;
+body[BODY_HAIR, RIGHT] = spr_male_hair_black_medium_right;
+body[BODY_HAIR, UP] = spr_male_hair_black_medium_up;
 
 self.moveState = scr_player_states_move_state;
 self.moveInputs = scr_player_get_action_inputs;

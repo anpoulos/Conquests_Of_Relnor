@@ -4,15 +4,11 @@ var _shield = scr_equipment_offhand_create(spr_equipment_iron_shield_icon, noone
 											argument0, STATS_TOOLS_SHIELDS, noone);
 
 _shield.sprite[DOWN] = spr_equipment_iron_shield_down;
-_shield.spriteBehind[DOWN] = false;
 
 _shield.sprite[LEFT] = spr_equipment_iron_shield_left;
-_shield.spriteBehind[LEFT] = false;
 
 _shield.sprite[RIGHT] = spr_equipment_iron_shield_right;
-_shield.spriteBehind[RIGHT] = true;
 
 _shield.sprite[UP] = spr_equipment_iron_shield_up;
-_shield.spriteBehind[UP] = true;
 
 return _shield;

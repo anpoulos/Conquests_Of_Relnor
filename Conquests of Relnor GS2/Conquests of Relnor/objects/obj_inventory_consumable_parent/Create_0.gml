@@ -3,7 +3,6 @@
 event_inherited();
 
 sprite[4] = noone;
-spriteBehind[4] = noone;
 itemStats[ITEM_STATS_TYPE] = ITEM_TYPE_CONSUMABLE;
 uses = 0;
 
