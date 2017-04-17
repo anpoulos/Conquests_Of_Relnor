@@ -3,18 +3,25 @@
 
 x = 0;
 y = 0;
-minColorRGB = make_color_rgb(255,255,255);
 
-global.moonTonight = irandom(2) == 0;
+//global.moonTonight = irandom(2) == 0;
 
 if(!global.isInterior){
-	minColorRGB = make_color_rgb(250,250,250);
+	if(global.moonTonight){
+		minColorRGB = make_color_rgb(245,245,235);
+	}
+	else{
+		minColorRGB = make_color_rgb(250,250,250);
+	}
 	if(instance_exists(global.sun)){
 		instance_destroy(global.sun);
 	}
 	global.sun = instance_create(room_width-100, room_height, obj_map_light_sun);
 	
 	sunStep = room_width/10000;
+}
+else{
+	minColorRGB = make_color_rgb(255,255,255);
 }
 
 if(surface_exists(global.lightSurface)){

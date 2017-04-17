@@ -63,10 +63,6 @@ radiusDecrement = 10;
 
 strength = 0.5;
 nightStrengthTarget = 0.0;
-if(global.moonTonight){
-	nightStrengthTarget = 0.5;
-	nightRadiusTarget = 4000;
-}
 dayStrengthTarget = 1.0;
 strengthIncrement = 0.01;
 strengthDecrement = 0.01;
@@ -89,15 +85,7 @@ color[2] = 100;
 lightColorRGB = make_color_rgb(color[0],color[1],color[2]);
 lightDirection = LIGHT_DIRECTION_STANDARD;
 
-if(global.moonTonight){
-	nightStrengthTarget = 0.5;
-	nightRadiusTarget = 4000;
-}
-else{
-	nightStrengthTarget = 0.0;
-	nightRadiusTarget = 0;
-	scr_linked_list_add(global.additiveLights, self);
-}
+scr_linked_list_add(global.additiveLights, self);
 
 scr_map_light_calculate_dimensions();
 scr_map_light_cycle_calc_light();

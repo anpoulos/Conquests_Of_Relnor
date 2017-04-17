@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = -y;
 
 image_speed += scr_misc_random_sign(5)*0.1; //multiply by 0.1 to avoid dividing by zero
 

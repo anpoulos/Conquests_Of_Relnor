@@ -14,7 +14,6 @@ if(object_get_physics(_object)){
 	_object.phy_active = _objectSave.phyActive;
 }
 		
-		
 _object.image_xscale = _objectSave.xScale;
 _object.image_yscale = _objectSave.yScale;
 _object.depth = _objectSave.objectDepth;

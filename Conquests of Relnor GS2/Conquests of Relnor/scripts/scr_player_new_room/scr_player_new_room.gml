@@ -21,4 +21,6 @@ if(!_foundOldTime){
 	global.sun = noone;
 }
 
+
+
 room_goto(argument2);

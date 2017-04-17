@@ -13,6 +13,7 @@ _objectSave.bboxLeft = _object.bbox_left;
 _objectSave.bboxRight = _object.bbox_right;
 _objectSave.bboxTop = _object.bbox_top;
 _objectSave.isVisible = _object.isVisible;
+
 if(object_get_physics(_object)){
 	_objectSave.phyActive = _object.phy_active;
 }

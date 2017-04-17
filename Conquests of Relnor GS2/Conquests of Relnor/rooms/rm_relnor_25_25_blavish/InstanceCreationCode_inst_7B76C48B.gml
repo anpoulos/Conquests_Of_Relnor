@@ -1,1 +1,0 @@
-lightDirection = LIGHT_DIRECTION_UP;

@@ -6,7 +6,8 @@
     "children": [
         "112f719c-1a39-42dd-a942-4e14412f86b2",
         "e3e84e16-479c-416c-97bc-5d9a1ce76455",
-        "6662c16e-c66c-444b-9482-df09cb4452af"
+        "6662c16e-c66c-444b-9482-df09cb4452af",
+        "c99a351a-c6c2-424f-bdbd-920ee4f0eb2b"
     ],
     "filterType": "GMObject",
     "folderName": "unwalkable",
