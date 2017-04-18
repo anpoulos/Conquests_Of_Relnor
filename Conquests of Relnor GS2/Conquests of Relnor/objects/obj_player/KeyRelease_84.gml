@@ -33,13 +33,7 @@ for(i = 0; i < instance_number(obj_map_door_invisible); i++){
         (y <= _doorInvisible.bottomY && y >= _doorInvisible.topY) ){
             _doorInvisible.player = self;
             with(_doorInvisible){
-				if(isOpen){
-					isOpen = false;
-				}
-				else{
-					isOpen = true;
-				}
-                script_execute(doorOpenedScript);
+                script_execute(doorCheckScript);
 				return true;
             }
     }

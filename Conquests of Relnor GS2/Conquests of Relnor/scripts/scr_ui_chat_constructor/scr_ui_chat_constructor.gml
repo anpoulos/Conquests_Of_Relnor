@@ -1,7 +1,16 @@
 ///scr_ui_chat_constructor(player, npc)
 
+///@param player
+///@param noc
+///@param rootDirectoryName
+///@param customChatFileName
+
 var _player = argument0;
 var _npc = argument1;
+var _rootDirectory = argument2;
+var _customChatFileName = argument3;
+
+var _fileName = _rootDirectory+"/";
 
 with(_player){
     scr_player_enable_busy();
@@ -9,21 +18,26 @@ with(_player){
     
     _chatWindow.player = self;
     _chatWindow.npc = _npc;
-    _chatWindow.NameText.text = string_replace_all(_npc.name, "_", " ")+":";
-    with(_npc){
-        scr_npc_enable_busy();
-    }
-    scr_lifeform_face_towards(_npc, x,y);
+	if(_npc != noone){
+	    _chatWindow.NameText.text = string_replace_all(_npc.name, "_", " ")+":";
+	    with(_npc){
+	        scr_npc_enable_busy();
+	    }
+	    scr_lifeform_face_towards(_npc, x,y);
     
-    var _fileName = "Chat/File_Chat_"+_npc.name;
+	    _fileName += "File_Chat_"+_npc.name;
     
-    if(string_length(_npc.nameIdentifier) > 0){
-        _fileName = _fileName+"_"+_npc.nameIdentifier+".txt";
-    }
+	    if(string_length(_npc.nameIdentifier) > 0){
+	        _fileName = _fileName+"_"+_npc.nameIdentifier+".txt";
+	    }
+	    else{
+	        _fileName = _fileName + ".txt";
+	    }
+	}
     else{
-        _fileName = _fileName + ".txt";
-    }
-    
+		_fileName += _customChatFileName + ".txt";
+	}
+	
     scr_ui_chat_load_file(_fileName, _chatWindow);
     
     return _chatWindow;

@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "05f5ee3a-a811-46c7-a34e-3a9f5a80a085",
+            "Value": {
+                "id": "31b61f05-60f5-484f-87a5-17882e249244",
+                "resourcePath": "views\\05f5ee3a-a811-46c7-a34e-3a9f5a80a085.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "0606b669-cd76-4de0-9f82-bad94d2e9e10",
             "Value": {
                 "id": "ca9fb688-dbd9-4729-a1a7-53ac6ed3f71e",
@@ -2388,6 +2396,14 @@
                 "id": "c283724d-6a58-4301-a7e0-0bb4560bbb4c",
                 "resourcePath": "sprites\\spr_map_door_wooden_2\\spr_map_door_wooden_2.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "34740680-20cd-468c-a541-55ee4c73bd3a",
+            "Value": {
+                "id": "a42630ac-53bd-456c-9410-433038f0146c",
+                "resourcePath": "scripts\\scr_map_door_parent_closed\\scr_map_door_parent_closed.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -11311,6 +11327,14 @@
             }
         },
         {
+            "Key": "fdb760a8-4e00-44a2-bf52-03011a184acf",
+            "Value": {
+                "id": "2e970874-7c06-48c1-aab9-3339f92a3242",
+                "resourcePath": "datafiles_yy\\Notifications\\locked.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "fe1cb208-f1e4-439c-ae57-1b1c45eedee7",
             "Value": {
                 "id": "9a4da2d2-4512-4b8d-bf45-c6e38aaf355c",
@@ -11653,6 +11677,7 @@
         "eadf5c63-feb3-4db9-9808-3b703c67a71e",
         "a91f807d-0909-428a-92e0-cea27f334114",
         "dd1b5618-332a-4f9b-ac25-b676274d52d6",
+        "34740680-20cd-468c-a541-55ee4c73bd3a",
         "7b7aade9-1328-430b-bd7f-599c8825fdb8",
         "40dffcde-5c44-49ee-8cee-0740716568fa",
         "5a517b5a-a8bb-4439-b70f-a845300388a5",

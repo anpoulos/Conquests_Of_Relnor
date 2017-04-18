@@ -18,7 +18,7 @@ for(var i = 0; i < instance_number(obj_npc_Parent); i++){
 }
 
 if(_closestNPC != noone){
-    ChatWindow = scr_ui_chat_constructor(self, _closestNPC);
+    ChatWindow = scr_ui_chat_constructor(self, _closestNPC, "Chat", noone);
     scr_ui_open_chat(ChatWindow);
     return true;
 }
