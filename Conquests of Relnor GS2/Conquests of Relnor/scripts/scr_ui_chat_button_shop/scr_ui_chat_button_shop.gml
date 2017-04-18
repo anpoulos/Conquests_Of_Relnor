@@ -1,9 +1,9 @@
 
-var _player = instance_find(obj_player, 0);
+///used as chat window object
 
-_player.ChatWindow.ChatContainer.isVisible = false;
+ChatContainer.isVisible = false;
 
-scr_ui_shop_show(self);
+scr_ui_shop_show(npc);
 
-instance_destroy(_player.ChatWindow);
+instance_destroy();
 

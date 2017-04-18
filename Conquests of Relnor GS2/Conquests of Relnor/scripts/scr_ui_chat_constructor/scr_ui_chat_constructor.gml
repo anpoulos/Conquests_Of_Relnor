@@ -12,33 +12,38 @@ var _customChatFileName = argument3;
 
 var _fileName = _rootDirectory+"/";
 
-with(_player){
-    scr_player_enable_busy();
-    var _chatWindow = instance_create(x,y,obj_ui_chat);
-    
-    _chatWindow.player = self;
-    _chatWindow.npc = _npc;
-	if(_npc != noone){
-	    _chatWindow.NameText.text = string_replace_all(_npc.name, "_", " ")+":";
-	    with(_npc){
-	        scr_npc_enable_busy();
-	    }
-	    scr_lifeform_face_towards(_npc, x,y);
-    
-	    _fileName += "File_Chat_"+_npc.name;
-    
-	    if(string_length(_npc.nameIdentifier) > 0){
-	        _fileName = _fileName+"_"+_npc.nameIdentifier+".txt";
-	    }
-	    else{
-	        _fileName = _fileName + ".txt";
-	    }
-	}
-    else{
-		_fileName += _customChatFileName + ".txt";
+var _chatWindow = instance_create(x,y,obj_ui_chat);
+	
+if(_player != noone){
+	scr_player_enable_busy();
+}
+
+_chatWindow.player = _player;
+_chatWindow.npc = _npc;
+
+if(_npc != noone){
+	_chatWindow.NameText.text = string_replace_all(_npc.name, "_", " ")+":";
+	with(_npc){
+	    scr_npc_enable_busy();
 	}
 	
-    scr_ui_chat_load_file(_fileName, _chatWindow);
+	if(_player != noone){
+		scr_lifeform_face_towards(_npc, _player.x,_player.y);
+	}
     
-    return _chatWindow;
+	_fileName += "File_Chat_"+_npc.name;
+    
+	if(string_length(_npc.nameIdentifier) > 0){
+	    _fileName = _fileName+"_"+_npc.nameIdentifier+".txt";
+	}
+	else{
+	    _fileName = _fileName + ".txt";
+	}
 }
+else{
+	_fileName += _customChatFileName + ".txt";
+}
+	
+scr_ui_chat_load_file(_fileName, _chatWindow);
+    
+return _chatWindow;

@@ -1,21 +1,25 @@
 ///scr_ui_chat_load_branch(branchIndex)
 
-var _branchIndex = argument0;
+///@param obj_chat_window
+///@param branchIndex
 
-var _list = ChatWindow.branches[_branchIndex];
+var _chatWindow = argument0;
+var _branchIndex = argument1;
 
-ChatWindow.currentBranch = _branchIndex;
+var _list = _chatWindow.branches[_branchIndex];
+
+_chatWindow.currentBranch = _branchIndex;
 
 var _player = instance_find(obj_player, 0);
 
-while(scr_linked_list_size(ChatWindow.lines) != 0){
-	var _tempLine = scr_linked_list_remove_next(ChatWindow.lines);
+while(scr_linked_list_size(_chatWindow.lines) != 0){
+	var _tempLine = scr_linked_list_remove_next(_chatWindow.lines);
 	_tempLine.isVisible = false;
     instance_destroy(_tempLine);
 }
 
-while(scr_linked_list_size(ChatWindow.buttons) != 0){
-	var _tempButton = scr_linked_list_remove_next(ChatWindow.buttons);
+while(scr_linked_list_size(_chatWindow.buttons) != 0){
+	var _tempButton = scr_linked_list_remove_next(_chatWindow.buttons);
 	_tempButton.isVisible = false;
     instance_destroy(_tempButton);
 }
@@ -90,12 +94,12 @@ for(var i = 0; i < _listSize; i++){
 		
 			case "#script":
 				var _scriptIndex = ds_queue_dequeue(_args);
-				script_execute(ChatWindow.scripts[_scriptIndex]);
+				script_execute(_chatWindow.scripts[_scriptIndex]);
 			break;
 		
             case "#title":
                 var _rawText = ds_queue_dequeue(_args);
-                ChatWindow.NameText.text = scr_ui_chat_get_text(_rawText);
+                _chatWindow.NameText.text = scr_ui_chat_get_text(_chatWindow, _rawText);
             break;
         
             case "#button":
@@ -108,10 +112,10 @@ for(var i = 0; i < _listSize; i++){
 					
 					var _buttonPosArray = scr_create_obj_array4(-70,-20,70,20, "_buttonPosArray");
 					
-					var _buttonX = ChatWindow.ChatContainer.rightX - _buttonPosArray.item[2] - 10;
+					var _buttonX = _chatWindow.ChatContainer.rightX - _buttonPosArray.item[2] - 10;
 					
-					var _offsetY = (scr_linked_list_size(ChatWindow.buttons) == 0) ? 
-						ChatWindow.ChatContainer.topY : scr_linked_list_peak_last(ChatWindow.buttons).bottomY;
+					var _offsetY = (scr_linked_list_size(_chatWindow.buttons) == 0) ? 
+						_chatWindow.ChatContainer.topY : scr_linked_list_peak_last(_chatWindow.buttons).bottomY;
 					
 					var _buttonY = _offsetY + _buttonPosArray.item[3] + 10;
 					
@@ -119,53 +123,53 @@ for(var i = 0; i < _listSize; i++){
                         fnt_default_medium, c_white, 1.0, 0.5);
 						
 					var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, _buttonColorArray, _buttonColorPressed,
-                                true, _buttonInfo, ChatWindow.ChatContainer);
+                                true, _buttonInfo, _chatWindow.ChatContainer);
 	
 					scr_destroy_instance(_buttonColorArray);
 					scr_destroy_instance(_buttonPosArray);
 					scr_destroy_instance(_buttonInfo);
 					
-					scr_linked_list_add(ChatWindow.buttons, _button);
+					scr_linked_list_add(_chatWindow.buttons, _button);
 				//End of create button
 				
                 switch(_buttonCommand){
                     case "#branch":
                         var _jumpToBranch = ds_queue_dequeue(_args);
 		                var _rawText = ds_queue_dequeue(_args);
-		                var _buttonText = scr_ui_chat_get_text(_rawText);
+		                var _buttonText = scr_ui_chat_get_text(_chatWindow, _rawText);
                         _button.text = _buttonText;
                         _button.tempVal = _jumpToBranch;
                         _button.clickedScript = scr_ui_chat_button_branch;
-                        _button.clickedAs = _button;
+                        _button.clickedAs = _chatWindow;
                         _button.isVisible = true;
                     break;
 					
 					case "#script":
 						var _scriptIndex = ds_queue_dequeue(_args);
 		                var _rawText = ds_queue_dequeue(_args);
-		                var _buttonText = scr_ui_chat_get_text(_rawText);
+		                var _buttonText = scr_ui_chat_get_text(_chatWindow, _rawText);
                         _button.text = _buttonText;
                         _button.tempVal = _scriptIndex;
                         _button.clickedScript = scr_ui_chat_button_ex_script;
-                        _button.clickedAs = _button;
+                        _button.clickedAs = _chatWindow;
                         _button.isVisible = true;
 					break;
                     
                     case "#close":
 		                var _rawText = ds_queue_dequeue(_args);
-		                var _buttonText = scr_ui_chat_get_text(_rawText);
+		                var _buttonText = scr_ui_chat_get_text(_chatWindow, _rawText);
                         _button.text = _buttonText;
                         _button.clickedScript = scr_ui_button_chat_close;
-                        _button.clickedAs = ChatWindow;
+                        _button.clickedAs = _chatWindow;
                         _button.isVisible = true;
                     break;
 					
 					case "#shop":
 		                var _rawText = ds_queue_dequeue(_args);
-		                var _buttonText = scr_ui_chat_get_text(_rawText);
+		                var _buttonText = scr_ui_chat_get_text(_chatWindow, _rawText);
                         _button.text = _buttonText;
                         _button.clickedScript = scr_ui_chat_button_shop;
-                        _button.clickedAs = ChatWindow.npc;
+                        _button.clickedAs = _chatWindow;
                         _button.isVisible = true;
 					break;
                     
@@ -180,22 +184,22 @@ for(var i = 0; i < _listSize; i++){
     else{
 	//Create Text
 		var _textOffset = 25;
-		var _textX = ChatWindow.ChatContainer.leftX + 35;
-		var _offsetY = (scr_linked_list_size(ChatWindow.lines) == 0) ?
-			ChatWindow.NameText.y : scr_linked_list_peak_last(ChatWindow.lines).y;
+		var _textX = _chatWindow.ChatContainer.leftX + 35;
+		var _offsetY = (scr_linked_list_size(_chatWindow.lines) == 0) ?
+			_chatWindow.NameText.y : scr_linked_list_peak_last(_chatWindow.lines).y;
 		var _textY = _offsetY + 35;	
 		
-		var _lineText = scr_ui_chat_get_text(_line);
+		var _lineText = scr_ui_chat_get_text(_chatWindow, _line);
 		
 		var _lineObject = scr_ui_font_constructor(_textX, _textY, _lineText, fnt_default_medium, c_white, 
-		    1.0, fa_left, fa_middle, ChatWindow.ChatContainer);
+		    1.0, fa_left, fa_middle, _chatWindow.ChatContainer);
 		_lineObject.isVisible = true;
 		
-		scr_linked_list_add(ChatWindow.lines, _lineObject);
+		scr_linked_list_add(_chatWindow.lines, _lineObject);
 	//End of Create Text
     }
 }
 
-var _dHeight = max(scr_linked_list_size(ChatWindow.lines)*45+25, scr_linked_list_size(ChatWindow.buttons)*55);
-ChatWindow.ChatContainer.bottomY = ChatWindow.ChatContainer.topY + _dHeight;
+var _dHeight = max(scr_linked_list_size(_chatWindow.lines)*45+25, scr_linked_list_size(_chatWindow.buttons)*55);
+_chatWindow.ChatContainer.bottomY = _chatWindow.ChatContainer.topY + _dHeight;
 

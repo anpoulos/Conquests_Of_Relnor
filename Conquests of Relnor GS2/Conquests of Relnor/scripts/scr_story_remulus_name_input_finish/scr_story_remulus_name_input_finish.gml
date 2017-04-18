@@ -8,4 +8,4 @@ instance_destroy(UiInput);
 
 quest[0] = 1;
 
-scr_ui_chat_load_branch(5);
+scr_ui_chat_load_branch(ChatWindow, 5);

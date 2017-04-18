@@ -1,4 +1,6 @@
-///scr_ui_chat_load_file(filename, ChatWindow)
+
+///@param fileName
+///@param chat_window_object
 
 var _fileName = argument0;
 var _chatWindow = argument1;
