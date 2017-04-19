@@ -60,34 +60,36 @@ with(global.player){
 				_icon.isVisible = true;
 				scr_linked_list_add(PauseMenuInventoryButtons, _icon);
 			//end of inventory icon
-		
-			//item use button
-				var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(0,0,100), "_buttonColorArray");
-			    var _buttonPressedColor = make_colour_rgb(0,0,50);
+			
+			if(_item.useScript != noone){
+				//item use button
+					var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(0,0,100), "_buttonColorArray");
+				    var _buttonPressedColor = make_colour_rgb(0,0,50);
            
-			    var _buttonPosArray = scr_create_obj_array4_ui(40, 34);
+				    var _buttonPosArray = scr_create_obj_array4_ui(40, 34);
                 
-			    var _fontColor = c_white;
+				    var _fontColor = c_white;
                 
-			    var _buttonX = _button.rightX + 25;
-			    var _buttonY = _currentY;
+				    var _buttonX = _button.rightX + 25;
+				    var _buttonY = _currentY;
                 
-			    var _text = scr_item_get_use_type(_item.itemStats[ITEM_STATS_TYPE]);
+				    var _text = scr_item_get_use_type(_item.itemStats[ITEM_STATS_TYPE]);
                             
-			    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, _item.useScript, _item, 
-					_text, fnt_default_medium, _fontColor, 1.0, 0.5);
+				    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, _item.useScript, _item, 
+						_text, fnt_default_medium, _fontColor, 1.0, 0.5);
                 
-			    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
-					_buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
+				    var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
+						_buttonColorArray, _buttonPressedColor, true, _buttonInfo, PauseMenuInventoryContainer);
 				
-				_button.isVisible = true;
+					_button.isVisible = true;
                 
-			    scr_destroy_instance(_buttonColorArray);
-			    scr_destroy_instance(_buttonPosArray);
-			    scr_destroy_instance(_buttonInfo);
+				    scr_destroy_instance(_buttonColorArray);
+				    scr_destroy_instance(_buttonPosArray);
+				    scr_destroy_instance(_buttonInfo);
 		
-				scr_linked_list_add(PauseMenuInventoryButtons, _button);
-			//end of item use button
+					scr_linked_list_add(PauseMenuInventoryButtons, _button);
+				//end of item use button
+			}
 		
 			//item drop button
 				var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(0,0,100), "_buttonColorArray");
