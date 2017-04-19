@@ -1,7 +1,7 @@
 ///scr_ui_chat_constructor(player, npc)
 
 ///@param player
-///@param noc
+///@param npc
 ///@param rootDirectoryName
 ///@param customChatFileName
 

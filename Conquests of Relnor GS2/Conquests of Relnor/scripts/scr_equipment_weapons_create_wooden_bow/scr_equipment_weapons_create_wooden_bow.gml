@@ -11,4 +11,6 @@ _bow.sprite[RIGHT] = spr_equipment_wooden_bow_right;
 
 _bow.sprite[UP] = spr_equipment_wooden_bow_up;
 
+_bow.equipmentSlots[EQUIPMENT_TYPE_OFFHAND] = true;
+
 return _bow;

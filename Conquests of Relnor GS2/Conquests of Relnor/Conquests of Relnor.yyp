@@ -4991,6 +4991,14 @@
             }
         },
         {
+            "Key": "718066c0-c8e3-4724-a7a4-704b268762f1",
+            "Value": {
+                "id": "46625062-c62d-404f-ba01-5446e9e8e872",
+                "resourcePath": "datafiles_yy\\Notifications\\inventoryFull.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "72355e31-15a7-49b8-b4ef-54cdd6314a93",
             "Value": {
                 "id": "134fefee-5ea7-4b4a-a3ef-9052c44a7730",

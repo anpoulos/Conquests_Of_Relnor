@@ -13,5 +13,11 @@ armor.sprite[RIGHT] = spr_armor_heavy_blue_right;
 
 armor.sprite[UP] = spr_armor_heavy_blue_up;
 
+armor.equipmentSlots[EQUIPMENT_TYPE_TOP] = true;
+armor.equipmentSlots[EQUIPMENT_TYPE_ARMOR] = true;
+armor.equipmentSlots[EQUIPMENT_TYPE_BOOTS] = true;
+armor.equipmentSlots[EQUIPMENT_TYPE_BOTTOM] = true;
+armor.equipmentSlots[EQUIPMENT_TYPE_GLOVES] = true;
+
 return armor;
 

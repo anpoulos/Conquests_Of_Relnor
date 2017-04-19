@@ -4,6 +4,7 @@ event_inherited();
 sprite[4] = noone;
 itemStats[ITEM_STATS_TYPE] = ITEM_TYPE_EQUIPMENT;
 equipmentStats[EQUIPMENT_STATS_MAX] = noone;
+equipmentSlots[EQUIPMENT_TYPE_MAX] = false;
 
 sex = MALE;
 

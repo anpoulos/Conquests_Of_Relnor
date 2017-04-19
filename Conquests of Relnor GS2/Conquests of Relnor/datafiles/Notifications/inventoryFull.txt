@@ -1,0 +1,4 @@
+#branch 0
+#title _
+Not enough inventory space available to do that.
+#button #close Ok

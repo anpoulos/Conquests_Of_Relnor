@@ -3,7 +3,10 @@
 var _freeSpaceNeeded = 1;
 
 if(scr_lifeform_parent_inventory_get_free_space(owner) < _freeSpaceNeeded){
-    //TODO message here
+    if(owner.object_index == obj_player){
+		var _chatWindow = scr_ui_chat_constructor(noone, noone, "Notifications", "inventoryFull");
+		scr_ui_open_chat(_chatWindow);
+	}
     return false;
 }
 
