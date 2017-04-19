@@ -21,7 +21,10 @@ for(var i = 0; i < INVENTORY_MAX; i++){
 scr_lifeform_parent_inventory_add(_newOwner, _moveItem);
 
 if(global.gamePaused){
-	scr_player_gui_update_all(true);
+	with(global.player){
+		scr_ui_party_inventory_equipment_refresh(true);
+		scr_player_gui_party_update_character_stats();
+	}
 }
 
 return true;

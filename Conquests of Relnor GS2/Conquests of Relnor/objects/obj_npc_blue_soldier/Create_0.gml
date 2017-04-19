@@ -1,7 +1,8 @@
 ///Blue_Soldier
 
 event_inherited();
-scr_npc_constructor("Blue_Soldier", 100, 100, 30, 400, 50, ALLEGIANCE_BLUE, 0);
+var _name = "Blue_Soldier_"+string(instance_number(obj_npc_blue_soldier));
+scr_npc_constructor(_name, 100, 100, 30, 400, 50, ALLEGIANCE_BLUE, 0);
 
 self.size = sprite_get_height(self.sprite_index);
 

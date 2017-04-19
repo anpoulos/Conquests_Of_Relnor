@@ -6,7 +6,8 @@
     "children": [
         "7e3e84d6-06fa-4d35-948b-0ad1289e7908",
         "e2139936-b2e3-4502-b2a2-3412bbd57cee",
-        "807efb26-3caf-41e1-bebd-b7cc714843f4"
+        "807efb26-3caf-41e1-bebd-b7cc714843f4",
+        "60bea55f-7071-4b67-970d-337cda7542e8"
     ],
     "filterType": "GMScript",
     "folderName": "Party",

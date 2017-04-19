@@ -28,7 +28,9 @@ if(owner.equipment[equipmentStats[EQUIPMENT_STATS_TYPE]] != noone){
 
 if(scr_lifeform_parent_inventory_get_free_space(owner) >= _freeSpaceNeeded){
 	var _inventorySlot = scr_item_inventory_get_slot(self);
-	owner.inventory[_inventorySlot] = noone;
+	if(_inventorySlot != -1){ //means item was equipped from inventory
+		owner.inventory[_inventorySlot] = noone;
+	}
 	
 	while(!scr_linked_list_is_empty(_unequipTheseItems)){
 		scr_lifeform_parent_inventory_unequip(scr_linked_list_remove_next(_unequipTheseItems));
