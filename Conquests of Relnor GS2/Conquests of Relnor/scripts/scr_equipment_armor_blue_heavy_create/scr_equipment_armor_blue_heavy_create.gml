@@ -4,6 +4,7 @@ var armor = scr_equipment_create(spr_armor_icon, noone, obj_inventory_equipment_
 
 armor.equipmentStats[EQUIPMENT_STATS_TYPE] = EQUIPMENT_TYPE_ARMOR;
 armor.equipmentStats[EQUIPMENT_STATS_TOOL_TYPE] = noone;
+armor.equipmentStats[EQUIPMENT_STATS_SEX] = SEX_BOTH;
 
 armor.sprite[DOWN] = spr_armor_heavy_blue_down;
 

@@ -4,6 +4,7 @@ var _helmet = scr_equipment_create(spr_helmet_icon, noone, obj_inventory_equipme
 
 _helmet.equipmentStats[EQUIPMENT_STATS_TYPE] = EQUIPMENT_TYPE_HELMET;
 _helmet.equipmentStats[EQUIPMENT_STATS_TOOL_TYPE] = noone;
+_helmet.equipmentStats[EQUIPMENT_STATS_SEX] = SEX_MALE;
 
 _helmet.equipmentSlots[EQUIPMENT_TYPE_HELMET] = true;
 

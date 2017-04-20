@@ -24,4 +24,7 @@ switch(argument0){
 	
 	case EQUIPMENT_TYPE_TOP:
 	return "Top";
+	
+	case EQUIPMENT_TYPE_AMULET:
+	return "Amulet";
 }

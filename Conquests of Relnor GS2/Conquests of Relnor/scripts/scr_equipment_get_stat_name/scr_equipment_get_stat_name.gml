@@ -16,6 +16,9 @@ switch(argument0){
     case EQUIPMENT_STATS_TOOL_TYPE:
     return "Tool Type";
 	
+	case EQUIPMENT_STATS_SEX:
+	return "Body Type";
+	
 	default:
 	return "EQUIPMENT STAT NOT FOUND";
 }

@@ -17,7 +17,7 @@ switch(face4Way){
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_GLOVES]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_BOTTOM]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_TOP]);
-		scr_equipment_draw(equipment[EQUIPMENT_TYPE_ARMOR]);
+		scr_equipment_draw(equipment[EQUIPMENT_TYPE_AMULET]);
 		if(equipment[EQUIPMENT_TYPE_HELMET] != noone){
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_HELMET]);
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_ARMOR]);
@@ -38,7 +38,7 @@ switch(face4Way){
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_GLOVES]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_BOTTOM]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_TOP]);
-		scr_equipment_draw(equipment[EQUIPMENT_TYPE_ARMOR]);
+		scr_equipment_draw(equipment[EQUIPMENT_TYPE_AMULET]);
 		if(equipment[EQUIPMENT_TYPE_HELMET] != noone){
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_HELMET]);
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_ARMOR]);
@@ -60,6 +60,7 @@ switch(face4Way){
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_GLOVES]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_BOTTOM]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_TOP]);
+		scr_equipment_draw(equipment[EQUIPMENT_TYPE_AMULET]);
 		if(equipment[EQUIPMENT_TYPE_HELMET] != noone){
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_HELMET]);
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_ARMOR]);
@@ -78,6 +79,7 @@ switch(face4Way){
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_GLOVES]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_BOTTOM]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_TOP]);
+		scr_equipment_draw(equipment[EQUIPMENT_TYPE_AMULET]);
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_ARMOR]);
 		if(equipment[EQUIPMENT_TYPE_HELMET] != noone){
 			scr_equipment_draw(equipment[EQUIPMENT_TYPE_HELMET]);

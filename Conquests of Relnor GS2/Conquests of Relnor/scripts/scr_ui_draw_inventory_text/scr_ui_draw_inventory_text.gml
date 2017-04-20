@@ -33,6 +33,10 @@ for(var i = 0; i < ITEM_STATS_MAX; i++){
 			                if(_equipmentStat != noone){
 			                    var _equipmentStatString = scr_equipment_get_stat_name(j);
 			                    switch(j){
+									case EQUIPMENT_STATS_SEX:
+			                            _equipmentStatString += ": " + scr_equipment_get_sex_name(_equipmentStat);
+									break;
+									
 			                        case EQUIPMENT_STATS_TYPE:
 			                            _equipmentStatString += ": " + scr_equipment_get_type_name(_equipmentStat);
 			                        break;

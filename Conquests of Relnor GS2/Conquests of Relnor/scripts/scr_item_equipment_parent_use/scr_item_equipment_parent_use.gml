@@ -1,5 +1,13 @@
 ///scr_item_equipment_parent_use
 
+if(equipmentStats[EQUIPMENT_STATS_SEX] != SEX_BOTH && owner.sex != equipmentStats[EQUIPMENT_STATS_SEX]){
+	if(owner.object_index == obj_player){
+		var _chatWindow = scr_ui_chat_constructor(noone, noone, "Notifications", "wrongSex");
+		scr_ui_open_chat(_chatWindow);
+	}
+	return false;
+}
+
 var _freeSpaceNeeded = 0;
 
 var _unequipTheseItems = scr_linked_list_create();
