@@ -67,7 +67,7 @@ var _desiredRange = _effectiveRange - size;
 //var _desiredX = target.x + _desiredRange*dcos(_angle);
 //var _desiredY = target.y - _desiredRange*dsin(_angle);
 
-scr_npc_move_to(self, target.x, target.y, noone,_desiredRange, false, false, self.runSpeed, self.sight, false);   
+scr_npc_move_to(self, target.x, target.y, noone, _effectiveRange, false, false, self.runSpeed, self.sight, false);   
 
 
 //if(triggers[TRIGGER_ATTACK]){

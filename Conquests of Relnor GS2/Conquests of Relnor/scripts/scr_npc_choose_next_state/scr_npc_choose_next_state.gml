@@ -37,20 +37,20 @@ if(followTarget != noone){
 	}	
 }
 
-if(waitForX != noone && waitForY != noone){
-	var _distance = point_distance(x,y,waitForX,waitForY);
-	if(_distance <= 5){
-		waitForX = noone;
-		waitForY = noone;
-	}
-	else{
-		var _anything = collision_circle(waitForX, waitForY, 5, obj_Lifeform_Parent, false, true);
-		if(_anything == noone){
-			scr_npc_move_to(self, waitForX, waitForY, noone, size, false, false, self.runSpeed, self.sight, true);
-		}
-	}
-	return true;
-}
+//if(waitForX != noone && waitForY != noone){
+//	var _distance = point_distance(x,y,waitForX,waitForY);
+//	if(_distance <= 5){
+//		waitForX = noone;
+//		waitForY = noone;
+//	}
+//	else{
+//		var _anything = collision_circle(waitForX, waitForY, 5, obj_Lifeform_Parent, false, true);
+//		if(_anything == noone){
+//			scr_npc_move_to(self, waitForX, waitForY, noone, size, false, false, self.runSpeed, self.sight, true);
+//		}
+//	}
+//	return true;
+//}
 
 var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
 if(_distanceFromOrigin > self.wanderRadius){

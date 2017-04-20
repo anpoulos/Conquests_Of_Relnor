@@ -5,21 +5,23 @@ if(currentMoveSpeed < moveSpeed){
 }
 
 if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTarget != noone){
+
+	var _previousTarget = target;
+	
     if(lockedTarget != noone){
         target = lockedTarget;
     }
     else{
-		var _hadPreviousTarget = target != noone;
         self.target = scr_npc_get_closest_target();
-		if(_hadPreviousTarget && target == noone){
+		if(_previousTarget != noone && target == noone){ //if npc was chasing someone and there is no longer anyone nearby to chase
             path_clear_points(path);
 			scr_npc_choose_next_state();
 		    return true;
 		}
     }
-    if(self.target != noone && instance_exists(target)){   //means we are chasing someone
-    var _distanceToTarget = point_distance(self.x, self.y, target.x, target.y);
-        if(_distanceToTarget <= moveToAccuracy){
+	
+    if(target != noone && instance_exists(target)){   //means we are chasing someone
+        if(_previousTarget != target || point_distance(x, y, target.x, target.y) <= moveToAccuracy){
             self.state = self.attackState;
             path_clear_points(path);
             return true;
@@ -35,9 +37,9 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
 			}
         }
     }
+	
 }
 
-var _rangeStop = MOVEMENT_ACCURACY;
 var _totalPoints = path_get_number(path);
 var _distanceToEnd = 0;
 
@@ -48,7 +50,7 @@ if(_totalPoints > 0){
     var _distanceToEnd = point_distance(self.x, self.y, _lastPointX, _lastPointY);
 }
 
-if(_distanceToEnd < _rangeStop){
+if(_distanceToEnd < moveToAccuracy){
         
 	ignoreTargeting = false;	
 		
@@ -64,8 +66,10 @@ if(_distanceToEnd < _rangeStop){
         script_execute(self.moveToEndScript);
         self.moveToEndScript = noone;
     }
+	else{
+		scr_npc_choose_next_state();
+	}
     
-	scr_npc_choose_next_state();
     return true;
 }
 
