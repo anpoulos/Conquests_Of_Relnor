@@ -47,6 +47,7 @@ for(var i = 0; i < _listSize; i++){
 			break;
 		
 			case "#if":
+				var _ifId = ds_queue_dequeue(_args);
 				var _variableName = ds_queue_dequeue(_args);
 				
 				var _variable = noone;
@@ -82,13 +83,12 @@ for(var i = 0; i < _listSize; i++){
 						var _nextLine = scr_linked_list_get_next(_list);
 						var _nextLineArgs = scr_string_split(_nextLine, " ");
 						var _nextLineArg0 = ds_queue_dequeue(_nextLineArgs);
-						var _endVariableName = "";
+						var _endIfId = "";
 						if(_nextLineArg0 == "#endif"){
-							_endVariableName = ds_queue_dequeue(_nextLineArgs);
+							_endIfId = ds_queue_dequeue(_nextLineArgs);
 						}
 					}
-					until( _endVariableName == _variableName);
-					
+					until( _endIfId == _ifId);
 				}
 			break;
 		

@@ -671,6 +671,14 @@
             }
         },
         {
+            "Key": "0de74140-1577-4aac-92f1-deb79b3eccfd",
+            "Value": {
+                "id": "f0becddd-ac3d-4b7c-92ea-87ae06909ca1",
+                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "0ded35e7-b90a-4df3-9871-521f8d39e36b",
             "Value": {
                 "id": "ea7a3661-d734-4329-b937-b955ae00adf0",
@@ -3676,14 +3684,6 @@
                 "id": "4d1597d9-5eba-4191-b8c9-84fa7319c3e4",
                 "resourcePath": "views\\50172605-6fac-4d10-af1f-a4d4f2b7231c.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "50849875-61d5-4c28-a0c6-6d4c234f7503",
-            "Value": {
-                "id": "60f11240-6290-4762-bafb-e372122c4fd9",
-                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
