@@ -999,6 +999,14 @@
             }
         },
         {
+            "Key": "1541e9ac-7e55-4aa1-bec6-6c8b0e780eb4",
+            "Value": {
+                "id": "642e3482-0a9e-4bc9-891b-cd0a1aaf446a",
+                "resourcePath": "scripts\\scr_map_shadow_draw_lifeform\\scr_map_shadow_draw_lifeform.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "158cf976-6345-486b-ac56-3b736fb0bf2e",
             "Value": {
                 "id": "6370cd30-10c3-4d8b-aa11-c1d254ba9076",
@@ -5447,6 +5455,14 @@
             }
         },
         {
+            "Key": "74b12bf8-a9b3-4806-bf15-8d899f766675",
+            "Value": {
+                "id": "6294caa0-78c3-42b0-a52c-5e83f4b666f3",
+                "resourcePath": "scripts\\scr_lifeform_draw\\scr_lifeform_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7538a500-0cda-4024-8d6a-e8cfcb20400e",
             "Value": {
                 "id": "b935dd56-0182-43d8-9742-53fc4d517273",
@@ -6980,6 +6996,14 @@
                 "id": "1e9ec1f0-ea06-4dac-9e6f-72e55b2ece68",
                 "resourcePath": "views\\9602ab90-6716-4563-a27d-e91a37c76c79.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9608a0e9-0a97-4b79-9d2d-5e899503d228",
+            "Value": {
+                "id": "635d83ce-d9ed-4acc-9f37-1eb37b19a34a",
+                "resourcePath": "shaders\\shader_0\\shader_0.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -12099,6 +12123,7 @@
         "bdb5c89e-d382-4a87-bfbc-221532f23245",
         "fa705b70-6964-4131-920b-88d3a75a0d81",
         "c523395c-3f5e-4f19-a73a-6d22e79682d5",
+        "74b12bf8-a9b3-4806-bf15-8d899f766675",
         "0d5c1ff5-c366-4e16-83bc-29d7c5400c53",
         "bac27f64-3124-4595-8d56-3f5f3e25a469",
         "72355e31-15a7-49b8-b4ef-54cdd6314a93",
@@ -12351,6 +12376,7 @@
         "b25d6d79-51f5-4b5a-9c81-fbcc6585d765",
         "b0034c8e-8175-45cf-a9f1-f78daaa3192b",
         "19c9eb2d-b5af-44fe-ab4a-18ecadcb8f4a",
+        "1541e9ac-7e55-4aa1-bec6-6c8b0e780eb4",
         "7bcbc0ef-491a-40bc-9a80-23c863adba16",
         "3d92e9ac-b8b5-4670-b6d6-e04f3271e960",
         "78c012f5-e692-4242-958f-0a2270bc35f0",
