@@ -1,7 +1,7 @@
 ///scr_lifeform_constructor
 
 hasBodyParts = false;
-
+combatCheckCount = -1;
 sex = noone;
 
 body[BODY_BODY, DOWN] = noone;

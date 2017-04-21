@@ -14,9 +14,9 @@ if(keyId != -1){
 }
 
 if(destinationRoom != noone){
-	global.mapSaves.destinationX = destinationX;
-	global.mapSaves.destinationY = destinationY;
-	global.mapSaves.destinationRoom = destinationRoom;
-	global.mapSaves.isLoading = true;
-	global.mapSaves.loadingOpacity = 0.1;
+	global.mapControl.destinationX = destinationX;
+	global.mapControl.destinationY = destinationY;
+	global.mapControl.destinationRoom = destinationRoom;
+	global.mapControl.isLoading = true;
+	global.mapControl.loadingOpacity = 0.1;
 }

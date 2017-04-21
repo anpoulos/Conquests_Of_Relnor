@@ -7,7 +7,7 @@ var _experience = argument1;
 
 _lifeform.experience += _experience;
 
-while(_lifeform.experience > global.mapSaves.experienceTotal[_lifeform.level]){
+while(_lifeform.experience > global.mapControl.experienceTotal[_lifeform.level]){
 	_lifeform.level += 1;
 	_lifeform.statPoints += STATS_MULTIPLIER;
 	if(_lifeform.autoLevel){

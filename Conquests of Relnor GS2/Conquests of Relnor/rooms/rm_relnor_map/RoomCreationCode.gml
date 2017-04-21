@@ -1,1 +1,1 @@
-scr_room_finish_initialize();
+scr_room_finish_initialize(MUSIC_TYPE_EXPLORE);

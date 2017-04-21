@@ -1,5 +1,15 @@
 ///scr_room_finish_initialize
 
+///@param music_type
+
+var _musicType = argument0;
+
+if(global.mapControl.musicType != _musicType){
+	global.mapControl.mapMusicType = _musicType;
+	global.mapControl.musicType = _musicType;
+	audio_sound_gain(global.mapControl.currentMusicIndex, 0, 1000);
+}
+
 scr_map_load_positions();
 
 var _tempGrid = mp_grid_create(0,0,room_width/global.tileOffset, 
@@ -13,7 +23,7 @@ global.playerSpawnY = noone;
 
 var _roomId = scr_room_get_id(room);
 
-if(global.mapSaves.objectList[_roomId] == noone){
+if(global.mapControl.objectList[_roomId] == noone){
 	var _groups = scr_linked_list_create();
 
 	for(var i = 0; i < instance_number(obj_group_parent); i++){
@@ -36,8 +46,8 @@ var _maxDistance = 200;
 var _currentDistance = 50;
 var _angle = 0;
 	
-while(!scr_linked_list_is_empty(global.mapSaves.followingList)){
-	var _lifeformSave = scr_linked_list_remove_next(global.mapSaves.followingList);
+while(!scr_linked_list_is_empty(global.mapControl.followingList)){
+	var _lifeformSave = scr_linked_list_remove_next(global.mapControl.followingList);
 	var _foundFreeSpot = false;
 	
 	while(_currentDistance < _maxDistance && !_foundFreeSpot){
@@ -67,7 +77,7 @@ while(!scr_linked_list_is_empty(global.mapSaves.followingList)){
 	}
 	
 	if(!_foundFreeSpot){
-		scr_linked_list_add(global.mapSaves.lifeformList[_lifeformSave.lastRoomId], _lifeformSave);
+		scr_linked_list_add(global.mapControl.lifeformList[_lifeformSave.lastRoomId], _lifeformSave);
 	}
 }
 

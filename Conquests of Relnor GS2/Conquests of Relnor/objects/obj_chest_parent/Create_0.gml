@@ -6,7 +6,7 @@ useScript = scr_chest_use;
 vaultId = instance_number(obj_chest_parent);
 vault = noone;
 
-var _vaultList = global.mapSaves.vaultList[scr_room_get_id(room)];
+var _vaultList = global.mapControl.vaultList[scr_room_get_id(room)];
 
 var _foundVault = false;
 for(var i = 0; i < scr_linked_list_size(_vaultList); i++){

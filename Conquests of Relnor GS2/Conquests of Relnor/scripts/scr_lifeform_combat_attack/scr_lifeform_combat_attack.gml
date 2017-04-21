@@ -27,7 +27,7 @@ else{
 	_destinationX = target.x;
 	_destinationY = target.y;
 }
-
+	
 //var _oX = 0;
 //var _oY = 0;
 

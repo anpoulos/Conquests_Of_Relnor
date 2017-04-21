@@ -1,0 +1,5 @@
+#branch 0
+#title _
+Cannot equip item.
+Body types do not match.
+#button #close Ok.

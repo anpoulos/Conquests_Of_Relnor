@@ -46,6 +46,12 @@ var _dir = point_direction(_source.x,_source.y,
 var _xForce = lengthdir_x(_knockback, _dir);
 var _yForce = lengthdir_y(_knockback, _dir);
 
+if(_source.isPlayer && _source.combatCheckCount == -1){
+	global.mapControl.musicType = MUSIC_TYPE_BATTLE;
+	audio_sound_gain(global.mapControl.currentMusicIndex, 0, 250);
+}
+_source.combatCheckCount = 300;
+
 with(_lifeform){
 
 	var _lookup = allegianceParent == noone ? obj_npc_Parent : allegianceParent;
@@ -66,6 +72,14 @@ with(_lifeform){
 	if(!isPlayer){
 		scr_npc_auto_retaliate(_source);
 	}
+	else{
+		if(combatCheckCount == -1){
+			global.mapControl.musicType = MUSIC_TYPE_BATTLE;
+			audio_sound_gain(global.mapControl.currentMusicIndex, 0, 250);
+		}
+	}
+	
+	combatCheckCount = 300;	
 	
     _xForce = round(_xForce/2);
     _yForce = round(_yForce/2);

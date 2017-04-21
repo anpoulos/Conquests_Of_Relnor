@@ -1,7 +1,10 @@
 ///Object Depth
 
 depth = -y;
-self.currentDepth = depth;
+currentDepth = depth;
+if(combatCheckCount > 0){
+	combatCheckCount -= 1;
+}
 
 //recover energy if not moving or using
 if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] < statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] && 

@@ -30,7 +30,7 @@ var _margin = 20;
 //EXP Text
 	var _textX = CharacterStatsContainer.leftX+_margin;
 	var _textY = _fontText.y + _margin;
-	var _text = "Experience: " + string(_character.experience) + " / "+string(global.mapSaves.experienceTotal[_character.level]);
+	var _text = "Experience: " + string(_character.experience) + " / "+string(global.mapControl.experienceTotal[_character.level]);
 
 	var _fontText = scr_ui_font_constructor(_textX, _textY, _text, fnt_default_medium, c_white, 1, fa_left, fa_center, CharacterStatsContainer);
 	scr_linked_list_add(CharacterStatsContainerList, _fontText);

@@ -2,9 +2,9 @@
 How do you do there?
 What will you be needing today?
 
-#if #quest 0 less 1
+#if 0 #quest 0 less 1
 #button #branch 4 "You_Wanted_To_See_Me?"
-#endif #quest
+#endif 0 #quest
 
 #button #branch 1 "Do_you_have_any_supplies?"
 #button #branch 2 "I_think_I'll_be_needing_a_room."

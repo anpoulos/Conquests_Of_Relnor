@@ -1,10 +1,10 @@
 ///scr_ui_menu_title_initialize
 
 global.debug = 0;
-global.mapSaves = instance_create(0,0,obj_map_saves);
 global.loadingInstances = false;
 global.player = noone;
 global.gamePaused = false;
+global.mapControl = instance_create(0,0,obj_map_control);
 
 //create menu container
 var _menuColor = make_colour_rgb(0,50,100);
