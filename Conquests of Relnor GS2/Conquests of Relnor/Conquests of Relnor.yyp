@@ -3023,6 +3023,14 @@
             }
         },
         {
+            "Key": "3edf2c8f-65fd-4feb-af6a-d83ea129e72a",
+            "Value": {
+                "id": "ba0adbb0-7d75-4697-bde2-52d3200e75c7",
+                "resourcePath": "tilesets\\tileset_world_map_water_shallow\\tileset_world_map_water_shallow.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "3ee9ed2e-36a9-4bac-8a2c-78b2e64f5648",
             "Value": {
                 "id": "8d4263f6-d9b1-4c2b-af9d-a4e7a6ae86a0",
@@ -8508,6 +8516,14 @@
                 "id": "8f9190f3-43d6-4e26-860a-4240789eb866",
                 "resourcePath": "views\\b7f6a3ff-84eb-4bde-972e-c46007b20fe5.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b80436ae-962e-4eb6-b6bc-38b5b3c06410",
+            "Value": {
+                "id": "7c5474f7-7a85-4188-b799-432b604ab3a6",
+                "resourcePath": "sprites\\spr_world_water_shallow\\spr_world_water_shallow.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
