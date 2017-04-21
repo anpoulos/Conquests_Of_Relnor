@@ -1,0 +1,42 @@
+
+For each turn:
+
+1. Troop Center:
+  i. for each camp in related camps:
+    if camp.units < CAMP_UNIT_MAX*2
+      camp.units += 1
+
+2. Camp:
+  i. if units >= TROOP_UNIT_MAX*2 && attachedTroops < 2 :
+       search for free space within 1 square of camp
+         if free space found: 
+           create new troop in square
+
+  ii. for each attached troop:
+        attempt to create supply line
+
+
+3. Troop:
+  i. if supply line does not exist:
+       units -= 1
+       if units <= 0, destroy self and end turn
+  
+  ii. for each adjacent square:
+        if square is possible target:
+          attack target
+          if units <= 0, destroy self
+          end turn
+        else
+          set nearestCamp as nearest camp
+          if units > TROOP_UNIT_MAX div 2 :
+          | target <- get nearest target
+          | calculate path to target
+          | nextSquare <- first square in path to target
+          | if distance from nextSquare to nearestCamp < 10 :
+          |   move to next square
+          |   end turn
+          else
+            move towards nearest camp
+
+
+
