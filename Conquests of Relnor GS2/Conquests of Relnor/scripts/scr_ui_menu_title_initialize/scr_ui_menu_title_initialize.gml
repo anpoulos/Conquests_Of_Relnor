@@ -1,9 +1,5 @@
 ///scr_ui_menu_title_initialize
 
-global.debug = 0;
-global.loadingInstances = false;
-global.player = noone;
-global.gamePaused = false;
 global.mapControl = instance_create(0,0,obj_map_control);
 
 //create menu container

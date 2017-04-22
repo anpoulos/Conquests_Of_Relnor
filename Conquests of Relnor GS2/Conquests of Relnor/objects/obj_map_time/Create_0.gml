@@ -7,11 +7,16 @@ y = 0;
 //global.moonTonight = irandom(2) == 0;
 
 if(!global.isInterior){
-	if(global.moonTonight){
-		minColorRGB = make_color_rgb(245,245,235);
+	if(scr_room_is_world_map(room)){
+		minColorRGB = make_color_rgb(125,125,125);
 	}
 	else{
-		minColorRGB = make_color_rgb(250,250,250);
+		if(global.moonTonight){
+			minColorRGB = make_color_rgb(245,245,235);
+		}
+		else{
+			minColorRGB = make_color_rgb(250,250,250);
+		}
 	}
 	if(instance_exists(global.sun)){
 		instance_destroy(global.sun);

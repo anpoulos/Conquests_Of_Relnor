@@ -85,3 +85,11 @@ mp_grid_destroy(_tempGrid);
 
 mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
 mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
+
+if(scr_room_is_world_map(room)){
+	//remove some gui elements
+	global.player.CommandMenuContainer.isVisible = false;
+	global.player.CommandInformationMenuContainer.isVisible = false;
+	global.player.PassiveMenuContainer.isVisible = false;
+	scr_square_troops_set_nearest_camps();
+}

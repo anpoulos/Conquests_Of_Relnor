@@ -1,0 +1,1 @@
+scr_map_world_set_allegiance(self, ALLEGIANCE_BLUE);

@@ -3,7 +3,6 @@
 
 if(loadingOpacity == 2.0){
 	scr_player_new_room(destinationX, destinationY, destinationRoom);
-	
 	isLoading = false;
 	loadingOpacity = 0.9;
 }

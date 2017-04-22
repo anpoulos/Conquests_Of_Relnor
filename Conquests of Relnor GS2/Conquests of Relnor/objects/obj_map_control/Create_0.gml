@@ -1,10 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.debug = 0;
+global.loadingInstances = false;
+global.player = noone;
+global.gamePaused = false;
 global.shadowOpacity = 0.3;
 global.shadowOpacityMax = 0.3;
 global.moonTonight = true;
 global.additiveLights = scr_linked_list_create();
+global.worldMapGrid = noone;
+global.worldMapControl = instance_create(0,0,obj_map_world_control);
 
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;

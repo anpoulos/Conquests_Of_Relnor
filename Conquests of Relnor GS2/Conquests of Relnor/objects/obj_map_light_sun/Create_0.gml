@@ -57,7 +57,7 @@ opacityDecrement = 0.01;
 
 radius = 2000;
 nightRadiusTarget = 0;
-dayRadiusTarget = 4000;
+dayRadiusTarget = 10000;
 radiusIncrement = 10;
 radiusDecrement = 10;
 

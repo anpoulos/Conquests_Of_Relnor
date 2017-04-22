@@ -8,7 +8,9 @@
         "af01e7f3-eba9-416b-a32d-19fe82f661dc",
         "1cedcfbf-18ff-4454-a4da-0c34e31577a8",
         "261e84c5-2680-475c-8d99-20534f8ee323",
-        "29daea38-64d3-461a-83dc-5acffeabb6d1"
+        "29daea38-64d3-461a-83dc-5acffeabb6d1",
+        "c4144720-df25-4c82-9d7c-e28a1e6ca6b9",
+        "43e00ae1-db0a-4d2f-bb8f-59a164da55b9"
     ],
     "filterType": "GMObject",
     "folderName": "Light",

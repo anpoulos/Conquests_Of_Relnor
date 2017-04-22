@@ -4,13 +4,19 @@
 global.time += 1;
 
 if(global.time == 18000){
-	global.moonTonight = irandom(2) == 0;
-	if(!global.isInterior && global.moonTonight){
-		minColorRGB = make_color_rgb(245,245,235);
+	if(scr_room_is_world_map(room)){
+		minColorRGB = make_color_rgb(125,125,125);
 	}
 	else{
-		minColorRGB = make_color_rgb(250,250,250);
+		global.moonTonight = irandom(2) == 0;
+		if(!global.isInterior && global.moonTonight){
+			minColorRGB = make_color_rgb(245,245,235);
+		}
+		else{
+			minColorRGB = make_color_rgb(250,250,250);
+		}
 	}
+	
 	//if(!global.isInterior && global.sun != noone){
 	//	if(global.moonTonight){
 	//		global.sun.nightStrengthTarget = 0.5;
