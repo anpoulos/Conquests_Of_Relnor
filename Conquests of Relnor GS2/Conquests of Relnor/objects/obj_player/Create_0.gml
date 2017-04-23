@@ -18,21 +18,6 @@ commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
 self.isPlayer = true;
 
-//equipment and inventory override
-scr_lifeform_parent_inventory_add(self, scr_equipment_tome_create_beginner_fire(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_create_iron_sword(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_offhand_create_iron_shield(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_weapons_create_wooden_bow(self));
-scr_lifeform_parent_inventory_add(self, scr_consumable_strong_health_potion(self));
-scr_lifeform_parent_inventory_add(self, scr_consumable_bread(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_torch_create(self, false));
-scr_lifeform_parent_inventory_add(self, scr_item_key_24_7_inn_room(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_armor_blue_heavy_create(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_helmet_heavy_create(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_amulet_soldier_create(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_top_battle_robe_create(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_bottom_pants_black_create(self));
-scr_lifeform_parent_inventory_add(self, scr_equipment_boots_male_black_create(self));
 
 
 //overrides
@@ -89,3 +74,19 @@ view.target = self;
 
 scr_player_create_gui();
 
+
+scr_lifeform_parent_inventory_add(self, scr_equipment_tome_create_beginner_fire(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_create_iron_sword(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_offhand_create_iron_shield(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_weapons_create_wooden_bow(self));
+scr_lifeform_parent_inventory_add(self, scr_consumable_strong_health_potion(self));
+scr_lifeform_parent_inventory_add(self, scr_consumable_bread(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_torch_create(self, false));
+scr_lifeform_parent_inventory_add(self, scr_item_key_24_7_inn_room(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_armor_blue_heavy_create(self));
+scr_lifeform_parent_inventory_add(self, scr_equipment_helmet_heavy_create(self));
+
+scr_lifeform_parent_inventory_equip(scr_equipment_boots_male_black_create(self));
+scr_lifeform_parent_inventory_equip(scr_equipment_bottom_pants_black_create(self));
+scr_lifeform_parent_inventory_equip(scr_equipment_top_battle_robe_create(self));
+scr_lifeform_parent_inventory_equip(scr_equipment_amulet_soldier_create(self));

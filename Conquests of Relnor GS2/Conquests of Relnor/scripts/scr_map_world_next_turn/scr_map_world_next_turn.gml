@@ -134,13 +134,12 @@ for(var i = 0; i < _troopTotal; i++){
 	}
 	
 	//if next to a target, attack
-	if(_weakestAdjacentTarget != noone && _weakestAdjacentTarget.units > 0){
+	if(_weakestAdjacentTarget != noone && _weakestAdjacentTarget.units > 0 && !_troop.needsReplenishing){
 		_weakestAdjacentTarget.units -= 1;
 		_troop.units -= 1;
 		if(_troop.units <= 0){
 			scr_linked_list_add(_troopsToDestroy, _troop);
 		}
-		
 		switch(_weakestAdjacentTarget.object_index){
 			case obj_map_world_square_troop:
 				if(_weakestAdjacentTarget.units <= 0){
@@ -154,6 +153,40 @@ for(var i = 0; i < _troopTotal; i++){
 				}
 			break;
 		}
+		
+		var _half = SQUARE_UNITS_MAX div 2;
+		var _fourth = SQUARE_UNITS_MAX div 4;
+		
+		if(_troop.units <= _fourth){
+			
+			var _totalUnits = 0;
+			var _allyTroops = scr_linked_list_create();
+			
+			for(var m = -1; m <= 1; m++){
+				var _cellX = _troop.cellX + m;
+				for(var n = -1; n <= 1; n++){
+					var _cellY = _troop.cellY + n;
+					var _adjacentSquare = global.worldMapControl.squares[_cellX, _cellY];
+					if(_adjacentSquare != noone &&
+					_adjacentSquare.allegiance == _troop.allegiance &&
+					_adjacentSquare.object_index == obj_map_world_square_troop){
+						_totalUnits += _adjacentSquare.units;
+						scr_linked_list_add(_allyTroops, _adjacentSquare);
+					}
+				}
+			}
+			
+			if(_totalUnits < _weakestAdjacentTarget.units){
+				for(var m = 0; m < scr_linked_list_size(_allyTroops); m++){
+					var _allyTroop = scr_linked_list_get_next(_allyTroops);
+					_allyTroop.needsReplenishing = true;
+				}
+			}
+			
+			scr_linked_list_destroy(_allyTroops);
+			
+		}
+		
 	}
 	else{
 		if(_troop.units > SQUARE_UNITS_MAX div 2 && !_troop.needsReplenishing){ //search for a target

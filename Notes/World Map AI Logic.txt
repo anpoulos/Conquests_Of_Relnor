@@ -2,9 +2,11 @@
 For each turn:
 
 1. Troop Center:
-  i. for each camp in related camps:
+  i. If all attached camps are not of same allegiance:
+       switch troop center allegiance to majority allegiance of all attached camps
+  ii. for each camp in related camps:
     if camp.units < CAMP_UNIT_MAX*2
-      camp.units += 1
+      camp.units += troop center output
 
 2. Camp:
   i. if units >= TROOP_UNIT_MAX*2 && attachedTroops < 2 :
@@ -27,7 +29,6 @@ For each turn:
           if units <= 0, destroy self
           end turn
         else
-          set nearestCamp as nearest camp
           if units > TROOP_UNIT_MAX div 2 :
           | target <- get nearest target
           | calculate path to target
