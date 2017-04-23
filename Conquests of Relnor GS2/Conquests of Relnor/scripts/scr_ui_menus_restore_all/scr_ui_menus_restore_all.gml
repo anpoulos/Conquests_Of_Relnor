@@ -7,3 +7,6 @@ for(var i = 0; i < _totalMenus; i++){
 	_rootMenu.isVisible = _rootMenu.wasVisible;
 }
 
+if(global.isWorldMap){
+	scr_square_player_create_clickable_squares(global.player.mapControl);
+}

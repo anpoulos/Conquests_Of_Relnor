@@ -92,6 +92,7 @@ for(var i = 0; i < _campTotal; i++){
 					_newTroop.nearestCamp = _camp;
 					scr_square_camp_attach_troop(_camp, _newTroop);
 					_placedTroop = true;
+					_newTroop.hasTurn = false;
 				}
 			}
 		}
@@ -107,6 +108,11 @@ var _troopTotal = instance_number(obj_map_world_square_troop);
 var _troopsToDestroy = scr_linked_list_create();
 for(var i = 0; i < _troopTotal; i++){
 	var _troop = instance_find(obj_map_world_square_troop, i);
+	
+	if(!_troop.hasTurn){
+		_troop.hasTurn = true;
+		continue;
+	}
 	
 	//i. If supply line does not exist, remove units
 		//TODO ?
@@ -125,12 +131,17 @@ for(var i = 0; i < _troopTotal; i++){
 					_weakestAdjacentTarget = _adjacentSquare;
 				}
 				else{
-					if(_adjacentSquare.units < _weakestAdjacentTarget.units){
+					if(_adjacentSquare.units < _weakestAdjacentTarget.units && _adjacentSquare.units > 0){
 						_weakestAdjacentTarget = _adjacentSquare;
 					}
 				}
 			}
 		}
+	}
+	
+	var _playerMapObject = global.player.mapControl;
+	if(_playerMapObject.cellX == _troop.cellX && _playerMapObject.cellY == _troop.cellY){
+		_weakestAdjacentTarget = noone;
 	}
 	
 	//if next to a target, attack
@@ -222,13 +233,28 @@ for(var i = 0; i < _troopTotal; i++){
 				}
 			}
 			
+			var _playerMapObject = global.player.mapControl;
+			if(_playerMapObject.allegiance != _troop.allegiance){
+				var _cells = scr_map_world_get_square_path(_troop.cellX, _troop.cellY, global.player.mapControl.cellX, global.player.mapControl.cellY);
+				var _distance = scr_linked_list_size(_cells);
+				if(_distance < _closestTargetDistance){
+					_closestTarget = _playerMapObject;
+					_closestTargetDistance = _distance;
+				}
+				scr_linked_list_destroy_all(_cells);
+			}
+			
 			if(_closestTarget != noone){
 				var _cells = scr_map_world_get_square_path(_troop.cellX, _troop.cellY, _closestTarget.cellX, _closestTarget.cellY);
-				if(scr_linked_list_size(_cells) > 0){
+				if(scr_linked_list_size(_cells) > 1 || 
+				(scr_linked_list_size(_cells) > 0 && _closestTarget == _playerMapObject && global.worldMapControl.squares[_playerMapObject.cellX, _playerMapObject.cellY] == noone)){
 					var _nextCell = scr_linked_list_get_next(_cells);
 					_troop.x = scr_map_square_get_transformed_coordinate(_nextCell.x);
 					_troop.y = scr_map_square_get_transformed_coordinate(_nextCell.y);
 					scr_map_world_square_set_cell(_troop);
+				}
+				if(_playerMapObject.cellX == _troop.cellX && _playerMapObject.cellY == _troop.cellY){
+					//TODO attack player
 				}
 			}
 			
@@ -236,7 +262,7 @@ for(var i = 0; i < _troopTotal; i++){
 		else{ //move towards nearest camp
 			_troop.needsReplenishing = true;
 			var _cells = scr_map_world_get_square_path(_troop.cellX, _troop.cellY, _troop.nearestCamp.cellX, _troop.nearestCamp.cellY);
-			if(scr_linked_list_size(_cells) > 0){
+			if(scr_linked_list_size(_cells) > 1){
 				var _nextCell = scr_linked_list_get_next(_cells);
 				_troop.x = scr_map_square_get_transformed_coordinate(_nextCell.x);
 				_troop.y = scr_map_square_get_transformed_coordinate(_nextCell.y);
@@ -249,3 +275,5 @@ for(var i = 0; i < _troopTotal; i++){
 
 scr_linked_list_destroy_all(_troopsToDestroy);
 
+global.player.mapControl.hasTurn = true;
+scr_square_player_create_clickable_squares(global.player.mapControl);

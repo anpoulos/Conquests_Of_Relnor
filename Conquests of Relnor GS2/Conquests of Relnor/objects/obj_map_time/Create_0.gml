@@ -7,7 +7,7 @@ y = 0;
 //global.moonTonight = irandom(2) == 0;
 
 if(!global.isInterior){
-	if(scr_room_is_world_map(room)){
+	if(global.isWorldMap){
 		minColorRGB = make_color_rgb(125,125,125);
 	}
 	else{

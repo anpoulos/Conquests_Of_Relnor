@@ -31,6 +31,20 @@ if(global.mapControl.lifeformList[_roomId] != noone){
 
 if(global.mapControl.objectList[_roomId] != noone){
 
+	if(global.isWorldMap){
+		var _totalSquares = instance_number(obj_map_world_square);
+		for(var i = 0; i < _totalSquares; i++){
+			var _square = instance_find(obj_map_world_square, i);
+			if(_square.roomId == scr_room_get_id(room)){
+				_square.isVisible = true;
+				mp_grid_add_cell(global.worldMapGrid, _square.cellX, _square.cellY);
+			}
+			if(_square.roomId == noone){
+				instance_destroy(_square);
+			}
+		}
+	}
+
 	for(var i = 0; i < instance_number(obj_map_parent); i++){
 		with(obj_map_parent){
 			instance_destroy();

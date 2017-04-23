@@ -34,7 +34,7 @@ for(var i = 0; i < path_get_number(_path); i++){
 	var _cellX = scr_map_square_get_cell_coordinate(_currentX);
 	var _cellY = scr_map_square_get_cell_coordinate(_currentY);
 	
-	if(  ! ((_cellX == argument0 && _cellY == argument1) || (_cellX == argument2 && _cellY == argument3)) ){
+	if(_cellX != argument0 || _cellY != argument1){
 		var _squaresTotal = scr_linked_list_size(_squares);
 		var _existsInList = false;
 		for(var j = 0; j < _squaresTotal; j++){

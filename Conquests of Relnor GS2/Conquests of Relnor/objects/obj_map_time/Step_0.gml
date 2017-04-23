@@ -4,7 +4,7 @@
 global.time += 1;
 
 if(global.time == 18000){
-	if(scr_room_is_world_map(room)){
+	if(global.isWorldMap){
 		minColorRGB = make_color_rgb(125,125,125);
 	}
 	else{

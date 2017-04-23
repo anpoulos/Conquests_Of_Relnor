@@ -2,6 +2,8 @@
 
 event_inherited();
 
+mapControl = noone;
+
 balance = 50.0
 
 quest[0] = 0;

@@ -17,6 +17,17 @@ if(global.mapControl.itemList[_roomId] == noone){
 	global.mapControl.itemList[_roomId] = scr_linked_list_create();
 }
 
+if(global.isWorldMap){
+	var _totalSquares = instance_number(obj_map_world_square);
+	for(var i = 0; i < _totalSquares; i++){
+		var _square = instance_find(obj_map_world_square, i);
+		if(_square.roomId == noone){
+			_square.isVisible = false;
+			_square.roomId = _roomId;
+		}
+	}
+}
+
 for(var i = 0; i < instance_number(obj_inventory_item_parent); i++){
 	var _item = instance_find(obj_inventory_item_parent, i);
 	if(_item.isVisible){

@@ -2,7 +2,7 @@
 
 depth = -y;
 currentDepth = depth;
-if(combatCheckCount > 0){
+if(!global.gamePaused && combatCheckCount > 0){
 	combatCheckCount -= 1;
 }
 

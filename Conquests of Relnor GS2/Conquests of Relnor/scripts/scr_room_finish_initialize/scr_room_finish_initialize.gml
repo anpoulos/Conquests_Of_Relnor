@@ -86,10 +86,24 @@ mp_grid_destroy(_tempGrid);
 mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
 mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
 
-if(scr_room_is_world_map(room)){
+if(global.isWorldMap){
+	if(global.mapControl.objectList[_roomId] != noone){
+		var _totalSquares = instance_number(obj_map_world_square);
+		for(var i = 0; i < _totalSquares; i++){
+			var _square = instance_find(obj_map_world_square, i);
+			if(_square.roomId == scr_room_get_id(room)){
+				_square.isVisible = true;
+				mp_grid_add_cell(global.worldMapGrid, _square.cellX, _square.cellY);
+			}
+		}
+	}
 	//remove some gui elements
 	global.player.CommandMenuContainer.isVisible = false;
 	global.player.CommandInformationMenuContainer.isVisible = false;
 	global.player.PassiveMenuContainer.isVisible = false;
 	scr_square_troops_set_nearest_camps();
+	global.player.mapControl = instance_create(global.player.x, global.player.y, obj_player_map);
+	scr_map_world_set_allegiance(global.player.mapControl, global.player.allegiance);
+	global.player.mapControl.hasTurn = true;
+	scr_square_player_create_clickable_squares(global.player.mapControl);
 }

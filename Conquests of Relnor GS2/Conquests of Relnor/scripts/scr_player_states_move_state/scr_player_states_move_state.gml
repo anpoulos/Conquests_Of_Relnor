@@ -1,5 +1,9 @@
 ///scr_player_states_move_state()
 
+if(global.isWorldMap){
+	return false;
+}
+
 script_execute(self.moveInputs); //populates various direction values and key presses
 
 scr_check_triggers(); //may change state

@@ -8,7 +8,9 @@
         "5b65eab7-58a9-4d95-8de4-372bae29b6c7",
         "305217ad-bd73-4cde-8dfd-3197493ae570",
         "fd861406-046f-4db4-9911-80262ab0afe4",
-        "ef131c82-4734-4624-bf6c-4228b0cf28ca"
+        "ef131c82-4734-4624-bf6c-4228b0cf28ca",
+        "d063abc2-22e5-4b6f-a2bb-0598c8599817",
+        "f437fc2d-7eb0-41e5-b2b4-ee32714a9f00"
     ],
     "filterType": "GMObject",
     "folderName": "Square",
