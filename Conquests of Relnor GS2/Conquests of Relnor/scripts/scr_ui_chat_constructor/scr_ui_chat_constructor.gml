@@ -44,6 +44,9 @@ else{
 	_fileName += _customChatFileName + ".txt";
 }
 	
-scr_ui_chat_load_file(_fileName, _chatWindow);
+if(!scr_ui_chat_load_file(_fileName, _chatWindow)){
+	instance_destroy(_chatWindow);
+	return noone;
+}
     
 return _chatWindow;

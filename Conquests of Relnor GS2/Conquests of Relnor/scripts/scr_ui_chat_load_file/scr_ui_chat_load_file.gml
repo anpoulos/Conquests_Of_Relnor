@@ -7,6 +7,10 @@ var _chatWindow = argument1;
 
 var _file = file_text_open_read(_fileName);
 
+if(_file == -1){
+	return false;
+}
+
 var _counter = 0;
 var _branchIndex = -1;
 var _branch = scr_linked_list_create();
@@ -47,3 +51,5 @@ while(!file_text_eof(_file)){
 _chatWindow.branches[_branchIndex] = _branch;
 
 file_text_close(_file);
+
+return true;
