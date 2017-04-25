@@ -58,23 +58,23 @@ if(self.state != self.moveState){
 
 var _inFrontOfMe = false;
 //TODO redo this with direction line
-switch(self.face4Way){
-    case RIGHT:
-        _inFrontOfMe = collision_line(x,y,x+self.size,y,obj_unwalkable,false,true);
-    break;
-    case DOWN:
-        _inFrontOfMe = collision_line(x,y,x,y+self.size,obj_unwalkable,false,true);
-    break;
-    case LEFT:
-        _inFrontOfMe = collision_line(x,y,x-self.size,y,obj_unwalkable,false,true);
-    break;
-    case UP:
-        _inFrontOfMe = collision_line(x,y-self.size*2,x,y,obj_unwalkable,false,true);
-    break;
-}
+//switch(self.face4Way){
+//    case RIGHT:
+//        _inFrontOfMe = collision_line(x,y,x+self.size,y,obj_unwalkable,false,true);
+//    break;
+//    case DOWN:
+//        _inFrontOfMe = collision_line(x,y,x,y+self.size,obj_unwalkable,false,true);
+//    break;
+//    case LEFT:
+//        _inFrontOfMe = collision_line(x,y,x-self.size,y,obj_unwalkable,false,true);
+//    break;
+//    case UP:
+//        _inFrontOfMe = collision_line(x,y-self.size*2,x,y,obj_unwalkable,false,true);
+//    break;
+//}
 
-if(_inFrontOfMe){
-    image_index = 0;
-    image_speed = 0;
-}
+//if(_inFrontOfMe){
+//    image_index = 0;
+//    image_speed = 0;
+//}
 

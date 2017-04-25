@@ -40,7 +40,6 @@ vSpeed = lengthdir_y(self.length, self.direction360);
 self.image_speed = sign(self.length) * self.imageSpeed;
 if(self.length == 0) self.image_index = 0;
  
-
 //sprite direction
 switch(self.face8Way){
     case FACE_RIGHT:
@@ -83,6 +82,7 @@ if(_destinationX > 0 && _destinationX < room_width &&
 	scr_obj_move_phy(self, hSpeed, vSpeed);	
 }
 //}
+
 
 
 
