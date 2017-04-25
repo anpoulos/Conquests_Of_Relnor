@@ -122,8 +122,23 @@ for(var i = 0; i < _troopTotal; i++){
 	for(var j = -1; j <= 1; j++){
 		var _cellX = _troop.cellX + j; 
 		for(var k = -1; k <= 1; k++){
-			var _cellY = _troop.cellY + k;
+			var _cellY = _troop.cellY + k;			
+			
+			if(global.player.mapControl.cellX == _cellX && 
+			global.player.mapControl.cellY == _cellY &&
+			scr_misc_allegiance_are_enemies(global.player.allegiance, _troop.allegiance)){
+				if(_weakestAdjacentTarget == noone){
+					_weakestAdjacentTarget = global.player.mapControl;
+				}
+				else{
+					if(global.player.mapControl.units < _weakestAdjacentTarget.units){
+						_weakestAdjacentTarget = global.player.mapControl;
+					}
+				}
+			}
+			
 			var _adjacentSquare = global.worldMapControl.squares[_cellX, _cellY];
+			
 			if(_adjacentSquare != noone && 
 			_adjacentSquare.allegiance != _troop.allegiance &&
 			(_adjacentSquare.object_index == obj_map_world_square_troop || _adjacentSquare.object_index == obj_map_world_square_camp)){
@@ -139,30 +154,32 @@ for(var i = 0; i < _troopTotal; i++){
 		}
 	}
 	
-	var _playerMapObject = global.player.mapControl;
-	if(_playerMapObject.cellX == _troop.cellX && _playerMapObject.cellY == _troop.cellY){
-		_weakestAdjacentTarget = noone;
-	}
-	
 	//if next to a target, attack
 	if(_weakestAdjacentTarget != noone && _weakestAdjacentTarget.units > 0 && !_troop.needsReplenishing){
-		_weakestAdjacentTarget.units -= 1;
-		_troop.units -= 1;
-		if(_troop.units <= 0){
-			scr_linked_list_add(_troopsToDestroy, _troop);
-		}
 		switch(_weakestAdjacentTarget.object_index){
+			case obj_player_map:
+				//TODO attack player
+			break;
+		
 			case obj_map_world_square_troop:
+				_weakestAdjacentTarget.units -= 1;
+				_troop.units -= 1;
 				if(_weakestAdjacentTarget.units <= 0){
 					scr_linked_list_add(_troopsToDestroy, _weakestAdjacentTarget);
 				}
 			break;
 			
 			case obj_map_world_square_camp:
+				_weakestAdjacentTarget.units -= 1;
+				_troop.units -= 1;
 				if(_weakestAdjacentTarget.units <= 0){
 					scr_map_world_set_allegiance(_weakestAdjacentTarget, _troop.allegiance);
 				}
 			break;
+		}
+			
+		if(_troop.units <= 0){
+			scr_linked_list_add(_troopsToDestroy, _troop);
 		}
 		
 		var _half = SQUARE_UNITS_MAX div 2;
@@ -246,16 +263,13 @@ for(var i = 0; i < _troopTotal; i++){
 			
 			if(_closestTarget != noone){
 				var _cells = scr_map_world_get_square_path(_troop.cellX, _troop.cellY, _closestTarget.cellX, _closestTarget.cellY);
-				if(scr_linked_list_size(_cells) > 1 || 
-				(scr_linked_list_size(_cells) > 0 && _closestTarget == _playerMapObject && global.worldMapControl.squares[_playerMapObject.cellX, _playerMapObject.cellY] == noone)){
+				if(scr_linked_list_size(_cells) > 1){
 					var _nextCell = scr_linked_list_get_next(_cells);
 					_troop.x = scr_map_square_get_transformed_coordinate(_nextCell.x);
 					_troop.y = scr_map_square_get_transformed_coordinate(_nextCell.y);
 					scr_map_world_square_set_cell(_troop);
 				}
-				if(_playerMapObject.cellX == _troop.cellX && _playerMapObject.cellY == _troop.cellY){
-					//TODO attack player
-				}
+				scr_linked_list_destroy_all(_cells);
 			}
 			
 		}

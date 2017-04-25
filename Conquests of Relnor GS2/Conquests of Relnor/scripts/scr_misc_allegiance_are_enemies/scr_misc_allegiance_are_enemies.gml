@@ -1,6 +1,10 @@
 ///@param allegiance1
 ///@param allegiance2
 
+if(argument0 == argument1){
+	return false;
+}
+
 switch(argument0){
 
 	case ALLEGIANCE_ANIMAL:

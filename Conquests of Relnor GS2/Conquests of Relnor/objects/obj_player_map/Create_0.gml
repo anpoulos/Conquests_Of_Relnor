@@ -13,3 +13,5 @@ hasTurn = true;
 allegiance = ALLEGIANCE_NEUTRAL;
 
 uiObjects = scr_linked_list_create();
+
+units = 1;
