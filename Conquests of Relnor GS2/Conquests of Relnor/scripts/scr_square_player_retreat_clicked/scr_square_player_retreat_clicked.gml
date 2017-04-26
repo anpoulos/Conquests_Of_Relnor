@@ -1,0 +1,1 @@
+///Used as player object

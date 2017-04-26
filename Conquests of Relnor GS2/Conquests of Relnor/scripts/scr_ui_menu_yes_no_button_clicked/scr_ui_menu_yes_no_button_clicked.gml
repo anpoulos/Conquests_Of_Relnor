@@ -9,6 +9,8 @@ var _newButtonScript = tempVal[1];
 var _newButtonScriptAs = tempVal[2];
 var _newTempVal = tempVal[3];
 
+instance_destroy(_menuToDestroy);
+
 if(_newButtonScriptAs != noone){
 	with(_newButtonScriptAs){
 		tempVal = _newTempVal;
@@ -20,6 +22,5 @@ else if(_newButtonScript != noone){
 	script_execute(_newButtonScript);
 }
 
-instance_destroy(_menuToDestroy);
-
 scr_ui_menus_restore_all();
+scr_square_player_create_clickable_squares(global.player.mapControl);

@@ -104,6 +104,8 @@ for(var i = 0; i < _campTotal; i++){
 
 //3. Troops
 
+var _isEngagingPlayer = false;
+
 var _troopTotal = instance_number(obj_map_world_square_troop);
 var _troopsToDestroy = scr_linked_list_create();
 for(var i = 0; i < _troopTotal; i++){
@@ -159,6 +161,17 @@ for(var i = 0; i < _troopTotal; i++){
 		switch(_weakestAdjacentTarget.object_index){
 			case obj_player_map:
 				//TODO attack player
+				var _lines = scr_linked_list_create();
+				scr_linked_list_add(_lines, "An enemy troop is engaging you.");
+				scr_linked_list_add(_lines, "Their unit count, from what you can see, is "+string(_troop.units));
+				scr_linked_list_add(_lines, "Do you wish to engage them or retreat?");
+				
+				scr_ui_menu_yes_no_create("Enemy Engagement", _lines, "Engage", 
+					scr_square_player_engage_clicked, _troop, noone, "Retreat", 
+					scr_square_player_retreat_clicked, global.player, noone);
+					
+				_isEngagingPlayer = true;
+				
 			break;
 		
 			case obj_map_world_square_troop:
@@ -290,4 +303,6 @@ for(var i = 0; i < _troopTotal; i++){
 scr_linked_list_destroy_all(_troopsToDestroy);
 
 global.player.mapControl.hasTurn = true;
-scr_square_player_create_clickable_squares(global.player.mapControl);
+if(!_isEngagingPlayer){
+	scr_square_player_create_clickable_squares(global.player.mapControl);
+}

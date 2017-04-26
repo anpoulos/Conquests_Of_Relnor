@@ -25,7 +25,14 @@ else{
 				_hasTurn = false;
 			}
 			else{
-				scr_square_menu_open(_square);
+				var _lines = scr_linked_list_create();
+				scr_linked_list_add(_lines, "Engage Enemy Troop?");
+				scr_linked_list_add(_lines, "Their unit count, from what you can see, is "+string(_square.units));
+				scr_linked_list_add(_lines, "Do you wish to engage them?");
+				
+				scr_ui_menu_yes_no_create("Enemy Engagement", _lines, 
+				"Engage", scr_square_player_engage_clicked, _square, noone, 
+					"Cancel", noone, noone, noone);
 			}
 		break;
 	}

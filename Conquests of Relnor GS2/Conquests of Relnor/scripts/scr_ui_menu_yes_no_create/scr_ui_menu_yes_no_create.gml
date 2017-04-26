@@ -21,6 +21,7 @@ var _noButtonScriptAs = argument8;
 var _noButtonTempVal = argument9;
 
 scr_ui_menus_hide_all();
+scr_square_player_clear_clickable_squares(global.player.mapControl);
 
 var _menuColor = make_colour_rgb(100,100,150);
 var _menuColorArray = scr_create_obj_array4_repeat(_menuColor, "_menuColorArray");
@@ -56,6 +57,7 @@ for(var i = 0; i < _totalLines; i++){
     var _font = scr_ui_font_constructor(_currentX,_currentY, _line, fnt_default_medium, c_white, 1.0, fa_left, fa_middle, _menu);
     _font.isVisible = true;
 	
+	_currentY += _yOffset;
 }
 scr_linked_list_destroy(_lines);
 
@@ -73,7 +75,7 @@ scr_linked_list_destroy(_lines);
                 
 		var _text = _yesButtonText;
                             
-		var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_menu_yes_no_button_clicked, self, 
+		var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_menu_yes_no_button_clicked, noone, 
 			_text, fnt_default_small, _fontColor, 1.0, 0.8);
                 
 		var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
@@ -105,7 +107,7 @@ scr_linked_list_destroy(_lines);
                 
 	var _text = _noButtonText;
                             
-	var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_menu_yes_no_button_clicked, self, 
+	var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_menu_yes_no_button_clicked, noone, 
 		_text, fnt_default_small, _fontColor, 1.0, 0.8);
                 
 	var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
