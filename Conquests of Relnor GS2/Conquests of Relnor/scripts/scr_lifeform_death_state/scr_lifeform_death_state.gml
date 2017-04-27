@@ -19,10 +19,9 @@ for(var i = 0; i < INVENTORY_MAX; i++){
 	if(_item == noone){
 		continue;
 	}
-	var _r = -1;//irandom(100)+1;
 	var _radius = reach;
-	var _itemDropPercentage = _item.itemStats[ITEM_STATS_DROP_PERCENTAGE]*100;
-	if(_r <= _itemDropPercentage){
+	var _r = floor(100 - _item.itemStats[ITEM_STATS_DROP_PERCENTAGE]*100);
+	if(irandom(_r) == 0){
 	
 		if(_item.object_index == obj_equipment_torch_parent || object_is_ancestor(_item.object_index, obj_equipment_torch_parent)){
 			if(_item.flame != noone && instance_exists(_item.flame)){
