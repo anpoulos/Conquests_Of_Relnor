@@ -5,5 +5,3 @@ with(argument0){
 		instance_destroy(scr_linked_list_remove_next(uiObjects));
 	}	
 }
-
-

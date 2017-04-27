@@ -5,10 +5,11 @@ var _lifeform = argument0;
 var _lifeformSave = instance_create(_lifeform.x, _lifeform.y, obj_map_lifeform_save);
 	
 _lifeformSave.objectIndex = _lifeform.object_index;
-	
+_lifeformSave.isVisible = _lifeform.isVisible;
 _lifeformSave.gold = _lifeform.gold;
 _lifeformSave.healthBarCurrentBar = _lifeform.healthBarCurrentBar;
 _lifeformSave.energyBarCurrentBar = _lifeform.energyBarCurrentBar;
+_lifeformSave.selected = _lifeform.selected;
 	
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	var _item = _lifeform.equipment[i];

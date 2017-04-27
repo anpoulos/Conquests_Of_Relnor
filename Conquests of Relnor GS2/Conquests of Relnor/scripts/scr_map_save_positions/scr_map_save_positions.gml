@@ -51,6 +51,9 @@ for(var k = 0; k < instance_number(obj_npc_Parent); k++){
 	var _lifeformSave = scr_save_convert_to_lifeform_save(_lifeform);
 	
 	if(!_lifeformSave.mapLocked && _lifeform.followTarget != noone && _lifeform.followTarget == global.player){
+		with(_lifeformSave){
+			selected = _lifeform.selected;
+		}
 		scr_linked_list_add(global.mapControl.followingList, _lifeformSave);
 	}
 	else{

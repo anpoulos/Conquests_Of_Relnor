@@ -1,20 +1,22 @@
 ///Draw Equipment and sprite
 
-//draw shadow
-if(hasShadow){
-	scr_map_shadow_draw_lifeform(global.shadowOpacity, 0.5);
-}
+if(isVisible){
+	//draw shadow
+	if(hasShadow){
+		scr_map_shadow_draw_lifeform(global.shadowOpacity, 0.5);
+	}
 
-//draw items behind first
+	//draw items behind first
 
-scr_lifeform_draw(x,y,1,1,0,c_white,1);
+	scr_lifeform_draw(x,y,1,1,0,c_white,1);
 
-///Draw Healthbar
+	///Draw Healthbar
 
-if(healthBarIsVisible){
-    var _h = 40;
-    draw_sprite(spr_lifeform_health_bar, healthBarCurrentBar, x, y-_h);
-    draw_sprite_ext(spr_lifeform_energy_bar, energyBarCurrentBar, x, y-_h+4,
-    1,0.5,0,c_white, 1.0);
+	if(healthBarIsVisible){
+	    var _h = 40;
+	    draw_sprite(spr_lifeform_health_bar, healthBarCurrentBar, x, y-_h);
+	    draw_sprite_ext(spr_lifeform_energy_bar, energyBarCurrentBar, x, y-_h+4,
+	    1,0.5,0,c_white, 1.0);
+	}
 }
 

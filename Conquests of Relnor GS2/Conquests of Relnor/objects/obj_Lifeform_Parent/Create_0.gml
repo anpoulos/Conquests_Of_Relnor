@@ -1,5 +1,7 @@
 ///scr_lifeform_constructor
 
+isVisible = true;
+
 hasBodyParts = false;
 combatCheckCount = -1;
 sex = noone;

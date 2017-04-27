@@ -1,4 +1,6 @@
 ///Deselect All
 
-scr_player_commands_deselect_all();
+if(!global.isWorldMap){
+	scr_player_commands_deselect_all();
+}
 

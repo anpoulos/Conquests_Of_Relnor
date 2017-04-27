@@ -16,14 +16,17 @@ if(isBusy || scr_linked_list_size(ClickedUIObjects) > 0){
     return false;
 }
 
-//move units
-if(!self.stillSelecting){
-	if(commandModule.mouseCommand != noone){
-        script_execute(self.commandModule.mouseCommand);
+if(!global.isWorldMap){
+	//move units
+	if(!self.stillSelecting){
+		if(commandModule.mouseCommand != noone){
+	        script_execute(self.commandModule.mouseCommand);
+		}
 	}
+
+	with(self.selectBox){
+	    instance_destroy();
+	}
+	self.selectBox = noone;
 }
 
-with(self.selectBox){
-    instance_destroy();
-}
-self.selectBox = noone;

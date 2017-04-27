@@ -57,7 +57,6 @@ while(!scr_linked_list_is_empty(global.mapControl.followingList)){
 		
 		if(mp_grid_get_cell(_tempGrid, _checkX div global.tileOffset, _checkY div global.tileOffset) != -1){
 			var _lifeform = scr_save_convert_to_lifeform(_lifeformSave);
-			instance_destroy(_lifeformSave);
 			_lifeform.x = _checkX;
 			_lifeform.y = _checkY;
 			_lifeform.phy_position_x = _checkX;
@@ -66,6 +65,19 @@ while(!scr_linked_list_is_empty(global.mapControl.followingList)){
 			_lifeform.origsinY = _checkY;
 			_lifeform.followTarget = global.player;
 			_foundFreeSpot = true;
+			
+			if(_lifeformSave.selected || global.isWorldMap){
+				scr_player_command_select(global.player, _lifeform);
+			}
+			
+			if(global.isWorldMap){
+				_lifeform.isVisible = false;
+			}
+			else{
+				_lifeform.isVisible = true;
+			}
+			
+			instance_destroy(_lifeformSave);
 		}
 		
 		_angle += 10;
@@ -103,7 +115,12 @@ if(global.isWorldMap){
 	global.player.PassiveMenuContainer.isVisible = false;
 	scr_square_troops_set_nearest_camps();
 	global.player.mapControl = instance_create(global.player.x, global.player.y, obj_player_map);
+	global.player.mapControl.units = 1 + scr_linked_list_size(global.player.commandModule.selected);
 	scr_map_world_set_allegiance(global.player.mapControl, global.player.allegiance);
 	global.player.mapControl.hasTurn = true;
 	scr_square_player_create_clickable_squares(global.player.mapControl);
+	global.player.phy_active = false;
+}
+else{
+	global.player.phy_active = true;
 }

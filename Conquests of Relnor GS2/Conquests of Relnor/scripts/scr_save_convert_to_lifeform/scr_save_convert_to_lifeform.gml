@@ -5,7 +5,8 @@ var _lifeformSave = argument0;
 global.loadingInstances = true;
 		
 var _lifeform = instance_create(_lifeformSave.x, _lifeformSave.y, _lifeformSave.objectIndex);
-		
+
+_lifeform.isVisible = _lifeformSave.isVisible;
 _lifeform.gold = _lifeformSave.gold;
 _lifeform.healthBarCurrentBar = _lifeformSave.healthBarCurrentBar;
 _lifeform.energyBarCurrentBar = _lifeformSave.energyBarCurrentBar;

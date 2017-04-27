@@ -1,4 +1,6 @@
 ///scr_player_command_select(commander, obj)
+///@param commander
+///@param obj
 var _commander = argument0;
 var obj = argument1;
     if(!obj.selected){

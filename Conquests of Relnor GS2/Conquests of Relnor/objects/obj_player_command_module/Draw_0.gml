@@ -3,6 +3,10 @@
 //var _engageCircleAlpha = 0.2/self.totalSelectedWithEngage;
 //var _wanderCircleAlpha = 0.2/self.totalSelectedWithWander;
 
+if(global.isWorldMap){
+	return true;
+}
+
 for(var i = 0; i < scr_linked_list_size(self.selected); i++){
     var _currentNPC = scr_linked_list_get_next(self.selected);
     if(_currentNPC.isDefensive){
