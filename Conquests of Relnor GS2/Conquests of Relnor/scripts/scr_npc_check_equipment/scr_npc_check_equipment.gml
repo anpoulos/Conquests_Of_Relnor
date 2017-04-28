@@ -14,10 +14,12 @@ if(global.isNight){
 			if(scr_is_ancestor_or_is(_equipment.object_index, obj_equipment_torch_parent)){
 				_hasLightEquipped = true;
 			}
-			else if(i != EQUIPMENT_TYPE_WEAPON && _equipment.equipmentSlots[EQUIPMENT_TYPE_OFFHAND]){
+			if(i == EQUIPMENT_TYPE_WEAPON && _equipment.equipmentSlots[EQUIPMENT_TYPE_OFFHAND]){ //means they are using a two handed weapon
 				_offhandSlotTaken = true;
 			}
 		}
+		
+		
 	}
 	
 	if(!_hasLightEquipped && !_offhandSlotTaken){
