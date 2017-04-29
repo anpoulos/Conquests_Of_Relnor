@@ -43,15 +43,29 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
 var _totalPoints = path_get_number(path);
 var _distanceToEnd = 0;
 
+var _nextPathPointX = path_get_point_x(path, pathIndex);
+var _nextPathPointY = path_get_point_y(path, pathIndex);
+
 if(_totalPoints > 0){
     var _lastPointX = path_get_point_x(path, _totalPoints-1);
     var _lastPointY = path_get_point_y(path, _totalPoints-1);
     
     var _distanceToEnd = point_distance(self.x, self.y, _lastPointX, _lastPointY);
+	
+	//Get direction
+	self.direction360 = point_direction(x, y, _nextPathPointX,_nextPathPointY);
+	if(pathIndex == 0){
+		if(followTarget != noone && instance_exists(followTarget)){
+			scr_lifeform_face_towards(self, followTarget.x, followTarget.y);
+		}
+	}
+	else{
+		scr_lifeform_update_face();    
+	}
 }
 
 if(_distanceToEnd < moveToAccuracy){
-        
+		
 	ignoreTargeting = false;	
 		
     self.alarm[1] = -1; //turn off idle state alarm
@@ -68,13 +82,10 @@ if(_distanceToEnd < moveToAccuracy){
     }
 	else{
 		scr_npc_choose_next_state();
-	}
+	}	
     
     return true;
 }
-
-var _nextPathPointX = path_get_point_x(path, pathIndex);
-var _nextPathPointY = path_get_point_y(path, pathIndex);
 
 var _distanceToNextPathPoint = point_distance(x,y,_nextPathPointX, _nextPathPointY);
 
@@ -83,10 +94,6 @@ if(_distanceToNextPathPoint < self.moveToAccuracy){
         pathIndex += 1;
     }
 }
-
-//Get direction
-self.direction360 = point_direction(x, y, _nextPathPointX,_nextPathPointY);
-scr_lifeform_update_face();    
     
 //Get length
 self.length = self.currentMoveSpeed;

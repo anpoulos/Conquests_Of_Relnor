@@ -28,7 +28,10 @@ if(followTarget != noone){
 		var _distanceToTarget = point_distance(self.x, self.y, followTarget.x, followTarget.y);
 		if(_distanceToTarget > size*4){
 	        scr_npc_move_to(self, followTarget.x, followTarget.y, 
-				noone,self.size*4, false, false, self.runSpeed, self.sight, false); 
+				noone, self.size*3, false, false, self.runSpeed, self.sight, false); 
+		}
+		else{
+			scr_lifeform_face_towards(self, followTarget.x, followTarget.y);
 		}
 		return true;
 	}

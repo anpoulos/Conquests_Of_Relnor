@@ -10,11 +10,11 @@
 ///@param maxPathDistance 8
 ///@param ignoreTargeting 9
 
-argument0.pathIndex = 0; 
-
 if(!scr_npc_get_path(argument0, argument1, argument2, argument0.path)){
 	return false;
 }
+
+argument0.pathIndex = 0; 
 
 var _d = argument8;
 
