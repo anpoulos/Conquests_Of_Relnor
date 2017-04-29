@@ -114,7 +114,6 @@ if(_vectorX != 0 || _vectorY != 0){
 		_direction+270,
 		c_black,
 		_opacity*argument0);
-
 }
 			
 			

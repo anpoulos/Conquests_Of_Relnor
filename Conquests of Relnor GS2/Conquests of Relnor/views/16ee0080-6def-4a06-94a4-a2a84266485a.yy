@@ -16,7 +16,10 @@
         "78f7984c-8046-44f6-9907-6f7169a53663",
         "2ec2a3f3-4bd2-4f3e-9f47-b3498f97e5d3",
         "dbb5dfab-b484-410c-b18b-f4ecad1e4a58",
-        "0f7e823b-fc8e-40ed-a6ef-463ca7a390c9"
+        "0f7e823b-fc8e-40ed-a6ef-463ca7a390c9",
+        "44224da6-9077-4cf1-a08f-be04388ee080",
+        "d430a6cc-e9ea-49ea-bdfa-2fd781a3a4cc",
+        "532a02eb-f70d-41d6-8c1e-12b938115273"
     ],
     "filterType": "GMObject",
     "folderName": "Clutter",
