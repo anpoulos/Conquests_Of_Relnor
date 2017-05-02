@@ -11,11 +11,11 @@ if(global.time >= 7000 && global.time <= 19000){
 	scr_map_light_cycle_radius_step(dayRadiusTarget);	
 	scr_map_light_cycle_day_opacity_step(dayOpacityTargetDuringDay);
 	scr_map_light_cycle_night_opacity_step(nightOpacityTargetDuringDay);
+	if(!isStill || dayRadiusTarget != nightRadiusTarget){
+		scr_map_light_calculate_dimensions();
+	}
 	if(hasDayFlicker){
 		scr_map_light_cycle_flicker();
-	}
-	else if(!isStill || dayRadiusTarget != nightRadiusTarget){
-		scr_map_light_calculate_dimensions();
 	}
 }
 else{
@@ -25,11 +25,11 @@ else{
 	scr_map_light_cycle_radius_step(nightRadiusTarget);
 	scr_map_light_cycle_day_opacity_step(dayOpacityTargetDuringNight);
 	scr_map_light_cycle_night_opacity_step(nightOpacityTargetDuringNight);
+	if(!isStill || dayRadiusTarget != nightRadiusTarget){
+		scr_map_light_calculate_dimensions();
+	}
 	if(hasNightFlicker){
 		scr_map_light_cycle_flicker();
-	}
-	else if(!isStill || dayRadiusTarget != nightRadiusTarget){
-		scr_map_light_calculate_dimensions();
 	}
 }
 

@@ -13,3 +13,4 @@ maxSpeed = 30;
 //overrides
 self.arrivalScript = scr_lifeform_damage_projectile_arrival;
 
+baseDestroyTimer = room_speed div 2;

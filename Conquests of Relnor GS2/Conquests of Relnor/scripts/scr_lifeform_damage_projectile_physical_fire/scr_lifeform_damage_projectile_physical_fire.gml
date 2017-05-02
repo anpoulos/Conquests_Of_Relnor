@@ -3,6 +3,6 @@
 with(argument0){
     var _forceX = destinationX-x;
     var _forceY = destinationY-y;
-    alarm[0] = 30;
+    alarm[0] = baseDestroyTimer;
     physics_apply_impulse(x,y,_forceX, _forceY);
 }

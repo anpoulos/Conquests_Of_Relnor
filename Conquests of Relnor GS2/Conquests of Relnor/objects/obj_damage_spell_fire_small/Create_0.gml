@@ -22,3 +22,5 @@ self.maxSpeed = initialSpeed;
 self.knockback = 3;
 self.amount = 4;
 self.energyCost = 20;
+
+light = instance_create(x,y,obj_map_light_spell_fire_small);

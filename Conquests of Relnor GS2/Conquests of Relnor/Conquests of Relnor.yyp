@@ -7063,6 +7063,14 @@
             }
         },
         {
+            "Key": "8ef85cc7-de96-481a-bda8-cf48a5144958",
+            "Value": {
+                "id": "f747f5ff-17f3-4afd-a1e0-fde9498687f1",
+                "resourcePath": "views\\8ef85cc7-de96-481a-bda8-cf48a5144958.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8ef921d9-a1dd-488c-8806-2743264d9cf4",
             "Value": {
                 "id": "c9af4380-97d2-4f5a-a5c5-0a9df763448f",
@@ -8743,6 +8751,14 @@
             }
         },
         {
+            "Key": "b38db469-6f0c-47e5-8f53-6de710dda0cd",
+            "Value": {
+                "id": "7987c7f9-c2ce-497f-98b8-4af78a1cef73",
+                "resourcePath": "sprites\\spr_spell_fire_smell\\spr_spell_fire_smell.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b3a11bf5-02fc-466a-a64c-5a2b6a5a0af5",
             "Value": {
                 "id": "7d3c5365-8887-4971-b750-995471de2f21",
@@ -9171,6 +9187,14 @@
             "Value": {
                 "id": "46c61cb9-370e-455f-a943-bf18053dc057",
                 "resourcePath": "views\\ba39e936-a327-4b91-83ab-593c98215625.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ba65aafe-4d55-454b-84b5-0cc871d00d4d",
+            "Value": {
+                "id": "319f0775-8827-45f7-8ca7-76ea62121a42",
+                "resourcePath": "views\\ba65aafe-4d55-454b-84b5-0cc871d00d4d.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -11396,6 +11420,14 @@
                 "id": "5f122600-ad22-475d-bafa-e61f4e3f8ce3",
                 "resourcePath": "sprites\\spr_male_hair_black_medium_left\\spr_male_hair_black_medium_left.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e28b4af9-d283-4dce-a12e-97e6bf9b5c39",
+            "Value": {
+                "id": "e951fcb9-e0b6-40d1-9d3a-22e67d02fc6a",
+                "resourcePath": "objects\\obj_map_light_spell_fire_small\\obj_map_light_spell_fire_small.yy",
+                "resourceType": "GMObject"
             }
         },
         {
