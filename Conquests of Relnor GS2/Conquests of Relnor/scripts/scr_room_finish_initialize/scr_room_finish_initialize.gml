@@ -124,3 +124,12 @@ if(global.isWorldMap){
 else{
 	global.player.phy_active = true;
 }
+
+var _totalNpcs = instance_number(obj_npc_Parent);
+for(var i = 0; i < _totalNpcs; i++){
+	var _npc = instance_find(obj_npc_Parent, i);
+	if(!_npc.wasLoadedFromSave){
+		scr_lifeform_add_exp(_npc, global.player.experience);
+	}
+}
+

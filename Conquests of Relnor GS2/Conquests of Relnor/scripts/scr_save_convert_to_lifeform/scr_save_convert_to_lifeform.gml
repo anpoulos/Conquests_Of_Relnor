@@ -10,6 +10,7 @@ _lifeform.isVisible = _lifeformSave.isVisible;
 _lifeform.gold = _lifeformSave.gold;
 _lifeform.healthBarCurrentBar = _lifeformSave.healthBarCurrentBar;
 _lifeform.energyBarCurrentBar = _lifeformSave.energyBarCurrentBar;
+_lifeform.wasLoadedFromSave = true;
 		
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	if(_lifeform.equipment[i] != noone){

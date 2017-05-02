@@ -2,6 +2,8 @@
 
 event_inherited();
 
+wasLoadedFromSave = false;
+
 allegianceParent = noone;
 
 collisionCounter = -1;
