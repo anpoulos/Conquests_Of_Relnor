@@ -64,8 +64,10 @@ with(_lifeform){
 		_npc.isDefensive &&
 		!_npc.isAggressive &&
 		!scr_lifeform_is_in_combat(_npc)){
-			if(_npc.followTarget != noone && _npc.followTarget == _lifeform){
-				_npc.target = _source;
+			if(_npc.followTarget != noone){
+				if(_npc.followTarget == _lifeform){
+					_npc.target = _source;
+				}
 			}
 			else{
 				_npc.isAggressive = true;

@@ -49,3 +49,7 @@ else{
 	PrimaryAttackText.text = "";
 	PrimaryAttackIcon.sprite = noone;
 }
+
+if(scr_ui_draw_is_visible(CommandInformationMenuContainer)){
+	scr_player_gui_update_command_selected(true);
+}

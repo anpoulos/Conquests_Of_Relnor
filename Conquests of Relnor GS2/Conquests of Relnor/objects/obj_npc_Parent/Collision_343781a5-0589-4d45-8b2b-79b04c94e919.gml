@@ -26,7 +26,7 @@ if(!instance_exists(self)){
 	return;
 }
 
-if(other == target){
+if(other == target && instance_exists(target)){
 	scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);
 	scr_npc_choose_next_state();
 	return;

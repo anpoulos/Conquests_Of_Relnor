@@ -1,31 +1,30 @@
 ///scr_player_gui_update_command_selected(boolean recountTotals)
+///@param recountTotals
+
 
 if(argument0){
-    self.commandModule.totalSelectedWithEngage = 0;
-    self.commandModule.totalSelectedWithWander = 0;
-    self.commandModule.totalSelectedWithDefense = 0;
-    for(var i = 0; i < scr_linked_list_size(commandModule.selected); i++){
+    commandModule.totalSelectedWithEngage = 0;
+    commandModule.totalSelectedWithWander = 0;
+    commandModule.totalSelectedWithDefense = 0;
+	
+    for(var i = 0; i < commandModule.totalSelected; i++){
         var _currentNPC = scr_linked_list_get_next(commandModule.selected);
         if(_currentNPC.isAggressive){
-            self.commandModule.totalSelectedWithEngage += 1;
+            commandModule.totalSelectedWithEngage += 1;
         }
         if(_currentNPC.wanderDistance > 0){
-            self.commandModule.totalSelectedWithWander += 1;   
+            commandModule.totalSelectedWithWander += 1;   
         }
         if(_currentNPC.isDefensive){
-            self.commandModule.totalSelectedWithDefense += 1;
+            commandModule.totalSelectedWithDefense += 1;
         }
     }
 }
 
-self.TotalSelectedText.text = string_insert(
-string(self.commandModule.totalSelected), "Total Selected: ",17);
+TotalSelectedText.text = "Total Selected: "+string(commandModule.totalSelected);
 
-self.TotalEngagedText.text = string_insert(
-string(self.commandModule.totalSelectedWithEngage), "Total Aggressive: ",20);
+TotalEngagedText.text = "Total Aggressive: " + string(commandModule.totalSelectedWithEngage);
 
-self.TotalWanderText.text = string_insert(
-string(self.commandModule.totalSelectedWithWander), "Total Wandering: ",18);
+TotalWanderText.text = "Total Wandering: "+string(commandModule.totalSelectedWithWander);
 
-self.TotalDefenseText.text = string_insert(
-string(self.commandModule.totalSelectedWithDefense), "Total Defensive: ",18);
+TotalDefenseText.text = "Total Defensive: "+string(commandModule.totalSelectedWithDefense);
