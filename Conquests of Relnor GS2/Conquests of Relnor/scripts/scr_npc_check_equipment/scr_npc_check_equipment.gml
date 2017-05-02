@@ -1,92 +1,36 @@
-
-if(global.isNight){
-	if(!checkedNightEquipment){
-		checkedNightEquipment = true;
-		checkedDayEquipment = false;
-	}
-		
-	var _hasLightEquipped = false;
-	var _offhandSlotTaken = false;
-	
-	for(var i = 0; i < EQUIPMENT_TYPE_MAX && !_hasLightEquipped; i++){
-		var _equipment = equipment[i];
-		if(_equipment != noone){
-			if(scr_is_ancestor_or_is(_equipment.object_index, obj_equipment_torch_parent)){
-				_hasLightEquipped = true;
-			}
-			if(i == EQUIPMENT_TYPE_WEAPON && _equipment.equipmentSlots[EQUIPMENT_TYPE_OFFHAND]){ //means they are using a two handed weapon
-				_offhandSlotTaken = true;
-			}
-		}
-		
-		
-	}
-	
-	if(!_hasLightEquipped && !_offhandSlotTaken){
-		for(var i = 0; i < INVENTORY_MAX; i++){
-		var _item = inventory[i];
-			if(_item != noone){
-				if(scr_is_ancestor_or_is(_item.object_index, obj_equipment_torch_parent)){
-					//check around for light
-					var _totalLights = instance_number(obj_map_light_cycle);
-					var _isInLight = false;
-					for(var j = 0; j < _totalLights; j++){
-						var _light = instance_find(obj_map_light_cycle, j);
-						if(_light.object_index != obj_map_light_sun){
-							var _distance = point_distance(x,y, _light.lightX, _light.lightY);
-							if(_distance <= _light.radius){
-								_isInLight = true;
-								break;
-							}
-						}
-					}
-					if(!_isInLight){
-						scr_lifeform_parent_inventory_equip(_item);
-						_hasLightEquipped = true;
-					}
-				}
-			}
-		}
-	}
-		
+if(!isVisible){
+	return false;
 }
-else{
-	if(!checkedDayEquipment){
-		
-		for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
-			var _item = equipment[i];
-			if(_item != noone){
-				if(scr_is_ancestor_or_is(_item.object_index, obj_equipment_torch_parent)){
-				
-					var _bestOffhand = noone;
-		
-					for(var i = 0; i < INVENTORY_MAX; i++){
-						var _inventoryItem = inventory[i];
-				
-						if(_inventoryItem!= noone && _inventoryItem.equipmentStats[EQUIPMENT_STATS_TYPE] == EQUIPMENT_TYPE_OFFHAND){
-							if(_bestOffhand == noone){
-								if(_inventoryItem.equipmentStats[EQUIPMENT_STATS_DEFENCE] > _item.equipmentStats[EQUIPMENT_STATS_DEFENCE]){
-									_bestOffhand = _item;
-								}
-							}
-							else if(_inventoryItem.equipmentStats[EQUIPMENT_STATS_DEFENCE] > _bestOffhand.equipmentStats[EQUIPMENT_STATS_DEFENCE]){
-								_bestOffhand = _item;
-							}
-						}
-					}
-					
-					if(_bestOffhand != noone){
-						scr_lifeform_parent_inventory_equip(_bestOffhand);
-					}
-				}
-			}
-		}	
-		
-		checkedNightEquipment = false;
-		checkedDayEquipment = true;
+
+var _totalLights = instance_number(obj_map_light_cycle);
+var _isInLight = false;
+var _hasLightEquipped = false;
+
+var _equipmentLights = scr_linked_list_create();
+for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
+	var _equipment = equipment[i];
+	if(_equipment != noone && scr_is_ancestor_or_is(_equipment.object_index, obj_equipment_torch_parent) && _equipment.flame != noone){
+		scr_linked_list_add(_equipmentLights, _equipment.flame);
+		_hasLightEquipped = true;
 	}
 }
 
+for(var j = 0; j < _totalLights && !_isInLight; j++){
+	var _light = instance_find(obj_map_light_cycle, j);
+	_isInLight = (!scr_linked_list_exists(_equipmentLights, _light) && point_distance(x,y, _light.lightX, _light.lightY) <= _light.radius*_light.strength);
+}
+
+if(_isInLight){
+	scr_npc_equip_best_offhand();
+}
+else if(!_hasLightEquipped){
+	var _weapon = equipment[EQUIPMENT_TYPE_WEAPON]
+	if(_weapon != noone && !_weapon.equipmentSlots[EQUIPMENT_TYPE_OFFHAND]){
+		scr_npc_equip_torch();
+	}
+}
+
+scr_linked_list_destroy(_equipmentLights);
 
 if(canEat){
 	for(var i = 0; i < INVENTORY_MAX; i++){

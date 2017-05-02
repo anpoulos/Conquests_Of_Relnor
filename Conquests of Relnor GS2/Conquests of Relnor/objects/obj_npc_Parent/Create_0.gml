@@ -10,8 +10,6 @@ ignoreTargeting = false;
 healthThreshold = irandom_range(25,75)/100;
 
 hasDialogue = false;
-checkedNightEquipment = false;
-checkedDayEquipment = false;
 nameIdentifier = "";
 busyState = scr_npc_states_busy;
 myCollisionTurn = false;

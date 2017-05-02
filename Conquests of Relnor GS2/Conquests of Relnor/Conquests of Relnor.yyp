@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "03714709-0e41-4f1e-bdac-fb5a095c26b8",
+            "Value": {
+                "id": "5457e62d-5f9e-4223-9f34-95cfc2fc9bdb",
+                "resourcePath": "views\\03714709-0e41-4f1e-bdac-fb5a095c26b8.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "0376c9d8-bab9-49dc-903b-30d83988032c",
             "Value": {
                 "id": "f9b7a8a4-af25-467f-ab5a-14432856d276",
@@ -1731,6 +1739,14 @@
             "Value": {
                 "id": "b66de41f-d658-4d18-85f6-c4de6da30041",
                 "resourcePath": "scripts\\scr_ui_party_stats_tree_refresh\\scr_ui_party_stats_tree_refresh.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "230bdb78-c7ca-4112-ae75-708042240595",
+            "Value": {
+                "id": "946ac83b-10c2-4f48-9f78-ad6e584d0f74",
+                "resourcePath": "scripts\\scr_npc_equip_torch\\scr_npc_equip_torch.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -7855,6 +7871,14 @@
             }
         },
         {
+            "Key": "a0e78bc6-4c62-4d93-8505-e736ebe5571e",
+            "Value": {
+                "id": "819a082d-b274-4bb7-84f1-0bdf345a5896",
+                "resourcePath": "scripts\\scr_npc_equip_best_offhand\\scr_npc_equip_best_offhand.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a11136fc-fa38-4731-922c-a4283a3c220e",
             "Value": {
                 "id": "bef79418-2262-43a4-909e-2ad8c730171e",
@@ -12897,6 +12921,8 @@
         "a763da72-4ac9-465b-aa9b-5d92f5aff43a",
         "daca68b0-6a2a-4447-aa62-57791d4fc3f7",
         "7ba8226d-73df-418a-b281-fb3288885b95",
+        "a0e78bc6-4c62-4d93-8505-e736ebe5571e",
+        "230bdb78-c7ca-4112-ae75-708042240595",
         "ad3ede71-ed8c-42ad-8f55-20bc0f172a59",
         "0446165b-3000-45e1-8829-bbd57cb04049",
         "b05fb97a-fc14-4f5a-b886-065d2d2d5eef",

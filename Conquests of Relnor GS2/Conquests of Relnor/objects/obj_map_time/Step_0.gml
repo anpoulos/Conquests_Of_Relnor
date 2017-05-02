@@ -1,7 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-global.time += 1;
+if(!global.gamePaused){
+	surface_set_target(global.lightSurface);
+		draw_set_color(minColorRGB);
+		draw_rectangle(0,0,room_width, room_height, false);
+	surface_reset_target();
+	return true;
+}
 
 if(global.time == 18000){
 	if(global.isWorldMap){
@@ -77,3 +83,5 @@ surface_set_target(global.lightSurface);
 	draw_set_color(minColorRGB);
 	draw_rectangle(0,0,room_width, room_height, false);
 surface_reset_target();
+
+global.time += 1;
