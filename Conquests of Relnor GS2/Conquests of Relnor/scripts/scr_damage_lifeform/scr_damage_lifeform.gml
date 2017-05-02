@@ -60,11 +60,16 @@ with(_lifeform){
 		var _npc = instance_find(_lookup, i);
 		var _distance = point_distance(x,y,_npc.x, _npc.y);
 		if(_npc != self &&
-		 _npc.state == _npc.idleState &&
 		_distance <= _npc.sight && 
 		_npc.isDefensive &&
-		!_npc.isAggressive){
-			_npc.isAggressive = true;
+		!_npc.isAggressive &&
+		!scr_lifeform_is_in_combat(_npc)){
+			if(_npc.followTarget != noone && _npc.followTarget == _lifeform){
+				_npc.target = _source;
+			}
+			else{
+				_npc.isAggressive = true;
+			}
 		    _npc.alarm[2] = -1;
 		}
 	}

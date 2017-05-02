@@ -3,6 +3,6 @@
 with(argument0){
     var _forceX = destinationX-x;
     var _forceY = destinationY-y;
-    alarm[11] = 30;
+    alarm[0] = 30;
     physics_apply_impulse(x,y,_forceX, _forceY);
 }

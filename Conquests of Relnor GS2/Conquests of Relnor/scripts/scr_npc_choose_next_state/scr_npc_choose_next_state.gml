@@ -30,9 +30,10 @@ if(followTarget != noone){
 	        scr_npc_move_to(self, followTarget.x, followTarget.y, 
 				noone, self.size*3, false, false, self.runSpeed, self.sight, false); 
 		}
-		else{
+		else if(!scr_lifeform_is_in_combat(self)){
 			scr_lifeform_face_towards(self, followTarget.x, followTarget.y);
 		}
+		scr_npc_check_equipment();
 		return true;
 	}
 	else{

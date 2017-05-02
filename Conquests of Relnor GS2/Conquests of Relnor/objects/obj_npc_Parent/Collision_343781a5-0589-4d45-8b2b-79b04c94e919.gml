@@ -26,6 +26,12 @@ if(!instance_exists(self)){
 	return;
 }
 
+if(other == target){
+	scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);
+	scr_npc_choose_next_state();
+	return;
+}
+
 if(walkThroughNPCs &&
 other.allegiance == allegiance){
 	phy_active = false;
