@@ -18,9 +18,12 @@ while(!scr_linked_list_is_empty(lines)){
 scr_linked_list_destroy(lines);
 
 for(var i = 0; i < array_length_1d(branches); i++){
-    scr_linked_list_destroy(branches[i]);
+	if(branches[i] != noone){
+		scr_linked_list_destroy(branches[i]);
+	}
 }
 
 scr_destroy_instance(ChatContainer);
 
+instance_destroy(speechBubble);
 

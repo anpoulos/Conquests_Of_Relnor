@@ -23,7 +23,8 @@
         "a763da72-4ac9-465b-aa9b-5d92f5aff43a",
         "daca68b0-6a2a-4447-aa62-57791d4fc3f7",
         "7ba8226d-73df-418a-b281-fb3288885b95",
-        "03714709-0e41-4f1e-bdac-fb5a095c26b8"
+        "03714709-0e41-4f1e-bdac-fb5a095c26b8",
+        "226ce992-41f1-4531-b16c-b99dae9eb407"
     ],
     "filterType": "GMScript",
     "folderName": "Parent",

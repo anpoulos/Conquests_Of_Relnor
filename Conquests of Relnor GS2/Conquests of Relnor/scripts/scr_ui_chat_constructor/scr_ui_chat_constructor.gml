@@ -20,9 +20,10 @@ if(_player != noone){
 
 _chatWindow.player = _player;
 _chatWindow.npc = _npc;
+_chatWindow.originalNpc = _npc;
 
 if(_npc != noone){
-	_chatWindow.NameText.text = string_replace_all(_npc.name, "_", " ")+":";
+	_chatWindow.NameText.text = _npc.name+" :";
 	with(_npc){
 	    scr_npc_enable_busy();
 	}
@@ -30,15 +31,9 @@ if(_npc != noone){
 	if(_player != noone){
 		scr_lifeform_face_towards(_npc, _player.x,_player.y);
 	}
+	
+	_fileName += "File_Chat_" + string_replace_all(scr_lifeform_get_full_name(_npc), " ", "_") + ".txt";
     
-	_fileName += "File_Chat_"+_npc.name;
-    
-	if(string_length(_npc.nameIdentifier) > 0){
-	    _fileName = _fileName+"_"+_npc.nameIdentifier+".txt";
-	}
-	else{
-	    _fileName = _fileName + ".txt";
-	}
 }
 else{
 	_fileName += _customChatFileName + ".txt";

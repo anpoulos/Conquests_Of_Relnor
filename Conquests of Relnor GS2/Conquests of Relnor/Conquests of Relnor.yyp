@@ -535,6 +535,14 @@
             }
         },
         {
+            "Key": "09a3716f-37bb-459a-84bd-42548fa9cc2b",
+            "Value": {
+                "id": "68eeafd4-4456-4e7d-9a41-c950f73da768",
+                "resourcePath": "objects\\obj_ui_chat_speech_bubble\\obj_ui_chat_speech_bubble.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "09b51416-87ae-4dbf-9e7a-f192c0d7f2cc",
             "Value": {
                 "id": "81154fa0-5c14-41cf-9633-6dd7099440d2",
@@ -732,14 +740,6 @@
                 "id": "f168dbab-7916-4978-a89d-757215b02915",
                 "resourcePath": "objects\\obj_map_light_sun\\obj_map_light_sun.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "0de74140-1577-4aac-92f1-deb79b3eccfd",
-            "Value": {
-                "id": "f0becddd-ac3d-4b7c-92ea-87ae06909ca1",
-                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -1723,6 +1723,14 @@
             "Value": {
                 "id": "f74b62ce-58d7-4583-ba34-7ae4ee2b88b8",
                 "resourcePath": "scripts\\scr_spell_projectile\\scr_spell_projectile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "226ce992-41f1-4531-b16c-b99dae9eb407",
+            "Value": {
+                "id": "298fc0ab-5072-491d-b47c-de1199a3e0f5",
+                "resourcePath": "scripts\\scr_lifeform_get_full_name\\scr_lifeform_get_full_name.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -7679,14 +7687,6 @@
             }
         },
         {
-            "Key": "99455fb4-9228-4a5a-a318-ea54845361ca",
-            "Value": {
-                "id": "73fdaa64-0096-4c3f-9322-2807b7c2b7b1",
-                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Man_01.txt.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "9952a77a-9278-4d96-939a-779aff3597c9",
             "Value": {
                 "id": "c71a5a45-452b-4055-b8b4-355878564f1f",
@@ -8092,6 +8092,14 @@
                 "id": "bcb4b4bb-fbf6-427b-9e80-8492e6331ad8",
                 "resourcePath": "views\\a1c1e2bc-bdf5-431c-af8f-b7b8c6758d30.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a1eb4752-54c5-41d1-b2bd-30e16ff2cdba",
+            "Value": {
+                "id": "71bae6b1-4519-4a30-9128-b182e1fd21c4",
+                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Remulus.txt.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -9399,6 +9407,14 @@
             }
         },
         {
+            "Key": "bab9c8a6-a382-4759-b216-773ed60c6b5c",
+            "Value": {
+                "id": "f8dc658a-7069-4180-a97d-aa803c815cc7",
+                "resourcePath": "datafiles_yy\\Chat\\File_Chat_Man_01.txt.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "bac27f64-3124-4595-8d56-3f5f3e25a469",
             "Value": {
                 "id": "31238e8e-02c0-44c6-93c8-ae71f1655884",
@@ -10196,6 +10212,14 @@
                 "id": "850feb0f-d430-42e6-a958-036be9439294",
                 "resourcePath": "scripts\\scr_room_npc_all_defensive\\scr_room_npc_all_defensive.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c7b33b12-cd53-47c6-92ec-b7720896e485",
+            "Value": {
+                "id": "7b64d151-844f-42b3-99ad-4ef41442b49c",
+                "resourcePath": "sprites\\spr_speech_bubble\\spr_speech_bubble.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -13227,6 +13251,7 @@
         "7ba8226d-73df-418a-b281-fb3288885b95",
         "a0e78bc6-4c62-4d93-8505-e736ebe5571e",
         "230bdb78-c7ca-4112-ae75-708042240595",
+        "226ce992-41f1-4531-b16c-b99dae9eb407",
         "ad3ede71-ed8c-42ad-8f55-20bc0f172a59",
         "0446165b-3000-45e1-8829-bbd57cb04049",
         "b05fb97a-fc14-4f5a-b886-065d2d2d5eef",

@@ -4,8 +4,8 @@
     "mvc": "1.1",
     "name": "d10dccf6-7d4b-4e80-b3af-5475f4491f4f",
     "children": [
-        "99455fb4-9228-4a5a-a318-ea54845361ca",
-        "0de74140-1577-4aac-92f1-deb79b3eccfd"
+        "bab9c8a6-a382-4759-b216-773ed60c6b5c",
+        "a1eb4752-54c5-41d1-b2bd-30e16ff2cdba"
     ],
     "filterType": "GMIncludedFile",
     "folderName": "Chat",

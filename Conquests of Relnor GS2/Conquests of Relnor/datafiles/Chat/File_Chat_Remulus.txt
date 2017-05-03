@@ -1,4 +1,5 @@
 #branch 0
+#set #npc #default
 How do you do there?
 What will you be needing today?
 
@@ -11,30 +12,28 @@ What will you be needing today?
 
 
 #branch 1
+#set #npc #default
 Supplies? Of course we do.
 #button #shop Open_Shop
 #button #close "Nevermind."
 
 #branch 2
-Of course sir. We only have one left. 
-Did you want the key or just to stay the night?
-I sell the key in my shop.
-And staying the night only costs 50.
-#button #branch 3 "I'll_stay_the_night."
+#set #npc #default
+If you need a room for the night
+then you can buy a key from my shop.
 #button #shop "I'll take the key."
 #button #close "Nevermind."
 
-#branch 3
-//TODO charge and sleep
-
 #branch 4
+#set #npc #default
 Oh... well... this is quite embarrassing, but
 I seemed to have forgotten your name from last night.
 In my defense, I may have had a little too much to drink.
 #button #script 6 "Don't_worry_about_it!"
 
 #branch 5
-#title #player_to_#npc
+#set #npc #player
+#title #npc_:
 Don't worry about it! That's why we liked you.
 The name's #player.
 

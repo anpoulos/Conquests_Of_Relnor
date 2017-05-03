@@ -39,11 +39,56 @@ for(var i = 0; i < _listSize; i++){
         
         switch(_arg0){
 		
+			case "#add":
+				var _variableName = ds_queue_dequeue(_args);
+				switch(_variableName){
+					case "#quest":
+						var _questIndex = real(ds_queue_dequeue(_args));
+						var _value = real(ds_queue_dequeue(_args));
+						_player.quest[_questIndex] += _value;
+					break;
+					case "#balance":
+						var _value = real(ds_queue_dequeue(_args));
+						_player.balance += _value;
+					break;
+				}
+			break;
+		
 			case "#set":
-				ds_queue_dequeue(_args);
-				var _questIndex = real(ds_queue_dequeue(_args));
-				var _newValue = real(ds_queue_dequeue(_args));
-				_player.quest[_questIndex] = _newValue;
+				var _variableName = ds_queue_dequeue(_args);
+				switch(_variableName){
+					case "#quest":
+						var _questIndex = real(ds_queue_dequeue(_args));
+						var _newValue = real(ds_queue_dequeue(_args));
+						_player.quest[_questIndex] = _newValue;
+					break;
+					case "#balance":
+						var _newValue = real(ds_queue_dequeue(_args));
+						_player.balance = _newValue;
+					break;
+					case "#npc":
+						var _rawTextName = ds_queue_dequeue(_args);
+						if(_rawTextName == "#player"){
+							_chatWindow.npc = global.player;
+						}
+						else if(_rawTextName == "#default"){
+							_chatWindow.npc = _chatWindow.originalNpc;
+						}
+						else{
+							var _name = scr_ui_chat_get_text(_chatWindow, _rawTextName);
+							var _totalNpcs = instance_number(obj_npc_Parent);
+							var _foundNpc = false;
+							for(var n = 0; n < _totalNpcs && !_foundNpc; n++){
+								var _npc = instance_find(obj_npc_Parent, n);
+							
+								if(scr_lifeform_get_full_name(_npc) == _name){
+									_chatWindow.npc = _npc;
+									_foundNpc = true;
+								}
+							}
+						}						
+					break;
+				}
 			break;
 		
 			case "#if":
@@ -87,6 +132,7 @@ for(var i = 0; i < _listSize; i++){
 						if(_nextLineArg0 == "#endif"){
 							_endIfId = ds_queue_dequeue(_nextLineArgs);
 						}
+						ds_queue_destroy(_nextLineArgs);
 					}
 					until( _endIfId == _ifId);
 				}

@@ -1,16 +1,19 @@
 #branch 0
+#set #npc #default
+#title #npc_:
 How's it going soldier?
 #button #branch 1 "Fine"
 #button #close Walk_Away
 
-
 #branch 1
-#title #player_to_#default:
+#set #npc #player
+#title #npc_:
 It's going fine.
 #button #branch 2 Continue
 
 #branch 2
-#title #default:
+#set #npc #default
+#title #npc_:
 That's good to hear.
 You from round the region?
 Or from out of the kingdom?
@@ -18,7 +21,8 @@ Or from out of the kingdom?
 #button #branch  "I'm a foreigner to these parts."
 
 #branch 3
-#title #player_to_#default:
+#set #npc #player
+#title #npc_:
 I'm from...
 #button #branch 4 Relnor
 #button #branch 5 Agnor
@@ -28,25 +32,30 @@ I'm from...
 
 #branch 4
 //Relnor
-#title #default:
+#set #npc #default
+#title #npc_:
 #script 0
 
 #branch 5
 //Agnor
-#title #default:
+#set #npc #default
+#title #npc_:
 #script 1
 
 #branch 6
 //Deviah
-#title #default:
+#set #npc #default
+#title #npc_:
 #script 2
 
 #branch 7
 //Crossheim
-#title #default:
+#set #npc #default
+#title #npc_:
 #script 3
 
 #branch 8
 //Eckhart
-#title #default:
+#set #npc #default
+#title #npc_:
 #script 4
