@@ -11,7 +11,8 @@
         "dea62172-761c-4de7-a7e0-99610b694da0",
         "acdb2505-7c03-44d9-bcae-5db94817713f",
         "22b0edc4-2b3b-41a0-bbce-d2f01c2acfab",
-        "168c714f-62fb-44cf-90fe-797b6aee2df9"
+        "168c714f-62fb-44cf-90fe-797b6aee2df9",
+        "9952a77a-9278-4d96-939a-779aff3597c9"
     ],
     "filterType": "GMSprite",
     "folderName": "Map",
