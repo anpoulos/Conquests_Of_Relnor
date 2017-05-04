@@ -2,7 +2,11 @@
 ///@param y
 ///@param room
 
-scr_linked_list_clear(global.additiveLights);
+scr_linked_list_destroy(global.additiveLights);
+scr_linked_list_destroy(global.totalLights);
+
+global.additiveLights = scr_linked_list_create();
+global.totalLights = scr_linked_list_create();
 
 scr_map_save_positions();
 

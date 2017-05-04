@@ -1,12 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var _additiveLightsTotal = scr_linked_list_size(global.additiveLights);
-
-for(var i = 0; i < _additiveLightsTotal; i++){
-	var _light = scr_linked_list_peak(global.additiveLights);
-	if(_light == self){
-		scr_linked_list_remove_next(global.additiveLights);
-	}
-	scr_linked_list_get_next(global.additiveLights);
-}
+scr_linked_list_remove(global.additiveLights, self);
+scr_linked_list_remove(global.totalLights, self);

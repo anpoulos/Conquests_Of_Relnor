@@ -4,7 +4,7 @@ if(currentMoveSpeed < moveSpeed){
     currentMoveSpeed += 0.5;
 }
 
-if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTarget != noone){
+if(!ignoreTargeting && (isAggressive && !commandedMoveTo) || lockedTarget != noone){
 
 	var _previousTarget = target;
 	
@@ -12,7 +12,7 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
         target = lockedTarget;
     }
     else{
-        self.target = scr_npc_get_closest_target();
+        target = scr_npc_get_closest_target();
 		if(_previousTarget != noone && target == noone){ //if npc was chasing someone and there is no longer anyone nearby to chase
             path_clear_points(path);
 			scr_npc_choose_next_state();
@@ -22,7 +22,7 @@ if(!ignoreTargeting && (self.isAggressive && !self.commandedMoveTo) || lockedTar
 	
     if(target != noone && instance_exists(target)){   //means we are chasing someone
         if(_previousTarget != target || point_distance(x, y, target.x, target.y) <= moveToAccuracy){
-            self.state = self.attackState;
+            state = attackState;
             path_clear_points(path);
             return true;
         }
@@ -50,10 +50,10 @@ if(_totalPoints > 0){
     var _lastPointX = path_get_point_x(path, _totalPoints-1);
     var _lastPointY = path_get_point_y(path, _totalPoints-1);
     
-    var _distanceToEnd = point_distance(self.x, self.y, _lastPointX, _lastPointY);
+    var _distanceToEnd = point_distance(x, y, _lastPointX, _lastPointY);
 	
 	//Get direction
-	self.direction360 = point_direction(x, y, _nextPathPointX,_nextPathPointY);
+	direction360 = point_direction(x, y, _nextPathPointX,_nextPathPointY);
 	if(pathIndex == 0){
 		if(followTarget != noone && instance_exists(followTarget)){
 			scr_lifeform_face_towards(self, followTarget.x, followTarget.y);
@@ -68,17 +68,17 @@ if(_distanceToEnd < moveToAccuracy){
 		
 	ignoreTargeting = false;	
 		
-    self.alarm[1] = -1; //turn off idle state alarm
+    alarm[1] = -1; //turn off idle state alarm
     
-    self.pathIndex = 0;
-    self.commandedMoveTo = false;    
+    pathIndex = 0;
+    commandedMoveTo = false;    
     path_clear_points(path);
     image_index = 0;
     image_speed = 0;
     
-    if(self.moveToEndScript != noone){
-        script_execute(self.moveToEndScript);
-        self.moveToEndScript = noone;
+    if(moveToEndScript != noone){
+        script_execute(moveToEndScript);
+        moveToEndScript = noone;
     }
 	else{
 		scr_npc_choose_next_state();
@@ -89,22 +89,22 @@ if(_distanceToEnd < moveToAccuracy){
 
 var _distanceToNextPathPoint = point_distance(x,y,_nextPathPointX, _nextPathPointY);
 
-if(_distanceToNextPathPoint < self.moveToAccuracy){
+if(_distanceToNextPathPoint < moveToAccuracy){
     if(pathIndex + 1 < _totalPoints){
         pathIndex += 1;
     }
 }
     
 //Get length
-self.length = self.currentMoveSpeed;
+length = currentMoveSpeed;
 
 // Get speeds
-var hSpeed = lengthdir_x(self.length, self.direction360);
-var vSpeed = lengthdir_y(self.length, self.direction360);
+var hSpeed = lengthdir_x(length, direction360);
+var vSpeed = lengthdir_y(length, direction360);
 
 //Control sprite speed
-self.image_speed = sign(self.length) * self.imageSpeed;
-if(self.length == 0) self.image_index = 0;
+image_speed = sign(length) * imageSpeed;
+if(length == 0) image_index = 0;
 
 //Move
 scr_obj_move_phy(self, hSpeed, vSpeed);

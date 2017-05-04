@@ -71,3 +71,5 @@ isAdditive = true;
 
 scr_map_light_calculate_dimensions();
 scr_map_light_cycle_calc_light();
+
+scr_linked_list_add(global.totalLights, self);

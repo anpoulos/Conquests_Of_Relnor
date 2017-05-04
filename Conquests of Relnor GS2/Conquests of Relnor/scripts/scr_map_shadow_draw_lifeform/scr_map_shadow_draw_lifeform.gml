@@ -29,9 +29,12 @@ for(var i = 0; i < _totalAdditiveLights; i++){
 	}
 }
 
-for(var i = 0; i < _totalLights; i++){
+var _totalLights = global.totalLights;
+var _totalTotalLights = scr_linked_list_size(_totalLights);
 
-	var _light = instance_find(obj_map_light_cycle, i);
+for(var i = 0; i < _totalTotalLights; i++){
+
+	var _light = scr_linked_list_get_next(_totalLights);
 	var _effectiveRadius = _light.radius*_light.strength;
 	
 	if(point_distance(x,y,_light.lightX, _light.lightY) > _effectiveRadius){

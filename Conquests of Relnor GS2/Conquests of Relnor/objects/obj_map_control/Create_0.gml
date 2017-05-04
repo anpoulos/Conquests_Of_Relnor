@@ -9,6 +9,7 @@ global.shadowOpacity = 0.3;
 global.shadowOpacityMax = 0.3;
 global.moonTonight = true;
 global.additiveLights = scr_linked_list_create();
+global.totalLights = scr_linked_list_create();
 global.worldMapGrid = noone;
 global.worldMapControl = instance_create(0,0,obj_map_world_control);
 
