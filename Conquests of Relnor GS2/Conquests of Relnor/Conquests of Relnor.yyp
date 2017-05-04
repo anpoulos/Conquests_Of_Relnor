@@ -6503,6 +6503,14 @@
             }
         },
         {
+            "Key": "8271edf4-db27-4aae-a509-7e21f8839ddf",
+            "Value": {
+                "id": "178b3eb1-e825-4e03-bd3a-787dd23e485f",
+                "resourcePath": "rooms\\rm_test_room_pincer_original\\rm_test_room_pincer_original.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "828b7d3b-669f-48c9-a103-1cb2b62693ab",
             "Value": {
                 "id": "1fd6c680-a5bb-4873-8c84-c776aa9e7190",

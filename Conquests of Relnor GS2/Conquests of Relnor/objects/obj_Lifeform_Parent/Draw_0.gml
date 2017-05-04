@@ -8,7 +8,9 @@ if(isVisible){
 
 	//draw items behind first
 
+	shader_set(shader_0);
 	scr_lifeform_draw(x,y,1,1,0,c_white,1);
+	shader_reset();
 
 	///Draw Healthbar
 

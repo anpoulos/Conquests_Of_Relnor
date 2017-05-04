@@ -1,12 +1,11 @@
-///@param x
-///@param y
-///@param xScale
-///@param yScale
-///@param rotation
-///@param color
-///@param alpha
+///@param x 0
+///@param y 1
+///@param xScale 2
+///@param yScale 3
+///@param rotation 4
+///@param color 5
+///@param alpha 6
 
-shader_set(shader_0);
 
 switch(face4Way){
 	case LEFT:
@@ -94,5 +93,3 @@ switch(face4Way){
 		scr_equipment_draw(equipment[EQUIPMENT_TYPE_WEAPON], argument0, argument1, argument2, argument3, argument4, argument5, argument6);
 	break;
 }
-
-shader_reset();

@@ -78,12 +78,14 @@ for(var i = 0; i < _totalLights; i++){
 			draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
 		}
 
+		shader_set(shader_0);
 		scr_lifeform_draw(_x,_y, 
 			_direction > 180 ? -1 : 1,
 			(1.0+_opacity)*argument1,
 			_direction+270,
 			c_black,
 			_opacity*argument0);
+		shader_reset();
 	}
 }
 
@@ -108,12 +110,14 @@ if(_vectorX != 0 || _vectorY != 0){
 		draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
 	}
 
+	shader_set(shader_0);
 	scr_lifeform_draw(_x,_y, 
 		_direction > 180 ? -1 : 1,
 		(1.0+_opacity)*argument1,
 		_direction+270,
 		c_black,
 		_opacity*argument0);
+	shader_reset();
 }
 			
 			
