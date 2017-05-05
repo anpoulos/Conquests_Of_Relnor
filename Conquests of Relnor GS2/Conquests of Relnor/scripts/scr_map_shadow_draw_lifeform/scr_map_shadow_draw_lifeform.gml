@@ -9,6 +9,7 @@ if(argument0 <= 0.0){ //means in daylight
 }
 
 isRevealed = false;
+scr_linked_list_clear(nearbyLights);
 
 if(_totalLights == 0){
 	return false;
@@ -42,6 +43,7 @@ for(var i = 0; i < _totalTotalLights; i++){
 	}
 	
 	isRevealed = true;
+	scr_linked_list_add(nearbyLights, _light);
 	
 	var _playerDistanceFromCenter = point_distance(x,y,_light.lightX, _light.lightY);
 	
@@ -81,14 +83,16 @@ for(var i = 0; i < _totalTotalLights; i++){
 			draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
 		}
 
-		shader_set(shader_0);
+		surface_free(shadowSurface);
+		shadowSurface = surface_create(room_width, room_height);
+		surface_set_target(shadowSurface);
 		scr_lifeform_draw(_x,_y, 
 			_direction > 180 ? -1 : 1,
 			(1.0+_opacity)*argument1,
 			_direction+270,
 			c_black,
 			_opacity*argument0);
-		shader_reset();
+		surface_reset_target();
 	}
 }
 
@@ -113,14 +117,17 @@ if(_vectorX != 0 || _vectorY != 0){
 		draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
 	}
 
-	shader_set(shader_0);
+
+	surface_free(shadowSurface);
+	shadowSurface = surface_create(room_width, room_height);
+	surface_set_target(shadowSurface);
 	scr_lifeform_draw(_x,_y, 
 		_direction > 180 ? -1 : 1,
 		(1.0+_opacity)*argument1,
 		_direction+270,
 		c_black,
 		_opacity*argument0);
-	shader_reset();
+		surface_reset_target();
 }
 			
 			

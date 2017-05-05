@@ -54,8 +54,6 @@ if(!argument6){
 
 argument0.moveToEndScript = argument3;
 argument0.moveToAccuracy = argument4;
-
-argument0.moveInputs = scr_npc_set_directions_by_offset;
 argument0.state = argument0.moveState;
 argument0.currentMoveSpeed = 1;
 argument0.moveSpeed = argument7;

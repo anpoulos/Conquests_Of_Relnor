@@ -19,7 +19,6 @@ var _oldTime = instance_find(obj_map_time, 0);
 var _foundOldTime = instance_exists(_oldTime);
 	
 if(!_foundOldTime){
-	global.shadowSurface = 0;
 	global.lightSurface = 0;
 	global.isNight = false;
 	global.time = 0;

@@ -1,5 +1,10 @@
 ///scr_lifeform_constructor
 
+nearbyLights = scr_linked_list_create();
+scr_linked_list_add(nearbyLights, noone); //necessary to avoid bugs
+
+shadowSurface = surface_create(room_width, room_height);
+
 isVisible = true;
 
 hasBodyParts = false;

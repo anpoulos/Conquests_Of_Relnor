@@ -41,7 +41,6 @@ self.directions[DOWN] = 0;
 self.directions[UP] = 0;
 
 self.attackState = scr_npc_states_attack_state;
-self.moveInputs = scr_npc_set_directions_by_offset;
 self.moveState = scr_npc_states_move_state;
 self.state = scr_npc_choose_next_state;
 self.idleState = scr_npc_idle_state;

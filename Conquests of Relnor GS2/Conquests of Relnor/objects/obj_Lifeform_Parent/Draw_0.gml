@@ -2,8 +2,10 @@
 
 if(isVisible){
 	//draw shadow
+	
 	if(hasShadow){
-		scr_map_shadow_draw_lifeform(global.shadowOpacity, 0.5);
+		draw_set_color(c_black);
+		draw_surface(shadowSurface, 0,0);
 	}
 
 	//draw items behind first

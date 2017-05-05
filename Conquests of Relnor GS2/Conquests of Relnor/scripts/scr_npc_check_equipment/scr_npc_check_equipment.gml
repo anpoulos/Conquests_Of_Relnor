@@ -1,24 +1,19 @@
 if(!isVisible){
 	return false;
 }
-var _isInEquippedLight = false;
+
+var _totalEquippedLights = 0;
 
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	var _equipment = equipment[i];
 	if(_equipment != noone && 
 	scr_is_ancestor_or_is(_equipment.object_index, obj_equipment_torch_parent) && 
 	_equipment.flame != noone){
-		_isInEquippedLight = true;
-		break;
-		//var _light = _equipment.flame;
-		//if(point_distance(x, y, _light.x, _light.y) <= _light.radius*_light.strength){
-		//	_isInEquippedLight = true;
-		//	break;
-		//}
+		_totalEquippedLights += 1;
 	}
 }
 
-if(isRevealed && !_isInEquippedLight){
+if(scr_linked_list_size(nearbyLights) > _totalEquippedLights) {
 	scr_npc_equip_best_offhand();
 }
 else{

@@ -1,5 +1,7 @@
 ///Object Depth
 
+
+
 depth = -y;
 currentDepth = depth;
 if(!global.gamePaused && combatCheckCount > 0){
