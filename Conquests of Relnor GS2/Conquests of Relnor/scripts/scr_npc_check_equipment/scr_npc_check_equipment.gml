@@ -2,26 +2,35 @@ if(!isVisible){
 	return false;
 }
 
-var _totalEquippedLights = 0;
+var _totalLights = instance_number(obj_map_light_cycle);
+var _isInLight = false;
+var _hasLightEquipped = false;
 
+var _equipmentLights = scr_linked_list_create();
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	var _equipment = equipment[i];
-	if(_equipment != noone && 
-	scr_is_ancestor_or_is(_equipment.object_index, obj_equipment_torch_parent) && 
-	_equipment.flame != noone){
-		_totalEquippedLights += 1;
+	if(_equipment != noone && scr_is_ancestor_or_is(_equipment.object_index, obj_equipment_torch_parent) && _equipment.flame != noone){
+		scr_linked_list_add(_equipmentLights, _equipment.flame);
+		_hasLightEquipped = true;
 	}
 }
 
-if(scr_linked_list_size(nearbyLights) > _totalEquippedLights) {
+for(var j = 0; j < _totalLights && !_isInLight; j++){
+	var _light = instance_find(obj_map_light_cycle, j);
+	_isInLight = (!scr_linked_list_exists(_equipmentLights, _light) && point_distance(x,y, _light.lightX, _light.lightY) <= _light.radius*_light.strength);
+}
+
+if(_isInLight){
 	scr_npc_equip_best_offhand();
 }
-else{
+else if(!_hasLightEquipped){
 	var _weapon = equipment[EQUIPMENT_TYPE_WEAPON]
 	if(_weapon != noone && !_weapon.equipmentSlots[EQUIPMENT_TYPE_OFFHAND]){
 		scr_npc_equip_torch();
 	}
 }
+
+scr_linked_list_destroy(_equipmentLights);
 
 if(canEat){
 	for(var i = 0; i < INVENTORY_MAX; i++){

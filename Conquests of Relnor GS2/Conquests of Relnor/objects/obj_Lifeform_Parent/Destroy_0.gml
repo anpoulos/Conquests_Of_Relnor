@@ -16,5 +16,3 @@ for(var i = 0; i < INVENTORY_MAX; i++){
 
 scr_linked_list_destroy(possibleEnemies);
 
-scr_linked_list_destroy(nearbyLights);
-
