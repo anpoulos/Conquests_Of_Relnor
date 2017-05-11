@@ -4,8 +4,6 @@ event_inherited();
 
 isVisible = false;
 
-isAdditive = false;
-
 xOffset = 0;
 yOffset = 0;
 

@@ -7,8 +7,6 @@ depth = -round(MAX/2);
 xOffset = 0;
 yOffset = 0;
 
-isAdditive = false;
-
 leftX = lightX;
 rightX = lightX;
 topY = lightY;
