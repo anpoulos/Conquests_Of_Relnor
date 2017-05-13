@@ -1,12 +1,12 @@
 ///scr_npc_constructor(name, hitpoints, energy, reach, sight, wanderDistance, allegiance, allegianceRank)
-///@param name
-///@param hitpoints
-///@param energy
-///@param reach
-///@param sight
-///@param wanderDistance
-///@param allegiance
-///@param allegianceRank
+///@param name 0 
+///@param hitpoints 1
+///@param energy 2
+///@param reach 3
+///@param sight 4
+///@param wanderDistance 5
+///@param allegiance 6
+///@param allegianceRank 7
 
 
 self.name = argument0;

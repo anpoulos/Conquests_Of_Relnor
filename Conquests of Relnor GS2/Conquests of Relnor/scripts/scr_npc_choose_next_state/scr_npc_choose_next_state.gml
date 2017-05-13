@@ -56,16 +56,15 @@ if(followTarget != noone){
 //	return true;
 //}
 
-var _distanceFromOrigin = point_distance(self.originX, self.originY, self.x, self.y);
-if(_distanceFromOrigin > self.wanderRadius){
-    scr_npc_move_to(self, self.originX, self.originY, noone, 50, false, false, self.walkSpeed, _distanceFromOrigin*2, false);
+if(wanderDistance != 0 && point_distance(originX, originY, x, y) > wanderRadius){
+    scr_npc_move_to(self, originX, originY, noone, 50, false, false, self.walkSpeed, size, false);
     return true;
 }
     
 var _nextState = irandom_range(0,2);
 
-if(self.alarm[1] > 0 || self.wanderDistance == 0){ //means we should be idle
-    _nextState = 1;
+if(self.alarm[1] > 0 || self.wanderDistance == 0 || scr_lifeform_is_in_combat(self)){ //means we should be idle
+    _nextState = 0;
 }
 
 switch(_nextState){

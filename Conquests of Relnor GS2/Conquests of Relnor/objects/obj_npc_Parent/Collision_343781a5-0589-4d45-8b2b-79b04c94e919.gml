@@ -22,20 +22,25 @@
 //	scr_npc_move_to(self, _tempX, _tempY, scr_npc_choose_next_state, size-1, false, false, self.runSpeed);
 //}
 
-if(!instance_exists(self)){
+if(!instance_exists(other) || !instance_exists(self)){
 	return;
 }
 
-if(other == target && instance_exists(target)){
+if(other == target){
 	scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);
 	scr_npc_choose_next_state();
 	return;
 }
 
-if(walkThroughNPCs &&
-other.allegiance == allegiance){
-	phy_active = false;
-	alarm[6] = room_speed;
+if(walkThroughNPCs){
+	if(other.allegiance == allegiance){
+		phy_active = false;
+		alarm[6] = room_speed;
+	}
+	else{
+		phy_active = true;
+		alarm[6] = 0;
+	}
 }
 else{
 	if(currentMoveSpeed > 0){
@@ -53,12 +58,14 @@ else{
 			collisionCounter = -1;
 			lastCollidedLifeform = noone;
 			firstCollidedLifeform = noone;
-	        scr_npc_auto_retaliate(other);
+			target = other;
+			scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);
+			scr_npc_choose_next_state();
 	        return true;
 	    }
 	}
 	
-		if(collisionCounter == -1){
+		if(wanderDistance > 0 && collisionCounter == -1){
 			firstCollidedLifeform = other;
 			lastCollidedLifeform = noone;
 			collisionCounter = room_speed;
@@ -77,18 +84,18 @@ else{
 			if(collisionCounter == 0){
 				if(firstCollidedLifeform == lastCollidedLifeform && instance_exists(firstCollidedLifeform)){
 				//random move
-					var _myNextPointX = path_get_point_x(path, pathIndex);
-					var _myNextPointY = path_get_point_y(path, pathIndex);
+					//var _myNextPointX = path_get_point_x(path, pathIndex);
+					//var _myNextPointY = path_get_point_y(path, pathIndex);
 	
-					var _direction = point_direction(phy_position_x, phy_position_y, _myNextPointX, _myNextPointY);
+					var _direction = point_direction(phy_position_x, phy_position_y, firstCollidedLifeform.x, firstCollidedLifeform.y);
 	
 					switch(irandom(1)){
 						case 0: 
-							_direction += 45;
+							_direction += 90;
 						break;
 						
 						case 1: 
-							_direction -= 45; 
+							_direction -= 90; 
 						break;
 					}
 	

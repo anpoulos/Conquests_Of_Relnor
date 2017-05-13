@@ -2,7 +2,7 @@
 
 event_inherited();
 var _name = "Blue_Soldier_"+string(instance_number(obj_npc_blue_soldier));
-scr_npc_constructor(_name, 100, 100, 30, 400, 50, ALLEGIANCE_BLUE, 0);
+scr_npc_constructor(_name, 100, 100, 30, 400, 0, ALLEGIANCE_BLUE, 0);
 
 self.size = sprite_get_height(self.sprite_index);
 
@@ -22,6 +22,6 @@ scr_lifeform_parent_inventory_equip(scr_equipment_create_iron_sword(self));
 scr_lifeform_parent_inventory_add(self, scr_consumable_potion_random(self));
 scr_lifeform_parent_inventory_add(self, scr_consumable_food_random(self));
 //override
-self.wanderDistance = 0;
 
 gold = irandom(100);
+isDefensive = false;

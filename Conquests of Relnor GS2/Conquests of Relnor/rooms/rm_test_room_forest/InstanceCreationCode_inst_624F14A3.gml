@@ -1,1 +1,1 @@
-sparsity *= 2;
+sparsity *= 8.0;

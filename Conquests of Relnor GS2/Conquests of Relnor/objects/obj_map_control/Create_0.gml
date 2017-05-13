@@ -19,6 +19,9 @@ for(var i = 0; i < ROOM_MAX; i++){
 	vaultList[i] = scr_linked_list_create();
 }
 
+settings[SETTINGS_MAX] = 0.0;
+settings[SETTINGS_DIFFICULTY] = 1.0;
+
 destinationX = noone;
 destinationY = noone;
 destinationRoom = noone;

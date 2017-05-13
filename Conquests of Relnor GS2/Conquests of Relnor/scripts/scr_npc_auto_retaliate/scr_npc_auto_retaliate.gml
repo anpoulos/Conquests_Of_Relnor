@@ -2,6 +2,6 @@
 self.target = argument0;
 self.state = self.attackState;
 		
-if(!isAggressive && followTarget == noone){
+if(!isAggressive && followTarget == noone && isDefensive){
 	isAggressive = true;
 }
