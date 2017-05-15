@@ -4,7 +4,7 @@ if(currentMoveSpeed < moveSpeed){
     currentMoveSpeed += 0.5;
 }
 
-if(!ignoreTargeting && (isAggressive && !commandedMoveTo) || lockedTarget != noone){
+if(!ignoreTargeting && ((isAggressive && !commandedMoveTo) || lockedTarget != noone)){
 
 	var _previousTarget = target;
 	

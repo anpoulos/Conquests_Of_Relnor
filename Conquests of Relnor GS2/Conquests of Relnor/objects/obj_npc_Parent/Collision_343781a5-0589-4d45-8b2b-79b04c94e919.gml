@@ -65,7 +65,7 @@ else{
 	    }
 	}
 	
-		if(wanderDistance > 0 && collisionCounter == -1){
+		if((state == moveState || state == attackState) && collisionCounter == -1){
 			firstCollidedLifeform = other;
 			lastCollidedLifeform = noone;
 			collisionCounter = room_speed;
