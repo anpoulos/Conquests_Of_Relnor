@@ -1,0 +1,1 @@
+global.player.commandModule.engageRangeClicked = true;

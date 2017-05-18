@@ -16,10 +16,14 @@ self.statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = argument2;
 self.statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = argument2;
 self.reach = argument3;
 self.sight = argument4;
+self.engageDistance = self.sight;
 self.wanderDistance = argument5;
-self.oldWanderDistance = self.wanderDistance;
-self.wanderRadius = self.wanderDistance;
-self.oldWanderRadius = self.wanderRadius;
+if(wanderDistance > 0){
+	isWandering = true;
+}
+else{
+	isWandering = false;
+}
 
 self.allegiance = argument6;
 self.allegianceRank[self.allegiance] = argument7;

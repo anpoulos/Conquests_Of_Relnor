@@ -6,3 +6,5 @@ moved = false;
 commander = noone;
 
 mapLocked = false;
+
+previewEngageDistance = 0;

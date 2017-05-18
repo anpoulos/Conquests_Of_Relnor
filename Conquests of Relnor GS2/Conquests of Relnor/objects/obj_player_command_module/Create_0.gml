@@ -15,3 +15,10 @@ followButtonClicked = false;
 followTarget = noone;
 
 attackTarget = noone;
+
+engageRangeClicked = false;
+wanderRangeClicked = false;
+wanderRangeX = 0;
+wanderRangeY = 0;
+primeWanderRangeClicked = false;
+previewWanderDistance = 0;

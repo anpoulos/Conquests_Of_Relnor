@@ -3,7 +3,7 @@
 //create top left command menu container
 var _commandMenuColor = make_colour_rgb(150,100,100); //grey shade of red
 var _commandMenuColorArray = scr_create_obj_array4_repeat(_commandMenuColor, "_commandMenuColorArray");
-var _commandMenuPosArray = scr_create_obj_array4(-90,-150,90,150, "_commandMenuPosArray");
+var _commandMenuPosArray = scr_create_obj_array4(-120,-150,120,150, "_commandMenuPosArray");
 var _commandMenuX = _commandMenuPosArray.item[2]+10;
 var _commandMenuY = _commandMenuPosArray.item[3]+10;
 
@@ -77,6 +77,33 @@ EngageText.isVisible = true;
     scr_destroy_instance(_DisableEngageButtonInfo);
 //End of Engage Mode Button
 
+//Engage Range Button
+    var _DisableEngageButtonColor = make_colour_rgb(50,150,50);
+    var _DisableEngageButtonPressedColor = make_colour_rgb(0,100,0);
+    var _DisableEngageButtonColorArray = scr_create_obj_array4_repeat(_DisableEngageButtonColor,"_DisableEngageButtonColorArray");
+    
+    var _DisableEngageButtonPositionArray = scr_create_obj_array4(-30,-10,30,10, "_DisableEngageButtonPositionArray");
+    
+    var _fontColor = c_white;
+    
+    var _DisableEngageButtonX = DisableEngageButton.x+60;
+    var _DisableEngageButtonY = DisableEngageButton.y;
+    
+    var _DisableEngageButtonInfo = 
+    scr_ui_get_obj_ui_button_information(5,scr_ui_button_engage_range_clicked,self,
+    "Set Range",fnt_default_small,_fontColor,1.0,0.6);
+    
+    var _button = scr_ui_button_constructor(_DisableEngageButtonX,_DisableEngageButtonY, 
+    _DisableEngageButtonPositionArray, _DisableEngageButtonColorArray, 
+    _DisableEngageButtonPressedColor, true, _DisableEngageButtonInfo, CommandMenuContainer);
+    
+    _button.isVisible = true;
+    
+    scr_destroy_instance(_DisableEngageButtonColorArray);
+    scr_destroy_instance(_DisableEngageButtonPositionArray);
+    scr_destroy_instance(_DisableEngageButtonInfo);
+//End of Engage Range Button
+
 //Wander Text
 var _wanderTextX = CommandMenuContainer.leftX+40;
 var _wanderTextY = EngageText.y+30;
@@ -114,7 +141,6 @@ WanderText.isVisible = true;
     scr_destroy_instance(_EnableWanderButtonInfo);
 //End of Wander Mode Button
 
-
 //Disable Wander
     var _DisableWanderButtonColor = make_colour_rgb(50,150,50);
     var _DisableWanderButtonPressedColor = make_colour_rgb(0,100,0);
@@ -140,6 +166,33 @@ WanderText.isVisible = true;
     scr_destroy_instance(_DisableWanderButtonPositionArray);
     scr_destroy_instance(_DisableWanderButtonInfo);
 //End of Wander Mode Button
+
+//Wander Range Button
+    var _DisableEngageButtonColor = make_colour_rgb(50,150,50);
+    var _DisableEngageButtonPressedColor = make_colour_rgb(0,100,0);
+    var _DisableEngageButtonColorArray = scr_create_obj_array4_repeat(_DisableEngageButtonColor,"_DisableEngageButtonColorArray");
+    
+    var _DisableEngageButtonPositionArray = scr_create_obj_array4(-30,-10,30,10, "_DisableEngageButtonPositionArray");
+    
+    var _fontColor = c_white;
+    
+    var _DisableEngageButtonX = DisableWanderButton.x+60;
+    var _DisableEngageButtonY = DisableWanderButton.y;
+    
+    var _DisableEngageButtonInfo = 
+    scr_ui_get_obj_ui_button_information(5,scr_ui_button_wander_range_clicked,self,
+    "Set Wander",fnt_default_small,_fontColor,1.0,0.6);
+    
+    var _button = scr_ui_button_constructor(_DisableEngageButtonX,_DisableEngageButtonY, 
+    _DisableEngageButtonPositionArray, _DisableEngageButtonColorArray, 
+    _DisableEngageButtonPressedColor, true, _DisableEngageButtonInfo, CommandMenuContainer);
+    
+    _button.isVisible = true;
+    
+    scr_destroy_instance(_DisableEngageButtonColorArray);
+    scr_destroy_instance(_DisableEngageButtonPositionArray);
+    scr_destroy_instance(_DisableEngageButtonInfo);
+//End of Wander Range Button
 
 //Defense Text
 var _x = CommandMenuContainer.leftX+40;

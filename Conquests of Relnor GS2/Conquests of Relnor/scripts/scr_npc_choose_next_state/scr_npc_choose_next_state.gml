@@ -41,29 +41,14 @@ if(followTarget != noone){
 	}	
 }
 
-//if(waitForX != noone && waitForY != noone){
-//	var _distance = point_distance(x,y,waitForX,waitForY);
-//	if(_distance <= 5){
-//		waitForX = noone;
-//		waitForY = noone;
-//	}
-//	else{
-//		var _anything = collision_circle(waitForX, waitForY, 5, obj_Lifeform_Parent, false, true);
-//		if(_anything == noone){
-//			scr_npc_move_to(self, waitForX, waitForY, noone, size, false, false, self.runSpeed, self.sight, true);
-//		}
-//	}
-//	return true;
-//}
-
-if(wanderDistance != 0 && point_distance(originX, originY, x, y) > wanderRadius){
+if(isWandering && point_distance(originX, originY, x, y) > wanderDistance){
     scr_npc_move_to(self, originX, originY, noone, 50, false, false, self.walkSpeed, size, false);
     return true;
 }
     
 var _nextState = irandom_range(0,2);
 
-if(self.alarm[1] > 0 || self.wanderDistance == 0 || scr_lifeform_is_in_combat(self)){ //means we should be idle
+if(self.alarm[1] > 0 || !isWandering || scr_lifeform_is_in_combat(self)){ //means we should be idle
     _nextState = 0;
 }
 

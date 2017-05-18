@@ -32,7 +32,7 @@ for(var i = 0; i < scr_linked_list_size(self.selected); i++){
     
     if(_currentNPC.isAggressive){
         draw_set_alpha(0.7);
-        draw_circle_colour(_currentNPC.x,_currentNPC.y, _currentNPC.sight, 
+        draw_circle_colour(_currentNPC.x,_currentNPC.y, _currentNPC.engageDistance, 
         c_red, c_red, true);
     }
     if(_currentNPC.wanderDistance > 0){
@@ -40,15 +40,31 @@ for(var i = 0; i < scr_linked_list_size(self.selected); i++){
         draw_circle_colour(_currentNPC.originX,_currentNPC.originY, _currentNPC.wanderDistance, 
         c_yellow, c_yellow, true);
     }
-	
-	if(global.debug == 1 && _currentNPC.waitForX != noone){
-		draw_line_color(_currentNPC.x, _currentNPC.y, _currentNPC.waitForX, _currentNPC.waitForY, c_red, c_red);
+	if(_currentNPC.previewEngageDistance > 0){
+        draw_set_alpha(0.7);
+        draw_circle_colour(_currentNPC.x,_currentNPC.y, _currentNPC.previewEngageDistance, 
+        c_orange, c_orange, true);
+	}
+	if(global.debug == 1){
+		var _string = string(_currentNPC.wanderDistance);
+		draw_text(_currentNPC.x, _currentNPC.y + _currentNPC.size, _string);
 	}
 	
     draw_set_alpha(1);
 }
 
+if(wanderRangeClicked){
+    draw_set_alpha(0.7);
+	draw_circle_color(wanderRangeX, wanderRangeY, previewWanderDistance, 
+	c_white, c_white, true);
+    draw_set_alpha(1);
+}
+
 ///Draw mouse pointers
+
+if(primeWanderRangeClicked){
+	draw_sprite(spr_command_module_set_wander, 0, mouse_x, mouse_y);
+}
 
 if(followButtonClicked && totalSelected > 0){
 	draw_circle_color(mouse_x, mouse_y, 20, c_green, c_green, true);

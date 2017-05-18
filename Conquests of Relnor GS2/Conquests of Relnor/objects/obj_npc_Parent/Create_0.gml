@@ -23,10 +23,8 @@ commandedMoveTo = false;
 isAggressive = false;
 originX = x;
 originY = y;
-wanderRadius = 1000;
 wanderDistance = 50;
-oldWanderRadius = wanderRadius;
-oldWanderDistance = wanderDistance;
+isWandering = true;
 lockedTarget = noone;
 waitForX = noone;
 waitForY = noone;
@@ -34,6 +32,7 @@ waitForY = noone;
 //override
 self.reach = 25;
 self.sight = 50;
+engageDistance = sight;
 
 self.directions[RIGHT] = 0;
 self.directions[LEFT] = 0;

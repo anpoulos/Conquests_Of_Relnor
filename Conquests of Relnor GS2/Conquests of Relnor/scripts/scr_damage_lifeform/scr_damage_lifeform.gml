@@ -60,7 +60,7 @@ with(_lifeform){
 		var _npc = instance_find(_lookup, i);
 		var _distance = point_distance(x,y,_npc.x, _npc.y);
 		if(_npc != self &&
-		_distance <= _npc.sight && 
+		_distance <= _npc.engageDistance && 
 		_npc.isDefensive &&
 		!_npc.isAggressive &&
 		!scr_lifeform_is_in_combat(_npc)){

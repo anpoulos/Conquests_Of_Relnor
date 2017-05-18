@@ -12,7 +12,7 @@ if(argument0){
         if(_currentNPC.isAggressive){
             commandModule.totalSelectedWithEngage += 1;
         }
-        if(_currentNPC.wanderDistance > 0){
+        if(_currentNPC.isWandering){
             commandModule.totalSelectedWithWander += 1;   
         }
         if(_currentNPC.isDefensive){

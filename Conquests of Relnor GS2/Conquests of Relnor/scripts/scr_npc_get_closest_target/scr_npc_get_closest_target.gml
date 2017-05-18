@@ -10,7 +10,7 @@ for(var i = 0; i < scr_linked_list_size(self.possibleEnemies); i++){
         var _objectType = instance_find(_enemyType, j);
         var _distance = point_distance(self.x, self.y, _objectType.x, _objectType.y);
 			
-		var _effectiveSite = sight;
+		var _effectiveSite = engageDistance;
 			
 		if(global.isNight && !_objectType.isRevealed){
 			_effectiveSite *= nightSightStrength;

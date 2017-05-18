@@ -63,15 +63,14 @@ for(var j = 0; j < STATS_INTELLIGENCE_MAX; j++){
 }
 		
 _lifeform.sight = _lifeformSave.sight;
+_lifeform.engageDistance = _lifeformSave.engageDistance;
 _lifeform.reach = _lifeformSave.reach;
 _lifeform.isDefensive = _lifeformSave.isDefensive;
 _lifeform.isAggressive = _lifeformSave.isAggressive;
 _lifeform.originX = _lifeformSave.originX;
 _lifeform.originY = _lifeformSave.originY;
-_lifeform.wanderRadius = _lifeformSave.wanderRadius;
 _lifeform.wanderDistance = _lifeformSave.wanderDistance;
-_lifeform.oldWanderRadius = _lifeformSave.oldWanderRadius;
-_lifeform.oldWanderDistance = _lifeformSave.oldWanderDistance;
+_lifeform.isWandering = _lifeformSave.isWandering;
 _lifeform.autoLevel = _lifeformSave.autoLevel;
 _lifeform.level = _lifeformSave.level;
 _lifeform.experience = _lifeformSave.experience;
