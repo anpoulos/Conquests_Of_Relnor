@@ -33,13 +33,14 @@ if(other == target){
 }
 
 if(walkThroughNPCs){
-	if(other.allegiance == allegiance){
+	if(!scr_misc_allegiance_are_enemies(other.allegiance, allegiance)){
 		phy_active = false;
 		alarm[6] = room_speed;
 	}
 	else{
 		phy_active = true;
-		alarm[6] = 0;
+		alarm[6] = -1;
+		walkThroughNPCs = false;
 	}
 }
 else{
