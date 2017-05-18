@@ -3,7 +3,7 @@
 if(isVisible){
 	//draw shadow
 	
-	if(hasShadow && global.mapControl.settings[SETTINGS_LIFEFORM_SHADOW] == 1.0){
+	if(hasShadow && global.mapControl.settings[SETTINGS_LIFEFORM_SHADOW]){
 		//draw_set_color(c_black);
 		scr_map_shadow_draw_lifeform(global.shadowOpacity, 0.5);
 	}

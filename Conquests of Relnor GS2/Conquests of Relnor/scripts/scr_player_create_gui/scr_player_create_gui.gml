@@ -13,6 +13,7 @@ MoveItem = noone;
 MoveItemButtonCurrent = noone;
 NextCharacterButton = noone;
 PauseMenuStatsTreeObjects = scr_linked_list_create();
+PauseMenuOptionsContainer = noone;
 
 scr_player_gui_create_player_information();
 

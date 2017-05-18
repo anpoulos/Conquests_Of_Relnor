@@ -19,8 +19,13 @@ for(var i = 0; i < ROOM_MAX; i++){
 	vaultList[i] = scr_linked_list_create();
 }
 
-settings[SETTINGS_MAX] = 0.0;
 settings[SETTINGS_DIFFICULTY] = 1.0;
+settings[SETTINGS_LIFEFORM_SHADOW] = false;
+settings[SETTINGS_MAP_SHADOW] = false;
+
+settingsType[SETTINGS_DIFFICULTY] = SETTINGS_TYPE_DECIMAL;
+settingsType[SETTINGS_LIFEFORM_SHADOW] = SETTINGS_TYPE_BOOLEAN;
+settingsType[SETTINGS_MAP_SHADOW] = SETTINGS_TYPE_BOOLEAN;
 
 destinationX = noone;
 destinationY = noone;

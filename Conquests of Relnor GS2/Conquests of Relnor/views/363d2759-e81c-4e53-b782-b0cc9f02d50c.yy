@@ -6,10 +6,8 @@
     "children": [
         "09343f37-60bd-4e77-9868-c13f1c271a94",
         "1336b575-49d6-4850-b2d3-193bffef7089",
-        "8c8c8139-ff67-418d-af01-b696e21e813c",
-        "7962e83c-c223-4552-ab60-5a773199f892",
-        "d20062d0-515e-4955-89a9-178c95fe705b",
-        "322e7ec1-a658-4b5d-ab51-f899508797c6"
+        "322e7ec1-a658-4b5d-ab51-f899508797c6",
+        "6cb68903-e8f4-4d21-b32a-4da6c8fc9fb4"
     ],
     "filterType": "GMScript",
     "folderName": "Menus",
