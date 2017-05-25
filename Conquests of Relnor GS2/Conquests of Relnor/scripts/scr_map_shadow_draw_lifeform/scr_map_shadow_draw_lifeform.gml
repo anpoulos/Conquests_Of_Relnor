@@ -43,8 +43,8 @@ with(obj_map_light_cycle){
 	var _radiusStrength = _effectiveRadius/_playerDistanceFromCenter;
 	var _a = (_effectiveRadius - _playerDistanceFromCenter)*_radiusStrength;
 	
-	var _pointX = x + _a*dcos(_direction);
-	var _pointY = y - _a*dsin(_direction);
+	var _pointX = _outerself.x + _a*dcos(_direction);
+	var _pointY = _outerself.y - _a*dsin(_direction);
 	
 	if(global.debug == 2){
 		draw_line_color(_outerself.x, _outerself.y, lightX, lightY, c_red, c_red);
@@ -85,6 +85,35 @@ with(obj_map_light_cycle){
 		}
 		
 	}
+}
+
+if(_forceAdditive){
+	var _pointX = x + _vectorX;
+	var _pointY = y + _vectorY;
+	
+	var _direction = point_direction(_pointX, _pointY,x,y);
+	var _distance = point_distance(x,y,_pointX,_pointY);	
+	
+	var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
+	
+	var _b = sprite_get_yoffset(sprite_index);
+	var _c = sprite_height-_b;
+
+	var _x = x + _c*dcos(_direction);
+	var _y = y + _c*(0.5 - dsin(_direction));
+
+	if(global.debug == 2){
+		draw_text_color(x,y-75, "opacity: "+string(_opacity),
+			c_white, c_white, c_white, c_white, 1.0);
+		draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
+	}
+
+	scr_lifeform_draw(_x,_y, 
+		_direction > 180 ? -1 : 1,
+		(1.0+_opacity)*argument1,
+		_direction+270,
+		c_black,
+		_opacity*argument0);
 }
 
 //var _totalTotalLights = instance_number(obj_map_light_cycle);
@@ -149,33 +178,4 @@ with(obj_map_light_cycle){
 //			_opacity*argument0);
 //	}
 //}
-
-if(_forceAdditive){
-	var _pointX = x + _vectorX;
-	var _pointY = y + _vectorY;
-	
-	var _direction = point_direction(_pointX, _pointY,x,y);
-	var _distance = point_distance(x,y,_pointX,_pointY);	
-	
-	var _opacity = 1 - (max(sprite_width, sprite_height)/_distance) ;
-	
-	var _b = sprite_get_yoffset(sprite_index);
-	var _c = sprite_height-_b;
-
-	var _x = x + _c*dcos(_direction);
-	var _y = y + _c*(0.5 - dsin(_direction));
-
-	if(global.debug == 2){
-		draw_text_color(x,y-75, "opacity: "+string(_opacity),
-			c_white, c_white, c_white, c_white, 1.0);
-		draw_line_color(x,y, _pointX, _pointY, c_white, c_white);
-	}
-
-	scr_lifeform_draw(_x,_y, 
-		_direction > 180 ? -1 : 1,
-		(1.0+_opacity)*argument1,
-		_direction+270,
-		c_black,
-		_opacity*argument0);
-}
 			
