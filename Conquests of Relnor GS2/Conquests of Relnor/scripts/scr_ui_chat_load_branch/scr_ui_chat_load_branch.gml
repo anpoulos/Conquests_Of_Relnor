@@ -240,8 +240,8 @@ for(var i = 0; i < _listSize; i++){
 		var _lineObject = scr_ui_font_constructor(_textX, _textY, _lineText, fnt_default_medium, c_white, 
 		    1.0, fa_left, fa_middle, _chatWindow.ChatContainer);
 		_lineObject.isVisible = true;
-		
 		_lineObject.text = "";
+		_lineObject.scroll = true;
 		
 		scr_linked_list_add(_chatWindow.lines, _lineObject);
 	//End of Create Text

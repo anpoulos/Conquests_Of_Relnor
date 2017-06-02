@@ -8,6 +8,7 @@ color = c_gray;
 alpha = 1;
 halign = fa_center;
 valign = fa_middle;
+scroll = false;
 
 scrollTextCounter = 0;
 
