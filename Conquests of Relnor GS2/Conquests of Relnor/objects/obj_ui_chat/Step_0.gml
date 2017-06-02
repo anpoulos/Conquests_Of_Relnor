@@ -10,3 +10,14 @@ if(npc != noone){
 else{
 	speechBubble.isVisible = false;
 }
+
+var _totalLines = scr_linked_list_size(lines);
+for(var i = 0; i < _totalLines; i++){
+	var _line = scr_linked_list_peak(lines);
+	_line.scroll = true;
+	if(_line.text != _line.fullText){
+		break;
+	}	
+	scr_linked_list_get_next(lines);
+}
+
