@@ -12,6 +12,8 @@
 var _uiFont = instance_create(argument0,argument1,obj_ui_font);
 
 _uiFont.text = argument2;
+_uiFont.fullText = _uiFont.text;
+
 _uiFont.font = argument3;
 _uiFont.color = argument4;
 _uiFont.alpha = argument5;

@@ -1,13 +1,13 @@
 ///scr_ui_font_parent_draw
 
-if(self.isVisible){
+if(isVisible){
    //draw text
-    draw_set_color(self.color);
-    draw_set_font(self.font);
-    draw_set_halign(self.halign);
-    draw_set_valign(self.valign);
-    draw_set_alpha(self.alpha);
-    draw_text(x,y,string_hash_to_newline(self.text));
+    draw_set_color(color);
+    draw_set_font(font);
+    draw_set_halign(halign);
+    draw_set_valign(valign);
+    draw_set_alpha(alpha);
+    draw_text(x,y,string_hash_to_newline(text));
 
     //reset text
     draw_set_halign(fa_left);

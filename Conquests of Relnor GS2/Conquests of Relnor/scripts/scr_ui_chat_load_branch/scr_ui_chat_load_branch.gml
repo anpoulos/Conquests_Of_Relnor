@@ -241,6 +241,8 @@ for(var i = 0; i < _listSize; i++){
 		    1.0, fa_left, fa_middle, _chatWindow.ChatContainer);
 		_lineObject.isVisible = true;
 		
+		_lineObject.text = "";
+		
 		scr_linked_list_add(_chatWindow.lines, _lineObject);
 	//End of Create Text
     }
