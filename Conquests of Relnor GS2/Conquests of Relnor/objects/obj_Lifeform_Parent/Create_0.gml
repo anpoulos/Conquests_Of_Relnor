@@ -7,6 +7,7 @@ isVisible = true;
 hasBodyParts = false;
 combatCheckCount = -1;
 sex = noone;
+isDead = false;
 
 body[BODY_BODY, DOWN] = noone;
 body[BODY_BODY, LEFT] = noone;

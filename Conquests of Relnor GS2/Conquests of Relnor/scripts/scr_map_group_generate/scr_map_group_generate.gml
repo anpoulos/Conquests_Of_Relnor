@@ -47,7 +47,12 @@ with(argument0){
 				var _cellX = _randomX div global.tileOffset;
 				var _cellY = _randomY div global.tileOffset;
 				if(mp_grid_get_cell(_grid, _cellX, _cellY) == 0){
-					instance_create(_randomX, _randomY, _object);
+				
+					var _obj = instance_create(_randomX, _randomY, _object);
+				
+					if(object_index == obj_group_npc_parent && respawns){
+						_obj.respawns = true;
+					}
 				
 					var _minX = _randomX - _objectWidthHalf;
 					var _maxX = _randomX + _objectWidthHalf;

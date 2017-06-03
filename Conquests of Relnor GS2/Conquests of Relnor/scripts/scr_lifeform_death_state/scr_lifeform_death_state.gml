@@ -1,13 +1,5 @@
 ///scr_lifeform_death_state()
 
-var _body = instance_create(x,y,obj_lifeform_body);
-
-_body.deadSprite = self.deadSprite;
-_body.liveSprite = self.sprites[LEFT];
-if(irandom(1) == 1){
-	_body.liveSprite = self.sprites[RIGHT];
-}
-
 if(gold > 0){
 	var _gold = instance_create(x,y, obj_inventory_item_gold_parent);
 
@@ -63,4 +55,8 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	}
 }
 
-instance_destroy();
+deathTimer = room_speed*irandom(10) + room_speed*10;
+
+state = scr_npc_idle_death_state;
+
+scr_npc_create_body(self);

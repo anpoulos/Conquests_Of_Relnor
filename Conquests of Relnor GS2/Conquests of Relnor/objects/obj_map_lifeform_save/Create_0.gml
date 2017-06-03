@@ -2,6 +2,8 @@
 // You can write your code in this editor
 isVisible = false;
 
+deathTimer = -1;
+
 objectIndex = noone;
 
 lastRoomId = noone;
@@ -11,10 +13,14 @@ level = 1;
 experience = 0;
 defence = 0;
 statPoints = 0;
-
+deadSprite = noone;
+autoDeadSprite = noone;
 gold = 0;
 healthBarCurrentBar = 9;
 energyBarCurrentBar = 9;
+isDead = false;
+spawnX = noone;
+spawnY = noone;
 
 mapLocked = true;
 

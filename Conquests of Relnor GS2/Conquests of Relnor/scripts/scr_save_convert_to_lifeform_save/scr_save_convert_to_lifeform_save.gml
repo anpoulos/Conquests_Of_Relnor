@@ -10,6 +10,13 @@ _lifeformSave.gold = _lifeform.gold;
 _lifeformSave.healthBarCurrentBar = _lifeform.healthBarCurrentBar;
 _lifeformSave.energyBarCurrentBar = _lifeform.energyBarCurrentBar;
 _lifeformSave.selected = _lifeform.selected;
+_lifeformSave.deathTimer = _lifeform.deathTimer;
+_lifeformSave.autoDeadSprite = _lifeform.autoDeadSprite;
+_lifeformSave.deadSprite = _lifeform.deadSprite;
+_lifeformSave.isDead = _lifeform.isDead;
+_lifeformSave.respawns = _lifeform.respawns;
+_lifeformSave.spawnX = _lifeform.spawnX;
+_lifeformSave.spawnY = _lifeform.spawnY;
 	
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	var _item = _lifeform.equipment[i];

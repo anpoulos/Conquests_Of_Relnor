@@ -11,6 +11,11 @@ _lifeform.gold = _lifeformSave.gold;
 _lifeform.healthBarCurrentBar = _lifeformSave.healthBarCurrentBar;
 _lifeform.energyBarCurrentBar = _lifeformSave.energyBarCurrentBar;
 _lifeform.wasLoadedFromSave = true;
+_lifeform.deathTimer = _lifeformSave.deathTimer;
+_lifeform.autoDeadSprite = _lifeformSave.autoDeadSprite;
+_lifeform.deadSprite = _lifeformSave.deadSprite;
+_lifeform.isDead = _lifeformSave.isDead;
+_lifeform.respawns = _lifeformSave.respawns;
 		
 for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	if(_lifeform.equipment[i] != noone){
@@ -77,6 +82,8 @@ _lifeform.experience = _lifeformSave.experience;
 _lifeform.defence = _lifeformSave.defence;
 _lifeform.statPoints = _lifeformSave.statPoints;
 _lifeform.mapLocked = _lifeformSave.mapLocked;		
+_lifeform.spawnX = _lifeformSave.spawnX;
+_lifeform.spawnY = _lifeformSave.spawnY;
 	
 if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) || _lifeformSave.objectIndex == obj_lifeform_npc_shopkeeper){
 	for(var i = 0; i < SHOP_ITEMS_MAX; i++){
@@ -98,6 +105,10 @@ if(object_is_ancestor(_lifeformSave.objectIndex, obj_lifeform_npc_shopkeeper) ||
 }
 	
 scr_lifeform_update_defence(_lifeform);
+
+if(_lifeform.isDead){
+	scr_npc_create_body(_lifeform);
+}
 	
 global.loadingInstances = false;
 

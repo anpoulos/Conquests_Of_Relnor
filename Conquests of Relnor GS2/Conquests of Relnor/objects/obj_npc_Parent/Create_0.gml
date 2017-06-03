@@ -2,6 +2,8 @@
 
 event_inherited();
 
+deathTimer = -1;
+
 wasLoadedFromSave = false;
 
 allegianceParent = noone;
@@ -11,6 +13,9 @@ ignoreTargeting = false;
 
 healthThreshold = irandom_range(25,75)/100;
 
+respawns = false;
+deadSprite = noone;
+autoDeadSprite = noone;
 hasDialogue = false;
 nameIdentifier = "";
 busyState = scr_npc_states_busy;
@@ -21,6 +26,8 @@ squareX = 0;
 squareY = 0;
 commandedMoveTo = false;
 isAggressive = false;
+spawnX = x;
+spawnY = y;
 originX = x;
 originY = y;
 wanderDistance = 50;
