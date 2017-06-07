@@ -2,8 +2,25 @@
 // You can write your code in this editor
 event_inherited();
 
-if(!phy_active && !isDead){
 
+
+if(isDead){
+	if(deathTimer > 0){
+		deathTimer -= 1;
+	}
+	
+	if(deathTimer == 0){
+		if(respawns){
+			var _npc = instance_create(spawnX, spawnY, object_index);
+			_npc.respawns = true;
+			_npc.spawnX = spawnX;
+			_npc.spawnY = spawnY;
+			scr_lifeform_add_exp(_npc, global.player.experience);
+		}
+		instance_destroy();
+	}
+}
+else if(!phy_active){
 	var _totalEnemyTypes = scr_linked_list_size(possibleEnemies);
 	
 	for(var i = 0; i < _totalEnemyTypes; i++){
@@ -23,19 +40,4 @@ if(!phy_active && !isDead){
 		
 	}	
 	
-}
-
-if(deathTimer > 0){
-	deathTimer -= 1;
-}
-	
-if(deathTimer == 0){
-	if(respawns){
-		var _npc = instance_create(spawnX, spawnY, object_index);
-		_npc.respawns = true;
-		_npc.spawnX = spawnX;
-		_npc.spawnY = spawnY;
-		scr_lifeform_add_exp(_npc, global.player.experience);
-	}
-	instance_destroy();
 }

@@ -22,3 +22,10 @@ switch(global.mapControl.settingsType[_setting]){
 		global.mapControl.settings[_setting] += _adjustAmount;
 	break;
 }
+
+switch(_setting){
+	case SETTINGS_SCROLL_SPEED:
+		var _settingAmount = global.mapControl.settings[_setting];
+		global.scrollSpeed = (1.1 - _settingAmount)*10;
+	break;
+}
