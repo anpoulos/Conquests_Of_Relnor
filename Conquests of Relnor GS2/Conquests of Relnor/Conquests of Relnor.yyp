@@ -3671,6 +3671,14 @@
             }
         },
         {
+            "Key": "44e723f5-c348-4475-8603-f3af120793f2",
+            "Value": {
+                "id": "a29afbd7-685c-47a7-bfa2-9289f08a588f",
+                "resourcePath": "views\\44e723f5-c348-4475-8603-f3af120793f2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "45101cc3-396b-4202-a4c4-ce8062cdb90d",
             "Value": {
                 "id": "9eb7bea7-7481-4ac7-a341-b36bb8825849",
@@ -5167,6 +5175,14 @@
             }
         },
         {
+            "Key": "643be270-c82f-4319-9955-98b8b8bd08a6",
+            "Value": {
+                "id": "9eaae30f-9649-4f65-9787-dc783a735df4",
+                "resourcePath": "scripts\\scr_lifeform_actions_is_free\\scr_lifeform_actions_is_free.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "648d5693-845c-4a62-afba-0ea22d30e010",
             "Value": {
                 "id": "8e51ff47-8ae8-49c0-ba03-a66b8d891704",
@@ -6227,6 +6243,14 @@
             "Value": {
                 "id": "2cabeafb-d599-4269-b7bc-9bf192fd45ec",
                 "resourcePath": "scripts\\scr_equipment_create_iron_sword\\scr_equipment_create_iron_sword.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "79e846fb-c1f5-45c6-bfba-03a0d058b5e1",
+            "Value": {
+                "id": "820a3207-0dc8-4ea0-b398-3fda73d91c2a",
+                "resourcePath": "scripts\\scr_lifeform_actions_set_free_cool\\scr_lifeform_actions_set_free_cool.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -13380,6 +13404,8 @@
         "aa25ac2b-0122-4252-9c4c-596bf282d61f",
         "496da68f-f2f0-4dcd-8b91-4ffbbe502743",
         "9b79847e-20bb-46ff-a8ed-c9dffde4df9f",
+        "643be270-c82f-4319-9955-98b8b8bd08a6",
+        "79e846fb-c1f5-45c6-bfba-03a0d058b5e1",
         "c7179506-8023-48a6-9563-6e00d1fff3c8",
         "b652bf0f-49c2-49a1-9c67-3fd07f6ee56c",
         "830e09a2-4247-40cc-a0c9-84c5f753eb03",

@@ -9,8 +9,8 @@ script_execute(moveInputs); //populates various direction values and key presses
 scr_check_triggers(); //may change state
 
 //get axis values
-xAxis = triggers[RIGHT] - triggers[LEFT];
-yAxis = triggers[DOWN] - triggers[UP];
+xAxis = triggers[TRIGGER_RIGHT] - triggers[TRIGGER_LEFT];
+yAxis = triggers[TRIGGER_DOWN] - triggers[TRIGGER_UP];
 
 //Get direction
 direction360 = point_direction(0, 0, xAxis, yAxis);

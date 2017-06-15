@@ -1,6 +1,9 @@
 ///Object Depth
+if(actionTimer > 0){
+	actionTimer -= 1;
+}
 
-
+scr_map_shadow_draw_lifeform(1, 0.5);
 
 depth = -y;
 currentDepth = depth;

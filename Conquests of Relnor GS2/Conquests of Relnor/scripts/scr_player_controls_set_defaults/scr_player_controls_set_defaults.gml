@@ -1,9 +1,11 @@
+skipGetActionCheck = false;
 
-triggersInputType[TRIGGERS_MAX] = TRIGGER_INPUT_TYPE_KEYBOARD;
-triggersExtraBindingInputType[TRIGGERS_MAX] = TRIGGER_INPUT_TYPE_KEYBOARD;
-
-triggersExtraBinding[TRIGGERS_MAX] = noone;
-triggersExtraBindingType[TRIGGERS_MAX] = TRIGGER_TYPE_CHECK;
+for(var i = 0; i < TRIGGERS_MAX; i++){
+	triggersInputType[i] = TRIGGER_INPUT_TYPE_KEYBOARD;
+	triggersExtraBindingInputType[i] = TRIGGER_INPUT_TYPE_KEYBOARD;
+	triggersExtraBinding[i] = 0;
+	triggersExtraBindingType[i] = TRIGGER_TYPE_PRESSED;
+}
 
 triggersType[TRIGGER_ATTACK] = TRIGGER_TYPE_CHECK;
 triggersBinding[TRIGGER_ATTACK] = vk_shift;
@@ -24,9 +26,8 @@ triggersBinding[TRIGGER_DESELECT_ALL] = ord("Q");
 triggersType[TRIGGER_ENGAGE] = TRIGGER_TYPE_PRESSED;
 triggersBinding[TRIGGER_ENGAGE] = ord("C");
 
-triggersType[TRIGGER_ENGAGE_DISABLE] = TRIGGER_TYPE_PRESSED;
-triggersBinding[TRIGGER_ENGAGE_DISABLE] = vk_control;
-triggersExtraBinding[TRIGGER_ENGAGE_DISABLE] = ord("C");
+triggersType[TRIGGER_DISABLE] = TRIGGER_TYPE_PRESSED;
+triggersBinding[TRIGGER_DISABLE] = vk_control;
 
 triggersType[TRIGGER_FORMATION] = TRIGGER_TYPE_PRESSED;
 triggersBinding[TRIGGER_FORMATION] = ord("F");

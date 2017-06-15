@@ -3,7 +3,7 @@
 var _totalClickables = instance_number(obj_ui_button);
 for(var i = 0; i < _totalClickables; i ++){
 	var _clickable = instance_find(obj_ui_button, i);
-	if(scr_ui_draw_is_visible(_clickable) && _clickable.menuContainer != PauseMenuOptionsContainer){
+	if(scr_ui_draw_is_visible(_clickable)){// && _clickable.menuContainer != PauseMenuOptionsContainer){
 		switch(_clickable.text){
 			case "X":
 			case "x":

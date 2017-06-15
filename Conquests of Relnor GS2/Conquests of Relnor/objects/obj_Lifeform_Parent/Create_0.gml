@@ -1,4 +1,5 @@
 ///scr_lifeform_constructor
+actionTimer = 0;
 
 shadowSurface = surface_create(room_width, room_height);
 
