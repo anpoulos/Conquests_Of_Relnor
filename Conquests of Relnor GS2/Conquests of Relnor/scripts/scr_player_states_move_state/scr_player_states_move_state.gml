@@ -4,8 +4,6 @@ if(global.isWorldMap){
 	return false;
 }
 
-script_execute(moveInputs); //populates various direction values and key presses
-
 scr_check_triggers(); //may change state
 
 //get axis values

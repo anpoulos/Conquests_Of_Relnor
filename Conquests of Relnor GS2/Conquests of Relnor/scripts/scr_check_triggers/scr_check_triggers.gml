@@ -2,13 +2,6 @@
 
 var _isFree = scr_lifeform_actions_is_free();
 
-if(triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU]){
-	if(!scr_player_actions_close_menu()){
-		scr_player_actions_open_party_menu();
-		return;
-	}
-}
-
 if(_isFree){
 	if(triggers[TRIGGER_USE]){
 		if(scr_player_actions_use()){

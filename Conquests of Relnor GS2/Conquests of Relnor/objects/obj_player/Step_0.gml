@@ -1,4 +1,5 @@
 ///Inherited
+scr_player_get_action_inputs();
 
 event_inherited();
 
@@ -11,3 +12,9 @@ if(combatCheckCount == 0){
 	audio_sound_gain(global.mapControl.currentMusicIndex, 0, 1000);
 }
 
+if(triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU]){
+	if(!scr_player_actions_close_menu()){
+		scr_player_actions_open_party_menu();
+	}
+	triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU] = false;
+}
