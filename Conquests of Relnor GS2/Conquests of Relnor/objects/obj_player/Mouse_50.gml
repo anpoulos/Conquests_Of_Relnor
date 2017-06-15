@@ -1,8 +1,5 @@
 ///scr_player_mouse_global_left_button_down
 
-
-
-
 if(commandModule.primeWanderRangeClicked){
 	commandModule.primeWanderRangeClicked = false;
 	commandModule.wanderRangeX = mouse_x;
@@ -12,8 +9,6 @@ if(commandModule.primeWanderRangeClicked){
 	return false;
 }
 
-
-	
 	var _mouseX = device_mouse_x_to_gui(0);
 	var _mouseY = device_mouse_y_to_gui(0);
 	
@@ -47,7 +42,7 @@ if(commandModule.primeWanderRangeClicked){
     }
 
 	if(!global.isWorldMap){
-		if(keyboard_check(ord("R"))){
+		if(triggers[TRIGGER_SELECT_BOX]){
 	        if(self.selectBox == noone && !instance_exists(self.selectBox)){
 	            self.selectBox = instance_create(mouse_x, mouse_y, obj_player_select_box);
 	            self.selectBox.selectScript = scr_player_command_select;
@@ -71,6 +66,3 @@ if(commandModule.primeWanderRangeClicked){
 	        }
 	    }
 	}
-
-    
-

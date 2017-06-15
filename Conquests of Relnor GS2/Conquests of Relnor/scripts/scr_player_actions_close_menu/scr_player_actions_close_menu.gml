@@ -1,4 +1,4 @@
-///Bring up esc menu
+///returns true if a menu was found and closed
 
 var _totalClickables = instance_number(obj_ui_button);
 for(var i = 0; i < _totalClickables; i ++){
@@ -20,22 +20,4 @@ for(var i = 0; i < _totalClickables; i ++){
 	}
 }
 
-if(global.gamePaused){
-
-	PauseMenuContainer.isVisible = false;
-	
-	scr_ui_menus_restore_all();
-	
-	scr_player_disable_busy();
-	
-	global.gamePaused = false;
-}
-else{
-	global.gamePaused = true;
-	
-	scr_ui_menus_hide_all();
-
-	scr_player_enable_busy();
-
-	scr_player_gui_party_menu();
-}
+return false;

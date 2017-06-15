@@ -2,6 +2,8 @@
 
 event_inherited();
 
+scr_player_controls_set_defaults();
+
 mapControl = noone;
 
 balance = 50.0
@@ -19,8 +21,6 @@ stillSelecting = false;
 commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
 self.isPlayer = true;
-
-
 
 //overrides
 self.reach = 30;
@@ -75,7 +75,6 @@ view.target = self;
 ///Create GUI
 
 scr_player_create_gui();
-
 
 scr_lifeform_parent_inventory_add(self, scr_equipment_tome_create_beginner_fire(self));
 scr_lifeform_parent_inventory_add(self, scr_equipment_create_iron_sword(self));

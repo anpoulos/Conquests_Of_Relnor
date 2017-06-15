@@ -1,4 +1,4 @@
-///T Pressed
+///returns true if successfully used an object
 
 if(isBusy){
 	return false;
