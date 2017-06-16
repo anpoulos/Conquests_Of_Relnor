@@ -1,11 +1,6 @@
 ///scr_ui_menus_controls_open
 
 PauseMenuContainer.isVisible = false;
-    
-if(ControlMenuContainer != noone){
-    ControlMenuContainer.isVisible = true;
-    return true;
-}
 
 //Menu Container
     var _menuColor = make_colour_rgb(100,100,150);
@@ -36,7 +31,7 @@ if(ControlMenuContainer != noone){
     var _buttonX = ControlMenuContainer.leftX + _buttonPosArray.item[2] + 10;
     var _buttonY = ControlMenuContainer.topY + _buttonPosArray.item[3] + 10;
     
-    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_buttons_controls_menu_close, self, 
+    var _buttonInfo = scr_ui_get_obj_ui_button_information(5, scr_ui_menus_controls_close, self, 
     "Close Menu", fnt_default_medium, _fontColor, 1.0, 0.8);
     
     var _button = scr_ui_button_constructor(_buttonX, _buttonY, _buttonPosArray, 
@@ -49,41 +44,8 @@ if(ControlMenuContainer != noone){
     scr_destroy_instance(_buttonInfo);
 //End of Close Menu Button
 
-var _textOffset = 20;
+ControlMenuButtons = scr_linked_list_create();
 
-var _texts = scr_linked_list_create();
-scr_linked_list_add(_texts, "t - activate object/talk to NPC");
-scr_linked_list_add(_texts, "shift - attack");
-scr_linked_list_add(_texts, "ctrl+shift - cycle attacks");
-scr_linked_list_add(_texts, "space - dash");
-scr_linked_list_add(_texts, "e - use magic");
-scr_linked_list_add(_texts, "ctrl+e - cycle magic");
-
-scr_linked_list_add(_texts, "left click - select unit or command selected units");
-scr_linked_list_add(_texts, "right click - deselect unit");
-scr_linked_list_add(_texts, "r (hold) + left click (hold) - selection box");
-scr_linked_list_add(_texts, "r (hold) + right click (hold) - deselection box");
-scr_linked_list_add(_texts, "q - deselect all");
-scr_linked_list_add(_texts, "c - enable engage mode");
-scr_linked_list_add(_texts, "ctrl + c - disable engage mode");
-scr_linked_list_add(_texts, "v - enable defensive mode");
-scr_linked_list_add(_texts, "ctrl+v - enable defensive mode");
-scr_linked_list_add(_texts, "f - square formation");
-scr_linked_list_add(_texts, "scroll in/out - zoom in/out");
-
-var _yOffset = 25;
-var _currentX = _button.x + 100;
-var _currentY = ControlMenuContainer.topY + _yOffset;
-
-while(!scr_linked_list_is_empty(_texts)){
-	var _text = scr_linked_list_remove_next(_texts);
-    
-    var _textDraw = scr_ui_font_constructor(_currentX, _currentY, _text, fnt_default_medium, c_white, 
-            1.0, fa_left, fa_middle, ControlMenuContainer);
-    _textDraw.isVisible = true;
-	_currentY += _yOffset;
-}
-
-scr_linked_list_destroy(_texts);
+scr_ui_menus_controls_refresh_bindings();
 
 ControlMenuContainer.isVisible = true;

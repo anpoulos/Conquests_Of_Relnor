@@ -5,6 +5,8 @@ for(var i = 0; i < TRIGGERS_MAX; i++){
 	triggersExtraBindingInputType[i] = TRIGGER_INPUT_TYPE_KEYBOARD;
 	triggersExtraBinding[i] = 0;
 	triggersExtraBindingType[i] = TRIGGER_TYPE_PRESSED;
+	triggersGamePadSlot[i] = 0;
+	triggersExtraGamePadSlot[i] = 0;
 }
 
 triggersType[TRIGGER_ATTACK] = TRIGGER_TYPE_CHECK;
