@@ -18,3 +18,7 @@ if(triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU]){
 	}
 	triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU] = false;
 }
+
+if(triggers[TRIGGER_COMMAND_MENU] && !global.gamePaused){
+	scr_player_actions_open_command_menu();
+}

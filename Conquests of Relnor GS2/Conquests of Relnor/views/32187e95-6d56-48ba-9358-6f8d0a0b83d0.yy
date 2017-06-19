@@ -7,7 +7,8 @@
         "34cec395-b99a-4264-aaaa-2ea488a72c83",
         "293bd257-4ffa-4eb0-b878-060676d4d072",
         "6a29e5a9-a1d3-41db-9a71-46ef6a4a8868",
-        "09972dba-7657-4ac8-a332-f2233f2f2076"
+        "09972dba-7657-4ac8-a332-f2233f2f2076",
+        "ef645285-47af-4e9f-8a6e-33ff0b0c3816"
     ],
     "filterType": "GMScript",
     "folderName": "Command",

@@ -26,7 +26,8 @@ triggersType[TRIGGER_DESELECT_ALL] = TRIGGER_TYPE_PRESSED;
 triggersBinding[TRIGGER_DESELECT_ALL] = ord("Q");
 
 triggersType[TRIGGER_ENGAGE] = TRIGGER_TYPE_PRESSED;
-triggersBinding[TRIGGER_ENGAGE] = ord("C");
+triggersBinding[TRIGGER_ENGAGE] = vk_control;
+triggersExtraBinding[TRIGGER_ENGAGE] = ord("C");
 
 triggersType[TRIGGER_DISABLE] = TRIGGER_TYPE_PRESSED;
 triggersBinding[TRIGGER_DISABLE] = vk_control;
@@ -58,4 +59,7 @@ triggersBinding[TRIGGER_RIGHT] = ord("D");
 
 triggersType[TRIGGER_LEFT] = TRIGGER_TYPE_CHECK;
 triggersBinding[TRIGGER_LEFT] = ord("A");
+
+triggersType[TRIGGER_COMMAND_MENU] = TRIGGER_TYPE_PRESSED;
+triggersBinding[TRIGGER_COMMAND_MENU] = ord("C");
 
