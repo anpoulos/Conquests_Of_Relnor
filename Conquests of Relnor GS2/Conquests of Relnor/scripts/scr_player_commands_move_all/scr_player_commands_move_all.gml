@@ -22,7 +22,10 @@
         var _myOffsetX = _currentNPC.x - _averageX;
         var _myOffsetY = _currentNPC.y - _averageY;
         
-        var _destinationX = mouse_x + _myOffsetX;//scr_room_get_grid_x(mouse_x)+ _myOffsetX;
-        var _destinationY = mouse_y + _myOffsetY;//scr_room_get_grid_y(mouse_y) + _myOffsetY;
+		var _mouseX = virtualMouse != noone ? virtualMouse.mouseX : mouse_x;
+		var _mouseY = virtualMouse != noone ? virtualMouse.mouseY : mouse_y;
+		
+        var _destinationX = _mouseX + _myOffsetX;
+        var _destinationY = _mouseY + _myOffsetY;
         scr_npc_commands_move(_currentNPC, _unitArrivalCommand, _destinationX, _destinationY, false);
     }

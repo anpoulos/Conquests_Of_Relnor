@@ -4,7 +4,10 @@ if(self.isBusy || self.commandModule.squarePreview != noone || self.commandModul
     return false;
 }
 
-var _squarePreview = instance_create(mouse_x, mouse_y, obj_player_command_square_preview);
+var _mouseX = virtualMouse == noone ? mouse_x : virtualMouse.mouseX;
+var _mouseY = virtualMouse == noone ? mouse_y : virtualMouse.mouseY;
+
+var _squarePreview = instance_create(_mouseX, _mouseY, obj_player_command_square_preview);
 self.commandModule.squarePreview = _squarePreview;
 
 scr_square_preview_generate_dimension_avgw_avgh_avgr(_squarePreview);

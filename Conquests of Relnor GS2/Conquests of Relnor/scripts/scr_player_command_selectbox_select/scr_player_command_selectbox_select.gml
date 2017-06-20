@@ -1,26 +1,28 @@
 ///scr_obj_selectbox_select
 
-//collision_rectangle(originalX, originalY, mouse_x, mouse_y, obj_Lifeform_Parent, false, true);
 self.creator.stillSelecting = true;
 var _leftX = 0;
 var _rightX = 0;
 var _topY = 0;
 var _bottomY = 0;
 
-if(originalX >= mouse_x){
+var _mouseX = global.player.virtualMouse == noone ? mouse_x : global.player.virtualMouse.mouseX;
+var _mouseY = global.player.virtualMouse == noone ? mouse_y : global.player.virtualMouse.mouseY;
+
+if(originalX >= _mouseX){
 _rightX = originalX;
-_leftX = mouse_x;
+_leftX = _mouseX;
 }
-if(originalY <= mouse_y){
-_bottomY = mouse_y;
+if(originalY <= _mouseY){
+_bottomY = _mouseY;
 _topY = originalY;
 }
-if(mouse_x > originalX){
-_rightX = mouse_x;
+if(_mouseX > originalX){
+_rightX = _mouseX;
 _leftX = originalX;
 }
-if(mouse_y < originalY){
-_topY = mouse_y;
+if(_mouseY < originalY){
+_topY = _mouseY;
 _bottomY = originalY;
 }
 
@@ -29,7 +31,7 @@ _bottomY = originalY;
         
         var _isInSelect = point_in_rectangle(_objectType.x, _objectType.y, _leftX, _topY, _rightX, _bottomY);        
         if(!_isInSelect){
-        _isInSelect = point_in_rectangle(_objectType.x, _objectType.y, mouse_x, mouse_y, originalX, originalY);
+			_isInSelect = point_in_rectangle(_objectType.x, _objectType.y, _mouseX, _mouseY, originalX, originalY);
         }
         
         if(_isInSelect && _objectType != self.creator){

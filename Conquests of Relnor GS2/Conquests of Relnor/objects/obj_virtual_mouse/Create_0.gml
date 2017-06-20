@@ -4,6 +4,8 @@ depth = -MAX;
 
 mode = VIRTUAL_MOUSE_MODE_BUTTON;
 
+gui = false;
+
 mouseMoveAmount = 2;
 
 mouseX = 0;

@@ -22,11 +22,15 @@ if(mousePressed){
 }
 
 if(mouseDown){
-
+	with(global.player){
+		scr_player_mouse_global_left_down(virtualMouse.mouseX, virtualMouse.mouseY);
+	}
 }
 
 if(mouseReleased){
-
+	with(global.player){
+		scr_player_mouse_global_left_released(virtualMouse.mouseX, virtualMouse.mouseY);
+	}	
 	mouseReleased = false;
 }
 
@@ -48,8 +52,9 @@ else{
 	}
 	if(global.player.triggers[TRIGGER_DOWN]){
 		mouseY += currentSpeed;
-		if(mouseY > display_get_gui_height()){
-			mouseY = display_get_gui_height();
+		var _maxY = gui ? display_get_gui_height() : room_width;
+		if(mouseY > _maxY){
+			mouseY = _maxY;
 		}
 		else{
 			_increaseMoveSpeed = true;
@@ -68,8 +73,9 @@ else{
 	
 	if(global.player.triggers[TRIGGER_RIGHT]){
 		mouseX += currentSpeed;
-		if(mouseX > display_get_gui_width()){
-			mouseX = display_get_gui_width();
+		var _maxX = gui ? display_get_gui_width() : room_width;
+		if(mouseX > _maxX){
+			mouseX = _maxX;
 		}
 		else{
 			_increaseMoveSpeed = true;

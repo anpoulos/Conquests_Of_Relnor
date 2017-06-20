@@ -19,13 +19,11 @@ if(triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU]){
 	triggers[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU] = false;
 }
 
-if(triggers[TRIGGER_COMMAND_MENU] && 
-!global.gamePaused && 
-!global.isWorldMap){
-	if(commandMenu == noone){
-		scr_player_actions_open_command_menu();
-	}
-	else{
+if(triggers[TRIGGER_COMMAND_MENU]){
+	if(commandMenu != noone){
 		instance_destroy(commandMenu);
+	}
+	else if (!global.gamePaused && !global.isWorldMap){
+		scr_player_actions_open_command_menu();
 	}
 }

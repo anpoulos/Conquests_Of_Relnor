@@ -12719,6 +12719,14 @@
             }
         },
         {
+            "Key": "ee951397-d1f4-43b9-9418-b968c165991a",
+            "Value": {
+                "id": "f948e7b6-663b-4b86-bf84-0ff67b66efa3",
+                "resourcePath": "scripts\\scr_player_mouse_global_left_down\\scr_player_mouse_global_left_down.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ee96a03d-0139-4c48-8e85-a215c871a279",
             "Value": {
                 "id": "080a99b5-14bc-49fc-8a07-4d6d24da9307",
@@ -13666,6 +13674,7 @@
         "00bae243-9614-4f82-8ac7-2faed9dfee39",
         "81468356-310a-4b68-a38b-4a313d7ff5c1",
         "569e5f5e-1f54-4496-abaa-6d456b5c012a",
+        "ee951397-d1f4-43b9-9418-b968c165991a",
         "14ce3323-1699-4c91-96e1-df706447dcaa",
         "cffb2e54-f627-4a28-93ad-18699a4ef0b6",
         "6857b896-d70c-440c-aa3b-1c45b7163686",

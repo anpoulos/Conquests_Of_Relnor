@@ -7,4 +7,5 @@ if(virtualMouse != noone){
 else{
 	virtualMouse = instance_create(0,0, obj_virtual_mouse);
 	virtualMouse.mode = VIRTUAL_MOUSE_MODE_MOUSE;
+	virtualMouse.gui = true;
 }

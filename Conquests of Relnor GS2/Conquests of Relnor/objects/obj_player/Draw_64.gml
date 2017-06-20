@@ -15,14 +15,14 @@ if (global.debug > 0) {
 
 
 if(MoveItem != noone){
-	if(virtualMouse == noone){
-		draw_sprite(MoveItem.icon, 0, 
-			device_mouse_x_to_gui(0), 
-			device_mouse_y_to_gui(0));
-	}
-	else{
+	if(virtualMouse != noone && virtualMouse.gui){
 		draw_sprite(MoveItem.icon, 0, 
 			virtualMouse.mouseX, 
 			virtualMouse.mouseY);
+	}
+	else{
+		draw_sprite(MoveItem.icon, 0, 
+			device_mouse_x_to_gui(0), 
+			device_mouse_y_to_gui(0));
 	}
 }

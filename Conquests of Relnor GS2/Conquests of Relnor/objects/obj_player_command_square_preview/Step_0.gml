@@ -1,10 +1,14 @@
 ///Check for collisions, update offsets
 
-    leftSide = mouse_x-widthOffset;
-    topSide = mouse_y-heightOffset;
-    rightSide = mouse_x+widthOffset;
-    bottomSide = mouse_y+heightOffset;
+	
+var _mouseX = global.player.virtualMouse == noone ? mouse_x : global.player.virtualMouse.mouseX;
+var _mouseY = global.player.virtualMouse == noone ? mouse_y : global.player.virtualMouse.mouseY;
+
+leftSide = _mouseX - widthOffset;
+topSide = _mouseY - heightOffset;
+rightSide = _mouseX + widthOffset;
+bottomSide = _mouseY + heightOffset;
     
-    isClear = !collision_rectangle(leftSide, topSide, rightSide, bottomSide, obj_unwalkable, false, true);
+isClear = !collision_rectangle(leftSide, topSide, rightSide, bottomSide, obj_unwalkable, false, true);
 
 
