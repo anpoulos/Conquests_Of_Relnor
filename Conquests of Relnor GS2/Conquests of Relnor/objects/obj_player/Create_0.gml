@@ -4,6 +4,7 @@ event_inherited();
 
 scr_player_controls_set_defaults();
 
+virtualMouse = noone;
 commandFromCommandMenu = false;
 commandMenu = noone;
 
