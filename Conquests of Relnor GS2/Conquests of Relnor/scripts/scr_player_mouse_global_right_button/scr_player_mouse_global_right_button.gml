@@ -5,8 +5,7 @@ if(!global.isWorldMap){
 	    return false;
 	}
 
-	if(triggers[TRIGGER_SELECT_BOX] ||
-	scr_player_command_menu_is_current(COMMAND_DESELECT_BOX)) {
+	if(scr_player_command_menu_is_current(COMMAND_DESELECT_BOX)) {
 	    if(selectBox == noone){
 	        selectBox = instance_create(mouse_x, mouse_y, obj_player_select_box);
 	        selectBox.selectScript = scr_player_command_find_and_deselect;

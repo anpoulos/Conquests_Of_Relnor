@@ -27,21 +27,4 @@ if(_isFree){
 	}
 }
 
-if(triggers[TRIGGER_ENGAGE] && !triggers[TRIGGER_DISABLE]){
-	scr_player_commands_selected_enable_engage();
-}
-else if(triggers[TRIGGER_ENGAGE] && triggers[TRIGGER_DISABLE]){
-	scr_player_commands_selected_disable_engage();
-}
-
-if(triggers[TRIGGER_FORMATION]){
-	scr_player_commands_square_preview_create();
-}
-
-if(triggers[TRIGGER_DESELECT_ALL]){
-	if(!global.isWorldMap){
-		scr_player_commands_deselect_all();
-	}
-}
-
 

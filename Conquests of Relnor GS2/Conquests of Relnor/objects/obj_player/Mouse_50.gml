@@ -42,8 +42,7 @@ if(commandModule.primeWanderRangeClicked){
     }
 
 	if(!global.isWorldMap){
-		if(triggers[TRIGGER_SELECT_BOX] || 
-		scr_player_command_menu_is_current(COMMAND_SELECT_BOX) ||
+		if(scr_player_command_menu_is_current(COMMAND_SELECT_BOX) ||
 		scr_player_command_menu_is_current(COMMAND_DESELECT_BOX)){
 	        if(selectBox == noone){
 	            selectBox = instance_create(mouse_x, mouse_y, obj_player_select_box);

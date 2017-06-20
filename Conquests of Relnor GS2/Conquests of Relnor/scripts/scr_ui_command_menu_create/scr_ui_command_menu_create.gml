@@ -65,6 +65,9 @@ var _totalColumnsEven = round(COMMAND_MAX/4);
 
 for(var i = 0; i < _totalColumnsEven - 1; i++){
 	for(var j = 0; j < 4; j++){
+		if(global.player.commandModule.totalSelected == 0 && _currentCommand > COMMAND_UI_DISPLAY_LIMIT){
+			continue;
+		}
 		//Start of Use Button
 			var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,50), "_buttonColorArray");
 			var _buttonPressedColor = make_colour_rgb(25,25,25);
@@ -102,6 +105,9 @@ for(var i = 0; i < _totalColumnsEven - 1; i++){
 _currentY = _originalY;
 
 for(var i = _currentCommand; i < COMMAND_MAX; i++){
+	if(global.player.commandModule.totalSelected == 0 && _currentCommand > COMMAND_UI_DISPLAY_LIMIT){
+		continue;
+	}
 	//Start of Use Button
 		var _buttonColorArray = scr_create_obj_array4_repeat(make_colour_rgb(50,50,50), "_buttonColorArray");
 		var _buttonPressedColor = make_colour_rgb(25,25,25);

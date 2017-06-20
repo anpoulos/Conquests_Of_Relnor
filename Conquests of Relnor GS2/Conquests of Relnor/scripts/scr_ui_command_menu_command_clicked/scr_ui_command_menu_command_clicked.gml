@@ -67,6 +67,10 @@ switch(tempVal){
 		_destroyMenu = false;
 	break;
 	
+	case COMMAND_TALK:
+		//TODO talk to party
+	break;
+	
 	default:
 		_destroyMenu = false;
 	break;

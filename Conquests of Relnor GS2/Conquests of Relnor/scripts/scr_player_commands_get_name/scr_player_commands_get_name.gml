@@ -18,4 +18,5 @@ switch(argument0){
 	case COMMAND_DEFENSIVE_DISABLE: return "Disable Defensive";
 	case COMMAND_FOLLOW: return "Follow";
 	case COMMAND_MOVE: return "Move";
+	case COMMAND_TALK: return "Talk To";
 }
