@@ -11,6 +11,8 @@ if(commandModule.engageRangeClicked){
 		}
 	}
 	
+	scr_player_command_menu_cleanup_for_cmd(COMMAND_ENGAGE_SET_RADIUS);
+	
 	return false;
 }
 
@@ -28,6 +30,8 @@ if(commandModule.wanderRangeClicked){
 	commandModule.wanderRangeX = 0;
 	commandModule.wanderRangeY = 0;
 	commandModule.previewWanderDistance = 0;
+	
+	scr_player_command_menu_cleanup_for_cmd(COMMAND_WANDER_SET_RADIUS);
 	
 	return false;
 }
