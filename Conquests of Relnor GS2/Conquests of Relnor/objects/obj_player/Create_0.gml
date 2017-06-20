@@ -4,6 +4,9 @@ event_inherited();
 
 scr_player_controls_set_defaults();
 
+commandFromCommandMenu = false;
+commandMenu = noone;
+
 mapControl = noone;
 
 balance = 50.0

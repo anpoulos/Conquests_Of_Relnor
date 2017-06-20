@@ -42,15 +42,19 @@ if(commandModule.primeWanderRangeClicked){
     }
 
 	if(!global.isWorldMap){
-		if(triggers[TRIGGER_SELECT_BOX]){
-	        if(self.selectBox == noone && !instance_exists(self.selectBox)){
-	            self.selectBox = instance_create(mouse_x, mouse_y, obj_player_select_box);
-	            self.selectBox.selectScript = scr_player_command_select;
-	            self.selectBox.creator = self;
-	            self.selectBox.originalX = mouse_x;
-	            self.selectBox.originalY = mouse_y;
+		if(triggers[TRIGGER_SELECT_BOX] || 
+		scr_player_command_menu_is_current(COMMAND_SELECT_BOX) ||
+		scr_player_command_menu_is_current(COMMAND_DESELECT_BOX)){
+	        if(selectBox == noone){
+	            selectBox = instance_create(mouse_x, mouse_y, obj_player_select_box);
+	            selectBox.selectScript = scr_player_command_menu_is_current(COMMAND_DESELECT_BOX) ? 
+					scr_player_command_find_and_deselect : 
+					scr_player_command_select;
+	            selectBox.creator = self;
+	            selectBox.originalX = mouse_x;
+	            selectBox.originalY = mouse_y;
 	        }
-	        scr_obj_move_to(self.selectBox, mouse_x, mouse_y);
+	        scr_obj_move_to(selectBox, mouse_x, mouse_y);
 	    }
 		else if(commandModule.followButtonClicked){
 	
@@ -60,8 +64,15 @@ if(commandModule.primeWanderRangeClicked){
 	        if(_selected != noone && 
 	        instance_exists(_selected) && 
 	        (_selected.allegiance == allegiance || _selected.allegiance == ALLEGIANCE_NEUTRAL)){
-	            self.stillSelecting = true;
-	            scr_player_command_select(self, _selected);
+	            stillSelecting = true;
+				if(scr_player_command_menu_is_current(COMMAND_DESELECT_SINGLE)){
+					scr_player_command_find_and_deselect(self, _selected);
+				scr_player_command_menu_cleanup_for_cmd(COMMAND_DESELECT_SINGLE);
+				}
+				else{
+					scr_player_command_select(self, _selected);
+				scr_player_command_menu_cleanup_for_cmd(COMMAND_SELECT_SINGLE);
+				}
 	            alarm[3] = 2;
 	        }
 	    }

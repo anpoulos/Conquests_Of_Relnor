@@ -575,6 +575,14 @@
             }
         },
         {
+            "Key": "0a7424b5-23fd-4e6e-a17e-a122ce748990",
+            "Value": {
+                "id": "b3ca0a8d-8697-452d-bd55-1edf11006e65",
+                "resourcePath": "scripts\\scr_player_command_menu_is_current\\scr_player_command_menu_is_current.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0ae53658-90de-4898-af92-ecd7c307f2e9",
             "Value": {
                 "id": "242eca9f-5c54-4377-aad6-cc184684abb2",
@@ -2239,14 +2247,6 @@
             }
         },
         {
-            "Key": "29effba6-f191-49cc-b0e2-060f5d058188",
-            "Value": {
-                "id": "cec50dc4-a00d-46a0-99ef-b82d573a76f2",
-                "resourcePath": "rooms\\rm_template_1\\rm_template_1.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "2a191618-34c4-495a-bfbb-f8dec5ebeb0f",
             "Value": {
                 "id": "68ddead7-55fc-4956-b94b-e4268dfeec3b",
@@ -2620,6 +2620,14 @@
                 "id": "2eee02e5-784d-413e-b38a-8e4841df2b77",
                 "resourcePath": "scripts\\scr_consumable_medium_health_potion\\scr_consumable_medium_health_potion.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "30cd6d41-580b-4310-97d3-c44842552558",
+            "Value": {
+                "id": "b39e4f92-7c2a-4cc7-bb71-f952952a2ad6",
+                "resourcePath": "views\\30cd6d41-580b-4310-97d3-c44842552558.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -8471,6 +8479,14 @@
             }
         },
         {
+            "Key": "a53ecd0c-4d5c-411b-ba61-66d7938bfa02",
+            "Value": {
+                "id": "f965e4a2-cbc3-4bf6-beed-c833ed3b5dc2",
+                "resourcePath": "scripts\\scr_player_command_menu_cleanup_for_cmd\\scr_player_command_menu_cleanup_for_cmd.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a554e561-2669-44ad-8ef8-8c8bf57e6c89",
             "Value": {
                 "id": "61ed3e92-c092-458c-9300-a3d469dbd6a0",
@@ -12223,6 +12239,14 @@
             }
         },
         {
+            "Key": "e537a93a-d3d4-496d-9ed7-8e3960a54979",
+            "Value": {
+                "id": "f3d441bf-2917-4d35-bfd2-a4c285ec94b9",
+                "resourcePath": "rooms\\rm_relnor_24_25_blavish\\rm_relnor_24_25_blavish.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "e5556fc6-5ad8-46f3-887e-da7d0efbe2ed",
             "Value": {
                 "id": "903601a8-d285-4749-b7b0-efd59c28e026",
@@ -13590,6 +13614,8 @@
         "09972dba-7657-4ac8-a332-f2233f2f2076",
         "0ff04ac4-163e-4b58-83d3-405c2103f2aa",
         "265ee407-3f1c-456a-8142-ba2dfd0efc5f",
+        "0a7424b5-23fd-4e6e-a17e-a122ce748990",
+        "a53ecd0c-4d5c-411b-ba61-66d7938bfa02",
         "7077a74f-282c-4fbe-8583-84a76b835005",
         "b9aec5b4-8e76-42d2-9b24-2bd3e32685cc",
         "51306433-ccb5-442f-bb5e-938c8d4e2907",

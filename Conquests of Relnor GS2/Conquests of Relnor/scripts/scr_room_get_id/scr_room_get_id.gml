@@ -21,7 +21,9 @@ switch(argument0){
 	
 	case rm_relnor_25_25_blavish: return 9;
 	
+	case rm_relnor_24_25_blavish: return 10;
+	
 	default: return -1;
 }
 
-#macro ROOM_MAX 10
+#macro ROOM_MAX 11

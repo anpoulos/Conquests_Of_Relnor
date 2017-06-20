@@ -62,37 +62,55 @@ if(wanderRangeClicked){
 
 ///Draw mouse pointers
 
-if(primeWanderRangeClicked){
+if(player.commandMenu != noone && player.commandMenu.currentCommand != noone){
+	switch(player.commandMenu.currentCommand){
+		case COMMAND_FOLLOW:
+			draw_circle_color(mouse_x, mouse_y, 20, c_green, c_green, true);
+			var _potentialFollow = instance_position(mouse_x, mouse_y, obj_Lifeform_Parent);
+			if(instance_exists(_potentialFollow)){
+				followTarget = _potentialFollow;
+				        draw_sprite(spr_player_command_module_mouse_follow, 0, mouse_x, mouse_y);
+			}
+			else{
+				followTarget = noone;
+			}
+		break;
+		
+		case COMMAND_ATTACK:
+			var _potentialEnemy = instance_position(mouse_x, mouse_y, obj_Lifeform_Parent);
+	
+			if(totalSelected > 0 && 
+			instance_exists(_potentialEnemy) && 
+			scr_misc_allegiance_are_enemies(player.allegiance, _potentialEnemy.allegiance)){
+			    draw_sprite(spr_player_command_module_mouse_enemy, 0, _potentialEnemy.x, _potentialEnemy.y);
+				attackTarget = _potentialEnemy;
+				mouseCommand = scr_player_commands_attack_target;
+			}
+		break;
+		
+		default:
+			attackTarget = noone;
+		    switch(mouseCommand){
+		        case scr_player_commands_move_all:
+		            draw_sprite(spr_player_command_module_mouse_move_all, 0, mouse_x, mouse_y);
+		        break;
+		    }
+		break;
+	}
+}
+else if(primeWanderRangeClicked){
 	draw_sprite(spr_command_module_set_wander, 0, mouse_x, mouse_y);
 }
-
-if(followButtonClicked && totalSelected > 0){
-	draw_circle_color(mouse_x, mouse_y, 20, c_green, c_green, true);
-	var _potentialFollow = instance_position(mouse_x, mouse_y, obj_Lifeform_Parent);
-	if(instance_exists(_potentialFollow)){
-		followTarget = _potentialFollow;
-	            draw_sprite(spr_player_command_module_mouse_follow, 0, mouse_x, mouse_y);
-	}
-	else{
-		followTarget = noone;
-	}
-}
 else{
-	var _potentialEnemy = instance_position(mouse_x, mouse_y, obj_Lifeform_Parent);
-	if(totalSelected > 0 && instance_exists(_potentialEnemy) && _potentialEnemy.allegiance != player.allegiance){
-	    draw_sprite(spr_player_command_module_mouse_enemy, 0, _potentialEnemy.x, _potentialEnemy.y);
-		attackTarget = _potentialEnemy;
-		mouseCommand = scr_player_commands_attack_target;
-	}
-	else{
-		attackTarget = noone;
-	    switch(mouseCommand){
-	        case scr_player_commands_move_all:
-	            draw_sprite(spr_player_command_module_mouse_move_all, 0, mouse_x, mouse_y);
-	        break;
-	    }
+	attackTarget = noone;
+	switch(mouseCommand){
+		case scr_player_commands_move_all:
+		    draw_sprite(spr_player_command_module_mouse_move_all, 0, mouse_x, mouse_y);
+		break;
 	}
 }
+
+
 
 
 

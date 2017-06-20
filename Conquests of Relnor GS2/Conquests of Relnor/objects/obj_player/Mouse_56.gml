@@ -50,14 +50,41 @@ if(isBusy || scr_linked_list_size(ClickedUIObjects) > 0){
 
 if(!global.isWorldMap){
 	//move units
-	if(!self.stillSelecting){
+	if(!stillSelecting){
 		if(commandModule.mouseCommand != noone){
-	        script_execute(self.commandModule.mouseCommand);
+		
+			var _executeMouseCommand = true;
+			
+			switch(commandModule.mouseCommand){
+				case scr_player_commands_attack_target:
+					scr_player_command_menu_cleanup_for_cmd(COMMAND_ATTACK);
+				break;
+				
+				case scr_player_commands_move_all:
+					scr_player_command_menu_cleanup_for_cmd(COMMAND_MOVE);
+				break;
+				
+				case scr_player_commands_follow:
+					scr_player_command_menu_cleanup_for_cmd(COMMAND_FOLLOW);
+				break;
+				
+				case scr_player_commands_square_formation:
+					scr_player_command_menu_cleanup_for_cmd(COMMAND_FORMATION);
+				break;
+				
+			}
+	        
+			if(_executeMouseCommand){
+				script_execute(commandModule.mouseCommand);
+			}
+			
 		}
 	}
 
-	with(self.selectBox){
-	    instance_destroy();
+	if(selectBox != noone){
+		instance_destroy(selectBox);
+		selectBox = noone;
+		scr_player_command_menu_cleanup_for_cmd(COMMAND_SELECT_BOX);
+		scr_player_command_menu_cleanup_for_cmd(COMMAND_DESELECT_BOX);
 	}
-	self.selectBox = noone;
 }

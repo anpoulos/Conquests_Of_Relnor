@@ -16,4 +16,6 @@ switch(argument0){
 	case COMMAND_WANDER_SET_RADIUS: return "Set Wander Radius";	
 	case COMMAND_DEFENSIVE: return "Enable Defensive";
 	case COMMAND_DEFENSIVE_DISABLE: return "Disable Defensive";
+	case COMMAND_FOLLOW: return "Follow";
+	case COMMAND_MOVE: return "Move";
 }
