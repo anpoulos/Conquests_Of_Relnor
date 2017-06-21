@@ -1,12 +1,24 @@
 scr_linked_list_destroy_all(ControlMenuButtons);
 
 ControlMenuButtons = scr_linked_list_create();
+	
 
 var _yOffset = 40;
 var _currentY = ControlMenuContainer.topY + 60;
 
 var _buttonWidth = 120;
 var _padding = _buttonWidth/2 + 10;
+
+//Input Type
+	var _descriptionText = "Input Type: ";
+	_descriptionText += triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER ? "Controller" : "Keyboard";
+    
+	var _textDraw = scr_ui_font_constructor(ControlMenuContainer.leftX + _padding, ControlMenuContainer.topY + _padding, 
+		_descriptionText, fnt_default_medium, c_white, 
+	    1.0, fa_left, fa_middle, ControlMenuContainer);
+	_textDraw.isVisible = true;
+	scr_linked_list_add(ControlMenuButtons, _textDraw);
+//Input Type
 
 for(var i = 0; i < TRIGGERS_MAX; i++){
 	
@@ -91,16 +103,6 @@ for(var i = 0; i < TRIGGERS_MAX; i++){
 	    scr_destroy_instance(_buttonInfo);
 		scr_linked_list_add(ControlMenuButtons, _button);
 	//Extra Button Binding
-	
-	//Input Type
-		var _descriptionText = "Input Type: ";
-		_descriptionText += triggersInputType[i] == TRIGGER_INPUT_TYPE_CONTROLLER ? "Controller" : "Keyboard";
-    
-	    var _textDraw = scr_ui_font_constructor(_button.x + _padding, _currentY, _descriptionText, fnt_default_medium, c_white, 
-	            1.0, fa_left, fa_middle, ControlMenuContainer);
-	    _textDraw.isVisible = true;
-		scr_linked_list_add(ControlMenuButtons, _textDraw);
-	//Input Type
 	
 	_currentY += _yOffset;
 }

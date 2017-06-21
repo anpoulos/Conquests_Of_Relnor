@@ -2,7 +2,7 @@
 
 event_inherited();
 
-scr_player_controls_set_defaults();
+scr_player_controls_set_defaults(TRIGGER_INPUT_TYPE_KEYBOARD);
 
 virtualMouse = noone;
 commandFromCommandMenu = false;

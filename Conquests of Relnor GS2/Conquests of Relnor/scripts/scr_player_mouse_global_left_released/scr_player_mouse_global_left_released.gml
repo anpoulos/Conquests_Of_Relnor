@@ -62,7 +62,7 @@ if(!global.isWorldMap){
 	if(!stillSelecting){
 		if(commandModule.mouseCommand != noone){
 		
-			var _executeMouseCommand = true;
+			script_execute(commandModule.mouseCommand);
 			
 			switch(commandModule.mouseCommand){
 				case scr_player_commands_attack_target:
@@ -82,10 +82,6 @@ if(!global.isWorldMap){
 				break;
 				
 			}
-	        
-			if(_executeMouseCommand){
-				script_execute(commandModule.mouseCommand);
-			}
 			
 		}
 	}
@@ -96,4 +92,7 @@ if(!global.isWorldMap){
 		scr_player_command_menu_cleanup_for_cmd(COMMAND_SELECT_BOX);
 		scr_player_command_menu_cleanup_for_cmd(COMMAND_DESELECT_BOX);
 	}
+}
+else{
+	//TODO square check here
 }

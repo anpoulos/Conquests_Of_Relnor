@@ -25,5 +25,6 @@ if(triggers[TRIGGER_COMMAND_MENU]){
 	}
 	else if (!global.gamePaused && !global.isWorldMap){
 		scr_player_actions_open_command_menu();
+		scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_BUTTON, true);
 	}
 }

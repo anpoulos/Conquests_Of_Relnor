@@ -34,4 +34,8 @@ if(self.isVisible){
     draw_text(textX,textY,string_hash_to_newline(self.text));
     
     scr_ui_button_set_default_draw();
+	
+	//draw_circle(x,y,5,false);
+	
+	//draw_text(x, y, string(x)+", "+string(y));
 }

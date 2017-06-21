@@ -77,11 +77,11 @@ if(commandModule.primeWanderRangeClicked){
 	            stillSelecting = true;
 				if(scr_player_command_menu_is_current(COMMAND_DESELECT_SINGLE)){
 					scr_player_command_find_and_deselect(self, _selected);
-				scr_player_command_menu_cleanup_for_cmd(COMMAND_DESELECT_SINGLE);
+					scr_player_command_menu_cleanup_for_cmd(COMMAND_DESELECT_SINGLE);
 				}
 				else{
 					scr_player_command_select(self, _selected);
-				scr_player_command_menu_cleanup_for_cmd(COMMAND_SELECT_SINGLE);
+					scr_player_command_menu_cleanup_for_cmd(COMMAND_SELECT_SINGLE);
 				}
 	            alarm[3] = 2;
 	        }

@@ -1,0 +1,1 @@
+///Cooldown alarm for button mode
