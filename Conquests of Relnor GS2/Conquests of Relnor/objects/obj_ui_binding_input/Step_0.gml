@@ -58,9 +58,7 @@ if(button != noone){
 						
 				with(global.player){
 					scr_ui_menus_controls_refresh_bindings();
-					if(triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER){
-						scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, true);
-					}
+					scr_ui_virtual_mouse_cleanup_from_player();
 				}
 				
 				instance_destroy();
@@ -79,13 +77,13 @@ if(button != noone){
 			for(var j = 0; j < _totalValidGamePadBindings; j++){
 				var _gamePadButton = scr_linked_list_get_next(_validGamePadBindingsList);
 				if(gamepad_button_check(i, _gamePadButton)){
+				
 					scr_player_controls_set_binding(_gamePadButton, bindingIndex, TRIGGER_INPUT_TYPE_CONTROLLER, isExtraBinding, i);
 					
-						
 					with(global.player){	
-						scr_ui_menus_controls_refresh_bindings();				
-						if(triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
-							scr_ui_virtual_mouse_cleanup_from_player();
+						scr_ui_menus_controls_refresh_bindings();	
+						if(virtualMouse == noone){
+							scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, true);
 						}
 					}
 				

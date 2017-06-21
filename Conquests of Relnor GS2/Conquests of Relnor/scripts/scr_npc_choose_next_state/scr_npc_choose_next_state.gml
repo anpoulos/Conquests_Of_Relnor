@@ -10,7 +10,7 @@ if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] <= 0){
 }
 			
 if(lockedTarget != noone){
-    if(instance_exists(lockedTarget)){
+    if(instance_exists(lockedTarget) && !lockedTarget.isDead){
         target = lockedTarget;
     }
     else{
