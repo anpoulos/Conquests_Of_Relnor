@@ -4255,14 +4255,6 @@
             }
         },
         {
-            "Key": "51306433-ccb5-442f-bb5e-938c8d4e2907",
-            "Value": {
-                "id": "9c20347d-97e7-4c6d-9c4f-62671f5e1303",
-                "resourcePath": "scripts\\scr_player_gui_create_command_menu\\scr_player_gui_create_command_menu.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "514caaf6-3106-4339-bed7-42e8a854068c",
             "Value": {
                 "id": "3e366293-2187-47af-8e04-33604f9a39f6",
@@ -9671,14 +9663,6 @@
             }
         },
         {
-            "Key": "b9aec5b4-8e76-42d2-9b24-2bd3e32685cc",
-            "Value": {
-                "id": "4abd9e8f-4b85-4eb0-a26e-d19ec716c491",
-                "resourcePath": "scripts\\scr_player_gui_create_passive_menu\\scr_player_gui_create_passive_menu.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "b9b1d7d7-ad77-4192-9ad1-0fecb9b48e3a",
             "Value": {
                 "id": "f8f49114-897d-40d1-b6c6-804597cc03fe",
@@ -13681,8 +13665,6 @@
         "0a7424b5-23fd-4e6e-a17e-a122ce748990",
         "a53ecd0c-4d5c-411b-ba61-66d7938bfa02",
         "7077a74f-282c-4fbe-8583-84a76b835005",
-        "b9aec5b4-8e76-42d2-9b24-2bd3e32685cc",
-        "51306433-ccb5-442f-bb5e-938c8d4e2907",
         "b66880e4-d388-4ae5-b575-ea5bbf402853",
         "34cdba84-94ff-4087-9957-6a723e3b2e8b",
         "53db8903-c41c-4c9c-82ca-8b77bfc04dce",

@@ -12,9 +12,7 @@ var obj = argument1;
             obj.commander = _commander;
             scr_linked_list_add(_commander.commandModule.selected, argument1);
             _commander.commandModule.totalSelected += 1;
-            _commander.CommandMenuContainer.isVisible = true;
-            _commander.CommandInformationMenuContainer.isVisible = true;
-            _commander.PassiveMenuContainer.isVisible = true;            
+            _commander.CommandInformationMenuContainer.isVisible = true;        
             if(obj.isAggressive){
                 _commander.commandModule.totalSelectedWithEngage += 1;
             }

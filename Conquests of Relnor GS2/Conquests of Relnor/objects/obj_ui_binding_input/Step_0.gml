@@ -57,10 +57,10 @@ if(button != noone){
 				scr_player_controls_set_binding(keyboard_key, bindingIndex, TRIGGER_INPUT_TYPE_KEYBOARD, isExtraBinding, noone);
 						
 				with(global.player){
+					scr_ui_menus_controls_refresh_bindings();
 					if(triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER){
 						scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, true);
 					}
-					scr_ui_menus_controls_refresh_bindings();
 				}
 				
 				instance_destroy();
@@ -82,11 +82,11 @@ if(button != noone){
 					scr_player_controls_set_binding(_gamePadButton, bindingIndex, TRIGGER_INPUT_TYPE_CONTROLLER, isExtraBinding, i);
 					
 						
-					with(global.player){					
+					with(global.player){	
+						scr_ui_menus_controls_refresh_bindings();				
 						if(triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
 							scr_ui_virtual_mouse_cleanup_from_player();
 						}
-						scr_ui_menus_controls_refresh_bindings();
 					}
 				
 					instance_destroy();

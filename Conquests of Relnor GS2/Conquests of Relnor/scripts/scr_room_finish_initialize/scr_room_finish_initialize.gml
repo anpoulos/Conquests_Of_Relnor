@@ -112,9 +112,7 @@ if(global.isWorldMap){
 		}
 	}
 	//remove some gui elements
-	global.player.CommandMenuContainer.isVisible = false;
 	global.player.CommandInformationMenuContainer.isVisible = false;
-	global.player.PassiveMenuContainer.isVisible = false;
 	scr_square_troops_set_nearest_camps();
 	global.player.mapControl = instance_create(global.player.x, global.player.y, obj_player_map);
 	global.player.mapControl.units = 1 + scr_linked_list_size(global.player.commandModule.selected);

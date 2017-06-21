@@ -62,9 +62,11 @@ if(!global.isWorldMap){
 	if(!stillSelecting){
 		if(commandModule.mouseCommand != noone){
 		
+			var _originalMouseCommand = commandModule.mouseCommand;
+			
 			script_execute(commandModule.mouseCommand);
 			
-			switch(commandModule.mouseCommand){
+			switch(_originalMouseCommand){
 				case scr_player_commands_attack_target:
 					scr_player_command_menu_cleanup_for_cmd(COMMAND_ATTACK);
 				break;
