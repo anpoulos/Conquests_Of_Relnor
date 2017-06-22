@@ -38,7 +38,7 @@ with(global.player){
 				}
 				
 			}
-			else{
+			else if(_mouseMode == VIRTUAL_MOUSE_MODE_MOUSE){
 				virtualMouse.mouseX = _x;
 				virtualMouse.mouseY = _y;
 			}		

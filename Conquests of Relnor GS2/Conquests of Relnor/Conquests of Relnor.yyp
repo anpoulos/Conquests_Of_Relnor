@@ -615,14 +615,6 @@
             }
         },
         {
-            "Key": "0b0b9ba5-b813-4f1d-afa3-7fb2c8eb5f57",
-            "Value": {
-                "id": "8bae9d72-2971-4af6-befa-28d82fca4a1b",
-                "resourcePath": "objects\\obj_player_global\\obj_player_global.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "0b12a491-39a2-43d2-a050-14b6e58d503f",
             "Value": {
                 "id": "d548f0f2-ab81-4fdb-8c64-67cf8a7c360b",
@@ -3887,6 +3879,14 @@
             }
         },
         {
+            "Key": "482f9378-be4d-456d-b3eb-fc90b80fb5ff",
+            "Value": {
+                "id": "8b19473e-624b-4151-875e-c7691d06190a",
+                "resourcePath": "scripts\\scr_player_check_triggers\\scr_player_check_triggers.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "48759f78-ebd6-46ec-b6b8-34bd6a6e536d",
             "Value": {
                 "id": "14a50963-8618-4a08-bbea-26075d2752e9",
@@ -5727,6 +5727,14 @@
             }
         },
         {
+            "Key": "6e0ab36e-6a34-4e07-9693-960800125453",
+            "Value": {
+                "id": "011a21fd-262d-48e2-bb98-ed6833421090",
+                "resourcePath": "objects\\obj_auto_target\\obj_auto_target.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6e2a666c-0872-4a02-9de8-dcee7d7a790f",
             "Value": {
                 "id": "6a6c8c77-5c25-4133-83e9-57aa4cfe8997",
@@ -5908,14 +5916,6 @@
                 "id": "46625062-c62d-404f-ba01-5446e9e8e872",
                 "resourcePath": "datafiles_yy\\Notifications\\inventoryFull.txt.yy",
                 "resourceType": "GMIncludedFile"
-            }
-        },
-        {
-            "Key": "72355e31-15a7-49b8-b4ef-54cdd6314a93",
-            "Value": {
-                "id": "134fefee-5ea7-4b4a-a3ef-9052c44a7730",
-                "resourcePath": "scripts\\scr_check_triggers\\scr_check_triggers.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -13638,7 +13638,6 @@
         "74b12bf8-a9b3-4806-bf15-8d899f766675",
         "0d5c1ff5-c366-4e16-83bc-29d7c5400c53",
         "bac27f64-3124-4595-8d56-3f5f3e25a469",
-        "72355e31-15a7-49b8-b4ef-54cdd6314a93",
         "df7e9eda-53c4-494f-a2f1-17d35105ae42",
         "775251ab-7e8c-4cd5-a3c6-3dfbbaaa8b27",
         "aa25ac2b-0122-4252-9c4c-596bf282d61f",
@@ -13706,6 +13705,7 @@
         "bfbee83c-ebcb-4dad-9bb5-312fe520739a",
         "30697e4b-6ad8-4c49-8103-9f88012174f4",
         "62dcbfcc-030d-4dc5-a49e-4e6d2c4b0ac1",
+        "482f9378-be4d-456d-b3eb-fc90b80fb5ff",
         "414dd75a-5adf-4721-8478-c32603eb186c",
         "72c915a5-b42e-47b8-9102-716f0577cb99",
         "0b12a491-39a2-43d2-a050-14b6e58d503f",

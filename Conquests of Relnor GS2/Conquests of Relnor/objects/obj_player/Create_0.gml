@@ -4,9 +4,13 @@ event_inherited();
 
 scr_player_controls_set_defaults(TRIGGER_INPUT_TYPE_KEYBOARD);
 
+selectBox = noone;
 virtualMouse = noone;
 commandFromCommandMenu = false;
 commandMenu = noone;
+autoTargetUI = noone;
+
+autoTarget = noone;
 
 mapControl = noone;
 

@@ -4,7 +4,7 @@ if(global.isWorldMap){
 	return false;
 }
 
-scr_check_triggers(); //may change state
+scr_player_check_triggers(); //may change state
 
 //get axis values
 xAxis = triggers[TRIGGER_RIGHT] - triggers[TRIGGER_LEFT];

@@ -12,6 +12,9 @@ if(triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
 		triggersExtraGamePadSlot[i] = 0;
 	}
 
+	triggersType[TRIGGER_AUTO_TARGET] = TRIGGER_TYPE_PRESSED;
+	triggersBinding[TRIGGER_AUTO_TARGET] = ord("R");
+
 	triggersType[TRIGGER_ATTACK] = TRIGGER_TYPE_CHECK;
 	triggersBinding[TRIGGER_ATTACK] = vk_shift;
 
@@ -96,6 +99,9 @@ else{ //controller defaults
 
 	triggersType[TRIGGER_COMMAND_MENU] = TRIGGER_TYPE_PRESSED;
 	triggersBinding[TRIGGER_COMMAND_MENU] = gp_face4;
+	
+	triggersType[TRIGGER_AUTO_TARGET] = TRIGGER_TYPE_PRESSED;
+	triggersBinding[TRIGGER_AUTO_TARGET] = gp_face2;
 }
 
 

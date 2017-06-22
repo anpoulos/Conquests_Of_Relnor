@@ -13,4 +13,5 @@ switch(argument0){
 	case TRIGGER_UP: return "Up";
 	case TRIGGER_USE: return "Use object or talk to person";
 	case TRIGGER_COMMAND_MENU: return "Bring up Command Menu";
+	case TRIGGER_AUTO_TARGET: return "Lock Target";
 }

@@ -173,7 +173,7 @@ if(mode == VIRTUAL_MOUSE_MODE_BUTTON){
 	}
 
 }
-else{
+else if (mode == VIRTUAL_MOUSE_MODE_MOUSE){
 
 	var _increaseMoveSpeed = false;
 
@@ -224,4 +224,21 @@ else{
 			currentSpeed += mouseMoveAmount;
 		}
 	}
+}
+else if(mode == VIRTUAL_MOUSE_MODE_AUTO_TARGET){
+
+	if(global.player.autoTargetUI != noone && global.player.autoTargetUI.possibleTargets > 0){
+		if(global.player.triggers[TRIGGER_RIGHT] || 
+		global.player.triggers[TRIGGER_LEFT] || 
+		global.player.triggers[TRIGGER_UP] || 
+		global.player.triggers[TRIGGER_DOWN]){
+			global.player.autoTargetUI.selectedTarget = scr_linked_list_get_next(global.player.autoTargetUI.possibleTargets);
+		}
+		if(global.player.triggers[TRIGGER_USE]){
+			instance_destroy(global.player.autoTargetUI);
+		}
+	}
+	
+	
+	
 }
