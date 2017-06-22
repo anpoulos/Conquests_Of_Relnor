@@ -2,7 +2,7 @@
 other.myCollisionTurn = true;
 
 ///Talk To
-if(keyboard_check(ord("T"))){
+if(!isBusy && triggers[TRIGGER_USE]){
     if(!isBusy && other.hasDialogue){
         scr_player_enable_busy();
         ChatWindow = scr_ui_chat_constructor(self, other, "Chat", noone);

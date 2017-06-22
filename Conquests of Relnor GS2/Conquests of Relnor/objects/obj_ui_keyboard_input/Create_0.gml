@@ -70,3 +70,8 @@ executeSaveScriptAs = noone;
 //End of Use Button
 
 MenuContainer.isVisible = true;
+
+if(global.player.virtualMouse != noone){
+	global.player.virtualMouse.mouseX = SaveInputButton.x;
+	global.player.virtualMouse.mouseY = SaveInputButton.y;
+}

@@ -140,3 +140,5 @@ character = noone;
 //End of Menu Container
 
 MenuContainer.isVisible = true;
+
+scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, true);

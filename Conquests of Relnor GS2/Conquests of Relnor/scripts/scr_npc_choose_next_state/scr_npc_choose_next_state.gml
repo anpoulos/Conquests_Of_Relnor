@@ -1,5 +1,10 @@
 ///scr_npc_choose_next_state
 
+if(global.gamePaused){
+	state = scr_npc_states_wait_until_unpaused;
+	return true;
+}
+
 collisionCounter = -1;
 lastCollidedLifeform = noone;
 firstCollidedLifeform = noone;

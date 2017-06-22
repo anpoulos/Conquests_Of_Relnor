@@ -57,6 +57,9 @@ if(button != noone){
 				scr_player_controls_set_binding(keyboard_key, bindingIndex, TRIGGER_INPUT_TYPE_KEYBOARD, isExtraBinding, noone);
 						
 				with(global.player){
+					if(virtualMouse != noone){
+						window_set_cursor(cr_default);
+					}
 					scr_ui_menus_controls_refresh_bindings();
 					scr_ui_virtual_mouse_cleanup_from_player();
 				}
@@ -83,6 +86,7 @@ if(button != noone){
 					with(global.player){	
 						scr_ui_menus_controls_refresh_bindings();	
 						if(virtualMouse == noone){
+							window_set_cursor(cr_none);
 							scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, true);
 						}
 					}

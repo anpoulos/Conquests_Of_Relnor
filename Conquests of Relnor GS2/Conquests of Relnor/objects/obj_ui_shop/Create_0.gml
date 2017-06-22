@@ -141,3 +141,6 @@ var _margin = 20;
 	_button.isVisible = true;
 //End of Close Button
 
+scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, true);
+
+

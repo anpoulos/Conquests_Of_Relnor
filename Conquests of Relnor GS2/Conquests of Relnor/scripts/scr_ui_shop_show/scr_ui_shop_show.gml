@@ -15,7 +15,4 @@ with(instance_find(obj_player, 0)){
 	_shop.shopContainer.isVisible = true;
 }
 
-with(_shopKeeper){
-	scr_npc_enable_busy();
-}
-
+scr_npc_enable_busy(_shopKeeper);

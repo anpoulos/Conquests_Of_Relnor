@@ -1,7 +1,10 @@
-///scr_npc_enable_busy
+///@param npc
 
-if(!isBusy){
-    isBusy = true;
-    state = busyState;
-    alarm[1] = -1; //turn off idle state alarm
+with(argument0){
+	if(!isBusy){
+	    isBusy = true;
+	    state = busyState;
+	    alarm[1] = -1; //turn off idle state alarm
+	}
 }
+

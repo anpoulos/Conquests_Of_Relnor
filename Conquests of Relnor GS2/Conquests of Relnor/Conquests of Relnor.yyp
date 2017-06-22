@@ -5647,6 +5647,14 @@
             }
         },
         {
+            "Key": "6cac77b1-bec9-4547-94ca-d069d4ae6345",
+            "Value": {
+                "id": "a3e6c49b-cf17-4036-a7fa-fb450351c12e",
+                "resourcePath": "scripts\\scr_npc_states_wait_until_unpaused\\scr_npc_states_wait_until_unpaused.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6cb68903-e8f4-4d21-b32a-4da6c8fc9fb4",
             "Value": {
                 "id": "1fe2f396-c9cd-4116-88ac-641f4b93ea29",
@@ -13718,6 +13726,7 @@
         "2b6c88a3-8422-49cb-8093-d17e1569edb5",
         "73c1277a-48b3-4207-8a8c-62a48c5d33df",
         "0294881d-8220-46a0-b7f6-cb8c30d666bb",
+        "6cac77b1-bec9-4547-94ca-d069d4ae6345",
         "7f1a87ad-58cf-42d1-8c31-825c1a02ae67",
         "ea664820-80fb-476c-bb6f-37d6ef6cf6a1",
         "a786377d-b35a-4638-a859-b2b774da6b0e",

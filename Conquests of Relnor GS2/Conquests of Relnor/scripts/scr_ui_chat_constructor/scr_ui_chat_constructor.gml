@@ -24,9 +24,7 @@ _chatWindow.originalNpc = _npc;
 
 if(_npc != noone){
 	_chatWindow.NameText.text = _npc.name+" :";
-	with(_npc){
-	    scr_npc_enable_busy();
-	}
+	scr_npc_enable_busy(_npc);
 	
 	if(_player != noone){
 		scr_lifeform_face_towards(_npc, _player.x,_player.y);

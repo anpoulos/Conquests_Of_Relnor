@@ -38,7 +38,8 @@ if(commandModule.primeWanderRangeClicked){
 				(MoveItem == noone || 
 					_uiObject == MoveItemButtonCurrent || 
 					_uiObject.object_index == obj_ui_party_character_panel)
-					){
+					) &&
+					(instance_number(obj_ui_keyboard_input) == 0 || _uiObject == instance_find(obj_ui_keyboard_input, 0).SaveInputButton){
 	            _uiObject.pressed = true; 
 	            scr_linked_list_add(ClickedUIObjects, _uiObject);
 	        }

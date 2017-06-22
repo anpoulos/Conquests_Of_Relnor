@@ -8,3 +8,5 @@ while(!scr_linked_list_is_empty(itemButtons)){
 scr_linked_list_destroy(itemButtons);
 
 instance_destroy(shopContainer);
+
+scr_ui_virtual_mouse_cleanup_from_player();

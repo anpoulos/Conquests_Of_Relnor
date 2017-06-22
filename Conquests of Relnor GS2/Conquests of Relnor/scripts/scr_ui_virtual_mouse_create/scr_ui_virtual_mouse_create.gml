@@ -14,8 +14,35 @@ with(global.player){
 		virtualMouse.mode = _mouseMode;
 	
 		if(_gui){
-			virtualMouse.mouseX = display_get_gui_width() div 2;
-			virtualMouse.mouseY = display_get_gui_height() div 2;
+			var _x = display_get_gui_width() div 2;
+			var _y = display_get_gui_height() div 2;
+			
+			if(_mouseMode == VIRTUAL_MOUSE_MODE_BUTTON){
+		
+				var _closestDistance = MAX;
+				var _closestClickable = noone;
+				
+				with(obj_ui_clickable_parent){
+					if(scr_ui_draw_is_visible(self) && clickedScript != noone){
+						var _distance = point_distance(_x, _y, x,y);
+						if(_distance < _closestDistance){
+							_closestDistance = _distance;
+							_closestClickable = self;
+						}
+					}					
+				}
+		
+				if(_closestClickable != noone){
+					virtualMouse.mouseX = _closestClickable.x;
+					virtualMouse.mouseY = _closestClickable.y;
+				}
+				
+			}
+			else{
+				virtualMouse.mouseX = _x;
+				virtualMouse.mouseY = _y;
+			}		
+				
 		}
 		else{
 			virtualMouse.mouseX = x;

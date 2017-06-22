@@ -1,9 +1,5 @@
-with(owner){
-	scr_npc_disable_busy();
-}
 
-
-
+scr_npc_disable_busy(owner);
 
 scr_player_disable_busy();
 
