@@ -24,3 +24,24 @@ if(!hasCalculated){
 	
 	hasCalculated = true;
 }
+else{
+
+	if(global.player.triggers[TRIGGER_RIGHT] || 
+		global.player.triggers[TRIGGER_LEFT] || 
+		global.player.triggers[TRIGGER_UP] || 
+		global.player.triggers[TRIGGER_DOWN]){
+			selectedTarget = scr_linked_list_get_next(possibleTargets);
+			
+			if(global.player.virtualMouse != noone){
+				global.player.virtualMouse.mouseX = selectedTarget.x;
+				global.player.virtualMouse.mouseY = selectedTarget.y;
+			}
+			
+		}
+		
+		if(global.player.triggers[TRIGGER_USE]){
+			global.player.autoTarget = selectedTarget;
+			instance_destroy(global.player.autoTargetUI);
+		}
+			
+}

@@ -1,6 +1,17 @@
 ///Inherited
 scr_player_get_action_inputs();
 
+if(autoTarget != noone){
+	if(!instance_exists(autoTarget) || autoTarget.isDead){
+		autoTarget = noone;
+	}
+}
+
+if(triggers[TRIGGER_AUTO_TARGET] && autoTargetUI != noone){
+	instance_destroy(autoTargetUI);
+	triggers[TRIGGER_AUTO_TARGET] = false;
+}
+
 event_inherited();
 
 ///Update Player GUI

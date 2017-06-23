@@ -20,8 +20,14 @@ var _destinationX = 0;
 var _destinationY = 0;
 
 if(isPlayer){
-	_destinationX = mouse_x;
-	_destinationY = mouse_y;
+	if(autoTarget == noone){
+		_destinationX = mouse_x;
+		_destinationY = mouse_y;
+	}
+	else{
+		_destinationX = autoTarget.x;
+		_destinationY = autoTarget.y;
+	}
 }
 else{
 	_destinationX = target.x;

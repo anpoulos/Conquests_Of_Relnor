@@ -1,28 +1,29 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if(global.player.triggers[TRIGGER_USE]){
-	if(!mouseDown){
-		mousePressed = true;
+if(mode == VIRTUAL_MOUSE_MODE_BUTTON || mode == VIRTUAL_MOUSE_MODE_MOUSE){
+	if(global.player.triggers[TRIGGER_USE]){
+		if(!mouseDown){
+			mousePressed = true;
+		}
+		mouseDown = true;
 	}
-	mouseDown = true;
-}
-else if(mouseDown){
-	mouseReleased = true;
-	mouseDown = false;
-	mousePressed = false;
-}
-else if(mouseReleased){
-	mouseReleased = false;
-}
+	else if(mouseDown){
+		mouseReleased = true;
+		mouseDown = false;
+		mousePressed = false;
+	}
+	else if(mouseReleased){
+		mouseReleased = false;
+	}
 
-if(mousePressed){
-	mousePressed = false;
-}
+	if(mousePressed){
+		mousePressed = false;
+	}
 
-if(mouseDown){
-	with(global.player){
-		scr_player_mouse_global_left_down(virtualMouse.mouseX, virtualMouse.mouseY);
+	if(mouseDown){
+		with(global.player){
+			scr_player_mouse_global_left_down(virtualMouse.mouseX, virtualMouse.mouseY);
+		}
 	}
 }
 
@@ -224,21 +225,4 @@ else if (mode == VIRTUAL_MOUSE_MODE_MOUSE){
 			currentSpeed += mouseMoveAmount;
 		}
 	}
-}
-else if(mode == VIRTUAL_MOUSE_MODE_AUTO_TARGET){
-
-	if(global.player.autoTargetUI != noone && global.player.autoTargetUI.possibleTargets > 0){
-		if(global.player.triggers[TRIGGER_RIGHT] || 
-		global.player.triggers[TRIGGER_LEFT] || 
-		global.player.triggers[TRIGGER_UP] || 
-		global.player.triggers[TRIGGER_DOWN]){
-			global.player.autoTargetUI.selectedTarget = scr_linked_list_get_next(global.player.autoTargetUI.possibleTargets);
-		}
-		if(global.player.triggers[TRIGGER_USE]){
-			instance_destroy(global.player.autoTargetUI);
-		}
-	}
-	
-	
-	
 }

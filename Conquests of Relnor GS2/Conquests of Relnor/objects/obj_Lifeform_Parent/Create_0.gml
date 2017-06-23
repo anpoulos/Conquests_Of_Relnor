@@ -112,7 +112,7 @@ statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = statsMax[STATS_PHYSICAL, S
 name = "Lifeform Parent";
 statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = 100;
 statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] = statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY];
-sight = 50;
+sight = 250;
 
 moveToX = noone;
 moveToY = noone;

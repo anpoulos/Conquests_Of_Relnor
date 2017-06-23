@@ -5,10 +5,10 @@ if(argument0 == 0){
 }
 
 switch(argument0){
-	case gp_face1: return "Button 1";
-	case gp_face2: return "Button 2";
-	case gp_face3: return "Button 3";
-	case gp_face4: return "Button 4";
+	case gp_face1: return "A Button";
+	case gp_face2: return "B Button";
+	case gp_face3: return "X Button";
+	case gp_face4: return "Y Button";
 	case gp_shoulderl: return "Left Button";
 	case gp_shoulderlb: return "Left Trigger";
 	case gp_shoulderr: return "Right Button";

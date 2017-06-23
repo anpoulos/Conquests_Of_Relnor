@@ -20,7 +20,7 @@ if(hasCalculated){
 	if(selectedTarget != noone){
 		depth = selectedTarget.depth + 1;
 		draw_set_color(c_red);
-		draw_circle(_target.x, _target.y, _target.size div 2, false);
+		draw_circle(selectedTarget.x, selectedTarget.y, selectedTarget.size div 2, false);
 	}
 
 }
