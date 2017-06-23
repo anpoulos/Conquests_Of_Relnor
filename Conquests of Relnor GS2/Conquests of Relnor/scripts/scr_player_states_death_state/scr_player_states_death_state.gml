@@ -1,8 +1,6 @@
 
-instance_destroy(global.mapControl);
-
 isDead = true;
 
-instance_destroy();
+global.mapControl.gameOver = true;
 
-room_goto(rm_menus_title);
+instance_destroy();

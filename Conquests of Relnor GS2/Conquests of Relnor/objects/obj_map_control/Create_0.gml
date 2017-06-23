@@ -47,3 +47,6 @@ for(var i = 0; i < LEVEL_CAP-1; i++){
 
 
 followingList = scr_linked_list_create();
+
+gameOver = false;
+gameOverOpacity = 0.0;

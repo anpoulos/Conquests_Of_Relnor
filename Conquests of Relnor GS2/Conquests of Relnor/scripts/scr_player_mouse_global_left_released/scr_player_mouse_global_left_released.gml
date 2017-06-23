@@ -96,5 +96,16 @@ if(!global.isWorldMap){
 	}
 }
 else{
-	//TODO square check here
+	var _cellX = scr_map_square_get_cell_coordinate(_mouseX);
+	var _cellY = scr_map_square_get_cell_coordinate(_mouseY);
+	var _point = instance_create(_cellX,_cellY,obj_point);
+	var _square = scr_map_world_square_get_square(_point);
+	instance_destroy(_point);
+	
+	if(_square != noone && scr_is_ancestor_or_is(_square.object_index, obj_map_world_square_clickable)){
+		with(_square){
+			scr_square_player_clicked_square();
+		}
+	}
+	
 }

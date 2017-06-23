@@ -1,4 +1,10 @@
 ///Inherited
+if(global.isWorldMap && 
+triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER &&
+virtualMouse == noone){
+	scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, false);
+}
+
 scr_player_get_action_inputs();
 
 if(autoTarget != noone){

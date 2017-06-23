@@ -21,3 +21,14 @@ if(audio_sound_get_gain(currentMusicIndex) == 0){
 	audio_sound_gain(currentMusicIndex, 0, 0);
 	audio_sound_gain(currentMusicIndex, 1, 1000);
 }
+
+if(gameOver){
+
+	if(gameOverOpacity < 1.0){
+		gameOverOpacity += 0.01;
+	}
+	
+	if(gameOverOpacity >= 1.0 && alarm[0] == -1){
+		alarm[0] = room_speed*5;
+	}
+}

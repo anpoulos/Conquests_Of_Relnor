@@ -32,3 +32,5 @@ for(var i = 0; i < ROOM_MAX; i++){
 }
 
 scr_linked_list_destroy_all(followingList);
+
+room_goto(rm_menus_title);
