@@ -12,9 +12,8 @@ if(!global.gamePaused && combatCheckCount > 0){
 }
 
 //recover energy if not moving or using
-if(statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] < statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] && 
-(!triggers[TRIGGER_DASH] && state != attackState)){
-    statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] += recoverEnergyAmount;
+if(!triggers[TRIGGER_DASH] && state != attackState){
+	scr_lifeform_recover_energy();
 }
 
 statRestoreStep += 1;

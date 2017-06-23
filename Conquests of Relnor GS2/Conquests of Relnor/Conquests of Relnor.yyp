@@ -3911,6 +3911,14 @@
             }
         },
         {
+            "Key": "48d06ee7-73ff-41c5-8032-c1c435e91b39",
+            "Value": {
+                "id": "8c931ed1-13fe-4cba-b6e2-866ffd547141",
+                "resourcePath": "scripts\\scr_lifeform_recover_energy\\scr_lifeform_recover_energy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "48e02ea3-8dee-4ad6-9070-588daf254637",
             "Value": {
                 "id": "b2d02057-89a6-4ac2-8faf-8937c2e84779",
@@ -6875,6 +6883,14 @@
             "Value": {
                 "id": "6dc2c041-b68c-42f7-903f-7c5c2a3e1d96",
                 "resourcePath": "scripts\\scr_destroy_instance\\scr_destroy_instance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "847fd4e2-975c-47a4-83c7-edb001d7443c",
+            "Value": {
+                "id": "2ed2e300-6156-4e56-8dd3-39b9e61b8a34",
+                "resourcePath": "scripts\\scr_player_states_death_state\\scr_player_states_death_state.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -12879,6 +12895,14 @@
             }
         },
         {
+            "Key": "efecfff8-32d5-40b5-bdd1-f86912a37450",
+            "Value": {
+                "id": "b51a3fbc-8a6d-4661-98c5-246097faf49b",
+                "resourcePath": "views\\efecfff8-32d5-40b5-bdd1-f86912a37450.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "f03dd7c2-2154-4a51-b41c-49e2e27c2ac0",
             "Value": {
                 "id": "87f7e47c-ae08-4316-a3e7-e114c14d20ce",
@@ -13653,6 +13677,7 @@
         "9b79847e-20bb-46ff-a8ed-c9dffde4df9f",
         "643be270-c82f-4319-9955-98b8b8bd08a6",
         "79e846fb-c1f5-45c6-bfba-03a0d058b5e1",
+        "48d06ee7-73ff-41c5-8032-c1c435e91b39",
         "c7179506-8023-48a6-9563-6e00d1fff3c8",
         "b652bf0f-49c2-49a1-9c67-3fd07f6ee56c",
         "830e09a2-4247-40cc-a0c9-84c5f753eb03",
@@ -13698,6 +13723,7 @@
         "83112251-e3b9-4e2e-800b-d83b6c00ba5c",
         "d9e0b6a3-7dfc-47ee-aa0e-5aa543f84bc6",
         "915efc3a-eced-4766-ada7-d88cba227092",
+        "847fd4e2-975c-47a4-83c7-edb001d7443c",
         "4472514e-1369-4b47-b690-18cd72b2d6d8",
         "19be29de-bf91-4938-9d58-88f28d976ffc",
         "00bae243-9614-4f82-8ac7-2faed9dfee39",

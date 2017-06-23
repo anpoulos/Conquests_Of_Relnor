@@ -3,6 +3,15 @@
 
 instance_destroy(global.player);
 
+instance_destroy(global.worldMapControl);
+mp_grid_destroy(global.worldMapGrid);
+
+mp_grid_destroy(global.aiGrid);
+
+with(obj_inventory_item_parent){
+	instance_destroy();
+}
+
 audio_stop_all();
 
 scr_linked_list_destroy_all(global.additiveLights);

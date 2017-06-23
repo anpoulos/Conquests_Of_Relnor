@@ -1,7 +1,7 @@
 ///@description Constructor
 event_inherited();
 
-scr_npc_constructor("Sorceror", 50, 150, 30, 200, 200, ALLEGIANCE_ANIMAL, 1);
+scr_npc_constructor("Sorceror", 50, 250, 30, 200, 200, ALLEGIANCE_ANIMAL, 1);
 self.isDefensive = true;
 self.isAggressive = true;
 

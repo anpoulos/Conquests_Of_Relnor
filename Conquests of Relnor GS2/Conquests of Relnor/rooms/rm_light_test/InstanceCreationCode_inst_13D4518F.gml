@@ -1,1 +1,0 @@
-respawns = true;

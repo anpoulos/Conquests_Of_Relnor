@@ -24,7 +24,7 @@ if(_statType == STATS_PHYSICAL){
 		
 		case STATS_PHYSICAL_ENERGY:
 			_increaseStatBy = STATS_ENERGY_MULTIPLIER;
-			_lifeform.recoverEnergyAmount = (_lifeform.statsMax[_statType, _statIndex] + _increaseStatBy)/100;
+			_lifeform.recoverEnergyAmount = (_lifeform.statsMax[_statType, _statIndex] + _increaseStatBy)/50;
 			if(_lifeform.recoverEnergyAmount < 1){
 				_lifeform.recoverEnergyAmount = 1;
 			}

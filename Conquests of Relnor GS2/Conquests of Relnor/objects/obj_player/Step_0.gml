@@ -14,6 +14,10 @@ if(triggers[TRIGGER_AUTO_TARGET] && autoTargetUI != noone){
 
 event_inherited();
 
+if(isDead){
+	return false;
+}
+
 ///Update Player GUI
 scr_player_gui_update_information();
 

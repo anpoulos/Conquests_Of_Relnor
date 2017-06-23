@@ -25,6 +25,7 @@ allegianceParent = obj_npc_allegiance_blue_parent;
 gold = 1000;
 zoom = 50;
 busyState = scr_player_states_busy_state;
+deathState = scr_player_states_death_state;
 stillSelecting = false;
 commandModule = instance_create(0,0,obj_player_command_module);
 commandModule.player = self;
