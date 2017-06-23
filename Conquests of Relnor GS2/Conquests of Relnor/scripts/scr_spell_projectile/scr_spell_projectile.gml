@@ -6,13 +6,23 @@ var _selectedSpell = self;
 with(owner){
 	image_speed = self.attackImageSpeed;
 
-	var _x = mouse_x;
-	var _y = mouse_y;
+	var _x = 0;
+	var _y = 0;
 
 	if(!isPlayer){
 		//recalculate for NPCs
 		_x = target.x;
 		_y = target.y;
+	}
+	else{
+		if(autoTarget != noone){
+			_x = autoTarget.x;
+			_y = autoTarget.y;
+		}
+		else{
+			_x = mouse_x;
+			_y = mouse_y;
+		}
 	}
 
 	scr_lifeform_face_towards(self, _x,_y);
