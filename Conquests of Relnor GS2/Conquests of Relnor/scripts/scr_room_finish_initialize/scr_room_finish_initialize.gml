@@ -21,8 +21,6 @@ mp_grid_add_instances(_tempGrid, obj_Lifeform_Parent, true);
 global.playerSpawnX = noone;
 global.playerSpawnY = noone;
 
-scr_ui_virtual_mouse_cleanup_from_player();
-
 var _roomId = scr_room_get_id(room);
 
 if(global.mapControl.objectList[_roomId] == noone){
@@ -120,8 +118,6 @@ if(global.isWorldMap){
 	global.player.mapControl.hasTurn = true;
 	scr_square_player_create_clickable_squares(global.player.mapControl);
 	global.player.phy_active = false;
-	
-	scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, false);
 }
 else{
 	global.player.phy_active = true;

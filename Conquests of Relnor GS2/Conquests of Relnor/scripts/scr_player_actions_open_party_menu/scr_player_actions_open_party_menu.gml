@@ -7,12 +7,7 @@ if(global.gamePaused){
 	
 	global.gamePaused = false;
 	
-	if(!global.isWorldMap){
-		scr_ui_virtual_mouse_cleanup_from_player();
-	}
-	else{
-		scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, false);
-	}
+	scr_ui_virtual_mouse_cleanup_from_player();
 }
 else{
 	global.gamePaused = true;

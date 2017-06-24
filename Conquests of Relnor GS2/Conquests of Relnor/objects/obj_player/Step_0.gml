@@ -1,8 +1,25 @@
 ///Inherited
 if(global.isWorldMap && 
 triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER &&
-virtualMouse == noone){
-	scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, false);
+!global.gamePaused){
+	var _clickablesOnScreen = false;
+	with(obj_ui_clickable_parent){
+		if(clickedScript != noone && scr_ui_draw_is_visible(self)){
+			_clickablesOnScreen = true;
+			break;
+		}
+	}
+	
+	if(_clickablesOnScreen){
+		if(virtualMouse == noone || !virtualMouse.gui){
+			scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_BUTTON, true);
+		}
+	}
+	else{
+		if(virtualMouse == noone || virtualMouse.gui){
+			scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_MOUSE, false);
+		}
+	}
 }
 
 scr_player_get_action_inputs();
@@ -44,7 +61,7 @@ if(triggers[TRIGGER_COMMAND_MENU]){
 	if(commandMenu != noone){
 		instance_destroy(commandMenu);
 	}
-	else if (!global.gamePaused && !global.isWorldMap){
+	else if (!global.gamePaused){
 		scr_player_actions_open_command_menu();
 		scr_ui_virtual_mouse_create(VIRTUAL_MOUSE_MODE_BUTTON, true);
 	}

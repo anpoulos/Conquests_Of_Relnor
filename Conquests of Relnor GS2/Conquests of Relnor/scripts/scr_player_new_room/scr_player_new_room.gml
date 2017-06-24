@@ -2,6 +2,8 @@
 ///@param y
 ///@param room
 
+scr_ui_virtual_mouse_cleanup_from_player();
+
 scr_linked_list_destroy(global.additiveLights);
 
 global.additiveLights = scr_linked_list_create();

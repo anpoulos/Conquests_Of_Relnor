@@ -4,6 +4,5 @@ with(global.player){
 		virtualMouse.mouseX = 0; //avoids bugs
 		virtualMouse.mouseY = 0;
 		instance_destroy(virtualMouse);
-		virtualMouse = noone;
 	}
 }

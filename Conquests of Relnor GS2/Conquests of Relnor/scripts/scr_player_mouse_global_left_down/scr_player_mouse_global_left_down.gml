@@ -15,12 +15,18 @@ if(commandModule.primeWanderRangeClicked){
 	return false;
 }
 
+	
 	var _mouseGuiX = device_mouse_x_to_gui(0);
 	var _mouseGuiY = device_mouse_y_to_gui(0);
 	
-	if(virtualMouse != noone && virtualMouse.gui){
-		_mouseGuiX = virtualMouse.mouseX;
-		_mouseGuiY = virtualMouse.mouseY;
+	if(virtualMouse != noone){
+		if(virtualMouse.gui){
+			_mouseGuiX = virtualMouse.mouseX;
+			_mouseGuiY = virtualMouse.mouseY;
+		}
+		else{
+			//TODO figure out how to convert to GUI coordinates
+		}
 	}
 	
 	var _totalClickable = instance_number(obj_ui_clickable_parent);

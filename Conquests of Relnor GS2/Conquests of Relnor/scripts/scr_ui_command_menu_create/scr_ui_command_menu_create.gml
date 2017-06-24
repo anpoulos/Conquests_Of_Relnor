@@ -51,6 +51,16 @@ var _buttonAlpha = 0.3;
 	scr_destroy_instance(_buttonInfo);
 //End of Close Button
 
+//filter out possible commands
+var _possibleCommands = scr_linked_list_create();
+for(var i = 0; i < COMMAND_MAX; i++){
+	if((global.player.commandModule.totalSelected == 0 && i > COMMAND_UI_DISPLAY_LIMIT && !global.isWorldMap) ||
+		(global.isWorldMap && i < COMMAND_UI_DISPLAY_START_WORLD_MAP)){
+			continue;
+	}
+	scr_linked_list_add(_possibleCommands, i);
+}
+
 var _buttonWidth = 200;
 var _buttonHeight = 50;
 
@@ -61,11 +71,16 @@ var _currentY = menuContainer.topY + 200;
 var _originalY = _currentY;
 var _currentCommand = 0;
 
-var _totalColumnsEven = round(COMMAND_MAX/4);
+var _totalColumnsEven = round(scr_linked_list_size(_possibleCommands)/4);
+if(_totalColumnsEven < 1){
+	_totalColumnsEven = 1;
+}
 
 for(var i = 0; i < _totalColumnsEven - 1; i++){
 	for(var j = 0; j < 4; j++){
-		if(global.player.commandModule.totalSelected == 0 && _currentCommand > COMMAND_UI_DISPLAY_LIMIT){
+		if((global.player.commandModule.totalSelected == 0 && _currentCommand > COMMAND_UI_DISPLAY_LIMIT && !global.isWorldMap) ||
+		(global.isWorldMap && _currentCommand < COMMAND_UI_DISPLAY_START_WORLD_MAP)){
+			_currentCommand += 1;
 			continue;
 		}
 		//Start of Use Button
@@ -105,7 +120,9 @@ for(var i = 0; i < _totalColumnsEven - 1; i++){
 _currentY = _originalY;
 
 for(var i = _currentCommand; i < COMMAND_MAX; i++){
-	if(global.player.commandModule.totalSelected == 0 && _currentCommand > COMMAND_UI_DISPLAY_LIMIT){
+	if((global.player.commandModule.totalSelected == 0 && _currentCommand > COMMAND_UI_DISPLAY_LIMIT && !global.isWorldMap) ||
+		(global.isWorldMap && _currentCommand < COMMAND_UI_DISPLAY_START_WORLD_MAP)){
+		_currentCommand += 1;
 		continue;
 	}
 	//Start of Use Button

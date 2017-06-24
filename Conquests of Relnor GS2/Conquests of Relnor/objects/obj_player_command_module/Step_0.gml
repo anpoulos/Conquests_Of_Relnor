@@ -1,10 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(global.isWorldMap || player == noone){
+	return true;
+}
+
 var _mouseX = player.virtualMouse == noone ? mouse_x : player.virtualMouse.mouseX;
 var _mouseY = player.virtualMouse == noone ? mouse_y : player.virtualMouse.mouseY;
 
-if(engageRangeClicked){
+if(engageRangeClicked){	
 	var _totalSelected = scr_linked_list_size(selected);
 	var _newEngageDistance = point_distance(player.x, player.y, _mouseX, _mouseY);
 	for(var i = 0; i < _totalSelected; i++){

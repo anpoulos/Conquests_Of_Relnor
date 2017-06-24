@@ -19,4 +19,5 @@ switch(argument0){
 	case COMMAND_FOLLOW: return "Follow";
 	case COMMAND_MOVE: return "Move";
 	case COMMAND_TALK: return "Talk To";
+	case COMMAND_WORLD_MAP_NEXT_TURN: return "Next Turn";
 }

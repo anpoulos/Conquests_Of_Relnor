@@ -5,13 +5,17 @@ commandMenu.menuContainer.isVisible = false;
 
 commandMenu.currentCommand = tempVal;
 
-commandFromCommandMenu = true;
-
 var _destroyMenu = true;
 
 scr_ui_virtual_mouse_cleanup_from_player();
 
 switch(tempVal){
+	case COMMAND_WORLD_MAP_NEXT_TURN:
+		with(obj_map_world){
+			scr_map_world_next_turn();
+		}
+	break;
+
 	case COMMAND_DESELECT_ALL:
 		scr_player_commands_deselect_all();
 	break;

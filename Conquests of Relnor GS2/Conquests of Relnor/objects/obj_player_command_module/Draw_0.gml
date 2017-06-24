@@ -3,12 +3,12 @@
 //var _engageCircleAlpha = 0.2/self.totalSelectedWithEngage;
 //var _wanderCircleAlpha = 0.2/self.totalSelectedWithWander;
 
-var _mouseX = player.virtualMouse == noone ? mouse_x : player.virtualMouse.mouseX;
-var _mouseY = player.virtualMouse == noone ? mouse_y : player.virtualMouse.mouseY;
-
-if(global.isWorldMap){
+if(global.isWorldMap || player == noone){
 	return true;
 }
+
+var _mouseX = player.virtualMouse == noone ? mouse_x : player.virtualMouse.mouseX;
+var _mouseY = player.virtualMouse == noone ? mouse_y : player.virtualMouse.mouseY;
 
 for(var i = 0; i < scr_linked_list_size(self.selected); i++){
     var _currentNPC = scr_linked_list_get_next(self.selected);
