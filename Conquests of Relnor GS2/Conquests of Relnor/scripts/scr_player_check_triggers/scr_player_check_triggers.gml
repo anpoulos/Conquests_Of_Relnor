@@ -21,7 +21,9 @@ if(_isFree){
 	}
 	
 	if(triggers[TRIGGER_ATTACK_CYCLE]){
-		instance_destroy(currentSpecial);
+		if(currentSpecial != noone){
+			instance_destroy(currentSpecial);
+		}
 		currentSpecial = instance_create(0,0,scr_linked_list_get_next(specials));
 	}
 

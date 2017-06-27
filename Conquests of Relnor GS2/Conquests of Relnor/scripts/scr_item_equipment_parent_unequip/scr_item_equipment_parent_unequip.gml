@@ -17,6 +17,14 @@ isEquipped = false;
 
 scr_lifeform_update_defence(owner);
 
+scr_linked_list_clear(owner.specials);
+
+if(owner.currentSpecial != noone){
+	instance_destroy(owner.currentSpecial);
+}
+
+owner.currentSpecial = noone;
+
 scr_lifeform_parent_inventory_add(owner, self);
 if(global.gamePaused){
 	scr_player_gui_update_all(true);
