@@ -18,10 +18,6 @@ if(triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
 	triggersType[TRIGGER_ATTACK] = TRIGGER_TYPE_CHECK;
 	triggersBinding[TRIGGER_ATTACK] = vk_shift;
 
-	triggersType[TRIGGER_ATTACK_CYCLE] = TRIGGER_TYPE_CHECK;
-	triggersBinding[TRIGGER_ATTACK_CYCLE] = vk_control;
-	triggersExtraBinding[TRIGGER_ATTACK_CYCLE] = vk_shift;
-
 	triggersType[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU] = TRIGGER_TYPE_PRESSED;
 	triggersBinding[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU] = vk_escape;
 
@@ -52,6 +48,12 @@ if(triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
 
 	triggersType[TRIGGER_COMMAND_MENU] = TRIGGER_TYPE_PRESSED;
 	triggersBinding[TRIGGER_COMMAND_MENU] = ord("C");
+	
+	triggersType[TRIGGER_ATTACK_CYCLE] = TRIGGER_TYPE_PRESSED;
+	triggersBinding[TRIGGER_ATTACK_CYCLE] = ord("Q");
+	
+	triggersType[TRIGGER_SPECIAL] = TRIGGER_TYPE_PRESSED;
+	triggersBinding[TRIGGER_SPECIAL] = ord("F");
 }
 else{ //controller defaults
 	for(var i = 0; i < TRIGGERS_MAX; i++){
@@ -98,10 +100,13 @@ else{ //controller defaults
 	triggersBinding[TRIGGER_LEFT] = gp_padl;
 
 	triggersType[TRIGGER_COMMAND_MENU] = TRIGGER_TYPE_PRESSED;
-	triggersBinding[TRIGGER_COMMAND_MENU] = gp_face4;
+	triggersBinding[TRIGGER_COMMAND_MENU] = gp_select;
 	
 	triggersType[TRIGGER_AUTO_TARGET] = TRIGGER_TYPE_PRESSED;
 	triggersBinding[TRIGGER_AUTO_TARGET] = gp_face2;
+
+	triggersType[TRIGGER_SPECIAL] = TRIGGER_TYPE_PRESSED;
+	triggersBinding[TRIGGER_SPECIAL] = gp_face4;
 }
 
 

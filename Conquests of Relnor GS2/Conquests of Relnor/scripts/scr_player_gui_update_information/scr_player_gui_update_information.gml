@@ -40,10 +40,9 @@ else{
 	SecondaryAttackIcon.sprite = noone;
 }
 
-if(equipment[EQUIPMENT_TYPE_WEAPON]){
-	var _item = equipment[EQUIPMENT_TYPE_WEAPON];
-	PrimaryAttackText.text = _item.itemStats[ITEM_STATS_NAME];
-	PrimaryAttackIcon.sprite = _item.icon;
+if(currentSpecial != noone){
+	PrimaryAttackText.text = currentSpecial.name;
+	PrimaryAttackIcon.sprite = currentSpecial.icon;
 }
 else{
 	PrimaryAttackText.text = "";

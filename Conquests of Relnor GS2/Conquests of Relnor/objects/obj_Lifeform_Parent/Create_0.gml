@@ -5,6 +5,10 @@ shadowSurface = surface_create(room_width, room_height);
 
 isVisible = true;
 
+isCharging = false;
+currentSpecial = noone;
+specials = scr_linked_list_create();
+
 hasBodyParts = false;
 combatCheckCount = -1;
 sex = noone;

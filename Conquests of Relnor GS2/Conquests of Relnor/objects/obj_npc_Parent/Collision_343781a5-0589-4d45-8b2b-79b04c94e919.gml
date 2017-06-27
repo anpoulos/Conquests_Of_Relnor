@@ -22,6 +22,10 @@
 //	scr_npc_move_to(self, _tempX, _tempY, scr_npc_choose_next_state, size-1, false, false, self.runSpeed);
 //}
 
+if(isCharging){
+	scr_special_charge_contact(other);
+}
+
 if(!instance_exists(other) || !instance_exists(self)){
 	return;
 }

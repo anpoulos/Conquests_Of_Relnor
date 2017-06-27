@@ -19,12 +19,21 @@ if(_isFree){
 			scr_lifeform_actions_set_free_cool(10);
 		}
 	}
+	
+	if(triggers[TRIGGER_ATTACK_CYCLE]){
+		instance_destroy(currentSpecial);
+		currentSpecial = instance_create(0,0,scr_linked_list_get_next(specials));
+	}
 
 	if((triggers[TRIGGER_ATTACK] || triggers[TRIGGER_MAGIC]) &&
 	(triggersInput != TRIGGER_INPUT_TYPE_CONTROLLER || autoTarget != noone)){		
 		image_index = 0;
 		state = attackState;
 		scr_lifeform_actions_set_free_cool(10);
+	}
+	
+	if(triggers[TRIGGER_SPECIAL]){
+		scr_lifeform_combat_special();
 	}
 }
 

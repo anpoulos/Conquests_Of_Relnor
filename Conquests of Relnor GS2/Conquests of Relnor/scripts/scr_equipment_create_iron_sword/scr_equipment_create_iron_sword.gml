@@ -10,5 +10,7 @@ _sword.sprite[RIGHT] = spr_equipment_iron_sword_right;
 
 _sword.sprite[UP] = spr_equipment_iron_sword_up;
 
+scr_linked_list_add(_sword.specials, obj_special_charge);
+
 return _sword;
 
