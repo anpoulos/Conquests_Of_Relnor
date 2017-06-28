@@ -1,8 +1,8 @@
 ///@param inputType
-triggersInput = argument0;
+global.triggersInput = argument0;
 
 //keyboard defaults
-if(triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
+if(global.triggersInput == TRIGGER_INPUT_TYPE_KEYBOARD){
 	for(var i = 0; i < TRIGGERS_MAX; i++){
 		triggersInputType[i] = TRIGGER_INPUT_TYPE_KEYBOARD;
 		triggersExtraBindingInputType[i] = TRIGGER_INPUT_TYPE_KEYBOARD;

@@ -5,7 +5,7 @@ var _mouseMode = argument0;
 var _gui = argument1;
 
 with(global.player){
-	if(triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER){
+	if(global.triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER){
 		if(virtualMouse != noone){
 			instance_destroy(virtualMouse);
 		}

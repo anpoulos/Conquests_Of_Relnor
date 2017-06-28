@@ -15,3 +15,4 @@ unequipScript = scr_item_equipment_parent_unequip;
 
 isEquipped = false;
 isVisibleWhenEquipped = true;
+specials = scr_linked_list_create();

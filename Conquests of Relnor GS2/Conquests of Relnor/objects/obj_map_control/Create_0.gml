@@ -11,6 +11,7 @@ global.moonTonight = true;
 global.additiveLights = scr_linked_list_create();
 global.worldMapGrid = noone;
 global.worldMapControl = instance_create(0,0,obj_map_world_control);
+global.triggersInput = TRIGGER_INPUT_TYPE_KEYBOARD;
 
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;

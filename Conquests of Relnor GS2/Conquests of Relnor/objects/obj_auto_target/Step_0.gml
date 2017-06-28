@@ -14,7 +14,8 @@ if(!hasCalculated){
 	var _y3 = y;
 
 	with(obj_npc_Parent){
-		if(point_in_triangle(x,y,_x1,_y1,_x2,_y2,_x3,_y3)){
+		if(scr_misc_allegiance_are_enemies(global.player.allegiance, allegiance) && 
+		point_in_triangle(x,y,_x1,_y1,_x2,_y2,_x3,_y3)){
 			scr_linked_list_add(_possibleTargets, self);
 			scr_linked_list_add(_possibleTargetsGUI, self);
 		}

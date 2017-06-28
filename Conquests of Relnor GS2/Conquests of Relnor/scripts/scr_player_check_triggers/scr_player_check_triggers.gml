@@ -20,7 +20,7 @@ if(_isFree){
 		}
 	}
 	
-	if(triggers[TRIGGER_ATTACK_CYCLE]){
+	if(triggers[TRIGGER_ATTACK_CYCLE] && scr_linked_list_size(specials) > 0){
 		if(currentSpecial != noone){
 			instance_destroy(currentSpecial);
 		}
@@ -28,7 +28,7 @@ if(_isFree){
 	}
 
 	if((triggers[TRIGGER_ATTACK] || triggers[TRIGGER_MAGIC]) &&
-	(triggersInput != TRIGGER_INPUT_TYPE_CONTROLLER || autoTarget != noone)){		
+	(global.triggersInput != TRIGGER_INPUT_TYPE_CONTROLLER || autoTarget != noone)){		
 		image_index = 0;
 		state = attackState;
 		scr_lifeform_actions_set_free_cool(10);

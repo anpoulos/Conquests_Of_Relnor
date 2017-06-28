@@ -1,6 +1,6 @@
 ///Inherited
 if(global.isWorldMap && 
-triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER &&
+global.triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER &&
 !global.gamePaused){
 	var _clickablesOnScreen = false;
 	with(obj_ui_clickable_parent){

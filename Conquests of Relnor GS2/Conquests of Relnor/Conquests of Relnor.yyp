@@ -887,6 +887,14 @@
             }
         },
         {
+            "Key": "101730ef-7f9b-43cc-bba0-6d08e0693d07",
+            "Value": {
+                "id": "4b8b625e-d55c-455c-aa4a-96ff41a8617f",
+                "resourcePath": "scripts\\scr_lifeform_combat_damage\\scr_lifeform_combat_damage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1070a59a-e5bf-44e1-8096-34be447e2ac4",
             "Value": {
                 "id": "aa41cbab-b5db-4ea7-b05c-0ddbe3d6dc00",
@@ -7911,6 +7919,14 @@
             }
         },
         {
+            "Key": "95e74b7c-1dce-4b78-82a1-adf23b06216b",
+            "Value": {
+                "id": "eb019bad-8fc1-4126-b88a-049285087a80",
+                "resourcePath": "scripts\\scr_lifeform_get_random_hit\\scr_lifeform_get_random_hit.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "95ea8479-576d-48bd-9f1d-01c270a8ec3e",
             "Value": {
                 "id": "e2574c31-40fc-4357-83f7-c9f24c1ed0e2",
@@ -13797,9 +13813,11 @@
         "fa705b70-6964-4131-920b-88d3a75a0d81",
         "c523395c-3f5e-4f19-a73a-6d22e79682d5",
         "333d2215-3524-48c1-aa16-dde9eb0ef863",
+        "95e74b7c-1dce-4b78-82a1-adf23b06216b",
+        "bac27f64-3124-4595-8d56-3f5f3e25a469",
+        "101730ef-7f9b-43cc-bba0-6d08e0693d07",
         "74b12bf8-a9b3-4806-bf15-8d899f766675",
         "0d5c1ff5-c366-4e16-83bc-29d7c5400c53",
-        "bac27f64-3124-4595-8d56-3f5f3e25a469",
         "df7e9eda-53c4-494f-a2f1-17d35105ae42",
         "775251ab-7e8c-4cd5-a3c6-3dfbbaaa8b27",
         "aa25ac2b-0122-4252-9c4c-596bf282d61f",

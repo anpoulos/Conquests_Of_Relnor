@@ -45,26 +45,6 @@
             "m_owner": "003a1e23-74ed-4332-9303-735595e71fcb"
         },
         {
-            "id": "81e8baec-b38b-48ec-93c9-ca4060160f96",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "24d58c76-65af-4bb6-b14b-41bd340a370d",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "003a1e23-74ed-4332-9303-735595e71fcb"
-        },
-        {
-            "id": "348f5489-a94e-42b6-aad6-f2639f79d04e",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "5a347da9-65ab-4ad4-9bd9-b0b8a5f92865",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "003a1e23-74ed-4332-9303-735595e71fcb"
-        },
-        {
             "id": "79622280-7db4-4f7b-aa94-5f093ddfc42e",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -81,7 +61,7 @@
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 66,
-            "eventtype": 5,
+            "eventtype": 10,
             "m_owner": "003a1e23-74ed-4332-9303-735595e71fcb"
         },
         {
@@ -253,6 +233,16 @@
             "enumb": 86,
             "eventtype": 10,
             "m_owner": "003a1e23-74ed-4332-9303-735595e71fcb"
+        },
+        {
+            "id": "f5b8b8ff-48d4-4d9d-b7b6-330368c9fe54",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "24d58c76-65af-4bb6-b14b-41bd340a370d",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "003a1e23-74ed-4332-9303-735595e71fcb"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -260,12 +250,12 @@
     "persistent": true,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 20,
-    "physicsFriction": 20,
+    "physicsFriction": 0,
     "physicsGroup": 0,
     "physicsKinematic": false,
     "physicsLinearDamping": 5,
     "physicsObject": true,
-    "physicsRestitution": 20,
+    "physicsRestitution": 0,
     "physicsSensor": false,
     "physicsShape": 1,
     "physicsShapePoints": [
@@ -299,7 +289,7 @@
         }
     ],
     "physicsStartAwake": true,
-    "solid": false,
+    "solid": true,
     "spriteId": "a41822f4-e903-405c-b274-25e5661859db",
     "visible": true
 }

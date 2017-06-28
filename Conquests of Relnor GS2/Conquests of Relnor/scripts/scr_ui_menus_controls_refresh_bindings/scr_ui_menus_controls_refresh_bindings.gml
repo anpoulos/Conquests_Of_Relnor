@@ -11,7 +11,7 @@ var _padding = _buttonWidth/2 + 10;
 
 //Input Type
 	var _descriptionText = "Input Type: ";
-	_descriptionText += triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER ? "Controller" : "Keyboard";
+	_descriptionText += global.triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER ? "Controller" : "Keyboard";
     
 	var _textDraw = scr_ui_font_constructor(ControlMenuContainer.leftX + _padding, ControlMenuContainer.topY + _padding, 
 		_descriptionText, fnt_default_medium, c_white, 

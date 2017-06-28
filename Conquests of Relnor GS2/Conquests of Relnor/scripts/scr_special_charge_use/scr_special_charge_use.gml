@@ -8,7 +8,7 @@ if(isPlayer){
 		_destinationX = autoTarget.x;
 		_destinationY = autoTarget.y;
 	}
-	else if (triggersInput != TRIGGER_INPUT_TYPE_CONTROLLER){
+	else if (global.triggersInput != TRIGGER_INPUT_TYPE_CONTROLLER){
 		_destinationX = mouse_x;
 		_destinationY = mouse_y;
 	}
@@ -25,14 +25,16 @@ scr_lifeform_face_towards(self, _destinationX, _destinationY);
 
 var _direction = point_direction(x, y, _destinationX, _destinationY);
 
-var _xAmount = dcos(_direction)*15;
-var _yAmount = dsin(_direction)*15;
+var _xAmount = dcos(_direction)*5000;
+var _yAmount = -dsin(_direction)*5000;
 
-scr_obj_move_phy(self, _xAmount, _yAmount);	
+statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY] -= currentSpecial.requiredEnergy;
 
-image_speed = 0.3;
+physics_apply_local_impulse(x,y, _xAmount, _yAmount);
+
+image_speed = 0.4;
 
 isCharging = true;
-alarm[7] = room_speed div 2;
+alarm[7] = room_speed;
 
 state = scr_lifeform_states_charge_state;

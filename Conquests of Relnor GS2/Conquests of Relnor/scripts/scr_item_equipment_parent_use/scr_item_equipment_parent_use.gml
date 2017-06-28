@@ -46,9 +46,7 @@ if(scr_lifeform_parent_inventory_get_free_space(owner) >= _freeSpaceNeeded){
 	
 	owner.equipment[equipmentStats[EQUIPMENT_STATS_TYPE]] = self;
 	
-	if(scr_is_ancestor_or_is(object_index, obj_equipment_weapon_parent)){
-		scr_linked_list_clear(owner.specials);
-		owner.currentSpecial = noone;
+	if(scr_linked_list_size(specials) > 0){
 		scr_linked_list_add_range(owner.specials, specials);
 	}
 

@@ -90,21 +90,14 @@ sprite_index = attackSprite[face4Way];
 
 if (!attacked && image_index >= 3){
 	
-	if(_item != noone){
-		var _damageType = _item.damageType;
-		var _toolIndex = _item.equipmentStats[EQUIPMENT_STATS_TOOL_TYPE];
-		var _accuracy = irandom_range( ceil(statsCurrent[STATS_TOOLS,_toolIndex]/STATS_MULTIPLIER), LEVEL_CAP)/LEVEL_CAP;
-		var _damage = _item.equipmentStats[EQUIPMENT_STATS_DAMAGE] * _accuracy;
+	if(_item == noone){
+		var _damageType = obj_damage_melee_small;
 	}
 	else{
-		var _damageType = obj_damage_melee_small;
-		var _accuracy = irandom_range( ceil(statsMax[STATS_PHYSICAL, STATS_PHYSICAL_ENERGY]/(STATS_MULTIPLIER*STATS_ENERGY_MULTIPLIER)), LEVEL_CAP ) / LEVEL_CAP;
-		var _strength = statsCurrent[STATS_PHYSICAL, STATS_PHYSICAL_STRENGTH];
-		var _a = ceil(_strength/STATS_MULTIPLIER);
-		var _damage = irandom(_a)*_accuracy;
+		var _damageType = _item.damageType;
 	}
 
-	scr_lifeform_damage_create(x, y, _damageType, _damage, 
+	scr_lifeform_damage_create(x, y, _damageType, scr_lifeform_get_random_hit(_item), 
 		self, _destinationX, _destinationY);
 	scr_lifeform_increase_stat(self, STATS_PHYSICAL, STATS_PHYSICAL_ENERGY, -_energyDrain);
 	
