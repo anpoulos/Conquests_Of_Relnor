@@ -44,66 +44,79 @@ if(triggers[TRIGGER_AUTO_TARGET]){
 	if(autoTarget != noone){
 		autoTarget = noone;
 	}
-	else{
-		var _angle1 = 0;
-		var _angle2 = 0;
+	
+	var _angle1 = 0;
+	var _angle2 = 0;
 
-		switch(face8Way){
-			case FACE_RIGHT:
-				_angle1 = 337.5;
-				_angle2 = 22.5;
-			break;
+	switch(face8Way){
+		case FACE_RIGHT:
+			_angle1 = 337.5;
+			_angle2 = 22.5;
+		break;
 		
-			case FACE_UPPERRIGHT:
-				_angle1 = 22.5;
-				_angle2 = 67.5;
-			break;
+		case FACE_UPPERRIGHT:
+			_angle1 = 22.5;
+			_angle2 = 67.5;
+		break;
 	
-			case FACE_UP:
-				_angle1 = 67.5;
-				_angle2 = 112.5;
-			break;
+		case FACE_UP:
+			_angle1 = 67.5;
+			_angle2 = 112.5;
+		break;
 		
-			case FACE_UPPERLEFT:
-				_angle1 = 112.5;
-				_angle2 = 157.5;
-			break;
+		case FACE_UPPERLEFT:
+			_angle1 = 112.5;
+			_angle2 = 157.5;
+		break;
 		
-			case FACE_LEFT:
-				_angle1 = 157.5;
-				_angle2 = 202.5;
-			break;
+		case FACE_LEFT:
+			_angle1 = 157.5;
+			_angle2 = 202.5;
+		break;
 		
-			case FACE_DOWNLEFT:
-				_angle1 = 202.5;
-				_angle2 = 247.5;
-			break;
+		case FACE_DOWNLEFT:
+			_angle1 = 202.5;
+			_angle2 = 247.5;
+		break;
 		
-			case FACE_DOWN:
-				_angle1 = 247.5;
-				_angle2 = 292.5;
-			break;
+		case FACE_DOWN:
+			_angle1 = 247.5;
+			_angle2 = 292.5;
+		break;
 		
-			case FACE_DOWNRIGHT:
-				_angle1 = 292.5;
-				_angle2 = 337.5;
-			break;
-		}
-	
-		var _x1 = x + sight*dcos(_angle1);
-		var _x2 = x + sight*dcos(_angle2);
-	
-		var _y1 = y - sight*dsin(_angle1);
-		var _y2 = y - sight*dsin(_angle2);
-	
-		autoTargetUI = instance_create(x,y,obj_auto_target);
-		autoTargetUI.x1 = _x1;
-		autoTargetUI.x2 = _x2;
-		autoTargetUI.y1 = _y1;
-		autoTargetUI.y2 = _y2;
+		case FACE_DOWNRIGHT:
+			_angle1 = 292.5;
+			_angle2 = 337.5;
+		break;
 	}
-
 	
+	var _x1 = x + sight*dcos(_angle1);
+	var _x2 = x + sight*dcos(_angle2);
+	
+	var _y1 = y - sight*dsin(_angle1);
+	var _y2 = y - sight*dsin(_angle2);
+	
+	//autoTargetUI = instance_create(x,y,obj_auto_target);
+	//autoTargetUI.x1 = _x1;
+	//autoTargetUI.x2 = _x2;
+	//autoTargetUI.y1 = _y1;
+	//autoTargetUI.y2 = _y2;
+		
+	var _npcsList = global.allNpcs;
+	var _totalNpcs = scr_linked_list_size(_npcsList);
+		
+	for(var i = 0; i < _totalNpcs; i++){
+		if(instance_exists(scr_linked_list_peak(_npcsList))){
+			var _npc = scr_linked_list_get_next(_npcsList);
+			if(!_npc.isDead && point_in_triangle(_npc.x, _npc.y, x,y,_x1,_y1,_x2,_y2)){
+				autoTarget = _npc;
+			}
+		}
+		else{
+			scr_linked_list_remove_next(_npcsList);
+		}
+	}
+		
 }
 
 

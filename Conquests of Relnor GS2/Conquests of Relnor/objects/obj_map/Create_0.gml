@@ -1,5 +1,7 @@
 ///Constructor, room initialize script called on creation code
 
+global.allNpcs = scr_linked_list_create();
+
 var _playerX = x;
 var _playerY = y;
 
