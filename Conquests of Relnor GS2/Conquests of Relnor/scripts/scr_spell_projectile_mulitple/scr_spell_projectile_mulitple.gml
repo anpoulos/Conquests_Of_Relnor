@@ -14,8 +14,8 @@ with(owner){
 	}
 	else{
 		if(autoTarget != noone){
-			_x = autoTarget.x;
-			_y = autoTarget.y;
+			_x = scr_player_get_auto_target_projected_x();
+			_y = scr_player_get_auto_target_projected_y();
 		}
 		else{
 			_x = mouse_x;

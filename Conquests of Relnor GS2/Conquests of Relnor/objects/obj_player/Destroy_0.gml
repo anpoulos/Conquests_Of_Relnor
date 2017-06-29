@@ -1,5 +1,7 @@
 ///Destroy
 
+global.player = noone;
+
 scr_destroy_instance(commandModule);
 instance_destroy(InventoryInfoContainerItemStats);
 instance_destroy(view);

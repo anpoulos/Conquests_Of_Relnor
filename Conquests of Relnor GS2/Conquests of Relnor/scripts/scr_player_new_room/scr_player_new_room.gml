@@ -25,4 +25,10 @@ if(!_foundOldTime){
 	global.sun = noone;
 }
 
+if(global.allNpcs != noone){
+	scr_linked_list_destroy(global.allNpcs);
+}
+
+global.allNpcs = scr_linked_list_create();
+
 room_goto(argument2);

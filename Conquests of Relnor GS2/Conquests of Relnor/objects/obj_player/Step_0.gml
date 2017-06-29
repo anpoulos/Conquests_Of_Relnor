@@ -30,11 +30,6 @@ if(autoTarget != noone){
 	}
 }
 
-if(triggers[TRIGGER_AUTO_TARGET] && autoTargetUI != noone){
-	instance_destroy(autoTargetUI);
-	triggers[TRIGGER_AUTO_TARGET] = false;
-}
-
 event_inherited();
 
 if(isDead){

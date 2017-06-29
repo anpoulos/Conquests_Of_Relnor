@@ -7,7 +7,6 @@ scr_player_controls_set_defaults(TRIGGER_INPUT_TYPE_KEYBOARD);
 selectBox = noone;
 virtualMouse = noone;
 commandMenu = noone;
-autoTargetUI = noone;
 
 autoTarget = noone;
 

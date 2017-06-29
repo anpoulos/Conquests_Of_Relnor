@@ -11,7 +11,7 @@ if(!audio_is_playing(currentMusic)){
 	currentMusic = scr_audio_music_get_random_music(musicType);
 	currentMusicIndex = audio_play_sound(currentMusic, 10, false);
 	audio_sound_gain(currentMusicIndex, 0, 0);
-	audio_sound_gain(currentMusicIndex, 1, 1000);
+	audio_sound_gain(currentMusicIndex, settings[SETTINGS_MUSIC_VOLUME], 1000);
 }
 
 if(audio_sound_get_gain(currentMusicIndex) == 0){
@@ -19,7 +19,7 @@ if(audio_sound_get_gain(currentMusicIndex) == 0){
 	currentMusic = scr_audio_music_get_random_music(musicType);
 	currentMusicIndex = audio_play_sound(currentMusic, 10, false);
 	audio_sound_gain(currentMusicIndex, 0, 0);
-	audio_sound_gain(currentMusicIndex, 1, 1000);
+	audio_sound_gain(currentMusicIndex, settings[SETTINGS_MUSIC_VOLUME], 1000);
 }
 
 if(gameOver){

@@ -33,4 +33,8 @@ for(var i = 0; i < ROOM_MAX; i++){
 
 scr_linked_list_destroy_all(followingList);
 
+if(global.allNpcs != noone){
+	scr_linked_list_destroy(global.allNpcs);
+}
+
 room_goto(rm_menus_title);

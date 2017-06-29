@@ -50,43 +50,43 @@ if(triggers[TRIGGER_AUTO_TARGET]){
 
 	switch(face8Way){
 		case FACE_RIGHT:
-			_angle1 = 337.5;
-			_angle2 = 22.5;
+			_angle1 = 315;
+			_angle2 = 45;
 		break;
 		
 		case FACE_UPPERRIGHT:
-			_angle1 = 22.5;
-			_angle2 = 67.5;
+			_angle1 = 0;
+			_angle2 = 90;
 		break;
 	
 		case FACE_UP:
-			_angle1 = 67.5;
-			_angle2 = 112.5;
+			_angle1 = 45;
+			_angle2 = 135;
 		break;
 		
 		case FACE_UPPERLEFT:
-			_angle1 = 112.5;
-			_angle2 = 157.5;
+			_angle1 = 90;
+			_angle2 = 180;
 		break;
 		
 		case FACE_LEFT:
-			_angle1 = 157.5;
-			_angle2 = 202.5;
+			_angle1 = 135;
+			_angle2 = 225;
 		break;
 		
 		case FACE_DOWNLEFT:
-			_angle1 = 202.5;
-			_angle2 = 247.5;
+			_angle1 = 180;
+			_angle2 = 270;
 		break;
 		
 		case FACE_DOWN:
-			_angle1 = 247.5;
-			_angle2 = 292.5;
+			_angle1 = 225;
+			_angle2 = 315;
 		break;
 		
 		case FACE_DOWNRIGHT:
-			_angle1 = 292.5;
-			_angle2 = 337.5;
+			_angle1 = 270;
+			_angle2 = 360;
 		break;
 	}
 	
@@ -95,12 +95,6 @@ if(triggers[TRIGGER_AUTO_TARGET]){
 	
 	var _y1 = y - sight*dsin(_angle1);
 	var _y2 = y - sight*dsin(_angle2);
-	
-	//autoTargetUI = instance_create(x,y,obj_auto_target);
-	//autoTargetUI.x1 = _x1;
-	//autoTargetUI.x2 = _x2;
-	//autoTargetUI.y1 = _y1;
-	//autoTargetUI.y2 = _y2;
 		
 	var _npcsList = global.allNpcs;
 	var _totalNpcs = scr_linked_list_size(_npcsList);
@@ -108,8 +102,11 @@ if(triggers[TRIGGER_AUTO_TARGET]){
 	for(var i = 0; i < _totalNpcs; i++){
 		if(instance_exists(scr_linked_list_peak(_npcsList))){
 			var _npc = scr_linked_list_get_next(_npcsList);
-			if(!_npc.isDead && point_in_triangle(_npc.x, _npc.y, x,y,_x1,_y1,_x2,_y2)){
+			if(!_npc.isDead && 
+			scr_misc_allegiance_are_enemies(_npc.allegiance, allegiance) && 
+			point_in_triangle(_npc.x, _npc.y, x,y,_x1,_y1,_x2,_y2)){
 				autoTarget = _npc;
+				break;
 			}
 		}
 		else{

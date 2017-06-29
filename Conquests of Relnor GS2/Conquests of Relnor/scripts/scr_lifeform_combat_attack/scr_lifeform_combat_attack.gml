@@ -11,8 +11,8 @@ if(isPlayer){
 		_destinationY = mouse_y;
 	}
 	else{
-		_destinationX = autoTarget.x;
-		_destinationY = autoTarget.y;
+		_destinationX = scr_player_get_auto_target_projected_x();
+		_destinationY = scr_player_get_auto_target_projected_y();
 	}
 }
 else{

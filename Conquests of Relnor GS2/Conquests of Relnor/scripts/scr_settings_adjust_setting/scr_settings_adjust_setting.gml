@@ -28,4 +28,8 @@ switch(_setting){
 		var _settingAmount = global.mapControl.settings[_setting];
 		global.scrollSpeed = (1.1 - _settingAmount)*10;
 	break;
+	
+	case SETTINGS_MUSIC_VOLUME:
+		audio_sound_gain(global.mapControl.currentMusicIndex, global.mapControl.settings[_setting], 500);
+	break;
 }

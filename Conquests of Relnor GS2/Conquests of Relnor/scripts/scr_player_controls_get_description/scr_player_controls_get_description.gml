@@ -2,7 +2,7 @@
 
 switch(argument0){
 	case TRIGGER_ATTACK: return "Attack";
-	case TRIGGER_ATTACK_CYCLE: return "Cycle through attacks";
+	case TRIGGER_ATTACK_CYCLE: return "Cycle through specials";
 	case TRIGGER_CLOSE_OR_OPEN_PARTY_MENU: return "Close menu or open party menu";
 	case TRIGGER_DASH: return "Sprint";
 	case TRIGGER_DOWN: return "Down";
@@ -14,4 +14,5 @@ switch(argument0){
 	case TRIGGER_USE: return "Use object or talk to person";
 	case TRIGGER_COMMAND_MENU: return "Bring up Command Menu";
 	case TRIGGER_AUTO_TARGET: return "Lock Target";
+	case TRIGGER_SPECIAL: return "Use Special Attack";
 }

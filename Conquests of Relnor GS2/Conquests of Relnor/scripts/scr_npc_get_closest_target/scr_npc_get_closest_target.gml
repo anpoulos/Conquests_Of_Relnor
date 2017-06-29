@@ -8,18 +8,20 @@ for(var i = 0; i < scr_linked_list_size(self.possibleEnemies); i++){
     var _enemyType = scr_linked_list_get_next(self.possibleEnemies);
 	
 	with(_enemyType){
-        var _distance = point_distance(_outerSelf.x, _outerSelf.y, x, y);
+		if(!isDead){
+			var _distance = point_distance(_outerSelf.x, _outerSelf.y, x, y);
 			
-		var _effectiveSite = _outerSelf.engageDistance;
+			var _effectiveSite = _outerSelf.engageDistance;
 			
-		if(global.isNight && !isRevealed){
-			_effectiveSite *= _outerSelf.nightSightStrength;
-		}
+			if((global.isNight || global.isInterior) && !isRevealed){
+				_effectiveSite *= _outerSelf.nightSightStrength;
+			}
 			
-        if(_distance <= _effectiveSite && _distance < _closestEnemyDistance){
-            _closestEnemy = self;
-            _closestEnemyDistance = _distance;
-        }
+	        if(_distance <= _effectiveSite && _distance < _closestEnemyDistance){
+	            _closestEnemy = self;
+	            _closestEnemyDistance = _distance;
+	        }
+		}        
 	}
 	
 	//var _totalEnemies = instance_number(_enemyType);

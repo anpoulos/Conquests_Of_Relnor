@@ -5,8 +5,8 @@ if(isPlayer){
 	var _destinationY = 0;
 	
 	if(scr_player_has_auto_target()){
-		_destinationX = autoTarget.x;
-		_destinationY = autoTarget.y;
+		_destinationX = scr_player_get_auto_target_projected_x();
+		_destinationY = scr_player_get_auto_target_projected_y();
 	}
 	else if (global.triggersInput != TRIGGER_INPUT_TYPE_CONTROLLER){
 		_destinationX = mouse_x;

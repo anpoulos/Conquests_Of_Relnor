@@ -16,6 +16,13 @@ if(isVisible){
 			//draw_set_color(c_black);
 			scr_map_shadow_draw_lifeform(global.shadowOpacity, 0.5);
 		}
+  
+		if(global.player != noone && global.player.autoTarget == self){
+			draw_set_alpha(0.5);
+			draw_set_color(c_red);
+			draw_circle(x, y, size div 2, false);
+			draw_set_alpha(1.0);
+		}
 
 		//draw items behind first
 
