@@ -13,6 +13,7 @@ global.worldMapGrid = noone;
 global.worldMapControl = instance_create(0,0,obj_map_world_control);
 global.triggersInput = TRIGGER_INPUT_TYPE_KEYBOARD;
 global.allNpcs = noone;
+global.timeIncrement = 1;
 
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;

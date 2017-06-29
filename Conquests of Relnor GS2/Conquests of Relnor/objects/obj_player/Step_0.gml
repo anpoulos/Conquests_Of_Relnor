@@ -22,6 +22,10 @@ global.triggersInput == TRIGGER_INPUT_TYPE_CONTROLLER &&
 	}
 }
 
+if(originalSleepTime != -1 && state != scr_player_states_sleep_state){
+	state = scr_player_states_sleep_state;
+}
+
 scr_player_get_action_inputs();
 
 if(autoTarget != noone){

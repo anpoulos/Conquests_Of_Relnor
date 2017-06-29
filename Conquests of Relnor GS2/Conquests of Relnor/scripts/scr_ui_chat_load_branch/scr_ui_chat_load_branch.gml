@@ -39,6 +39,12 @@ for(var i = 0; i < _listSize; i++){
         
         switch(_arg0){
 		
+			case "#close":
+				scr_player_disable_busy();
+				instance_destroy(_chatWindow);
+				return true;
+			break;
+		
 			case "#add":
 				var _variableName = ds_queue_dequeue(_args);
 				switch(_variableName){

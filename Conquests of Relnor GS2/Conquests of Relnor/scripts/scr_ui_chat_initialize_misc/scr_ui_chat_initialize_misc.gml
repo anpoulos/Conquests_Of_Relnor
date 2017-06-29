@@ -8,8 +8,10 @@ scripts[2] = scr_ui_chat_2;
 scripts[3] = scr_ui_chat_3;
 scripts[4] = scr_ui_chat_4;
 
-
 scripts[5] = scr_story_cut_scene_example;
 
-
 scripts[6] = scr_story_remulus_name_input;
+
+scripts[7] = scr_ui_chat_7;
+scripts[8] = scr_ui_chat_8;
+scripts[9] = scr_ui_chat_9;

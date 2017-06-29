@@ -8,6 +8,8 @@ selectBox = noone;
 virtualMouse = noone;
 commandMenu = noone;
 
+originalSleepTime = -1;
+
 autoTarget = noone;
 
 mapControl = noone;

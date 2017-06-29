@@ -77,27 +77,3 @@ else{
 	scr_npc_choose_next_state();
 }
 
-
-//if(triggers[TRIGGER_ATTACK]){
-//	scr_lifeform_combat_attack(equipment[EQUIPMENT_TYPE_WEAPON]);
-//}
-//else if(triggers[TRIGGER_MAGIC]){
-//	if(offhandSpell != noone){
-//		with(offhandSpell.useAs){
-//			script_execute(useScript);
-//		}
-//	}
-//	else{
-//		state = moveState;
-//	}
-//}
-
-
-//if(triggers[TRIGGER_MAGIC_CYCLE]){
-//	var _item = equipment[EQUIPMENT_TYPE_OFFHAND];
-//	if(_item != noone && _item.object_index == obj_offhand_tome_parent){
-//		_item.selectedSpell = scr_linked_list_get_next(_item.initializedSpells);
-//		self.offhandSpell = _item.selectedSpell;
-//		scr_player_gui_update_information();
-//	}
-//}

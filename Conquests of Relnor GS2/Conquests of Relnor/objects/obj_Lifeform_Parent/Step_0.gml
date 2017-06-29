@@ -56,10 +56,6 @@ else{
 
 ///Check for unwalkable object in front with collision line
 
-if(self.state != self.moveState){
-    return false;
-}
-
 //var _inFrontOfMe = false;
 //switch(self.face4Way){
 //    case RIGHT:

@@ -1,15 +1,7 @@
 ///Destroy
 
-
-while(!scr_linked_list_is_empty(buttons)){
-	instance_destroy(scr_linked_list_remove_next(buttons));
-}
-scr_linked_list_destroy(buttons);
-
-while(!scr_linked_list_is_empty(lines)){
-	instance_destroy(scr_linked_list_remove_next(lines));
-}
-scr_linked_list_destroy(lines);
+scr_linked_list_destroy_all(buttons);
+scr_linked_list_destroy_all(lines);
 
 for(var i = 0; i < array_length_1d(branches); i++){
 	if(branches[i] != noone){

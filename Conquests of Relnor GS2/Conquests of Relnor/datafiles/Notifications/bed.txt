@@ -1,0 +1,19 @@
+#branch 0
+#title _
+Sleep for how many hours?
+#button #branch 1 4_hours
+#button #branch 2 8_hours
+#button #branch 3 12_hours
+#button #close Nevermind
+
+#branch 1
+#script 7
+#close
+
+#branch 2
+#script 8
+#close
+
+#branch 3
+#script 9
+#close

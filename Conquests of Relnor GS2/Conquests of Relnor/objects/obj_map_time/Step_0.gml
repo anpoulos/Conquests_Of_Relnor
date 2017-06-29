@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if(!global.gamePaused){
+if(global.gamePaused){
 	surface_set_target(global.lightSurface);
 		draw_set_color(minColorRGB);
 		draw_rectangle(0,0,room_width, room_height, false);
@@ -74,14 +74,13 @@ else{
 	} 
 }
 
-
-if(global.time >= 24000){
-	global.time = 0;
-}
-
 surface_set_target(global.lightSurface);
 	draw_set_color(minColorRGB);
 	draw_rectangle(0,0,room_width, room_height, false);
 surface_reset_target();
 
-global.time += 1;
+global.time += global.timeIncrement;
+
+if(global.time >= 24000){
+	global.time = 0;
+}

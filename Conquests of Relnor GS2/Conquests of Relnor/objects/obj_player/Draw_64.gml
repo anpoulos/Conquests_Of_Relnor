@@ -11,6 +11,8 @@ if (global.debug > 0) {
 	}
 	draw_text_color(30,200, "Player x,y : "+string(x)+", "+string(y), 
 		c_white, c_white,c_white,c_white, 1.0);
+	draw_text_color(30,250, "SleepTime : "+string(originalSleepTime), 
+		c_white, c_white,c_white,c_white, 1.0);
 }
 
 

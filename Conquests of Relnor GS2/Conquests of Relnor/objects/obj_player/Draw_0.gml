@@ -6,3 +6,7 @@ if(global.debug == 3){
     draw_set_alpha(1.0);
 }
 
+if(originalSleepTime != -1){
+	//TODO draw sleep bubble
+}
+

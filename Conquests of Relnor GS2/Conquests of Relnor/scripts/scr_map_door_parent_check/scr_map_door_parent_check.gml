@@ -16,8 +16,7 @@ if(keyId != -1){
 	}
 
 	if(_isLocked){
-		var _chatWindow = scr_ui_chat_constructor(noone, noone, "Notifications", "locked");
-		scr_ui_open_chat(_chatWindow);
+		scr_ui_chat_notification("locked");
 		return false;
 	}
 
