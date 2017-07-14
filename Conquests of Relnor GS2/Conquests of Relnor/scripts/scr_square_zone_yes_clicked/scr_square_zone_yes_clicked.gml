@@ -5,4 +5,4 @@ instance_destroy(tempVal);
 
 scr_ui_menus_restore_all();
 
-scr_player_new_room(destinationX, destinationY, destinationRoom);
+scr_player_new_room(destinationX, destinationY, destinationRoom, noone);

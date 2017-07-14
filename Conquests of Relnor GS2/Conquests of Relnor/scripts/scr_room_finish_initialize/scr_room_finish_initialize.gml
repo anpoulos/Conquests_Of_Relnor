@@ -21,6 +21,9 @@ mp_grid_add_instances(_tempGrid, obj_Lifeform_Parent, true);
 global.playerSpawnX = noone;
 global.playerSpawnY = noone;
 
+global.player.view.x = room_width div 2;
+global.player.view.y = room_height div 2;
+
 var _roomId = scr_room_get_id(room);
 
 if(global.mapControl.objectList[_roomId] == noone){
@@ -46,6 +49,84 @@ var _maxDistance = 200;
 var _currentDistance = 50;
 var _angle = 0;
 	
+mp_grid_destroy(_tempGrid);
+
+mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
+mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
+
+if(global.mapControl.previousDirection != noone){
+	var _startX = 64;
+	var _startY = 64;
+	var _closestDoor = noone;
+	var _closestDistance = MAX;
+	switch(global.mapControl.previousDirection){
+	
+		case EAST:
+			with(obj_map_door_parent){
+				if(x > _startX){
+					continue;
+				}
+				var _distance = abs(y - global.mapControl.previousY);
+				if(_distance < _closestDistance){
+					_closestDoor = self;
+					_closestDistance = _distance;
+				}
+			}
+		break;
+		
+		case WEST:
+			with(obj_map_door_parent){
+				_startX = room_width - _startX;
+				if(x < _startX){
+					continue;
+				}
+				var _distance = abs(y - global.mapControl.previousY);
+				if(_distance < _closestDistance){
+					_closestDoor = self;
+					_closestDistance = _distance;
+				}
+			}
+		break;
+		
+		case NORTH:
+			with(obj_map_door_parent){
+				_startY = room_height - _startX;
+				if(y < _startY){
+					continue;
+				}
+				var _distance = abs(x - global.mapControl.previousX);
+				if(_distance < _closestDistance){
+					_closestDoor = self;
+					_closestDistance = _distance;
+				}
+			}
+		break;
+		
+		case SOUTH:
+			with(obj_map_door_parent){
+				if(y > _startY){
+					continue;
+				}
+				var _distance = abs(x - global.mapControl.previousX);
+				if(_distance < _closestDistance){
+					_closestDoor = self;
+					_closestDistance = _distance;
+				}
+			}
+		break;
+		
+	}
+	
+	if(_closestDoor != noone){
+		global.player.x = _closestDoor.x;
+		global.player.y = _closestDoor.y;
+		global.player.phy_position_x = _closestDoor.x;
+		global.player.phy_position_y = _closestDoor.y;
+	}
+	
+	global.mapControl.previousDirection = noone;
+}
+
 while(!scr_linked_list_is_empty(global.mapControl.followingList)){
 	var _lifeformSave = scr_linked_list_remove_next(global.mapControl.followingList);
 	var _foundFreeSpot = false;
@@ -92,11 +173,6 @@ while(!scr_linked_list_is_empty(global.mapControl.followingList)){
 		scr_linked_list_add(global.mapControl.lifeformList[_lifeformSave.lastRoomId], _lifeformSave);
 	}
 }
-
-mp_grid_destroy(_tempGrid);
-
-mp_grid_add_instances(global.aiGrid, obj_map_solid_parent, true);
-mp_grid_add_instances(global.aiGrid, obj_unwalkable, true);
 
 if(global.isWorldMap){
 	if(global.mapControl.objectList[_roomId] != noone){

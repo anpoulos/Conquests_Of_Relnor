@@ -14,7 +14,10 @@
         "9da30e17-0500-40c6-afb2-af8799ea3c71",
         "09969287-a1fb-45a6-8711-7a7411d2c991",
         "499a72cd-33b1-427f-9aa8-83a1a94cd0b6",
-        "eadf5c63-feb3-4db9-9808-3b703c67a71e"
+        "eadf5c63-feb3-4db9-9808-3b703c67a71e",
+        "80945f85-f143-4a1b-9d71-19b7b79f4a8d",
+        "dfa6b527-4474-4a0e-ba50-5e152699cb7d",
+        "b8ea6a5c-28e7-4693-9ccc-79096358ce80"
     ],
     "filterType": "GMScript",
     "folderName": "Room",

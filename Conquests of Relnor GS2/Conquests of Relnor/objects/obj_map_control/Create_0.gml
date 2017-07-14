@@ -24,6 +24,9 @@ for(var i = 0; i < ROOM_MAX; i++){
 
 scr_settings_initialize();
 
+previousX = noone;
+previousY = noone;
+previousDirection = noone;
 destinationX = noone;
 destinationY = noone;
 destinationRoom = noone;
@@ -53,3 +56,5 @@ followingList = scr_linked_list_create();
 
 gameOver = false;
 gameOverOpacity = 0.0;
+
+scr_rooms_set();

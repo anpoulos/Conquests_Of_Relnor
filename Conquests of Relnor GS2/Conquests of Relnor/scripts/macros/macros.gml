@@ -1,3 +1,14 @@
+#macro NORTH 0
+#macro EAST 1
+#macro SOUTH 2
+#macro WEST 3
+#macro NORTHEAST 4
+#macro NORTHWEST 5
+#macro SOUTHEAST 6
+#macro SOUTHWEST 7
+
+#macro RELNOR_MAX_CELLS 50
+
 #macro SETTINGS_MAP_SHADOW 0
 #macro SETTINGS_LIFEFORM_SHADOW 1
 #macro SETTINGS_DIFFICULTY 2
