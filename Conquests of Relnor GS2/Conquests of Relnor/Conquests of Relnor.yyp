@@ -1143,6 +1143,14 @@
             }
         },
         {
+            "Key": "15c2bc69-58e4-459c-aee3-f73402d59d64",
+            "Value": {
+                "id": "f135d040-b4c3-470d-ae08-14af69be4493",
+                "resourcePath": "views\\15c2bc69-58e4-459c-aee3-f73402d59d64.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "15e5e26f-c5c7-434b-b067-6264ef55edba",
             "Value": {
                 "id": "7074db36-7cc4-423a-84b2-a03eabe0d4bc",
@@ -3015,6 +3023,14 @@
             }
         },
         {
+            "Key": "35c38472-03b4-4e35-9d70-6d3d33cd1ecc",
+            "Value": {
+                "id": "d42a74a5-c3a8-433b-9613-ac3278405252",
+                "resourcePath": "scripts\\scr_date_get_next_date\\scr_date_get_next_date.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "35c5e54f-2e2d-4a7a-954b-a73cc0b6c031",
             "Value": {
                 "id": "5d882b74-5ce7-4a1a-abb8-79f2c7f9b9d8",
@@ -3148,6 +3164,14 @@
                 "id": "c808329f-3acf-4eae-aa34-d502aad0348e",
                 "resourcePath": "sprites\\spr_npc_red_cavalry_down\\spr_npc_red_cavalry_down.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "385dbfbb-aa50-4ebd-929d-2fd350738e5f",
+            "Value": {
+                "id": "7f9ba196-7c4a-4029-a1c4-a473d05bf49f",
+                "resourcePath": "scripts\\scr_date_day_increment_day\\scr_date_day_increment_day.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -7175,6 +7199,14 @@
             }
         },
         {
+            "Key": "872c64d1-cef8-4eeb-901c-ef9b8687e924",
+            "Value": {
+                "id": "7ee4e6cc-d4e6-4f7a-a1ef-21c7884380a4",
+                "resourcePath": "objects\\obj_date\\obj_date.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "873d3709-8bba-4d59-b6fc-f776a3c13c36",
             "Value": {
                 "id": "a3dce01d-cd49-4c37-87bc-ffd11a1e5226",
@@ -7684,6 +7716,14 @@
                 "id": "043f6f2e-3317-4e17-a444-bc31fa317f04",
                 "resourcePath": "objects\\obj_map_door_wooden_3\\obj_map_door_wooden_3.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8f37eb50-ed4f-48ca-ac46-ae773b7689b5",
+            "Value": {
+                "id": "06495c11-aa51-4876-9dce-6a7a3bfd0e47",
+                "resourcePath": "scripts\\scr_date_month_increment_month\\scr_date_month_increment_month.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -14431,6 +14471,9 @@
         "9f2edc86-07aa-4713-aedd-1bb1a366c0c1",
         "31d5c9c4-65d3-4ab9-b8cc-154f15ad609a",
         "3afb0625-ad6a-412d-8681-6c7cb3957ffb",
+        "385dbfbb-aa50-4ebd-929d-2fd350738e5f",
+        "8f37eb50-ed4f-48ca-ac46-ae773b7689b5",
+        "35c38472-03b4-4e35-9d70-6d3d33cd1ecc",
         "61a995e9-684d-41a5-8e57-e3a8653b965b"
     ],
     "tutorial": ""

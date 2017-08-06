@@ -4,8 +4,6 @@ event_inherited();
 
 scr_linked_list_add(global.allNpcs, self);
 
-deathTimer = -1;
-
 wasLoadedFromSave = false;
 
 allegianceParent = noone;

@@ -83,4 +83,5 @@ global.time += global.timeIncrement;
 
 if(global.time >= 24000){
 	global.time = 0;
+	scr_date_day_increment_day();
 }

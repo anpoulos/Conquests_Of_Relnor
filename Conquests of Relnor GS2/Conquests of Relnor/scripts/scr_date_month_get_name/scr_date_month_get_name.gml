@@ -1,21 +1,22 @@
 ///@param month
 
 switch(argument0){
-	case 1: return "Melium";
-	case 2: return "Rosium";
-	case 3: return "Hotium";
-	case 4: return "Blazium";
-	case 5: return "Setium";
-	case 6: return "Leafia";
-	case 7: return "Countia";
-	case 8: return "Groundia";
-	case 9: return "Baria";
-	case 10: return "Animia";
-	case 11: return "Harvestia";
-	case 12: return "Bitteric";
-	case 13: return "Bruteric";
-	case 14: return "Cozic";
-	case 15: return "Stoperic";
+	case DATE_MONTH_MELIUM: return "Melium";
+	case DATE_MONTH_ROSIUM: return "Rosium";
+	case DATE_MONTH_HOTIUM: return "Hotium";
+	case DATE_MONTH_BLAZIUM: return "Blazium";
+	case DATE_MONTH_SETIUM: return "Setium";
+	case DATE_MONTH_LEAFIA: return "Leafia";
+	case DATE_MONTH_COUNTIA: return "Countia";
+	case DATE_MONTH_GROUNDIA: return "Groundia";
+	case DATE_MONTH_BARIA: return "Baria";
+	case DATE_MONTH_ANIMIA: return "Animia";
+	case DATE_MONTH_HARVESTIA: return "Harvestia";
+	case DATE_MONTH_BITTERIC: return "Bitteric";
+	case DATE_MONTH_BRUTERIC: return "Bruteric";
+	case DATE_MONTH_COZIC: return "Cozic";
+	case DATE_MONTH_STOPERIC: return "Stoperic";
+	default: return "Month not found.";
 }
 
 

@@ -76,7 +76,7 @@ else{ //controller defaults
 	triggersBinding[TRIGGER_CLOSE_OR_OPEN_PARTY_MENU] = gp_start;
 
 	triggersType[TRIGGER_DASH] = TRIGGER_TYPE_CHECK;
-	triggersBinding[TRIGGER_DASH] = gp_face3;
+	triggersBinding[TRIGGER_DASH] = gp_face2;
 
 	triggersType[TRIGGER_MAGIC] = TRIGGER_TYPE_CHECK;
 	triggersBinding[TRIGGER_MAGIC] = gp_shoulderlb;
@@ -103,10 +103,10 @@ else{ //controller defaults
 	triggersBinding[TRIGGER_COMMAND_MENU] = gp_select;
 	
 	triggersType[TRIGGER_AUTO_TARGET] = TRIGGER_TYPE_PRESSED;
-	triggersBinding[TRIGGER_AUTO_TARGET] = gp_face2;
+	triggersBinding[TRIGGER_AUTO_TARGET] = gp_face4;
 
 	triggersType[TRIGGER_SPECIAL] = TRIGGER_TYPE_PRESSED;
-	triggersBinding[TRIGGER_SPECIAL] = gp_face4;
+	triggersBinding[TRIGGER_SPECIAL] = gp_face3;
 }
 
 

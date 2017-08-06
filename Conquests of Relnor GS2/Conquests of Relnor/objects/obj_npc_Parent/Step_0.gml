@@ -4,20 +4,18 @@ event_inherited();
 
 
 
-if(isDead){
-	if(deathTimer > 0){
-		deathTimer -= 1;
-	}
-	
-	if(deathTimer == 0){
-		if(respawns){
-			var _npc = instance_create(spawnX, spawnY, object_index);
-			_npc.respawns = true;
-			_npc.spawnX = spawnX;
-			_npc.spawnY = spawnY;
-			scr_lifeform_add_exp(_npc, global.player.experience);
-		}
+if(isDead){	
+	if(!respawns){
 		instance_destroy();
+	}
+	var _dateCompare = scr_date_compare(spawnDay, spawnMonth, spawnYear, global.dateDay, global.dateMonth, global.dateYear);
+	if(_dateCompare == -1 || _dateCompare == 0){
+		var _npc = instance_create(spawnX, spawnY, object_index);
+		_npc.respawns = true;
+		_npc.spawnX = spawnX;
+		_npc.spawnY = spawnY;
+		scr_lifeform_add_exp(_npc, global.player.experience);
+		instance_destroy();	
 	}
 }
 else if(!phy_active){

@@ -14,6 +14,10 @@ global.worldMapControl = instance_create(0,0,obj_map_world_control);
 global.triggersInput = TRIGGER_INPUT_TYPE_KEYBOARD;
 global.allNpcs = noone;
 global.timeIncrement = 1;
+global.dateDay = 1;
+global.dateMonth = DATE_MONTH_MELIUM;
+global.dateYear = 1240;
+global.day = DATE_DAY_ORPIS;
 
 for(var i = 0; i < ROOM_MAX; i++){
 	lifeformList[i] = noone;
@@ -50,7 +54,6 @@ for(var i = 0; i < LEVEL_CAP; i++){
 for(var i = 0; i < LEVEL_CAP-1; i++){
 	experienceDifference[i] = experienceTotal[i+1]-experienceTotal[i];
 }
-
 
 followingList = scr_linked_list_create();
 

@@ -55,7 +55,12 @@ for(var i = 0; i < EQUIPMENT_TYPE_MAX; i++){
 	}
 }
 
-deathTimer = room_speed*irandom(10) + room_speed*10;
+var _spawnDate = scr_date_get_next_date(1);
+
+spawnDay = _spawnDate.day;
+spawnMonth = _spawnDate.month;
+spawnYear = _spawnDate.year;
+instance_destroy(_spawnDate);
 
 state = scr_npc_idle_death_state;
 

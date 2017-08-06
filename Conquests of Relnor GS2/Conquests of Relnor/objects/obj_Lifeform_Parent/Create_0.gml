@@ -3,6 +3,10 @@ actionTimer = 0;
 
 shadowSurface = surface_create(room_width, room_height);
 
+deathDay = -1;
+deathMonth = -1;
+deathYear = -1;
+
 isVisible = true;
 
 isCharging = false;
@@ -108,7 +112,6 @@ moveOffsetY = 0;
 reach = 15;
 
 statRestoreStep = 0;
-
 
 isPlayer = false;
 statsMax[STATS_PHYSICAL, STATS_PHYSICAL_HEALTH] = 10;

@@ -2,7 +2,9 @@
 // You can write your code in this editor
 isVisible = false;
 
-deathTimer = -1;
+spawnDay = -1;
+spawnMonth = -1;
+spawnYear = -1;
 
 objectIndex = noone;
 

@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if(deathTimer > 0){
-	deathTimer -= 1;
-}
+day = -1;
+month = -1;
+year = -1;
